@@ -129,6 +129,6 @@ dmypy.json
 .pyre/
 
 # Data files 
-.txt
-.dat
-.fig
+*.txt
+*.dat
+*.fig
