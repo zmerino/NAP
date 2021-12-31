@@ -1,10 +1,10 @@
-function [failed, sx, sPDF, sCDF, u, sqr, nBlocks, Blacklist, Ns, ...
-    binNs, LG_max, LG_sum, T, BRlevel, BR0]...
-    = stitch_pdf(inputSample, filename, lowLim, upLim, p)
-
-% initialze the failed trip flag to false
+function [failed,sx,sPDF,sCDF,u,sqr,nBlocks,Blacklist,Ns,binNs, LG_max, LG_sum,T,BRlevel,BR0] = stitch_pdf(inputSample,filename,sendFileName,lowLim,upLim,p)
+publicationQuality();
 failed = 0;
 
+% stitchPDF switching board %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+plotQQandSQR =              false; %<- true/false plot on/off QQ&SQR from stitchpdf
+saveFIG =                   true; %<- true/false save plot figures on/off
 % Script Detailed output %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 show_block_layout =         false; % true/false see details of block chain
 visualize_interpolation =   false; % true/false  checking & debuging on/off
@@ -14,7 +14,7 @@ blockPdfs =                 false; % true/false plot on/off pdf for each block
 targetCoverage = 40;%65;
 targetCoverage = round(targetCoverage);
 minNs = 10;                                    % minimum number of samples
-maxNs = 140000000;                        % larger makes program very slow
+maxNs = 100000000;                        % larger makes program very slow
 %%                                                     some error checking      section 2
 targetCoverage = sort(targetCoverage);
 nTargets = length(targetCoverage);
@@ -43,6 +43,8 @@ indx = 15:length(xScore)-15;
 dx = xScore(indx+14) - xScore(indx-14);
 dy = yCoverage(indx+14) - yCoverage(indx-14);
 wScore = dy./dx;
+xScore = xScore(15:end-15);
+%plot(xScore,wScore);                                        % for checking
 wt = size(targetCoverage,1);
 for k=1:nTargets
     a = yCoverage - targetCoverage(k);
@@ -54,7 +56,11 @@ wt = wt/wtsum;
 
 %%                                          define qualitative descriptors      section 4
 %---------------------------------------------------------- read in sample
+FileName4Sample = sendFileName;
 orginalSample = inputSample;
+
+% inFileName = ['fullSample_',filename,'.dat'];
+% dlmwrite(inFileName,orginalSample,'delimiter','\n','precision',12);
 
 sample = unique(orginalSample);
 numUnique = length(orginalSample) - length(sample);
@@ -604,7 +610,7 @@ if sum(~isfinite(sPDF)) || sum(~isfinite(sx))
     % pdf trigger non-finite values when estimate fails
     sum(~isfinite(sx))
     warning('non-finite values')
-%     pause
+    %pause
 end
 
 
@@ -614,6 +620,7 @@ end
 %                    boundaries as they should be, which is not automatic
 % integrate assuming linear interpolation only
 sCDF = zeros( size(sPDF) );
+
 %----------------------------------------------------------------------
 sCDF(1) = 0;
 kmax = length(sCDF);
@@ -625,6 +632,26 @@ for k=2:kmax
 end
 temp = sCDF(kmax);
 sCDF = pNorm*(sCDF/temp) + pL;  % recalling what pL, pR and pNorm are
+
+if sum(~isfinite(sCDF)) || sum(~isfinite(sx))
+    sum(~isfinite(sCDF))
+    % pdf trigger non-finite values when estimate fails
+    sum(~isfinite(sx))
+    warning('non-finite values')
+    %pause
+end
+
+sCDF(1) = 0;
+kmax = length(sCDF);
+% disp(['length(sCDF): ',num2str(kmax)])
+for k=2:kmax
+    fave = 0.5*( sPDF(k) + sPDF(k-1) );
+    area = fave*( sx(k) - sx(k-1) );
+    sCDF(k) = sCDF(k-1) + area;
+end
+temp = sCDF(kmax);
+sCDF = pNorm*(sCDF/temp) + pL;  
+
 %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 % ============================================ END: stitch blocks together
 %/////////////////////////////////////////////////////////////////////////
@@ -647,5 +674,9 @@ end
 
 % --------------------------------------------------- get scaled residual
 sqr = sqrt(Ns)*(u - uref); % normal formula has sqrt(Ns+2) but Ns -> Ns-2
+% plot results
+
 [u,sqr] = misc_functions.sqr(sx,sPDF,inputSample);
+misc_functions.stitch_results_plot(plotQQandSQR,uref,u,msgModelType,Ns,prefix,saveFIG,sqr)
+% --------------------------------------------------------------- finished
 end

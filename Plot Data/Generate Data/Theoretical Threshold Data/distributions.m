@@ -32,7 +32,8 @@ classdef distributions
     end
     methods
         function [obj] = dist_list(obj)
-            rng(1,'twister');
+            % used to seed random sample generation
+%             rng(1,'twister');
             debug = false;
             switch obj.dist_name
                 case 'Beta-a0p5-b1p5'

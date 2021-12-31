@@ -32,7 +32,6 @@ classdef distributions
     end
     methods
         function [obj] = dist_list(obj)
-            rng(1,'twister');
             debug = false;
             switch obj.dist_name
                 case 'Beta-a0p5-b1p5'
@@ -48,7 +47,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'Beta-a2-b0p5'
                     % Beta2 Case Statement
@@ -63,7 +62,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'Beta-a0p5-b0p5'
                     % Beta3 Case Statement
@@ -78,7 +77,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'Bimodal-Normal' %------------------------------------------------- Mixture****
                     % Normal Case Statement
@@ -185,7 +184,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'BirnbaumSaunders'
                     % BirnbaumSaunders Case Statement
@@ -201,7 +200,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'BirnbaumSaunders-Stable' %------------------------------------------------- Mixture****
                     % BirnbaumSaunders Case Statement
@@ -320,7 +319,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'Chisquare'
                     % Chisquare Case Statement
@@ -332,7 +331,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'Exponential'
                     % Exponential Case Statement
@@ -345,7 +344,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'Extreme-Value'
                     % Extreme Value Case Statement
@@ -362,7 +361,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'Gamma'
                     % Gamma Case Statement
@@ -378,7 +377,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'Generalized-Extreme-Value' %------------------------------------------------- Mixture****
                     % Generalized Extreme Value Value Statement
@@ -397,7 +396,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'Generalized-Pareto' %------------------------------------------------- Mixture****
                     % Generalized Pareto Value Value Case Statement
@@ -417,7 +416,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'HalfNormal'
                     % Half Normal Value Case Statement
@@ -433,7 +432,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'InverseGaussian'
                     % Inverse Gaussian Case Statement
@@ -449,7 +448,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'Normal'
                     % Normal Case Statement
@@ -465,7 +464,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'Normal-Contaminated' %------------------------------------------------- Mixture****
                     % Normal Case Statement
@@ -720,7 +719,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'Stable1'
                     % Stable Case Statement
@@ -754,7 +753,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'Stable2' %------------------------------------------------- Mixture****
                     % mixture model for 2 stable distributions
@@ -1085,7 +1084,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'Uniform'
                     % Uniform Case Statement
@@ -1099,12 +1098,12 @@ classdef distributions
                     obj.pdf_y = pdf(obj.distInfo,obj.x);
                     
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     obj.rndData = random(obj.distInfo,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 case 'Uniform-Mix' %------------------------------------------------- Mixture****
                     % Uniform Case Statement
@@ -1220,7 +1219,7 @@ classdef distributions
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
+                    obj.true_quantile = icdf(obj.distInfo,obj.pVector);
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                 otherwise
                     % Warning Statement
