@@ -34,9 +34,9 @@ estimator_plot_flag =       false;   %<- true/false plot SE results on/off
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 save_graphics =             false;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   11; %<---- maximum exponent to generate samples
+max_pow =                   9; %<---- maximum exponent to generate samples
 min_pow =                   9; %<---- minimum exponent to generate samples
-trials =                    3;  %<--- trials to run to generate heuristics for programs
+trials =                    1;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -67,7 +67,7 @@ distribution_vector = ["Generalized-Pareto","Stable","Normal", "Uniform","Beta-a
  distribution_vector = ["Trimodal-Normal","Normal", "Uniform"];
 % distribution_vector = ["Beta-a0p5-b1p5"];
 % distribution_vector = ["Stable"];
-% distribution_vector = ["Normal"];
+distribution_vector = ["Normal"];
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Main Function Call Loop used to lable plot figures
 
