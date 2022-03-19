@@ -1,8 +1,13 @@
 
 close all; clear;
 
-filename = 'BR0_data_table.txt';
-data = readtable(filename);
+filename = 'br0_table.dat';
+
+dirname = fullfile('data','theoretical_threshold');
+
+pathname = fullfile(dirname, filename);
+
+data = readtable(pathname);
 
 
 disp(data)

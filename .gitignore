@@ -134,3 +134,4 @@ dmypy.json
 *.fig
 *.png
 *.eps
+*.asv

@@ -52,7 +52,7 @@ xlabel('$log_{2}(N)$','Interpreter','latex')
 ylabel('Max Lagrange Multiplier','Interpreter','latex')
 legend
 
-figure('Name','Max lagrange multiplier')
+figure('Name','NSE Max lagrange multiplier')
 b = boxchart(log(data_nse.sample_power)/log(2), data_nse.lagrange, 'GroupByColor',data_nse.distribution);
 bp = gca;
 bp.XAxis.TickLabelInterpreter = 'latex';
@@ -60,7 +60,7 @@ xlabel('$log_{2}(N)$','Interpreter','latex')
 ylabel('Max Lagrange Multiplier','Interpreter','latex')
 legend
 
-figure('Name','Max lagrange multiplier')
+figure('Name','NMEM Max lagrange multiplier')
 b = boxchart(log(data_nmem.sample_power)/log(2), data_nmem.lagrange, 'GroupByColor',data_nmem.distribution);
 bp = gca;
 bp.XAxis.TickLabelInterpreter = 'latex';
@@ -77,9 +77,13 @@ xlabel('$log_{2}(N)$','Interpreter','latex')
 ylabel('KL','Interpreter','latex')
 legend
 
+% TODO: Make sure kl/mse data is positive. Why the negative values?
 figure('Name','KL NSE by distribution')
-b = boxchart(log(data_nse.sample_power)/log(2), log(data_nse.kl),...
+b = boxchart(log(data_nse.sample_power)/log(2), log(abs(data_nse.kl)),...
         'GroupByColor',data_nse.distribution);
+% figure('Name','KL NSE by distribution')
+% b = boxchart(log(data_nse.sample_power)/log(2), log(data_nse.kl),...
+%         'GroupByColor',data_nse.distribution);
 bp = gca;
 bp.XAxis.TickLabelInterpreter = 'latex';
 bp.XTickLabel = labels;
