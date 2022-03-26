@@ -321,7 +321,6 @@ end
 %%                                                        run PDFestimator      section 13
 tic
 
-
 % initialize vector to hold all lagrainge mutiplers per block
 LG = zeros(1,nBlocks);
 parfor b=1:nBlocks
@@ -351,15 +350,21 @@ parfor b=1:nBlocks
         tempStruc.adaptiveDx = false;
         
         try
+            
             [failed, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b},tempStruc);
+
         catch
             warning(['Problem using function.  Assigning a value of 0.',' t: ',num2str(t),' b: ',num2str(b)]);
             lagrange = 0;
-            targetBlock{t,b}.data(:,1) = linspace(min(MatPDFsample{b}),max(MatPDFsample{b}),length(MatPDFsample{b}));
-            targetBlock{t,b}.data(:,2) = 0*ones(length(MatPDFsample{b}),1);
-            targetBlock{t,b}.data(:,3) = 0*ones(length(MatPDFsample{b}),1);
+%             targetBlock{t,b}.data(:,1) = linspace(min(MatPDFsample{b}),max(MatPDFsample{b}),length(MatPDFsample{b}));
+%             targetBlock{t,b}.data(:,2) = 0*ones(length(MatPDFsample{b}),1);
+%             targetBlock{t,b}.data(:,3) = 0*ones(length(MatPDFsample{b}),1);
+
+            targetBlock{t,b}.data(:,1) = linspace(min(MatPDFsample{b}),max(MatPDFsample{b}),tempStruc.integrationPoints);
+            targetBlock{t,b}.data(:,2) = 0*ones(tempStruc.integrationPoints,1);
+            targetBlock{t,b}.data(:,3) = 0*ones(tempStruc.integrationPoints,1);
         end
-        
+
         LG(1,b) = size(lagrange,1);
         
     end
