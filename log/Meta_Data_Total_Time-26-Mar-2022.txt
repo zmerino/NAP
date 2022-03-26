@@ -1,0 +1,52 @@
+Time estimate for meta data run started on: 26-Mar-2022 14:33:05
+Sample Range: 256 - 32768
+Number of Trials: 10
+
+Trimodal-Normal NSE: Sample size: 256 Total Time per Sample: 0.00055756 hrs
+Trimodal-Normal NMEM: Sample size: 256 Total Time per Sample: 2.0347e-05 hrs 
+
+Trimodal-Normal NSE: Sample size: 512 Total Time per Sample: 0.0013591 hrs
+Trimodal-Normal NMEM: Sample size: 512 Total Time per Sample: 7.0981e-05 hrs 
+
+Trimodal-Normal NSE: Sample size: 1024 Total Time per Sample: 0.0024044 hrs
+Trimodal-Normal NMEM: Sample size: 1024 Total Time per Sample: 0.0001625 hrs 
+
+Trimodal-Normal NSE: Sample size: 2048 Total Time per Sample: 0.0036819 hrs
+Trimodal-Normal NMEM: Sample size: 2048 Total Time per Sample: 0.00024582 hrs 
+
+Trimodal-Normal NSE: Sample size: 4096 Total Time per Sample: 0.005481 hrs
+Trimodal-Normal NMEM: Sample size: 4096 Total Time per Sample: 0.00037205 hrs 
+
+Trimodal-Normal NSE: Sample size: 8192 Total Time per Sample: 0.0074696 hrs
+Trimodal-Normal NMEM: Sample size: 8192 Total Time per Sample: 0.00054618 hrs 
+
+Trimodal-Normal NSE: Sample size: 16384 Total Time per Sample: 0.010794 hrs
+Trimodal-Normal NMEM: Sample size: 16384 Total Time per Sample: 0.0007486 hrs 
+
+Trimodal-Normal NSE: Sample size: 32768 Total Time per Sample: 0.014489 hrs
+Trimodal-Normal NMEM: Sample size: 32768 Total Time per Sample: 0.0010286 hrs 
+
+ 
+ NSE: Total Time per Distribution: 0.014489 hrs
+ NMEM: Total Time per Distribution: 0.0010286 hrs
+_____________________________________________________
+Normal NSE: Sample size: 256 Total Time per Sample: 0.01412 hrs
+Normal NMEM: Sample size: 256 Total Time per Sample: 0.0010271 hrs 
+
+Normal NSE: Sample size: 512 Total Time per Sample: 0.013467 hrs
+Normal NMEM: Sample size: 512 Total Time per Sample: 0.00099749 hrs 
+
+Normal NSE: Sample size: 1024 Total Time per Sample: 0.012671 hrs
+Normal NMEM: Sample size: 1024 Total Time per Sample: 0.00092898 hrs 
+
+Normal NSE: Sample size: 2048 Total Time per Sample: 0.011662 hrs
+Normal NMEM: Sample size: 2048 Total Time per Sample: 0.00087035 hrs 
+
+Normal NSE: Sample size: 4096 Total Time per Sample: 0.010452 hrs
+Normal NMEM: Sample size: 4096 Total Time per Sample: 0.00078145 hrs 
+
+Normal NSE: Sample size: 8192 Total Time per Sample: 0.0092961 hrs
+Normal NMEM: Sample size: 8192 Total Time per Sample: 0.00064382 hrs 
+
+Normal NSE: Sample size: 16384 Total Time per Sample: 0.007045 hrs
+Normal NMEM: Sample size: 16384 Total Time per Sample: 0.00047783 hrs 

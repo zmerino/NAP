@@ -1,0 +1,18 @@
+Time estimate for threshold run started on: 26-Mar-2022 14:34:23
+Sample Range: 256 - 67108864
+Number of Trials: 1000
+
+Uniform-Mix Sample size: 256 Total Time per Sample: 0.0018544 hrs
+Uniform-Mix Sample size: 512 Total Time per Sample: 0.00011917 hrs
+Uniform-Mix Sample size: 1024 Total Time per Sample: 0.0048811 hrs
+Uniform-Mix Sample size: 2048 Total Time per Sample: 0.0022047 hrs
+Uniform-Mix Sample size: 4096 Total Time per Sample: 0.0038542 hrs
+Uniform-Mix Sample size: 8192 Total Time per Sample: 0.0010964 hrs
+Uniform-Mix Sample size: 16384 Total Time per Sample: 0.0057822 hrs
+Uniform-Mix Sample size: 32768 Total Time per Sample: 0.0025761 hrs
+Uniform-Mix Sample size: 65536 Total Time per Sample: 0.0090089 hrs
+Uniform-Mix Sample size: 131072 Total Time per Sample: 0.011666 hrs
+Uniform-Mix Sample size: 262144 Total Time per Sample: 0.027824 hrs
+Uniform-Mix Sample size: 524288 Total Time per Sample: 0.053869 hrs
+Uniform-Mix Sample size: 1048576 Total Time per Sample: 0.11333 hrs
+Uniform-Mix Sample size: 2097152 Total Time per Sample: 0.28213 hrs

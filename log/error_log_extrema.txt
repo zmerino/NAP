@@ -1,0 +1,123 @@
+|<
+Stable, Trial: 1/3 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 1
+Elapsed time is 1.410144 seconds.
+[Warning: Problem using function.  Assigning a value of 0. t: 1 b: 1] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stitch_pdf', '/home/zach/Documents/github/nse/functions/stitch_pdf.m', 358)" style="font-weight:bold">stitch_pdf</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/stitch_pdf.m',358,0)">line 358</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 180)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',180,0)">line 180</a>)] 
+|<
+
+ans =
+
+     1
+
+
+ans =
+
+     0
+
+
+ans =
+
+   NaN
+
+
+ans =
+
+  1×0 empty <a href="matlab:helpPopup double" style="font-weight:bold">double</a> row vector
+
+[Warning: non-finite values] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stitch_pdf', '/home/zach/Documents/github/nse/functions/stitch_pdf.m', 615)" style="font-weight:bold">stitch_pdf</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/stitch_pdf.m',615,0)">line 615</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 180)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',180,0)">line 180</a>)] 
+non-finite values
+Stable, Trial: 2/3 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 2
+Elapsed time is 17.486394 seconds.
+|<
+Stable, Trial: 3/3 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 3
+Elapsed time is 2.072347 seconds.
+[Warning: Problem using function.  Assigning a value of 0. t: 1 b: 5] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stitch_pdf', '/home/zach/Documents/github/nse/functions/stitch_pdf.m', 358)" style="font-weight:bold">stitch_pdf</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/stitch_pdf.m',358,0)">line 358</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 180)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',180,0)">line 180</a>)] 
+|<
+Stable, Trial: 1/3 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 1
+Elapsed time is 3.262484 seconds.
+<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/stitch_pdf.m',357,1)">357 </a>        catch
+if system_dependent('IsDebugMode')==1, dbquit all; end
+driver_extrema
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 16)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',16,0)">line 16</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 19)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',19,0)">line 19</a>)] 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 4).
+|<
+Stable, Trial: 1/3 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 1
+Elapsed time is 12.246687 seconds.
+|<
+Stable, Trial: 2/3 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 2
+Elapsed time is 1.460691 seconds.
+|<
+Stable, Trial: 3/3 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 3
+Elapsed time is 7.631855 seconds.
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 3
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+|<
+Stable, Trial: 1/3 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 1
+Elapsed time is 3.943456 seconds.
+|<
+Stable, Trial: 2/3 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 2
+Elapsed time is 1.466531 seconds.
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 1
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('distcomp.remoteparfor/getCompleteIntervals', '/usr/local/MATLAB/R2021b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m', 379)" style="font-weight:bold">distcomp.remoteparfor/getCompleteIntervals</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m',379,0)">line 379</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function>distributed_execution', '/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m', 746)" style="font-weight:bold">parallel_function>distributed_execution</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m',746,0)">line 746</a>)
+        [tags, out] = P.getCompleteIntervals(chunkSize);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function', '/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m', 578)" style="font-weight:bold">parallel_function</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m',578,0)">line 578</a>)
+    R = distributed_execution(...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stitch_pdf', '/home/zach/Documents/github/nse/functions/stitch_pdf.m', 326)" style="font-weight:bold">stitch_pdf</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/stitch_pdf.m',326,0)">line 326</a>)
+parfor b=1:nBlocks
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 180)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',180,0)">line 180</a>)
+                = stitch_pdf(sample,rndom.filename, actual.min_limit,...
+} 
+driver_theoretical_trheshold
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_trheshold', '/home/zach/Documents/github/nse/driver_theoretical_trheshold.m', 6)" style="font-weight:bold">driver_theoretical_trheshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_trheshold.m',6,0)">line 6</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_trheshold', '/home/zach/Documents/github/nse/driver_theoretical_trheshold.m', 8)" style="font-weight:bold">driver_theoretical_trheshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_trheshold.m',8,0)">line 8</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_trheshold', '/home/zach/Documents/github/nse/driver_theoretical_trheshold.m', 11)" style="font-weight:bold">driver_theoretical_trheshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_trheshold.m',11,0)">line 11</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 21)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',21,0)">line 21</a>)] 
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('distcomp.remoteparfor/getCompleteIntervals', '/usr/local/MATLAB/R2021b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m', 379)" style="font-weight:bold">distcomp.remoteparfor/getCompleteIntervals</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m',379,0)">line 379</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function>distributed_execution', '/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m', 746)" style="font-weight:bold">parallel_function>distributed_execution</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m',746,0)">line 746</a>)
+        [tags, out] = P.getCompleteIntervals(chunkSize);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function', '/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m', 578)" style="font-weight:bold">parallel_function</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m',578,0)">line 578</a>)
+    R = distributed_execution(...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stitch_pdf', '/home/zach/Documents/github/nse/functions/stitch_pdf.m', 326)" style="font-weight:bold">stitch_pdf</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/stitch_pdf.m',326,0)">line 326</a>)
+parfor b=1:nBlocks
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 181)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',181,0)">line 181</a>)
+                = stitch_pdf(sample,rndom.filename, actual.min_limit,...
+} 
+driver_cpu_failure_KL
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse/driver_cpu_failure_KL.m', 7)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_cpu_failure_KL.m',7,0)">line 7</a>)] 

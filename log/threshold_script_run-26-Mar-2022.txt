@@ -1,0 +1,10 @@
+Threshold script started on: 26-Mar-2022 14:43:40/n
+_____________________________________________________
+Estimated time of complettion for Uniform-Mix distribution of sample size 256: 1.0475e-05hrs
+=====================================================
+_____________________________________________________Uniform-Mix, Trial: 10/10 Sample size: 256 Time: 0.000224 sec
+=====================================================
+Total Elapsed Time: 21.2403, Percent Complete: 10.0855
+_____________________________________________________
+Estimated time of complettion for Generalized-Pareto distribution of sample size 256: 5.9167e-07hrs
+=====================================================

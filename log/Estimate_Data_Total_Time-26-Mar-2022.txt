@@ -1,0 +1,73 @@
+Time estimate for estimator data run started on: 26-Mar-2022 14:33:40
+Sample Range: 256 - 2048
+Number of Trials: 2
+
+Beta-a0p5-b1p5 NSE: Sample size: 256 Total Time per Sample: 9.2568e-05 hrs
+Beta-a0p5-b1p5 NMEM: Sample size: 256 Total Time per Sample: 7.6822e-06 hrs 
+
+Beta-a0p5-b1p5 NSE: Sample size: 512 Total Time per Sample: 0.00020261 hrs
+Beta-a0p5-b1p5 NMEM: Sample size: 512 Total Time per Sample: 1.8197e-05 hrs 
+
+Beta-a0p5-b1p5 NSE: Sample size: 1024 Total Time per Sample: 0.00036106 hrs
+Beta-a0p5-b1p5 NMEM: Sample size: 1024 Total Time per Sample: 3.2832e-05 hrs 
+
+Beta-a0p5-b1p5 NSE: Sample size: 2048 Total Time per Sample: 0.00065373 hrs
+Beta-a0p5-b1p5 NMEM: Sample size: 2048 Total Time per Sample: 5.8008e-05 hrs 
+
+ 
+ NSE: Total Time per Distribution: 0.00065373 hrs
+ NMEM: Total Time per Distribution: 5.8008e-05 hrs
+_____________________________________________________
+Beta-a2-b0p5 NSE: Sample size: 256 Total Time per Sample: 0.0006275 hrs
+Beta-a2-b0p5 NMEM: Sample size: 256 Total Time per Sample: 5.7637e-05 hrs 
+
+Beta-a2-b0p5 NSE: Sample size: 512 Total Time per Sample: 0.00063546 hrs
+Beta-a2-b0p5 NMEM: Sample size: 512 Total Time per Sample: 6.0749e-05 hrs 
+
+Beta-a2-b0p5 NSE: Sample size: 1024 Total Time per Sample: 0.00088847 hrs
+Beta-a2-b0p5 NMEM: Sample size: 1024 Total Time per Sample: 8.2829e-05 hrs 
+
+Beta-a2-b0p5 NSE: Sample size: 2048 Total Time per Sample: 0.0012163 hrs
+Beta-a2-b0p5 NMEM: Sample size: 2048 Total Time per Sample: 0.00010394 hrs 
+
+ 
+ NSE: Total Time per Distribution: 0.0018701 hrs
+ NMEM: Total Time per Distribution: 0.00016195 hrs
+_____________________________________________________
+Beta-a0p5-b0p5 NSE: Sample size: 256 Total Time per Sample: 0.001212 hrs
+Beta-a0p5-b0p5 NMEM: Sample size: 256 Total Time per Sample: 0.00010189 hrs 
+
+Beta-a0p5-b0p5 NSE: Sample size: 512 Total Time per Sample: 0.001165 hrs
+Beta-a0p5-b0p5 NMEM: Sample size: 512 Total Time per Sample: 9.9043e-05 hrs 
+
+Beta-a0p5-b0p5 NSE: Sample size: 1024 Total Time per Sample: 0.000945 hrs
+Beta-a0p5-b0p5 NMEM: Sample size: 1024 Total Time per Sample: 8.0882e-05 hrs 
+
+Beta-a0p5-b0p5 NSE: Sample size: 2048 Total Time per Sample: 0.0005485 hrs
+Beta-a0p5-b0p5 NMEM: Sample size: 2048 Total Time per Sample: 5.4388e-05 hrs 
+
+ 
+ NSE: Total Time per Distribution: 0.0024186 hrs
+ NMEM: Total Time per Distribution: 0.00021634 hrs
+_____________________________________________________
+Generalized-Pareto NSE: Sample size: 256 Total Time per Sample: 0.00057564 hrs
+Generalized-Pareto NMEM: Sample size: 256 Total Time per Sample: 5.87e-05 hrs 
+
+Generalized-Pareto NSE: Sample size: 512 Total Time per Sample: 0.00061479 hrs
+Generalized-Pareto NMEM: Sample size: 512 Total Time per Sample: 5.8942e-05 hrs 
+
+Generalized-Pareto NSE: Sample size: 1024 Total Time per Sample: 0.0005814 hrs
+Generalized-Pareto NMEM: Sample size: 1024 Total Time per Sample: 5.3963e-05 hrs 
+
+Generalized-Pareto NSE: Sample size: 2048 Total Time per Sample: 0.0005996 hrs
+Generalized-Pareto NMEM: Sample size: 2048 Total Time per Sample: 5.0818e-05 hrs 
+
+ 
+ NSE: Total Time per Distribution: 0.0030182 hrs
+ NMEM: Total Time per Distribution: 0.00026716 hrs
+_____________________________________________________
+Stable NSE: Sample size: 256 Total Time per Sample: 0.0010423 hrs
+Stable NMEM: Sample size: 256 Total Time per Sample: 7.9815e-05 hrs 
+
+Stable NSE: Sample size: 512 Total Time per Sample: 0.0015718 hrs
+Stable NMEM: Sample size: 512 Total Time per Sample: 0.00012894 hrs 

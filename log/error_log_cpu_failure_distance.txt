@@ -1,0 +1,62 @@
+|<
+Trimodal-Normal, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Elapsed time is 0.701071 seconds.
+|<
+Trimodal-Normal, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Elapsed time is 0.679833 seconds.
+|<
+Trimodal-Normal, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Elapsed time is 0.861206 seconds.
+|<
+Trimodal-Normal, Trial: 1/10 sample size: 2048 failSE: 0 failNMEM: 0
+Elapsed time is 1.106309 seconds.
+|<
+Trimodal-Normal, Trial: 1/10 sample size: 4096 failSE: 0 failNMEM: 0
+Elapsed time is 1.187191 seconds.
+|<
+Trimodal-Normal, Trial: 1/10 sample size: 8192 failSE: 0 failNMEM: 0
+Elapsed time is 1.339273 seconds.
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stitch_pdf', '/home/zach/Documents/github/nse/functions/stitch_pdf.m', 355)" style="font-weight:bold">stitch_pdf</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/stitch_pdf.m',355,0)">line 355</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse/driver_cpu_failure_KL.m', 175)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_cpu_failure_KL.m',175,0)">line 175</a>)
+                = stitch_pdf(sample,rndom.filename, actual.min_limit,...
+} 
+driver_theoretical_trheshold
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_trheshold', '/home/zach/Documents/github/nse/driver_theoretical_trheshold.m', 6)" style="font-weight:bold">driver_theoretical_trheshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_trheshold.m',6,0)">line 6</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_trheshold', '/home/zach/Documents/github/nse/driver_theoretical_trheshold.m', 8)" style="font-weight:bold">driver_theoretical_trheshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_trheshold.m',8,0)">line 8</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_trheshold', '/home/zach/Documents/github/nse/driver_theoretical_trheshold.m', 18)" style="font-weight:bold">driver_theoretical_trheshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_trheshold.m',18,0)">line 18</a>)] 
+|<
+Trimodal-Normal, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Elapsed time is 0.943455 seconds.
+|<
+Trimodal-Normal, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Elapsed time is 0.714604 seconds.
+|<
+Trimodal-Normal, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Elapsed time is 0.958331 seconds.
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('distcomp.remoteparfor/getCompleteIntervals', '/usr/local/MATLAB/R2021b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m', 379)" style="font-weight:bold">distcomp.remoteparfor/getCompleteIntervals</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m',379,0)">line 379</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function>distributed_execution', '/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m', 746)" style="font-weight:bold">parallel_function>distributed_execution</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m',746,0)">line 746</a>)
+        [tags, out] = P.getCompleteIntervals(chunkSize);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function', '/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m', 578)" style="font-weight:bold">parallel_function</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m',578,0)">line 578</a>)
+    R = distributed_execution(...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stitch_pdf', '/home/zach/Documents/github/nse/functions/stitch_pdf.m', 326)" style="font-weight:bold">stitch_pdf</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/stitch_pdf.m',326,0)">line 326</a>)
+parfor b=1:nBlocks
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse/driver_cpu_failure_KL.m', 182)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_cpu_failure_KL.m',182,0)">line 182</a>)
+                = stitch_pdf(sample,rndom.filename, actual.min_limit,...
+} 
+driver_theoretical_trheshold
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_trheshold', '/home/zach/Documents/github/nse/driver_theoretical_trheshold.m', 6)" style="font-weight:bold">driver_theoretical_trheshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_trheshold.m',6,0)">line 6</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_trheshold', '/home/zach/Documents/github/nse/driver_theoretical_trheshold.m', 8)" style="font-weight:bold">driver_theoretical_trheshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_trheshold.m',8,0)">line 8</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_trheshold', '/home/zach/Documents/github/nse/driver_theoretical_trheshold.m', 11)" style="font-weight:bold">driver_theoretical_trheshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_trheshold.m',11,0)">line 11</a>)] 
