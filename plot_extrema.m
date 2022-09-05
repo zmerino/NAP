@@ -1,5 +1,6 @@
 clc; clear; close all;
 
+addpath("functions/")
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% To Plot %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

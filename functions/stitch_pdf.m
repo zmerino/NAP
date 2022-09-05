@@ -1,17 +1,27 @@
 function [failed, sx, sPDF, sCDF, u, sqr, nBlocks, Blacklist, Ns, ...
     binNs, LG_max, LG_sum, T, BRlevel, BR0]...
-    = stitch_pdf(inputSample, filename, lowLim, upLim, p)
+    = stitch_pdf(inputSample, filename, lowLim, upLim, p, ...
+    show_block_layout, visualize_interpolation, blockPdfs, savePNG) % for visualization
+    
 
 % initialze the failed trip flag to false
 failed = 0;
 
 % Script Detailed output %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-show_block_layout =         false; % true/false see details of block chain
-visualize_interpolation =   false; % true/false  checking & debuging on/off
-blockPdfs =                 false; % true/false plot on/off pdf for each block
-
+if ~exist('show_block_layout','var')
+      show_block_layout = false;
+end
+if ~exist('visualize_interpolation','var')
+      visualize_interpolation = false;
+end
+if ~exist('blockPdfs','var')
+      blockPdfs = false;
+end
+if ~exist('savePNG','var')
+      savePNG = false;
+end
 %%                                                              user input      section 1
-targetCoverage = 40;%65;
+targetCoverage = 40;
 targetCoverage = round(targetCoverage);
 minNs = 10;                                    % minimum number of samples
 maxNs = 140000000;                        % larger makes program very slow
@@ -205,10 +215,6 @@ for b=1:nBlocks
     blockShift(b) = 0.5*( x(kU) + x(kL) );          % REMEMBER x is sorted!
 end
 
-%     inFileName = ['Kblocks_',filename,'.dat'];
-%     dlmwrite(inFileName,[kBlockLower,kBlockUpper],'delimiter','\n','precision',12);
-    
-
 % ----------------------------------------------------------- for checking
 if( show_block_layout )
     t = 1:nBlocks;
@@ -221,8 +227,6 @@ if( show_block_layout )
     if savePNG
         pngfile = strcat('BlockLength_',char(filename),'.png');
         saveas(gcf,pngfile)
-%         figfile = strcat('BlockLength_',char(filename),'.fig');
-%         saveas(gcf,figfile)
     end
     figure('Name','BlockSize')
     plot(t,blockSize,'-k');
@@ -232,8 +236,6 @@ if( show_block_layout )
     if savePNG
         pngfile = strcat('BlockSize_',char(filename),'.png');
         saveas(gcf,pngfile)
-%         figfile = strcat('BlockSize_',char(filename),'.fig');
-%         saveas(gcf,figfile)
     end
 end
 aveBlockSize = mean(blockSize);
@@ -242,38 +244,26 @@ minBlockSize = min(blockSize);
 stdBlockSize = std(blockSize);
 %%                                              report with error checking      section 10
 if( nBlocks == 1 )
-%     disp('   number of blocks = 1');
     kL = 1;
     kR = Ns;
-%     disp(['   block 1: (kL,kR) = (',num2str(kL),',',num2str(kR),')']);
 else
-%     disp(['  number of blocks = ',num2str(nBlocks)]);
-%     disp(['average block size = ',num2str(aveBlockSize)]);
-%     disp(['maximum block size = ',num2str(maxBlockSize)]);
-%     disp(['minimum block size = ',num2str(minBlockSize)]);
-%     disp(['std dev block size = ',num2str(stdBlockSize)]);
     %-------------------------------------------------------- for debugging
     if false
         % ----------------------------- write out details on 1st and 2nd blocks
         kL = kBlockLower(1);
         kR = kBlockUpper(1);
-%         disp(['   block 1: (kL,kR) = (',num2str(kL),',',num2str(kR),')']);
         % 2nd block
         kL = kBlockLower(2);
         kR = kBlockUpper(2);
-%         disp(['   block 2: (kL,kR) = (',num2str(kL),',',num2str(kR),')']);
         % ---------------------- write out details on 2nd to last & last blocks
         kL = kBlockLower(end-1);
         kR = kBlockUpper(end-1);
-%         disp(['block Ns-1: (kL,kR) = (',num2str(kL),',',num2str(kR),')']);
         kL = kBlockLower(end);
         kR = kBlockUpper(end);
-%         disp(['  block Ns: (kL,kR) = (',num2str(kL),',',num2str(kR),')']);
     else
         for index = 1:length(kBlockLower)
             kL = kBlockLower(index);
             kR = kBlockUpper(index);
-%             disp(['   block ',num2str(index),': (kL,kR) = (',num2str(kL),',',num2str(kR),')']);
             if index > 9
                 space = '             ';
             elseif index > 99
@@ -281,12 +271,9 @@ else
             else
                 space = '            ';
             end
-%             disp([space,'(xL,xR) = (',num2str(x(kL)),',',num2str(sample(kR)),')'])
-%             disp([space,'(xL,xR) = (',num2str(x(kL)),',',num2str(x(kR)),')'])
         end
     end
 end
-% disp(['  target coverage = ',num2str(targetCoverage)]);
 %%                                              set up probability factors      section 11
 nBs0 = blockSize - 1;
 nBs0(1) = nBs0(1) + 0.5;
@@ -294,14 +281,6 @@ nBs0(nBlocks) = nBs0(nBlocks) + 0.5;
 %%                                              divide problem into blocks      section 12
 totalCounts = nBlocks*nTargets;
 % --------------------------------------------------- commit to full Monte
-
-
-%     inFileName = ['blockscale_',filename,'.dat'];
-%     dlmwrite(inFileName,blockScale,'delimiter','\n','precision',12);
-%     
-%     inFileName = ['blockShift_',filename,'.dat'];
-%     dlmwrite(inFileName,blockShift,'delimiter','\n','precision',12);
-
 for b=1:nBlocks
     j1 = kBlockLower(b);
     j2 = kBlockUpper(b);
@@ -311,12 +290,6 @@ for b=1:nBlocks
     orig_sample = x(j1+1:j2-1)';
     scaled_sample = x(j1+1:j2-1)';
     MatPDFsample{b} = sample;
-    
-%     inFileName = ['original_',filename,'_B_',num2str(b),'.dat'];
-%     dlmwrite(inFileName,orig_sample,'delimiter','\n','precision',12);
-%     
-%     inFileName = ['scaled_',filename,'_B_',num2str(b),'.dat'];
-%     dlmwrite(inFileName,sample,'delimiter','\n','precision',12);
 end
 %%                                                        run PDFestimator      section 13
 tic
@@ -356,10 +329,6 @@ parfor b=1:nBlocks
         catch
             warning(['Problem using function.  Assigning a value of 0.',' t: ',num2str(t),' b: ',num2str(b)]);
             lagrange = 0;
-%             targetBlock{t,b}.data(:,1) = linspace(min(MatPDFsample{b}),max(MatPDFsample{b}),length(MatPDFsample{b}));
-%             targetBlock{t,b}.data(:,2) = 0*ones(length(MatPDFsample{b}),1);
-%             targetBlock{t,b}.data(:,3) = 0*ones(length(MatPDFsample{b}),1);
-
             targetBlock{t,b}.data(:,1) = linspace(min(MatPDFsample{b}),max(MatPDFsample{b}),tempStruc.integrationPoints);
             targetBlock{t,b}.data(:,2) = 0*ones(tempStruc.integrationPoints,1);
             targetBlock{t,b}.data(:,3) = 0*ones(tempStruc.integrationPoints,1);
@@ -411,11 +380,6 @@ while( b <= nBlocks )
     %indexList is used to evaluate goodblocks later in script
     indexList = [indexList,b];
     updateIndex = updateIndex + 1;
-    
-    % save block data for debugging
-%     dlmwrite([filename,'_blockX_',num2str(b),'.dat'],blockX{b},'Precision',12) 
-%     dlmwrite([filename,'_blockPDF_',num2str(b),'.dat'],blockPDF{b},'Precision',12) 
-%     dlmwrite([filename,'_blockCDF_',num2str(b),'.dat'],blockCDF{b},'Precision',12) 
         
     b = b + 1;
         
@@ -441,7 +405,7 @@ end
 %/////////////////////////////////////////////////////////////////////////
 % ------------------------------ for debugging: quick look at the sections
 if blockPdfs
-    publicationQuality();
+%     publicationQuality();
     
     figure('Name','blockPdfs')
     hold on
@@ -497,7 +461,6 @@ for b=1:length(indexList)-1
     Lnot = or( (sx < xmin) , (sx > xmax) );  % => outside of overlap region
     xStitch = sx(~Lnot);                          % within overlap region
     k0 = length(xStitch);
-    
     if( k0 < 1 ) %51 <------------------------------ currently very small!
         disp(['    left block # = ',num2str(b)]);
         disp(['   right block # = ',num2str(b+1)]);
@@ -506,15 +469,8 @@ for b=1:length(indexList)-1
         disp(['         overlap = ',num2str(k0)]);
         warning('overlap is too small!');
         failed = 1;
-%         dlmwrite(['FAILED_',filename,'_blockX_',num2str(b),'.dat'],blockX{b},'Precision',12) 
-%         dlmwrite(['FAILED_',filename,'_blockPDF_',num2str(b),'.dat'],blockPDF{b},'Precision',12) 
-%         dlmwrite(['FAILED_',filename,'_blockCDF_',num2str(b),'.dat'],blockCDF{b},'Precision',12) 
-%         inFileName = ['scaled_',prefix,'b',num2str(b,'%03d'),filename,'.dat'];
-        %dlmwrite(inFileName,scaled_sample,'delimiter','\n','precision',12);
     end
-    
- 
-    
+
     %----------------------------------------------------------------------
     [xb,indx] = unique(blockX{indexList(b)});
     yb = blockPDF{indexList(b)}(indx);
@@ -534,14 +490,14 @@ for b=1:length(indexList)-1
     u1 = max(ub);
     v0 = min(vb);
     v1 = max(vb);
-    if v1 == v0
-        v0 = v0 + 0.000001;
-        % CHEAP FIX for failed blocks^^^ <----------------------------------------------------------- (*)
-    end
-    if u1 == u0
-        u0 = u0 + 0.000001;
-        % CHEAP FIX for failed blocks ^^^ <----------------------------------------------------------- (*)
-    end
+%     if v1 == v0
+%         v0 = v0 + 0.000001;
+%         % CHEAP FIX for failed blocks^^^ <----------------------------------------------------------- (*)
+%     end
+%     if u1 == u0
+%         u0 = u0 + 0.000001;
+%         % CHEAP FIX for failed blocks ^^^ <----------------------------------------------------------- (*)
+%     end
     u = (ub - u0)/(u1 - u0);
     % Some times v1=v0 or u1=u0 which leads to division by zero
     v = (vb - v0)/(v1 - v0);
@@ -593,8 +549,6 @@ for b=1:length(indexList)-1
         if savePNG
             pngfile = strcat('CDF_Stitch_Index_',int2str(b),'_',char(filename),'.png');
             saveas(gcf,pngfile)
-%             figfile = strcat('CDF_Stitch_Index_',int2str(b),'_',char(filename),'.fig');
-%             saveas(gcf,figfile)
         end
     end
     %-------------------------------------------------- substitute into sx

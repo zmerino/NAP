@@ -1,4 +1,7 @@
 
+
+addpath("functions/")
+
 % Import data table
 filename = fullfile('data','estimator_meta_data.dat');
 data = readtable(filename);
