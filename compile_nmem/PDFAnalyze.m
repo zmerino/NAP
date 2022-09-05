@@ -163,6 +163,8 @@ function [py, y, cy, sqr] = PDFAnalyze(sample, varargin)
             end
             ylabel('PDF');                 
             xlabel('Sample Range');
+
+            saveas(gcf,'example pdf.png')
         end
         
         if plotSQR  
@@ -183,6 +185,7 @@ function [py, y, cy, sqr] = PDFAnalyze(sample, varargin)
             end
             xlabel('Mean');
             ylabel('SQR');
+            saveas(gcf,'example sqr.png')
         end
         
         if plotBoth       
@@ -214,6 +217,8 @@ function [py, y, cy, sqr] = PDFAnalyze(sample, varargin)
             fBoth.YColor = 'k';
             ylabel('PDF');                 
             xlabel('Sample Range');
+
+            saveas(gcf,'example both.png')
         end        
     end
 end
