@@ -1,0 +1,184 @@
+\nEstimated time of complettion for Uniform-Mix distribution of sample size 256: 0.00020583hrs
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('block_definition.min_br_gold', '/home/zach/Documents/github/nse/functions/block_definition.m', 519)" style="font-weight:bold">block_definition.min_br_gold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/block_definition.m',519,0)">line 519</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('block_definition.r_tree', '/home/zach/Documents/github/nse/functions/block_definition.m', 237)" style="font-weight:bold">block_definition.r_tree</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/block_definition.m',237,0)">line 237</a>)
+                        [dxBR,brL,brR,partition] = block_definition.min_br_gold(sample(pList(b):pList(b+1)),window,p,binMin,filename);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 164)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',164,0)">line 164</a>)
+            [pList,T,BRlevel,BR0] = block_definition.r_tree(x,actual.min_limit,actual.max_limit,rndom.filename,p);
+} 
+driver_theoretical_threshold
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 7)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',7,0)">line 7</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 9)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',9,0)">line 9</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 12)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',12,0)">line 12</a>)] 
+\nEstimated time of complettion for Uniform-Mix distribution of sample size 256: 4.3389e-06hrs
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('block_definition.get_ratio', '/home/zach/Documents/github/nse/functions/block_definition.m', 603)" style="font-weight:bold">block_definition.get_ratio</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/block_definition.m',603,0)">line 603</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('block_definition.min_br_gold', '/home/zach/Documents/github/nse/functions/block_definition.m', 511)" style="font-weight:bold">block_definition.min_br_gold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/block_definition.m',511,0)">line 511</a>)
+                rRight2 = block_definition.get_ratio(sample(leftPar:end),window);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('block_definition.r_tree', '/home/zach/Documents/github/nse/functions/block_definition.m', 237)" style="font-weight:bold">block_definition.r_tree</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/block_definition.m',237,0)">line 237</a>)
+                        [dxBR,brL,brR,partition] = block_definition.min_br_gold(sample(pList(b):pList(b+1)),window,p,binMin,filename);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 164)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',164,0)">line 164</a>)
+            [pList,T,BRlevel,BR0] = block_definition.r_tree(x,actual.min_limit,actual.max_limit,rndom.filename,p);
+} 
+driver_theoretical_threshold
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 7)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',7,0)">line 7</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 9)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',9,0)">line 9</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 12)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',12,0)">line 12</a>)] 
+\nEstimated time of complettion for Uniform-Mix distribution of sample size 256: 1.625e-06hrs
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('block_definition.min_br_gold', '/home/zach/Documents/github/nse/functions/block_definition.m', 511)" style="font-weight:bold">block_definition.min_br_gold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/block_definition.m',511,0)">line 511</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('block_definition.r_tree', '/home/zach/Documents/github/nse/functions/block_definition.m', 237)" style="font-weight:bold">block_definition.r_tree</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/block_definition.m',237,0)">line 237</a>)
+                        [dxBR,brL,brR,partition] = block_definition.min_br_gold(sample(pList(b):pList(b+1)),window,p,binMin,filename);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 164)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',164,0)">line 164</a>)
+            [pList,T,BRlevel,BR0] = block_definition.r_tree(x,actual.min_limit,actual.max_limit,rndom.filename,p);
+} 
+driver_theoretical_threshold
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 7)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',7,0)">line 7</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 9)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',9,0)">line 9</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 12)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',12,0)">line 12</a>)] 
+\nEstimated time of complettion for Uniform-Mix distribution of sample size 256: 1.0861e-06hrs
+_____________________________________________________
+Uniform-Mix, Trial: 10/10 Sample size: 256 Time: 0.000234 sec
+=====================================================
+Total Elapsed Time: 2.9796sec Percent Complete: 10.3704%
+\nEstimated time of complettion for Generalized-Pareto distribution of sample size 256: 4.75e-07hrs
+_____________________________________________________
+Generalized-Pareto, Trial: 10/10 Sample size: 256 Time: 9.7e-05 sec
+=====================================================
+Total Elapsed Time: 3.186sec Percent Complete: 21.4815%
+\nEstimated time of complettion for Stable distribution of sample size 256: 5.1389e-07hrs
+_____________________________________________________
+Stable, Trial: 10/10 Sample size: 256 Time: 0.000184 sec
+=====================================================
+Total Elapsed Time: 4.7188sec Percent Complete: 32.5926%
+\nEstimated time of complettion for Trimodal-Normal distribution of sample size 256: 6.6667e-07hrs
+_____________________________________________________
+Trimodal-Normal, Trial: 10/10 Sample size: 256 Time: 0.000206 sec
+=====================================================
+Total Elapsed Time: 7.9348sec Percent Complete: 43.7037%
+\nEstimated time of complettion for Normal distribution of sample size 256: 4.1944e-07hrs
+_____________________________________________________
+Normal, Trial: 10/10 Sample size: 256 Time: 0.000121 sec
+=====================================================
+Total Elapsed Time: 8.1442sec Percent Complete: 54.8148%
+\nEstimated time of complettion for Uniform distribution of sample size 256: 1.1e-06hrs
+_____________________________________________________
+Uniform, Trial: 10/10 Sample size: 256 Time: 8.6e-05 sec
+=====================================================
+Total Elapsed Time: 8.189sec Percent Complete: 65.9259%
+\nEstimated time of complettion for Beta-a0p5-b1p5 distribution of sample size 256: 5.1667e-07hrs
+_____________________________________________________
+Beta-a0p5-b1p5, Trial: 10/10 Sample size: 256 Time: 8.5e-05 sec
+=====================================================
+Total Elapsed Time: 8.2491sec Percent Complete: 77.037%
+\nEstimated time of complettion for Beta-a2-b0p5 distribution of sample size 256: 2.7222e-07hrs
+_____________________________________________________
+Beta-a2-b0p5, Trial: 10/10 Sample size: 256 Time: 8.6e-05 sec
+=====================================================
+Total Elapsed Time: 8.306sec Percent Complete: 88.1481%
+\nEstimated time of complettion for Beta-a0p5-b0p5 distribution of sample size 256: 2.6944e-07hrs
+_____________________________________________________
+Beta-a0p5-b0p5, Trial: 10/10 Sample size: 256 Time: 7.5e-05 sec
+=====================================================
+Total Elapsed Time: 8.3554sec Percent Complete: 99.2593%
+driver_theoretical_threshold
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 7)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',7,0)">line 7</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 9)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',9,0)">line 9</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 12)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',12,0)">line 12</a>)] 
+\nEstimated time of complettion for Uniform-Mix distribution of sample size 256: 1.2306e-06hrs
+_____________________________________________________
+Uniform-Mix, Trial: 10/10 Sample size: 256 Time: 0.000236 sec
+=====================================================
+Total Elapsed Time: 18.1901sec Percent Complete: 10.0855%
+\nEstimated time of complettion for Generalized-Pareto distribution of sample size 256: 4.3889e-07hrs
+_____________________________________________________
+Generalized-Pareto, Trial: 10/10 Sample size: 256 Time: 0.000141 sec
+=====================================================
+Total Elapsed Time: 31.2654sec Percent Complete: 21.1966%
+\nEstimated time of complettion for Stable distribution of sample size 256: 4.8611e-07hrs
+_____________________________________________________
+Stable, Trial: 10/10 Sample size: 256 Time: 0.000204 sec
+=====================================================
+Total Elapsed Time: 48.1281sec Percent Complete: 32.3077%
+\nEstimated time of complettion for Trimodal-Normal distribution of sample size 256: 6.6944e-07hrs
+_____________________________________________________
+Trimodal-Normal, Trial: 10/10 Sample size: 256 Time: 0.000298 sec
+=====================================================
+Total Elapsed Time: 69.6282sec Percent Complete: 43.4188%
+\nEstimated time of complettion for Normal distribution of sample size 256: 4.8611e-07hrs
+_____________________________________________________
+Normal, Trial: 10/10 Sample size: 256 Time: 0.000214 sec
+=====================================================
+Total Elapsed Time: 82.1048sec Percent Complete: 54.5299%
+\nEstimated time of complettion for Uniform distribution of sample size 256: 4.8056e-07hrs
+_____________________________________________________
+Uniform, Trial: 10/10 Sample size: 256 Time: 0.0002 sec
+=====================================================
+Total Elapsed Time: 89.4556sec Percent Complete: 65.641%
+\nEstimated time of complettion for Beta-a0p5-b1p5 distribution of sample size 256: 4.7222e-07hrs
+_____________________________________________________
+Beta-a0p5-b1p5, Trial: 10/10 Sample size: 256 Time: 0.000161 sec
+=====================================================
+Total Elapsed Time: 100.858sec Percent Complete: 76.7521%
+\nEstimated time of complettion for Beta-a2-b0p5 distribution of sample size 256: 5.9722e-07hrs
+_____________________________________________________
+Beta-a2-b0p5, Trial: 10/10 Sample size: 256 Time: 0.000143 sec
+=====================================================
+Total Elapsed Time: 111.2833sec Percent Complete: 87.8632%
+\nEstimated time of complettion for Beta-a0p5-b0p5 distribution of sample size 256: 3.6667e-07hrs
+_____________________________________________________
+Beta-a0p5-b0p5, Trial: 10/10 Sample size: 256 Time: 0.000155 sec
+=====================================================
+Total Elapsed Time: 122.003sec Percent Complete: 98.9744%
+plot_extrema
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load')" style="font-weight:bold">load</a>
+Unable to find file or directory 'data/estimates/nse_Stable_s_2048.mat'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/nse/plot_extrema.m', 52)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/plot_extrema.m',52,0)">line 52</a>)
+        load(fullfile(dir_name,['nse_',num2str(d_vec(i)),'_s_', num2str(n_vec(j)),'.mat']));
+} 
+plot_extrema
+[Warning: Imaginary parts of complex X and/or Y arguments ignored.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/nse/plot_extrema.m', 246)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/plot_extrema.m',246,0)">line 246</a>)] 
+plot_cpu_failure_distance
+<a href="matlab: opentoline('/home/zach/Documents/github/nse/plot_cpu_failure_distance.m',12,1)">12  </a>names = {'Uniform-Mix', 'Generalized-Pareto', 'Stable',...
+dbcont
+plot_theorectical_threshold
+    <strong>SamplePowers</strong>    <strong>UniformMixMean</strong>    <strong>UniformMixStdev</strong>    <strong>GeneralizedParetoMean</strong>    <strong>GeneralizedParetoStdev</strong>    <strong>StableMean</strong>    <strong>StableStdev</strong>    <strong>TrimodalNormalMean</strong>    <strong>TrimodalNormalStdev</strong>    <strong>NormalMean</strong>    <strong>NormalStdev</strong>    <strong>UniformMean</strong>    <strong>UniformStdev</strong>    <strong>BetaA0p5B1p5Mean</strong>    <strong>BetaA0p5B1p5Stdev</strong>    <strong>BetaA2B0p5Mean</strong>    <strong>BetaA2B0p5Stdev</strong>    <strong>BetaA0p5B0p5Mean</strong>    <strong>BetaA0p5B0p5Stdev</strong>
+    <strong>____________</strong>    <strong>______________</strong>    <strong>_______________</strong>    <strong>_____________________</strong>    <strong>______________________</strong>    <strong>__________</strong>    <strong>___________</strong>    <strong>__________________</strong>    <strong>___________________</strong>    <strong>__________</strong>    <strong>___________</strong>    <strong>___________</strong>    <strong>____________</strong>    <strong>________________</strong>    <strong>_________________</strong>    <strong>______________</strong>    <strong>_______________</strong>    <strong>________________</strong>    <strong>_________________</strong>
+
+          8             0.052206         0.0064173            1.9954e-05                2.6562e-05          2.0616e-05    3.7062e-05           0.079462              0.013331           0.069146      0.012174         0.1152        0.012095          0.042372           0.0053485            0.036009          0.006201            0.073597            0.014183    
+          9             0.029408         0.0027948            2.5104e-06                3.8783e-06           2.133e-06    2.5059e-06           0.038593             0.0042007           0.033332     0.0055922        0.06749       0.0051946          0.019702            0.002704            0.014702         0.0016886            0.036413           0.0056371    
+         10             0.014361         0.0019632            1.8912e-07                3.6695e-07          1.0223e-07    1.1402e-07           0.018137             0.0021319           0.015989     0.0018619       0.037865       0.0026425         0.0097817           0.0010732           0.0063078         0.0010564            0.017462           0.0025652    
+         11            0.0081727         0.0003826            2.0598e-08                3.5571e-08          1.9961e-08    4.1576e-08           0.010107             0.0012537           0.007644    0.00084185       0.023687       0.0023834         0.0049922          0.00036018            0.003143         0.0002431            0.010407           0.0010426    
+         12            0.0039507        0.00027654            2.5719e-09                5.0672e-09           5.438e-09    9.0689e-09          0.0051043            0.00047628          0.0035961    0.00044346       0.014738      0.00073263         0.0025291          0.00018119           0.0015764        0.00013124           0.0058028          0.00051301    
+         13            0.0021719        9.6985e-05            1.7405e-10                 2.669e-10          8.2661e-10    1.1773e-09          0.0027622             0.0003122          0.0017916    0.00015382      0.0092031      0.00052885         0.0013723          0.00010715          0.00081106        5.8254e-05           0.0033776          0.00013465    
+         14            0.0011321        5.3829e-05            5.1342e-11                8.0785e-11           5.692e-11    1.0661e-10          0.0013887            0.00015062         0.00089359    4.5168e-05      0.0058055       0.0002188        0.00075654          3.9619e-05          0.00044434        2.1758e-05           0.0019589          0.00010186    
+         15            0.0006138        2.3127e-05            2.3486e-12                3.4786e-12           5.809e-12    8.3794e-12         0.00069633            8.6584e-05         0.00045276    4.6375e-05      0.0038452      0.00016514        0.00042628          1.8448e-05           0.0002329        1.1809e-05            0.001202            5.44e-05    
+         16           0.00031717        8.8181e-06            6.7299e-13                9.3921e-13          1.9515e-12    4.2567e-12         0.00036581             1.872e-05         0.00021745    1.8625e-05      0.0024849      8.7433e-05        0.00024056          8.2113e-06          0.00012716        5.8318e-06          0.00071952          2.1667e-05    
+         17           0.00017053        6.3036e-06            3.0407e-13                3.1688e-13          1.7278e-13    1.9242e-13         0.00018703            1.4488e-05         0.00010924    9.2103e-06      0.0016473      4.0365e-05        0.00013729           3.743e-06          7.0185e-05         3.162e-06          0.00045109          1.2707e-05    
+         18           8.4773e-05        1.5609e-06            3.3759e-14                 5.061e-14          3.2292e-14    5.4706e-14         8.6214e-05            5.1084e-06         5.6282e-05    4.0965e-06      0.0010744      2.5213e-05        7.9765e-05          1.6036e-06          3.8389e-05        8.0642e-07          0.00027698          7.3543e-06    
+         19           4.4229e-05        1.0683e-06            7.6117e-16                1.3687e-15          4.5318e-16    5.8209e-16         4.1145e-05            2.6967e-06         2.6948e-05    1.4928e-06     0.00071749      7.0522e-06        4.7761e-05          8.8056e-07          2.1258e-05        4.2212e-07          0.00017537          3.6753e-06    
+         20           2.2632e-05        4.0369e-07            1.5286e-16                1.6687e-16            1.05e-16    1.7463e-16          2.224e-05            1.5753e-06         1.3776e-05    7.3132e-07     0.00047387      8.5199e-06         2.746e-05          5.3637e-07          1.1838e-05        1.9735e-07          0.00010807          2.4735e-06    
+
+driver_test_mex
+|<

@@ -1,0 +1,3446 @@
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 24)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',24,0)">line 24</a>)] 
+|<
+Beta-a0p5-b1p5, Trial: 1/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 1
+Elapsed time is 0.248577 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 2/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 2
+Elapsed time is 0.149400 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 3/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 3
+Elapsed time is 0.174017 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 4/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 4
+Elapsed time is 0.276565 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 5/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 5
+Elapsed time is 0.187976 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 6/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 6
+Elapsed time is 0.141791 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 7/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 7
+Elapsed time is 0.172034 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 8/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 8
+Elapsed time is 0.226751 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 9/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 9
+Elapsed time is 0.125720 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 10/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 10
+Elapsed time is 0.151168 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 11/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 11
+Elapsed time is 0.220479 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 12/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 12
+Elapsed time is 0.226599 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 13/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 13
+Elapsed time is 0.106461 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 14/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 14
+Elapsed time is 0.246688 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 15/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 15
+Elapsed time is 0.172124 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 16/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 16
+Elapsed time is 0.184009 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 17/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 17
+Elapsed time is 0.221934 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 18/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 18
+Elapsed time is 0.180559 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 19/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 19
+Elapsed time is 0.169803 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 20/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 20
+Elapsed time is 0.215808 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 21/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 21
+Elapsed time is 0.179002 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 22/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 22
+Elapsed time is 0.106012 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 23/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 23
+Elapsed time is 0.183302 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 24/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 24
+Elapsed time is 0.169350 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 25/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 25
+Elapsed time is 0.186138 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 26/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 26
+Elapsed time is 0.143678 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 27/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 27
+Elapsed time is 0.183840 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 28/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 28
+Elapsed time is 0.178908 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 29/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 29
+Elapsed time is 0.232688 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 30/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 30
+Elapsed time is 0.208302 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 31/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 31
+Elapsed time is 0.186833 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 32/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 32
+Elapsed time is 0.234657 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 33/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 33
+Elapsed time is 0.177916 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 34/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 34
+Elapsed time is 0.172226 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 35/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 35
+Elapsed time is 0.141735 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 36/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 36
+Elapsed time is 0.178761 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 37/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 37
+Elapsed time is 0.184211 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 38/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 38
+Elapsed time is 0.156095 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 39/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 39
+Elapsed time is 0.351967 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 40/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 40
+Elapsed time is 0.183176 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 41/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 41
+Elapsed time is 0.185632 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 42/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 42
+Elapsed time is 0.198851 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 43/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 43
+Elapsed time is 0.277199 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 44/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 44
+Elapsed time is 0.196734 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 45/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 45
+Elapsed time is 0.185417 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 46/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 46
+Elapsed time is 0.193395 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 47/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 47
+Elapsed time is 0.138557 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 48/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 48
+Elapsed time is 0.139239 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 49/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 49
+Elapsed time is 0.171408 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 50/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 50
+Elapsed time is 0.137470 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 51/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 51
+Elapsed time is 0.239389 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 52/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 52
+Elapsed time is 0.188577 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 53/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 53
+Elapsed time is 0.248905 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 54/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 54
+Elapsed time is 0.240269 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 55/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 55
+Elapsed time is 0.146896 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 56/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 56
+Elapsed time is 0.185038 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 57/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 57
+Elapsed time is 0.179847 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 58/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 58
+Elapsed time is 0.100348 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 59/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 59
+Elapsed time is 0.175915 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 60/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 60
+Elapsed time is 0.287651 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 61/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 61
+Elapsed time is 0.180447 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 62/100 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 62
+Elapsed time is 0.148935 seconds.
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('distcomp.remoteparfor/getCompleteIntervals', '/usr/local/MATLAB/R2021b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m', 379)" style="font-weight:bold">distcomp.remoteparfor/getCompleteIntervals</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m',379,0)">line 379</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function>distributed_execution', '/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m', 746)" style="font-weight:bold">parallel_function>distributed_execution</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m',746,0)">line 746</a>)
+        [tags, out] = P.getCompleteIntervals(chunkSize);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function', '/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m', 578)" style="font-weight:bold">parallel_function</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m',578,0)">line 578</a>)
+    R = distributed_execution(...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stitch_pdf', '/home/zach/Documents/github/nse/functions/stitch_pdf.m', 299)" style="font-weight:bold">stitch_pdf</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/stitch_pdf.m',299,0)">line 299</a>)
+parfor b=1:nBlocks
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 188)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',188,0)">line 188</a>)
+                = stitch_pdf(sample,rndom.filename, actual.min_limit,...
+} 
+driver_extrema
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 12)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',12,0)">line 12</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 24)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',24,0)">line 24</a>)] 
+|<
+Beta-a0p5-b1p5, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 1
+Elapsed time is 0.271769 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 2/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 2
+Elapsed time is 0.188409 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 3/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 3
+Elapsed time is 0.204462 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 4/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 4
+Elapsed time is 0.146755 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 5/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 5
+Elapsed time is 0.199970 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 6/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 6
+Elapsed time is 0.181285 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 7/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 7
+Elapsed time is 0.183310 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 8/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 8
+Elapsed time is 0.176945 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 9/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 9
+Elapsed time is 0.171156 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 10/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 10
+Elapsed time is 0.182630 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 1
+Elapsed time is 0.234410 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 2/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 2
+Elapsed time is 0.249236 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 3/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 3
+Elapsed time is 0.188067 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 4/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 4
+Elapsed time is 0.250395 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 5/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 5
+Elapsed time is 0.189177 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 6/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 6
+Elapsed time is 0.225392 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 7/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 7
+Elapsed time is 0.260634 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 8/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 8
+Elapsed time is 0.238756 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 9/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 9
+Elapsed time is 0.274685 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 10/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 10
+Elapsed time is 0.245025 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 1
+Elapsed time is 0.275842 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 2/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 2
+Elapsed time is 0.550682 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 3/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 3
+Elapsed time is 0.340875 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 4/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 4
+Elapsed time is 0.339006 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 5/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 5
+Elapsed time is 0.393221 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 6/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 6
+Elapsed time is 0.414721 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 7/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 7
+Elapsed time is 0.414478 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 8/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 8
+Elapsed time is 0.282748 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 9/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 9
+Elapsed time is 0.649544 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 10/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 10
+Elapsed time is 0.463344 seconds.
+|<
+Beta-a2-b0p5, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 1
+Elapsed time is 0.154754 seconds.
+|<
+Beta-a2-b0p5, Trial: 2/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 2
+Elapsed time is 0.190558 seconds.
+|<
+Beta-a2-b0p5, Trial: 3/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 3
+Elapsed time is 0.236725 seconds.
+|<
+Beta-a2-b0p5, Trial: 4/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 4
+Elapsed time is 0.189245 seconds.
+|<
+Beta-a2-b0p5, Trial: 5/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 5
+Elapsed time is 0.185228 seconds.
+|<
+Beta-a2-b0p5, Trial: 6/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 6
+Elapsed time is 0.244575 seconds.
+|<
+Beta-a2-b0p5, Trial: 7/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 7
+Elapsed time is 0.191178 seconds.
+|<
+Beta-a2-b0p5, Trial: 8/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 8
+Elapsed time is 0.194424 seconds.
+|<
+Beta-a2-b0p5, Trial: 9/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 9
+Elapsed time is 0.221544 seconds.
+|<
+Beta-a2-b0p5, Trial: 10/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 10
+Elapsed time is 0.189297 seconds.
+|<
+Beta-a2-b0p5, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 1
+Elapsed time is 0.254844 seconds.
+|<
+Beta-a2-b0p5, Trial: 2/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 2
+Elapsed time is 0.251885 seconds.
+|<
+Beta-a2-b0p5, Trial: 3/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 3
+Elapsed time is 0.335673 seconds.
+|<
+Beta-a2-b0p5, Trial: 4/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 4
+Elapsed time is 0.392334 seconds.
+|<
+Beta-a2-b0p5, Trial: 5/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 5
+Elapsed time is 0.316301 seconds.
+|<
+Beta-a2-b0p5, Trial: 6/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 6
+Elapsed time is 0.316103 seconds.
+|<
+Beta-a2-b0p5, Trial: 7/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 7
+Elapsed time is 0.348934 seconds.
+|<
+Beta-a2-b0p5, Trial: 8/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 8
+Elapsed time is 0.265127 seconds.
+|<
+Beta-a2-b0p5, Trial: 9/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 9
+Elapsed time is 0.399088 seconds.
+|<
+Beta-a2-b0p5, Trial: 10/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 10
+Elapsed time is 0.257455 seconds.
+|<
+Beta-a2-b0p5, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 1
+Elapsed time is 0.417936 seconds.
+|<
+Beta-a2-b0p5, Trial: 2/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 2
+Elapsed time is 0.500394 seconds.
+|<
+Beta-a2-b0p5, Trial: 3/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 3
+Elapsed time is 0.613684 seconds.
+|<
+Beta-a2-b0p5, Trial: 4/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 4
+Elapsed time is 0.539721 seconds.
+|<
+Beta-a2-b0p5, Trial: 5/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 5
+Elapsed time is 0.344031 seconds.
+|<
+Beta-a2-b0p5, Trial: 6/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 6
+Elapsed time is 0.406132 seconds.
+|<
+Beta-a2-b0p5, Trial: 7/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 7
+Elapsed time is 0.309656 seconds.
+|<
+Beta-a2-b0p5, Trial: 8/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 8
+Elapsed time is 0.407154 seconds.
+|<
+Beta-a2-b0p5, Trial: 9/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 9
+Elapsed time is 0.606781 seconds.
+|<
+Beta-a2-b0p5, Trial: 10/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 10
+Elapsed time is 0.553033 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 1
+Elapsed time is 0.150744 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 2/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 2
+Elapsed time is 0.142394 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 3/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 3
+Elapsed time is 0.156591 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 4/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 4
+Elapsed time is 0.144543 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 5/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 5
+Elapsed time is 0.140630 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 6/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 6
+Elapsed time is 0.142683 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 7/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 7
+Elapsed time is 0.189307 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 8/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 8
+Elapsed time is 0.144270 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 9/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 9
+Elapsed time is 0.142842 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 10/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 10
+Elapsed time is 0.137879 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 1
+Elapsed time is 0.161611 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 2/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 2
+Elapsed time is 0.208462 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 3/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 3
+Elapsed time is 0.147871 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 4/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 4
+Elapsed time is 0.152844 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 5/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 5
+Elapsed time is 0.158068 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 6/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 6
+Elapsed time is 0.203304 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 7/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 7
+Elapsed time is 0.155135 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 8/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 8
+Elapsed time is 0.142673 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 9/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 9
+Elapsed time is 0.151280 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 10/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 10
+Elapsed time is 0.191857 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 1
+Elapsed time is 0.322172 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 2/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 2
+Elapsed time is 0.282249 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 3/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 3
+Elapsed time is 0.281999 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 4/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 4
+Elapsed time is 0.357422 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 5/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 5
+Elapsed time is 0.222060 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 6/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 6
+Elapsed time is 0.270938 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 7/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 7
+Elapsed time is 0.272997 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 8/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 8
+Elapsed time is 0.292555 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 9/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 9
+Elapsed time is 0.353764 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 10/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 10
+Elapsed time is 0.354894 seconds.
+|<
+Generalized-Pareto, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 1
+Elapsed time is 0.171039 seconds.
+|<
+Generalized-Pareto, Trial: 2/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 2
+Elapsed time is 0.177320 seconds.
+|<
+Generalized-Pareto, Trial: 3/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 3
+Elapsed time is 0.132141 seconds.
+|<
+Generalized-Pareto, Trial: 4/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 4
+Elapsed time is 0.453780 seconds.
+|<
+Generalized-Pareto, Trial: 5/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 5
+Elapsed time is 0.175392 seconds.
+|<
+Generalized-Pareto, Trial: 6/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 6
+Elapsed time is 0.173936 seconds.
+|<
+Generalized-Pareto, Trial: 7/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 7
+Elapsed time is 0.178367 seconds.
+|<
+Generalized-Pareto, Trial: 8/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 8
+Elapsed time is 0.174474 seconds.
+|<
+Generalized-Pareto, Trial: 9/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 9
+Elapsed time is 0.151234 seconds.
+|<
+Generalized-Pareto, Trial: 10/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 10
+Elapsed time is 0.171485 seconds.
+|<
+Generalized-Pareto, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 1
+Elapsed time is 0.202819 seconds.
+|<
+Generalized-Pareto, Trial: 2/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 2
+Elapsed time is 0.231862 seconds.
+|<
+Generalized-Pareto, Trial: 3/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 3
+Elapsed time is 0.219113 seconds.
+|<
+Generalized-Pareto, Trial: 4/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 4
+Elapsed time is 0.186330 seconds.
+|<
+Generalized-Pareto, Trial: 5/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 5
+Elapsed time is 0.250691 seconds.
+|<
+Generalized-Pareto, Trial: 6/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 6
+Elapsed time is 0.198520 seconds.
+|<
+Generalized-Pareto, Trial: 7/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 7
+Elapsed time is 0.194055 seconds.
+|<
+Generalized-Pareto, Trial: 8/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 8
+Elapsed time is 0.254615 seconds.
+|<
+Generalized-Pareto, Trial: 9/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 9
+Elapsed time is 0.189732 seconds.
+|<
+Generalized-Pareto, Trial: 10/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 10
+Elapsed time is 0.348011 seconds.
+|<
+Generalized-Pareto, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 1
+Elapsed time is 0.245497 seconds.
+|<
+Generalized-Pareto, Trial: 2/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 2
+Elapsed time is 0.363228 seconds.
+|<
+Generalized-Pareto, Trial: 3/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 3
+Elapsed time is 0.190928 seconds.
+|<
+Generalized-Pareto, Trial: 4/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 4
+Elapsed time is 0.347553 seconds.
+|<
+Generalized-Pareto, Trial: 5/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 5
+Elapsed time is 0.273081 seconds.
+|<
+Generalized-Pareto, Trial: 6/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 6
+Elapsed time is 0.232322 seconds.
+|<
+Generalized-Pareto, Trial: 7/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 7
+Elapsed time is 0.254611 seconds.
+|<
+Generalized-Pareto, Trial: 8/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 8
+Elapsed time is 0.232213 seconds.
+|<
+Generalized-Pareto, Trial: 9/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 9
+Elapsed time is 0.252420 seconds.
+|<
+Generalized-Pareto, Trial: 10/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 10
+Elapsed time is 0.225553 seconds.
+|<
+Stable, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 1
+Elapsed time is 1.269126 seconds.
+|<
+Stable, Trial: 2/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 2
+Elapsed time is 1.239103 seconds.
+|<
+Stable, Trial: 3/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 3
+Elapsed time is 2.458910 seconds.
+|<
+Stable, Trial: 4/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 4
+Elapsed time is 1.775861 seconds.
+|<
+Stable, Trial: 5/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 5
+Elapsed time is 1.339067 seconds.
+|<
+Stable, Trial: 6/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 6
+Elapsed time is 1.543907 seconds.
+|<
+Stable, Trial: 7/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 7
+Elapsed time is 1.581070 seconds.
+|<
+Stable, Trial: 8/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 8
+Elapsed time is 1.829146 seconds.
+|<
+Stable, Trial: 9/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 9
+Elapsed time is 1.461334 seconds.
+|<
+Stable, Trial: 10/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 10
+Elapsed time is 1.205106 seconds.
+|<
+Stable, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 1
+Elapsed time is 1.992481 seconds.
+|<
+Stable, Trial: 2/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 2
+Elapsed time is 2.037674 seconds.
+|<
+Stable, Trial: 3/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 3
+Elapsed time is 4.448932 seconds.
+|<
+Stable, Trial: 4/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 4
+Elapsed time is 3.050697 seconds.
+|<
+Stable, Trial: 5/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 5
+Elapsed time is 2.448566 seconds.
+|<
+Stable, Trial: 6/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 6
+Elapsed time is 2.831191 seconds.
+|<
+Stable, Trial: 7/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 7
+Elapsed time is 3.105899 seconds.
+|<
+Stable, Trial: 8/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 8
+Elapsed time is 3.223272 seconds.
+|<
+Stable, Trial: 9/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 9
+Elapsed time is 2.653584 seconds.
+|<
+Stable, Trial: 10/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 10
+Elapsed time is 2.256172 seconds.
+|<
+Stable, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 1
+Elapsed time is 1.047167 seconds.
+|<
+Stable, Trial: 2/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 2
+Elapsed time is 1.415297 seconds.
+|<
+Stable, Trial: 3/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 3
+Elapsed time is 1.207926 seconds.
+|<
+Stable, Trial: 4/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 4
+Elapsed time is 1.026684 seconds.
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('distcomp.remoteparfor/getCompleteIntervals', '/usr/local/MATLAB/R2021b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m', 379)" style="font-weight:bold">distcomp.remoteparfor/getCompleteIntervals</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m',379,0)">line 379</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function>distributed_execution', '/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m', 746)" style="font-weight:bold">parallel_function>distributed_execution</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m',746,0)">line 746</a>)
+        [tags, out] = P.getCompleteIntervals(chunkSize);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function', '/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m', 578)" style="font-weight:bold">parallel_function</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m',578,0)">line 578</a>)
+    R = distributed_execution(...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stitch_pdf', '/home/zach/Documents/github/nse/functions/stitch_pdf.m', 299)" style="font-weight:bold">stitch_pdf</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/stitch_pdf.m',299,0)">line 299</a>)
+parfor b=1:nBlocks
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 188)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',188,0)">line 188</a>)
+                = stitch_pdf(sample,rndom.filename, actual.min_limit,...
+} 
+plot_cpu_failure_distance
+plot_cpu_failure_distance
+opentoline('/usr/local/MATLAB/R2021b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m',379,0)
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.desktop.editor.RtcEditorDocument>@(msg)handleResponse(msg)', '/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/+matlab/+desktop/+editor/@RtcEditorDocument/RtcEditorDocument.m', 76)" style="font-weight:bold">matlab.desktop.editor.RtcEditorDocument>@(msg)handleResponse(msg)</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/+matlab/+desktop/+editor/@RtcEditorDocument/RtcEditorDocument.m',76,0)">line 76</a>)
+
+
+In message.internal.executeCallback
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.desktop.editor.RtcEditorDocument/performActionSync', '/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/+matlab/+desktop/+editor/@RtcEditorDocument/RtcEditorDocument.m', 96)" style="font-weight:bold">matlab.desktop.editor.RtcEditorDocument/performActionSync</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/+matlab/+desktop/+editor/@RtcEditorDocument/RtcEditorDocument.m',96,0)">line 96</a>)
+                    pause(obj.DelayTime);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.desktop.editor.RtcEditorDocument/goToPositionInLine', '/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/+matlab/+desktop/+editor/@RtcEditorDocument/RtcEditorDocument.m', 236)" style="font-weight:bold">matlab.desktop.editor.RtcEditorDocument/goToPositionInLine</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/+matlab/+desktop/+editor/@RtcEditorDocument/RtcEditorDocument.m',236,0)">line 236</a>)
+            obj.performActionSync('GoToPositionInLine', line, position);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.desktop.editor.Document/goToPositionInLine', '/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/+matlab/+desktop/+editor/@Document/Document.m', 495)" style="font-weight:bold">matlab.desktop.editor.Document/goToPositionInLine</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/+matlab/+desktop/+editor/@Document/Document.m',495,0)">line 495</a>)
+            obj.Editor.goToPositionInLine(line, position);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('opentoline>goToLineColumn', '/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/opentoline.m', 75)" style="font-weight:bold">opentoline>goToLineColumn</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/opentoline.m',75,0)">line 75</a>)
+        editorObj.goToPositionInLine(lineNumber, columnNumber);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('opentoline', '/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/opentoline.m', 59)" style="font-weight:bold">opentoline</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/opentoline.m',59,0)">line 59</a>)
+    goToLineColumn(editorObj, lineNumber, columnNumber, selectLine);
+} 
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.desktop.editor.RtcEditorDocument>@(msg)handleResponse(msg)', '/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/+matlab/+desktop/+editor/@RtcEditorDocument/RtcEditorDocument.m', 76)" style="font-weight:bold">matlab.desktop.editor.RtcEditorDocument>@(msg)handleResponse(msg)</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/+matlab/+desktop/+editor/@RtcEditorDocument/RtcEditorDocument.m',76,0)">line 76</a>)
+
+
+In message.internal.executeCallback
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.desktop.editor.RtcEditorDocument/performActionSync', '/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/+matlab/+desktop/+editor/@RtcEditorDocument/RtcEditorDocument.m', 96)" style="font-weight:bold">matlab.desktop.editor.RtcEditorDocument/performActionSync</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/+matlab/+desktop/+editor/@RtcEditorDocument/RtcEditorDocument.m',96,0)">line 96</a>)
+                    pause(obj.DelayTime);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.desktop.editor.RtcEditorDocument/goToPositionInLine', '/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/+matlab/+desktop/+editor/@RtcEditorDocument/RtcEditorDocument.m', 236)" style="font-weight:bold">matlab.desktop.editor.RtcEditorDocument/goToPositionInLine</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/+matlab/+desktop/+editor/@RtcEditorDocument/RtcEditorDocument.m',236,0)">line 236</a>)
+            obj.performActionSync('GoToPositionInLine', line, position);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.desktop.editor.Document/goToPositionInLine', '/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/+matlab/+desktop/+editor/@Document/Document.m', 495)" style="font-weight:bold">matlab.desktop.editor.Document/goToPositionInLine</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/+matlab/+desktop/+editor/@Document/Document.m',495,0)">line 495</a>)
+            obj.Editor.goToPositionInLine(line, position);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('opentoline>goToLineColumn', '/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/opentoline.m', 75)" style="font-weight:bold">opentoline>goToLineColumn</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/opentoline.m',75,0)">line 75</a>)
+        editorObj.goToPositionInLine(lineNumber, columnNumber);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('opentoline', '/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/opentoline.m', 59)" style="font-weight:bold">opentoline</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/codetools/opentoline.m',59,0)">line 59</a>)
+    goToLineColumn(editorObj, lineNumber, columnNumber, selectLine);
+} 
+plot_cpu_failure_distance
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_cpu_failure_distance', '/home/zach/Documents/github/nse/plot_cpu_failure_distance.m', 36)" style="font-weight:bold">plot_cpu_failure_distance</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/plot_cpu_failure_distance.m',36,0)">line 36</a>)
+Unrecognized table variable name 'sample_power'.
+} 
+opentoline('/home/zach/Documents/github/nse/plot_cpu_failure_distance.m',36,0)
+plot_cpu_failure_distance
+if system_dependent('IsDebugMode')==1, dbquit all; end
+plot_cpu_failure_distance
+<a href="matlab: opentoline('/home/zach/Documents/github/nse/plot_cpu_failure_distance.m',11,1)">11  </a>names = {'Uniform-Mix', 'Generalized-Pareto', 'Stable',...
+dbcont
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_cpu_failure_distance', '/home/zach/Documents/github/nse/plot_cpu_failure_distance.m', 37)" style="font-weight:bold">plot_cpu_failure_distance</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/plot_cpu_failure_distance.m',37,0)">line 37</a>)
+Unrecognized table variable name 'sample_power'.
+} 
+plot_cpu_failure_distance
+<a href="matlab: opentoline('/home/zach/Documents/github/nse/plot_cpu_failure_distance.m',10,1)">10  </a>names = {'Uniform-Mix', 'Generalized-Pareto', 'Stable',...
+dbquit
+plot_theorectical_threshold
+    <strong>SamplePowers</strong>    <strong>UniformMixMean</strong>    <strong>UniformMixStdev</strong>    <strong>GeneralizedParetoMean</strong>    <strong>GeneralizedParetoStdev</strong>    <strong>StableMean</strong>    <strong>StableStdev</strong>    <strong>TrimodalNormalMean</strong>    <strong>TrimodalNormalStdev</strong>    <strong>NormalMean</strong>    <strong>NormalStdev</strong>    <strong>UniformMean</strong>    <strong>UniformStdev</strong>    <strong>BetaA0p5B1p5Mean</strong>    <strong>BetaA0p5B1p5Stdev</strong>    <strong>BetaA2B0p5Mean</strong>    <strong>BetaA2B0p5Stdev</strong>    <strong>BetaA0p5B0p5Mean</strong>    <strong>BetaA0p5B0p5Stdev</strong>
+    <strong>____________</strong>    <strong>______________</strong>    <strong>_______________</strong>    <strong>_____________________</strong>    <strong>______________________</strong>    <strong>__________</strong>    <strong>___________</strong>    <strong>__________________</strong>    <strong>___________________</strong>    <strong>__________</strong>    <strong>___________</strong>    <strong>___________</strong>    <strong>____________</strong>    <strong>________________</strong>    <strong>_________________</strong>    <strong>______________</strong>    <strong>_______________</strong>    <strong>________________</strong>    <strong>_________________</strong>
+
+          8             0.045152          0.019061                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+          9             0.023937          0.010033                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+         10             0.012234         0.0050783                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+         11            0.0067199         0.0027696                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+         12             0.003477         0.0014262                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+         13            0.0018806        0.00076851                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+         14           0.00098557        0.00040197                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+         15           0.00052835        0.00021512                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+         16           0.00027351        0.00011123                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+         17           0.00014351        5.8289e-05                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+         18           7.3708e-05        2.9927e-05                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+         19           3.7992e-05        1.5416e-05                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+         20           1.9386e-05        7.8647e-06                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+         21           9.8707e-06        4.0033e-06                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+         22           4.9993e-06        2.0272e-06                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+         23            2.526e-06         1.024e-06                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+         24           1.2733e-06        5.1612e-07                 0                        0                   0              0                 0                      0                 0              0              0              0                 0                    0                  0                  0                  0                    0        
+
+plot_extrema
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('prob.StableDistribution>@(theta)zexpz(g2(theta))', '/usr/local/MATLAB/R2021b/toolbox/stats/stats/+prob/StableDistribution.m', 560)" style="font-weight:bold">prob.StableDistribution>@(theta)zexpz(g2(theta))</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/stats/stats/+prob/StableDistribution.m',560,0)">line 560</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('integralCalc/iterateArrayValued', '/usr/local/MATLAB/R2021b/toolbox/matlab/funfun/private/integralCalc.m', 193)" style="font-weight:bold">integralCalc/iterateArrayValued</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/funfun/private/integralCalc.m',193,0)">line 193</a>)
+                        fxj = FUN(t(j)).*w(j);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('integralCalc/vadapt', '/usr/local/MATLAB/R2021b/toolbox/matlab/funfun/private/integralCalc.m', 130)" style="font-weight:bold">integralCalc/vadapt</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/funfun/private/integralCalc.m',130,0)">line 130</a>)
+            [q,errbnd] = iterateArrayValued(u,tinterval,pathlen);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('integralCalc', '/usr/local/MATLAB/R2021b/toolbox/matlab/funfun/private/integralCalc.m', 75)" style="font-weight:bold">integralCalc</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/funfun/private/integralCalc.m',75,0)">line 75</a>)
+        [q,errbnd] = vadapt(@AtoBInvTransform,interval);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('integral', '/usr/local/MATLAB/R2021b/toolbox/matlab/funfun/integral.m', 87)" style="font-weight:bold">integral</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/funfun/integral.m',87,0)">line 87</a>)
+Q = integralCalc(fun,a,b,opstruct);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('prob.StableDistribution>stablepdf', '/usr/local/MATLAB/R2021b/toolbox/stats/stats/+prob/StableDistribution.m', 560)" style="font-weight:bold">prob.StableDistribution>stablepdf</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/stats/stats/+prob/StableDistribution.m',560,0)">line 560</a>)
+            + theta2shift2 .* integral(@(theta) zexpz( g2(theta) ),0.5, 1,'ArrayValued',1,'AbsTol',1e-10,'RelTol',1e-4) ); % Default accuracy of INTEGRAL is sometimes hard to reach
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('prob.StableDistribution.pdffunc', '/usr/local/MATLAB/R2021b/toolbox/stats/stats/+prob/StableDistribution.m', 222)" style="font-weight:bold">prob.StableDistribution.pdffunc</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/stats/stats/+prob/StableDistribution.m',222,0)">line 222</a>)
+            [varargout{1:nargout}] = stablepdf(varargin{:});
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('prob.ToolboxParametricDistribution/pdffun', '/usr/local/MATLAB/R2021b/toolbox/shared/statslib/+prob/ToolboxParametricDistribution.m', 29)" style="font-weight:bold">prob.ToolboxParametricDistribution/pdffun</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/shared/statslib/+prob/ToolboxParametricDistribution.m',29,0)">line 29</a>)
+            y = this.pdffunc(x,pcell{1:min(end,this.NumParameters)});
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('prob.TruncatableDistribution/pdf', '/usr/local/MATLAB/R2021b/toolbox/shared/statslib/+prob/TruncatableDistribution.m', 111)" style="font-weight:bold">prob.TruncatableDistribution/pdf</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/shared/statslib/+prob/TruncatableDistribution.m',111,0)">line 111</a>)
+                y = pdffun(this,x);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('distributions/dist_list', '/home/zach/Documents/github/nse/functions/distributions.m', 719)" style="font-weight:bold">distributions/dist_list</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/distributions.m',719,0)">line 719</a>)
+                    obj.pdf_y = pdf(obj.distInfo, obj.x);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/nse/plot_extrema.m', 234)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/plot_extrema.m',234,0)">line 234</a>)
+                actual = dist_list(actual);
+} 
+plot_extrema
+plot_cpu_failure_distance
+dbcont
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_cpu_failure_distance', '/home/zach/Documents/github/nse/plot_cpu_failure_distance.m', 36)" style="font-weight:bold">plot_cpu_failure_distance</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/plot_cpu_failure_distance.m',36,0)">line 36</a>)
+Unrecognized table variable name 'sample_power'.
+} 
+plot_cpu_failure_distance
+<a href="matlab: opentoline('/home/zach/Documents/github/nse/plot_cpu_failure_distance.m',12,1)">12  </a>names = {'Uniform-Mix', 'Generalized-Pareto', 'Stable',...
+dbcont
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_cpu_failure_distance', '/home/zach/Documents/github/nse/plot_cpu_failure_distance.m', 38)" style="font-weight:bold">plot_cpu_failure_distance</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/plot_cpu_failure_distance.m',38,0)">line 38</a>)
+Unrecognized table variable name 'sample_power'.
+} 
+driver_extrema
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 12)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',12,0)">line 12</a>)] 
+|<
+Beta-a0p5-b1p5, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 1
+Elapsed time is 0.414001 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 2/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 2
+Elapsed time is 0.188300 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 3/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 3
+Elapsed time is 0.235569 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 4/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 4
+Elapsed time is 0.212885 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 5/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 5
+Elapsed time is 0.209411 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 6/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 6
+Elapsed time is 0.218768 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 7/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 7
+Elapsed time is 0.146583 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 8/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 8
+Elapsed time is 0.224417 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 9/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 9
+Elapsed time is 0.113743 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 10/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 10
+Elapsed time is 0.113475 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 1
+Elapsed time is 0.237063 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 2/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 2
+Elapsed time is 0.285577 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 3/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 3
+Elapsed time is 0.313856 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 4/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 4
+Elapsed time is 0.180757 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 5/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 5
+Elapsed time is 0.242804 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 6/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 6
+Elapsed time is 0.240043 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 7/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 7
+Elapsed time is 0.315119 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 8/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 8
+Elapsed time is 0.387634 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 9/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 9
+Elapsed time is 0.252794 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 10/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 10
+Elapsed time is 0.280327 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 1
+Elapsed time is 0.536390 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 2/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 2
+Elapsed time is 0.335364 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 3/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 3
+Elapsed time is 0.435415 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 4/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 4
+Elapsed time is 0.418823 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 5/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 5
+Elapsed time is 0.470796 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 6/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 6
+Elapsed time is 0.464640 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 7/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 7
+Elapsed time is 0.357271 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 8/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 8
+Elapsed time is 0.569874 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 9/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 9
+Elapsed time is 0.475444 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 10/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 10
+Elapsed time is 0.477464 seconds.
+|<
+Beta-a2-b0p5, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 1
+Elapsed time is 0.245368 seconds.
+|<
+Beta-a2-b0p5, Trial: 2/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 2
+Elapsed time is 0.195425 seconds.
+|<
+Beta-a2-b0p5, Trial: 3/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 3
+Elapsed time is 0.173216 seconds.
+|<
+Beta-a2-b0p5, Trial: 4/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 4
+Elapsed time is 0.247403 seconds.
+|<
+Beta-a2-b0p5, Trial: 5/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 5
+Elapsed time is 0.154871 seconds.
+|<
+Beta-a2-b0p5, Trial: 6/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 6
+Elapsed time is 0.204500 seconds.
+|<
+Beta-a2-b0p5, Trial: 7/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 7
+Elapsed time is 0.154821 seconds.
+|<
+Beta-a2-b0p5, Trial: 8/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 8
+Elapsed time is 0.238324 seconds.
+|<
+Beta-a2-b0p5, Trial: 9/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 9
+Elapsed time is 0.245093 seconds.
+|<
+Beta-a2-b0p5, Trial: 10/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 10
+Elapsed time is 0.244939 seconds.
+|<
+Beta-a2-b0p5, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 1
+Elapsed time is 0.425673 seconds.
+|<
+Beta-a2-b0p5, Trial: 2/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 2
+Elapsed time is 0.254180 seconds.
+|<
+Beta-a2-b0p5, Trial: 3/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 3
+Elapsed time is 0.349364 seconds.
+|<
+Beta-a2-b0p5, Trial: 4/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 4
+Elapsed time is 0.233213 seconds.
+|<
+Beta-a2-b0p5, Trial: 5/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 5
+Elapsed time is 0.384629 seconds.
+|<
+Beta-a2-b0p5, Trial: 6/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 6
+Elapsed time is 0.247917 seconds.
+|<
+Beta-a2-b0p5, Trial: 7/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 7
+Elapsed time is 0.384451 seconds.
+|<
+Beta-a2-b0p5, Trial: 8/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 8
+Elapsed time is 0.279825 seconds.
+|<
+Beta-a2-b0p5, Trial: 9/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 9
+Elapsed time is 0.265262 seconds.
+|<
+Beta-a2-b0p5, Trial: 10/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 10
+Elapsed time is 0.201257 seconds.
+|<
+Beta-a2-b0p5, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 1
+Elapsed time is 0.348697 seconds.
+|<
+Beta-a2-b0p5, Trial: 2/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 2
+Elapsed time is 0.523656 seconds.
+|<
+Beta-a2-b0p5, Trial: 3/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 3
+Elapsed time is 0.341912 seconds.
+|<
+Beta-a2-b0p5, Trial: 4/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 4
+Elapsed time is 0.623909 seconds.
+|<
+Beta-a2-b0p5, Trial: 5/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 5
+Elapsed time is 1.293351 seconds.
+|<
+Beta-a2-b0p5, Trial: 6/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 6
+Elapsed time is 0.406632 seconds.
+|<
+Beta-a2-b0p5, Trial: 7/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 7
+Elapsed time is 0.907599 seconds.
+|<
+Beta-a2-b0p5, Trial: 8/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 8
+Elapsed time is 0.460413 seconds.
+|<
+Beta-a2-b0p5, Trial: 9/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 9
+Elapsed time is 0.440059 seconds.
+|<
+Beta-a2-b0p5, Trial: 10/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 10
+Elapsed time is 0.513774 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 1
+Elapsed time is 0.113988 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 2/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 2
+Elapsed time is 0.160252 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 3/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 3
+Elapsed time is 0.163247 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 4/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 4
+Elapsed time is 0.068334 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 5/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 5
+Elapsed time is 0.154340 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 6/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 6
+Elapsed time is 0.156891 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 7/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 7
+Elapsed time is 0.162393 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 8/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 8
+Elapsed time is 0.205109 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 9/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 9
+Elapsed time is 0.078511 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 10/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 10
+Elapsed time is 0.078801 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 1
+Elapsed time is 0.198531 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 2/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 2
+Elapsed time is 0.217774 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 3/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 3
+Elapsed time is 0.159244 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 4/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 4
+Elapsed time is 0.197546 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 5/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 5
+Elapsed time is 0.154327 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 6/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 6
+Elapsed time is 0.158979 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 7/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 7
+Elapsed time is 0.273189 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 8/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 8
+Elapsed time is 0.202399 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 9/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 9
+Elapsed time is 0.199371 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 10/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 10
+Elapsed time is 0.153123 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 1
+Elapsed time is 0.271629 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 2/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 2
+Elapsed time is 0.355756 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 3/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 3
+Elapsed time is 0.457011 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 4/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 4
+Elapsed time is 0.219412 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 5/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 5
+Elapsed time is 0.217545 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 6/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 6
+Elapsed time is 0.282011 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 7/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 7
+Elapsed time is 0.281949 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 8/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 8
+Elapsed time is 0.340996 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 9/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 9
+Elapsed time is 0.349733 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 10/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 10
+Elapsed time is 0.291782 seconds.
+|<
+Generalized-Pareto, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 1
+Elapsed time is 0.124162 seconds.
+|<
+Generalized-Pareto, Trial: 2/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 2
+Elapsed time is 0.185320 seconds.
+|<
+Generalized-Pareto, Trial: 3/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 3
+Elapsed time is 0.335859 seconds.
+|<
+Generalized-Pareto, Trial: 4/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 4
+Elapsed time is 0.198565 seconds.
+|<
+Generalized-Pareto, Trial: 5/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 5
+Elapsed time is 0.162001 seconds.
+|<
+Generalized-Pareto, Trial: 6/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 6
+Elapsed time is 0.184890 seconds.
+|<
+Generalized-Pareto, Trial: 7/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 7
+Elapsed time is 0.196156 seconds.
+|<
+Generalized-Pareto, Trial: 8/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 8
+Elapsed time is 0.194134 seconds.
+|<
+Generalized-Pareto, Trial: 9/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 9
+Elapsed time is 0.171378 seconds.
+|<
+Generalized-Pareto, Trial: 10/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 10
+Elapsed time is 0.126226 seconds.
+|<
+Generalized-Pareto, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 1
+Elapsed time is 0.244186 seconds.
+|<
+Generalized-Pareto, Trial: 2/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 2
+Elapsed time is 0.186352 seconds.
+|<
+Generalized-Pareto, Trial: 3/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 3
+Elapsed time is 0.184554 seconds.
+|<
+Generalized-Pareto, Trial: 4/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 4
+Elapsed time is 0.198103 seconds.
+|<
+Generalized-Pareto, Trial: 5/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 5
+Elapsed time is 0.242780 seconds.
+|<
+Generalized-Pareto, Trial: 6/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 6
+Elapsed time is 0.199263 seconds.
+|<
+Generalized-Pareto, Trial: 7/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 7
+Elapsed time is 0.194294 seconds.
+|<
+Generalized-Pareto, Trial: 8/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 8
+Elapsed time is 0.234463 seconds.
+|<
+Generalized-Pareto, Trial: 9/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 9
+Elapsed time is 0.221131 seconds.
+|<
+Generalized-Pareto, Trial: 10/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 10
+Elapsed time is 0.247645 seconds.
+|<
+Generalized-Pareto, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 1
+Elapsed time is 0.289166 seconds.
+|<
+Generalized-Pareto, Trial: 2/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 2
+Elapsed time is 0.174855 seconds.
+|<
+Generalized-Pareto, Trial: 3/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 3
+Elapsed time is 0.220806 seconds.
+|<
+Generalized-Pareto, Trial: 4/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 4
+Elapsed time is 0.201908 seconds.
+|<
+Generalized-Pareto, Trial: 5/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 5
+Elapsed time is 0.251166 seconds.
+|<
+Generalized-Pareto, Trial: 6/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 6
+Elapsed time is 0.189917 seconds.
+|<
+Generalized-Pareto, Trial: 7/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 7
+Elapsed time is 0.186262 seconds.
+|<
+Generalized-Pareto, Trial: 8/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 8
+Elapsed time is 0.236133 seconds.
+|<
+Generalized-Pareto, Trial: 9/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 9
+Elapsed time is 0.220774 seconds.
+|<
+Generalized-Pareto, Trial: 10/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 10
+Elapsed time is 0.273095 seconds.
+|<
+Stable, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 1
+Elapsed time is 1.477096 seconds.
+|<
+Stable, Trial: 2/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 2
+Elapsed time is 1.498837 seconds.
+|<
+Stable, Trial: 3/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 3
+Elapsed time is 1.236638 seconds.
+|<
+Stable, Trial: 4/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 4
+Elapsed time is 1.750000 seconds.
+|<
+Stable, Trial: 5/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 5
+Elapsed time is 1.658942 seconds.
+|<
+Stable, Trial: 6/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 6
+Elapsed time is 1.630037 seconds.
+|<
+Stable, Trial: 7/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 7
+Elapsed time is 1.499220 seconds.
+|<
+Stable, Trial: 8/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 8
+Elapsed time is 1.394158 seconds.
+|<
+Stable, Trial: 9/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 9
+Elapsed time is 1.527218 seconds.
+|<
+Stable, Trial: 10/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 10
+Elapsed time is 1.545216 seconds.
+|<
+Stable, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 1
+Elapsed time is 2.211177 seconds.
+|<
+Stable, Trial: 2/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 2
+Elapsed time is 2.583843 seconds.
+|<
+Stable, Trial: 3/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 3
+Elapsed time is 2.575815 seconds.
+|<
+Stable, Trial: 4/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 4
+Elapsed time is 3.429469 seconds.
+|<
+Stable, Trial: 5/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 5
+Elapsed time is 2.307267 seconds.
+|<
+Stable, Trial: 6/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 6
+Elapsed time is 2.995094 seconds.
+|<
+Stable, Trial: 7/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 7
+Elapsed time is 3.771452 seconds.
+|<
+Stable, Trial: 8/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 8
+Elapsed time is 2.356365 seconds.
+|<
+Stable, Trial: 9/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 9
+Elapsed time is 2.109280 seconds.
+|<
+Stable, Trial: 10/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 10
+Elapsed time is 2.598636 seconds.
+|<
+Stable, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 1
+Elapsed time is 1.315828 seconds.
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 3
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+|<
+
+ans =
+
+        2531
+
+
+ans =
+
+     0
+
+
+ans =
+
+  Columns 1 through 38
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 39 through 76
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 77 through 114
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 115 through 152
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 153 through 190
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 191 through 228
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 229 through 266
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 267 through 304
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 305 through 342
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 343 through 380
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 381 through 418
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 419 through 456
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 457 through 494
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 495 through 532
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 533 through 570
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 571 through 608
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 609 through 646
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 647 through 684
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 685 through 722
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 723 through 760
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 761 through 798
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 799 through 836
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 837 through 874
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 875 through 912
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 913 through 950
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 951 through 988
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 989 through 1,026
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,027 through 1,064
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,065 through 1,102
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,103 through 1,140
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,141 through 1,178
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,179 through 1,216
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,217 through 1,254
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,255 through 1,292
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,293 through 1,330
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,331 through 1,368
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,369 through 1,406
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,407 through 1,444
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,445 through 1,482
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,483 through 1,520
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,521 through 1,558
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,559 through 1,596
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,597 through 1,634
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,635 through 1,672
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,673 through 1,710
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,711 through 1,748
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,749 through 1,786
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,787 through 1,824
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,825 through 1,862
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,863 through 1,900
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,901 through 1,938
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,939 through 1,976
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,977 through 2,014
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,015 through 2,052
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,053 through 2,090
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,091 through 2,128
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,129 through 2,166
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,167 through 2,204
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,205 through 2,242
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,243 through 2,280
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,281 through 2,318
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,319 through 2,356
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,357 through 2,394
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,395 through 2,432
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,433 through 2,470
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,471 through 2,508
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,509 through 2,531
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+
+ans =
+
+  1×0 empty <a href="matlab:helpPopup double" style="font-weight:bold">double</a> row vector
+
+[Warning: non-finite values] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stitch_pdf', '/home/zach/Documents/github/nse/functions/stitch_pdf.m', 568)" style="font-weight:bold">stitch_pdf</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/stitch_pdf.m',568,0)">line 568</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 188)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',188,0)">line 188</a>)] 
+non-finite values
+Stable, Trial: 2/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 2
+Elapsed time is 2.092114 seconds.
+|<
+Stable, Trial: 3/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 3
+Elapsed time is 1.394667 seconds.
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 1
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+|<
+
+ans =
+
+        2727
+
+
+ans =
+
+     0
+
+
+ans =
+
+  Columns 1 through 38
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 39 through 76
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 77 through 114
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 115 through 152
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 153 through 190
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 191 through 228
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 229 through 266
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 267 through 304
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 305 through 342
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 343 through 380
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 381 through 418
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 419 through 456
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 457 through 494
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 495 through 532
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 533 through 570
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 571 through 608
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 609 through 646
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 647 through 684
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 685 through 722
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 723 through 760
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 761 through 798
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 799 through 836
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 837 through 874
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 875 through 912
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 913 through 950
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 951 through 988
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 989 through 1,026
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,027 through 1,064
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,065 through 1,102
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,103 through 1,140
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,141 through 1,178
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,179 through 1,216
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,217 through 1,254
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,255 through 1,292
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,293 through 1,330
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,331 through 1,368
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,369 through 1,406
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,407 through 1,444
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,445 through 1,482
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,483 through 1,520
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,521 through 1,558
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,559 through 1,596
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,597 through 1,634
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,635 through 1,672
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,673 through 1,710
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,711 through 1,748
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,749 through 1,786
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,787 through 1,824
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,825 through 1,862
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,863 through 1,900
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,901 through 1,938
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,939 through 1,976
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,977 through 2,014
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,015 through 2,052
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,053 through 2,090
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,091 through 2,128
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,129 through 2,166
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,167 through 2,204
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,205 through 2,242
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,243 through 2,280
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,281 through 2,318
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,319 through 2,356
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,357 through 2,394
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,395 through 2,432
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,433 through 2,470
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,471 through 2,508
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,509 through 2,546
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,547 through 2,584
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,585 through 2,622
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,623 through 2,660
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,661 through 2,698
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 2,699 through 2,727
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+
+ans =
+
+  1×0 empty <a href="matlab:helpPopup double" style="font-weight:bold">double</a> row vector
+
+[Warning: non-finite values] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stitch_pdf', '/home/zach/Documents/github/nse/functions/stitch_pdf.m', 568)" style="font-weight:bold">stitch_pdf</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/stitch_pdf.m',568,0)">line 568</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 188)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',188,0)">line 188</a>)] 
+non-finite values
+Stable, Trial: 4/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 4
+Elapsed time is 39.355722 seconds.
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 1
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+|<
+
+ans =
+
+        1498
+
+
+ans =
+
+     0
+
+
+ans =
+
+  Columns 1 through 38
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 39 through 76
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 77 through 114
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 115 through 152
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 153 through 190
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 191 through 228
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 229 through 266
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 267 through 304
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 305 through 342
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 343 through 380
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 381 through 418
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 419 through 456
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 457 through 494
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 495 through 532
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 533 through 570
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 571 through 608
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 609 through 646
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 647 through 684
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 685 through 722
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 723 through 760
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 761 through 798
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 799 through 836
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 837 through 874
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 875 through 912
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 913 through 950
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 951 through 988
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 989 through 1,026
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,027 through 1,064
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,065 through 1,102
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,103 through 1,140
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,141 through 1,178
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,179 through 1,216
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,217 through 1,254
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,255 through 1,292
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,293 through 1,330
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,331 through 1,368
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,369 through 1,406
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,407 through 1,444
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,445 through 1,482
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,483 through 1,498
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+
+ans =
+
+  1×0 empty <a href="matlab:helpPopup double" style="font-weight:bold">double</a> row vector
+
+[Warning: non-finite values] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stitch_pdf', '/home/zach/Documents/github/nse/functions/stitch_pdf.m', 568)" style="font-weight:bold">stitch_pdf</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/stitch_pdf.m',568,0)">line 568</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 188)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',188,0)">line 188</a>)] 
+non-finite values
+Stable, Trial: 5/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 5
+Elapsed time is 27.239450 seconds.
+|<
+Stable, Trial: 6/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 6
+Elapsed time is 1.967072 seconds.
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 1
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+|<
+
+ans =
+
+        1336
+
+
+ans =
+
+     0
+
+
+ans =
+
+  Columns 1 through 38
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 39 through 76
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 77 through 114
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 115 through 152
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 153 through 190
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 191 through 228
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 229 through 266
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 267 through 304
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 305 through 342
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 343 through 380
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 381 through 418
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 419 through 456
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 457 through 494
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 495 through 532
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 533 through 570
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 571 through 608
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 609 through 646
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 647 through 684
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 685 through 722
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 723 through 760
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 761 through 798
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 799 through 836
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 837 through 874
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 875 through 912
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 913 through 950
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 951 through 988
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 989 through 1,026
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,027 through 1,064
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,065 through 1,102
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,103 through 1,140
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,141 through 1,178
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,179 through 1,216
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,217 through 1,254
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,255 through 1,292
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,293 through 1,330
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,331 through 1,336
+
+   NaN   NaN   NaN   NaN   NaN   NaN
+
+
+ans =
+
+  1×0 empty <a href="matlab:helpPopup double" style="font-weight:bold">double</a> row vector
+
+[Warning: non-finite values] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stitch_pdf', '/home/zach/Documents/github/nse/functions/stitch_pdf.m', 568)" style="font-weight:bold">stitch_pdf</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/stitch_pdf.m',568,0)">line 568</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 188)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',188,0)">line 188</a>)] 
+non-finite values
+Stable, Trial: 7/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 7
+Elapsed time is 25.644986 seconds.
+|<
+Stable, Trial: 8/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 8
+Elapsed time is 1.013036 seconds.
+|<
+Stable, Trial: 9/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 9
+Elapsed time is 1.070900 seconds.
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 1
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+|<
+
+ans =
+
+        1622
+
+
+ans =
+
+     0
+
+
+ans =
+
+  Columns 1 through 38
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 39 through 76
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 77 through 114
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 115 through 152
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 153 through 190
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 191 through 228
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 229 through 266
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 267 through 304
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 305 through 342
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 343 through 380
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 381 through 418
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 419 through 456
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 457 through 494
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 495 through 532
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 533 through 570
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 571 through 608
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 609 through 646
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 647 through 684
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 685 through 722
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 723 through 760
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 761 through 798
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 799 through 836
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 837 through 874
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 875 through 912
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 913 through 950
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 951 through 988
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 989 through 1,026
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,027 through 1,064
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,065 through 1,102
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,103 through 1,140
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,141 through 1,178
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,179 through 1,216
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,217 through 1,254
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,255 through 1,292
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,293 through 1,330
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,331 through 1,368
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,369 through 1,406
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,407 through 1,444
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,445 through 1,482
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,483 through 1,520
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,521 through 1,558
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,559 through 1,596
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 1,597 through 1,622
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+
+ans =
+
+  1×0 empty <a href="matlab:helpPopup double" style="font-weight:bold">double</a> row vector
+
+[Warning: non-finite values] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stitch_pdf', '/home/zach/Documents/github/nse/functions/stitch_pdf.m', 568)" style="font-weight:bold">stitch_pdf</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/stitch_pdf.m',568,0)">line 568</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/nse/driver_extrema.m', 188)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_extrema.m',188,0)">line 188</a>)] 
+non-finite values
+Stable, Trial: 10/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 10
+Elapsed time is 53.242945 seconds.
+test_nonclass_NSE
+[Warning: "/home/zach/Documents/github/nse_MVnmem/compile_nmem" not found in path.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rmpath', '/usr/local/MATLAB/R2021b/toolbox/matlab/general/rmpath.m', 71)" style="font-weight:bold">rmpath</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/general/rmpath.m',71,0)">line 71</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_nonclass_NSE', '/home/zach/Documents/github/nse_MVnmem/test_nonclass_NSE.m', 8)" style="font-weight:bold">test_nonclass_NSE</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_MVnmem/test_nonclass_NSE.m',8,0)">line 8</a>)] 
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 1
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 2
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 3
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+|<
+test_nonclass_NSE
+[Warning: "/home/zach/Documents/github/nse_MVnmem/compile_nmem" not found in path.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rmpath', '/usr/local/MATLAB/R2021b/toolbox/matlab/general/rmpath.m', 71)" style="font-weight:bold">rmpath</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/general/rmpath.m',71,0)">line 71</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_nonclass_NSE', '/home/zach/Documents/github/nse_MVnmem/test_nonclass_NSE.m', 8)" style="font-weight:bold">test_nonclass_NSE</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_MVnmem/test_nonclass_NSE.m',8,0)">line 8</a>)] 
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 1
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 2
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 3
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+|<
+test
+
+test =
+
+  1×2 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>distribution</strong>     <strong>names</strong>  
+    <strong>____________</strong>    <strong>________</strong>
+
+      "Normal"      "Normal"
+
+test
+
+test =
+
+  1×2 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>distribution</strong>     <strong>names</strong>  
+    <strong>____________</strong>    <strong>________</strong>
+
+      "Normal"      "Normal"
+
+test_nonclass_NSE
+[Warning: "/home/zach/Documents/github/nse_MVnmem/compile_nmem" not found in path.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rmpath', '/usr/local/MATLAB/R2021b/toolbox/matlab/general/rmpath.m', 71)" style="font-weight:bold">rmpath</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/general/rmpath.m',71,0)">line 71</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_nonclass_NSE', '/home/zach/Documents/github/nse_MVnmem/test_nonclass_NSE.m', 8)" style="font-weight:bold">test_nonclass_NSE</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_MVnmem/test_nonclass_NSE.m',8,0)">line 8</a>)] 
+|<
+overlaping blocks 1 and 2
+ left block length = 706
+right block length = 634
+              xmin = 4.3149
+              xmax = 4.9916
+     overlap count = 549
+-------------------------------------------------------
+    
+[Warning: Ignoring extra legend entries.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend>process_inputs', '/usr/local/MATLAB/R2021b/toolbox/matlab/scribe/legend.m', 592)" style="font-weight:bold">legend>process_inputs</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/scribe/legend.m',592,0)">line 592</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend>make_legend', '/usr/local/MATLAB/R2021b/toolbox/matlab/scribe/legend.m', 319)" style="font-weight:bold">legend>make_legend</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/scribe/legend.m',319,0)">line 319</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend', '/usr/local/MATLAB/R2021b/toolbox/matlab/scribe/legend.m', 263)" style="font-weight:bold">legend</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/scribe/legend.m',263,0)">line 263</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stitch_pdf', '/home/zach/Documents/github/nse_MVnmem/functions/stitch_pdf.m', 548)" style="font-weight:bold">stitch_pdf</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_MVnmem/functions/stitch_pdf.m',548,0)">line 548</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_nonclass_NSE', '/home/zach/Documents/github/nse_MVnmem/test_nonclass_NSE.m', 142)" style="font-weight:bold">test_nonclass_NSE</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_MVnmem/test_nonclass_NSE.m',142,0)">line 142</a>)] 
+overlaping blocks 2 and 3
+ left block length = 634
+right block length = 706
+              xmin = 4.9914
+              xmax = 5.6602
+     overlap count = 546
+-------------------------------------------------------
+    
+[Warning: Ignoring extra legend entries.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend>process_inputs', '/usr/local/MATLAB/R2021b/toolbox/matlab/scribe/legend.m', 592)" style="font-weight:bold">legend>process_inputs</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/scribe/legend.m',592,0)">line 592</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend>make_legend', '/usr/local/MATLAB/R2021b/toolbox/matlab/scribe/legend.m', 319)" style="font-weight:bold">legend>make_legend</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/scribe/legend.m',319,0)">line 319</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend', '/usr/local/MATLAB/R2021b/toolbox/matlab/scribe/legend.m', 263)" style="font-weight:bold">legend</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/scribe/legend.m',263,0)">line 263</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stitch_pdf', '/home/zach/Documents/github/nse_MVnmem/functions/stitch_pdf.m', 548)" style="font-weight:bold">stitch_pdf</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_MVnmem/functions/stitch_pdf.m',548,0)">line 548</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_nonclass_NSE', '/home/zach/Documents/github/nse_MVnmem/test_nonclass_NSE.m', 142)" style="font-weight:bold">test_nonclass_NSE</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_MVnmem/test_nonclass_NSE.m',142,0)">line 142</a>)] 
+plot_theorectical_threshold
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('readtable', '/usr/local/MATLAB/R2021b/toolbox/matlab/iofun/readtable.m', 498)" style="font-weight:bold">readtable</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/iofun/readtable.m',498,0)">line 498</a>)
+Unable to find or open 'data/theoretical_threshold/br0_table.dat'. Check the path and filename or file permissions.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_theorectical_threshold', '/home/zach/Documents/github/nse/plot_theorectical_threshold.m', 12)" style="font-weight:bold">plot_theorectical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/plot_theorectical_threshold.m',12,0)">line 12</a>)
+data = readtable(pathname);
+} 
+driver_cpu_failure_KL
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse/driver_cpu_failure_KL.m', 11)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_cpu_failure_KL.m',11,0)">line 11</a>)] 
+|<
+Beta-a0p5-b1p5, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 1
+Elapsed time is 0.245900 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 2/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 2
+Elapsed time is 0.117859 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 3/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 3
+Elapsed time is 0.118110 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 4/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 4
+Elapsed time is 0.145794 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 5/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 5
+Elapsed time is 0.189164 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 6/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 6
+Elapsed time is 0.130913 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 7/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 7
+Elapsed time is 0.115218 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 8/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 8
+Elapsed time is 0.131917 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 9/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 9
+Elapsed time is 0.230056 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 10/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 10
+Elapsed time is 0.231076 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 1
+Elapsed time is 0.165446 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 2/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 2
+Elapsed time is 0.162300 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 3/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 3
+Elapsed time is 0.114316 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 4/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 4
+Elapsed time is 0.177905 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 5/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 5
+Elapsed time is 0.159936 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 6/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 6
+Elapsed time is 0.280730 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 7/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 7
+Elapsed time is 0.158565 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 8/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 8
+Elapsed time is 0.140531 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 9/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 9
+Elapsed time is 0.168899 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 10/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 10
+Elapsed time is 0.164250 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 1
+Elapsed time is 0.364230 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 2/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 2
+Elapsed time is 0.347294 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 3/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 3
+Elapsed time is 0.500610 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 4/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 4
+Elapsed time is 0.343350 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 5/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 5
+Elapsed time is 0.614873 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 6/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 6
+Elapsed time is 0.336086 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 7/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 7
+Elapsed time is 0.266140 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 8/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 8
+Elapsed time is 0.197602 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 9/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 9
+Elapsed time is 0.356939 seconds.
+|<
+Beta-a0p5-b1p5, Trial: 10/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 10
+Elapsed time is 0.392094 seconds.
+|<
+Beta-a2-b0p5, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 1
+Elapsed time is 0.112577 seconds.
+|<
+Beta-a2-b0p5, Trial: 2/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 2
+Elapsed time is 0.140775 seconds.
+|<
+Beta-a2-b0p5, Trial: 3/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 3
+Elapsed time is 0.138342 seconds.
+|<
+Beta-a2-b0p5, Trial: 4/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 4
+Elapsed time is 0.118410 seconds.
+|<
+Beta-a2-b0p5, Trial: 5/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 5
+Elapsed time is 0.166166 seconds.
+|<
+Beta-a2-b0p5, Trial: 6/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 6
+Elapsed time is 0.302187 seconds.
+|<
+Beta-a2-b0p5, Trial: 7/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 7
+Elapsed time is 0.128097 seconds.
+|<
+Beta-a2-b0p5, Trial: 8/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 8
+Elapsed time is 0.119634 seconds.
+|<
+Beta-a2-b0p5, Trial: 9/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 9
+Elapsed time is 0.148677 seconds.
+|<
+Beta-a2-b0p5, Trial: 10/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 10
+Elapsed time is 0.113223 seconds.
+|<
+Beta-a2-b0p5, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 1
+Elapsed time is 0.479486 seconds.
+|<
+Beta-a2-b0p5, Trial: 2/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 2
+Elapsed time is 0.238809 seconds.
+|<
+Beta-a2-b0p5, Trial: 3/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 3
+Elapsed time is 0.227125 seconds.
+|<
+Beta-a2-b0p5, Trial: 4/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 4
+Elapsed time is 0.165948 seconds.
+|<
+Beta-a2-b0p5, Trial: 5/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 5
+Elapsed time is 0.398762 seconds.
+|<
+Beta-a2-b0p5, Trial: 6/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 6
+Elapsed time is 0.318707 seconds.
+|<
+Beta-a2-b0p5, Trial: 7/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 7
+Elapsed time is 0.312023 seconds.
+|<
+Beta-a2-b0p5, Trial: 8/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 8
+Elapsed time is 0.251658 seconds.
+|<
+Beta-a2-b0p5, Trial: 9/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 9
+Elapsed time is 0.201892 seconds.
+|<
+Beta-a2-b0p5, Trial: 10/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 10
+Elapsed time is 0.243629 seconds.
+|<
+Beta-a2-b0p5, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 1
+Elapsed time is 0.640728 seconds.
+|<
+Beta-a2-b0p5, Trial: 2/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 2
+Elapsed time is 0.176577 seconds.
+|<
+Beta-a2-b0p5, Trial: 3/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 3
+Elapsed time is 0.365002 seconds.
+|<
+Beta-a2-b0p5, Trial: 4/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 4
+Elapsed time is 0.404309 seconds.
+|<
+Beta-a2-b0p5, Trial: 5/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 5
+Elapsed time is 0.496937 seconds.
+|<
+Beta-a2-b0p5, Trial: 6/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 6
+Elapsed time is 0.567708 seconds.
+|<
+Beta-a2-b0p5, Trial: 7/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 7
+Elapsed time is 0.338522 seconds.
+|<
+Beta-a2-b0p5, Trial: 8/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 8
+Elapsed time is 0.346546 seconds.
+|<
+Beta-a2-b0p5, Trial: 9/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 9
+Elapsed time is 0.556303 seconds.
+|<
+Beta-a2-b0p5, Trial: 10/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 10
+Elapsed time is 0.398799 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 1
+Elapsed time is 0.080750 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 2/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 2
+Elapsed time is 0.089222 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 3/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 3
+Elapsed time is 0.109618 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 4/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 4
+Elapsed time is 0.083071 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 5/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 5
+Elapsed time is 0.082033 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 6/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 6
+Elapsed time is 0.112521 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 7/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 7
+Elapsed time is 0.084857 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 8/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 8
+Elapsed time is 0.116103 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 9/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 9
+Elapsed time is 0.122062 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 10/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 10
+Elapsed time is 0.122818 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 1
+Elapsed time is 0.180918 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 2/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 2
+Elapsed time is 0.162246 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 3/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 3
+Elapsed time is 0.122170 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 4/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 4
+Elapsed time is 0.118043 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 5/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 5
+Elapsed time is 0.143530 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 6/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 6
+Elapsed time is 0.121710 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 7/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 7
+Elapsed time is 0.159341 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 8/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 8
+Elapsed time is 0.124043 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 9/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 9
+Elapsed time is 0.136155 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 10/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 10
+Elapsed time is 0.120705 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 1
+Elapsed time is 0.202625 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 2/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 2
+Elapsed time is 0.236315 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 3/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 3
+Elapsed time is 0.214736 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 4/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 4
+Elapsed time is 0.230807 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 5/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 5
+Elapsed time is 0.289362 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 6/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 6
+Elapsed time is 0.310480 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 7/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 7
+Elapsed time is 0.236882 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 8/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 8
+Elapsed time is 0.223646 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 9/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 9
+Elapsed time is 0.313358 seconds.
+|<
+Beta-a0p5-b0p5, Trial: 10/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 10
+Elapsed time is 0.235023 seconds.
+|<
+Generalized-Pareto, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 1
+Elapsed time is 0.277918 seconds.
+|<
+Generalized-Pareto, Trial: 2/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 2
+Elapsed time is 0.117036 seconds.
+|<
+Generalized-Pareto, Trial: 3/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 3
+Elapsed time is 0.257459 seconds.
+|<
+Generalized-Pareto, Trial: 4/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 4
+Elapsed time is 0.150432 seconds.
+|<
+Generalized-Pareto, Trial: 5/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 5
+Elapsed time is 0.101136 seconds.
+|<
+Generalized-Pareto, Trial: 6/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 6
+Elapsed time is 0.172546 seconds.
+|<
+Generalized-Pareto, Trial: 7/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 7
+Elapsed time is 0.112869 seconds.
+|<
+Generalized-Pareto, Trial: 8/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 8
+Elapsed time is 0.187139 seconds.
+|<
+Generalized-Pareto, Trial: 9/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 9
+Elapsed time is 0.173515 seconds.
+|<
+Generalized-Pareto, Trial: 10/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 1   i: 10
+Elapsed time is 0.187158 seconds.
+|<
+Generalized-Pareto, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 1
+Elapsed time is 0.148913 seconds.
+|<
+Generalized-Pareto, Trial: 2/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 2
+Elapsed time is 0.187597 seconds.
+|<
+Generalized-Pareto, Trial: 3/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 3
+Elapsed time is 0.488198 seconds.
+|<
+Generalized-Pareto, Trial: 4/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 4
+Elapsed time is 0.558297 seconds.
+|<
+Generalized-Pareto, Trial: 5/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 5
+Elapsed time is 0.147373 seconds.
+|<
+Generalized-Pareto, Trial: 6/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 6
+Elapsed time is 0.145473 seconds.
+|<
+Generalized-Pareto, Trial: 7/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 7
+Elapsed time is 0.137888 seconds.
+|<
+Generalized-Pareto, Trial: 8/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 8
+Elapsed time is 0.153459 seconds.
+|<
+Generalized-Pareto, Trial: 9/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 9
+Elapsed time is 0.145067 seconds.
+|<
+Generalized-Pareto, Trial: 10/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 2   i: 10
+Elapsed time is 0.103243 seconds.
+|<
+Generalized-Pareto, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 1
+Elapsed time is 0.382735 seconds.
+|<
+Generalized-Pareto, Trial: 2/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 2
+Elapsed time is 0.269094 seconds.
+|<
+Generalized-Pareto, Trial: 3/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 3
+Elapsed time is 0.211592 seconds.
+|<
+Generalized-Pareto, Trial: 4/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 4
+Elapsed time is 0.252949 seconds.
+|<
+Generalized-Pareto, Trial: 5/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 5
+Elapsed time is 0.183789 seconds.
+|<
+Generalized-Pareto, Trial: 6/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 6
+Elapsed time is 0.412095 seconds.
+|<
+Generalized-Pareto, Trial: 7/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 7
+Elapsed time is 0.235056 seconds.
+|<
+Generalized-Pareto, Trial: 8/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 8
+Elapsed time is 0.234783 seconds.
+|<
+Generalized-Pareto, Trial: 9/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 9
+Elapsed time is 0.271716 seconds.
+|<
+Generalized-Pareto, Trial: 10/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 4   k: 3   i: 10
+Elapsed time is 0.224456 seconds.
+|<
+Stable, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 1
+Elapsed time is 5.048641 seconds.
+|<
+Stable, Trial: 2/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 2
+Elapsed time is 0.790780 seconds.
+|<
+Stable, Trial: 3/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 3
+Elapsed time is 1.346464 seconds.
+|<
+Stable, Trial: 4/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 4
+Elapsed time is 1.013232 seconds.
+|<
+Stable, Trial: 5/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 5
+Elapsed time is 1.060136 seconds.
+|<
+Stable, Trial: 6/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 6
+Elapsed time is 5.627108 seconds.
+|<
+Stable, Trial: 7/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 7
+Elapsed time is 6.677399 seconds.
+|<
+Stable, Trial: 8/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 8
+Elapsed time is 1.086162 seconds.
+|<
+Stable, Trial: 9/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 9
+Elapsed time is 1.051276 seconds.
+|<
+Stable, Trial: 10/10 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 1   i: 10
+Elapsed time is 1.748599 seconds.
+|<
+Stable, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 1
+Elapsed time is 1.988849 seconds.
+|<
+Stable, Trial: 2/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 2
+Elapsed time is 5.787287 seconds.
+|<
+Stable, Trial: 3/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 3
+Elapsed time is 2.592098 seconds.
+|<
+Stable, Trial: 4/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 4
+Elapsed time is 3.299693 seconds.
+|<
+Stable, Trial: 5/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 5
+Elapsed time is 8.669271 seconds.
+|<
+Stable, Trial: 6/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 6
+Elapsed time is 4.186357 seconds.
+|<
+Stable, Trial: 7/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 7
+Elapsed time is 1.760546 seconds.
+|<
+Stable, Trial: 8/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 8
+Elapsed time is 7.288465 seconds.
+|<
+Stable, Trial: 9/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 9
+Elapsed time is 2.255549 seconds.
+|<
+Stable, Trial: 10/10 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 2   i: 10
+Elapsed time is 7.107534 seconds.
+|<
+Stable, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 1
+Elapsed time is 2.962692 seconds.
+|<
+Stable, Trial: 2/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 2
+Elapsed time is 4.092417 seconds.
+|<
+Stable, Trial: 3/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 3
+Elapsed time is 2.477482 seconds.
+|<
+Stable, Trial: 4/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 4
+Elapsed time is 4.396006 seconds.
+|<
+Stable, Trial: 5/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 5
+Elapsed time is 4.540371 seconds.
+|<
+Stable, Trial: 6/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 6
+Elapsed time is 3.648950 seconds.
+|<
+Stable, Trial: 7/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 7
+Elapsed time is 1.854867 seconds.
+|<
+Stable, Trial: 8/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 8
+Elapsed time is 3.596334 seconds.
+|<
+Stable, Trial: 9/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 9
+Elapsed time is 3.042686 seconds.
+|<
+Stable, Trial: 10/10 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 5   k: 3   i: 10
+Elapsed time is 4.458312 seconds.
+driver_theoretical_threshold
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 9)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',9,0)">line 9</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_theoretical_threshold', '/home/zach/Documents/github/nse/driver_theoretical_threshold.m', 12)" style="font-weight:bold">driver_theoretical_threshold</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_theoretical_threshold.m',12,0)">line 12</a>)] 

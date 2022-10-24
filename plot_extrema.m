@@ -20,12 +20,13 @@ dir_name = fullfile('data','estimates');
 % Define the etimates to plot
 
 % Sample range
-n_vec = [256,512];
+n_vec = [256,512,1024];
 % Distribution range
 d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5",...
         "Stable","Generalized-Pareto"];
 
 n_vec = 2.^[10,11,12,13,14,15];
+n_vec = 2.^[8,9,10];
 % Distribution range
 d_vec = ["Stable"];
 

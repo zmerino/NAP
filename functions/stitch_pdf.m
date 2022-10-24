@@ -312,19 +312,20 @@ parfor b=1:nBlocks
 %             tempStruc.highBound = 1;
 %         end
         
-        tempStruc.SURDtarget = targetCoverage(1);
-        tempStruc.SURDmin = 5;
-        tempStruc.SURDmax  = 100;        
-        tempStruc.LagrangeMin = 1;
-        tempStruc.LagrangeMax = 200;
-        tempStruc.integrationPoints  = 5000;
-        tempStruc.scoreType = 'QZ';
-        tempStruc.minVariance = false;
-        tempStruc.adaptiveDx = false;
+%         tempStruc.SURDtarget = targetCoverage(1);
+%         tempStruc.SURDmin = 5;
+%         tempStruc.SURDmax  = 100;        
+%         tempStruc.LagrangeMin = 1;
+%         tempStruc.LagrangeMax = 200;
+%         tempStruc.integrationPoints  = 5000;
+%         tempStruc.scoreType = 'QZ';
+%         tempStruc.minVariance = false;
+%         tempStruc.adaptiveDx = false;
         
         try
             
-            [failed, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b},tempStruc);
+%             [failed, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b},tempStruc);
+            [failed, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b});
 
         catch
             warning(['Problem using function.  Assigning a value of 0.',' t: ',num2str(t),' b: ',num2str(b)]);
