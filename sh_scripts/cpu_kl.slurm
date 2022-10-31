@@ -1,10 +1,10 @@
 #!/bin/sh
 
 #SBATCH --partition=Orion
-#SBATCH --job-name=nse_threshold
+#SBATCH --job-name=nse_cpu
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --time=48:30:00 
+#SBATCH --ntasks-per-node=20
+#SBATCH --time=24:00:00 
 
 ### email notification
 
@@ -27,5 +27,5 @@ cd /users/zmerino/nse_versions/nse_current
 
 ### Change Directory and run MainScript
 
-matlab -nodisplay -nosplash < driver_theoretical_threshold.m > run.log
+matlab -nodisplay -nosplash < driver_cpu_failure_KL.m > run.log
 

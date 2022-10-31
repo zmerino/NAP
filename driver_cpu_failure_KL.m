@@ -3,13 +3,13 @@
 clc;clear all; close all;
 
 addpath("functions/")
-% addpath("compile_nmem/")
 addpath("compile_nmem_mv/")
-
 
 % error handling
 status = mkdir('log');
 diary(fullfile('log','error_log_cpu_failure_distance.txt'))
+diary on;
+
 % empty text file used to track progress
 filename = ['cpu_failure_distance_script_run-',datestr(datetime(floor(now),'ConvertFrom','datenum')),'.txt'];
 full_file = fullfile('log',filename);
@@ -22,9 +22,6 @@ fclose(fid);
 actual = distributions;
 actual.generate_data = false;
 
-% YexpScale = -3;
-YexpScale = -2;
-
 % User Options ============================================================
 % script switching board
 estimator_call_flag =       true;   %<- true/false call SE on/off
@@ -32,9 +29,9 @@ estimator_plot_flag =       false;   %<- true/false plot SE results on/off
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 save_graphics =             false;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   22; %<---- maximum exponent to generate samples
+max_pow =                   10; %<---- maximum exponent to generate samples
 min_pow =                   8; %<---- minimum exponent to generate samples
-trials =                    500   ;  %<--- trials to run to generate heuristics for programs
+trials =                    10   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -53,20 +50,8 @@ distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5",...
     "tLocationScale","Uniform","Uniform-Mix","Weibull","Chisquare",...
     "InverseGaussian","Trimodal-Normal","Stable",...
     "Stable2","Stable3","Stable1","BirnbaumSaunders-Stable"];
-% distribution_vector = ["Normal","Uniform","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
-distribution_vector = ["Beta-a0p5-b0p5","Generalized-Pareto"];
-% distribution_vector = ["Beta-a0p5-b0p5","Generalized-Pareto";
-distribution_vector = ["Trimodal-Normal","Normal","Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto"];
-% distribution_vector = ["Beta-a0p5-b0p5"];
 
-distribution_vector = ["Uniform-Mix","Generalized-Pareto","Stable","Trimodal-Normal","Normal", "Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
-distribution_vector = ["Generalized-Pareto","Stable","Normal", "Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
-distribution_vector = ["Uniform-Mix","Generalized-Pareto","Stable","Trimodal-Normal","Normal", "Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
-distribution_vector = ["Trimodal-Normal","Normal", "Uniform"];
-distribution_vector = ["Generalized-Pareto","Stable","Uniform","Beta-a0p5-b0p5"];
-distribution_vector = ["Trimodal-Normal","Normal","Generalized-Pareto","Beta-a0p5-b0p5"];
 distribution_vector = ["Trimodal-Normal","Normal","Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto", "Uniform-Mix"];
-
 distribution = distribution_vector';
 names = ["Tri-Modal-Normal", "Normal", "Uniform", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Uniform-Mix"]';
 test = table(distribution,names);
@@ -337,17 +322,17 @@ for j = 1:length(distribution_vector)
     cpu_nse = cpu_vec_se;
     cpu_nmem = cpu_vec_nmem;
 
-    temp = vertcat(reshape_groups(sample_vec',mse_vec_se),...
-    reshape_groups(sample_vec',mse_vec_nmem));
+    temp = vertcat(misc_functions.reshape_groups(sample_vec',mse_vec_se),...
+    misc_functions.reshape_groups(sample_vec',mse_vec_nmem));
     sample_power = temp(:,1);
     mse = temp(:,2);
 
-    temp = vertcat(reshape_groups(sample_vec',kl_vec_se),...
-    reshape_groups(sample_vec',kl_vec_nmem));
+    temp = vertcat(misc_functions.reshape_groups(sample_vec',kl_vec_se),...
+    misc_functions.reshape_groups(sample_vec',kl_vec_nmem));
     kl = temp(:,2);
     
-    temp = vertcat(reshape_groups(sample_vec',cpu_vec_se),...
-    reshape_groups(sample_vec',cpu_vec_nmem));
+    temp = vertcat(misc_functions.reshape_groups(sample_vec',cpu_vec_se),...
+    misc_functions.reshape_groups(sample_vec',cpu_vec_nmem));
     cpu_time = temp(:,2);
 
     distribution = repelem(distribution_vector(j), length(temp(:,2)))';
@@ -355,17 +340,17 @@ for j = 1:length(distribution_vector)
 
     name = repelem(names(j), length(temp(:,2)))';
 
-    nse_label = repelem(["NSE"], size(reshape_groups(sample_vec',cpu_vec_se), 1));
-    nmem_label = repelem(["NMEM"], size(reshape_groups(sample_vec',cpu_vec_nmem), 1));
+    nse_label = repelem(["NSE"], size(misc_functions.reshape_groups(sample_vec',cpu_vec_se), 1));
+    nmem_label = repelem(["NMEM"], size(misc_functions.reshape_groups(sample_vec',cpu_vec_nmem), 1));
 
-    temp = vertcat(reshape_groups(sample_vec',fail_nse(:,:,j)),...
-        reshape_groups(sample_vec',fail_nmem(:,:,j)));
+    temp = vertcat(misc_functions.reshape_groups(sample_vec',fail_nse(:,:,j)),...
+        misc_functions.reshape_groups(sample_vec',fail_nmem(:,:,j)));
     
 
     fail = temp(:,2);   
 
-    temp = vertcat(reshape_groups(sample_vec',lagrange_nse(:,:,j)),...
-        reshape_groups(sample_vec',lagrange_nmem(:,:,j)));
+    temp = vertcat(misc_functions.reshape_groups(sample_vec',lagrange_nse(:,:,j)),...
+        misc_functions.reshape_groups(sample_vec',lagrange_nmem(:,:,j)));
     
     lagrange = temp(:,2);    
     

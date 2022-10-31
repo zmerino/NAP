@@ -1,10 +1,17 @@
 #!/bin/sh
 
+### general setup
+
+
 #SBATCH --partition=Orion
-#SBATCH --job-name=nse_threshold
+#SBATCH --job-name=nse_extrema
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --time=48:30:00 
+#SBATCH --ntasks-per-node=20
+#SBATCH --time=24:00:00 
+
+
+###SBATCH -o logs/slurm.%N.%J.%u.out # STDOUT
+###SBATCH -e logs/slurm.%N.%J.%u.err # STDERR
 
 ### email notification
 
@@ -27,5 +34,5 @@ cd /users/zmerino/nse_versions/nse_current
 
 ### Change Directory and run MainScript
 
-matlab -nodisplay -nosplash < driver_cpu_failure_KL.m > run.log
+matlab -nodisplay -nosplash < driver_extrema.m > run.log
 

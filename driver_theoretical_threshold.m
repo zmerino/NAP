@@ -11,6 +11,7 @@ status = mkdir(dir_name);
 % error handling
 status = mkdir('log');
 diary(fullfile('log','error_log_threoretical_threshold.txt'))
+diary on;
 
 % empty text file used to track progress
 filename = ['threshold_script_run-',datestr(datetime(floor(now),'ConvertFrom','datenum')),'.txt'];

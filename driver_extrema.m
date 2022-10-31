@@ -12,6 +12,7 @@ clc;clear; close all;
 % error handling
 status = mkdir('log');
 diary(fullfile('log','error_log_extrema.txt'))
+diary on;
 
 % empty text file used to track progress
 filename = ['extrema_script_run-',datestr(datetime(floor(now),'ConvertFrom','datenum')),'.txt'];
