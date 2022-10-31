@@ -24,9 +24,6 @@ fclose(fid);
 actual = distributions;
 actual.generate_data = false;
 
-% YexpScale = -3;
-YexpScale = -2;
-
 % User Options ============================================================
 % script switching board
 estimator_call_flag =       true;   %<- true/false call SE on/off
@@ -36,7 +33,7 @@ save_graphics =             false;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 max_pow =                   15; %<---- maximum exponent to generate samples
 min_pow =                   14; %<---- minimum exponent to generate samples
-trials =                    1   ;  %<--- trials to run to generate heuristics for programs
+trials =                    3   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -197,9 +194,29 @@ for j = 1:length(distribution_vector)
             % nse object instantiation
             nse = NSE;
             % NSE.stitch() method called to calcualted relevant parameters
-            [fail_code,x_nse,SE_pdf,SE_cdf,SE_u,SE_SQR,nBlocks,...
-                rndom.Ns,binrndom.Ns, max_LG, sum_LG,T,BRlevel,BR0]...
-                = nse.stitch(sample);
+
+            % use ONLY for NSE_working_archived.m class code
+%             [fail_code,x_nse,SE_pdf,SE_cdf,SE_u,SE_SQR,nBlocks,...
+%                 rndom.Ns,binrndom.Ns, max_LG, sum_LG,T,BRlevel,BR0]...
+%                 = nse.stitch(sample);
+
+            nse = nse.stitch(sample);
+            
+            % extract relevant parameters from object after stich() method
+            fail_code = nse.failed;
+            x_nse = nse.sx;
+            SE_pdf = nse.sPDF;
+            SE_cdf = nse.sCDF;
+            SE_u = nse.u;
+            SE_SQR = nse.sqr;
+            nBlocks = nse.nBlocks;
+            rndom.Ns = nse.N;
+            binrndom.Ns =  nse.binN;
+            max_LG = nse.LG_max;
+            sum_LG = nse.LG_sum;
+            T = nse.T;
+            BRlevel = nse.BRlevel;
+            BR0 = nse.BR0;
 
             tcpuSE = cputime-tintialSE;
 

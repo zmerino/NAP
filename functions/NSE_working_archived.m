@@ -12,33 +12,15 @@ classdef NSE
         p = [NSE.p1,NSE.p2,NSE.p3,NSE.p4,NSE.p5,NSE.p6,NSE.p7,NSE.p8];
         % boot strap parameters to be added????
     end
-    properties
-        % possible outputs
-        failed;
-        sx;
-        sPDF;
-        sCDF;
-        u;
-        sqr;
-        nBlocks;
-        N;
-        binN;
-        LG_max;
-        LG_sum;
-        T;
-        BRlevel;
-        BR0;
-    end
     methods
 
-%         function [obj.failed, obj.sx, obj.sPDF, obj.sCDF, u, sqr, obj.nBlocks, N, ...
-%                 obj.binN, LG_max, LG_sum, T, obj.BRlevel, BR0]...
-%                 = stitch(obj, inputSample) % for visualization
+        function [failed, sx, sPDF, sCDF, u, sqr, nBlocks, Ns, ...
+                binNs, LG_max, LG_sum, T, BRlevel, BR0]...
+                = stitch(obj, inputSample) % for visualization
 
-        function [obj] = stitch(obj, inputSample) % for visualization
 
-            % initialze the obj.failed trip flag to false
-            obj.failed = 0;
+            % initialze the failed trip flag to false
+            failed = 0;
 
             % Script Detailed output %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if ~exist('plt_blocksize','var')
@@ -103,11 +85,11 @@ classdef NSE
             end
 
             x = sort(sample);
-            obj.N = length(x);
-            obj.binN = 15;
-            if( obj.N < minNs )
+            Ns = length(x);
+            binNs = 15;
+            if( Ns < minNs )
                 error(['Sample size is too small. minNs = ',num2str(minNs)]);
-            elseif( obj.N > maxNs )
+            elseif( Ns > maxNs )
                 error(['Sample size is too large. maxNs = ',num2str(maxNs)]);
             end
 
@@ -116,27 +98,27 @@ classdef NSE
             end
 
             % OBSERVATION WINDOW: CDF Boundary Probabilities      section 5
-            pL = 0.5/obj.N;   % probability for data to be  left of window
-            pR = 0.5/obj.N;   % probability for data to be right of window
+            pL = 0.5/Ns;   % probability for data to be  left of window
+            pR = 0.5/Ns;   % probability for data to be right of window
             pNorm = 1 - pL - pR;          % probability for data to fall within window
 
             % partition data into primary blocks      section 6
-            % [j,obj.nBlocks,kBlockLower,kBlockUpper,kList,T,obj.BRlevel,BR0] = block_definition.bin_width_size(obj.N,obj.binN,x);
+            % [j,nBlocks,kBlockLower,kBlockUpper,kList,T,BRlevel,BR0] = block_definition.bin_width_size(Ns,binNs,x);
 
-            obt_blocks = blocks;
-            obt_blocks.sample = x;
-            obt_blocks.binNs = obj.binN;
-            [j,obj.nBlocks,kBlockLower,kBlockUpper,kList,obj.T,obj.BRlevel,obj.BR0] = obt_blocks.bin_width_size(obt_blocks);
+            test = blocks
+            test.sample = x;
+            test.binNs = binNs;
+            [j,nBlocks,kBlockLower,kBlockUpper,kList,T,BRlevel,BR0] = test.bin_width_size(test);
 
             % create staggered (secondary) blocks      section 7
-            if( obj.nBlocks > 2 )
-                if( obj.nBlocks == 3 )          % block size of three is a special case
+            if( nBlocks > 2 )
+                if( nBlocks == 3 )          % block size of three is a special case
                     kBlockLower(1) = 1;
                     kBlockUpper(1) = kList(1);
                     kBlockLower(2) = round( ( 1  + kList(1) )/2 );
-                    kBlockUpper(2) = round( ( kList(1) + obj.N )/2 );
+                    kBlockUpper(2) = round( ( kList(1) + Ns )/2 );
                     kBlockLower(3) = kList(1);
-                    kBlockUpper(3) = obj.N;
+                    kBlockUpper(3) = Ns;
                 else
                     % set index for staggered blocks (sb)
                     nB = 1;
@@ -166,29 +148,29 @@ classdef NSE
                     kBlockUpper(nB) = kList(j);
                     nB = nB + 1;
                     kBlockLower(nB) = round( ( kList(j-1)  +  kList(j) )/2 );
-                    kBlockUpper(nB) = round( ( kList(j)  +  obj.N )/2 );
+                    kBlockUpper(nB) = round( ( kList(j)  +  Ns )/2 );
 
-                    kBlockLower(obj.nBlocks) = kBlockUpper(end-2);
-                    kBlockUpper(obj.nBlocks) = obj.N;
+                    kBlockLower(nBlocks) = kBlockUpper(end-2);
+                    kBlockUpper(nBlocks) = Ns;
                 end
             else                                               % => block size is 1
-                kBlockLower = zeros(1,obj.nBlocks);
-                kBlockUpper = zeros(1,obj.nBlocks);
+                kBlockLower = zeros(1,nBlocks);
+                kBlockUpper = zeros(1,nBlocks);
                 kBlockLower(1) = 1;
-                kBlockUpper(1) = obj.N;
+                kBlockUpper(1) = Ns;
             end
 
             % Determine block sizes      section 8
             blockSize = kBlockUpper - kBlockLower + 1;
             flag = 1;
-            if( blockSize(1) < obj.binN )
+            if( blockSize(1) < binNs )
                 flag = -1;
-                k = obj.binN - blockSize(1);
+                k = binNs - blockSize(1);
                 tt = blockSize - k;
-                for j=2:obj.nBlocks
-                    if( tt(j) > obj.binN )
+                for j=2:nBlocks
+                    if( tt(j) > binNs )
                         jRef = j;
-                        if( jRef == obj.nBlocks )
+                        if( jRef == nBlocks )
                             error('All blocks are too small! Sample is too hard');
                         end
                         break;
@@ -203,12 +185,12 @@ classdef NSE
                 kBlockLower(jRef) = kBlockLower(jRef) + k;
                 kBlockLower(jRef+1) = kBlockLower(jRef+1) + k;
             end
-            if( blockSize(obj.nBlocks) < obj.binN )
+            if( blockSize(nBlocks) < binNs )
                 flag = -1;
-                k = obj.binN - blockSize(obj.nBlocks);
+                k = binNs - blockSize(nBlocks);
                 tt = blockSize - k;
-                for j=obj.nBlocks-1:-1:1
-                    if( tt(j) > obj.binN )
+                for j=nBlocks-1:-1:1
+                    if( tt(j) > binNs )
                         jRef = j;
                         if( jRef == 1 )
                             error('All blocks are too small! Sample is too hard');
@@ -216,9 +198,9 @@ classdef NSE
                         break;
                     end
                 end
-                kBlockUpper(obj.nBlocks) = obj.N;
-                kBlockLower(obj.nBlocks) = kBlockLower(obj.nBlocks) - k;
-                for j=obj.nBlocks-1:-1:jRef+1
+                kBlockUpper(nBlocks) = Ns;
+                kBlockLower(nBlocks) = kBlockLower(nBlocks) - k;
+                for j=nBlocks-1:-1:jRef+1
                     kBlockUpper(j) = kBlockUpper(j) - k;
                     kBlockLower(j) = kBlockLower(j) - k;
                 end
@@ -230,9 +212,9 @@ classdef NSE
             end
 
             % get length scale & shifts for each block      section 9
-            blockScale = zeros(1,obj.nBlocks);     % => length of x as the span of a block
-            blockShift = zeros(1,obj.nBlocks);     % shift in x to center the span about 0
-            for b=1:obj.nBlocks
+            blockScale = zeros(1,nBlocks);     % => length of x as the span of a block
+            blockShift = zeros(1,nBlocks);     % shift in x to center the span about 0
+            for b=1:nBlocks
                 kL = kBlockLower(b);
                 kU = kBlockUpper(b);
                 blockScale(b) = 0.5*( x(kU) - x(kL) );          % REMEMBER x is sorted!
@@ -241,7 +223,7 @@ classdef NSE
 
             % ----------------------------------------------------------- for checking
             if( plt_blocksize )
-                t = 1:obj.nBlocks;
+                t = 1:nBlocks;
                 figure('Name','BlockScale')
                 plot(t,blockScale,'-k');
                 title('Length of each block with respect to x variable');
@@ -257,9 +239,9 @@ classdef NSE
             end
 
             % report with error checking      section 10
-            if( obj.nBlocks == 1 )
+            if( nBlocks == 1 )
                 kL = 1;
-                kR = obj.N;
+                kR = Ns;
             else
                 for index = 1:length(kBlockLower)
                     kL = kBlockLower(index);
@@ -270,11 +252,11 @@ classdef NSE
             % set up probability factors      section 11
             nBs0 = blockSize - 1;
             nBs0(1) = nBs0(1) + 0.5;
-            nBs0(obj.nBlocks) = nBs0(obj.nBlocks) + 0.5;
+            nBs0(nBlocks) = nBs0(nBlocks) + 0.5;
             % divide problem into blocks      section 12
-            totalCounts = obj.nBlocks*nTargets;
+            totalCounts = nBlocks*nTargets;
             % commit to full Monte
-            for b=1:obj.nBlocks
+            for b=1:nBlocks
                 j1 = kBlockLower(b);
                 j2 = kBlockUpper(b);
                 s = 1/blockScale(b);
@@ -288,13 +270,13 @@ classdef NSE
             tic
 
             % initialize vector to hold all lagrainge mutiplers per block
-            LG = zeros(1,obj.nBlocks);
-            parfor b=1:obj.nBlocks
+            LG = zeros(1,nBlocks);
+            parfor b=1:nBlocks
                 lagrange = [];
                 for t=1:nTargets
                     tempStruc = struct('SURDtarget',targetCoverage(t));
                     try
-                        [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b});
+                        [failed, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b});
                     catch
                         warning(['Problem using function.  Assigning a value of 0.',' t: ',num2str(t),' b: ',num2str(b)]);
                         lagrange = 0;
@@ -305,18 +287,18 @@ classdef NSE
                     LG(1,b) = size(lagrange,1);
                 end
             end
-            obj.LG_max = max(LG);
-            obj.LG_sum = sum(LG);
+            LG_max = max(LG);
+            LG_sum = sum(LG);
 
             % read files and combine different target PDFs per block      section 14
-            blockPDF = cell(1,obj.nBlocks);
-            blockCDF = cell(1,obj.nBlocks);
-            blockX = cell(1,obj.nBlocks);
+            blockPDF = cell(1,nBlocks);
+            blockCDF = cell(1,nBlocks);
+            blockX = cell(1,nBlocks);
 
             b = 1;
             updateIndex = 1;
             indexList = [];
-            while( b <= obj.nBlocks )
+            while( b <= nBlocks )
                 % get block data
                 blockX{b} = targetBlock{1,b}.data(:,1);        % same x for all targets
                 blockPDF{b} = wt(1)*targetBlock{1,b}.data(:,2);
@@ -330,7 +312,7 @@ classdef NSE
                 % scale block data
                 sInv = blockScale(b);             % Note:  sInv = 1/s = 1/blockScale(b)
                 s = 1/sInv;
-                sWb = s*(nBs0(b)/obj.N);  % Wb = nBs0/N = weight based on frequency count
+                sWb = s*(nBs0(b)/Ns);  % Wb = nBs0/Ns = weight based on frequency count
                 % apply scaling
                 blockPDF{b} = sWb*blockPDF{b}; % s on PDF is required to undo sInv on x
                 blockX{b} = sInv*blockX{b} ...           % put x back to original units
@@ -342,7 +324,7 @@ classdef NSE
                 b = b + 1;
             end
 
-            obj.nBlocks = b-1;
+            nBlocks = b-1;
             fprintf('|<\n');
 
             %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -365,14 +347,14 @@ classdef NSE
             end
 
             % sync block data into a single range      section 16
-            obj.sx = [];
-            obj.sPDF = [];
+            sx = [];
+            sPDF = [];
             for b=1:length(indexList)
-                obj.sx = [obj.sx, blockX{indexList(b)}'];
-                obj.sPDF = [obj.sPDF, blockPDF{indexList(b)}'];        % multiply blockPDF by s ?????
+                sx = [sx, blockX{indexList(b)}'];
+                sPDF = [sPDF, blockPDF{indexList(b)}'];        % multiply blockPDF by s ?????
             end
-            [obj.sx,indx] = unique(obj.sx);
-            obj.sPDF = obj.sPDF(indx);
+            [sx,indx] = unique(sx);
+            sPDF = sPDF(indx);
 
             % stitch the blocks together      section 17
 
@@ -391,8 +373,8 @@ classdef NSE
                 xmin = min(blockX{indexList(b+1)});
                 xmax = max(blockX{indexList(b)});
 
-                Lnot = or( (obj.sx < xmin) , (obj.sx > xmax) );  % => outside of overlap region
-                xStitch = obj.sx(~Lnot);                          % within overlap region
+                Lnot = or( (sx < xmin) , (sx > xmax) );  % => outside of overlap region
+                xStitch = sx(~Lnot);                          % within overlap region
                 k0 = length(xStitch);
                 if( k0 < 1 ) %51 <------------------------------ currently very small!
                     disp(['    left block # = ',num2str(b)]);
@@ -401,7 +383,7 @@ classdef NSE
                     disp(['            xmin = ',num2str(xmin)]);
                     disp(['         overlap = ',num2str(k0)]);
                     warning('overlap is too small!');
-                    obj.failed = 1;
+                    failed = 1;
                 end
 
                 %----------------------------------------------------------------------
@@ -461,26 +443,26 @@ classdef NSE
                 end
 
 
-                [~,indx] = min( abs(obj.sx-xmin) );
+                [~,indx] = min( abs(sx-xmin) );
                 dk = k0 - 1;
-                obj.sPDF(indx:indx+dk) = stitchPDF;
+                sPDF(indx:indx+dk) = stitchPDF;
 
             end
 
-            % normalize obj.sPDF      section 18
-            % ^Technical note:  ^obj.sPDF is already normalized but, we can force the
+            % normalize sPDF      section 18
+            % ^Technical note:  ^sPDF is already normalized but, we can force the
             %                    boundaries as they should be, which is not automatic
             % integrate assuming linear interpolation only
-            obj.sCDF = zeros( size(obj.sPDF) );
-            obj.sCDF(1) = 0;
-            kmax = length(obj.sCDF);
+            sCDF = zeros( size(sPDF) );
+            sCDF(1) = 0;
+            kmax = length(sCDF);
             for k=2:kmax
-                fave = 0.5*( obj.sPDF(k) + obj.sPDF(k-1) );
-                area = fave*( obj.sx(k) - obj.sx(k-1) );
-                obj.sCDF(k) = obj.sCDF(k-1) + area;
+                fave = 0.5*( sPDF(k) + sPDF(k-1) );
+                area = fave*( sx(k) - sx(k-1) );
+                sCDF(k) = sCDF(k-1) + area;
             end
-            temp = obj.sCDF(kmax);
-            obj.sCDF = pNorm*(obj.sCDF/temp) + pL;  % recalling what pL, pR and pNorm are
+            temp = sCDF(kmax);
+            sCDF = pNorm*(sCDF/temp) + pL;  % recalling what pL, pR and pNorm are
             %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
             % END: stitch blocks together
             %/////////////////////////////////////////////////////////////////////////
@@ -490,19 +472,19 @@ classdef NSE
             % calculate & plot SQR
 
             % adjust u range
-            sampleUpLim = max(obj.sx);
-            sampleLoLim = min(obj.sx);
+            sampleUpLim = max(sx);
+            sampleLoLim = min(sx);
             [row, ~] = find(sample <= sampleUpLim & sample >= sampleLoLim);
-            obj.u = interp1(obj.sx,obj.sCDF,sample(row));    % get corresponding u for each x in sample
+            u = interp1(sx,sCDF,sample(row));    % get corresponding u for each x in sample
             uref = (1:size(sample(row),1))/(size(sample(row),1) - 1);
-            if( size(uref,1) ~= size(obj.u,1) )
-                obj.u = obj.u';
+            if( size(uref,1) ~= size(u,1) )
+                u = u';
             end
 
 
             % get scaled residual
-            obj.sqr = sqrt(obj.N)*(obj.u - uref); % normal formula has sqrt(N+2) but N -> N-2
-            [obj.u,obj.sqr] = misc_functions.sqr(obj.sx,obj.sPDF,inputSample);
+            sqr = sqrt(Ns)*(u - uref); % normal formula has sqrt(Ns+2) but Ns -> Ns-2
+            [u,sqr] = misc_functions.sqr(sx,sPDF,inputSample);
         end
     end
 end

@@ -1,0 +1,770 @@
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE')" style="font-weight:bold">NSE</a>
+Error: <a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/NSE.m',297,26)">File: NSE.m Line: 297 Column: 26</a>
+Unable to classify the variable 'obj' in the body of the parfor-loop. For
+more information, see <a href="matlab: helpview([docroot '/parallel-computing/distcomp_ug.map'],'MIR_ERROR_PARFOR_BAD_TEMPORARY_VARIABLE')">Parallel for Loops in MATLAB, "Solve Variable
+Classification Issues in parfor-Loops"</a>.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 198)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',198,0)">line 198</a>)
+            nse = NSE;
+} 
+opentoline('/home/zach/Documents/github/nse/functions/NSE.m',297,26)
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',11,0)">line 11</a>)] 
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('blocks')" style="font-weight:bold">blocks</a>
+Cannot define property 'Ns' in class 'blocks' because the property has already been defined in the superclass 'NSE'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE/stitch', '/home/zach/Documents/github/nse/functions/NSE.m', 126)" style="font-weight:bold">NSE/stitch</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/NSE.m',126,0)">line 126</a>)
+            obt_blocks = blocks;
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 203)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',203,0)">line 203</a>)
+            nse.stitch(sample);
+} 
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',11,0)">line 11</a>)] 
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('blocks')" style="font-weight:bold">blocks</a>
+Cannot define property 'binNs' in class 'blocks' because the property has already been defined in the superclass 'NSE'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE/stitch', '/home/zach/Documents/github/nse/functions/NSE.m', 126)" style="font-weight:bold">NSE/stitch</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/NSE.m',126,0)">line 126</a>)
+            obt_blocks = blocks;
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 203)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',203,0)">line 203</a>)
+            nse.stitch(sample);
+} 
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',11,0)">line 11</a>)] 
+|<
+{Unrecognized property 'obj' for class 'NSE'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE/stitch', '/home/zach/Documents/github/nse/functions/NSE.m', 504)" style="font-weight:bold">NSE/stitch</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/NSE.m',504,0)">line 504</a>)
+            obj.obj = sqrt(obj.N)*(obj.u - uref); % normal formula has sqrt(N+2) but N -> N-2
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 203)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',203,0)">line 203</a>)
+            nse.stitch(sample);
+} 
+opentoline('/home/zach/Documents/github/nse/functions/NSE.m',504,0)
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',11,0)">line 11</a>)] 
+|<
+{Unrecognized method, property, or field 'Ns' for class 'NSE'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 212)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',212,0)">line 212</a>)
+            rndom.Ns = nse.Ns;
+} 
+opentoline('/home/zach/Documents/github/nse/driver_distributions.m',212,0)
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',11,0)">line 11</a>)] 
+|<
+{Unable to perform assignment because the size of the left side is 1-by-1 and the size of the right side is 0-by-0.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 222)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',222,0)">line 222</a>)
+            fail_nse(k,i,j) = fail_code;
+} 
+opentoline('/home/zach/Documents/github/nse/driver_distributions.m',222,0)
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',11,0)">line 11</a>)] 
+|<
+<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',222,1)">222 </a>            fail_nse(k,i,j) = fail_code;
+dbquit
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',11,0)">line 11</a>)] 
+<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/NSE.m',41,1)">41  </a>            obj.failed = 0;
+dbcont
+dbcont
+|<
+if system_dependent('IsDebugMode')==1, dbquit all; end
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',11,0)">line 11</a>)] 
+<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/NSE.m',44,1)">44  </a>            if ~exist('plt_blocksize','var')
+dbcont
+|<
+dbcont
+dbcont
+dbcont
+dbcont
+if system_dependent('IsDebugMode')==1, dbquit all; end
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',11,0)">line 11</a>)] 
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE/stitch')" style="font-weight:bold">NSE/stitch</a>
+Too many input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 203)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',203,0)">line 203</a>)
+            nse.stitch(nse,sample);
+} 
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',11,0)">line 11</a>)] 
+<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/NSE.m',44,1)">44  </a>            if ~exist('plt_blocksize','var')
+dbcont
+|<
+dbcont
+Elapsed time is 11.121926 seconds.
+|<
+Elapsed time is 0.705893 seconds.
+|<
+Elapsed time is 0.230662 seconds.
+|<
+Elapsed time is 0.315808 seconds.
+|<
+    left block # = 14
+   right block # = 15
+            xmax = 7.9959
+            xmin = 7.996
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE/stitch', '/home/zach/Documents/github/nse/functions/NSE.m', 403)" style="font-weight:bold">NSE/stitch</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/NSE.m',403,0)">line 403</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 203)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',203,0)">line 203</a>)] 
+Elapsed time is 0.224505 seconds.
+|<
+Elapsed time is 0.164228 seconds.
+|<
+Elapsed time is 2.717736 seconds.
+|<
+    left block # = 14
+   right block # = 15
+            xmax = 0.98624
+            xmin = 0.98634
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE/stitch', '/home/zach/Documents/github/nse/functions/NSE.m', 403)" style="font-weight:bold">NSE/stitch</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/NSE.m',403,0)">line 403</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 203)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',203,0)">line 203</a>)] 
+Elapsed time is 4.628640 seconds.
+|<
+Elapsed time is 3.206145 seconds.
+|<
+Elapsed time is 5.599855 seconds.
+|<
+Elapsed time is 2.190331 seconds.
+|<
+    left block # = 14
+   right block # = 15
+            xmax = 1
+            xmin = 1
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE/stitch', '/home/zach/Documents/github/nse/functions/NSE.m', 403)" style="font-weight:bold">NSE/stitch</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/NSE.m',403,0)">line 403</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 203)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',203,0)">line 203</a>)] 
+Elapsed time is 3.860492 seconds.
+|<
+Elapsed time is 0.618879 seconds.
+|<
+Elapsed time is 0.913476 seconds.
+|<
+Elapsed time is 6.772607 seconds.
+|<
+Elapsed time is 5.528112 seconds.
+opentoline('/home/zach/Documents/github/nse/functions/NSE.m',403,0)
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',11,0)">line 11</a>)] 
+|<
+Elapsed time is 0.662958 seconds.
+|<
+    left block # = 1
+   right block # = 2
+            xmax = 2.4988
+            xmin = 2.5132
+         overlap = 0
+<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/NSE.m',403,1)">403 </a>                    warning('overlap is too small!');
+if system_dependent('IsDebugMode')==1, dbquit all; end
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',11,0)">line 11</a>)] 
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE/stitch')" style="font-weight:bold">NSE/stitch</a>
+Too many input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 202)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',202,0)">line 202</a>)
+                = nse.stitch(sample);
+} 
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',11,0)">line 11</a>)] 
+
+test = 
+
+  <a href="matlab:helpPopup blocks" style="font-weight:bold">blocks</a> with properties:
+
+    plt_figs: 0
+      plt_xi: 0
+    plt_tree: 1
+      sample: []
+          Ns: []
+      window: []
+      binMin: []
+       binNs: []
+      max_bs: 100000
+          p1: 1
+          p2: 0.5500
+          p3: 1
+          p4: 0.3300
+          p5: 2
+          p6: 0.0625
+          p7: 0.5000
+          p8: 40
+           p: [1 0.5500 1 0.3300 2 0.0625 0.5000 40]
+
+|<
+<a href="matlab: opentoline('/home/zach/Documents/github/nse/functions/NSE.m',403,1)">403 </a>                u1 = max(ub);
+dbcont
+Elapsed time is 4.180427 seconds.
+
+test = 
+
+  <a href="matlab:helpPopup blocks" style="font-weight:bold">blocks</a> with properties:
+
+    plt_figs: 0
+      plt_xi: 0
+    plt_tree: 1
+      sample: []
+          Ns: []
+      window: []
+      binMin: []
+       binNs: []
+      max_bs: 100000
+          p1: 1
+          p2: 0.5500
+          p3: 1
+          p4: 0.3300
+          p5: 2
+          p6: 0.0625
+          p7: 0.5000
+          p8: 40
+           p: [1 0.5500 1 0.3300 2 0.0625 0.5000 40]
+
+|<
+Elapsed time is 0.681191 seconds.
+
+test = 
+
+  <a href="matlab:helpPopup blocks" style="font-weight:bold">blocks</a> with properties:
+
+    plt_figs: 0
+      plt_xi: 0
+    plt_tree: 1
+      sample: []
+          Ns: []
+      window: []
+      binMin: []
+       binNs: []
+      max_bs: 100000
+          p1: 1
+          p2: 0.5500
+          p3: 1
+          p4: 0.3300
+          p5: 2
+          p6: 0.0625
+          p7: 0.5000
+          p8: 40
+           p: [1 0.5500 1 0.3300 2 0.0625 0.5000 40]
+
+|<
+Elapsed time is 0.168619 seconds.
+
+test = 
+
+  <a href="matlab:helpPopup blocks" style="font-weight:bold">blocks</a> with properties:
+
+    plt_figs: 0
+      plt_xi: 0
+    plt_tree: 1
+      sample: []
+          Ns: []
+      window: []
+      binMin: []
+       binNs: []
+      max_bs: 100000
+          p1: 1
+          p2: 0.5500
+          p3: 1
+          p4: 0.3300
+          p5: 2
+          p6: 0.0625
+          p7: 0.5000
+          p8: 40
+           p: [1 0.5500 1 0.3300 2 0.0625 0.5000 40]
+
+|<
+Elapsed time is 0.179948 seconds.
+
+test = 
+
+  <a href="matlab:helpPopup blocks" style="font-weight:bold">blocks</a> with properties:
+
+    plt_figs: 0
+      plt_xi: 0
+    plt_tree: 1
+      sample: []
+          Ns: []
+      window: []
+      binMin: []
+       binNs: []
+      max_bs: 100000
+          p1: 1
+          p2: 0.5500
+          p3: 1
+          p4: 0.3300
+          p5: 2
+          p6: 0.0625
+          p7: 0.5000
+          p8: 40
+           p: [1 0.5500 1 0.3300 2 0.0625 0.5000 40]
+
+|<
+Elapsed time is 0.177303 seconds.
+
+test = 
+
+  <a href="matlab:helpPopup blocks" style="font-weight:bold">blocks</a> with properties:
+
+    plt_figs: 0
+      plt_xi: 0
+    plt_tree: 1
+      sample: []
+          Ns: []
+      window: []
+      binMin: []
+       binNs: []
+      max_bs: 100000
+          p1: 1
+          p2: 0.5500
+          p3: 1
+          p4: 0.3300
+          p5: 2
+          p6: 0.0625
+          p7: 0.5000
+          p8: 40
+           p: [1 0.5500 1 0.3300 2 0.0625 0.5000 40]
+
+|<
+Elapsed time is 0.161191 seconds.
+
+test = 
+
+  <a href="matlab:helpPopup blocks" style="font-weight:bold">blocks</a> with properties:
+
+    plt_figs: 0
+      plt_xi: 0
+    plt_tree: 1
+      sample: []
+          Ns: []
+      window: []
+      binMin: []
+       binNs: []
+      max_bs: 100000
+          p1: 1
+          p2: 0.5500
+          p3: 1
+          p4: 0.3300
+          p5: 2
+          p6: 0.0625
+          p7: 0.5000
+          p8: 40
+           p: [1 0.5500 1 0.3300 2 0.0625 0.5000 40]
+
+|<
+Elapsed time is 2.275927 seconds.
+
+test = 
+
+  <a href="matlab:helpPopup blocks" style="font-weight:bold">blocks</a> with properties:
+
+    plt_figs: 0
+      plt_xi: 0
+    plt_tree: 1
+      sample: []
+          Ns: []
+      window: []
+      binMin: []
+       binNs: []
+      max_bs: 100000
+          p1: 1
+          p2: 0.5500
+          p3: 1
+          p4: 0.3300
+          p5: 2
+          p6: 0.0625
+          p7: 0.5000
+          p8: 40
+           p: [1 0.5500 1 0.3300 2 0.0625 0.5000 40]
+
+|<
+Elapsed time is 6.394004 seconds.
+
+test = 
+
+  <a href="matlab:helpPopup blocks" style="font-weight:bold">blocks</a> with properties:
+
+    plt_figs: 0
+      plt_xi: 0
+    plt_tree: 1
+      sample: []
+          Ns: []
+      window: []
+      binMin: []
+       binNs: []
+      max_bs: 100000
+          p1: 1
+          p2: 0.5500
+          p3: 1
+          p4: 0.3300
+          p5: 2
+          p6: 0.0625
+          p7: 0.5000
+          p8: 40
+           p: [1 0.5500 1 0.3300 2 0.0625 0.5000 40]
+
+|<
+Elapsed time is 2.672200 seconds.
+
+test = 
+
+  <a href="matlab:helpPopup blocks" style="font-weight:bold">blocks</a> with properties:
+
+    plt_figs: 0
+      plt_xi: 0
+    plt_tree: 1
+      sample: []
+          Ns: []
+      window: []
+      binMin: []
+       binNs: []
+      max_bs: 100000
+          p1: 1
+          p2: 0.5500
+          p3: 1
+          p4: 0.3300
+          p5: 2
+          p6: 0.0625
+          p7: 0.5000
+          p8: 40
+           p: [1 0.5500 1 0.3300 2 0.0625 0.5000 40]
+
+|<
+Elapsed time is 7.660485 seconds.
+
+test = 
+
+  <a href="matlab:helpPopup blocks" style="font-weight:bold">blocks</a> with properties:
+
+    plt_figs: 0
+      plt_xi: 0
+    plt_tree: 1
+      sample: []
+          Ns: []
+      window: []
+      binMin: []
+       binNs: []
+      max_bs: 100000
+          p1: 1
+          p2: 0.5500
+          p3: 1
+          p4: 0.3300
+          p5: 2
+          p6: 0.0625
+          p7: 0.5000
+          p8: 40
+           p: [1 0.5500 1 0.3300 2 0.0625 0.5000 40]
+
+|<
+Elapsed time is 2.046789 seconds.
+
+test = 
+
+  <a href="matlab:helpPopup blocks" style="font-weight:bold">blocks</a> with properties:
+
+    plt_figs: 0
+      plt_xi: 0
+    plt_tree: 1
+      sample: []
+          Ns: []
+      window: []
+      binMin: []
+       binNs: []
+      max_bs: 100000
+          p1: 1
+          p2: 0.5500
+          p3: 1
+          p4: 0.3300
+          p5: 2
+          p6: 0.0625
+          p7: 0.5000
+          p8: 40
+           p: [1 0.5500 1 0.3300 2 0.0625 0.5000 40]
+
+|<
+Elapsed time is 3.599126 seconds.
+
+test = 
+
+  <a href="matlab:helpPopup blocks" style="font-weight:bold">blocks</a> with properties:
+
+    plt_figs: 0
+      plt_xi: 0
+    plt_tree: 1
+      sample: []
+          Ns: []
+      window: []
+      binMin: []
+       binNs: []
+      max_bs: 100000
+          p1: 1
+          p2: 0.5500
+          p3: 1
+          p4: 0.3300
+          p5: 2
+          p6: 0.0625
+          p7: 0.5000
+          p8: 40
+           p: [1 0.5500 1 0.3300 2 0.0625 0.5000 40]
+
+|<
+Elapsed time is 0.470757 seconds.
+
+test = 
+
+  <a href="matlab:helpPopup blocks" style="font-weight:bold">blocks</a> with properties:
+
+    plt_figs: 0
+      plt_xi: 0
+    plt_tree: 1
+      sample: []
+          Ns: []
+      window: []
+      binMin: []
+       binNs: []
+      max_bs: 100000
+          p1: 1
+          p2: 0.5500
+          p3: 1
+          p4: 0.3300
+          p5: 2
+          p6: 0.0625
+          p7: 0.5000
+          p8: 40
+           p: [1 0.5500 1 0.3300 2 0.0625 0.5000 40]
+
+|<
+Elapsed time is 0.902909 seconds.
+
+test = 
+
+  <a href="matlab:helpPopup blocks" style="font-weight:bold">blocks</a> with properties:
+
+    plt_figs: 0
+      plt_xi: 0
+    plt_tree: 1
+      sample: []
+          Ns: []
+      window: []
+      binMin: []
+       binNs: []
+      max_bs: 100000
+          p1: 1
+          p2: 0.5500
+          p3: 1
+          p4: 0.3300
+          p5: 2
+          p6: 0.0625
+          p7: 0.5000
+          p8: 40
+           p: [1 0.5500 1 0.3300 2 0.0625 0.5000 40]
+
+|<
+Elapsed time is 2.464987 seconds.
+
+test = 
+
+  <a href="matlab:helpPopup blocks" style="font-weight:bold">blocks</a> with properties:
+
+    plt_figs: 0
+      plt_xi: 0
+    plt_tree: 1
+      sample: []
+          Ns: []
+      window: []
+      binMin: []
+       binNs: []
+      max_bs: 100000
+          p1: 1
+          p2: 0.5500
+          p3: 1
+          p4: 0.3300
+          p5: 2
+          p6: 0.0625
+          p7: 0.5000
+          p8: 40
+           p: [1 0.5500 1 0.3300 2 0.0625 0.5000 40]
+
+|<
+Elapsed time is 4.567942 seconds.
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',11,0)">line 11</a>)] 
+|<
+Elapsed time is 0.717075 seconds.
+|<
+Elapsed time is 0.648419 seconds.
+|<
+Elapsed time is 0.180669 seconds.
+|<
+Elapsed time is 0.206328 seconds.
+|<
+Elapsed time is 0.201319 seconds.
+|<
+Elapsed time is 0.148920 seconds.
+|<
+Elapsed time is 2.324216 seconds.
+|<
+Elapsed time is 5.034522 seconds.
+|<
+Elapsed time is 2.987557 seconds.
+|<
+Elapsed time is 5.888402 seconds.
+|<
+Elapsed time is 1.775247 seconds.
+|<
+Elapsed time is 3.277881 seconds.
+|<
+Elapsed time is 0.442648 seconds.
+|<
+Elapsed time is 0.569139 seconds.
+|<
+Elapsed time is 2.327939 seconds.
+|<
+Elapsed time is 4.540583 seconds.
+Example_NSE_NMEM
+{Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE', '/home/zach/Documents/github/nse_MVnmem/functions/NSE.m', 43)" style="font-weight:bold">NSE</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_MVnmem/functions/NSE.m',43,0)">line 43</a>)
+                p6 = ceil(0.0625*length(unique(inputSample))^0.5);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Example_NSE_NMEM', '/home/zach/Documents/github/nse_MVnmem/Example_NSE_NMEM.m', 94)" style="font-weight:bold">Example_NSE_NMEM</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_MVnmem/Example_NSE_NMEM.m',94,0)">line 94</a>)
+    nse = NSE;
+} 
+Example_NSE_NMEM
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE')" style="font-weight:bold">NSE</a>
+Too many input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Example_NSE_NMEM', '/home/zach/Documents/github/nse/Example_NSE_NMEM.m', 98)" style="font-weight:bold">Example_NSE_NMEM</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/Example_NSE_NMEM.m',98,0)">line 98</a>)
+    stitchPdf = NSE(sample);
+} 
+opentoline('/home/zach/Documents/github/nse/Example_NSE_NMEM.m',98,0)
+Example_NSE_NMEM
+|<
+|<
+Example_NSE_NMEM
+|<
+|<
+Example_NSE_NMEM
+|<
+|<
+Example_NSE_NMEM
+|<
+|<
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse/driver_distributions.m',11,0)">line 11</a>)] 
+|<
+Elapsed time is 0.652668 seconds.
+|<
+Elapsed time is 0.651867 seconds.
+|<
+Elapsed time is 0.564649 seconds.
+|<
+Elapsed time is 0.716700 seconds.
+|<
+Elapsed time is 0.750195 seconds.
+|<
+Elapsed time is 0.658857 seconds.
+|<
+Elapsed time is 0.122932 seconds.
+|<
+Elapsed time is 0.166873 seconds.
+|<
+Elapsed time is 0.142785 seconds.
+|<
+Elapsed time is 0.141926 seconds.
+|<
+Elapsed time is 0.228304 seconds.
+|<
+Elapsed time is 0.185925 seconds.
+|<
+Elapsed time is 0.208511 seconds.
+|<
+Elapsed time is 0.151230 seconds.
+|<
+Elapsed time is 0.116825 seconds.
+|<
+Elapsed time is 0.169317 seconds.
+|<
+Elapsed time is 0.119875 seconds.
+|<
+Elapsed time is 0.113213 seconds.
+|<
+Elapsed time is 2.132218 seconds.
+|<
+Elapsed time is 4.364290 seconds.
+|<
+Elapsed time is 2.584937 seconds.
+|<
+Elapsed time is 4.863170 seconds.
+|<
+Elapsed time is 2.579228 seconds.
+|<
+Elapsed time is 5.857656 seconds.
+|<
+Elapsed time is 2.635267 seconds.
+|<
+Elapsed time is 5.921131 seconds.
+|<
+Elapsed time is 3.854572 seconds.
+|<
+Elapsed time is 6.402949 seconds.
+|<
+Elapsed time is 2.861293 seconds.
+|<
+Elapsed time is 9.235251 seconds.
+|<
+Elapsed time is 2.024449 seconds.
+|<
+Elapsed time is 3.968495 seconds.
+|<
+Elapsed time is 2.382993 seconds.
+|<
+Elapsed time is 3.698113 seconds.
+|<
+Elapsed time is 2.033898 seconds.
+|<
+Elapsed time is 3.508437 seconds.
+|<
+Elapsed time is 0.557302 seconds.
+|<
+Elapsed time is 0.754716 seconds.
+|<
+Elapsed time is 0.532509 seconds.
+|<
+Elapsed time is 0.630235 seconds.
+|<
+Elapsed time is 0.533472 seconds.
+|<
+Elapsed time is 0.642293 seconds.
+|<
+Elapsed time is 2.474582 seconds.
+|<
+Elapsed time is 4.945230 seconds.
+|<
+Elapsed time is 2.705385 seconds.
+|<
+Elapsed time is 3.814290 seconds.
+|<
+Elapsed time is 2.505344 seconds.
+|<
+Elapsed time is 7.172919 seconds.
