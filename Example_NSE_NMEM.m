@@ -16,8 +16,8 @@ actual.generate_data = false;
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   13; %<---- maximum exponent to generate samples
-min_pow =                   13; %<---- minimum exponent to generate samples
+max_pow =                   14; %<---- maximum exponent to generate samples
+min_pow =                   14; %<---- minimum exponent to generate samples
 trials =                    1   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
@@ -81,17 +81,21 @@ for j = 1:length(distribution_vector)
 
     % Use the following code to visualise internal workings of NSE()
 
-%     show_block_layout=true;
-%     visualize_interpolation=true;
-%     blockPdfs=true;
-%     savePNG=true;
+    %     show_block_layout=true;
+    %     visualize_interpolation=true;
+    %     blockPdfs=true;
+    %     savePNG=true;
 
-%     vis_list = num2cell([show_block_layout,visualize_interpolation,blockPdfs,savePNG]);
+    %     vis_list = num2cell([show_block_layout,visualize_interpolation,blockPdfs,savePNG]);
 
-%     stitchPdf = NSE(sample,rndom.filename, actual.min_limit,actual.max_limit,p,vis_list{:});
+    %     stitchPdf = NSE(sample,rndom.filename, actual.min_limit,actual.max_limit,p,vis_list{:});
 
+    % nse object instantiation
+    nse = NSE;
     % Otherwise use defualt values and use the NSE class
-    stitchPdf = NSE(sample,rndom.filename, actual.min_limit,actual.max_limit,p);
+
+    %     stitchPdf = nse.stitch(sample);
+    stitchPdf = nse.stitch(sample);
 
     %---------------------------------------------------------- NMEM start
     try
