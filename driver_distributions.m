@@ -31,8 +31,8 @@ estimator_plot_flag =       false;   %<- true/false plot SE results on/off
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 save_graphics =             false;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   15; %<---- maximum exponent to generate samples
-min_pow =                   14; %<---- minimum exponent to generate samples
+max_pow =                   19; %<---- maximum exponent to generate samples
+min_pow =                   19; %<---- minimum exponent to generate samples
 trials =                    3   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
@@ -58,6 +58,9 @@ distribution = distribution_vector';
 names = ["Tri-Modal-Normal", "Normal", "Uniform", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Uniform-Mix"]';
 
 
+distribution_vector = ["Uniform", "Uniform-Mix","Stable"];
+distribution = distribution_vector';
+names = ["Uniform", "Uniform-Mix","Stable"]';
 % distribution_vector = ["Beta-a0p5-b1p5"];
 % distribution = distribution_vector';
 % names = ["Beta(0.5,1.5)"]';

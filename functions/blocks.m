@@ -76,7 +76,6 @@ classdef blocks < NSE % inherit NSE properties i.e. p vector and max block size
             BRlevel = {BR0};
 
             % beggin level loop
-            %             if BR0 < T
             if BR0 > T
                 for jj = 1:maxLevel
                     % vector to hold all attempted partitions per level
@@ -101,6 +100,7 @@ classdef blocks < NSE % inherit NSE properties i.e. p vector and max block size
 
                         % golden ration bifraction minimization
                         [brL,brR,partition] = obj.min_br_gold(obj, obj.sample(pList(b):pList(b+1)));
+%                         [brL,brR,partition] = obj.gss(obj, obj.sample(pList(b):pList(b+1)));
 
                         % plot br and r for various paritions of whole
                         % sample
@@ -205,13 +205,11 @@ classdef blocks < NSE % inherit NSE properties i.e. p vector and max block size
                     splitCount = 0;
                     % loop over modified partition list (holder)
                     for k = 1:length(holder)-1
-                        % calcualte difference
-                        diff = holder(k+1)-holder(k);
                         % add partion between elements when diff > max_bs
                         if holder(k+1)-holder(k) > obj.max_bs
                             split = floor((holder(k+1)-holder(k))/2);
                             % update new partiton list
-                            LargNcheck = [LargNcheck,LargNcheck(k)+ split];
+                            LargNcheck = [LargNcheck; LargNcheck(k)+ split];
                             % update counter: number of found splits
                             splitCount = splitCount + 1;
                         end
@@ -249,29 +247,6 @@ classdef blocks < NSE % inherit NSE properties i.e. p vector and max block size
                 xlabel('Tree Level')
                 legend('Threshold')
 
-                %                 figure('Name','br values per level')
-                %                 hold on
-                %                 plot(0:size(plevel,1)-1,T*ones(size(plevel,1)), '-r');
-                %                 for k = 2:size(BRlevel,1)
-                %                     plot((k-2)*ones(size(BRlevel{k,1}(1,:),1),1),...
-                %                         BRlevel{k,1}(1,:),...
-                %                         'o',...
-                %                         'MarkerEdgeColor',[0,0,0],...
-                %                         'MarkerFaceColor',[0,0,0],...
-                %                         'MarkerSize',4,'DisplayName','none')
-                %                     levelTrack = 1:size(plevel,1);
-                %                 end
-                %
-                %                 str = cell(1,size(levelTrack,2));
-                %                 for ii = 1:length(levelTrack)-1
-                %                     str{ii} = sprintf('%1.0f',levelTrack(ii));
-                %                 end
-                %                 xticks(levelTrack)
-                %                 xticklabels(str)
-                %                 ylabel('BR')
-                %                 xlabel('Tree Level')
-                %                 legend('Threshold')
-
                 figure('Name','tree branching')
                 subplot(2,1,1)
                 histogram(obj.sample)
@@ -291,13 +266,6 @@ classdef blocks < NSE % inherit NSE properties i.e. p vector and max block size
 
                     levelTrack = 0:size(plevel,1)-1;
                 end
-                % final partition markers
-                % plot(obj.sample(plevel{end,1}{1,1}(:,1)),...
-                %     zeros(size(plevel{end,1}{1,1}(:,1),1),1),...
-                %     'o',...
-                %     'MarkerEdgeColor',[1,0,0],...
-                %     'MarkerFaceColor',[1,0,0],...
-                %     'MarkerSize',5)
                 plot(obj.sample(pList),...
                     zeros(length(pList),1),...
                     'o',...
@@ -338,11 +306,66 @@ classdef blocks < NSE % inherit NSE properties i.e. p vector and max block size
 
         end
 
+        function [brL,brR,partition] = gss(obj, sample)
+
+            Ns = length(sample);
+            bLeft = 1 + obj.binMin;
+            bRight = Ns - obj.binMin;
+            goldenR = (1+sqrt(5))/2;
+            partition = ceil(Ns/2);
+
+            while bRight-bLeft > 2
+
+                % define partitions ---------------------------------------
+                bLeft1 = partition;
+                bRight1 = Ns - partition;
+                rRight1 = obj.get_ratio(obj, sample(partition:end));
+                rLeft1 = obj.get_ratio(obj, sample(1:partition));
+                dxbrC = abs(obj.br_product(obj, bLeft1, rLeft1, Ns)-obj.br_product(obj, bRight1, rRight1, Ns));
+                % --------------------
+                leftPar = partition - 1;
+                bLeft2 = leftPar;
+                bRight2 = Ns - leftPar ;
+                rRight2 = obj.get_ratio(obj, sample(leftPar:end));
+                rLeft2 = obj.get_ratio(obj, sample(1:leftPar));
+                dxbrL = abs(obj.br_product(obj, bLeft2,rLeft2,Ns)-obj.br_product(obj, bRight2,rRight2,Ns));
+                % --------------------
+                rightPar = partition + 1;
+                bLeft3 = rightPar;
+                bRight3 = Ns - rightPar;
+                rRight3 = obj.get_ratio(obj, sample(rightPar:end));
+                rLeft3 = obj.get_ratio(obj, sample(1:rightPar));
+                dxbrR = abs(obj.br_product(obj, bLeft3,rLeft3,Ns)-obj.br_product(obj, bRight3,rRight3,Ns));
+                % --------------------
+                dxCR = dxbrC - dxbrR;
+                dxLC = dxbrL - dxbrC;
+                dxLR = dxbrL - dxbrR;
+                
+                % dxbrC = dxbrL or dxbrR = dxbrC or dxbrC is smallest
+                if dxLC == 0 || dxCR == 0 || (dxLC > 0 && dxCR < 0) || bRight-bLeft <= 2
+                    brL = obj.br_product(obj, bLeft1,rLeft1,Ns);
+                    brR = obj.br_product(obj, bRight1, rRight1,Ns);
+                    partition = bLeft1;
+                    return
+                end
+
+                % parition update conditions ------------------------------
+                 % dxbrR is smallest
+                if dxCR >= 0 && dxLR > 0
+                    bLeft = leftPar;
+                    % Shrink --->
+                    partition = round((bLeft+bRight*goldenR)/(1+goldenR));
+                % dxbrL is smallest
+                elseif dxLC <= 0 && dxLR < 0
+                    bRight = rightPar;
+                    % <--- Shrink
+                    partition = round((bLeft*goldenR+bRight)/(1+goldenR));
+                end
+            end
+        end
+
         function [brL,brR,partition] = min_br_gold(obj, sample)
 
-            % function definition
-            %             br = @br_product;
-            %             sample = sort(sample);
             Ns = length(sample);
             bLeft = 1 + obj.binMin;
             bRight = Ns - obj.binMin;
@@ -427,7 +450,7 @@ classdef blocks < NSE % inherit NSE properties i.e. p vector and max block size
             % REQUIRED to sort the magnitude of differences
             dx = sort(dx');
             dxMin = mean(dx(1:obj.window));
-            dxMax = mean(dx(end-obj.window:end));
+            dxMax = mean(dx(end-obj.window+1:end));
             % optional ratio condition
             % -------------------------------------------------------------
             % r -> 0, dxMin << dxMax and r -> 1, dxMin ~ dxMax

@@ -1,0 +1,2674 @@
+|<
+Elapsed time is 0.355712 seconds.
+|<
+Elapsed time is 0.197204 seconds.
+|<
+Elapsed time is 0.137275 seconds.
+|<
+Elapsed time is 0.130369 seconds.
+|<
+Elapsed time is 0.166452 seconds.
+|<
+Elapsed time is 0.265289 seconds.
+|<
+Elapsed time is 6.119275 seconds.
+|<
+Elapsed time is 4.739916 seconds.
+|<
+Elapsed time is 2.616005 seconds.
+|<
+Elapsed time is 8.096821 seconds.
+|<
+Elapsed time is 2.721062 seconds.
+|<
+Elapsed time is 8.004025 seconds.
+|<
+Elapsed time is 5.249465 seconds.
+|<
+Elapsed time is 7.441021 seconds.
+|<
+Elapsed time is 6.294907 seconds.
+|<
+Elapsed time is 7.666357 seconds.
+|<
+Elapsed time is 4.957543 seconds.
+|<
+Elapsed time is 9.116386 seconds.
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse_scaled_sample/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_distributions.m',11,0)">line 11</a>)] 
+|<
+Elapsed time is 0.222223 seconds.
+|<
+Elapsed time is 0.197093 seconds.
+|<
+Elapsed time is 0.189877 seconds.
+|<
+Elapsed time is 0.130580 seconds.
+|<
+Elapsed time is 0.199152 seconds.
+|<
+Elapsed time is 0.230564 seconds.
+|<
+Elapsed time is 7.929101 seconds.
+|<
+Elapsed time is 9.162720 seconds.
+|<
+Elapsed time is 5.868314 seconds.
+|<
+Elapsed time is 6.826369 seconds.
+|<
+Elapsed time is 3.286811 seconds.
+|<
+Elapsed time is 10.510251 seconds.
+|<
+Elapsed time is 5.032709 seconds.
+|<
+Elapsed time is 8.670706 seconds.
+|<
+Elapsed time is 7.039379 seconds.
+|<
+Elapsed time is 7.925729 seconds.
+|<
+Elapsed time is 5.112206 seconds.
+|<
+Elapsed time is 7.932998 seconds.
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse_scaled_sample/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_distributions.m',11,0)">line 11</a>)] 
+{Unrecognized function or variable 'tempStruct'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE/stitch', '/home/zach/Documents/github/nse_scaled_sample/functions/NSE.m', 299)" style="font-weight:bold">NSE/stitch</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/functions/NSE.m',299,0)">line 299</a>)
+                bounds{b} = tempStruct;
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse_scaled_sample/driver_distributions.m', 206)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_distributions.m',206,0)">line 206</a>)
+            nse = nse.stitch(sample);
+} 
+opentoline('/home/zach/Documents/github/nse_scaled_sample/functions/NSE.m',299,0)
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse_scaled_sample/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_distributions.m',11,0)">line 11</a>)] 
+|<
+Elapsed time is 0.337182 seconds.
+|<
+Elapsed time is 0.137434 seconds.
+|<
+Elapsed time is 0.169376 seconds.
+|<
+Elapsed time is 0.172342 seconds.
+|<
+Elapsed time is 0.166022 seconds.
+|<
+Elapsed time is 0.097479 seconds.
+|<
+Elapsed time is 6.555179 seconds.
+|<
+Elapsed time is 4.592105 seconds.
+|<
+Elapsed time is 2.279729 seconds.
+|<
+Elapsed time is 5.664725 seconds.
+|<
+Elapsed time is 2.815969 seconds.
+|<
+Elapsed time is 4.318248 seconds.
+|<
+Elapsed time is 6.641666 seconds.
+|<
+Elapsed time is 7.265955 seconds.
+|<
+Elapsed time is 4.608658 seconds.
+|<
+Elapsed time is 6.841048 seconds.
+|<
+Elapsed time is 5.837128 seconds.
+|<
+Elapsed time is 7.435545 seconds.
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse_scaled_sample/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_distributions.m',11,0)">line 11</a>)] 
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('horzcat')" style="font-weight:bold">horzcat</a>
+Dimensions of arrays being concatenated are not
+consistent.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('blocks.r_tree', '/home/zach/Documents/github/nse_scaled_sample/functions/blocks.m', 214)" style="font-weight:bold">blocks.r_tree</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/functions/blocks.m',214,0)">line 214</a>)
+                            LargNcheck = [LargNcheck,LargNcheck(k)+ split];
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('blocks.bin_width_size', '/home/zach/Documents/github/nse_scaled_sample/functions/blocks.m', 26)" style="font-weight:bold">blocks.bin_width_size</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/functions/blocks.m',26,0)">line 26</a>)
+                [kList,T,BRlevel,BR0] = obj.r_tree(obj);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE/stitch', '/home/zach/Documents/github/nse_scaled_sample/functions/NSE.m', 129)" style="font-weight:bold">NSE/stitch</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/functions/NSE.m',129,0)">line 129</a>)
+            [j,obj.nBlocks,kBlockLower,kBlockUpper,kList,obj.T,obj.BRlevel,obj.BR0] = obt_blocks.bin_width_size(obt_blocks);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse_scaled_sample/driver_distributions.m', 206)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_distributions.m',206,0)">line 206</a>)
+            nse = nse.stitch(sample);
+} 
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse_scaled_sample/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_distributions.m',11,0)">line 11</a>)] 
+|<
+Elapsed time is 0.662672 seconds.
+|<
+Elapsed time is 0.468982 seconds.
+|<
+Elapsed time is 0.503323 seconds.
+|<
+Elapsed time is 44.812244 seconds.
+|<
+    left block # = 3
+   right block # = 4
+            xmax = 2.4349
+            xmin = 2.8599
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE/stitch', '/home/zach/Documents/github/nse_scaled_sample/functions/NSE.m', 424)" style="font-weight:bold">NSE/stitch</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/functions/NSE.m',424,0)">line 424</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/nse_scaled_sample/driver_distributions.m', 206)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_distributions.m',206,0)">line 206</a>)] 
+Elapsed time is 42.877230 seconds.
+|<
+Elapsed time is 44.737637 seconds.
+|<
+Elapsed time is 15.969010 seconds.
+|<
+Elapsed time is 21.488331 seconds.
+|<
+Elapsed time is 20.832088 seconds.
+driver_cpu_failure_KL
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 9)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',9,0)">line 9</a>)] 
+{Unrecognized function or variable 'stitch_pdf'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 175)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',175,0)">line 175</a>)
+                = stitch_pdf(sample,rndom.filename, actual.min_limit,...
+} 
+driver_cpu_failure_KL
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 10)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',10,0)">line 10</a>)] 
+|<
+Uniform
+Uniform, Trial: 1/3 sample size: 524288 failSE: 0 failNMEM: 0
+Elapsed time is 0.434079 seconds.
+|<
+Uniform
+Uniform, Trial: 2/3 sample size: 524288 failSE: 0 failNMEM: 0
+Elapsed time is 0.229456 seconds.
+|<
+Uniform
+Uniform, Trial: 3/3 sample size: 524288 failSE: 0 failNMEM: 0
+Elapsed time is 0.255041 seconds.
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 3
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 4
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+|<
+non-finite values
+Uniform-Mix
+[Warning: NSE: the inputs contain non-finite values!] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 295)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',295,0)">line 295</a>)] 
+
+ans =
+
+     0
+
+
+ans =
+
+        1025
+
+
+ans =
+
+  0×1 empty <a href="matlab:helpPopup double" style="font-weight:bold">double</a> column vector
+
+
+ans =
+
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+
+
+ans =
+
+     0
+
+
+ans =
+
+    0.3000
+
+
+ans =
+
+   6.1942e-05
+
+
+ans =
+
+    0.4634
+
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('KLDiv', '/home/zach/Documents/github/nse_scaled_sample/functions/KLDiv.m', 32)" style="font-weight:bold">KLDiv</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/functions/KLDiv.m',32,0)">line 32</a>)
+the inputs contain non-finite values!
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 298)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',298,0)">line 298</a>)
+            kl_se_test = KLDiv(kl_dist.pdf_y', SE_pdf);
+} 
+driver_cpu_failure_KL
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 10)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',10,0)">line 10</a>)] 
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 3
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+|<
+non-finite values
+Uniform-Mix
+[Warning: NSE: the inputs contain non-finite values!] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 298)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',298,0)">line 298</a>)] 
+
+ans =
+
+     0
+
+
+ans =
+
+        1036
+
+
+ans =
+
+  0×1 empty <a href="matlab:helpPopup double" style="font-weight:bold">double</a> column vector
+
+
+ans =
+
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+
+
+ans =
+
+     0
+
+
+ans =
+
+    0.3000
+
+
+ans =
+
+   2.7276e-05
+
+
+ans =
+
+    0.4134
+
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('KLDiv', '/home/zach/Documents/github/nse_scaled_sample/functions/KLDiv.m', 32)" style="font-weight:bold">KLDiv</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/functions/KLDiv.m',32,0)">line 32</a>)
+the inputs contain non-finite values!
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 301)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',301,0)">line 301</a>)
+            kl_se_test = KLDiv(kl_dist.pdf_y', SE_pdf);
+} 
+driver_cpu_failure_KL
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 10)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',10,0)">line 10</a>)] 
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 1/3 sample size: 524288 failSE: 0 failNMEM: 0
+Elapsed time is 3.442957 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 2/3 sample size: 524288 failSE: 0 failNMEM: 0
+Elapsed time is 4.666175 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 3/3 sample size: 524288 failSE: 0 failNMEM: 0
+Elapsed time is 3.391558 seconds.
+|<
+Normal
+Normal, Trial: 1/3 sample size: 524288 failSE: 0 failNMEM: 0
+Elapsed time is 0.488884 seconds.
+|<
+Normal
+Normal, Trial: 2/3 sample size: 524288 failSE: 0 failNMEM: 0
+Elapsed time is 0.449256 seconds.
+|<
+Normal
+Normal, Trial: 3/3 sample size: 524288 failSE: 0 failNMEM: 0
+Elapsed time is 0.471862 seconds.
+|<
+[Warning: Problem using function.  Assigning a value of 0.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 236)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',236,0)">line 236</a>)] 
+Beta-a0p5-b1p5
+Beta-a0p5-b1p5, Trial: 1/3 sample size: 524288 failSE: 0 failNMEM: 1
+Elapsed time is 22.048299 seconds.
+|<
+[Warning: Problem using function.  Assigning a value of 0.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 236)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',236,0)">line 236</a>)] 
+Beta-a0p5-b1p5
+Beta-a0p5-b1p5, Trial: 2/3 sample size: 524288 failSE: 0 failNMEM: 1
+Elapsed time is 24.675508 seconds.
+|<
+[Warning: Problem using function.  Assigning a value of 0.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 236)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',236,0)">line 236</a>)] 
+Beta-a0p5-b1p5
+Beta-a0p5-b1p5, Trial: 3/3 sample size: 524288 failSE: 0 failNMEM: 1
+Elapsed time is 23.181714 seconds.
+|<
+[Warning: Problem using function.  Assigning a value of 0.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 236)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',236,0)">line 236</a>)] 
+Beta-a2-b0p5
+Beta-a2-b0p5, Trial: 1/3 sample size: 524288 failSE: 0 failNMEM: 1
+Elapsed time is 22.956246 seconds.
+|<
+[Warning: Problem using function.  Assigning a value of 0.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 236)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',236,0)">line 236</a>)] 
+Beta-a2-b0p5
+Beta-a2-b0p5, Trial: 2/3 sample size: 524288 failSE: 0 failNMEM: 1
+Elapsed time is 25.452374 seconds.
+|<
+[Warning: Problem using function.  Assigning a value of 0.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 236)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',236,0)">line 236</a>)] 
+Beta-a2-b0p5
+Beta-a2-b0p5, Trial: 3/3 sample size: 524288 failSE: 0 failNMEM: 1
+Elapsed time is 21.773255 seconds.
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('distcomp.remoteparfor/getCompleteIntervals', '/usr/local/MATLAB/R2021b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m', 379)" style="font-weight:bold">distcomp.remoteparfor/getCompleteIntervals</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/parallel/distcomp/+distcomp/remoteparfor.m',379,0)">line 379</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function>distributed_execution', '/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m', 746)" style="font-weight:bold">parallel_function>distributed_execution</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m',746,0)">line 746</a>)
+        [tags, out] = P.getCompleteIntervals(chunkSize);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function', '/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m', 578)" style="font-weight:bold">parallel_function</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2021b/toolbox/matlab/lang/parallel_function.m',578,0)">line 578</a>)
+    R = distributed_execution(...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE/stitch', '/home/zach/Documents/github/nse_scaled_sample/functions/NSE.m', 308)" style="font-weight:bold">NSE/stitch</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/functions/NSE.m',308,0)">line 308</a>)
+            parfor b=1:obj.nBlocks
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 202)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',202,0)">line 202</a>)
+            nse = nse.stitch(sample);
+} 
+driver_distributions
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 4).
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 1/10 sample size: 256 failSE: 0 failNMEM: 0
+Elapsed time is 11.147440 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 1/10 sample size: 512 failSE: 0 failNMEM: 0
+Elapsed time is 0.640683 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 1/10 sample size: 1024 failSE: 0 failNMEM: 0
+Elapsed time is 0.625991 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 1/10 sample size: 2048 failSE: 0 failNMEM: 0
+Elapsed time is 0.657352 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 1/10 sample size: 4096 failSE: 0 failNMEM: 0
+Elapsed time is 0.658653 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 1/10 sample size: 8192 failSE: 0 failNMEM: 0
+Elapsed time is 0.646766 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 1/10 sample size: 16384 failSE: 0 failNMEM: 0
+Elapsed time is 0.694956 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 1/10 sample size: 32768 failSE: 0 failNMEM: 0
+Elapsed time is 0.701556 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 1/10 sample size: 65536 failSE: 0 failNMEM: 0
+Elapsed time is 0.911005 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 1/10 sample size: 131072 failSE: 0 failNMEM: 0
+Elapsed time is 1.248835 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 1/10 sample size: 262144 failSE: 0 failNMEM: 0
+Elapsed time is 1.964081 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 1/10 sample size: 524288 failSE: 0 failNMEM: 0
+Elapsed time is 2.956021 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 2/10 sample size: 256 failSE: 0 failNMEM: 0
+Elapsed time is 0.606293 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 2/10 sample size: 512 failSE: 0 failNMEM: 0
+Elapsed time is 0.617296 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 2/10 sample size: 1024 failSE: 0 failNMEM: 0
+Elapsed time is 0.577562 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 2/10 sample size: 2048 failSE: 0 failNMEM: 0
+Elapsed time is 0.614034 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 2/10 sample size: 4096 failSE: 0 failNMEM: 0
+Elapsed time is 0.655330 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 2/10 sample size: 8192 failSE: 0 failNMEM: 0
+Elapsed time is 0.612799 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 2/10 sample size: 16384 failSE: 0 failNMEM: 0
+Elapsed time is 0.646016 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 2/10 sample size: 32768 failSE: 0 failNMEM: 0
+Elapsed time is 0.740597 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 2/10 sample size: 65536 failSE: 0 failNMEM: 0
+Elapsed time is 1.063348 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 2/10 sample size: 131072 failSE: 0 failNMEM: 0
+Elapsed time is 1.027682 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 2/10 sample size: 262144 failSE: 0 failNMEM: 0
+Elapsed time is 2.116319 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 2/10 sample size: 524288 failSE: 0 failNMEM: 0
+Elapsed time is 4.411538 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 3/10 sample size: 256 failSE: 0 failNMEM: 0
+Elapsed time is 0.611830 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 3/10 sample size: 512 failSE: 0 failNMEM: 0
+Elapsed time is 0.637171 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 3/10 sample size: 1024 failSE: 0 failNMEM: 0
+Elapsed time is 0.582805 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 3/10 sample size: 2048 failSE: 0 failNMEM: 0
+Elapsed time is 0.733489 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 3/10 sample size: 4096 failSE: 0 failNMEM: 0
+Elapsed time is 0.621142 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 3/10 sample size: 8192 failSE: 0 failNMEM: 0
+Elapsed time is 0.605796 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 3/10 sample size: 16384 failSE: 0 failNMEM: 0
+Elapsed time is 0.665331 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 3/10 sample size: 32768 failSE: 0 failNMEM: 0
+Elapsed time is 0.870501 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 3/10 sample size: 65536 failSE: 0 failNMEM: 0
+Elapsed time is 0.872947 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 3/10 sample size: 131072 failSE: 0 failNMEM: 0
+Elapsed time is 1.137003 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 3/10 sample size: 262144 failSE: 0 failNMEM: 0
+Elapsed time is 2.166836 seconds.
+|<
+Trimodal-Normal
+Trimodal-Normal, Trial: 3/10 sample size: 524288 failSE: 0 failNMEM: 0
+Elapsed time is 3.702416 seconds.
+|<
+non-finite values
+Trimodal-Normal
+[Warning: NSE: the inputs contain non-finite values!] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 298)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',298,0)">line 298</a>)] 
+
+ans =
+
+     0
+
+
+ans =
+
+    28
+
+
+ans =
+
+  0×1 empty <a href="matlab:helpPopup double" style="font-weight:bold">double</a> column vector
+
+
+ans =
+
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+   NaN
+
+
+ans =
+
+    0.0025
+
+
+ans =
+
+    0.5990
+
+
+ans =
+
+    0.0011
+
+
+ans =
+
+    0.5853
+
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('KLDiv', '/home/zach/Documents/github/nse_scaled_sample/functions/KLDiv.m', 32)" style="font-weight:bold">KLDiv</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/functions/KLDiv.m',32,0)">line 32</a>)
+the inputs contain non-finite values!
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_cpu_failure_KL', '/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m', 301)" style="font-weight:bold">driver_cpu_failure_KL</a> (<a href="matlab: opentoline('/home/zach/Documents/github/nse_scaled_sample/driver_cpu_failure_KL.m',301,0)">line 301</a>)
+            kl_se_test = KLDiv(kl_dist.pdf_y', SE_pdf);
+} 
+driver_cpu_failure_KL

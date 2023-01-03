@@ -3,7 +3,8 @@
 clc;clear all; close all;
 
 addpath("functions/")
-addpath("compile_nmem_mv/")
+addpath("compile_nmem/")
+% addpath("compile_nmem_mv/")
 
 % error handling
 status = mkdir('log');
@@ -29,7 +30,7 @@ estimator_plot_flag =       false;   %<- true/false plot SE results on/off
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 save_graphics =             false;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   10; %<---- maximum exponent to generate samples
+max_pow =                   19; %<---- maximum exponent to generate samples
 min_pow =                   8; %<---- minimum exponent to generate samples
 trials =                    10   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
@@ -51,10 +52,28 @@ distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5",...
     "InverseGaussian","Trimodal-Normal","Stable",...
     "Stable2","Stable3","Stable1","BirnbaumSaunders-Stable"];
 
-distribution_vector = ["Trimodal-Normal","Normal","Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto", "Uniform-Mix"];
+distribution_vector = ["Trimodal-Normal","Normal","Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto", "Uniform-Mix", "Stable"];
 distribution = distribution_vector';
-names = ["Tri-Modal-Normal", "Normal", "Uniform", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Uniform-Mix"]';
-test = table(distribution,names);
+names = ["Tri-Modal-Normal", "Normal", "Uniform", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Uniform-Mix", "Stable"]';
+
+
+distribution_vector = ["Trimodal-Normal","Normal","Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto"];
+distribution = distribution_vector';
+names = ["Tri-Modal-Normal", "Normal", "Uniform", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto"];
+
+
+distribution_vector = ["Uniform", "Uniform-Mix", "Stable", "Generalized-Pareto"];
+distribution = distribution_vector';
+names = ["Uniform", "Uniform-Mix", "Stable", "Generalized-Pareto"];
+
+distribution_vector = [ "Uniform-Mix", "Stable", "Generalized-Pareto"];
+distribution = distribution_vector';
+names = [ "Uniform-Mix", "Stable", "Generalized-Pareto"];
+
+distribution_vector = ["Trimodal-Normal","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto", "Stable"];
+distribution = distribution_vector';
+names = ["Tri-Modal-Normal", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -165,11 +184,38 @@ for j = 1:length(distribution_vector)
             sample = rndom.rndData;
             
             tintialSE = cputime;
-            % mixture model does not return random sample
-            [fail_code,x,SE_pdf,SE_cdf,SE_u,SE_SQR,nBlocks,Blacklist,...
-                rndom.Ns,binrndom.Ns, max_LG, sum_LG,T,BRlevel,BR0]...
-                = stitch_pdf(sample,rndom.filename, actual.min_limit,...
-                actual.max_limit,p);
+
+%             % nse object instantiation
+%             nse = NSE2;
+%             % NSE.stitch() method called to calcualted relevant parameters
+% 
+% 
+%             disp(distribution_vector(j))
+% %             use ONLY for NSE_working_archived.m class code
+%             [fail_code,x,SE_pdf,SE_cdf,SE_u,SE_SQR,nBlocks,...
+%                 rndom.Ns,binrndom.Ns, max_LG, sum_LG,T,BRlevel,BR0]...
+%                 = nse.stitch(sample);
+
+
+            % nse object instantiation
+            nse = NSE;
+            nse = nse.stitch(sample);
+            
+            % extract relevant parameters from object after stich() method
+            fail_code = nse.failed;
+            x = nse.sx;
+            SE_pdf = nse.sPDF;
+            SE_cdf = nse.sCDF;
+            SE_u = nse.u;
+            SE_SQR = nse.sqr;
+            nBlocks = nse.nBlocks;
+            rndom.Ns = nse.N;
+            binrndom.Ns =  nse.binN;
+            max_LG = nse.LG_max;
+            sum_LG = nse.LG_sum;
+            T = nse.T;
+            BRlevel = nse.BRlevel;
+            BR0 = nse.BR0;
 
             tcpuSE = cputime-tintialSE;
             
@@ -239,6 +285,13 @@ for j = 1:length(distribution_vector)
             kl_dist = actual;
             kl_dist.x = x;
             kl_dist = dist_list(kl_dist);
+
+            test1 = ~isfinite(kl_dist.pdf_y);
+            test2 = ~isfinite(SE_pdf);
+            test3 =  sum(~isfinite(kl_dist.pdf_y));
+            test4 = sum(~isfinite(SE_pdf));
+
+            disp(distribution_vector(j))
 
             if sum(~isfinite(kl_dist.pdf_y)) ||...
                     sum(~isfinite(SE_pdf))

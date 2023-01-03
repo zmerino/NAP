@@ -273,6 +273,10 @@ classdef NSE
             nBs0(obj.nBlocks) = nBs0(obj.nBlocks) + 0.5;
             % divide problem into blocks      section 12
             totalCounts = obj.nBlocks*nTargets;
+
+
+            % initialize tempStruc for parfor
+            bounds = cell(1,obj.nBlocks);
             % commit to full Monte
             for b=1:obj.nBlocks
                 j1 = kBlockLower(b);
@@ -283,24 +287,41 @@ classdef NSE
                 orig_sample = x(j1+1:j2-1)';
                 scaled_sample = x(j1+1:j2-1)';
                 MatPDFsample{b} = sample;
+
+                if b == 1
+                    tempStruc.lowBound = -1;
+                elseif b == obj.nBlocks
+                    tempStruc.highBound = 1;
+                else
+                    tempStruc.lowBound = -1;
+                    tempStruc.highBound = 1;
+                end
+                bounds{b} = tempStruc;
             end
             % run PDFestimator      section 13
             tic
 
             % initialize vector to hold all lagrainge mutiplers per block
             LG = zeros(1,obj.nBlocks);
+
+
             parfor b=1:obj.nBlocks
+%             for b=1:obj.nBlocks
+
+%                 tempStruc.lowBound = -1;
+%                 tempStruc.highBound = 1;
+
                 lagrange = [];
                 for t=1:nTargets
-                    tempStruc = struct('SURDtarget',targetCoverage(t));
+%                     tempStruc = struct('SURDtarget',targetCoverage(t));
                     try
-                        [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b});
+                        [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b}, bounds{b});
                     catch
                         warning(['Problem using function.  Assigning a value of 0.',' t: ',num2str(t),' b: ',num2str(b)]);
                         lagrange = 0;
-                        targetBlock{t,b}.data(:,1) = linspace(min(MatPDFsample{b}),max(MatPDFsample{b}),tempStruc.integrationPoints);
-                        targetBlock{t,b}.data(:,2) = 0*ones(tempStruc.integrationPoints,1);
-                        targetBlock{t,b}.data(:,3) = 0*ones(tempStruc.integrationPoints,1);
+                        targetBlock{t,b}.data(:,1) = linspace(min(MatPDFsample{b}),max(MatPDFsample{b}),100);
+                        targetBlock{t,b}.data(:,2) = 0*ones(100,1);
+                        targetBlock{t,b}.data(:,3) = 0*ones(100,1);
                     end
                     LG(1,b) = size(lagrange,1);
                 end
