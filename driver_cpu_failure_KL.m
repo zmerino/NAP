@@ -3,7 +3,7 @@
 clc;clear all; close all;
 
 addpath("functions/")
-addpath("compile_nmem/")
+% addpath("compile_nmem/")
 % addpath("compile_nmem_mv/")
 
 % error handling
@@ -30,7 +30,7 @@ estimator_plot_flag =       false;   %<- true/false plot SE results on/off
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 save_graphics =             false;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   19; %<---- maximum exponent to generate samples
+max_pow =                   15; %<---- maximum exponent to generate samples
 min_pow =                   8; %<---- minimum exponent to generate samples
 trials =                    10   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
@@ -70,10 +70,18 @@ distribution_vector = [ "Uniform-Mix", "Stable", "Generalized-Pareto"];
 distribution = distribution_vector';
 names = [ "Uniform-Mix", "Stable", "Generalized-Pareto"];
 
-distribution_vector = ["Trimodal-Normal","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto", "Stable"];
-distribution = distribution_vector';
-names = ["Tri-Modal-Normal", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
+% distribution_vector = ["Trimodal-Normal","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto", "Stable"];
+% distribution = distribution_vector';
+% names = ["Tri-Modal-Normal", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
 
+
+distribution_vector = [ "Stable", "Generalized-Pareto"];
+distribution = distribution_vector';
+names = [ "Stable", "Generalized-Pareto"];
+
+% distribution_vector = [ "Uniform-Mix", "Generalized-Pareto"];
+% distribution = distribution_vector';
+% names = [ "Uniform-Mix", "Generalized-Pareto"];
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -284,7 +292,11 @@ for j = 1:length(distribution_vector)
             % NSE
             kl_dist = actual;
             kl_dist.x = x;
-            kl_dist = dist_list(kl_dist);
+            try
+                kl_dist = dist_list(kl_dist);
+            catch
+                disp('error!')
+            end
 
             test1 = ~isfinite(kl_dist.pdf_y);
             test2 = ~isfinite(SE_pdf);

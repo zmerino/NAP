@@ -304,23 +304,13 @@ classdef NSE
 
             % initialize vector to hold all lagrainge mutiplers per block
             LG = zeros(1,obj.nBlocks);
-%             parfor b=1:obj.nBlocks
-            for b=1:obj.nBlocks
-                if b == 1
-                    tempStruc.lowBound = max(MatPDFsample{b});
-                elseif b == obj.nBlocks
-                    tempStruc.highBound = min(MatPDFsample{b});
-                else
-                    tempStruc.lowBound = min(MatPDFsample{b});
-                    tempStruc.highBound = max(MatPDFsample{b});
-                end
+            parfor b=1:obj.nBlocks
                 lagrange = [];
                 for t=1:nTargets
                     %                     tempStruc = struct('SURDtarget',targetCoverage(t));
                     try
 %                         [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b}, bounds{b});
-                        [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b},tempStruc);
-%                         [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b});
+                        [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b});
                     catch
                         warning(['Problem using function.  Assigning a value of 0.',' t: ',num2str(t),' b: ',num2str(b)]);
                         lagrange = 0;

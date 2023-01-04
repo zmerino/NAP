@@ -1,1 +1,1 @@
-Cpu failure distance script started on: 03-Jan-2023 17:00:45/n
+Cpu failure distance script started on: 03-Jan-2023 22:48:11/n
