@@ -3,7 +3,6 @@
 clc;clear all; close all;
 
 addpath("functions/")
-% addpath("compile_nmem/")
 addpath("compile_nmem_mv/")
 
 % error handling
@@ -30,7 +29,7 @@ estimator_plot_flag =       false;   %<- true/false plot SE results on/off
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 save_graphics =             false;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   15; %<---- maximum exponent to generate samples
+max_pow =                   13; %<---- maximum exponent to generate samples
 min_pow =                   8; %<---- minimum exponent to generate samples
 trials =                    5   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
@@ -56,32 +55,23 @@ distribution_vector = ["Trimodal-Normal","Normal","Uniform","Beta-a0p5-b1p5","Be
 distribution = distribution_vector';
 names = ["Tri-Modal-Normal", "Normal", "Uniform", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Uniform-Mix", "Stable"]';
 
-
-distribution_vector = ["Trimodal-Normal","Normal","Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto"];
+% For bounds Lnot = or( (obj.sx <= xmin) , (obj.sx >= xmax) ); 
+distribution_vector = ["Trimodal-Normal","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Generalized-Pareto"];
 distribution = distribution_vector';
-names = ["Tri-Modal-Normal", "Normal", "Uniform", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto"];
+names = ["Tri-Modal-Normal", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Generalized-Pareto"];
 
-
-% distribution_vector = ["Uniform", "Uniform-Mix", "Stable", "Generalized-Pareto"];
-% distribution = distribution_vector';
-% names = ["Uniform", "Uniform-Mix", "Stable", "Generalized-Pareto"];
-% 
-% distribution_vector = [ "Uniform-Mix", "Stable", "Generalized-Pareto"];
-% distribution = distribution_vector';
-% names = [ "Uniform-Mix", "Stable", "Generalized-Pareto"];
-
-% distribution_vector = ["Trimodal-Normal","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto", "Stable"];
-% distribution = distribution_vector';
-% names = ["Tri-Modal-Normal", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
-
-
-distribution_vector = [ "Stable"];
+% For bounds Lnot = or( (obj.sx < xmin) , (obj.sx > xmax) );  
+distribution_vector = ["Trimodal-Normal","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
 distribution = distribution_vector';
-names = [ "Stable"];
+names = ["Tri-Modal-Normal", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)"];
 
-% distribution_vector = ["Uniform", "Uniform-Mix", "Generalized-Pareto"];
+% distribution_vector = [ "Stable"];
 % distribution = distribution_vector';
-% names = ["Uniform", "Uniform-Mix", "Generalized-Pareto"];
+% names = [ "Stable"];
+
+% distribution_vector = ["Uniform", "Uniform-Mix", "Generalized-Pareto","Beta-a0p5-b0p5"];
+% distribution = distribution_vector';
+% names = ["Uniform", "Uniform-Mix", "Generalized-Pareto", "Beta(0.5,0.5)"];
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

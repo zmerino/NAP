@@ -1,0 +1,518 @@
+{Unrecognized function or variable 'stitch_pdf'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/NSE/driver_extrema.m', 191)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/driver_extrema.m',191,0)">line 191</a>)
+                = stitch_pdf(sample,rndom.filename, actual.min_limit,...
+} 
+opentoline('/home/zach/Documents/github/NSE/driver_extrema.m',191,0)
+driver_extrema
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/NSE/driver_extrema.m', 13)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/driver_extrema.m',13,0)">line 13</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/NSE/driver_extrema.m', 26)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/driver_extrema.m',26,0)">line 26</a>)] 
+{Unrecognized function or variable 'SE_x'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/NSE/driver_extrema.m', 251)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/driver_extrema.m',251,0)">line 251</a>)
+            kl_info_se.x = SE_x;
+} 
+driver_extrema
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/NSE/driver_extrema.m', 13)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/driver_extrema.m',13,0)">line 13</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/NSE/driver_extrema.m', 26)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/driver_extrema.m',26,0)">line 26</a>)] 
+Beta-a0p5-b1p5, Trial: 1/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 1
+Elapsed time is 0.178724 seconds.
+Beta-a0p5-b1p5, Trial: 2/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 2
+Elapsed time is 0.166831 seconds.
+Beta-a0p5-b1p5, Trial: 3/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 3
+Elapsed time is 0.213012 seconds.
+Beta-a0p5-b1p5, Trial: 4/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 4
+Elapsed time is 0.086932 seconds.
+Beta-a0p5-b1p5, Trial: 5/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 5
+Elapsed time is 0.146542 seconds.
+Beta-a0p5-b1p5, Trial: 1/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 1
+Elapsed time is 0.173473 seconds.
+Beta-a0p5-b1p5, Trial: 2/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 2
+Elapsed time is 0.208880 seconds.
+Beta-a0p5-b1p5, Trial: 3/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 3
+Elapsed time is 0.285115 seconds.
+Beta-a0p5-b1p5, Trial: 4/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 4
+Elapsed time is 0.218307 seconds.
+Beta-a0p5-b1p5, Trial: 5/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 5
+Elapsed time is 0.198901 seconds.
+Beta-a0p5-b1p5, Trial: 1/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 1
+Elapsed time is 0.180852 seconds.
+Beta-a0p5-b1p5, Trial: 2/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 2
+Elapsed time is 0.346820 seconds.
+Beta-a0p5-b1p5, Trial: 3/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 3
+Elapsed time is 0.250289 seconds.
+Beta-a0p5-b1p5, Trial: 4/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 4
+Elapsed time is 0.210654 seconds.
+Beta-a0p5-b1p5, Trial: 5/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 5
+Elapsed time is 0.230603 seconds.
+Beta-a0p5-b1p5, Trial: 1/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 4   i: 1
+Elapsed time is 0.435843 seconds.
+Beta-a0p5-b1p5, Trial: 2/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 4   i: 2
+Elapsed time is 0.401495 seconds.
+Beta-a0p5-b1p5, Trial: 3/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 4   i: 3
+Elapsed time is 0.342697 seconds.
+Beta-a0p5-b1p5, Trial: 4/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 4   i: 4
+Elapsed time is 0.379716 seconds.
+Beta-a0p5-b1p5, Trial: 5/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 4   i: 5
+Elapsed time is 0.649962 seconds.
+Beta-a0p5-b1p5, Trial: 1/5 sample size: 4096 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 5   i: 1
+Elapsed time is 0.709407 seconds.
+Beta-a0p5-b1p5, Trial: 2/5 sample size: 4096 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 5   i: 2
+Elapsed time is 0.623698 seconds.
+Beta-a0p5-b1p5, Trial: 3/5 sample size: 4096 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 5   i: 3
+Elapsed time is 0.781921 seconds.
+Beta-a0p5-b1p5, Trial: 4/5 sample size: 4096 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 5   i: 4
+Elapsed time is 0.680029 seconds.
+Beta-a0p5-b1p5, Trial: 5/5 sample size: 4096 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 5   i: 5
+Elapsed time is 0.846025 seconds.
+Beta-a0p5-b1p5, Trial: 1/5 sample size: 8192 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 6   i: 1
+Elapsed time is 1.769178 seconds.
+Beta-a0p5-b1p5, Trial: 2/5 sample size: 8192 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 6   i: 2
+Elapsed time is 1.733852 seconds.
+Beta-a0p5-b1p5, Trial: 3/5 sample size: 8192 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 6   i: 3
+Elapsed time is 1.508830 seconds.
+Beta-a0p5-b1p5, Trial: 4/5 sample size: 8192 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 6   i: 4
+Elapsed time is 1.121813 seconds.
+Beta-a0p5-b1p5, Trial: 5/5 sample size: 8192 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 6   i: 5
+Elapsed time is 1.664534 seconds.
+Beta-a0p5-b1p5, Trial: 1/5 sample size: 16384 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 7   i: 1
+Elapsed time is 2.463746 seconds.
+Beta-a0p5-b1p5, Trial: 2/5 sample size: 16384 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 7   i: 2
+Elapsed time is 2.640365 seconds.
+Beta-a0p5-b1p5, Trial: 3/5 sample size: 16384 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 7   i: 3
+Elapsed time is 2.567917 seconds.
+Beta-a0p5-b1p5, Trial: 4/5 sample size: 16384 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 7   i: 4
+Elapsed time is 2.102222 seconds.
+Beta-a0p5-b1p5, Trial: 5/5 sample size: 16384 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 7   i: 5
+Elapsed time is 2.511627 seconds.
+Beta-a0p5-b1p5, Trial: 1/5 sample size: 32768 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 8   i: 1
+Elapsed time is 5.909084 seconds.
+Beta-a0p5-b1p5, Trial: 2/5 sample size: 32768 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 8   i: 2
+Elapsed time is 5.686426 seconds.
+Beta-a0p5-b1p5, Trial: 3/5 sample size: 32768 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 8   i: 3
+Elapsed time is 4.468473 seconds.
+Beta-a0p5-b1p5, Trial: 4/5 sample size: 32768 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 8   i: 4
+Elapsed time is 4.922119 seconds.
+Beta-a0p5-b1p5, Trial: 5/5 sample size: 32768 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 8   i: 5
+Elapsed time is 4.294246 seconds.
+Beta-a2-b0p5, Trial: 1/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 1
+Elapsed time is 0.166965 seconds.
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 5
+In parallel_function>make_general_channel/channel_general (line 837)
+In remoteParallelFunction (line 67)
+    left block # = 4
+   right block # = 5
+            xmax = 0.63152
+            xmin = 0.63385
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE/stitch', '/home/zach/Documents/github/NSE/functions/NSE.m', 447)" style="font-weight:bold">NSE/stitch</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/functions/NSE.m',447,0)">line 447</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/NSE/driver_extrema.m', 197)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/driver_extrema.m',197,0)">line 197</a>)] 
+    left block # = 5
+   right block # = 6
+            xmax = 0.63385
+            xmin = 0.63386
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE/stitch', '/home/zach/Documents/github/NSE/functions/NSE.m', 447)" style="font-weight:bold">NSE/stitch</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/functions/NSE.m',447,0)">line 447</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/NSE/driver_extrema.m', 197)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/driver_extrema.m',197,0)">line 197</a>)] 
+Beta-a2-b0p5, Trial: 2/5 sample size: 256 failSE: 1 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 2
+Elapsed time is 0.368059 seconds.
+Beta-a2-b0p5, Trial: 3/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 3
+Elapsed time is 0.134862 seconds.
+    left block # = 5
+   right block # = 6
+            xmax = 0.75805
+            xmin = 0.75804
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE/stitch', '/home/zach/Documents/github/NSE/functions/NSE.m', 447)" style="font-weight:bold">NSE/stitch</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/functions/NSE.m',447,0)">line 447</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/NSE/driver_extrema.m', 197)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/driver_extrema.m',197,0)">line 197</a>)] 
+Beta-a2-b0p5, Trial: 4/5 sample size: 256 failSE: 1 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 4
+Elapsed time is 0.307502 seconds.
+Beta-a2-b0p5, Trial: 5/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 1   i: 5
+Elapsed time is 0.081828 seconds.
+Beta-a2-b0p5, Trial: 1/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 1
+Elapsed time is 0.157790 seconds.
+Beta-a2-b0p5, Trial: 2/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 2
+Elapsed time is 0.195423 seconds.
+Beta-a2-b0p5, Trial: 3/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 3
+Elapsed time is 0.163364 seconds.
+    left block # = 6
+   right block # = 7
+            xmax = 0.99994
+            xmin = 0.99986
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('NSE/stitch', '/home/zach/Documents/github/NSE/functions/NSE.m', 447)" style="font-weight:bold">NSE/stitch</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/functions/NSE.m',447,0)">line 447</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/NSE/driver_extrema.m', 197)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/driver_extrema.m',197,0)">line 197</a>)] 
+Beta-a2-b0p5, Trial: 4/5 sample size: 512 failSE: 1 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 4
+Elapsed time is 0.219903 seconds.
+Beta-a2-b0p5, Trial: 5/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 2   i: 5
+Elapsed time is 0.188938 seconds.
+Beta-a2-b0p5, Trial: 1/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 1
+Elapsed time is 0.319000 seconds.
+Beta-a2-b0p5, Trial: 2/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 2
+Elapsed time is 0.394724 seconds.
+Beta-a2-b0p5, Trial: 3/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 3
+Elapsed time is 0.232913 seconds.
+Beta-a2-b0p5, Trial: 4/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 4
+Elapsed time is 0.463565 seconds.
+Beta-a2-b0p5, Trial: 5/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 3   i: 5
+Elapsed time is 0.283947 seconds.
+Beta-a2-b0p5, Trial: 1/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 4   i: 1
+Elapsed time is 0.480895 seconds.
+Beta-a2-b0p5, Trial: 2/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 4   i: 2
+Elapsed time is 0.646737 seconds.
+Beta-a2-b0p5, Trial: 3/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 4   i: 3
+Elapsed time is 0.585186 seconds.
+Beta-a2-b0p5, Trial: 4/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 4   i: 4
+Elapsed time is 0.486741 seconds.
+Beta-a2-b0p5, Trial: 5/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 4   i: 5
+Elapsed time is 0.833209 seconds.
+Beta-a2-b0p5, Trial: 1/5 sample size: 4096 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 5   i: 1
+Elapsed time is 0.860954 seconds.
+Beta-a2-b0p5, Trial: 2/5 sample size: 4096 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 5   i: 2
+Elapsed time is 0.943581 seconds.
+Beta-a2-b0p5, Trial: 3/5 sample size: 4096 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 5   i: 3
+Elapsed time is 1.324973 seconds.
+Beta-a2-b0p5, Trial: 4/5 sample size: 4096 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 5   i: 4
+Elapsed time is 1.295262 seconds.
+Beta-a2-b0p5, Trial: 5/5 sample size: 4096 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 5   i: 5
+Elapsed time is 1.146090 seconds.
+Beta-a2-b0p5, Trial: 1/5 sample size: 8192 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 6   i: 1
+Elapsed time is 1.937085 seconds.
+Beta-a2-b0p5, Trial: 2/5 sample size: 8192 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 6   i: 2
+Elapsed time is 1.883053 seconds.
+Beta-a2-b0p5, Trial: 3/5 sample size: 8192 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 6   i: 3
+Elapsed time is 1.911304 seconds.
+Beta-a2-b0p5, Trial: 4/5 sample size: 8192 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 6   i: 4
+Elapsed time is 1.812287 seconds.
+Beta-a2-b0p5, Trial: 5/5 sample size: 8192 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 6   i: 5
+Elapsed time is 1.743473 seconds.
+Beta-a2-b0p5, Trial: 1/5 sample size: 16384 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 7   i: 1
+Elapsed time is 2.990303 seconds.
+Beta-a2-b0p5, Trial: 2/5 sample size: 16384 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 7   i: 2
+Elapsed time is 2.820421 seconds.
+Beta-a2-b0p5, Trial: 3/5 sample size: 16384 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 7   i: 3
+Elapsed time is 2.547775 seconds.
+Beta-a2-b0p5, Trial: 4/5 sample size: 16384 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 7   i: 4
+Elapsed time is 3.036923 seconds.
+Beta-a2-b0p5, Trial: 5/5 sample size: 16384 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 7   i: 5
+Elapsed time is 2.545064 seconds.
+Beta-a2-b0p5, Trial: 1/5 sample size: 32768 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 8   i: 1
+Elapsed time is 7.202423 seconds.
+Beta-a2-b0p5, Trial: 2/5 sample size: 32768 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 8   i: 2
+Elapsed time is 5.994709 seconds.
+Beta-a2-b0p5, Trial: 3/5 sample size: 32768 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 8   i: 3
+Elapsed time is 8.094676 seconds.
+Beta-a2-b0p5, Trial: 4/5 sample size: 32768 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 8   i: 4
+Elapsed time is 7.088172 seconds.
+Beta-a2-b0p5, Trial: 5/5 sample size: 32768 failSE: 0 failNMEM: 0
+Iteration:    j: 2   k: 8   i: 5
+Elapsed time is 5.745376 seconds.
+Beta-a0p5-b0p5, Trial: 1/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 1
+Elapsed time is 0.187078 seconds.
+Beta-a0p5-b0p5, Trial: 2/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 2
+Elapsed time is 0.121744 seconds.
+Beta-a0p5-b0p5, Trial: 3/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 3
+Elapsed time is 0.137521 seconds.
+Beta-a0p5-b0p5, Trial: 4/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 4
+Elapsed time is 0.125385 seconds.
+Beta-a0p5-b0p5, Trial: 5/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 1   i: 5
+Elapsed time is 0.186998 seconds.
+Beta-a0p5-b0p5, Trial: 1/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 1
+Elapsed time is 0.164631 seconds.
+Beta-a0p5-b0p5, Trial: 2/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 2
+Elapsed time is 0.161047 seconds.
+Beta-a0p5-b0p5, Trial: 3/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 3
+Elapsed time is 0.175261 seconds.
+Beta-a0p5-b0p5, Trial: 4/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 4
+Elapsed time is 0.154867 seconds.
+Beta-a0p5-b0p5, Trial: 5/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 2   i: 5
+Elapsed time is 0.171616 seconds.
+Beta-a0p5-b0p5, Trial: 1/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 1
+Elapsed time is 0.226881 seconds.
+Beta-a0p5-b0p5, Trial: 2/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 2
+Elapsed time is 0.256553 seconds.
+Beta-a0p5-b0p5, Trial: 3/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 3
+Elapsed time is 0.211362 seconds.
+Beta-a0p5-b0p5, Trial: 4/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 4
+Elapsed time is 0.216294 seconds.
+Beta-a0p5-b0p5, Trial: 5/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 3   i: 5
+Elapsed time is 0.191769 seconds.
+Beta-a0p5-b0p5, Trial: 1/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 4   i: 1
+Elapsed time is 0.400884 seconds.
+Beta-a0p5-b0p5, Trial: 2/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 4   i: 2
+Elapsed time is 0.460250 seconds.
+Beta-a0p5-b0p5, Trial: 3/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 4   i: 3
+Elapsed time is 0.318290 seconds.
+Beta-a0p5-b0p5, Trial: 4/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 4   i: 4
+Elapsed time is 0.373232 seconds.
+Beta-a0p5-b0p5, Trial: 5/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 4   i: 5
+Elapsed time is 0.368263 seconds.
+Beta-a0p5-b0p5, Trial: 1/5 sample size: 4096 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 5   i: 1
+Elapsed time is 0.491850 seconds.
+Beta-a0p5-b0p5, Trial: 2/5 sample size: 4096 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 5   i: 2
+Elapsed time is 0.706688 seconds.
+Beta-a0p5-b0p5, Trial: 3/5 sample size: 4096 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 5   i: 3
+Elapsed time is 0.695540 seconds.
+Beta-a0p5-b0p5, Trial: 4/5 sample size: 4096 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 5   i: 4
+Elapsed time is 0.536472 seconds.
+Beta-a0p5-b0p5, Trial: 5/5 sample size: 4096 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 5   i: 5
+Elapsed time is 0.592235 seconds.
+Beta-a0p5-b0p5, Trial: 1/5 sample size: 8192 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 6   i: 1
+Elapsed time is 0.897615 seconds.
+Beta-a0p5-b0p5, Trial: 2/5 sample size: 8192 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 6   i: 2
+Elapsed time is 1.064316 seconds.
+Beta-a0p5-b0p5, Trial: 3/5 sample size: 8192 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 6   i: 3
+Elapsed time is 0.969309 seconds.
+Beta-a0p5-b0p5, Trial: 4/5 sample size: 8192 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 6   i: 4
+Elapsed time is 0.855167 seconds.
+Beta-a0p5-b0p5, Trial: 5/5 sample size: 8192 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 6   i: 5
+Elapsed time is 0.864246 seconds.
+Beta-a0p5-b0p5, Trial: 1/5 sample size: 16384 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 7   i: 1
+Elapsed time is 1.951345 seconds.
+Beta-a0p5-b0p5, Trial: 2/5 sample size: 16384 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 7   i: 2
+Elapsed time is 2.028764 seconds.
+Beta-a0p5-b0p5, Trial: 3/5 sample size: 16384 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 7   i: 3
+Elapsed time is 2.067511 seconds.
+Beta-a0p5-b0p5, Trial: 4/5 sample size: 16384 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 7   i: 4
+Elapsed time is 1.900752 seconds.
+Beta-a0p5-b0p5, Trial: 5/5 sample size: 16384 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 7   i: 5
+Elapsed time is 1.568251 seconds.
+Beta-a0p5-b0p5, Trial: 1/5 sample size: 32768 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 8   i: 1
+Elapsed time is 3.961616 seconds.
+Beta-a0p5-b0p5, Trial: 2/5 sample size: 32768 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 8   i: 2
+Elapsed time is 4.224940 seconds.
+Beta-a0p5-b0p5, Trial: 3/5 sample size: 32768 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 8   i: 3
+Elapsed time is 3.786543 seconds.
+Beta-a0p5-b0p5, Trial: 4/5 sample size: 32768 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 8   i: 4
+Elapsed time is 4.337569 seconds.
+Beta-a0p5-b0p5, Trial: 5/5 sample size: 32768 failSE: 0 failNMEM: 0
+Iteration:    j: 3   k: 8   i: 5
+Elapsed time is 3.803578 seconds.
+plot_extrema
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load')" style="font-weight:bold">load</a>
+Unable to find file or directory 'data/estimates/nse_Stable_s_256.mat'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/NSE/plot_extrema.m', 54)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/plot_extrema.m',54,0)">line 54</a>)
+        load(fullfile(dir_name,['nse_',num2str(d_vec(i)),'_s_', num2str(n_vec(j)),'.mat']));
+} 
+plot_extrema
+{Unrecognized function or variable 'heavy'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/NSE/plot_extrema.m', 238)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/plot_extrema.m',238,0)">line 238</a>)
+                [nse_htx, nse_hty, nse_htx_act, nse_hty_act] = heavy(nse{d_indx,n_indx,3}(:,j),...
+} 
+opentoline('/home/zach/Documents/github/NSE/plot_extrema.m',238,0)
+driver_extrema
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/NSE/driver_extrema.m', 13)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/driver_extrema.m',13,0)">line 13</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/NSE/driver_extrema.m', 26)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/driver_extrema.m',26,0)">line 26</a>)] 
+Beta-a0p5-b1p5, Trial: 1/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 1
+Elapsed time is 0.199751 seconds.
+Beta-a0p5-b1p5, Trial: 2/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 2
+Elapsed time is 0.199510 seconds.
+Beta-a0p5-b1p5, Trial: 3/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 3
+Elapsed time is 0.162314 seconds.
+Beta-a0p5-b1p5, Trial: 4/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 4
+Elapsed time is 0.489188 seconds.
+Beta-a0p5-b1p5, Trial: 5/5 sample size: 256 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 1   i: 5
+Elapsed time is 0.242407 seconds.
+Beta-a0p5-b1p5, Trial: 1/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 1
+Elapsed time is 0.320657 seconds.
+Beta-a0p5-b1p5, Trial: 2/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 2
+Elapsed time is 0.211790 seconds.
+Beta-a0p5-b1p5, Trial: 3/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 3
+Elapsed time is 0.185412 seconds.
+Beta-a0p5-b1p5, Trial: 4/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 4
+Elapsed time is 0.142707 seconds.
+Beta-a0p5-b1p5, Trial: 5/5 sample size: 512 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 2   i: 5
+Elapsed time is 0.188071 seconds.
+Beta-a0p5-b1p5, Trial: 1/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 1
+Elapsed time is 0.350178 seconds.
+Beta-a0p5-b1p5, Trial: 2/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 2
+Elapsed time is 0.321805 seconds.
+Beta-a0p5-b1p5, Trial: 3/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 3
+Elapsed time is 0.287481 seconds.
+Beta-a0p5-b1p5, Trial: 4/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 4
+Elapsed time is 0.198308 seconds.
+Beta-a0p5-b1p5, Trial: 5/5 sample size: 1024 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 3   i: 5
+Elapsed time is 0.326208 seconds.
+Beta-a0p5-b1p5, Trial: 1/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 4   i: 1
+Elapsed time is 0.360899 seconds.
+Beta-a0p5-b1p5, Trial: 2/5 sample size: 2048 failSE: 0 failNMEM: 0
+Iteration:    j: 1   k: 4   i: 2
+Elapsed time is 0.493816 seconds.
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_extrema', '/home/zach/Documents/github/NSE/driver_extrema.m', 217)" style="font-weight:bold">driver_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/driver_extrema.m',217,0)">line 217</a>)
+} 
+plot_extrema
+[Warning: Imaginary parts of complex X and/or Y arguments ignored.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/NSE/plot_extrema.m', 244)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/plot_extrema.m',244,0)">line 244</a>)] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/NSE/plot_extrema.m', 244)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/plot_extrema.m',244,0)">line 244</a>)] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/NSE/plot_extrema.m', 244)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/plot_extrema.m',244,0)">line 244</a>)] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/NSE/plot_extrema.m', 244)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/plot_extrema.m',244,0)">line 244</a>)] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/NSE/plot_extrema.m', 244)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/plot_extrema.m',244,0)">line 244</a>)] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/NSE/plot_extrema.m', 244)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/plot_extrema.m',244,0)">line 244</a>)] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/NSE/plot_extrema.m', 244)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/plot_extrema.m',244,0)">line 244</a>)] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/NSE/plot_extrema.m', 244)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/plot_extrema.m',244,0)">line 244</a>)] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/NSE/plot_extrema.m', 244)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/plot_extrema.m',244,0)">line 244</a>)] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/NSE/plot_extrema.m', 244)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/plot_extrema.m',244,0)">line 244</a>)] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/NSE/plot_extrema.m', 244)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/plot_extrema.m',244,0)">line 244</a>)] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/NSE/plot_extrema.m', 244)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/plot_extrema.m',244,0)">line 244</a>)] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_extrema', '/home/zach/Documents/github/NSE/plot_extrema.m', 244)" style="font-weight:bold">plot_extrema</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/plot_extrema.m',244,0)">line 244</a>)] 
+driver_distributions
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('driver_distributions', '/home/zach/Documents/github/NSE/driver_distributions.m', 11)" style="font-weight:bold">driver_distributions</a> (<a href="matlab: opentoline('/home/zach/Documents/github/NSE/driver_distributions.m',11,0)">line 11</a>)] 

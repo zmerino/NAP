@@ -431,11 +431,9 @@ classdef NSE
                 xmin_list = mink(blockX{indexList(b+1)},5);
                 xmax_list = maxk(blockX{indexList(b)},5);
 
-                xmax_list(end-1)
-                xmin_list(end-1)
 %                 Lnot = or( (obj.sx <= xmin) , (obj.sx >= xmax) ); 
-                Lnot = or( (obj.sx < xmin) , (obj.sx > xmax) );  
-%                 Lnot = or( (obj.sx < xmin*(1+0.0001)) , (obj.sx > xmax*(1-0.0001)) );  % works for uniform, unform-mix, GP
+%                 Lnot = or( (obj.sx < xmin) , (obj.sx > xmax) );  
+                Lnot = or( (obj.sx < xmin*(1+0.0001)) , (obj.sx > xmax*(1-0.0001)) );  % works for uniform, unform-mix, GP
 %                 Lnot = or( (obj.sx < xmin*(1+0.0000001)) , (obj.sx > xmax*(1-0.0000001)) );  % test for stable
 %                 Lnot = or( (obj.sx < xmin_list(2)) , (obj.sx > xmax_list(2)) );  
                 xStitch = obj.sx(~Lnot);                          % within overlap region
@@ -450,11 +448,6 @@ classdef NSE
                     obj.failed = 1;
                 end
 
-                disp(['    left block # = ',num2str(b)]);
-                disp(['   right block # = ',num2str(b+1)]);
-                disp(['            xmax = ',num2str(xmax)]);
-                disp(['            xmin = ',num2str(xmin)]);
-                disp(['         overlap = ',num2str(k0)]);
                 %----------------------------------------------------------------------
                 [xb,indx] = unique(blockX{indexList(b)});
                 yb = blockPDF{indexList(b)}(indx);
@@ -462,18 +455,12 @@ classdef NSE
                 zb = blockCDF{indexList(b)}(indx);
                 ub = interp1(xb,zb,xStitch);
 
-%                 disp([])
-% 
-                disp(['xb: min ',num2str(min(xb)),' max ',num2str(max(xb))])
-                disp(['xStitch: min ',num2str(min(xStitch)),' max ',num2str(max(xStitch))])
                 %----------------------------------------------------------------------
                 [xb1,indx] = unique(blockX{indexList(b+1)});
                 yb1 = blockPDF{indexList(b+1)}(indx);
                 PDFupper = interp1(xb1,yb1,xStitch);
                 zb1 = blockCDF{indexList(b+1)}(indx);
                 vb = interp1(xb1,zb1,xStitch);
-                disp(['xb1: min ',num2str(min(xb1)),' max ',num2str(max(xb1))])
-                disp(['block: ',num2str(indexList(b))])
                 %----------------------------------------------------------------------
                 u0 = min(ub);
                 u0 = min(ub) + 1e-10; % ------------------------------------------------------------ TEMP FIX
@@ -482,14 +469,6 @@ classdef NSE
                 v0 = min(vb) + 1e-10;
                 v1 = max(vb);
 
-                ubtest = sum(~isfinite(ub))
-                vbtest = sum(~isfinite(vb))
-% 
-                ub_vals = ub(~isfinite(ub));
-                vb_vals = ub(~isfinite(vb));
-                ub_vals2 = ~isfinite(ub);
-                vb_vals2 = ~isfinite(vb);
-
                 u = (ub - u0)/(u1 - u0);
                 v = (vb - v0)/(v1 - v0);
                 power = 2;
@@ -497,16 +476,33 @@ classdef NSE
                 aUpper = v.^(power);
                 temp = aLower + aUpper;
 
-%                 testlower = sum(~isfinite(aLower))
-%                 testupper = sum(~isfinite(aUpper))
-
                 f_lower = aLower./temp;
                 f_upper = aUpper./temp;
 
                 stitchPDF = PDFlower.*f_lower + PDFupper.*f_upper;
 
-
                 if sum(~isfinite(PDFlower)) || sum(~isfinite(obj.sPDF))|| sum(~isfinite(PDFupper)) || sum(~isfinite(stitchPDF))
+
+                    % debugging
+                    disp(['    left block # = ',num2str(b)]);
+                    disp(['   right block # = ',num2str(b+1)]);
+                    disp(['            xmax = ',num2str(xmax)]);
+                    disp(['            xmin = ',num2str(xmin)]);
+                    disp(['         overlap = ',num2str(k0)]);
+
+                    disp(['xb: min ',num2str(min(xb)),' max ',num2str(max(xb))])
+                    disp(['xStitch: min ',num2str(min(xStitch)),' max ',num2str(max(xStitch))])
+                    disp(['xb1: min ',num2str(min(xb1)),' max ',num2str(max(xb1))])
+                    disp(['block: ',num2str(indexList(b))])
+
+                    ubtest = sum(~isfinite(ub))
+                    vbtest = sum(~isfinite(vb))
+
+                    ub_vals = ub(~isfinite(ub));
+                    vb_vals = ub(~isfinite(vb));
+                    ub_vals2 = ~isfinite(ub);
+                    vb_vals2 = ~isfinite(vb);
+
                     randColor = rand(length(indexList),3);
                     figure('Name','input blocks')
                     hold on;

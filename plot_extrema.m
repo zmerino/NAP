@@ -25,10 +25,8 @@ n_vec = [256,512,1024];
 d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5",...
         "Stable","Generalized-Pareto"];
 
-n_vec = 2.^[10,11,12,13,14,15];
-n_vec = 2.^[8,9,10];
-% Distribution range
-d_vec = ["Stable"];
+n_vec = 2.^[8,9,10,11,12,13,14,15];
+d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
 
 
 % Initialize empty structure to store data in
@@ -237,7 +235,7 @@ if plot_heavy
                 % Remove zeros in actual.pdf_y generated from inf/nan values
                 [row,~] = find(actual.pdf_y > 0);
     
-                [nse_htx, nse_hty, nse_htx_act, nse_hty_act] = heavy(nse{d_indx,n_indx,3}(:,j),...
+                    [nse_htx, nse_hty, nse_htx_act, nse_hty_act] = heavy(nse{d_indx,n_indx,3}(:,j),...
                     nse{d_indx,n_indx,5}(:,j), actual);
                 [nmem_htx, nmem_hty, nmem_htx_act, nmem_hty_act] = heavy(nmem{d_indx,n_indx,3}(:,j),...
                     nmem{d_indx,n_indx,5}(:,j), actual);
