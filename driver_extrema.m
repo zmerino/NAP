@@ -66,7 +66,7 @@ distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5",...
 
 
 distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
-distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
+% distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
 
 % distribution_vector = ["Stable"];
 % names = ["Stable(,,,)"]';
@@ -185,7 +185,7 @@ for j = 1:length(distribution_vector)
             sample = rndom.rndData;
             
             tintialSE = cputime;
-            
+
             % nse object instantiation
             nse = NSE;
             nse = nse.stitch(sample);
@@ -279,7 +279,7 @@ for j = 1:length(distribution_vector)
                 ' failSE: ', num2str(fail_nse(k,i,j)), ' failNMEM: ', num2str(fail_nmem(k,i,j))])
             
             
-            [u_NMEM,sqr_NMEM] = misc_functions.sqr(x_NMEM,pdf_NMEM,sample_vec(k));
+            [u_NMEM,sqr_NMEM] = misc_functions.sqr(x_NMEM,pdf_NMEM,sample);
 
 
             disp(['Iteration:    j: ', num2str(j),'   k: ', num2str(k), '   i: ', num2str(i)])

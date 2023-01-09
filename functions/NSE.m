@@ -283,30 +283,17 @@ classdef NSE
                 j2 = kBlockUpper(b);
                 s = 1/blockScale(b);
 
-%                 sample = s*( x(j1+1:j2-1) - blockShift(b) )';       % Note: x is sorted
-%                 MatPDFsample{b} = sample;
-
-%                 if b == 1
-%                     tempStruc.highBound = 1;
-%                 elseif b == obj.nBlocks
-%                     tempStruc.lowBound = -1;
-%                 else
-%                     tempStruc.lowBound = -1;
-%                     tempStruc.highBound = 1;
-%                 end
-% 
-                orig_sample = x(j1+1:j2-1)';
-                MatPDFsample{b} = orig_sample;
+                sample = s*( x(j1+1:j2-1) - blockShift(b) )';       % Note: x is sorted
+                MatPDFsample{b} = sample;
 
                 if b == 1
-                    tempStruc.highBound = max(orig_sample);
+                    tempStruc.highBound = 1;
                 elseif b == obj.nBlocks
-                    tempStruc.lowBound = min(orig_sample);
+                    tempStruc.lowBound = -1;
                 else
-                    tempStruc.lowBound = min(orig_sample);
-                    tempStruc.highBound = max(orig_sample);
+                    tempStruc.lowBound = -1;
+                    tempStruc.highBound = 1;
                 end
-
                 bounds{b} = tempStruc;
             end
             % run PDFestimator      section 13
@@ -315,22 +302,12 @@ classdef NSE
             % initialize vector to hold all lagrainge mutiplers per block
             LG = zeros(1,obj.nBlocks);
             parfor b=1:obj.nBlocks
-%             for b=1:obj.nBlocks
-%                 if b == 1
-%                     tempStruc.lowBound = max(MatPDFsample{b});
-%                 elseif b == obj.nBlocks
-%                     tempStruc.highBound = min(MatPDFsample{b});
-%                 else
-%                     tempStruc.lowBound = min(MatPDFsample{b});
-%                     tempStruc.highBound = max(MatPDFsample{b});
-%                 end
                 lagrange = [];
                 for t=1:nTargets
                     %                     tempStruc = struct('SURDtarget',targetCoverage(t));
                     try
                         [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b}, bounds{b});
-%                         [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b},tempStruc);
-%                         [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b});
+%                         
                     catch
                         warning(['Problem using function.  Assigning a value of 0.',' t: ',num2str(t),' b: ',num2str(b)]);
                         lagrange = 0;
@@ -370,14 +347,11 @@ classdef NSE
                 sWb = s*(nBs0(b)/obj.N);  % Wb = nBs0/N = weight based on frequency count
                 % apply scaling
                 blockPDF{b} = sWb*blockPDF{b}; % s on PDF is required to undo sInv on x
-%                 blockX{b} = sInv*blockX{b} ...           % put x back to original units
-%                     + blockShift(b); % translates x-original back to its location
-                blockX{b} = blockX{b}; % translates x-original back to its location
-
+                blockX{b} = sInv*blockX{b} ...           % put x back to original units
+                    + blockShift(b); % translates x-original back to its location
                 %indexList is used to evaluate goodblocks later in script
                 indexList = [indexList,b];
                 updateIndex = updateIndex + 1;
-
                 b = b + 1;
             end
 
@@ -413,17 +387,6 @@ classdef NSE
             obj.sPDF = obj.sPDF(indx);
 
             % stitch the blocks together      section 17
-
-            % implement a lever-arm weigthing between two blocks across common overlap
-            % region. Use blockCDF as the weighting factors.
-            % CDFL1 = max(CDFL)   CDFL0 = min(CDFL)
-            % CDFR1 = max(CDFR)   CDFR0 = min(CDFR)
-            % u = (CDFL - CDFL0)/(CDFL1 - CDFL0)    v = (CDFR - CDFR0)/(CDFR1 - CDFR0)
-            % a = (1 - u)^2       b = v^2
-            % fL = a/(a + b)
-            % fR = b/(a + b)                    note that fL + fR = 1
-            %                                   note that fL --> 0 at most right point
-            %                                   note that fR --> 0 at most left  point
             for b=1:length(indexList)-1
 
                 xmin = min(blockX{indexList(b+1)});
@@ -432,8 +395,8 @@ classdef NSE
                 xmax_list = maxk(blockX{indexList(b)},5);
 
 %                 Lnot = or( (obj.sx <= xmin) , (obj.sx >= xmax) ); 
-%                 Lnot = or( (obj.sx < xmin) , (obj.sx > xmax) );  
-                Lnot = or( (obj.sx < xmin*(1+0.0001)) , (obj.sx > xmax*(1-0.0001)) );  % works for uniform, unform-mix, GP
+                Lnot = or( (obj.sx < xmin) , (obj.sx > xmax) );  
+%                 Lnot = or( (obj.sx < xmin*(1+0.0001)) , (obj.sx > xmax*(1-0.0001)) );  % works for uniform, unform-mix, GP
 %                 Lnot = or( (obj.sx < xmin*(1+0.0000001)) , (obj.sx > xmax*(1-0.0000001)) );  % test for stable
 %                 Lnot = or( (obj.sx < xmin_list(2)) , (obj.sx > xmax_list(2)) );  
                 xStitch = obj.sx(~Lnot);                          % within overlap region
