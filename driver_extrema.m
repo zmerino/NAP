@@ -39,9 +39,9 @@ estimator_plot_flag =       false;   %<- true/false plot SE results on/off
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 save_graphics =             false;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   22; %<---- maximum exponent to generate samples
+max_pow =                   15; %<---- maximum exponent to generate samples
 min_pow =                   8; %<---- minimum exponent to generate samples
-trials =                    500;  %<--- trials to run to generate heuristics for programs
+trials =                    5;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -66,6 +66,7 @@ distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5",...
 
 
 distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
+% distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
 
 % distribution_vector = ["Stable"];
 % names = ["Stable(,,,)"]';
@@ -184,11 +185,26 @@ for j = 1:length(distribution_vector)
             sample = rndom.rndData;
             
             tintialSE = cputime;
-            % mixture model does not return random sample
-            [fail_code,SE_x,SE_pdf,SE_cdf,SE_u,SE_SQR,nBlocks,Blacklist,...
-                rndom.Ns,binrndom.Ns, max_LG, sum_LG,T,BRlevel,BR0]...
-                = stitch_pdf(sample,rndom.filename, actual.min_limit,...
-                actual.max_limit,p);
+
+            % nse object instantiation
+            nse = NSE;
+            nse = nse.stitch(sample);
+            
+            % extract relevant parameters from object after stich() method
+            fail_code = nse.failed;
+            SE_x = nse.sx;
+            SE_pdf = nse.sPDF;
+            SE_cdf = nse.sCDF;
+            SE_u = nse.u;
+            SE_SQR = nse.sqr;
+            nBlocks = nse.nBlocks;
+            rndom.Ns = nse.N;
+            binrndom.Ns =  nse.binN;
+            max_LG = nse.LG_max;
+            sum_LG = nse.LG_sum;
+            T = nse.T;
+            BRlevel = nse.BRlevel;
+            BR0 = nse.BR0;
 
             tcpuSE = cputime-tintialSE;
             
@@ -263,7 +279,7 @@ for j = 1:length(distribution_vector)
                 ' failSE: ', num2str(fail_nse(k,i,j)), ' failNMEM: ', num2str(fail_nmem(k,i,j))])
             
             
-            [u_NMEM,sqr_NMEM] = misc_functions.sqr(x_NMEM,pdf_NMEM,sample_vec(k));
+            [u_NMEM,sqr_NMEM] = misc_functions.sqr(x_NMEM,pdf_NMEM,sample);
 
 
             disp(['Iteration:    j: ', num2str(j),'   k: ', num2str(k), '   i: ', num2str(i)])

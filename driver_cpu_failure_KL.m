@@ -29,9 +29,9 @@ estimator_plot_flag =       false;   %<- true/false plot SE results on/off
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 save_graphics =             false;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   10; %<---- maximum exponent to generate samples
+max_pow =                   15; %<---- maximum exponent to generate samples
 min_pow =                   8; %<---- minimum exponent to generate samples
-trials =                    10   ;  %<--- trials to run to generate heuristics for programs
+trials =                    5   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -51,10 +51,31 @@ distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5",...
     "InverseGaussian","Trimodal-Normal","Stable",...
     "Stable2","Stable3","Stable1","BirnbaumSaunders-Stable"];
 
-distribution_vector = ["Trimodal-Normal","Normal","Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto", "Uniform-Mix"];
+distribution_vector = ["Trimodal-Normal","Normal","Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto", "Uniform-Mix", "Stable"];
 distribution = distribution_vector';
-names = ["Tri-Modal-Normal", "Normal", "Uniform", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Uniform-Mix"]';
-test = table(distribution,names);
+names = ["Tri-Modal-Normal", "Normal", "Uniform", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Uniform-Mix", "Stable"]';
+
+% For bounds Lnot = or( (obj.sx <= xmin) , (obj.sx >= xmax) ); 
+distribution_vector = ["Trimodal-Normal","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Generalized-Pareto"];
+distribution = distribution_vector';
+names = ["Tri-Modal-Normal", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Generalized-Pareto"];
+
+% For bounds Lnot = or( (obj.sx < xmin) , (obj.sx > xmax) );  
+distribution_vector = ["Trimodal-Normal","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
+distribution = distribution_vector';
+names = ["Tri-Modal-Normal", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)"];
+
+distribution_vector = [ "Stable"];
+distribution = distribution_vector';
+names = [ "Stable"];
+
+distribution_vector = ["Uniform", "Uniform-Mix", "Generalized-Pareto","Beta-a0p5-b0p5"];
+distribution = distribution_vector';
+names = ["Uniform", "Uniform-Mix", "Generalized-Pareto", "Beta(0.5,0.5)"];
+
+distribution_vector = ["Trimodal-Normal","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
+distribution = distribution_vector';
+names = ["Tri-Modal-Normal", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -128,9 +149,9 @@ for j = 1:length(distribution_vector)
         
         actual = actual.dist_list();
         
+        tic  
         for k = 1:length(sample_vec)
         
-            tic  
             
             interp_etimate = [];
             estimate_data = {};
@@ -165,11 +186,38 @@ for j = 1:length(distribution_vector)
             sample = rndom.rndData;
             
             tintialSE = cputime;
-            % mixture model does not return random sample
-            [fail_code,x,SE_pdf,SE_cdf,SE_u,SE_SQR,nBlocks,Blacklist,...
-                rndom.Ns,binrndom.Ns, max_LG, sum_LG,T,BRlevel,BR0]...
-                = stitch_pdf(sample,rndom.filename, actual.min_limit,...
-                actual.max_limit,p);
+
+%             % nse object instantiation
+%             nse = NSE2;
+%             % NSE.stitch() method called to calcualted relevant parameters
+% 
+% 
+%             disp(distribution_vector(j))
+% %             use ONLY for NSE_working_archived.m class code
+%             [fail_code,x,SE_pdf,SE_cdf,SE_u,SE_SQR,nBlocks,...
+%                 rndom.Ns,binrndom.Ns, max_LG, sum_LG,T,BRlevel,BR0]...
+%                 = nse.stitch(sample);
+
+
+            % nse object instantiation
+            nse = NSE;
+            nse = nse.stitch(sample);
+            
+            % extract relevant parameters from object after stich() method
+            fail_code = nse.failed;
+            x = nse.sx;
+            SE_pdf = nse.sPDF;
+            SE_cdf = nse.sCDF;
+            SE_u = nse.u;
+            SE_SQR = nse.sqr;
+            nBlocks = nse.nBlocks;
+            rndom.Ns = nse.N;
+            binrndom.Ns =  nse.binN;
+            max_LG = nse.LG_max;
+            sum_LG = nse.LG_sum;
+            T = nse.T;
+            BRlevel = nse.BRlevel;
+            BR0 = nse.BR0;
 
             tcpuSE = cputime-tintialSE;
             
@@ -238,7 +286,16 @@ for j = 1:length(distribution_vector)
             % NSE
             kl_dist = actual;
             kl_dist.x = x;
-            kl_dist = dist_list(kl_dist);
+            try
+                kl_dist = dist_list(kl_dist);
+            catch
+                disp('error!')
+            end
+
+            test1 = ~isfinite(kl_dist.pdf_y);
+            test2 = ~isfinite(SE_pdf);
+            test3 =  sum(~isfinite(kl_dist.pdf_y));
+            test4 = sum(~isfinite(SE_pdf));
 
             if sum(~isfinite(kl_dist.pdf_y)) ||...
                     sum(~isfinite(SE_pdf))
@@ -300,8 +357,9 @@ for j = 1:length(distribution_vector)
             mse_vec_se(k,i) = mse_se_test;
             mse_vec_nmem(k,i) =  mse_nmem_test;
             
-            toc
         end
+        % track time to generate estimates for a sample range per trial
+        toc
     end
 
     % cpu time
@@ -322,43 +380,49 @@ for j = 1:length(distribution_vector)
     cpu_nse = cpu_vec_se;
     cpu_nmem = cpu_vec_nmem;
 
+    % build data table ----------------------------------------------------
+
+    % MSE
     temp = vertcat(misc_functions.reshape_groups(sample_vec',mse_vec_se),...
     misc_functions.reshape_groups(sample_vec',mse_vec_nmem));
     sample_power = temp(:,1);
     mse = temp(:,2);
 
+    % KL
     temp = vertcat(misc_functions.reshape_groups(sample_vec',kl_vec_se),...
     misc_functions.reshape_groups(sample_vec',kl_vec_nmem));
     kl = temp(:,2);
     
+    % CPU
     temp = vertcat(misc_functions.reshape_groups(sample_vec',cpu_vec_se),...
     misc_functions.reshape_groups(sample_vec',cpu_vec_nmem));
     cpu_time = temp(:,2);
 
+    % Distributions 
     distribution = repelem(distribution_vector(j), length(temp(:,2)))';
-
-
     name = repelem(names(j), length(temp(:,2)))';
 
     nse_label = repelem(["NSE"], size(misc_functions.reshape_groups(sample_vec',cpu_vec_se), 1));
     nmem_label = repelem(["NMEM"], size(misc_functions.reshape_groups(sample_vec',cpu_vec_nmem), 1));
 
+    % Failed
     temp = vertcat(misc_functions.reshape_groups(sample_vec',fail_nse(:,:,j)),...
         misc_functions.reshape_groups(sample_vec',fail_nmem(:,:,j)));
-    
-
+ 
     fail = temp(:,2);   
 
+    % Lagragian
     temp = vertcat(misc_functions.reshape_groups(sample_vec',lagrange_nse(:,:,j)),...
         misc_functions.reshape_groups(sample_vec',lagrange_nmem(:,:,j)));
-    
     lagrange = temp(:,2);    
     
     estimator = vertcat(nse_label', nmem_label');
 
-    test = table(distribution, name, estimator, sample_power, mse, kl, cpu_time, fail, lagrange);
+    dist_table = table(distribution, name, estimator, sample_power, mse, kl, cpu_time, fail, lagrange);
 
-    global_table = [global_table; test];
+    % append table per distribution to global table containing data for all
+    % distributions
+    global_table = [global_table; dist_table];
 
 end
 

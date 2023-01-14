@@ -39,6 +39,8 @@ classdef NSE
 
             % initialze the obj.failed trip flag to false
             obj.failed = 0;
+            
+            writematrix(inputSample,'original_sample_block.txt')
 
             % Script Detailed output %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if ~exist('plt_blocksize','var')
@@ -283,13 +285,17 @@ classdef NSE
                 j2 = kBlockUpper(b);
                 s = 1/blockScale(b);
 
-                sample = s*( x(j1+1:j2-1) - blockShift(b) )';       % Note: x is sorted
-                MatPDFsample{b} = sample;
+%                 sample = s*( x(j1+1:j2-1) - blockShift(b) )';       % Note: x is sorted
+%                 MatPDFsample{b} = sample;
+
+                orig_sample = x(j1+1:j2-1)';
+                MatPDFsample{b} = orig_sample;
+                writematrix(MatPDFsample{b},['sample_block_',num2str(b),'.txt'])
 
                 if b == 1
-                    tempStruc.highBound = 1;
+                    tempStruc.lowBound = 1;
                 elseif b == obj.nBlocks
-                    tempStruc.lowBound = -1;
+                    tempStruc.highBound = -1;
                 else
                     tempStruc.lowBound = -1;
                     tempStruc.highBound = 1;
@@ -302,12 +308,22 @@ classdef NSE
             % initialize vector to hold all lagrainge mutiplers per block
             LG = zeros(1,obj.nBlocks);
             parfor b=1:obj.nBlocks
+%             for b=1:obj.nBlocks
+%                 if b == 1
+%                     tempStruc.lowBound = max(MatPDFsample{b});
+%                 elseif b == obj.nBlocks
+%                     tempStruc.highBound = min(MatPDFsample{b});
+%                 else
+%                     tempStruc.lowBound = min(MatPDFsample{b});
+%                     tempStruc.highBound = max(MatPDFsample{b});
+%                 end
                 lagrange = [];
                 for t=1:nTargets
                     %                     tempStruc = struct('SURDtarget',targetCoverage(t));
                     try
-                        [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b}, bounds{b});
-%                         
+%                         [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b}, bounds{b});
+%                         [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b},tempStruc);
+                        [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b});
                     catch
                         warning(['Problem using function.  Assigning a value of 0.',' t: ',num2str(t),' b: ',num2str(b)]);
                         lagrange = 0;
@@ -347,15 +363,18 @@ classdef NSE
                 sWb = s*(nBs0(b)/obj.N);  % Wb = nBs0/N = weight based on frequency count
                 % apply scaling
                 blockPDF{b} = sWb*blockPDF{b}; % s on PDF is required to undo sInv on x
-                blockX{b} = sInv*blockX{b} ...           % put x back to original units
-                    + blockShift(b); % translates x-original back to its location
+%                 blockX{b} = sInv*blockX{b} ...           % put x back to original units
+%                     + blockShift(b); % translates x-original back to its location
+                blockX{b} = blockX{b}; % translates x-original back to its location
                 %indexList is used to evaluate goodblocks later in script
                 indexList = [indexList,b];
                 updateIndex = updateIndex + 1;
+
                 b = b + 1;
             end
 
             obj.nBlocks = b-1;
+            fprintf('|<\n');
 
             %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
             % Begin: stitch blocks together
@@ -391,14 +410,8 @@ classdef NSE
 
                 xmin = min(blockX{indexList(b+1)});
                 xmax = max(blockX{indexList(b)});
-                xmin_list = mink(blockX{indexList(b+1)},5);
-                xmax_list = maxk(blockX{indexList(b)},5);
 
-%                 Lnot = or( (obj.sx <= xmin) , (obj.sx >= xmax) ); 
-                Lnot = or( (obj.sx < xmin) , (obj.sx > xmax) );  
-%                 Lnot = or( (obj.sx < xmin*(1+0.0001)) , (obj.sx > xmax*(1-0.0001)) );  % works for uniform, unform-mix, GP
-%                 Lnot = or( (obj.sx < xmin*(1+0.0000001)) , (obj.sx > xmax*(1-0.0000001)) );  % test for stable
-%                 Lnot = or( (obj.sx < xmin_list(2)) , (obj.sx > xmax_list(2)) );  
+                Lnot = or( (obj.sx <= xmin) , (obj.sx >= xmax) );  % => outside of overlap region
                 xStitch = obj.sx(~Lnot);                          % within overlap region
                 k0 = length(xStitch);
                 if( k0 < 1 ) %51 <------------------------------ currently very small!
@@ -411,6 +424,11 @@ classdef NSE
                     obj.failed = 1;
                 end
 
+                disp(['    left block # = ',num2str(b)]);
+                disp(['   right block # = ',num2str(b+1)]);
+                disp(['            xmax = ',num2str(xmax)]);
+                disp(['            xmin = ',num2str(xmin)]);
+                disp(['         overlap = ',num2str(k0)]);
                 %----------------------------------------------------------------------
                 [xb,indx] = unique(blockX{indexList(b)});
                 yb = blockPDF{indexList(b)}(indx);
@@ -418,12 +436,18 @@ classdef NSE
                 zb = blockCDF{indexList(b)}(indx);
                 ub = interp1(xb,zb,xStitch);
 
+                disp([])
+
+                disp(['xb: min ',num2str(min(xb)),' max ',num2str(max(xb))])
+                disp(['xStitch: min ',num2str(min(xStitch)),' max ',num2str(max(xStitch))])
                 %----------------------------------------------------------------------
                 [xb1,indx] = unique(blockX{indexList(b+1)});
                 yb1 = blockPDF{indexList(b+1)}(indx);
                 PDFupper = interp1(xb1,yb1,xStitch);
                 zb1 = blockCDF{indexList(b+1)}(indx);
                 vb = interp1(xb1,zb1,xStitch);
+                disp(['xb1: min ',num2str(min(xb1)),' max ',num2str(max(xb1))])
+                disp(['block: ',num2str(indexList(b))])
                 %----------------------------------------------------------------------
                 u0 = min(ub);
                 u0 = min(ub) + 1e-10; % ------------------------------------------------------------ TEMP FIX
@@ -432,6 +456,14 @@ classdef NSE
                 v0 = min(vb) + 1e-10;
                 v1 = max(vb);
 
+                ubtest = sum(~isfinite(ub))
+                vbtest = sum(~isfinite(vb))
+
+                ub_vals = ub(~isfinite(ub));
+                vb_vals = ub(~isfinite(vb));
+                ub_vals2 = ~isfinite(ub);
+                vb_vals2 = ~isfinite(vb);
+
                 u = (ub - u0)/(u1 - u0);
                 v = (vb - v0)/(v1 - v0);
                 power = 2;
@@ -439,33 +471,16 @@ classdef NSE
                 aUpper = v.^(power);
                 temp = aLower + aUpper;
 
+                testlower = sum(~isfinite(aLower))
+                testupper = sum(~isfinite(aUpper))
+
                 f_lower = aLower./temp;
                 f_upper = aUpper./temp;
 
                 stitchPDF = PDFlower.*f_lower + PDFupper.*f_upper;
 
+
                 if sum(~isfinite(PDFlower)) || sum(~isfinite(obj.sPDF))|| sum(~isfinite(PDFupper)) || sum(~isfinite(stitchPDF))
-
-                    % debugging
-                    disp(['    left block # = ',num2str(b)]);
-                    disp(['   right block # = ',num2str(b+1)]);
-                    disp(['            xmax = ',num2str(xmax)]);
-                    disp(['            xmin = ',num2str(xmin)]);
-                    disp(['         overlap = ',num2str(k0)]);
-
-                    disp(['xb: min ',num2str(min(xb)),' max ',num2str(max(xb))])
-                    disp(['xStitch: min ',num2str(min(xStitch)),' max ',num2str(max(xStitch))])
-                    disp(['xb1: min ',num2str(min(xb1)),' max ',num2str(max(xb1))])
-                    disp(['block: ',num2str(indexList(b))])
-
-                    ubtest = sum(~isfinite(ub))
-                    vbtest = sum(~isfinite(vb))
-
-                    ub_vals = ub(~isfinite(ub));
-                    vb_vals = ub(~isfinite(vb));
-                    ub_vals2 = ~isfinite(ub);
-                    vb_vals2 = ~isfinite(vb);
-
                     randColor = rand(length(indexList),3);
                     figure('Name','input blocks')
                     hold on;
@@ -490,8 +505,7 @@ classdef NSE
                         x_min = min(blockX{indexList(nb+1)});
                         x_max = max(blockX{indexList(nb)});
 
-%                         Lnot = or( (obj.sx <= x_min) , (obj.sx >= x_max) );
-                        Lnot = or( (obj.sx < x_min) , (obj.sx > x_max) );
+                        Lnot = or( (obj.sx <= x_min) , (obj.sx >= x_max) );
                         xStitch2 = obj.sx(~Lnot);
                         xStitch2_max = max(xStitch2);
                         xStitch2_min = min(xStitch2);
@@ -516,6 +530,64 @@ classdef NSE
                     disp('test')
                 end
 
+
+%                 if sum(~isfinite(PDFlower)) || sum(~isfinite(obj.sPDF))|| sum(~isfinite(PDFupper)) || sum(~isfinite(stitchPDF))
+% 
+%                     randColor = rand(length(indexList),3);
+%                     figure('Name','input block')
+%                     hold on;
+%                     % plot original blocked sample
+%                     block_min = min(MatPDFsample{indexList(b)});
+%                     block_max = max(MatPDFsample{indexList(b)});
+%                     disp(['block: ',num2str(b), ' (',num2str(block_min),', ',num2str(block_max),')'])
+% 
+%                     plot([block_min,block_max],[2*b,2*b],'-o','Color',randColor(b,:))
+% 
+%                     block_min = min(MatPDFsample{indexList(b+1)});
+%                     block_max = max(MatPDFsample{indexList(b+1)});
+%                     disp(['block: ',num2str(b), ' (',num2str(block_min),', ',num2str(block_max),')'])
+% 
+%                     plot([block_min,block_max],[2*(b+1),2*(b+1)],'-o','Color',randColor(b+1,:))
+% 
+%                     Lnot = or( (obj.sx < xmin) , (obj.sx > xmax) );
+%                     xStitch = obj.sx(~Lnot);
+% 
+%                     xStitch2_max = max(xStitch);
+%                     xStitch2_min = min(xStitch);
+% 
+%                     plot([xStitch2_min,xStitch2_max],[2*(b+1/2),2*(b+1/2)],'-s','Color',randColor(b,:))
+% 
+%                     figure('Name','current block')
+%                     hold on;
+%                     block_min = min(blockX{indexList(b)});
+%                     block_max = max(blockX{indexList(b)});
+%                     disp(['block: ',num2str(b), ' (',num2str(block_min),', ',num2str(block_max),')'])
+% 
+%                     plot([block_min,block_max],[2*b,2*b],'-o','Color',randColor(b,:))
+% 
+%                     block_min = min(blockX{indexList(b+1)});
+%                     block_max = max(blockX{indexList(b+1)});
+%                     disp(['block: ',num2str(b), ' (',num2str(block_min),', ',num2str(block_max),')'])
+% 
+%                     plot([block_min,block_max],[2*(b+1),2*(b+1)],'-o','Color',randColor(b+1,:))
+% 
+%                     Lnot = or( (obj.sx < xmin) , (obj.sx > xmax) );
+%                     xStitch = obj.sx(~Lnot);
+% 
+%                     xStitch2_max = max(xStitch);
+%                     xStitch2_min = min(xStitch);
+% 
+%                     plot([xStitch2_min,xStitch2_max],[2*(b+1/2),2*(b+1/2)],'-s','Color',randColor(b,:))
+% 
+%                     % pdf trigger non-finite values when estimate fails
+%                     PDFlower(~isfinite(PDFlower));
+%                     test1 = sum(~isfinite(PDFlower))
+%                     test2 = sum(~isfinite(PDFupper))
+%                     test3 = sum(~isfinite(obj.sPDF))
+%                     test4 = sum(~isfinite(stitchPDF))
+%                     warning('non-finite values')
+%                     %     pause
+%                 end
 
 
                 if plt_stitchpdf
