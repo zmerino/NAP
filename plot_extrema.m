@@ -4,10 +4,11 @@ addpath("functions/")
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% To Plot %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-plot_pdf = false;
-plot_cdf = false;
-plot_sqr = false;
+plot_pdf = true;
+plot_cdf = true;
+plot_sqr = true;
 plot_heavy = true;
+save_figs = true;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Import data %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -88,7 +89,8 @@ if plot_pdf
 
         for n_idx = 1:size(nse, 2)
     
-            figure('Name',['PDF_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)])
+            fig_name = ['PDF_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
+            figure('Name',fig_name)
             hold on;
             % Set actual distribution type
             actual.dist_name = nse{d_idx,n_idx,1,1}(1,:);
@@ -117,6 +119,9 @@ if plot_pdf
                 ylim([0,1])
             end
             legend([nse_h(1),nmem_h(1), g],'Interpreter','latex')
+            if save_figs
+                saveas(bp, fullfile('figures', [fig_name, '.png']))
+            end
         end
     end
 end
@@ -129,9 +134,9 @@ if plot_cdf
 
         for n_idx = 1:size(nse, 2)
 
-            figure('Name',['CDF_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)])
+            fig_name = ['CDF_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
+            figure('Name',fig_name)
             hold on;
-    
             % Set actual distribution type
             actual.dist_name = nse{d_idx,n_idx,1,1};
             % Set distrobution over specific range i.e. the x values from the 
@@ -158,6 +163,9 @@ if plot_cdf
             end
             ylim([0,1])
             legend([nse_h(1),nmem_h(1), g],'Interpreter','latex')
+            if save_figs
+                saveas(bp, fullfile('figures', [fig_name, '.png']))
+            end
         end
     end
 end
@@ -171,7 +179,8 @@ if plot_sqr
 
         for n_idx = 1:size(nse, 2)
     
-            figure('Name',['SQR_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)])
+            fig_name = ['SQR_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
+            figure('Name',fig_name)
             hold on;
             smallN = 256;
             smallN2 = 258;
@@ -214,6 +223,9 @@ if plot_sqr
             legend([nse_h(1),nmem_h(1)],'Interpreter','latex')
             xlabel('$x$','Interpreter','latex')
             ylabel('$sqr(x)$','Interpreter','latex')
+            if save_figs
+                saveas(bp, fullfile('figures', [fig_name, '.png']))
+            end
         end
     end
 end
@@ -227,7 +239,8 @@ if plot_heavy
 
         for n_idx = 1:size(nse, 2)
     
-            figure('Name',['Heavy_Tails_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)])
+            fig_name = ['Heavy_Tails_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
+            figure('Name',fig_name)
             hold on;
             for j = 1:size(nse{d_idx,n_idx,3}, 2)  
     
@@ -263,6 +276,9 @@ if plot_heavy
             xlim([min(nse_htx),max(nse_htx) + 0.1*(max(nse_htx) - min(nse_htx))])
 %             ylim([min(nse_hty),max(nse_hty) + 0.1*(max(nse_hty) - min(nse_hty))])
             legend([nse_h(1),nmem_h(1), g],'Interpreter','latex', 'Location','southwest')
+            if save_figs
+                saveas(bp, fullfile('figures', [fig_name, '.png']))
+            end
         end
     end
 end

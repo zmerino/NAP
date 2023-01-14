@@ -26,6 +26,7 @@ MANIFEST
 
 # Data files
 data/
+figures/
 
 *.mat
 *.txt
