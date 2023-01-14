@@ -24,14 +24,11 @@ actual.generate_data = false;
 
 % User Options ============================================================
 % script switching board
-estimator_call_flag =       true;   %<- true/false call SE on/off
-estimator_plot_flag =       false;   %<- true/false plot SE results on/off
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
-save_graphics =             false;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   15; %<---- maximum exponent to generate samples
-min_pow =                   8; %<---- minimum exponent to generate samples
-trials =                    5   ;  %<--- trials to run to generate heuristics for programs
+max_pow =                   24; %<---- maximum exponent to generate samples
+min_pow =                   6; %<---- minimum exponent to generate samples
+trials =                    1   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -51,31 +48,43 @@ distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5",...
     "InverseGaussian","Trimodal-Normal","Stable",...
     "Stable2","Stable3","Stable1","BirnbaumSaunders-Stable"];
 
-distribution_vector = ["Trimodal-Normal","Normal","Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto", "Uniform-Mix", "Stable"];
-distribution = distribution_vector';
-names = ["Tri-Modal-Normal", "Normal", "Uniform", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Uniform-Mix", "Stable"]';
+% distribution_vector = ["Trimodal-Normal","Normal","Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto", "Uniform-Mix", "Stable"];
+% distribution = distribution_vector';
+% names = ["Tri-Modal-Normal", "Normal", "Uniform", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Uniform-Mix", "Stable"]';
+% 
+% % For bounds Lnot = or( (obj.sx <= xmin) , (obj.sx >= xmax) ); 
+% distribution_vector = ["Trimodal-Normal","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Generalized-Pareto"];
+% distribution = distribution_vector';
+% names = ["Tri-Modal-Normal", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Generalized-Pareto"];
+% 
+% % For bounds Lnot = or( (obj.sx < xmin) , (obj.sx > xmax) );  
+% distribution_vector = ["Trimodal-Normal","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
+% distribution = distribution_vector';
+% names = ["Tri-Modal-Normal", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)"];
 
-% For bounds Lnot = or( (obj.sx <= xmin) , (obj.sx >= xmax) ); 
-distribution_vector = ["Trimodal-Normal","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Generalized-Pareto"];
-distribution = distribution_vector';
-names = ["Tri-Modal-Normal", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Generalized-Pareto"];
-
-% For bounds Lnot = or( (obj.sx < xmin) , (obj.sx > xmax) );  
-distribution_vector = ["Trimodal-Normal","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
-distribution = distribution_vector';
-names = ["Tri-Modal-Normal", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)"];
-
-distribution_vector = [ "Stable"];
-distribution = distribution_vector';
-names = [ "Stable"];
-
-distribution_vector = ["Uniform", "Uniform-Mix", "Generalized-Pareto","Beta-a0p5-b0p5"];
-distribution = distribution_vector';
-names = ["Uniform", "Uniform-Mix", "Generalized-Pareto", "Beta(0.5,0.5)"];
+% distribution_vector = ["Uniform", "Uniform-Mix", "Generalized-Pareto","Beta-a0p5-b0p5"];
+% distribution = distribution_vector';
+% names = ["Uniform", "Uniform-Mix", "Generalized-Pareto", "Beta(0.5,0.5)"];
 
 distribution_vector = ["Trimodal-Normal","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
 distribution = distribution_vector';
 names = ["Tri-Modal-Normal", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
+
+
+distribution_vector = ["Trimodal-Normal","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
+distribution = distribution_vector';
+names = ["Tri-Modal-Normal", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
+
+
+
+
+distribution_vector = ["Normal"];
+distribution = distribution_vector';
+names = ["Normal"];
+
+% distribution_vector = ["Trimodal-Normal","Normal"];
+% distribution = distribution_vector';
+% names = ["Tri-Modal-Normal", "Normal"];
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -96,15 +105,14 @@ for a = 1:size(distribution_vector,2)
 end
 
 % only works for division with no remainders
-% fail_nmem = zeros(trials,(max_pow-min_pow)/step,length(distribution_vector));
-% fail_nse = zeros(trials,(max_pow-min_pow)/step,length(distribution_vector));
 fail_nmem = zeros((max_pow-min_pow+1)/step, trials,length(distribution_vector));
 fail_nse = zeros((max_pow-min_pow+1)/step, trials,length(distribution_vector));
 lagrange_nse = zeros((max_pow-min_pow+1)/step, trials,length(distribution_vector));
 lagrange_nmem = zeros((max_pow-min_pow+1)/step, trials,length(distribution_vector));
 
-
+% table to store meta data
 global_table = table();
+mse_table = table();
 
 % change code to multithreaded version
 for j = 1:length(distribution_vector)
@@ -144,15 +152,19 @@ for j = 1:length(distribution_vector)
     kl_vec_nmem = zeros(length(sample_vec),trials);
     mse_vec_se = zeros(length(sample_vec),trials);
     mse_vec_nmem = zeros(length(sample_vec),trials);
-       
+
+    % store mse per block for all trials per distribution and sample size
+    mse_dists_nse = cell(length(sample_vec),trials);
+    mse_dists_nmem = cell(length(sample_vec),trials);
+
+    % store block size and scale per distribution and sample size
+    block_scale_all = cell(length(sample_vec),trials);
+    block_size_all = cell(length(sample_vec),trials);
+    
     for i = 1:trials
-        
         actual = actual.dist_list();
-        
-        tic  
         for k = 1:length(sample_vec)
-        
-            
+                    
             interp_etimate = [];
             estimate_data = {};
             
@@ -177,7 +189,7 @@ for j = 1:length(distribution_vector)
             %==========================================================
             % % % % % % % start of estimates % % % % % % % % %
             %==========================================================
-            
+            tic
             %-- NSE start
             
             sendFileName1 = ['D_',char(actual.dist_name),cpu_type,char(rndom.filename),'.dat'];
@@ -186,26 +198,14 @@ for j = 1:length(distribution_vector)
             sample = rndom.rndData;
             
             tintialSE = cputime;
-
-%             % nse object instantiation
-%             nse = NSE2;
-%             % NSE.stitch() method called to calcualted relevant parameters
-% 
-% 
-%             disp(distribution_vector(j))
-% %             use ONLY for NSE_working_archived.m class code
-%             [fail_code,x,SE_pdf,SE_cdf,SE_u,SE_SQR,nBlocks,...
-%                 rndom.Ns,binrndom.Ns, max_LG, sum_LG,T,BRlevel,BR0]...
-%                 = nse.stitch(sample);
-
-
+            % NSE ---------------------------------------------------------
             % nse object instantiation
             nse = NSE;
             nse = nse.stitch(sample);
             
             % extract relevant parameters from object after stich() method
             fail_code = nse.failed;
-            x = nse.sx;
+            SE_x = nse.sx;
             SE_pdf = nse.sPDF;
             SE_cdf = nse.sCDF;
             SE_u = nse.u;
@@ -220,11 +220,46 @@ for j = 1:length(distribution_vector)
             BR0 = nse.BR0;
 
             tcpuSE = cputime-tintialSE;
-            
+
             fail_nse(k,i,j) = fail_code;
-                           
+
+            % Meta data ---
+
+            % Blocks
+%             t = 1:nse.nBlocks;
+%             figure('Name','BlockScale')
+%             plot(t,nse.block_scale,'-k');
+%             title('Length of each block with respect to x variable');
+%             ylabel('Length of Block','Interpreter','latex')
+%             xlabel('Block Index','Interpreter','latex')
+%             title('Length Block with Respect to $x$','Interpreter','latex')
+% 
+%             figure('Name','BlockSize')
+%             plot(t,nse.block_size,'-k');
+%             ylabel('Number of Data Points','Interpreter','latex')
+%             xlabel('Block Index','Interpreter','latex')
+%             title('Data Points per Block','Interpreter','latex')
+
             
-            %-- NMEM start
+            block_scale_all{k,i} = nse.block_scale;
+            block_size_all{k,i} = nse.block_size;
+
+            % Stitching ---
+%             figure('Name','plt_blockpdf')
+%             hold on
+%             for b=1:length(nse.block_indx)
+%                 plot( nse.blocks_x{nse.block_indx(b)} , nse.blocks_pdf{nse.block_indx(b)} )
+%             end
+%             ylabel('$\hat{f}(x)$','Interpreter','latex')
+%             xlabel('$x$','Interpreter','latex')
+%             if max( nse.blocks_x{nse.block_indx(length(nse.block_indx))}) < 1.1
+%                 ylim([0,6])
+%             else
+%                 ylim([0,1])
+%             end
+
+            
+            % NMEM --------------------------------------------------------
             try
                 tintialNMEM = cputime;
                 [failed, x_NMEM, pdf_NMEM, cdf_NMEM,sqr_NMEM, ~,lagrange_multipler] = EstimatePDF(sample);
@@ -244,59 +279,53 @@ for j = 1:length(distribution_vector)
                 % don't record cpu time if estimator failed
                 tcpuNMEM = NaN;
             end
-                        
+            
+            toc
             %==========================================================
             % % % % % % % % end of estimate % % % % % % % % %
             %==========================================================
             
-            % calculate LG multipliers
+            %%%%%%%%%%%%%%%% calculate LG multipliers %%%%%%%%%%%%%%%%%%%%%
             lagrange_nse(k,i,j) = sum(max_LG);
             lagrange_nmem(k,i,j) = sum(length(lagrange_multipler));
             
-            % calculate kl values
+            %%%%%%%%%%%%%%%% calculate distance metrics %%%%%%%%%%%%%%%%%%%
             kl_info_se = actual;
-            kl_info_se.x = x;
+            kl_info_se.x = SE_x;
             kl_info_se = dist_list(kl_info_se);
             
             kl_info_nmem = actual;
             kl_info_nmem.x = x_NMEM';
             kl_info_nmem = dist_list(kl_info_nmem);
             kl_info_nmem;
-            %----------------------------------------------------------
             
-            SE_test_x = interp1(kl_info_se.x,kl_info_se.pdf_y,x);
+            SE_test_x = interp1(kl_info_se.x,kl_info_se.pdf_y,SE_x);
             NMEM_test_x = interp1(kl_info_nmem.x,kl_info_nmem.pdf_y,x_NMEM');
             
-            if sum(~isfinite(interp1(kl_info_se.x,kl_info_se.pdf_y,x)))...
-                    || sum(~isfinite(SE_pdf))... % for some reason indefinite values
+            % Check if any NaNs were produced from stitching procedure
+            if sum(~isfinite(interp1(kl_info_se.x,kl_info_se.pdf_y,SE_x)))...
+                    || sum(~isfinite(SE_pdf))... 
                     || sum(~isfinite(pdf_NMEM))...
                     || sum(~isfinite(interp1(kl_info_nmem.x,kl_info_nmem.pdf_y,x_NMEM')))
                 disp('non-finite values')
             end
-            actual_se_pdf = interp1(kl_info_se.x,kl_info_se.pdf_y,x);
+            actual_se_pdf = interp1(kl_info_se.x,kl_info_se.pdf_y,SE_x);
             actual_nmem_pdf = interp1(kl_info_nmem.x,kl_info_nmem.pdf_y,x_NMEM');
             
             % find rand sample to find kl for
             [s_se,idx1] = datasample(SE_pdf,length(x_NMEM));
             [s_nmem,idx2] = datasample(pdf_NMEM',k);
                       
-            
-            % KL calculations ---------------------------------------------
-            
-            % NSE
+            % NSE ---------------------------------------------------------
+
+            % KL ---
             kl_dist = actual;
-            kl_dist.x = x;
+            kl_dist.x = SE_x;
             try
                 kl_dist = dist_list(kl_dist);
             catch
                 disp('error!')
             end
-
-            test1 = ~isfinite(kl_dist.pdf_y);
-            test2 = ~isfinite(SE_pdf);
-            test3 =  sum(~isfinite(kl_dist.pdf_y));
-            test4 = sum(~isfinite(SE_pdf));
-
             if sum(~isfinite(kl_dist.pdf_y)) ||...
                     sum(~isfinite(SE_pdf))
                 warning('NSE: the inputs contain non-finite values!')
@@ -304,22 +333,58 @@ for j = 1:length(distribution_vector)
                         
             kl_se_test = KLDiv(kl_dist.pdf_y', SE_pdf);
             
-            % MSE
-            interpSEact = interp1(kl_info_se.x,kl_info_se.pdf_y,x);
-                       
+            % MSE ---
+            interpSEact = interp1(kl_info_se.x,kl_info_se.pdf_y,SE_x);
             mse_se_test = sample_vec(k)^(-1)*sum((SE_pdf - interpSEact).^2);
+
+            % test MSE per block ---------------------
+            block_mse_nmem = [];
+            block_mse_nse = [];
+            for b = 1:length(nse.block_indx)
+                x_min = min(nse.blocks_x{b});
+                x_max = max(nse.blocks_x{b});
+                % NSE ---
+                x_mask = and( (x_min <= SE_x) , (SE_x <= x_max) ); 
+                x_sub = SE_x(x_mask);
+                f_sub = SE_pdf(x_mask);
+                fact_sub = interp1(kl_info_se.x,kl_info_se.pdf_y,x_sub);
+                mse = sample_vec(k)^(-1)*sum((f_sub - fact_sub).^2);
+
+                block_mse_nse = [block_mse_nse, mse];
+%                 figure('Name', ['pdf sub: ',num2str(b)])
+%                 hold on;
+%                 plot(SE_x,SE_pdf, '--b')
+%                 plot(x_sub,fact_sub, '-k.')
+%                 plot(x_sub,f_sub, '-r.')
+
+                % NMEM ---
+                x_mask = and( (x_min <= x_NMEM) , (x_NMEM <= x_max) ); 
+                x_sub = x_NMEM(x_mask);
+                f_sub = pdf_NMEM(x_mask);
+                fact_sub = interp1(kl_info_nmem.x,kl_info_nmem.pdf_y,x_sub);
+                mse = sample_vec(k)^(-1)*sum((f_sub - fact_sub).^2);
+                block_mse_nmem = [block_mse_nmem, mse];
+                
+%                 plot(x_NMEM,pdf_NMEM, '--m')
+%                 plot(x_sub,fact_sub, '-k*')
+%                 plot(x_sub,f_sub, '-r*')
+            end
+
+            % store MSE distribution per trial
+            mse_dists_nse{k,i} = block_mse_nse;
+            mse_dists_nmem{k,i} = block_mse_nmem;
+
             
-            % NMEM
+            % NMEM --------------------------------------------------------
             
+            % KL ---
             kl_dist = actual;
             kl_dist.x = x_NMEM;
             kl_dist = dist_list(kl_dist);
-
             if sum(~isfinite(kl_dist.pdf_y')) ||...
                     sum(~isfinite(pdf_NMEM'))
                 warning('NMEM: the inputs contain non-finite values!')
             end
-
             kl_info_nmem = actual;
             kl_info_nmem.x = x_NMEM';
             kl_info_nmem = dist_list(kl_info_nmem);
@@ -328,25 +393,25 @@ for j = 1:length(distribution_vector)
             
             kl_nmem_test = KLDiv(actual_nmem_pdf', pdf_NMEM');
             
-            % MSE
+            % MSE ---
             interpNMEMpdfact = interp1(kl_info_nmem.x,kl_info_nmem.pdf_y,x_NMEM');
-
             mse_nmem_test = sample_vec(k)^(-1)*sum((pdf_NMEM' - interpNMEMpdfact).^2);
             
-            % end of KL ---------------------------------------------------
-            
-            
+            %%%%%%%%%%%%%%%%%%%%% store meta data %%%%%%%%%%%%%%%%%%%%%%%%%
+
             % read in actual distribution
             rndom.dist_list();
             
             % Create final answer file
-            rndom.filename = sprintf(['D_', char(rndom.dist_name),'_T_','%d', '_S_','%d'],i, rndom.Ns);
+            rndom.filename = sprintf(['D_', char(rndom.dist_name), ...
+                '_T_','%d', '_S_','%d'],i, rndom.Ns);
             
             disp([char(actual.dist_name),...
                 ', Trial: ',num2str(i),'/', num2str(trials), ...
                 ' sample size: ',num2str(sample_vec(k)), ...
-                ' failSE: ', num2str(fail_nse(k,i,j)), ' failNMEM: ', num2str(fail_nmem(k,i,j))])
-            
+                ' failSE: ', num2str(fail_nse(k,i,j)), ' failNMEM: ', ...
+                num2str(fail_nmem(k,i,j))])
+
             % store time of computation
             cpu_vec_se(k,i) = tcpuSE;
             cpu_vec_nmem(k,i) = tcpuNMEM;
@@ -358,8 +423,6 @@ for j = 1:length(distribution_vector)
             mse_vec_nmem(k,i) =  mse_nmem_test;
             
         end
-        % track time to generate estimates for a sample range per trial
-        toc
     end
 
     % cpu time
@@ -380,9 +443,61 @@ for j = 1:length(distribution_vector)
     cpu_nse = cpu_vec_se;
     cpu_nmem = cpu_vec_nmem;
 
-    % build data table ----------------------------------------------------
+    %%%%%%%%%%%%%%%%%%%%%%% build data table %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    % MSE
+    % Block Scale and Size
+    for k = 1:length(sample_vec)
+        figure('Name',['Scale  per Block: ',convertStringsToChars(distribution_vector(j)),'S: ',num2str(sample_vec(k))])
+        hold on;
+        for i = 1:trials
+            block_scale_nse = block_scale_all{k,i};
+            n_block = length(block_scale_nse);
+            n_vec = [1:length(block_scale_nse)] .* (1/n_block);
+
+            plot(n_vec, block_scale_nse, '-r')
+            xlabel('Percent of Estimate Range')
+            ylabel('Block Scale')
+        end
+    end
+
+    for k = 1:length(sample_vec)
+        figure('Name',['Size  per Block: ',convertStringsToChars(distribution_vector(j)),'S: ',num2str(sample_vec(k))])
+        hold on;
+        for i = 1:trials
+            block_size_nse = block_size_all{k,i};
+            n_block = length(block_size_nse);
+            n_vec = [1:length(block_size_nse)] .* (1/n_block);
+
+            plot(n_vec, block_size_nse, '-r')
+            xlabel('Percent of Estimate Range')
+            ylabel('Block Size')
+        end
+    end
+
+    % MSE: Per Block
+    for k = 1:length(sample_vec)
+        figure('Name',['MSE per Block: ',convertStringsToChars(distribution_vector(j)),'S: ',num2str(sample_vec(k))])
+        hold on;
+        for i = 1:trials
+            block_mse_nse = mse_dists_nse{k,i};
+
+            n_block_nse = length(block_mse_nse);
+            n_vec_nse = [1:length(block_mse_nse)] .* (1/n_block_nse);
+
+            block_mse_nmem = mse_dists_nmem{k,i};
+
+            n_block_nmem = length(block_mse_nmem);
+            n_vec_nmem = [1:length(block_mse_nmem)] .* (1/n_block_nmem);
+
+            plot(n_vec_nse, block_mse_nse, '-r')
+            plot(n_vec_nmem, block_mse_nmem, '-b')
+            xlabel('Percent of Estimate Range')
+            ylabel('MSE per Block')
+        end
+    end
+
+
+    % MSE: Full Distribution
     temp = vertcat(misc_functions.reshape_groups(sample_vec',mse_vec_se),...
     misc_functions.reshape_groups(sample_vec',mse_vec_nmem));
     sample_power = temp(:,1);

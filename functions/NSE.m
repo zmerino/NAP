@@ -23,19 +23,23 @@ classdef NSE
         nBlocks;
         N;
         binN;
-        LG_max;
-        LG_sum;
         T;
         BRlevel;
         BR0;
+        % estimate data
+        blocks_x;
+        blocks_pdf;
+        blocks_cdf;
+        block_indx;
+        % meta data
+        LG;
+        LG_max;
+        LG_sum;
+        block_size;
+        block_scale;
     end
     methods
-
-        %         function [obj.failed, obj.sx, obj.sPDF, obj.sCDF, u, sqr, obj.nBlocks, N, ...
-        %                 obj.binN, LG_max, LG_sum, T, obj.BRlevel, BR0]...
-        %                 = stitch(obj, inputSample) % for visualization
-
-        function [obj] = stitch(obj, inputSample) % for visualization
+        function [obj] = stitch(obj, inputSample)
 
             % initialze the obj.failed trip flag to false
             obj.failed = 0;
@@ -239,22 +243,9 @@ classdef NSE
                 blockShift(b) = 0.5*( x(kU) + x(kL) );          % REMEMBER x is sorted!
             end
 
-            % ----------------------------------------------------------- for checking
-            if( plt_blocksize )
-                t = 1:obj.nBlocks;
-                figure('Name','BlockScale')
-                plot(t,blockScale,'-k');
-                title('Length of each block with respect to x variable');
-                ylabel('Length of Block','Interpreter','latex')
-                xlabel('Block Index','Interpreter','latex')
-                title('Length Block with Respect to $x$','Interpreter','latex')
-
-                figure('Name','BlockSize')
-                plot(t,blockSize,'-k');
-                ylabel('Number of Data Points','Interpreter','latex')
-                xlabel('Block Index','Interpreter','latex')
-                title('Data Points per Block','Interpreter','latex')
-            end
+            % track meta data
+            obj.block_size = blockSize;
+            obj.block_scale = blockScale;
 
             % report with error checking      section 10
             if( obj.nBlocks == 1 )
@@ -297,17 +288,14 @@ classdef NSE
                 bounds{b} = tempStruc;
             end
             % run PDFestimator      section 13
-            tic
-
+            
             % initialize vector to hold all lagrainge mutiplers per block
             LG = zeros(1,obj.nBlocks);
             parfor b=1:obj.nBlocks
                 lagrange = [];
                 for t=1:nTargets
-                    %                     tempStruc = struct('SURDtarget',targetCoverage(t));
                     try
-                        [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b}, bounds{b});
-%                         
+                        [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b}, bounds{b});    
                     catch
                         warning(['Problem using function.  Assigning a value of 0.',' t: ',num2str(t),' b: ',num2str(b)]);
                         lagrange = 0;
@@ -318,6 +306,9 @@ classdef NSE
                     LG(1,b) = size(lagrange,1);
                 end
             end
+
+            % track meta data
+            obj.LG = LG;
             obj.LG_max = max(LG);
             obj.LG_sum = sum(LG);
 
@@ -361,6 +352,10 @@ classdef NSE
             % Begin: stitch blocks together
             %/////////////////////////////////////////////////////////////////////////
             % ------------------------------ for debugging: quick look at the sections
+            obj.blocks_x = blockX;
+            obj.blocks_pdf = blockPDF;
+            obj.blocks_cdf = blockCDF;
+            obj.block_indx = indexList;
             if plt_blockpdf
                 figure('Name','plt_blockpdf')
                 hold on
