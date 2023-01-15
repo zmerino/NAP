@@ -26,9 +26,9 @@ actual.generate_data = false;
 % script switching board
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   24; %<---- maximum exponent to generate samples
+max_pow =                   10; %<---- maximum exponent to generate samples
 min_pow =                   6; %<---- minimum exponent to generate samples
-trials =                    1   ;  %<--- trials to run to generate heuristics for programs
+trials =                    3   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -245,18 +245,18 @@ for j = 1:length(distribution_vector)
             block_size_all{k,i} = nse.block_size;
 
             % Stitching ---
-%             figure('Name','plt_blockpdf')
-%             hold on
-%             for b=1:length(nse.block_indx)
-%                 plot( nse.blocks_x{nse.block_indx(b)} , nse.blocks_pdf{nse.block_indx(b)} )
-%             end
-%             ylabel('$\hat{f}(x)$','Interpreter','latex')
-%             xlabel('$x$','Interpreter','latex')
-%             if max( nse.blocks_x{nse.block_indx(length(nse.block_indx))}) < 1.1
-%                 ylim([0,6])
-%             else
-%                 ylim([0,1])
-%             end
+            figure('Name','plt_blockpdf')
+            hold on
+            for b=1:length(nse.block_indx)
+                plot( nse.blocks_x{nse.block_indx(b)} , nse.blocks_pdf{nse.block_indx(b)} )
+            end
+            ylabel('$\hat{f}(x)$','Interpreter','latex')
+            xlabel('$x$','Interpreter','latex')
+            if max( nse.blocks_x{nse.block_indx(length(nse.block_indx))}) < 1.1
+                ylim([0,6])
+            else
+                ylim([0,1])
+            end
 
             
             % NMEM --------------------------------------------------------

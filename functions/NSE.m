@@ -292,6 +292,7 @@ classdef NSE
             % initialize vector to hold all lagrainge mutiplers per block
             LG = zeros(1,obj.nBlocks);
             parfor b=1:obj.nBlocks
+%             for b=1:obj.nBlocks
                 lagrange = [];
                 for t=1:nTargets
                     try
