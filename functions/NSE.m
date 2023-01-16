@@ -1,19 +1,34 @@
 classdef NSE
     properties (Constant)
-        max_bs = 100000;
+%     properties (SetAccess = public)
+%         max_bs = 100000;
+%         p1 = 1;
+%         p2 = 0.55;
+%         p3 = 1;
+%         p4 = 0.33;
+%         p5 = 2;
+%         p6 = 0.0625;
+%         p7 = 0.5;
+%         p8 = 40;
         p1 = 1;
         p2 = 0.55;
         p3 = 1;
         p4 = 0.33;
         p5 = 2;
-        p6 = 0.0625;
+        p6 = 0.625;
         p7 = 0.5;
         p8 = 40;
-        p = [NSE.p1,NSE.p2,NSE.p3,NSE.p4,NSE.p5,NSE.p6,NSE.p7,NSE.p8];
+        % 1, 0.55, 1, 0.33, 2, 0.0625, 0.5, 40
+%         p = [NSE.p1,NSE.p2,NSE.p3,NSE.p4,NSE.p5,NSE.p6,NSE.p7,NSE.p8];
         % boot strap parameters to be added????
+    end
+    properties (SetAccess = public)
+        max_bs=1e6;
     end
     properties
         % possible outputs
+        p = [NSE.p1,NSE.p2,NSE.p3,NSE.p4,NSE.p5,NSE.p6,NSE.p7,NSE.p8];
+%         max_bs=1e6;
         failed;
         sx;
         sPDF;
@@ -398,6 +413,19 @@ classdef NSE
                 xStitch = obj.sx(~Lnot);                          % within overlap region
                 k0 = length(xStitch);
                 if( k0 < 1 ) %51 <------------------------------ currently very small!
+
+                    randColor = rand(length(indexList),3);
+                    figure('Name','input blocks')
+                    hold on;
+                    for nb=1:length(indexList)-1
+                        block_min = min(blockX{indexList(nb)});
+                        block_max = max(blockX{indexList(nb)});
+                        disp(['original block: ',num2str(nb), ' (',num2str(block_min),', ',num2str(block_max),')'])
+%                         plot([block_min,block_max],[2*nb,2*nb],'-o','Color',randColor(nb,:))
+                        plot([block_min,block_max],[1*nb,1*nb],'-o','Color',randColor(nb,:))
+
+                    end
+
                     disp(['    left block # = ',num2str(b)]);
                     disp(['   right block # = ',num2str(b+1)]);
                     disp(['            xmax = ',num2str(xmax)]);

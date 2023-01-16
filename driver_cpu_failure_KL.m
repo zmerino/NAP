@@ -26,9 +26,9 @@ actual.generate_data = false;
 % script switching board
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   10; %<---- maximum exponent to generate samples
-min_pow =                   6; %<---- minimum exponent to generate samples
-trials =                    3   ;  %<--- trials to run to generate heuristics for programs
+max_pow =                   18; %<---- maximum exponent to generate samples
+min_pow =                   18; %<---- minimum exponent to generate samples
+trials =                    1   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -201,6 +201,7 @@ for j = 1:length(distribution_vector)
             % NSE ---------------------------------------------------------
             % nse object instantiation
             nse = NSE;
+            nse.max_bs = 1e3;
             nse = nse.stitch(sample);
             
             % extract relevant parameters from object after stich() method
@@ -540,6 +541,10 @@ for j = 1:length(distribution_vector)
     global_table = [global_table; dist_table];
 
 end
+
+
+
+
 
 figure('Name','Advanced Box Plot')
 b = boxchart(log(global_table.sample_power)/log(2), global_table.mse, 'GroupByColor',global_table.estimator);
