@@ -26,7 +26,7 @@ actual.generate_data = false;
 % script switching board
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   19; %<---- maximum exponent to generate samples
+max_pow =                   24; %<---- maximum exponent to generate samples
 min_pow =                   19; %<---- minimum exponent to generate samples
 trials =                    1   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
