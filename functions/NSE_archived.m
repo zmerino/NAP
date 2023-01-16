@@ -1,22 +1,34 @@
 classdef NSE
     properties (Constant)
+%     properties (SetAccess = public)
 %         max_bs = 100000;
+%         p1 = 1;
+%         p2 = 0.55;
+%         p3 = 1;
+%         p4 = 0.33;
+%         p5 = 2;
+%         p6 = 0.0625;
+%         p7 = 0.5;
+%         p8 = 40;
         p1 = 1;
         p2 = 0.55;
         p3 = 1;
         p4 = 0.33;
         p5 = 2;
-%         p6 = 0.0625;
-        p6 = 0.625;
+        p6 = 0.0625;
         p7 = 0.5;
         p8 = 40;
+        % 1, 0.55, 1, 0.33, 2, 0.0625, 0.5, 40
+%         p = [NSE.p1,NSE.p2,NSE.p3,NSE.p4,NSE.p5,NSE.p6,NSE.p7,NSE.p8];
+        % boot strap parameters to be added????
     end
     properties (SetAccess = public)
-        max_bs=1e5;
+        max_bs=1e6;
     end
     properties
         % possible outputs
         p = [NSE.p1,NSE.p2,NSE.p3,NSE.p4,NSE.p5,NSE.p6,NSE.p7,NSE.p8];
+%         max_bs=1e6;
         failed;
         sx;
         sPDF;
