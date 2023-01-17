@@ -1,0 +1,147 @@
+
+--------------------------------------------------------------------------------
+          Segmentation violation detected at 2023-01-15 21:00:19 -0500
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : UTF-8
+  Deployed                 : false
+  GNU C Library            : 2.28 stable
+  Graphics Driver          : Uninitialized software 
+  Graphics card 1          : 0x102b ( 0x102b ) 0x534 Version 0.0.0.0 (0-0-0)
+  Java Version             : Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot(TM) 64-Bit Server VM mixed mode
+  MATLAB Architecture      : glnxa64
+  MATLAB Entitlement ID    : 1302402
+  MATLAB Root              : /apps/pkg/matlab/R2022b
+  MATLAB Version           : 9.13.0.2049777 (R2022b)
+  OpenGL                   : software
+  Operating System         : "Red Hat Enterprise Linux release 8.3 (Ootpa)"
+  Process ID               : 2485498
+  Processor ID             : x86 Family 6 Model 63 Stepping 2, GenuineIntel
+  Session Key              : 289d5c7d-3d75-40f9-b93c-ed9a1063a168
+  Window System            : No active display
+
+Fault Count: 1
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR 0 interpret' id 22753931425536
+
+Register State (from fault):
+  RAX = 0000000000000d8e  RBX = 000014b1cbff8390
+  RCX = 00000000007fffff  RDX = 0000000000000d8e
+  RSP = 000014b1cbff8390  RBP = 000014b1cfff8aa0
+  RSI = 000014b09bffe020  RDI = 000014b1cbff8390
+
+   R8 = 000014b0b45cbb70   R9 = 0000000000000007
+  R10 = 0000000000000000  R11 = 0000000000000000
+  R12 = 000014b1cfff8440  R13 = 0000000000000001
+  R14 = 000014b1cfff89a0  R15 = 000014b0c9a06a20
+
+  RIP = 000014b0c9a2d593  EFL = 0000000000010297
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x000014b0c9a2d593 /users/zmerino/nse_versions/nse3/compile_nmem_mv/EstimatePDF.mexa64+00075155
+[  1] 0x000014b0c9a2b7ee /users/zmerino/nse_versions/nse3/compile_nmem_mv/EstimatePDF.mexa64+00067566 mexFunctionAdapter+00000606
+[  2] 0x000014b20dfc7ae7      /apps/pkg/matlab/R2022b/bin/glnxa64/libmex.so+00858855
+[  3] 0x000014b20dfc7e6a      /apps/pkg/matlab/R2022b/bin/glnxa64/libmex.so+00859754
+[  4] 0x000014b20dfb2680      /apps/pkg/matlab/R2022b/bin/glnxa64/libmex.so+00771712
+[  5] 0x000014b20e72267d /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_dispatcher.so+01349245 _ZN8Mfh_file20dispatch_file_commonEMS_FviPP11mxArray_tagiS2_EiS2_iS2_+00000173
+[  6] 0x000014b20e72369c /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_dispatcher.so+01353372
+[  7] 0x000014b20e723a71 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_dispatcher.so+01354353 _ZN8Mfh_file8dispatchEiPSt10unique_ptrI11mxArray_tagN6matrix6detail17mxDestroy_deleterEEiPPS1_+00000033
+[  8] 0x000014b20dbd9004 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+02260996
+[  9] 0x000014b20dbd9853 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+02263123
+[ 10] 0x000014b1fd203914  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+10406164
+[ 11] 0x000014b1fd1f6880  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+10352768
+[ 12] 0x000014b1fd192762  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+09942882
+[ 13] 0x000014b1fcef43c0  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07197632
+[ 14] 0x000014b1fcef66b4  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07206580
+[ 15] 0x000014b1fcef3bf9  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07195641
+[ 16] 0x000014b1fcf0555f  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07267679
+[ 17] 0x000014b1fcf05fd9  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07270361
+[ 18] 0x000014b1fcef3a14  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07195156
+[ 19] 0x000014b1fcef3b06  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07195398
+[ 20] 0x000014b1fd0224ee  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+08434926
+[ 21] 0x000014b1fd026461  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+08451169
+[ 22] 0x000014b20dd29688 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+03638920
+[ 23] 0x000014b20dbc326d /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+02171501
+[ 24] 0x000014b20dbc5cc5 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+02182341
+[ 25] 0x000014b20e72267d /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_dispatcher.so+01349245 _ZN8Mfh_file20dispatch_file_commonEMS_FviPP11mxArray_tagiS2_EiS2_iS2_+00000173
+[ 26] 0x000014b20e72369c /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_dispatcher.so+01353372
+[ 27] 0x000014b20e723a71 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_dispatcher.so+01354353 _ZN8Mfh_file8dispatchEiPSt10unique_ptrI11mxArray_tagN6matrix6detail17mxDestroy_deleterEEiPPS1_+00000033
+[ 28] 0x000014b20dbd9004 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+02260996
+[ 29] 0x000014b20dbd9853 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+02263123
+[ 30] 0x000014b1fd203914  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+10406164
+[ 31] 0x000014b1fd1f69dd  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+10353117
+[ 32] 0x000014b1fd1927b2  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+09942962
+[ 33] 0x000014b1fcef43c0  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07197632
+[ 34] 0x000014b1fcef66b4  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07206580
+[ 35] 0x000014b1fcef3bf9  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07195641
+[ 36] 0x000014b1fcf0555f  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07267679
+[ 37] 0x000014b1fcf05fd9  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07270361
+[ 38] 0x000014b1fcef3a14  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07195156
+[ 39] 0x000014b1fcef3b06  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07195398
+[ 40] 0x000014b1fd0224ee  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+08434926
+[ 41] 0x000014b1fd026461  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+08451169
+[ 42] 0x000014b20dd29688 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+03638920
+[ 43] 0x000014b20dc2cebf /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+02604735
+[ 44] 0x000014b20dc33bf7 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+02632695
+[ 45] 0x000014b20dcf257f /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+03413375
+[ 46] 0x000014b20dcf2b60 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+03414880
+[ 47] 0x000014b1b279f954 /apps/pkg/matlab/R2022b/bin/glnxa64/builtins/m_interpreter/mwm_interpreter_builtinimpl.so+00280916
+[ 48] 0x000014b20e698da4 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_dispatcher.so+00785828
+[ 49] 0x000014b20e69baa8 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_dispatcher.so+00797352
+[ 50] 0x000014b20e67c9f0 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_dispatcher.so+00670192
+[ 51] 0x000014b20e67ccf1 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_dispatcher.so+00670961 _ZN18Mfh_MATLAB_fn_impl8dispatchEiPSt10unique_ptrI11mxArray_tagN6matrix6detail17mxDestroy_deleterEEiPPS1_+00000033
+[ 52] 0x000014b20dbd9004 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+02260996
+[ 53] 0x000014b20dbd9853 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+02263123
+[ 54] 0x000014b1fd203914  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+10406164
+[ 55] 0x000014b1fd1f69dd  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+10353117
+[ 56] 0x000014b1fd1927b2  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+09942962
+[ 57] 0x000014b1fcef43c0  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07197632
+[ 58] 0x000014b1fcef66b4  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07206580
+[ 59] 0x000014b1fcef3bf9  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07195641
+[ 60] 0x000014b1fcf0555f  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07267679
+[ 61] 0x000014b1fcf05fd9  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07270361
+[ 62] 0x000014b1fcef3a14  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07195156
+[ 63] 0x000014b1fcef3b06  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+07195398
+[ 64] 0x000014b1fd0224ee  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+08434926
+[ 65] 0x000014b1fd026461  /apps/pkg/matlab/R2022b/bin/glnxa64/libmwm_lxe.so+08451169
+[ 66] 0x000014b20dd29688 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+03638920
+[ 67] 0x000014b20dc2cebf /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+02604735
+[ 68] 0x000014b20dc33bf7 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+02632695
+[ 69] 0x000014b20dcd9685 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+03311237
+[ 70] 0x000014b20dcd9aee /apps/pkg/matlab/R2022b/bin/glnxa64/libmwlxemainservices.so+03312366
+[ 71] 0x000014b20e9fe9a2    /apps/pkg/matlab/R2022b/bin/glnxa64/libmwiqm.so+01005986 _ZN3iqm14UserEvalPlugin7executeEP15inWorkSpace_tag+00000754
+[ 72] 0x000014b20e9d944e    /apps/pkg/matlab/R2022b/bin/glnxa64/libmwiqm.so+00853070
+[ 73] 0x000014b20e9a5ce2    /apps/pkg/matlab/R2022b/bin/glnxa64/libmwiqm.so+00642274
+[ 74] 0x000014b20e0946f1 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwbridge.so+00493297
+[ 75] 0x000014b20e094af3 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwbridge.so+00494323
+[ 76] 0x000014b20e0afc32 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwbridge.so+00605234 _Z22mnGetCommandLineBufferbRbN7mwboost8optionalIKP15inWorkSpace_tagEEbRKNS0_9function2IN6mlutil14cmddistributor17inExecutionStatusERKNSt7__cxx1112basic_stringIDsSt11char_traitsIDsESaIDsEEES4_EE+00000210
+[ 77] 0x000014b20e0afe73 /apps/pkg/matlab/R2022b/bin/glnxa64/libmwbridge.so+00605811 _Z8mnParserv+00000435
+[ 78] 0x000014b20e879baf    /apps/pkg/matlab/R2022b/bin/glnxa64/libmwmcr.so+00879535
+[ 79] 0x000014b2272ef23d    /apps/pkg/matlab/R2022b/bin/glnxa64/libmwmvm.so+02839101 _ZN14cmddistributor15PackagedTaskIIP10invokeFuncIN7mwboost8functionIFvvEEEEENS2_10shared_ptrINS2_13unique_futureIDTclfp_EEEEEERKT_+00000061
+[ 80] 0x000014b2272ef339    /apps/pkg/matlab/R2022b/bin/glnxa64/libmwmvm.so+02839353 _ZNSt17_Function_handlerIFN7mwboost3anyEvEZN14cmddistributor15PackagedTaskIIP10createFuncINS0_8functionIFvvEEEEESt8functionIS2_ET_EUlvE_E9_M_invokeERKSt9_Any_data+00000025
+[ 81] 0x000014b20e9f899d    /apps/pkg/matlab/R2022b/bin/glnxa64/libmwiqm.so+00981405 _ZN3iqm18PackagedTaskPlugin7executeEP15inWorkSpace_tag+00000093
+[ 82] 0x000014b20e8753b5    /apps/pkg/matlab/R2022b/bin/glnxa64/libmwmcr.so+00861109
+[ 83] 0x000014b20e9d944e    /apps/pkg/matlab/R2022b/bin/glnxa64/libmwiqm.so+00853070
+[ 84] 0x000014b20e9a4052    /apps/pkg/matlab/R2022b/bin/glnxa64/libmwiqm.so+00634962
+[ 85] 0x000014b20e9a49c3    /apps/pkg/matlab/R2022b/bin/glnxa64/libmwiqm.so+00637379
+[ 86] 0x000014b20e864a3e    /apps/pkg/matlab/R2022b/bin/glnxa64/libmwmcr.so+00793150
+[ 87] 0x000014b20e864635    /apps/pkg/matlab/R2022b/bin/glnxa64/libmwmcr.so+00792117
+[ 88] 0x000014b20e86488d    /apps/pkg/matlab/R2022b/bin/glnxa64/libmwmcr.so+00792717
+[ 89] 0x000014b22560142f /apps/pkg/matlab/R2022b/bin/glnxa64/libmwboost_thread.so.1.75.0+00037935
+[ 90] 0x000014b2266b617a                             /lib64/libpthread.so.0+00033146
+[ 91] 0x000014b22620fdf3                                   /lib64/libc.so.6+01035763 clone+00000067
+
+
+This error was detected while a MEX-file was running. If the MEX-file
+is not an official MathWorks function, please examine its source code
+for errors. Please consult the External Interfaces Guide for information
+on debugging MEX-files.
