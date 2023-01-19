@@ -47,7 +47,6 @@ distribution_vector = ["Normal"];
 distribution = distribution_vector';
 names = ["Normal"];
 
-
 % find amy of the strings in "str" inside of "distribtuionVector"
 str = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
 flag = zeros(1,length(distribution_vector));
@@ -204,18 +203,18 @@ for j = 1:length(distribution_vector)
             block_size_all{k,i} = nse.block_size;
 
             % Stitching ---
-%             figure('Name','plt_blockpdf')
-%             hold on
-%             for b=1:length(nse.block_indx)
-%                 plot( nse.blocks_x{nse.block_indx(b)} , nse.blocks_pdf{nse.block_indx(b)} )
-%             end
-%             ylabel('$\hat{f}(x)$','Interpreter','latex')
-%             xlabel('$x$','Interpreter','latex')
-%             if max( nse.blocks_x{nse.block_indx(length(nse.block_indx))}) < 1.1
-%                 ylim([0,6])
-%             else
-%                 ylim([0,1])
-%             end
+            figure('Name','plt_blockpdf')
+            hold on
+            for b=1:length(nse.block_indx)
+                plot( nse.blocks_x{nse.block_indx(b)} , nse.blocks_pdf{nse.block_indx(b)} )
+            end
+            ylabel('$\hat{f}(x)$','Interpreter','latex')
+            xlabel('$x$','Interpreter','latex')
+            if max( nse.blocks_x{nse.block_indx(length(nse.block_indx))}) < 1.1
+                ylim([0,6])
+            else
+                ylim([0,1])
+            end
 
             
             % NMEM --------------------------------------------------------
@@ -404,65 +403,36 @@ for j = 1:length(distribution_vector)
 
     %%%%%%%%%%%%%%%%%%%%%%% build data table %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%     % Block Scale and Size
-%     for k = 1:length(sample_vec)
-%         figure('Name',['Scale  per Block: ',convertStringsToChars(distribution_vector(j)),'S: ',num2str(sample_vec(k))])
-%         hold on;
-%         for i = 1:trials
-%             block_scale_nse = block_scale_all{k,i};
-%             n_block = length(block_scale_nse);
-%             n_vec = [1:length(block_scale_nse)] .* (1/n_block);
-% 
-%             plot(n_vec, block_scale_nse, '-r')
-%             xlabel('Percent of Estimate Range')
-%             ylabel('Block Scale')
-%         end
-%     end
-% 
-%     for k = 1:length(sample_vec)
-%         figure('Name',['Size  per Block: ',convertStringsToChars(distribution_vector(j)),'S: ',num2str(sample_vec(k))])
-%         hold on;
-%         for i = 1:trials
-%             block_size_nse = block_size_all{k,i};
-%             n_block = length(block_size_nse);
-%             n_vec = [1:length(block_size_nse)] .* (1/n_block);
-% 
-%             plot(n_vec, block_size_nse, '-r')
-%             xlabel('Percent of Estimate Range')
-%             ylabel('Block Size')
-%         end
-%     end
-
-    % MSE: Per Block
+    % Block Scale and Size
     for k = 1:length(sample_vec)
-        figure('Name',['MSE per Block: ',convertStringsToChars(distribution_vector(j)),'S: ',num2str(sample_vec(k))])
+        figure('Name',['Scale  per Block: ',convertStringsToChars(distribution_vector(j)),'S: ',num2str(sample_vec(k))])
         hold on;
         for i = 1:trials
-            block_mse_nse = mse_dists_nse{k,i};
+            block_scale_nse = block_scale_all{k,i};
+            n_block = length(block_scale_nse);
+            n_vec = [1:length(block_scale_nse)] .* (1/n_block);
 
-            n_block_nse = length(block_mse_nse);
-            n_vec_nse = [1:length(block_mse_nse)] .* (1/n_block_nse);
-
-            block_mse_nmem = mse_dists_nmem{k,i};
-
-            n_block_nmem = length(block_mse_nmem);
-            n_vec_nmem = [1:length(block_mse_nmem)] .* (1/n_block_nmem);
-
-            plot(n_vec_nse, block_mse_nse, '-r')
-            plot(n_vec_nmem, block_mse_nmem, '-b')
+            plot(n_vec, block_scale_nse, '-r')
             xlabel('Percent of Estimate Range')
-            ylabel('MSE per Block')
+            ylabel('Block Scale')
         end
     end
 
-    % MSE: Per Block - Mean and Variance
-
-    
     for k = 1:length(sample_vec)
-            avg = mse_dists_nse{k,:}
-            test = 'test'
+        figure('Name',['Size  per Block: ',convertStringsToChars(distribution_vector(j)),'S: ',num2str(sample_vec(k))])
+        hold on;
+        for i = 1:trials
+            block_size_nse = block_size_all{k,i};
+            n_block = length(block_size_nse);
+            n_vec = [1:length(block_size_nse)] .* (1/n_block);
+
+            plot(n_vec, block_size_nse, '-r')
+            xlabel('Percent of Estimate Range')
+            ylabel('Block Size')
+        end
     end
 
+    % MSE: Per Block
     for k = 1:length(sample_vec)
         figure('Name',['MSE per Block: ',convertStringsToChars(distribution_vector(j)),'S: ',num2str(sample_vec(k))])
         hold on;

@@ -18,6 +18,9 @@ fid = fopen(full_file, 'w');
 fprintf(fid,['Cpu failure distance script started on: ',datestr(datetime(now,'ConvertFrom','datenum')),'/n']);
 fclose(fid);
 
+dir_name = fullfile('data','estimates');
+status = mkdir(dir_name);
+
 % class assignment
 actual = distributions;
 actual.generate_data = false;
@@ -26,9 +29,9 @@ actual.generate_data = false;
 % script switching board
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   12; %<---- maximum exponent to generate samples
-min_pow =                   10; %<---- minimum exponent to generate samples
-trials =                    5   ;  %<--- trials to run to generate heuristics for programs
+max_pow =                   15; %<---- maximum exponent to generate samples
+min_pow =                   12; %<---- minimum exponent to generate samples
+trials =                    50   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -434,58 +437,128 @@ for j = 1:length(distribution_vector)
 %     end
 
     % MSE: Per Block
+%     for k = 1:length(sample_vec)
+%         figure('Name',['MSE per Block: ',convertStringsToChars(distribution_vector(j)),'S: ',num2str(sample_vec(k))])
+%         hold on;
+%         for i = 1:trials
+%             block_mse_nse = mse_dists_nse{k,i};
+% 
+%             n_block_nse = length(block_mse_nse);
+%             n_vec_nse = [1:length(block_mse_nse)] .* (1/n_block_nse);
+% 
+%             block_mse_nmem = mse_dists_nmem{k,i};
+% 
+%             n_block_nmem = length(block_mse_nmem);
+%             n_vec_nmem = [1:length(block_mse_nmem)] .* (1/n_block_nmem);
+% 
+%             plot(n_vec_nse, block_mse_nse, '-r')
+%             plot(n_vec_nmem, block_mse_nmem, '-b')
+%             xlabel('Percent of Estimate Range')
+%             ylabel('MSE per Block')
+%         end
+%     end
+
+%     for k = 1:length(sample_vec)
+%         figure('Name',['MSE per Block: ',convertStringsToChars(distribution_vector(j)),'S: ',num2str(sample_vec(k))])
+%         hold on;
+%         for i = 1:trials
+%             block_mse_nse = mse_dists_nse{k,i};
+% 
+%             n_block_nse = length(block_mse_nse);
+%             n_vec_nse = [1:length(block_mse_nse)] .* (1/n_block_nse);
+% 
+%             block_mse_nmem = mse_dists_nmem{k,i};
+% 
+%             n_block_nmem = length(block_mse_nmem);
+%             n_vec_nmem = [1:length(block_mse_nmem)] .* (1/n_block_nmem);
+% 
+%             plot(n_vec_nse, block_mse_nse, '-r')
+%             plot(n_vec_nmem, block_mse_nmem, '-b')
+%             xlabel('Percent of Estimate Range')
+%             ylabel('MSE per Block')
+%         end
+%     end
+
+    % MSE: Per Block - Mean and Variance ----------------------------------
+
+    % check the meddian block number per sample size so that statistics are
+    % gathered for estiamtes with the same block size and the most data is
+    % returned
+    temp = zeros(length(sample_vec),trials);
     for k = 1:length(sample_vec)
-        figure('Name',['MSE per Block: ',convertStringsToChars(distribution_vector(j)),'S: ',num2str(sample_vec(k))])
-        hold on;
         for i = 1:trials
-            block_mse_nse = mse_dists_nse{k,i};
-
-            n_block_nse = length(block_mse_nse);
-            n_vec_nse = [1:length(block_mse_nse)] .* (1/n_block_nse);
-
-            block_mse_nmem = mse_dists_nmem{k,i};
-
-            n_block_nmem = length(block_mse_nmem);
-            n_vec_nmem = [1:length(block_mse_nmem)] .* (1/n_block_nmem);
-
-            plot(n_vec_nse, block_mse_nse, '-r')
-            plot(n_vec_nmem, block_mse_nmem, '-b')
-            xlabel('Percent of Estimate Range')
-            ylabel('MSE per Block')
+            %store length of array = block #
+            temp(k,i) = length(mse_dists_nse{k,i});
         end
     end
-
-    % MSE: Per Block - Mean and Variance
+    nb_median = round(median(temp, 2)); % rounding just incase non-integer
 
     
+    mse_per_trials_nse = [];
+    mse_per_trials_nmem = [];
+    avg_per_sample_nse = cell(length(sample_vec));
+    stdev_per_sample_nse = cell(length(sample_vec));
+    avg_per_sample_nmem = cell(length(sample_vec));
+    stdev_per_sample_nmem = cell(length(sample_vec));
+    mse_avg_nse = cell(4,length(sample_vec));
+    mse_avg_nmem = cell(4,length(sample_vec));
     for k = 1:length(sample_vec)
-            avg = mse_dists_nse{k,:}
-            test = 'test'
+            % stack data block per trials for all estimates with the
+            % median block number
+            for i = 1:trials
+                if nb_median(k) == length(mse_dists_nse{k,i})
+                    mse_per_trials_nse = [mse_per_trials_nse;mse_dists_nse{k,i}];
+                end
+            end
+            % find mean/std dev per trial for each block
+            avg_per_sample_nse{k} = mean(mse_per_trials_nse,1);
+            stdev_per_sample_nse{k} = std(mse_per_trials_nse,1);
+            
+            % stack data block per trials for all estimates with the
+            % median block number
+            for i = 1:trials
+                if nb_median(k) == length(mse_dists_nmem{k,i})
+                    mse_per_trials_nmem = [mse_per_trials_nmem;mse_dists_nmem{k,i}];
+                end
+            end
+            % find mean/std dev per trial for each block
+            avg_per_sample_nmem{k} = mean(mse_per_trials_nmem,1);
+            stdev_per_sample_nmem{k} = std(mse_per_trials_nmem,1);
+
+            % store relevant curves
+            mse_avg_nse{1,k} = [1:length(avg_per_sample_nse{k})];
+            mse_avg_nse{2,k} = avg_per_sample_nse{k};
+            mse_avg_nse{3,k} = avg_per_sample_nse{k} - stdev_per_sample_nse{k};
+            mse_avg_nse{4,k} = avg_per_sample_nse{k} + stdev_per_sample_nse{k};
+
+            mse_avg_nmem{1,k} = [1:length(avg_per_sample_nmem{k})];
+            mse_avg_nmem{2,k} = avg_per_sample_nmem{k};
+            mse_avg_nmem{3,k} = avg_per_sample_nmem{k} - stdev_per_sample_nmem{k};
+            mse_avg_nmem{4,k} = avg_per_sample_nmem{k} + stdev_per_sample_nmem{k};
+
+            save(fullfile(dir_name,['MSE_nse_',num2str(distribution_vector(j)),'_s_',num2str(sample_vec(k)), '.mat']), 'mse_avg_nse')
+            save(fullfile(dir_name,['MSE_nmem_',num2str(distribution_vector(j)),'_s_',num2str(sample_vec(k)),'.mat']), 'mse_avg_nmem')
     end
 
+
     for k = 1:length(sample_vec)
-        figure('Name',['MSE per Block: ',convertStringsToChars(distribution_vector(j)),'S: ',num2str(sample_vec(k))])
+        n_vec_nse = [1:length(avg_per_sample_nse{k})];
+        n_vec_nmem = [1:length(avg_per_sample_nmem{k})];
+        figure('Name',['MSE stats per Block: ',convertStringsToChars(distribution_vector(j)),'S: ',num2str(sample_vec(k))])
         hold on;
-        for i = 1:trials
-            block_mse_nse = mse_dists_nse{k,i};
-
-            n_block_nse = length(block_mse_nse);
-            n_vec_nse = [1:length(block_mse_nse)] .* (1/n_block_nse);
-
-            block_mse_nmem = mse_dists_nmem{k,i};
-
-            n_block_nmem = length(block_mse_nmem);
-            n_vec_nmem = [1:length(block_mse_nmem)] .* (1/n_block_nmem);
-
-            plot(n_vec_nse, block_mse_nse, '-r')
-            plot(n_vec_nmem, block_mse_nmem, '-b')
-            xlabel('Percent of Estimate Range')
-            ylabel('MSE per Block')
-        end
+        % NSE
+        plot(n_vec_nse, avg_per_sample_nse{k}, '-r')
+        plot(n_vec_nse, avg_per_sample_nse{k} - stdev_per_sample_nse{k}, '--r')
+        plot(n_vec_nse, avg_per_sample_nse{k} + stdev_per_sample_nse{k}, '--r')
+        %NMEM
+        plot(n_vec_nmem, avg_per_sample_nmem{k}, '-b')
+        plot(n_vec_nmem, avg_per_sample_nmem{k} - stdev_per_sample_nmem{k}, '--b')
+        plot(n_vec_nmem, avg_per_sample_nmem{k} + stdev_per_sample_nmem{k}, '--b')
+        xlabel('Block')
+        ylabel('MSE Mean and StdDev per Block')
     end
 
-
-    % MSE: Full Distribution
+    % MSE: Full Distribution ----------------------------------------------
     temp = vertcat(misc_functions.reshape_groups(sample_vec',mse_vec_se),...
     misc_functions.reshape_groups(sample_vec',mse_vec_nmem));
     sample_power = temp(:,1);

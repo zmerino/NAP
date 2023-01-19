@@ -31,10 +31,10 @@ estimator_plot_flag =       false;   %<- true/false plot SE results on/off
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 save_graphics =             false;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   14; %<---- maximum exponent to generate samples
-min_pow =                   14; %<---- minimum exponent to generate samples
+max_pow =                   18; %<---- maximum exponent to generate samples
+min_pow =                   10; %<---- minimum exponent to generate samples
 trials =                    3   ;  %<--- trials to run to generate heuristics for programs
-step =                      1;  %<---- control synthetic rndom samples to skip being created
+step =                      4;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
 temp_max_limit =            1000; %<---- set upper limit for both
@@ -44,32 +44,15 @@ x_resolution =              1000;
 % Univariant Random Sample Generator available on zmerino's github
 cpu_type =                   '\';%<--- '\' or '/' for windows or linux
 
-% Example distribution to test %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5",...
-    "Bimodal-Normal","BirnbaumSaunders","Burr",...
-    "Exponential","Extreme-Value","Gamma","Generalized-Extreme-Value",...
-    "Generalized-Pareto","HalfNormal","Normal","Square-periodic",...
-    "tLocationScale","Uniform","Uniform-Mix","Weibull","Chisquare",...
-    "InverseGaussian","Trimodal-Normal","Stable",...
-    "Stable2","Stable3","Stable1","BirnbaumSaunders-Stable"];
 
-distribution_vector = ["Trimodal-Normal","Normal","Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto", "Uniform-Mix"];
+distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
 distribution = distribution_vector';
-names = ["Tri-Modal-Normal", "Normal", "Uniform", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Uniform-Mix"]';
+names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
 
+% distribution_vector = ["Normal"];
+% distribution = distribution_vector';
+% names = ["Normal"];
 
-distribution_vector = ["Uniform", "Uniform-Mix","Stable"];
-distribution = distribution_vector';
-names = ["Tri-Modal-Normal", "Uniform-Mix","Stable"]';
-
-
-distribution_vector = ["Trimodal-Normal", "Beta-a0p5-b0p5"];
-distribution = distribution_vector';
-names = ["Uniform", "Beta(0.5,0.5)"]';
-
-distribution_vector = ["Uniform-Mix", "Generalized-Pareto","Beta-a0p5-b0p5"];
-distribution = distribution_vector';
-names = ["Uniform-Mix", "Generalized-Pareto", "Beta(0.5,0.5)"];
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -327,6 +310,11 @@ for j = 1:length(distribution_vector)
 %             ylabel('$sqr(x)$','Interpreter','latex')
 
             toc
+            disp([char(actual.dist_name),...
+                ', Trial: ',num2str(i),'/', num2str(trials), ...
+                ' sample size: ',num2str(sample_vec(k)), ...
+                ' failSE: ', num2str(fail_nse(k,i,j)), ' failNMEM: ', ...
+                num2str(fail_nmem(k,i,j))])
         end
     end
 
