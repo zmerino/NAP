@@ -26,9 +26,9 @@ actual.generate_data = false;
 % script switching board
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   18; %<---- maximum exponent to generate samples
-min_pow =                   18; %<---- minimum exponent to generate samples
-trials =                    1   ;  %<--- trials to run to generate heuristics for programs
+max_pow =                   12; %<---- maximum exponent to generate samples
+min_pow =                   10; %<---- minimum exponent to generate samples
+trials =                    5   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -39,56 +39,14 @@ x_resolution =              1000;
 % Univariant Random Sample Generator available on zmerino's github
 cpu_type =                   '\';%<--- '\' or '/' for windows or linux
 
-% Example distribution to test %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5",...
-    "Bimodal-Normal","BirnbaumSaunders","Burr",...
-    "Exponential","Extreme-Value","Gamma","Generalized-Extreme-Value",...
-    "Generalized-Pareto","HalfNormal","Normal","Square-periodic",...
-    "tLocationScale","Uniform","Uniform-Mix","Weibull","Chisquare",...
-    "InverseGaussian","Trimodal-Normal","Stable",...
-    "Stable2","Stable3","Stable1","BirnbaumSaunders-Stable"];
-
-% distribution_vector = ["Trimodal-Normal","Normal","Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto", "Uniform-Mix", "Stable"];
-% distribution = distribution_vector';
-% names = ["Tri-Modal-Normal", "Normal", "Uniform", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Uniform-Mix", "Stable"]';
-% 
-% % For bounds Lnot = or( (obj.sx <= xmin) , (obj.sx >= xmax) ); 
-% distribution_vector = ["Trimodal-Normal","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Generalized-Pareto"];
-% distribution = distribution_vector';
-% names = ["Tri-Modal-Normal", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Generalized-Pareto"];
-% 
-% % For bounds Lnot = or( (obj.sx < xmin) , (obj.sx > xmax) );  
-% distribution_vector = ["Trimodal-Normal","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
-% distribution = distribution_vector';
-% names = ["Tri-Modal-Normal", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)"];
-
-% distribution_vector = ["Uniform", "Uniform-Mix", "Generalized-Pareto","Beta-a0p5-b0p5"];
-% distribution = distribution_vector';
-% names = ["Uniform", "Uniform-Mix", "Generalized-Pareto", "Beta(0.5,0.5)"];
-
-distribution_vector = ["Trimodal-Normal","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
+distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
 distribution = distribution_vector';
-names = ["Tri-Modal-Normal", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
-
-
-distribution_vector = ["Trimodal-Normal","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
-distribution = distribution_vector';
-names = ["Tri-Modal-Normal", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
-
-
-
+names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
 
 distribution_vector = ["Normal"];
 distribution = distribution_vector';
 names = ["Normal"];
 
-% distribution_vector = ["Trimodal-Normal","Normal"];
-% distribution = distribution_vector';
-% names = ["Tri-Modal-Normal", "Normal"];
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Main Function Call Loop used to lable plot figures
 
 % find amy of the strings in "str" inside of "distribtuionVector"
 str = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
