@@ -33,7 +33,7 @@ YexpScale = -2;
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   24; %<---- maximum exponent to generate samples
+max_pow =                   21; %<---- maximum exponent to generate samples
 min_pow =                   8; %<---- minimum exponent to generate samples
 trials =                    1000;  %<--- trials to run to generate heuristics for programs
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

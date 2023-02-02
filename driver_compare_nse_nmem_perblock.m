@@ -29,8 +29,8 @@ actual.generate_data = false;
 % script switching board
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   15; %<---- maximum exponent to generate samples
-min_pow =                   12; %<---- minimum exponent to generate samples
+max_pow =                   20; %<---- maximum exponent to generate samples
+min_pow =                   10; %<---- minimum exponent to generate samples
 trials =                    50   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
@@ -46,9 +46,9 @@ distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-
 distribution = distribution_vector';
 names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
 
-distribution_vector = ["Normal"];
-distribution = distribution_vector';
-names = ["Normal"];
+% distribution_vector = ["Normal"];
+% distribution = distribution_vector';
+% names = ["Normal"];
 
 
 % find amy of the strings in "str" inside of "distribtuionVector"
@@ -336,6 +336,9 @@ for j = 1:length(distribution_vector)
             mse_dists_nse{k,i} = block_mse_nse;
             mse_dists_nmem{k,i} = block_mse_nmem;
 
+            save(fullfile(dir_name,['MSE_nse_',num2str(distribution_vector(j)),'_s_',num2str(sample_vec(1)),'_',num2str(sample_vec(end)), '.mat']), 'mse_dists_nse')
+            save(fullfile(dir_name,['MSE_nmem_',num2str(distribution_vector(j)),'_s_',num2str(sample_vec(1)),'_',num2str(sample_vec(end)),'.mat']), 'mse_dists_nmem')
+
             
             % NMEM --------------------------------------------------------
             
@@ -493,6 +496,7 @@ for j = 1:length(distribution_vector)
     end
     nb_median = round(median(temp, 2)); % rounding just incase non-integer
 
+    save(fullfile(dir_name,['Nblocks_nse_',num2str(distribution_vector(j)), '.mat']), 'temp')
     
     mse_per_trials_nse = [];
     mse_per_trials_nmem = [];
@@ -502,7 +506,14 @@ for j = 1:length(distribution_vector)
     stdev_per_sample_nmem = cell(length(sample_vec));
     mse_avg_nse = cell(4,length(sample_vec));
     mse_avg_nmem = cell(4,length(sample_vec));
-    for k = 1:length(sample_vec)
+
+
+    for k = 1:length(sample_vec) % loop over all samples
+    
+        mse_per_trials_nse = [];
+        mse_per_trials_nmem = [];
+
+        nse_data = cell(5, trials);
             % stack data block per trials for all estimates with the
             % median block number
             for i = 1:trials
