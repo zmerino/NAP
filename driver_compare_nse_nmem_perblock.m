@@ -29,9 +29,9 @@ actual.generate_data = false;
 % script switching board
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   11; %<---- maximum exponent to generate samples
-min_pow =                   10; %<---- minimum exponent to generate samples
-trials =                    3   ;  %<--- trials to run to generate heuristics for programs
+max_pow =                   18; %<---- maximum exponent to generate samples
+min_pow =                   8; %<---- minimum exponent to generate samples
+trials =                    10   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -49,6 +49,11 @@ names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", 
 % distribution_vector = ["Normal"];
 % distribution = distribution_vector';
 % names = ["Normal"];
+
+% distribution_vector = ["Normal","Uniform"];
+% distribution = distribution_vector';
+% names = ["Normal","Uniform"];
+
 
 
 % find amy of the strings in "str" inside of "distribtuionVector"
@@ -193,27 +198,13 @@ for j = 1:length(distribution_vector)
 
             % Meta data ---
 
-            % Blocks
-%             t = 1:nse.nBlocks;
-%             figure('Name','BlockScale')
-%             plot(t,nse.block_scale,'-k');
-%             title('Length of each block with respect to x variable');
-%             ylabel('Length of Block','Interpreter','latex')
-%             xlabel('Block Index','Interpreter','latex')
-%             title('Length Block with Respect to $x$','Interpreter','latex')
-% 
-%             figure('Name','BlockSize')
-%             plot(t,nse.block_size,'-k');
-%             ylabel('Number of Data Points','Interpreter','latex')
-%             xlabel('Block Index','Interpreter','latex')
-%             title('Data Points per Block','Interpreter','latex')
-
-            
             block_scale_all{k,i} = nse.block_scale;
             block_size_all{k,i} = nse.block_size;
 
+            bs = nse.block_size;
 
             % store information about block
+
             block_size(1,k,i) = max(nse.block_size);
             block_size(2,k,i) = min(nse.block_size);
             block_size(3,k,i) = mean(nse.block_size);
@@ -270,7 +261,6 @@ for j = 1:length(distribution_vector)
             lagrange_nse(k,i,j) = sum(max_LG);
             lagrange_nmem(k,i,j) = sum(length(lagrange_multipler));
 
-            
             %%%%%%%%%%%%%%%% calculate distance metrics %%%%%%%%%%%%%%%%%%%
             kl_info_se = actual;
             kl_info_se.x = SE_x;
@@ -299,7 +289,6 @@ for j = 1:length(distribution_vector)
             [s_nmem,idx2] = datasample(pdf_NMEM',k);
                       
             % NSE ---------------------------------------------------------
-
             % KL ---
             kl_dist = actual;
             kl_dist.x = SE_x;
@@ -347,10 +336,6 @@ for j = 1:length(distribution_vector)
             mse_dists_nse{k,i} = block_mse_nse;
             mse_dists_nmem{k,i} = block_mse_nmem;
 
-            save(fullfile(dir_name,['MSE_nse_',num2str(distribution_vector(j)),'_s_',num2str(sample_vec(1)),'_',num2str(sample_vec(end)), '.mat']), 'mse_dists_nse')
-            save(fullfile(dir_name,['MSE_nmem_',num2str(distribution_vector(j)),'_s_',num2str(sample_vec(1)),'_',num2str(sample_vec(end)),'.mat']), 'mse_dists_nmem')
-
-            
             % NMEM --------------------------------------------------------
             
             % KL ---
@@ -434,8 +419,6 @@ for j = 1:length(distribution_vector)
         end
     end
     nb_median = round(median(temp, 2)); % rounding just incase non-integer
-
-    save(fullfile(dir_name,['Nblocks_nse_',num2str(distribution_vector(j)), '.mat']), 'temp')
     
     mse_per_trials_nse = [];
     mse_per_trials_nmem = [];
@@ -485,10 +468,10 @@ for j = 1:length(distribution_vector)
             mse_avg_nmem{3,k} = avg_per_sample_nmem{k} - stdev_per_sample_nmem{k};
             mse_avg_nmem{4,k} = avg_per_sample_nmem{k} + stdev_per_sample_nmem{k};
 
-            save(fullfile(dir_name,['MSE_nse_',num2str(distribution_vector(j)),'_s_',num2str(sample_vec(k)), '.mat']), 'mse_avg_nse')
-            save(fullfile(dir_name,['MSE_nmem_',num2str(distribution_vector(j)),'_s_',num2str(sample_vec(k)),'.mat']), 'mse_avg_nmem')
     end
 
+    save(fullfile(dir_name,['MSE_AVG_nse_',num2str(distribution_vector(j)),'_s_',num2str(sample_vec(1)),'_',num2str(sample_vec(end)), '.mat']), 'mse_avg_nse')
+    save(fullfile(dir_name,['MSE_AVG_nmem_',num2str(distribution_vector(j)),'_s_',num2str(sample_vec(1)),'_',num2str(sample_vec(end)),'.mat']), 'mse_avg_nmem')
 
     for k = 1:length(sample_vec)
         n_vec_nse = [1:length(avg_per_sample_nse{k})];
@@ -496,13 +479,13 @@ for j = 1:length(distribution_vector)
         figure('Name',['MSE stats per Block: ',convertStringsToChars(distribution_vector(j)),'S: ',num2str(sample_vec(k))])
         hold on;
         % NSE
-        plot(n_vec_nse, avg_per_sample_nse{k}, '-r')
-        plot(n_vec_nse, avg_per_sample_nse{k} - stdev_per_sample_nse{k}, '--r')
-        plot(n_vec_nse, avg_per_sample_nse{k} + stdev_per_sample_nse{k}, '--r')
+        plot(n_vec_nse, avg_per_sample_nse{k}, '-sr')
+        plot(n_vec_nse, avg_per_sample_nse{k} - stdev_per_sample_nse{k}, '--.r')
+        plot(n_vec_nse, avg_per_sample_nse{k} + stdev_per_sample_nse{k}, '--.r')
         %NMEM
-        plot(n_vec_nmem, avg_per_sample_nmem{k}, '-b')
-        plot(n_vec_nmem, avg_per_sample_nmem{k} - stdev_per_sample_nmem{k}, '--b')
-        plot(n_vec_nmem, avg_per_sample_nmem{k} + stdev_per_sample_nmem{k}, '--b')
+        plot(n_vec_nmem, avg_per_sample_nmem{k}, '-sb')
+        plot(n_vec_nmem, avg_per_sample_nmem{k} - stdev_per_sample_nmem{k}, '--.b')
+        plot(n_vec_nmem, avg_per_sample_nmem{k} + stdev_per_sample_nmem{k}, '--.b')
         xlabel('Block')
         ylabel('MSE Mean and StdDev per Block')
     end
@@ -553,27 +536,40 @@ for j = 1:length(distribution_vector)
     % max
     bs_max_mat = squeeze(block_size(1,:,:));
     bs_max = misc_functions.reshape_groups(sample_vec',bs_max_mat);
-    temp1 = vertcat(bs_max, padding);
+    max_size = vertcat(bs_max, padding);
+
+    sample_power = max_size(:,1);
+    max_size = max_size(:,2);
+
 
     % min
     bs_min_mat = squeeze(block_size(2,:,:));
     bs_min = misc_functions.reshape_groups(sample_vec',bs_min_mat);
-    temp2 = vertcat(bs_min, padding);
+    min_size = vertcat(bs_min, padding);
+    min_size = min_size(:,2);
+
 
     % mean
     bs_mean_mat = squeeze(block_size(3,:,:));
     bs_mean = misc_functions.reshape_groups(sample_vec',bs_mean_mat);
-    temp3 = vertcat(bs_mean, padding);
+    mean_size = vertcat(bs_mean, padding);
+    mean_size = mean_size(:,2);
+
 
     % median
-
     bs_med_mat = squeeze(block_size(4,:,:));
     bs_med = misc_functions.reshape_groups(sample_vec',bs_med_mat);
-    temp4 = vertcat(bs_med, padding);
+    median_size = vertcat(bs_med, padding);
+    median_size = median_size(:,2);
 
-    sample_power = temp1(:,1);
 
-    blocksize = horzcat(temp1(:,2), temp2(:,2), temp3(:,2), temp4(:,2));
+    %std dev
+    bs_stdev_mat = squeeze(block_size(4,:,:));
+    bs_stdev = misc_functions.reshape_groups(sample_vec',bs_stdev_mat);
+    std_size = vertcat(bs_stdev, padding);
+    std_size = std_size(:,2);
+
+    blocksize = table(max_size, min_size, mean_size, median_size, std_size);
 
 
     % block scale ------------------------
@@ -581,27 +577,37 @@ for j = 1:length(distribution_vector)
     % max
     bs_max_mat = squeeze(block_scale(1,:,:));
     bs_max = misc_functions.reshape_groups(sample_vec',bs_max_mat);
-    temp1 = vertcat(bs_max, padding);
+    max_scale = vertcat(bs_max, padding);
+    max_scale = max_scale(:,2);
 
     % min
     bs_min_mat = squeeze(block_scale(2,:,:));
     bs_min = misc_functions.reshape_groups(sample_vec',bs_min_mat);
-    temp2 = vertcat(bs_min, padding);
+    min_scale = vertcat(bs_min, padding);
+    min_scale = min_scale(:,2);
 
     % mean
     bs_mean_mat = squeeze(block_scale(3,:,:));
     bs_mean = misc_functions.reshape_groups(sample_vec',bs_mean_mat);
-    temp3 = vertcat(bs_mean, padding);
+    mean_scale = vertcat(bs_mean, padding);
+    mean_scale = mean_scale(:,2);
 
     % median
     bs_med_mat = squeeze(block_scale(4,:,:));
     bs_med = misc_functions.reshape_groups(sample_vec',bs_med_mat);
-    temp4 = vertcat(bs_med, padding);
+    median_scale = vertcat(bs_med, padding);
+    median_scale = median_scale(:,2);
 
-    blockscale = horzcat(temp1(:,2), temp2(:,2), temp3(:,2), temp4(:,2));
+    %std dev
+    bs_stdev_mat = squeeze(block_size(4,:,:));
+    bs_stdev = misc_functions.reshape_groups(sample_vec',bs_stdev_mat);
+    std_scale = vertcat(bs_stdev, padding);
+    std_scale = std_scale(:,2);
 
+    blockscale = table(max_scale, min_scale, mean_scale, median_scale, std_scale);
 
     dist_table = table(distribution, name, estimator, sample_power, mse, kl, cpu_time, fail, lagrange, blocksize, blockscale);
+    dist_table = splitvars(dist_table);
 
     % append table per distribution to global table containing data for all
     % distributions
@@ -609,29 +615,7 @@ for j = 1:length(distribution_vector)
 
 end
 
-
-
-
-
-figure('Name','Advanced Box Plot')
-b = boxchart(log(global_table.sample_power)/log(2), global_table.mse, 'GroupByColor',global_table.estimator);
-bp = gca;
-bp.XAxis.TickLabelInterpreter = 'latex';
-xlabel('$log_{2}(N)$','Interpreter','latex')
-ylabel('$L_1$','Interpreter','latex')
-legend
-
-figure('Name','Advanced Box Plot 2')
-b = boxchart(log(global_table.sample_power)/log(2), log(global_table.mse), 'GroupByColor',global_table.distribution);
-bp = gca;
-bp.XAxis.TickLabelInterpreter = 'latex';
-xlabel('$log_{2}(N)$','Interpreter','latex')
-ylabel('$L_1$','Interpreter','latex')
-legend
-
-disp(global_table)
-
-writetable(global_table,fullfile('data','estimator_meta_data.dat'))
+writetable(global_table,fullfile('data','combined_estimator_meta_data.dat'))
 
 
 

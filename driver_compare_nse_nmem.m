@@ -43,9 +43,9 @@ distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-
 distribution = distribution_vector';
 names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
 
-distribution_vector = ["Normal","Uniform"];
-distribution = distribution_vector';
-names = ["Normal","Uniform"];
+% distribution_vector = ["Normal","Uniform"];
+% distribution = distribution_vector';
+% names = ["Normal","Uniform"];
 
 
 % find amy of the strings in "str" inside of "distribtuionVector"

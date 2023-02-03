@@ -26,9 +26,9 @@ actual.generate_data = false;
 % script switching board
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   12; %<---- maximum exponent to generate samples
+max_pow =                   20; %<---- maximum exponent to generate samples
 min_pow =                   10; %<---- minimum exponent to generate samples
-trials =                    5   ;  %<--- trials to run to generate heuristics for programs
+trials =                    50   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -215,28 +215,6 @@ for j = 1:length(distribution_vector)
             else
                 ylim([0,1])
             end
-
-            
-            % NMEM --------------------------------------------------------
-            try
-                tintialNMEM = cputime;
-                [failed, x_NMEM, pdf_NMEM, cdf_NMEM,sqr_NMEM, ~,lagrange_multipler] = EstimatePDF(sample);
-                fail_nmem(k,i,j) = 0;
-                tcpuNMEM = cputime-tintialNMEM;
-            
-                n = length(sqr_NMEM);
-                dx = 1 / (n + 1);
-                u_NMEM = dx:dx:(n * dx);
-            catch
-                warning('Problem using function.  Assigning a value of 0.');
-                lagrange_multipler = 0;
-                x_NMEM = linspace(min(sample),max(sample),length(sample))';
-                pdf_NMEM = 0*ones(length(sample),1);
-                cdf_NMEM = 0*ones(length(sample),1);
-                fail_nmem(k,i,j) = 1;
-                % don't record cpu time if estimator failed
-                tcpuNMEM = NaN;
-            end
             
             toc
             %==========================================================
@@ -251,24 +229,15 @@ for j = 1:length(distribution_vector)
             kl_info_se = actual;
             kl_info_se.x = SE_x;
             kl_info_se = dist_list(kl_info_se);
-            
-            kl_info_nmem = actual;
-            kl_info_nmem.x = x_NMEM';
-            kl_info_nmem = dist_list(kl_info_nmem);
-            kl_info_nmem;
-            
+           
             SE_test_x = interp1(kl_info_se.x,kl_info_se.pdf_y,SE_x);
-            NMEM_test_x = interp1(kl_info_nmem.x,kl_info_nmem.pdf_y,x_NMEM');
             
             % Check if any NaNs were produced from stitching procedure
             if sum(~isfinite(interp1(kl_info_se.x,kl_info_se.pdf_y,SE_x)))...
                     || sum(~isfinite(SE_pdf))... 
-                    || sum(~isfinite(pdf_NMEM))...
-                    || sum(~isfinite(interp1(kl_info_nmem.x,kl_info_nmem.pdf_y,x_NMEM')))
                 disp('non-finite values')
             end
             actual_se_pdf = interp1(kl_info_se.x,kl_info_se.pdf_y,SE_x);
-            actual_nmem_pdf = interp1(kl_info_nmem.x,kl_info_nmem.pdf_y,x_NMEM');
             
             % find rand sample to find kl for
             [s_se,idx1] = datasample(SE_pdf,length(x_NMEM));
@@ -385,21 +354,14 @@ for j = 1:length(distribution_vector)
 
     % cpu time
     stdCPUtimeSE = horzcat(sample_vec',std(cpu_vec_se,[],2));
-    stdCPUtimeNMEM = horzcat(sample_vec',std(cpu_vec_nmem,[],2));
     avgCPUtimeSE = horzcat(sample_vec',mean(cpu_vec_se,2));
-    avgCPUtimeNMEM = horzcat(sample_vec',mean(cpu_vec_nmem,2));
         
     cpu.stdTimeSE{j} = horzcat(sample_vec',std(cpu_vec_se,[],2));
-    cpu.stdTimeNMEM{j} = horzcat(sample_vec',std(cpu_vec_nmem,[],2));
     cpu.timeSE{j} = horzcat(sample_vec',mean(cpu_vec_se,2));
-    cpu.timeNMEM{j} = horzcat(sample_vec',mean(cpu_vec_nmem,2));
 
     mse_nse = mse_vec_se;
-    mse_nmem = mse_vec_nmem;
     kl_nse = kl_vec_se;
-    kl_nmem = kl_vec_nmem;
     cpu_nse = cpu_vec_se;
-    cpu_nmem = cpu_vec_nmem;
 
     %%%%%%%%%%%%%%%%%%%%%%% build data table %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -442,61 +404,11 @@ for j = 1:length(distribution_vector)
             n_block_nse = length(block_mse_nse);
             n_vec_nse = [1:length(block_mse_nse)] .* (1/n_block_nse);
 
-            block_mse_nmem = mse_dists_nmem{k,i};
-
-            n_block_nmem = length(block_mse_nmem);
-            n_vec_nmem = [1:length(block_mse_nmem)] .* (1/n_block_nmem);
-
             plot(n_vec_nse, block_mse_nse, '-r')
-            plot(n_vec_nmem, block_mse_nmem, '-b')
             xlabel('Percent of Estimate Range')
             ylabel('MSE per Block')
         end
     end
-
-
-    % MSE: Full Distribution
-    temp = vertcat(misc_functions.reshape_groups(sample_vec',mse_vec_se),...
-    misc_functions.reshape_groups(sample_vec',mse_vec_nmem));
-    sample_power = temp(:,1);
-    mse = temp(:,2);
-
-    % KL
-    temp = vertcat(misc_functions.reshape_groups(sample_vec',kl_vec_se),...
-    misc_functions.reshape_groups(sample_vec',kl_vec_nmem));
-    kl = temp(:,2);
-    
-    % CPU
-    temp = vertcat(misc_functions.reshape_groups(sample_vec',cpu_vec_se),...
-    misc_functions.reshape_groups(sample_vec',cpu_vec_nmem));
-    cpu_time = temp(:,2);
-
-    % Distributions 
-    distribution = repelem(distribution_vector(j), length(temp(:,2)))';
-    name = repelem(names(j), length(temp(:,2)))';
-
-    nse_label = repelem(["NSE"], size(misc_functions.reshape_groups(sample_vec',cpu_vec_se), 1));
-    nmem_label = repelem(["NMEM"], size(misc_functions.reshape_groups(sample_vec',cpu_vec_nmem), 1));
-
-    % Failed
-    temp = vertcat(misc_functions.reshape_groups(sample_vec',fail_nse(:,:,j)),...
-        misc_functions.reshape_groups(sample_vec',fail_nmem(:,:,j)));
- 
-    fail = temp(:,2);   
-
-    % Lagragian
-    temp = vertcat(misc_functions.reshape_groups(sample_vec',lagrange_nse(:,:,j)),...
-        misc_functions.reshape_groups(sample_vec',lagrange_nmem(:,:,j)));
-    lagrange = temp(:,2);    
-    
-    estimator = vertcat(nse_label', nmem_label');
-
-    dist_table = table(distribution, name, estimator, sample_power, mse, kl, cpu_time, fail, lagrange);
-
-    % append table per distribution to global table containing data for all
-    % distributions
-    global_table = [global_table; dist_table];
-
 end
 
 
