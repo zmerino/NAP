@@ -22,7 +22,7 @@ fid = fopen(full_file, 'w');
 fprintf(fid,['Extrema script started on: ',datestr(datetime(now,'ConvertFrom','datenum')),'/n']);
 fclose(fid);
 
-dir_name = fullfile('data','estimates');
+dir_name = fullfile('data','heavy_tails');
 status = mkdir(dir_name);
 
 % class assignment

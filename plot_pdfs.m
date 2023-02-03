@@ -4,11 +4,12 @@ addpath("functions/")
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% To Plot %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-plot_pdf = true;
-plot_cdf = true;
-plot_sqr = true;
-plot_heavy = true;
-save_figs = true;
+plot_mse_dist = true;
+plot_pdf = false;
+plot_cdf = false;
+plot_sqr = false;
+plot_heavy = false;
+save_figs = false;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Import data %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -16,16 +17,21 @@ save_figs = true;
 actual = distributions;
 
 % Path to directory
-dir_name = fullfile('data','estimates');
+dir_name = fullfile('data','pdf_estimates');
 
 % Define the etimates to plot
 
 % Sample range
-n_vec = 2.^[8,9,10,11,12,13,14,15];
+n_vec = 2.^[8,9,10,11,12,13,14,15,16,17,18];
+n_vec = 2.^[10,11];
 % Distribution range
-d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
+% d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
+% d_vec = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
+d_vec = ["Trimodal-Normal","Uniform","Normal"];
+% d_vec = ["Normal"];
+
 % Trials per sample
-trials = 5;
+trials = 10;
 
 % Initialize empty structure to store data in
 n = length(n_vec);
@@ -37,36 +43,41 @@ nmem = cell(d,n,t,7);
 for i = 1:length(d_vec)
     for j = 1:length(n_vec)
         for k = 1:trials
-
+                        
             % Make sure that distribution names are saved as character vectors
-    
+
             % distribution names
             nse{i,j,k,1} = d_vec(i);
             nmem{i,j,k,1} = d_vec(i);
             % sample size
             nse{i,j,k,2} = n_vec(j);
             nmem{i,j,k,2} = n_vec(j);
-    
+
             % Load data from estimate directory
-            load(fullfile(dir_name,['nse_',num2str(d_vec(i)),'_s_', num2str(n_vec(j)),'.mat']));
-            load(fullfile(dir_name,['nmem_',num2str(d_vec(i)),'_s_', num2str(n_vec(j)),'.mat']));
-    
+            load(fullfile(dir_name,['nse_',num2str(d_vec(i)),'_t_',num2str(trials),'_s_', num2str(n_vec(j)),'.mat']));
+            load(fullfile(dir_name,['nmem_',num2str(d_vec(i)),'_t_',num2str(trials),'_s_', num2str(n_vec(j)),'.mat']));
+
             % x
-            test = nse_data{1,:};
-            nse{i,j,k,3} = nse_data{1,k};
-            nmem{i,j,k,3} = nmem_data{1,k};
+            nse_data = nse_pdf_data;
+            nmem_data = nmem_pdf_data;
+
+            nse{i,j,k,3} = nse_data{2,k}'; % make sure column vector
+            nmem{i,j,k,3} = nmem_data{2,k};
+
             % pdf
-            nse{i,j,k,4} = nse_data{2,k};
-            nmem{i,j,k,4} = nmem_data{2,k};
+            nse{i,j,k,4} = nse_data{3,k}'; % make sure column vector
+            nmem{i,j,k,4} = nmem_data{3,k};
+
             % cdf
-            nse{i,j,k,5} = nse_data{3,k};
-            nmem{i,j,k,5} = nmem_data{3,k};
-            % u
-            nse{i,j,k,6} = nse_data{4,k};
-            nmem{i,j,k,6} = nmem_data{4,k};
-            % sqr
-            nse{i,j,k,7} = nse_data{5,k};
-            nmem{i,j,k,7} = nmem_data{5,k};
+            nse{i,j,k,5} = trapz(nse_data{2,k}, nse_data{3,k});
+            nmem{i,j,k,5} = trapz(nmem_data{2,k}, nmem_data{3,k});
+
+            % u and sqr
+            [nse{i,j,k,6}, nse{i,j,k,7}] = misc_functions.sqr(nse_data{2,k},nse_data{3,k},nse_data{1,k});
+            [nmem{i,j,k,6}, nmem{i,j,k,7}] = misc_functions.sqr(nmem_data{2,k},nmem_data{3,k},nmem_data{1,k});
+
+
+
         end
     end
 end
@@ -81,6 +92,84 @@ names = {'Uniform-Mix', 'Generalized-Pareto', 'Stable',...
 names = {'Beta(0.5,1.5)','Beta(2,0.5)', 'Beta(0.5,0.5)', 'Generalized-Pareto', 'Stable'}';
 
 
+%%% MSE Plots %%%
+actual = distributions;
+actual.generate_data = false;
+
+if plot_mse_dist
+
+    qnum = 50;
+
+    % x values for given quantiles
+    for d_idx = 1:size(nse, 1)
+
+        for n_idx = 1:size(nse, 2)
+
+            mse_dist = zeros(qnum,trials);
+            for t_idx = 1:size(nse, 3)
+
+                
+                disp(['dist: ',num2str(d_idx),'/',num2str(size(nse, 1)),...
+                    's: ',num2str(n_idx),'/',num2str(size(nse, 2)),...
+                    't: ',num2str(t_idx),'/',num2str(size(nse, 3))])
+
+                xs = nse{d_idx,n_idx,t_idx,3}(:,1);
+                fs = nse{d_idx,n_idx,t_idx,4}(:,1);
+                Fs = nse{d_idx,n_idx,t_idx,5}(:,1);
+
+                q_min = 0.01;
+                q_max = 0.99;
+
+                quantiles = linspace(q_min, q_max, qnum);
+                xq = interp1(Fs,xs,quantiles);
+                fq = interp1(xs,fs,xq);
+
+                % get actual distribution
+                actual.min_limit = min(xs);
+                actual.max_limit = max(xs);
+                actual.dist_name = d_vec(d_idx);
+
+                for q = 2:qnum
+
+                    trunc_xs = linspace(xq(q-1), xq(q), 1000);
+                    trunc_fs = interp1(xs,fs,trunc_xs);
+
+                    actual.x = linspace(min(trunc_xs),max(trunc_xs),length(trunc_xs));
+                    actual = actual.dist_list();
+
+                    fact = actual.pdf_y;
+
+                    mse_dist(q-1,t_idx) = mse(fact, trunc_fs);
+
+                end
+
+            end
+
+            % plot quantiles
+%             figure()
+%             hold on;
+%             plot(xs, Fs, '--k')
+%             plot(xq, quantiles, 'og')
+%             plot(xq, fq, '.b')
+%             xlabel('x')
+%             ylabel('Q(x)')
+
+            figure('Name',['d_',convertStringsToChars(d_vec(d_idx)),'_s_',num2str(n_vec(n_idx))])
+            hold on;
+            for t = 1:size(mse_dist,2)
+                plot(quantiles, mse_dist(:,t), '-r')
+            end
+            xlabel('x')
+            ylabel('MSE(x)')
+
+        end
+    end
+
+
+
+end
+
+
 %%% PDFs %%%
 if plot_pdf
     % Plot data the order of indices corresponds to distribution, sample size,
@@ -88,19 +177,19 @@ if plot_pdf
     for d_idx = 1:size(nse, 1)
 
         for n_idx = 1:size(nse, 2)
-    
+
             fig_name = ['PDF_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
             figure('Name',fig_name)
             hold on;
             % Set actual distribution type
             actual.dist_name = nse{d_idx,n_idx,1,1}(1,:);
-            % Set distrobution over specific range i.e. the x values from the 
+            % Set distrobution over specific range i.e. the x values from the
             % first trial estimate
 
             actual.x = nse{d_idx,n_idx,1,3}(:,1);
             % Generate distrobution attributes
             actual = dist_list(actual);
-    
+
             % Remove zeros in actual.pdf_y generated from inf/nan values
             [row,~] = find(actual.pdf_y > 0);
             for s_idx = 1:trials
@@ -139,16 +228,17 @@ if plot_cdf
             hold on;
             % Set actual distribution type
             actual.dist_name = nse{d_idx,n_idx,1,1};
-            % Set distrobution over specific range i.e. the x values from the 
+            % Set distrobution over specific range i.e. the x values from the
             % first trial estimate
             actual.x = nse{d_idx,n_idx,1,3}(:,1);
             % Generate distrobution attributes
             actual = dist_list(actual);
-    
+
             % Remove zeros in actual.pdf_y generated from inf/nan values
             [row,~] = find(actual.pdf_y > 0);
-    
+
             for s_idx = 1:trials
+
                 nse_h = plot(nse{d_idx,n_idx,s_idx,3}, nse{d_idx,n_idx,s_idx,5},'-r', 'DisplayName', '$\hat{F}_i^{NSE}(x)$');
                 nmem_h = plot(nmem{d_idx,n_idx,s_idx,3}, nmem{d_idx,n_idx,s_idx,5},'-b', 'DisplayName', '$\hat{F}_i^{NMEM}(x)$');
             end
@@ -178,7 +268,7 @@ if plot_sqr
     for d_idx = 1:size(nse, 1)
 
         for n_idx = 1:size(nse, 2)
-    
+
             fig_name = ['SQR_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
             figure('Name',fig_name)
             hold on;
@@ -204,15 +294,15 @@ if plot_sqr
             plot(muLD,-lemonDrop,'k--');
             % Set actual distribution type
             actual.dist_name = nse{d_idx,n_idx,1,1};
-            % Set distrobution over specific range i.e. the x values from the 
+            % Set distrobution over specific range i.e. the x values from the
             % first trial estimate
             actual.x = nse{d_idx,n_idx,1,3}(:,1);
             % Generate distrobution attributes
             actual = dist_list(actual);
-    
+
             % Remove zeros in actual.pdf_y generated from inf/nan values
             [row,~] = find(actual.pdf_y > 0);
-    
+
             for s_idx = 1:trials
                 nse_h = plot(nse{d_idx,n_idx,s_idx,6}, nse{d_idx,n_idx,s_idx,7},'-r', 'DisplayName', '$\hat{sqr}_i^{NSE}(x)$');
                 nmem_h = plot(nmem{d_idx,n_idx,s_idx,6}, nmem{d_idx,n_idx,s_idx,7},'-b', 'DisplayName', '$\hat{sqr}_i^{NMEM}(x)$');
@@ -238,15 +328,15 @@ if plot_heavy
     for d_idx = 1:size(nse, 1)
 
         for n_idx = 1:size(nse, 2)
-    
+
             fig_name = ['Heavy_Tails_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
             figure('Name',fig_name)
             hold on;
-            for j = 1:size(nse{d_idx,n_idx,3}, 2)  
-    
+            for j = 1:size(nse{d_idx,n_idx,3}, 2)
+
                 % Set actual distribution type
                 actual.dist_name = nse{d_idx,n_idx,1,1};
-                % Set distrobution over specific range i.e. the x values from the 
+                % Set distrobution over specific range i.e. the x values from the
                 % first trial estimate
                 xs = nse{d_idx,n_idx,1,3}(:,1);
                 x_min = min(xs);
@@ -254,16 +344,22 @@ if plot_heavy
                 actual.x = linspace(x_min,x_max*2,1000);
                 % Generate distrobution attributes
                 actual = dist_list(actual);
-        
+
                 % Remove zeros in actual.pdf_y generated from inf/nan values
                 [row,~] = find(actual.pdf_y > 0);
-    
+
                 for s_idx = 1:trials
-                        [nse_htx, nse_hty, nse_htx_act, nse_hty_act] = heavy(nse{d_idx,n_idx,s_idx,3}(:,j),...
+                    [nse_htx, nse_hty, nse_htx_act, nse_hty_act] = heavy(nse{d_idx,n_idx,s_idx,3}(:,j),...
                         nse{d_idx,n_idx,s_idx,5}(:,j), actual);
+
+
+                    test = nmem{d_idx,n_idx,s_idx,3}(:,j);
+                    test2 = nmem{d_idx,n_idx,s_idx,5}(:,j);
+                    test3 = nmem{d_idx,n_idx,s_idx,3};
+                    test4 = nmem{d_idx,n_idx,s_idx,5};
                     [nmem_htx, nmem_hty, nmem_htx_act, nmem_hty_act] = heavy(nmem{d_idx,n_idx,s_idx,3}(:,j),...
                         nmem{d_idx,n_idx,s_idx,5}(:,j), actual);
-        
+
                     nse_h = plot(real(nse_htx), real(nse_hty), '-r', 'DisplayName', '$\hat{f}_i^{NSE}(x)$');
                     nmem_h = plot(real(nmem_htx), real(nmem_hty), '-b', 'DisplayName', '$\hat{f}_i^{NMEM}(x)$');
                 end
@@ -272,9 +368,9 @@ if plot_heavy
             bp = gca;
             set(bp, 'YScale', 'log')
             xlabel('$x$','Interpreter','latex')
-            ylabel('$\frac{log(1 - \hat{F}(x))}{log(1000)}$','Interpreter','latex')
-            xlim([min(nse_htx),max(nse_htx) + 0.1*(max(nse_htx) - min(nse_htx))])
-%             ylim([min(nse_hty),max(nse_hty) + 0.1*(max(nse_hty) - min(nse_hty))])
+            ylabel('$log(1 - \hat{F}(x))$','Interpreter','latex')
+            %             xlim([min(nse_htx),max(nse_htx) + 0.1*(max(nse_htx) - min(nse_htx))])
+            %             ylim([min(nse_hty),max(nse_hty) + 0.1*(max(nse_hty) - min(nse_hty))])
             legend([nse_h(1),nmem_h(1), g],'Interpreter','latex', 'Location','southwest')
             if save_figs
                 saveas(bp, fullfile('figures', [fig_name, '.png']))

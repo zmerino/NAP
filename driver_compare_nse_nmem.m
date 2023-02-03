@@ -43,9 +43,9 @@ distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-
 distribution = distribution_vector';
 names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
 
-% distribution_vector = ["Normal","Uniform"];
-% distribution = distribution_vector';
-% names = ["Normal","Uniform"];
+distribution_vector = ["Beta-a0p5-b0p5","Normal","Uniform"];
+distribution = distribution_vector';
+names = ["Beta(0.5,0.5)","Normal","Uniform"];
 
 
 % find amy of the strings in "str" inside of "distribtuionVector"
@@ -221,7 +221,8 @@ for j = 1:length(distribution_vector)
             % NMEM --------------------------------------------------------
             try
                 tintialNMEM = cputime;
-                [failed, x_NMEM, pdf_NMEM, cdf_NMEM,sqr_NMEM, ~,lagrange_multipler] = EstimatePDF(sample);
+                parameters.LagrangeMin	= 2;
+                [failed, x_NMEM, pdf_NMEM, cdf_NMEM,sqr_NMEM, ~,lagrange_multipler] = EstimatePDF(sample,parameters);
                 fail_nmem(k,i,j) = 0;
                 tcpuNMEM = cputime-tintialNMEM;
             
