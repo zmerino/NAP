@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #SBATCH --partition=Orion
-#SBATCH --job-name=nse_cpu
+#SBATCH --job-name=save_pdfs
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=20
 #SBATCH --time=24:00:00 
@@ -25,5 +25,5 @@ cd /users/zmerino/nse_versions/nse_current
 
 ### Change Directory and run MainScript
 
-matlab -nodisplay -nosplash < driver_compare_nse_nmem_perblock.m > run.log
+matlab -nodisplay -nosplash < driver_save_pdfs_samples.m > run.log
 

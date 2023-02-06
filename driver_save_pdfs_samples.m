@@ -29,9 +29,9 @@ actual.generate_data = false;
 % script switching board
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   14; %<---- maximum exponent to generate samples
+max_pow =                   20; %<---- maximum exponent to generate samples
 min_pow =                   8; %<---- minimum exponent to generate samples
-trials =                    10   ;  %<--- trials to run to generate heuristics for programs
+trials =                    50   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -50,9 +50,20 @@ names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", 
 % distribution = distribution_vector';
 % names = ["Normal"];
 
-distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
+
+distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto"];
 distribution = distribution_vector';
-names = ["Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
+names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto"];
+
+
+distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto"];
+distribution = distribution_vector';
+names = ["Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto"];
+
+
+% distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
+% distribution = distribution_vector';
+% names = ["Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
 
 
 % distribution_vector = ["Normal","Uniform"];
@@ -311,7 +322,7 @@ for j = 1:length(distribution_vector)
 
     nse_label = repelem(["NSE"], size(misc_functions.reshape_groups(sample_vec',cpu_vec_se), 1));
     nmem_label = repelem(["NMEM"], size(misc_functions.reshape_groups(sample_vec',cpu_vec_nmem), 1));
-clo
+
     % Failed
     temp = vertcat(misc_functions.reshape_groups(sample_vec',fail_nse(:,:,j)),...
         misc_functions.reshape_groups(sample_vec',fail_nmem(:,:,j)));
