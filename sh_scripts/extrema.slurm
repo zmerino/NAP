@@ -7,7 +7,7 @@
 #SBATCH --job-name=nse_extrema
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=20
-#SBATCH --time=24:00:00 
+#SBATCH --time=48:00:00 
 
 
 ###SBATCH -o logs/slurm.%N.%J.%u.out # STDOUT
@@ -23,9 +23,6 @@
 
 ### select version of Matlab
 
-#VER=R2018b
-#VER=R2018b
-#VER=R2020b
 VER=R2022b
 
 ### run job

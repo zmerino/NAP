@@ -4,7 +4,7 @@
 #SBATCH --job-name=save_pdfs
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=20
-#SBATCH --time=24:00:00 
+#SBATCH --time=48:00:00 
 
 ### email notification
 
