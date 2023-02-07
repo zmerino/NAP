@@ -35,6 +35,7 @@ classdef NSE
         blocks_cdf;
         block_indx;
         % meta data
+        LG_vals;
         LG;
         LG_max;
         LG_sum;
@@ -294,6 +295,7 @@ classdef NSE
             
             % initialize vector to hold all lagrainge mutiplers per block
             LG = zeros(1,obj.nBlocks);
+            LG_vals = cell(1,obj.nBlocks);
             parfor b=1:obj.nBlocks
 %             for b=1:obj.nBlocks
                 lagrange = [];
@@ -308,10 +310,12 @@ classdef NSE
                         targetBlock{t,b}.data(:,3) = 0*ones(100,1);
                     end
                     LG(1,b) = size(lagrange,1);
+                    LG_vals{b} = lagrange;
                 end
             end
 
             % track meta data
+            obj.LG_vals = LG_vals;
             obj.LG = LG;
             obj.LG_max = max(LG);
             obj.LG_sum = sum(LG);

@@ -1,7 +1,8 @@
 function [htx, hty, htx_act, hty_act] = heavy(xcdf, cdf, obj)
     
     basex = 1;
-    basey = log(1000);
+%     basey = log(1000);
+    basey = 1;
 
     ind = find(xcdf>0);
 

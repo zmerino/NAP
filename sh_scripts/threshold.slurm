@@ -3,8 +3,8 @@
 #SBATCH --partition=Orion
 #SBATCH --job-name=nse_threshold
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --time=24:00:00 
+#SBATCH --ntasks-per-node=20
+#SBATCH --time=48:00:00 
 
 ### email notification
 
@@ -16,9 +16,7 @@
 
 ### select version of Matlab
 
-#VER=R2018b
-VER=R2018b
-#VER=R2020b
+VER=R2022b
 
 ### run job
 

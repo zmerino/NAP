@@ -33,9 +33,9 @@ YexpScale = -2;
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   24; %<---- maximum exponent to generate samples
+max_pow =                   22; %<---- maximum exponent to generate samples
 min_pow =                   8; %<---- minimum exponent to generate samples
-trials =                    1000;  %<--- trials to run to generate heuristics for programs
+trials =                    30;  %<--- trials to run to generate heuristics for programs
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % max_pow =                   20; %<---- maximum exponent to generate samples
 % min_pow =                   8; %<---- minimum exponent to generate samples
@@ -162,7 +162,18 @@ for j = 1:length(distribution_vector)
             x = sort(sample);
             
             % Track T,BR per trial
-            [pList,T,BRlevel,BR0] = block_definition.r_tree(x,actual.min_limit,actual.max_limit,rndom.filename,p);
+            nse = NSE;
+            nse.max_bs = 1e3;
+            nse = nse.stitch(sample);
+
+            obt_blocks = blocks;
+            obt_blocks = obt_blocks.stitch(sample);
+            obt_blocks.sample = x;
+            obt_blocks.binNs = nse.binN;
+            obt_blocks.Ns = length(x);
+
+            [pList,T,BRlevel,BR0] = obt_blocks.r_tree(obt_blocks);
+%             [pList,T,BRlevel,BR0] = block_def.r_tree(x,actual.min_limit,actual.max_limit,rndom.filename,p);
             
             tend = toc(tstart);
             m_conversion = 60;
@@ -213,6 +224,10 @@ for j = 1:length(distribution_vector)
             
             BR0_track(k) = BR0;
             
+            disp([char(actual.dist_name),...
+                ', Trial: ',num2str(i),'/', num2str(trials), ...
+                ' sample size: ',num2str(sample_vec(k))])
+
         end
         
         dist_t_track(i,:,j) = T_track;

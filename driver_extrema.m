@@ -22,7 +22,7 @@ fid = fopen(full_file, 'w');
 fprintf(fid,['Extrema script started on: ',datestr(datetime(now,'ConvertFrom','datenum')),'/n']);
 fclose(fid);
 
-dir_name = fullfile('data','estimates');
+dir_name = fullfile('data','heavy_tails');
 status = mkdir(dir_name);
 
 % class assignment
@@ -39,9 +39,9 @@ estimator_plot_flag =       false;   %<- true/false plot SE results on/off
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 save_graphics =             false;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   15; %<---- maximum exponent to generate samples
+max_pow =                   20; %<---- maximum exponent to generate samples
 min_pow =                   8; %<---- minimum exponent to generate samples
-trials =                    5;  %<--- trials to run to generate heuristics for programs
+trials =                    30;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -52,28 +52,8 @@ x_resolution =              1000;
 % Univariant Random Sample Generator available on zmerino's github
 cpu_type =                   '\';%<--- '\' or '/' for windows or linux
 
-% Example distribution to test %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5",...
-    "Bimodal-Normal","BirnbaumSaunders","Burr",...
-    "Exponential","Extreme-Value","Gamma","Generalized-Extreme-Value",...
-    "Generalized-Pareto","HalfNormal","Normal","Square-periodic",...
-    "tLocationScale","Uniform","Uniform-Mix","Weibull","Chisquare",...
-    "InverseGaussian","Trimodal-Normal","Stable",...
-    "Stable2","Stable3","Stable1","BirnbaumSaunders-Stable"];
-
-% distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto"];
-% names = ["Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto"]';
-
-
 distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
-% distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
 
-% distribution_vector = ["Stable"];
-% names = ["Stable(,,,)"]';
-
-% distribution = distribution_vector';
-% % names = ["Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable(,,,)"]';
-% test = table(distribution,names);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Main Function Call Loop used to lable plot figures

@@ -1,3 +1,0 @@
-distribution,name,estimator,sample_power,mse,kl,cpu_time,fail,lagrange
-Normal,Normal,NSE,524288,1.30958104684724e-07,1.40275905233069e-05,4.5,0,3
-Normal,Normal,NMEM,524288,3.9893964829136e-10,7.55450868013984e-07,0.269999999999982,0,1

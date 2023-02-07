@@ -1,17 +1,10 @@
 #!/bin/sh
 
-### general setup
-
-
 #SBATCH --partition=Orion
-#SBATCH --job-name=nse_extrema
+#SBATCH --job-name=save_pdfs_nse
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=20
 #SBATCH --time=48:00:00 
-
-
-###SBATCH -o logs/slurm.%N.%J.%u.out # STDOUT
-###SBATCH -e logs/slurm.%N.%J.%u.err # STDERR
 
 ### email notification
 
@@ -32,5 +25,5 @@ cd /users/zmerino/nse_versions/nse_current
 
 ### Change Directory and run MainScript
 
-matlab -nodisplay -nosplash < driver_extrema.m > run.log
+matlab -nodisplay -nosplash < driver_save_pdfs_samples_nse.m > run.log
 
