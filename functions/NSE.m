@@ -43,7 +43,7 @@ classdef NSE
         block_scale;
     end
     methods
-        function [obj] = stitch(obj, inputSample)
+        function [obj] = stitch(obj, inputSample, serial)
 
             % initialze the obj.failed trip flag to false
             obj.failed = 0;
@@ -296,8 +296,14 @@ classdef NSE
             % initialize vector to hold all lagrainge mutiplers per block
             LG = zeros(1,obj.nBlocks);
             LG_vals = cell(1,obj.nBlocks);
-            parfor b=1:obj.nBlocks
-%             for b=1:obj.nBlocks
+
+            % conditionally execture parfor or for loop
+            if serial
+                parforArg = 0;
+            else
+                parforArg = Inf;
+            end
+            parfor (b=1:obj.nBlocks, parforArg)
                 lagrange = [];
                 for t=1:nTargets
                     try
