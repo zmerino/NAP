@@ -1,9 +1,12 @@
 #!/bin/sh
 
 #SBATCH --partition=Orion
-#SBATCH --job-name=save_pdfs_nse
+#SBATCH --job-name=cpu_10
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=20
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=20        # cpu-cores per task (>1 if multi-threaded tasks)
+#SBATCH --mem-per-cpu=4G        
+
 #SBATCH --time=48:00:00 
 
 ### email notification
@@ -25,5 +28,5 @@ cd /users/zmerino/nse_versions/nse_current
 
 ### Change Directory and run MainScript
 
-matlab -nodisplay -nosplash < driver_save_pdfs_samples_nse.m > run.log
+matlab -nodisplay -nosplash < driver_cpu_10_t_50.m > run.log
 
