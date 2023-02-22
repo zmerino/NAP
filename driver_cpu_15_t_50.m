@@ -18,8 +18,8 @@ fid = fopen(full_file, 'w');
 fprintf(fid,['Cpu failure distance script started on: ',datestr(datetime(now,'ConvertFrom','datenum')),'/n']);
 fclose(fid);
 
-dir_name = fullfile('data','cpu_15_t_50_maxN_22_pdf_estimates');
-table_name = 'cpu_15_t_50_maxN_22_data_v2.dat';
+dir_name = fullfile('data','cpu_15_t_50_set_1');
+table_name = 'cpu_15_t_50_set_1.dat';
 
 status = mkdir(dir_name);
 
@@ -62,9 +62,13 @@ distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-
 distribution = distribution_vector';
 names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
 
-distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto"];
+distribution_vector = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto"];
 distribution = distribution_vector';
-names = [ "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto"];
+names = ["Tri-Modal-Normal","Uniform", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto"];
+
+% distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto"];
+% distribution = distribution_vector';
+% names = [ "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto"];
 
 
 % find amy of the strings in "str" inside of "distribtuionVector"
@@ -325,8 +329,8 @@ for j = 1:length(distribution_vector)
                 '_t_', num2str(trials), ...
                 '_s_',num2str(sample_vec(k))];
 
-%         save(fullfile(dir_name,['nse_', filename, '.mat']), 'nse_pdf_data')
-%         save(fullfile(dir_name,['nmem_', filename, '.mat']), 'nmem_pdf_data')
+        save(fullfile(dir_name,['nse_', filename, '.mat']), 'nse_pdf_data')
+        save(fullfile(dir_name,['nmem_', filename, '.mat']), 'nmem_pdf_data')
     end
 
     % cpu time

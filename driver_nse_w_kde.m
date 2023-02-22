@@ -3,7 +3,6 @@
 clc;clear all; close all;
 
 addpath("functions/")
-% addpath("compile_nmem/")
 addpath("compile_nmem_mv/")
 
 
@@ -20,6 +19,10 @@ fid = fopen(full_file, 'w');
 fprintf(fid,['Cpu failure distance script started on: ',datestr(datetime(now,'ConvertFrom','datenum')),'/n']);
 fclose(fid);
 
+dir_name = fullfile('figures','kde_pdfs');
+% dir_name = fullfile('figures','kde_pdfs_mod');
+status = mkdir(dir_name);
+
 % class assignment
 actual = distributions;
 actual.generate_data = false;
@@ -29,11 +32,11 @@ actual.generate_data = false;
 estimator_call_flag =       true;   %<- true/false call SE on/off
 estimator_plot_flag =       false;   %<- true/false plot SE results on/off
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
-save_graphics =             false;   %<- true/false save .png of plots on/off
+save_figs =                 true;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   18; %<---- maximum exponent to generate samples
-min_pow =                   10; %<---- minimum exponent to generate samples
-trials =                    3   ;  %<--- trials to run to generate heuristics for programs
+max_pow =                   14; %<---- maximum exponent to generate samples
+min_pow =                   14; %<---- minimum exponent to generate samples
+trials =                    1   ;  %<--- trials to run to generate heuristics for programs
 step =                      4;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -48,6 +51,12 @@ cpu_type =                   '\';%<--- '\' or '/' for windows or linux
 distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
 distribution = distribution_vector';
 names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
+
+
+distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5", "Generalized-Pareto", "Stable"];
+distribution = distribution_vector';
+names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
+
 
 % distribution_vector = ["Normal"];
 % distribution = distribution_vector';
@@ -121,6 +130,14 @@ for j = 1:length(distribution_vector)
     nse_cdfs = cell(length(distribution_vector), trials, length(sample_vec), 2);
     nse_sqrs = cell(length(distribution_vector), trials, length(sample_vec), 2);
     
+    nse_kde_pdfs = cell(length(distribution_vector), trials, length(sample_vec), 2);
+    nse_kde_cdfs = cell(length(distribution_vector), trials, length(sample_vec), 2);
+    nse_kde_sqrs = cell(length(distribution_vector), trials, length(sample_vec), 2);
+
+    kde_pdfs = cell(length(distribution_vector), trials, length(sample_vec), 2);
+    kde_cdfs = cell(length(distribution_vector), trials, length(sample_vec), 2);
+    kde_sqrs = cell(length(distribution_vector), trials, length(sample_vec), 2);
+
     nmem_pdfs = cell(length(distribution_vector), trials, length(sample_vec), 2);
     nmem_cdfs = cell(length(distribution_vector), trials, length(sample_vec), 2);
     nmem_sqrs = cell(length(distribution_vector), trials, length(sample_vec), 2);
@@ -165,7 +182,40 @@ for j = 1:length(distribution_vector)
             % % % % % % % start of estimates % % % % % % % % %
             %==========================================================
 
-            %-- NSE start
+            %-- NSE w/ KDE start
+
+            sendFileName1 = ['D_',char(actual.dist_name),cpu_type,char(rndom.filename),'.dat'];
+            rndom.randomVSactual = "random";
+            rndom = dist_list(rndom);
+            sample = rndom.rndData;
+
+            tintialSE = cputime;
+
+            % nse object instantiation
+            nse_kde = NSEkde;
+            serial = true;
+            nse_kde = nse_kde.stitch(sample, serial);
+            
+            % extract relevant parameters from object after stich() method
+            fail_code = nse_kde.failed;
+            x_nse_kde = nse_kde.sx;
+            SE_pdf_kde = nse_kde.sPDF;
+%             SE_cdf = nse_kde.sCDF;
+%             SE_u = nse_kde.u;
+%             SE_SQR = nse_kde.sqr;
+%             nBlocks = nse_kde.nBlocks;
+            rndom.Ns = nse_kde.N;
+            binrndom.Ns =  nse_kde.binN;
+%             max_LG = nse_kde.LG_max;
+%             sum_LG = nse_kde.LG_sum;
+%             T = nse_kde.T;
+%             BRlevel = nse_kde.BRlevel;
+%             BR0 = nse_kde.BR0;
+% 
+%             tcpuSE = cputime-tintialSE;
+
+
+            %-- NSE w/o KDE start
 
             sendFileName1 = ['D_',char(actual.dist_name),cpu_type,char(rndom.filename),'.dat'];
             rndom.randomVSactual = "random";
@@ -176,14 +226,8 @@ for j = 1:length(distribution_vector)
 
             % nse object instantiation
             nse = NSE;
-            % NSE.stitch() method called to calcualted relevant parameters
-
-            % use ONLY for NSE_working_archived.m class code
-%             [fail_code,x_nse,SE_pdf,SE_cdf,SE_u,SE_SQR,nBlocks,...
-%                 rndom.Ns,binrndom.Ns, max_LG, sum_LG,T,BRlevel,BR0]...
-%                 = nse.stitch(sample);
-
-            nse = nse.stitch(sample);
+            serial = true;
+            nse = nse.stitch(sample, serial);
             
             % extract relevant parameters from object after stich() method
             fail_code = nse.failed;
@@ -203,7 +247,12 @@ for j = 1:length(distribution_vector)
 
             tcpuSE = cputime-tintialSE;
 
-            fail_nse(k,i,j) = fail_code;
+            disp(['Number of blocks: ', num2str(nBlocks)])
+
+            %-- KDE start
+            tintialNMEM = cputime;
+            [pdf_KDE,x_KDE] = ksdensity(sample);
+            tcpuNMEM = cputime-tintialNMEM;
 
 
             %-- NMEM start
@@ -226,6 +275,24 @@ for j = 1:length(distribution_vector)
                 % don't record cpu time if estimator failed
                 tcpuNMEM = NaN;
             end
+            
+            % Stitching ---
+
+%             figure('Name','plt_blockpdf')
+%             hold on
+%             for b=1:length(nse_kde.block_indx)
+%                 plot( nse_kde.blocks_x{nse_kde.block_indx(b)} , nse_kde.blocks_pdf{nse_kde.block_indx(b)}, '-b' )
+%             end
+%             for b=1:length(nse_kde.block_indx)
+%                 plot( nse.blocks_x{nse.block_indx(b)} , nse.blocks_pdf{nse.block_indx(b)}, '-r')
+%             end
+%             ylabel('$\hat{f}(x)$','Interpreter','latex')
+%             xlabel('$x$','Interpreter','latex')
+%             if max( nse_kde.blocks_x{nse_kde.block_indx(length(nse_kde.block_indx))}) < 1.1
+%                 ylim([0,6])
+%             else
+%                 ylim([0,1])
+%             end
 
             %==========================================================
             % % % % % % % % end of estimate % % % % % % % % %
@@ -240,160 +307,115 @@ for j = 1:length(distribution_vector)
             nse_pdfs{j,i,k,1} = x_nse;
             nse_pdfs{j,i,k,2} = SE_pdf;
 
+            nse_kde_pdfs{j,i,k,1} = x_nse_kde;
+            nse_kde_pdfs{j,i,k,2} = SE_pdf_kde;
 
-            nmem_cdfs{j,i,k,1} = x_NMEM;
-            nmem_cdfs{j,i,k,2} = cdf_NMEM;
-
-            nse_cdfs{j,i,k,1} = x_nse;
-            nse_cdfs{j,i,k,2} = SE_cdf;
-
-
-            nmem_sqrs{j,i,k,1} = u_NMEM;
-            nmem_sqrs{j,i,k,2} = sqr_NMEM;
-
-            nse_sqrs{j,i,k,1} = SE_u;
-            nse_sqrs{j,i,k,2} = SE_SQR;
-
-            % -------------------------------------------------------------
-
-%             figure()
-%             plot(x_NMEM,pdf_NMEM, DisplayName='pdf nmem')
-%             xlabel('x')
-%             ylabel('f(x)')
-% 
-%             figure()
-%             plot(x_nse,SE_pdf, DisplayName='pdf nse')
-%             xlabel('x')
-%             ylabel('f(x)')
-% 
-%             figure()
-%             plot(x_NMEM,cdf_NMEM, DisplayName='cdf nmem')
-%             xlabel('x')
-%             ylabel('F(x)')
-% 
-%             figure()
-%             plot(x_nse,SE_cdf, DisplayName='cdf nse')
-%             xlabel('x')
-%             ylabel('F(x)')
-% 
-% 
-%             figure('Name','SQR')
-%             hold on;
-%             smallN = 256;
-%             smallN2 = 258;
-%             graymax = 240;
-%             range = 0:1/(smallN+1):1;
-%             muLD = range*(smallN + 1) / (smallN + 1);
-%             lemonDrop = sqrt(muLD.*(1-muLD)) * 3.4;
-%             sampleCount2 = (smallN + 2):-1:1;
-%             colorRange = (255-graymax)*sampleCount2/(smallN + 2);
-%             base = repmat(graymax, smallN + 2, 1);
-%             col = (base + colorRange') / 255;
-%             rgb = [col col col];
-%             count2 = 1;
-%             for ii = ceil(smallN2/2):smallN2-1
-%                 ix = [ii ii+1 smallN2-ii smallN2-ii+1];
-%                 fill(range(ix), lemonDrop(ix), rgb(count2, :),'edgecolor','none')
-%                 fill(range(ix), -lemonDrop(ix), rgb(count2, :),'edgecolor','none')
-%                 count2 = count2 + 2;
-%             end
-%             plot(muLD,lemonDrop,'k--');
-%             plot(muLD,-lemonDrop,'k--');
-%             %             h = plot(nse(d_indx,n_indx).u, nse(d_indx,n_indx).sqr, 'DisplayName', '$\hat{sqr}_i(x)$');
-%             nse_h = plot(SE_u, SE_SQR,'-r', 'DisplayName', '$\hat{sqr}_i^{NSE}(x)$');
-%             nmem_h = plot(u_NMEM, sqr_NMEM,'-b', 'DisplayName', '$\hat{sqr}_i^{NMEM}(x)$');
-%             bp = gca;
-%             xlabel('$x$','Interpreter','latex')
-%             ylabel('$\hat{SQR}(x)$','Interpreter','latex')
-%             %             legend([nse_h(1),nmem_h(1), g],'Interpreter','latex')
-%             xlabel('$x$','Interpreter','latex')
-%             ylabel('$sqr(x)$','Interpreter','latex')
+            kde_pdfs{j,i,k,1} = x_KDE;
+            kde_pdfs{j,i,k,2} = pdf_KDE;
 
             toc
             disp([char(actual.dist_name),...
                 ', Trial: ',num2str(i),'/', num2str(trials), ...
-                ' sample size: ',num2str(sample_vec(k)), ...
-                ' failSE: ', num2str(fail_nse(k,i,j)), ' failNMEM: ', ...
-                num2str(fail_nmem(k,i,j))])
+                ' sample size: ',num2str(sample_vec(k))])
         end
     end
 
 
     % PDFs ----------------------------------------------------------------
+    xl1 = [-0.1, 1.1];
+    yl1 = [-0.1, 0.8];
+    xl2 = [0, 10];
+    yl2 = [-0.1, 6];
     for k = 1:length(sample_vec)
-        figure('Name',['PDFs for sample size ',num2str(sample_vec(k))])
+
+        fig_name = sprintf('pdf_d_%s_%s', convertCharsToStrings(distribution_vector(j)), num2str(sample_vec(k)));
+        figure('Name',fig_name)
+
+        subplot(2,2,1)
         hold on;
         for i = 1:trials
-            plot(nmem_pdfs{j,i,k,1}, nmem_pdfs{j,i,k,2}, '-b', DisplayName='pdf nmem')
-            plot(nse_pdfs{j,i,k,1}, nse_pdfs{j,i,k,2}, '-r', DisplayName='pdf nse')
+            plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
+            plot(nse_kde_pdfs{j,i,k,1}, nse_kde_pdfs{j,i,k,2}, '-b', DisplayName='$\hat{f}(x)_{NSE \ KDE}$')
+
+            if max(actual.x) > 3
+                xlim(xl2)
+            else
+                xlim(xl1)
+            end
+            if max(actual.pdf_y) > 1
+                ylim(yl2)
+            else
+                ylim(yl1)
+            end
+
+            title('$\hat{f}(x)_{NSE \ KDE}$','interpreter','latex')
+            ylabel('f(x)')
+        end
+        subplot(2,2,2)
+        hold on;
+        for i = 1:trials
+            plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
+            plot(kde_pdfs{j,i,k,1}, kde_pdfs{j,i,k,2}, '-g', DisplayName='$\hat{f}(x)_{KDE}$')
+
+            if max(actual.x) > 3
+                xlim(xl2)
+            else
+                xlim(xl1)
+            end
+            if max(actual.pdf_y) > 1
+                ylim(yl2)
+            else
+                ylim(yl1)
+            end
+
+            title('$\hat{f}(x)_{KDE}$','interpreter','latex')
+        end
+        subplot(2,2,3)
+        hold on;
+        for i = 1:trials
+            plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
+            plot(nse_pdfs{j,i,k,1}, nse_pdfs{j,i,k,2}, '-m', DisplayName='$\hat{f}(x)_{NSE}$')
+
+            if max(actual.x) > 3
+                xlim(xl2)
+            else
+                xlim(xl1)
+            end
+            if max(actual.pdf_y) > 1
+                ylim(yl2)
+            else
+                ylim(yl1)
+            end
+
+            title('$\hat{f}(x)_{NSE}$','interpreter','latex')
+            xlabel('x')
+            ylabel('f(x)')
+        end
+        subplot(2,2,4)
+        hold on;
+        for i = 1:trials
+            plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
+            plot(nmem_pdfs{j,i,k,1}, nmem_pdfs{j,i,k,2}, '-r', DisplayName='$\hat{f}(x)_{NMEM}$')
+
+            if max(actual.x) > 3
+                xlim(xl2)
+            else
+                xlim(xl1)
+            end
+            if max(actual.pdf_y) > 1
+                ylim(yl2)
+            else
+                ylim(yl1)
+            end
+
+            title('$\hat{f}(x)_{NMEM}$','interpreter','latex')
         end
         xlabel('x')
-        ylabel('f(x)')
-        if max(nse_pdfs{j,1,1,1}) > 20
-            xlim([0,20])
-        end
-        if max(nse_pdfs{j,1,1,2}) > 1
-            ylim([0,6])
-        else
-            ylim([0,1])
+        bp = gca;
+        if save_figs
+            saveas(bp, fullfile(dir_name, [fig_name, '.png']))
         end
     end
-    
-%     % CDFs ----------------------------------------------------------------
-%     for k = 1:length(sample_vec)
-%         figure('Name',['CDFs for sample size ',num2str(sample_vec(k))])
-%         hold on;
-%         for i = 1:trials
-%             plot(nmem_cdfs{j,i,k,1}, nmem_cdfs{j,i,k,2}, '-b', DisplayName='pdf nmem')
-%             plot(nse_cdfs{j,i,k,1}, nse_cdfs{j,i,k,2}, '-r', DisplayName='pdf nse')
-%         end
-%         xlabel('x')
-%         ylabel('f(x)')
-%     end
-%  
-%     % SQRs ----------------------------------------------------------------
-%     for k = 1:length(sample_vec)
-%         figure('Name',['SQRs for sample size ',num2str(sample_vec(k))])
-%     
-%         hold on;
-%         smallN = 256;
-%         smallN2 = 258;
-%         graymax = 240;
-%         range = 0:1/(smallN+1):1;
-%         muLD = range*(smallN + 1) / (smallN + 1);
-%         lemonDrop = sqrt(muLD.*(1-muLD)) * 3.4;
-%         sampleCount2 = (smallN + 2):-1:1;
-%         colorRange = (255-graymax)*sampleCount2/(smallN + 2);
-%         base = repmat(graymax, smallN + 2, 1);
-%         col = (base + colorRange') / 255;
-%         rgb = [col col col];
-%         count2 = 1;
-%         for ii = ceil(smallN2/2):smallN2-1
-%             ix = [ii ii+1 smallN2-ii smallN2-ii+1];
-%             fill(range(ix), lemonDrop(ix), rgb(count2, :),'edgecolor','none')
-%             fill(range(ix), -lemonDrop(ix), rgb(count2, :),'edgecolor','none')
-%             count2 = count2 + 2;
-%         end
-%         plot(muLD,lemonDrop,'k--');
-%         plot(muLD,-lemonDrop,'k--');
-%         %             h = plot(nse(d_indx,n_indx).u, nse(d_indx,n_indx).sqr, 'DisplayName', '$\hat{sqr}_i(x)$');
-%    
-%         for i = 1:trials
-%             nse_h = plot(nmem_sqrs{j,i,k,1}, nmem_sqrs{j,i,k,2},'-r', 'DisplayName', '$\hat{sqr}_i^{NSE}(x)$');
-%             nmem_h = plot(nse_sqrs{j,i,k,1}, nse_sqrs{j,i,k,2},'-b', 'DisplayName', '$\hat{sqr}_i^{NMEM}(x)$');
-%         end
-%         
-%         bp = gca;
-%         xlabel('$x$','Interpreter','latex')
-%         ylabel('$\hat{SQR}(x)$','Interpreter','latex')
-%         %             legend([nse_h(1),nmem_h(1), g],'Interpreter','latex')
-%         xlabel('$x$','Interpreter','latex')
-%         ylabel('$sqr(x)$','Interpreter','latex')
-%     end
-
-
-
-
 
 end
 

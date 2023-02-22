@@ -5,7 +5,7 @@ addpath("functions/")
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% To Plot %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 plot_mse_dist = true;
-plot_pdf = false;
+plot_pdf = true;
 plot_cdf = false;
 plot_sqr = false;
 plot_heavy = false;
@@ -13,25 +13,29 @@ save_figs = false;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Import data %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Create actual distrobution onject
+% Create actual distrobution onjects
 actual = distributions;
 
 % Path to directory
 dir_name = fullfile('data','pdf_estimates');
+dir_name = fullfile('data','cpu_20_t_50_maxN_22_pdf_estimates');
+dir_name = fullfile('data','cpu_15_t_50_maxN_22_pdf_estimates');
+% cpu_20_t_50_maxN_22_pdf_estimates
 
 % Define the etimates to plot
 
 % Sample range
 n_vec = 2.^[8,9,10,11,12,13,14,15,16,17,18];
-n_vec = 2.^[10,11];
+n_vec = 2.^[14];
 % Distribution range
 % d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
 % d_vec = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
 d_vec = ["Trimodal-Normal","Uniform","Normal"];
+% d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto"];
 % d_vec = ["Normal"];
 
 % Trials per sample
-trials = 10;
+trials = 50;
 
 % Initialize empty structure to store data in
 n = length(n_vec);
@@ -98,67 +102,127 @@ actual.generate_data = false;
 
 if plot_mse_dist
 
-    qnum = 50;
+    qnum = 20;
 
     % x values for given quantiles
     for d_idx = 1:size(nse, 1)
 
         for n_idx = 1:size(nse, 2)
 
-            mse_dist = zeros(qnum,trials);
-            for t_idx = 1:size(nse, 3)
+            mse_dist_nse = zeros(qnum,trials);
+            mse_dist_nmem = zeros(qnum,trials);
+%             for t_idx = 1:size(nse, 3)
+            for t_idx = 1:3
 
                 
                 disp(['dist: ',num2str(d_idx),'/',num2str(size(nse, 1)),...
-                    's: ',num2str(n_idx),'/',num2str(size(nse, 2)),...
-                    't: ',num2str(t_idx),'/',num2str(size(nse, 3))])
+                    ' s: ',num2str(n_idx),'/',num2str(size(nse, 2)),...
+                    ' t: ',num2str(t_idx),'/',num2str(size(nse, 3))])
 
+                
+               % NMEM
+                xs = nmem{d_idx,n_idx,t_idx,3}(:,1);
+                fs = nmem{d_idx,n_idx,t_idx,4}(:,1);
+                Fs = nmem{d_idx,n_idx,t_idx,5}(:,1);
+
+                [metric_dist, quantiles,xq,fq] = quant_metric(xs, fs, Fs, qnum, d_vec(d_idx));
+                mse_dist_nmem(:,t_idx) = metric_dist;
+
+                %NSE
                 xs = nse{d_idx,n_idx,t_idx,3}(:,1);
                 fs = nse{d_idx,n_idx,t_idx,4}(:,1);
                 Fs = nse{d_idx,n_idx,t_idx,5}(:,1);
 
-                q_min = 0.01;
-                q_max = 0.99;
+                [metric_dist,~,~,~] = quant_metric(xs, fs, Fs, qnum, d_vec(d_idx));
+                mse_dist_nse(:,t_idx) = metric_dist;
 
-                quantiles = linspace(q_min, q_max, qnum);
-                xq = interp1(Fs,xs,quantiles);
-                fq = interp1(xs,fs,xq);
 
-                % get actual distribution
-                actual.min_limit = min(xs);
-                actual.max_limit = max(xs);
-                actual.dist_name = d_vec(d_idx);
+%                 q_min = 0.01;
+%                 q_max = 0.99;
+%                 
+%                 xs = nse{d_idx,n_idx,t_idx,3}(:,1);
+%                 fs = nse{d_idx,n_idx,t_idx,4}(:,1);
+%                 Fs = nse{d_idx,n_idx,t_idx,5}(:,1);
 
-                for q = 2:qnum
 
-                    trunc_xs = linspace(xq(q-1), xq(q), 1000);
-                    trunc_fs = interp1(xs,fs,trunc_xs);
+%                 quantiles = linspace(q_min, q_max, qnum);
+%                 xq = interp1(Fs,xs,quantiles);
+%                 fq = interp1(xs,fs,xq);
 
-                    actual.x = linspace(min(trunc_xs),max(trunc_xs),length(trunc_xs));
-                    actual = actual.dist_list();
+%                 % get actual distribution
+%                 actual.min_limit = min(xs);
+%                 actual.max_limit = max(xs);
+%                 actual.dist_name = d_vec(d_idx);
+% 
+%                 for q = 2:qnum
+% 
+%                     trunc_xs = linspace(xq(q-1), xq(q), 1000);
+%                     trunc_fs = interp1(xs,fs,trunc_xs);
+% 
+%                     actual.x = linspace(min(trunc_xs),max(trunc_xs),length(trunc_xs));
+%                     actual = actual.dist_list();
+% 
+%                     fact = actual.pdf_y;
+% 
+%                     mse_dist_nse(q-1,t_idx) = mse(fact, trunc_fs);
+% 
+%                 end
 
-                    fact = actual.pdf_y;
-
-                    mse_dist(q-1,t_idx) = mse(fact, trunc_fs);
-
-                end
+%                 xs = nmem{d_idx,n_idx,t_idx,3}(:,1);
+%                 fs = nmem{d_idx,n_idx,t_idx,4}(:,1);
+%                 Fs = nmem{d_idx,n_idx,t_idx,5}(:,1);
+% 
+% 
+%                 quantiles = linspace(q_min, q_max, qnum);
+%                 xq = interp1(Fs,xs,quantiles);
+%                 fq = interp1(xs,fs,xq);
+% 
+%                 % get actual distribution
+%                 actual.min_limit = min(xs);
+%                 actual.max_limit = max(xs);
+%                 actual.dist_name = d_vec(d_idx);
+% 
+%                 for q = 2:qnum
+% 
+%                     trunc_xs = linspace(xq(q-1), xq(q), 1000);
+%                     trunc_fs = interp1(xs,fs,trunc_xs);
+% 
+%                     actual.x = linspace(min(trunc_xs),max(trunc_xs),length(trunc_xs));
+%                     actual = actual.dist_list();
+% 
+%                     fact = actual.pdf_y;
+% 
+%                     mse_dist_nmem(q-1,t_idx) = mse(fact, trunc_fs);
+% 
+%                 end
 
             end
 
             % plot quantiles
-%             figure()
-%             hold on;
-%             plot(xs, Fs, '--k')
-%             plot(xq, quantiles, 'og')
-%             plot(xq, fq, '.b')
-%             xlabel('x')
-%             ylabel('Q(x)')
+            figure('Name',['quantile_d_',convertStringsToChars(d_vec(d_idx)),'_s_',num2str(n_vec(n_idx))])
+            hold on;
+            plot(xs, Fs, '--k')
+            plot(xq, quantiles, 'og')
+            plot(xq, fq, '.b')
+            xlabel('x')
+            ylabel('Q(x)')
 
             figure('Name',['d_',convertStringsToChars(d_vec(d_idx)),'_s_',num2str(n_vec(n_idx))])
             hold on;
-            for t = 1:size(mse_dist,2)
-                plot(quantiles, mse_dist(:,t), '-r')
+            for t = 1:size(mse_dist_nse,2)
+                plot(quantiles, mse_dist_nse(:,t), '-r')
+                plot(quantiles, mse_dist_nmem(:,t), '-b')
             end
+            bp = gca;
+            bp.YAxis.Scale ="log";
+            xlabel('x')
+            ylabel('MSE(x)')
+
+
+            figure('Name',['avg_d_',convertStringsToChars(d_vec(d_idx)),'_s_',num2str(n_vec(n_idx))])
+            hold on;
+            plot(quantiles, mean(mse_dist_nse,2), '-r')
+            plot(quantiles, mean(mse_dist_nmem,2), '-b')
             xlabel('x')
             ylabel('MSE(x)')
 
