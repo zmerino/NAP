@@ -1,4 +1,4 @@
-classdef blocks < NSE % inherit NSE properties i.e. p vector and max block size
+classdef blocks < NAP % inherit properties i.e. p vector and max block size
     properties (Constant)
         % plot anything
         plt_figs = false;
@@ -100,7 +100,6 @@ classdef blocks < NSE % inherit NSE properties i.e. p vector and max block size
 
                         % golden ration bifraction minimization
                         [brL,brR,partition] = obj.min_br_gold(obj, obj.sample(pList(b):pList(b+1)));
-%                         [brL,brR,partition] = obj.gss(obj, obj.sample(pList(b):pList(b+1)));
 
                         % plot br and r for various paritions of whole
                         % sample

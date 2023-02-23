@@ -1,1 +1,0 @@
-mex -O  'EstimatePDFmv.cpp' 'OutputControl.cpp' 'WriteResults.cpp' 'Score.cpp' 'ScoreQZ.cpp' 'MinimizeScore.cpp' 'InputParameters.cpp' 'InputData.cpp' 'ChebyShev.cpp' 'JointProbability.cpp' 'Variable.cpp'
