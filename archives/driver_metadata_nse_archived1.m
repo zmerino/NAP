@@ -102,7 +102,7 @@ for j = 1:length(distribution_vector)
     sample_track = [];
     
     % Create vector of  samples
-    sample_vec = misc_functions.sample_pow(min_pow,max_pow,data_type_flag,step);
+    sample_vec = utils.sample_pow(min_pow,max_pow,data_type_flag,step);
     cpu_vec_se = zeros(length(sample_vec),trials);
     cpu_vec_nmem = zeros(length(sample_vec),trials);
     kl_vec_se = zeros(length(sample_vec),trials);

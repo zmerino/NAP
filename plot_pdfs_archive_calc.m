@@ -100,8 +100,8 @@ for i = 1:length(d_vec)
             nmem{i,j,k,5} = trapz(nmem_data{2,k}, nmem_data{3,k});
 
             % u and sqr
-            [nse{i,j,k,6}, nse{i,j,k,7}] = misc_functions.sqr(nse_data{2,k},nse_data{3,k},nse_data{1,k});
-            [nmem{i,j,k,6}, nmem{i,j,k,7}] = misc_functions.sqr(nmem_data{2,k},nmem_data{3,k},nmem_data{1,k});
+            [nse{i,j,k,6}, nse{i,j,k,7}] = utils.sqr(nse_data{2,k},nse_data{3,k},nse_data{1,k});
+            [nmem{i,j,k,6}, nmem{i,j,k,7}] = utils.sqr(nmem_data{2,k},nmem_data{3,k},nmem_data{1,k});
 
 
 
@@ -267,15 +267,15 @@ if plot_mse_dist
 
 
         % MSE
-        temp = vertcat(misc_functions.reshape_groups(n_vec',mse_dist_nse),...
-            misc_functions.reshape_groups(n_vec',mse_dist_nmem));
+        temp = vertcat(utils.reshape_groups(n_vec',mse_dist_nse),...
+            utils.reshape_groups(n_vec',mse_dist_nmem));
     
         sample_power = temp(:,1);
         mse_total = temp(:,2);
 
         % KL
-        temp = vertcat(misc_functions.reshape_groups(n_vec',kl_dist_nse),...
-            misc_functions.reshape_groups(n_vec',kl_dist_nmem));
+        temp = vertcat(utils.reshape_groups(n_vec',kl_dist_nse),...
+            utils.reshape_groups(n_vec',kl_dist_nmem));
     
         kl_total = temp(:,2);
     
@@ -283,8 +283,8 @@ if plot_mse_dist
         distribution = repelem(d_vec(d_idx), length(temp(:,2)))';
         name = repelem(names(d_idx), length(temp(:,2)))';
     
-        nse_label = repelem(["NSE"], size(misc_functions.reshape_groups(n_vec',mse_dist_nse), 1));
-        nmem_label = repelem(["NMEM"], size(misc_functions.reshape_groups(n_vec',mse_dist_nmem), 1));
+        nse_label = repelem(["NSE"], size(utils.reshape_groups(n_vec',mse_dist_nse), 1));
+        nmem_label = repelem(["NMEM"], size(utils.reshape_groups(n_vec',mse_dist_nmem), 1));
 
 
         estimator = vertcat(nse_label', nmem_label');

@@ -128,7 +128,7 @@ for j = 1:length(distribution_vector)
     sample_track = [];
     
     % Create vector of  samples
-    sample_vec = misc_functions.sample_pow(min_pow,max_pow,data_type_flag,step);
+    sample_vec = utils.sample_pow(min_pow,max_pow,data_type_flag,step);
     cpu_vec_se_parallel = zeros(length(sample_vec),trials);
     cpu_vec_se_serial = zeros(length(sample_vec),trials);
     cpu_vec_nmem = zeros(length(sample_vec),trials);
@@ -352,9 +352,9 @@ for j = 1:length(distribution_vector)
     %%%%%%%%%%%%%%%%%%%%%%% build data table %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     % CPU cpu_vec_se_serial
-    temp = vertcat(misc_functions.reshape_groups(sample_vec',cpu_vec_se_parallel),...
-        misc_functions.reshape_groups(sample_vec',cpu_vec_se_serial),...
-        misc_functions.reshape_groups(sample_vec',cpu_vec_nmem));
+    temp = vertcat(utils.reshape_groups(sample_vec',cpu_vec_se_parallel),...
+        utils.reshape_groups(sample_vec',cpu_vec_se_serial),...
+        utils.reshape_groups(sample_vec',cpu_vec_nmem));
 
     sample_power = temp(:,1);
     cpu_time = temp(:,2);
@@ -363,39 +363,39 @@ for j = 1:length(distribution_vector)
     distribution = repelem(distribution_vector(j), length(temp(:,2)))';
     name = repelem(names(j), length(temp(:,2)))';
 
-    nse_label_parallel = repelem(["NSE_{parallel}"], size(misc_functions.reshape_groups(sample_vec',cpu_vec_se_parallel), 1));
-    nse_label_serial = repelem(["NSE_{serial}"], size(misc_functions.reshape_groups(sample_vec',cpu_vec_se_serial), 1));
-    nmem_label = repelem(["NMEM"], size(misc_functions.reshape_groups(sample_vec',cpu_vec_nmem), 1));
+    nse_label_parallel = repelem(["NSE_{parallel}"], size(utils.reshape_groups(sample_vec',cpu_vec_se_parallel), 1));
+    nse_label_serial = repelem(["NSE_{serial}"], size(utils.reshape_groups(sample_vec',cpu_vec_se_serial), 1));
+    nmem_label = repelem(["NMEM"], size(utils.reshape_groups(sample_vec',cpu_vec_nmem), 1));
 
     % Failed
-    temp = vertcat(misc_functions.reshape_groups(sample_vec',fail_nse_parallel(:,:,j)),...
-                misc_functions.reshape_groups(sample_vec',fail_nse_serial(:,:,j)),...
-                misc_functions.reshape_groups(sample_vec',fail_nmem(:,:,j)));
+    temp = vertcat(utils.reshape_groups(sample_vec',fail_nse_parallel(:,:,j)),...
+                utils.reshape_groups(sample_vec',fail_nse_serial(:,:,j)),...
+                utils.reshape_groups(sample_vec',fail_nmem(:,:,j)));
 
     fail = temp(:,2);   
 
     % Lagragian
-    temp = vertcat(misc_functions.reshape_groups(sample_vec',lagrange_nse_parallel(:,:,j)),...
-            misc_functions.reshape_groups(sample_vec',lagrange_nse_serial(:,:,j)),...
-            misc_functions.reshape_groups(sample_vec',lagrange_nmem(:,:,j)));
+    temp = vertcat(utils.reshape_groups(sample_vec',lagrange_nse_parallel(:,:,j)),...
+            utils.reshape_groups(sample_vec',lagrange_nse_serial(:,:,j)),...
+            utils.reshape_groups(sample_vec',lagrange_nmem(:,:,j)));
     lagrange = temp(:,2);    
     
     estimator = vertcat(nse_label_parallel',nse_label_serial', nmem_label');
     
     % padding NMEM with NaNs because there are no scale/size infromation
-    padding = misc_functions.reshape_groups(sample_vec',NaN(length(sample_vec),trials));
+    padding = utils.reshape_groups(sample_vec',NaN(length(sample_vec),trials));
 
     % average Lagragian for all blocks, group in lagrange for nmem
-    temp = vertcat(misc_functions.reshape_groups(sample_vec',avg_lagrange_nse_parallel(:,:,j)),...
+    temp = vertcat(utils.reshape_groups(sample_vec',avg_lagrange_nse_parallel(:,:,j)),...
             padding,...
-            misc_functions.reshape_groups(sample_vec',lagrange_nmem(:,:,j)));
+            utils.reshape_groups(sample_vec',lagrange_nmem(:,:,j)));
     avg_lagrange = temp(:,2);  
 
     % block size ------------------------
 
     % max
     bs_max_mat = squeeze(block_size(1,:,:));
-    bs_max = misc_functions.reshape_groups(sample_vec',bs_max_mat);
+    bs_max = utils.reshape_groups(sample_vec',bs_max_mat);
     max_size = vertcat(bs_max, padding, padding);
 
     sample_power = max_size(:,1);
@@ -404,28 +404,28 @@ for j = 1:length(distribution_vector)
 
     % min
     bs_min_mat = squeeze(block_size(2,:,:));
-    bs_min = misc_functions.reshape_groups(sample_vec',bs_min_mat);
+    bs_min = utils.reshape_groups(sample_vec',bs_min_mat);
     min_size = vertcat(bs_min, padding, padding);
     min_size = min_size(:,2);
 
 
     % mean
     bs_mean_mat = squeeze(block_size(3,:,:));
-    bs_mean = misc_functions.reshape_groups(sample_vec',bs_mean_mat);
+    bs_mean = utils.reshape_groups(sample_vec',bs_mean_mat);
     mean_size = vertcat(bs_mean, padding, padding);
     mean_size = mean_size(:,2);
 
 
     % median
     bs_med_mat = squeeze(block_size(4,:,:));
-    bs_med = misc_functions.reshape_groups(sample_vec',bs_med_mat);
+    bs_med = utils.reshape_groups(sample_vec',bs_med_mat);
     median_size = vertcat(bs_med, padding, padding);
     median_size = median_size(:,2);
 
 
     %std dev
     bs_stdev_mat = squeeze(block_size(4,:,:));
-    bs_stdev = misc_functions.reshape_groups(sample_vec',bs_stdev_mat);
+    bs_stdev = utils.reshape_groups(sample_vec',bs_stdev_mat);
     std_size = vertcat(bs_stdev, padding, padding);
     std_size = std_size(:,2);
 
@@ -436,31 +436,31 @@ for j = 1:length(distribution_vector)
 
     % max
     bs_max_mat = squeeze(block_scale(1,:,:));
-    bs_max = misc_functions.reshape_groups(sample_vec',bs_max_mat);
+    bs_max = utils.reshape_groups(sample_vec',bs_max_mat);
     max_scale = vertcat(bs_max, padding, padding);
     max_scale = max_scale(:,2);
 
     % min
     bs_min_mat = squeeze(block_scale(2,:,:));
-    bs_min = misc_functions.reshape_groups(sample_vec',bs_min_mat);
+    bs_min = utils.reshape_groups(sample_vec',bs_min_mat);
     min_scale = vertcat(bs_min, padding, padding);
     min_scale = min_scale(:,2);
 
     % mean
     bs_mean_mat = squeeze(block_scale(3,:,:));
-    bs_mean = misc_functions.reshape_groups(sample_vec',bs_mean_mat);
+    bs_mean = utils.reshape_groups(sample_vec',bs_mean_mat);
     mean_scale = vertcat(bs_mean, padding, padding);
     mean_scale = mean_scale(:,2);
 
     % median
     bs_med_mat = squeeze(block_scale(4,:,:));
-    bs_med = misc_functions.reshape_groups(sample_vec',bs_med_mat);
+    bs_med = utils.reshape_groups(sample_vec',bs_med_mat);
     median_scale = vertcat(bs_med, padding, padding);
     median_scale = median_scale(:,2);
 
     %std dev
     bs_stdev_mat = squeeze(block_size(4,:,:));
-    bs_stdev = misc_functions.reshape_groups(sample_vec',bs_stdev_mat);
+    bs_stdev = utils.reshape_groups(sample_vec',bs_stdev_mat);
     std_scale = vertcat(bs_stdev, padding, padding);
     std_scale = std_scale(:,2);
 

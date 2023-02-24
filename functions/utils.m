@@ -1,4 +1,4 @@
-classdef misc_functions
+classdef utils
     methods(Static)
         function [u,sqr] = sqr(sx,sPDF,sample)
             Ns = length(sample);

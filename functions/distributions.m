@@ -112,7 +112,7 @@ classdef distributions
                         % mixture string array flag for mixSampling()
                         mixtureType = "two";
                         % generate n vector for mixture samplings
-                        n = misc_functions.mixSampling(obj.Ns,p,mixtureType);
+                        n = utils.mixSampling(obj.Ns,p,mixtureType);
                         % generate random sample
                         rndData1 = random(distInfo1,1,n(1));
                         rndData2 = random(distInfo2,1,n(2));
@@ -121,10 +121,10 @@ classdef distributions
                         obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     end
                     % CREATE DISTRIBUTION OBJECT --------------------------
-                    % mixture string array flag for misc_functions.mixSampling()
+                    % mixture string array flag for utils.mixSampling()
                     mixtureType = "two";
                     % generate m vector for mixture samplings
-                    m = misc_functions.mixSampling(obj.Ncdf,p,mixtureType);
+                    m = utils.mixSampling(obj.Ncdf,p,mixtureType);
                     % generate random sample to create distribution
                     % object
                     actData1 = random(distInfo1,1,m(1));
@@ -242,10 +242,10 @@ classdef distributions
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     % generate random sample or actual pdf
                     if obj.randomVSactual == "random"
-                        % mixture string array flag for misc_functions.mixSampling()
+                        % mixture string array flag for utils.mixSampling()
                         mixtureType = "two";
                         % generate n vector for mixture samplings
-                        n = misc_functions.mixSampling(obj.Ns,p,mixtureType);
+                        n = utils.mixSampling(obj.Ns,p,mixtureType);
                         % generate random sample
                         rndData1 = random(distInfo1,1,n(1));
                         rndData2 = random(distInfo2,1,n(2));
@@ -254,10 +254,10 @@ classdef distributions
                         obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     end
                     % CREATE DISTRIBUTION OBJECT --------------------------
-                    % mixture string array flag for misc_functions.mixSampling()
+                    % mixture string array flag for utils.mixSampling()
                     mixtureType = "two";
                     % generate m vector for mixture samplings
-                    m = misc_functions.mixSampling(obj.Ncdf,p,mixtureType);
+                    m = utils.mixSampling(obj.Ncdf,p,mixtureType);
                     % generate random sample to create distribution
                     % object
                     actData1 = random(distInfo1,1,m(1));
@@ -496,10 +496,10 @@ classdef distributions
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     % generate random sample or actual pdf
                     if obj.randomVSactual == "random"
-                        % mixture string array flag for misc_functions.mixSampling()
+                        % mixture string array flag for utils.mixSampling()
                         mixtureType = "two";
                         % generate n vector for mixture samplings
-                        n = misc_functions.mixSampling(obj.Ns,p,mixtureType);
+                        n = utils.mixSampling(obj.Ns,p,mixtureType);
                         % generate random sample
                         rndData1 = random(distInfo1,1,n(1));
                         rndData2 = random(distInfo2,1,n(2));
@@ -508,10 +508,10 @@ classdef distributions
                         obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     end
                     % CREATE DISTRIBUTION OBJECT --------------------------
-                    % mixture string array flag for misc_functions.mixSampling()
+                    % mixture string array flag for utils.mixSampling()
                     mixtureType = "two";
                     % generate m vector for mixture samplings
-                    m = misc_functions.mixSampling(obj.Ncdf,p,mixtureType);
+                    m = utils.mixSampling(obj.Ncdf,p,mixtureType);
                     % generate random sample to create distribution
                     % object
                     actData1 = random(distInfo1,1,m(1));
@@ -616,10 +616,10 @@ classdef distributions
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     % generate random sample or actual pdf
                     if obj.randomVSactual == "random"
-                        % mixture string array flag for misc_functions.mixSampling()
+                        % mixture string array flag for utils.mixSampling()
                         mixtureType = "six";
                         % generate n vector for mixture samplings
-                        n = misc_functions.mixSampling(obj.Ns,p,mixtureType);
+                        n = utils.mixSampling(obj.Ns,p,mixtureType);
                         % generate random sample
                         rndData1 = random(distInfo1,1,n(1));
                         rndData2 = random(distInfo2,1,n(2));
@@ -633,10 +633,10 @@ classdef distributions
                         obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     end
                     % CREATE DISTRIBUTION OBJECT --------------------------
-                    % mixture string array flag for misc_functions.mixSampling()
+                    % mixture string array flag for utils.mixSampling()
                     mixtureType = "six";
                     % generate m vector for mixture samplings
-                    m = misc_functions.mixSampling(obj.Ncdf,p,mixtureType);
+                    m = utils.mixSampling(obj.Ncdf,p,mixtureType);
                     % generate random sample to create distribution
                     % object
                     actData1 = random(distInfo1,1,m(1));
@@ -792,10 +792,10 @@ classdef distributions
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     % generate random sample or actual pdf
                     if obj.randomVSactual == "random"
-                        % mixture string array flag for misc_functions.mixSampling()
+                        % mixture string array flag for utils.mixSampling()
                         mixtureType = "two";
                         % generate n vector for mixture samplings
-                        n = misc_functions.mixSampling(obj.Ns,p,mixtureType);
+                        n = utils.mixSampling(obj.Ns,p,mixtureType);
                         % generate random sample
                         rndData1 = random(distInfo1,1,n(1));
                         rndData2 = random(distInfo2,1,n(2));
@@ -804,10 +804,10 @@ classdef distributions
                         obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     end
                     % CREATE DISTRIBUTION OBJECT --------------------------
-                    % mixture string array flag for misc_functions.mixSampling()
+                    % mixture string array flag for utils.mixSampling()
                     mixtureType = "two";
                     % generate m vector for mixture samplings
-                    m = misc_functions.mixSampling(obj.Ncdf,p,mixtureType);
+                    m = utils.mixSampling(obj.Ncdf,p,mixtureType);
                     % generate random sample to create distribution
                     % object
                     actData1 = random(distInfo1,1,m(1));
@@ -902,10 +902,10 @@ classdef distributions
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     % generate random sample or actual pdf
                     if obj.randomVSactual == "random"
-                        % mixture string array flag for misc_functions.mixSampling()
+                        % mixture string array flag for utils.mixSampling()
                         mixtureType = "three";
                         % generate n vector for mixture samplings
-                        n = misc_functions.mixSampling(obj.Ns,p,mixtureType);
+                        n = utils.mixSampling(obj.Ns,p,mixtureType);
                         % generate random sample
                         rndData1 = random(distInfo1,1,n(1));
                         rndData2 = random(distInfo2,1,n(2));
@@ -915,10 +915,10 @@ classdef distributions
                         obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     end
                     % CREATE DISTRIBUTION OBJECT --------------------------
-                    % mixture string array flag for misc_functions.mixSampling()
+                    % mixture string array flag for utils.mixSampling()
                     mixtureType = "three";
                     % generate m vector for mixture samplings
-                    m = misc_functions.mixSampling(obj.Ncdf,p,mixtureType);
+                    m = utils.mixSampling(obj.Ncdf,p,mixtureType);
                     % generate random sample to create distribution
                     % object
                     actData1 = random(distInfo1,1,m(1));
@@ -1002,10 +1002,10 @@ classdef distributions
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     % generate random sample or actual pdf
                     if obj.randomVSactual == "random"
-                        % mixture string array flag for misc_functions.mixSampling()
+                        % mixture string array flag for utils.mixSampling()
                         mixtureType = "three";
                         % generate n vector for mixture samplings
-                        n = misc_functions.mixSampling(obj.Ns,p,mixtureType);
+                        n = utils.mixSampling(obj.Ns,p,mixtureType);
                         % generate random sample
                         rndData1 = random(distInfo1,1,n(1));
                         rndData2 = random(distInfo2,1,n(2));
@@ -1015,10 +1015,10 @@ classdef distributions
                         obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     end
                     % CREATE DISTRIBUTION OBJECT --------------------------
-                    % mixture string array flag for misc_functions.mixSampling()
+                    % mixture string array flag for utils.mixSampling()
                     mixtureType = "three";
                     % generate m vector for mixture samplings
-                    m = misc_functions.mixSampling(obj.Ncdf,p,mixtureType);
+                    m = utils.mixSampling(obj.Ncdf,p,mixtureType);
                     % generate random sample to create distribution
                     % object
                     actData1 = random(distInfo1,1,m(1));
@@ -1142,10 +1142,10 @@ classdef distributions
                     %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     % generate random sample or actual pdf
                     if obj.randomVSactual == "random"
-                        % mixture string array flag for misc_functions.mixSampling()
+                        % mixture string array flag for utils.mixSampling()
                         mixtureType = "three";
                         % generate n vector for mixture samplings
-                        n = misc_functions.mixSampling(obj.Ns,p,mixtureType);
+                        n = utils.mixSampling(obj.Ns,p,mixtureType);
                         % generate random sample
                         rndData1 = random(distInfo1,1,n(1));
                         rndData2 = random(distInfo2,1,n(2));
@@ -1155,10 +1155,10 @@ classdef distributions
                         obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     end
                     % CREATE DISTRIBUTION OBJECT --------------------------
-                    % mixture string array flag for misc_functions.mixSampling()
+                    % mixture string array flag for utils.mixSampling()
                     mixtureType = "three";
                     % generate m vector for mixture samplings
-                    m = misc_functions.mixSampling(obj.Ncdf,p,mixtureType);
+                    m = utils.mixSampling(obj.Ncdf,p,mixtureType);
                     % generate random sample to create distribution
                     % object
                     actData1 = random(distInfo1,1,m(1));

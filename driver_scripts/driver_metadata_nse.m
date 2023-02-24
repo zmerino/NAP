@@ -100,7 +100,7 @@ for j = 1:length(distribution_vector)
     sample_track = [];
     
     % Create vector of  samples
-    sample_vec = misc_functions.sample_pow(min_pow,max_pow,data_type_flag,step);
+    sample_vec = utils.sample_pow(min_pow,max_pow,data_type_flag,step);
     cpu_vec_se = zeros(length(sample_vec),trials);
     kl_vec_se = zeros(length(sample_vec),trials);
     mse_vec_se = zeros(length(sample_vec),trials);
@@ -379,38 +379,38 @@ for j = 1:length(distribution_vector)
 
 
     % MSE: Full Distribution ----------------------------------------------
-    temp = misc_functions.reshape_groups(sample_vec',mse_vec_se);
+    temp = utils.reshape_groups(sample_vec',mse_vec_se);
     sample_power = temp(:,1);
     mse = temp(:,2);
 
     % KL
-    temp = misc_functions.reshape_groups(sample_vec',kl_vec_se);
+    temp = utils.reshape_groups(sample_vec',kl_vec_se);
     kl = temp(:,2);
     
     % CPU
-    temp = misc_functions.reshape_groups(sample_vec',cpu_vec_se);
+    temp = utils.reshape_groups(sample_vec',cpu_vec_se);
     cpu_time = temp(:,2);
 
     % Distributions 
     distribution = repelem(distribution_vector(j), length(temp(:,2)))';
     name = repelem(names(j), length(temp(:,2)))';
 
-    nse_label = repelem(["NSE"], size(misc_functions.reshape_groups(sample_vec',cpu_vec_se), 1));
+    nse_label = repelem(["NSE"], size(utils.reshape_groups(sample_vec',cpu_vec_se), 1));
     estimator = nse_label';
 
     % Failed
-    temp = misc_functions.reshape_groups(sample_vec',fail_nse(:,:,j));
+    temp = utils.reshape_groups(sample_vec',fail_nse(:,:,j));
     fail = temp(:,2);   
 
     % Lagragian
-    temp = misc_functions.reshape_groups(sample_vec',lagrange_nse(:,:,j));
+    temp = utils.reshape_groups(sample_vec',lagrange_nse(:,:,j));
     lagrange = temp(:,2);    
     
     % block size ------------------------
 
     % max
     bs_max_mat = squeeze(block_size(1,:,:));
-    bs_max = misc_functions.reshape_groups(sample_vec',bs_max_mat);
+    bs_max = utils.reshape_groups(sample_vec',bs_max_mat);
     max = bs_max;
 
     sample_power = max(:,1);
@@ -419,28 +419,28 @@ for j = 1:length(distribution_vector)
 
     % min
     bs_min_mat = squeeze(block_size(2,:,:));
-    bs_min = misc_functions.reshape_groups(sample_vec',bs_min_mat);
+    bs_min = utils.reshape_groups(sample_vec',bs_min_mat);
     min = bs_min;
     min = min(:,2);
 
 
     % mean
     bs_mean_mat = squeeze(block_size(3,:,:));
-    bs_mean = misc_functions.reshape_groups(sample_vec',bs_mean_mat);
+    bs_mean = utils.reshape_groups(sample_vec',bs_mean_mat);
     mean = bs_mean;
     mean = mean(:,2);
 
 
     % median
     bs_med_mat = squeeze(block_size(4,:,:));
-    bs_med = misc_functions.reshape_groups(sample_vec',bs_med_mat);
+    bs_med = utils.reshape_groups(sample_vec',bs_med_mat);
     median = bs_med;
     median = median(:,2);
 
 
     %std dev
     bs_stdev_mat = squeeze(block_size(4,:,:));
-    bs_stdev = misc_functions.reshape_groups(sample_vec',bs_stdev_mat);
+    bs_stdev = utils.reshape_groups(sample_vec',bs_stdev_mat);
     std = bs_stdev;
     std = std(:,2);
 
@@ -451,31 +451,31 @@ for j = 1:length(distribution_vector)
 
     % max
     bs_max_mat = squeeze(block_scale(1,:,:));
-    bs_max = misc_functions.reshape_groups(sample_vec',bs_max_mat);
+    bs_max = utils.reshape_groups(sample_vec',bs_max_mat);
     max = bs_max;
     max = max(:,2);
 
     % min
     bs_min_mat = squeeze(block_scale(2,:,:));
-    bs_min = misc_functions.reshape_groups(sample_vec',bs_min_mat);
+    bs_min = utils.reshape_groups(sample_vec',bs_min_mat);
     min = bs_min;
     min = min(:,2);
 
     % mean
     bs_mean_mat = squeeze(block_scale(3,:,:));
-    bs_mean = misc_functions.reshape_groups(sample_vec',bs_mean_mat);
+    bs_mean = utils.reshape_groups(sample_vec',bs_mean_mat);
     mean = bs_mean;
     mean = mean(:,2);
 
     % median
     bs_med_mat = squeeze(block_scale(4,:,:));
-    bs_med = misc_functions.reshape_groups(sample_vec',bs_med_mat);
+    bs_med = utils.reshape_groups(sample_vec',bs_med_mat);
     median = bs_med;
     median = median(:,2);
 
     %std dev
     bs_stdev_mat = squeeze(block_size(4,:,:));
-    bs_stdev = misc_functions.reshape_groups(sample_vec',bs_stdev_mat);
+    bs_stdev = utils.reshape_groups(sample_vec',bs_stdev_mat);
     std = bs_stdev;
     std = std(:,2);
 

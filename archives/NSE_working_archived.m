@@ -46,7 +46,7 @@ classdef NSE
             end
 
             % --------------------------------------------- universal scoring function
-            logLikelihood = misc_functions.likelihood();
+            logLikelihood = utils.likelihood();
             xScore0 = logLikelihood(:,1);
             yCoverage0 = logLikelihood(:,2);
             xScore = xScore0;
@@ -484,7 +484,7 @@ classdef NSE
 
             % get scaled residual
             sqr = sqrt(Ns)*(u - uref); % normal formula has sqrt(Ns+2) but Ns -> Ns-2
-            [u,sqr] = misc_functions.sqr(sx,sPDF,inputSample);
+            [u,sqr] = utils.sqr(sx,sPDF,inputSample);
         end
     end
 end

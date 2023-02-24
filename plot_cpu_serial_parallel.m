@@ -6,21 +6,13 @@ addpath("data/")
 
 save_figs = true;
 
-dir_name = fullfile('figures','cpu20_t50_N22');
+dir_name = fullfile('figures','cpu20_t50_N22_set1');
 % dir_name = fullfile('figures','cpu10_t2_N26');
 status = mkdir(dir_name);
 
 % Import data table
 filename = fullfile('data','estimator_meta_data.dat');
-filename = 'serial_parallel_cpu_data.dat';
-filename = 'nse_estimator_meta_data.dat';
-filename = 'serial_parallel_cpu_data.dat';
-filename = 'cpu_10_t_50_maxN_22_data_v2.dat';
-filename = 'cpu_15_t_50_maxN_22_data_v2.dat';   
-filename = 'cpu_20_t_50_maxN_22_data_v2.dat';
-% filename = 'cpu_10_t_50_maxN_18_data_test.dat';
-% filename = 'cpu_15_t_50_maxN_21_data.dat';
-% filename = 'cpu_20_t_50_maxN_21_data.dat';
+filename = 'cpu_20_t_50_set_1.dat';
 
 
 data = readtable(filename);
@@ -30,8 +22,8 @@ names = {'Uniform-Mix', 'Generalized-Pareto', 'Stable',...
     'Tri-Modal-Normal', 'Normal', 'Uniform', 'Beta(0.5,1.5)',...
     'Beta(2,0.5)', 'Beta(0.5,0.5)'}';
 
-names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto"];
-names = ["Tri-Modal-Normal","Uniform", "Normal"];
+names = ["Tri-Modal-Normal","Uniform", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto"];
+% names = ["Tri-Modal-Normal","Uniform", "Normal"];
 % names = [ "Normal", "Beta(0.5,0.5)", "Generalized-Pareto"];
 % names = ["Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto"];
 

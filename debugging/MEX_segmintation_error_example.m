@@ -102,7 +102,7 @@ for j = 1:length(distribution_vector)
     sample_track = [];
     
     % Create vector of  samples
-    sample_vec = misc_functions.sample_pow(min_pow,max_pow,data_type_flag,step);
+    sample_vec = utils.sample_pow(min_pow,max_pow,data_type_flag,step);
     cpu_vec_se = zeros(length(sample_vec),trials);
     cpu_vec_nmem = zeros(length(sample_vec),trials);
     kl_vec_se = zeros(length(sample_vec),trials);
@@ -455,37 +455,37 @@ for j = 1:length(distribution_vector)
 
 
     % MSE: Full Distribution
-    temp = vertcat(misc_functions.reshape_groups(sample_vec',mse_vec_se),...
-    misc_functions.reshape_groups(sample_vec',mse_vec_nmem));
+    temp = vertcat(utils.reshape_groups(sample_vec',mse_vec_se),...
+    utils.reshape_groups(sample_vec',mse_vec_nmem));
     sample_power = temp(:,1);
     mse = temp(:,2);
 
     % KL
-    temp = vertcat(misc_functions.reshape_groups(sample_vec',kl_vec_se),...
-    misc_functions.reshape_groups(sample_vec',kl_vec_nmem));
+    temp = vertcat(utils.reshape_groups(sample_vec',kl_vec_se),...
+    utils.reshape_groups(sample_vec',kl_vec_nmem));
     kl = temp(:,2);
     
     % CPU
-    temp = vertcat(misc_functions.reshape_groups(sample_vec',cpu_vec_se),...
-    misc_functions.reshape_groups(sample_vec',cpu_vec_nmem));
+    temp = vertcat(utils.reshape_groups(sample_vec',cpu_vec_se),...
+    utils.reshape_groups(sample_vec',cpu_vec_nmem));
     cpu_time = temp(:,2);
 
     % Distributions 
     distribution = repelem(distribution_vector(j), length(temp(:,2)))';
     name = repelem(names(j), length(temp(:,2)))';
 
-    nse_label = repelem(["NSE"], size(misc_functions.reshape_groups(sample_vec',cpu_vec_se), 1));
-    nmem_label = repelem(["NMEM"], size(misc_functions.reshape_groups(sample_vec',cpu_vec_nmem), 1));
+    nse_label = repelem(["NSE"], size(utils.reshape_groups(sample_vec',cpu_vec_se), 1));
+    nmem_label = repelem(["NMEM"], size(utils.reshape_groups(sample_vec',cpu_vec_nmem), 1));
 
     % Failed
-    temp = vertcat(misc_functions.reshape_groups(sample_vec',fail_nse(:,:,j)),...
-        misc_functions.reshape_groups(sample_vec',fail_nmem(:,:,j)));
+    temp = vertcat(utils.reshape_groups(sample_vec',fail_nse(:,:,j)),...
+        utils.reshape_groups(sample_vec',fail_nmem(:,:,j)));
  
     fail = temp(:,2);   
 
     % Lagragian
-    temp = vertcat(misc_functions.reshape_groups(sample_vec',lagrange_nse(:,:,j)),...
-        misc_functions.reshape_groups(sample_vec',lagrange_nmem(:,:,j)));
+    temp = vertcat(utils.reshape_groups(sample_vec',lagrange_nse(:,:,j)),...
+        utils.reshape_groups(sample_vec',lagrange_nmem(:,:,j)));
     lagrange = temp(:,2);    
     
     estimator = vertcat(nse_label', nmem_label');

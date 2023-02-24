@@ -33,9 +33,9 @@ YexpScale = -2;
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   22; %<---- maximum exponent to generate samples
+max_pow =                   17; %<---- maximum exponent to generate samples
 min_pow =                   8; %<---- minimum exponent to generate samples
-trials =                    30;  %<--- trials to run to generate heuristics for programs
+trials =                    3;  %<--- trials to run to generate heuristics for programs
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % max_pow =                   20; %<---- maximum exponent to generate samples
 % min_pow =                   8; %<---- minimum exponent to generate samples
@@ -62,7 +62,8 @@ cpu_type =                   '\';%<--- '\' or '/' for windows or linux
     "Stable2","Stable3","Stable1","BirnbaumSaunders-Stable"];
 %}
 distribution_vector = ["Uniform-Mix","Generalized-Pareto","Stable","Trimodal-Normal","Normal", "Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
-% distribution_vector = ["Normal","Uniform"];
+distribution_vector = ["Trimodal-Normal","Normal", "Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
+distribution_vector = ["Normal","Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5"];
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Main Function Call Loop used to lable plot figures
 
@@ -117,7 +118,7 @@ for j = 1:length(distribution_vector)
     dist_BR_track = cell(length(distribution_vector));
     
     % Create vector of  samples
-    sample_vec = misc_functions.sample_pow(min_pow,max_pow,data_type_flag,step);
+    sample_vec = utils.sample_pow(min_pow,max_pow,data_type_flag,step);
     BoxCPUtimeSE = zeros((max_pow-min_pow)*trials,2);
     BoxCPUtimeNMEM = zeros((max_pow-min_pow)*trials,2);
     %
@@ -164,10 +165,11 @@ for j = 1:length(distribution_vector)
             % Track T,BR per trial
             nse = NSE;
             nse.max_bs = 1e3;
-            nse = nse.stitch(sample);
+            serial = false;
+            nse = nse.stitch(sample, serial);
 
             obt_blocks = blocks;
-            obt_blocks = obt_blocks.stitch(sample);
+            obt_blocks = obt_blocks.stitch(sample, serial);
             obt_blocks.sample = x;
             obt_blocks.binNs = nse.binN;
             obt_blocks.Ns = length(x);
@@ -240,75 +242,80 @@ end
 
 % For display purposes
 
-% xT = linspace(2^min_pow,2^max_pow,10000);
+xT = linspace(2^min_pow,2^max_pow,10000);
 % T = 2.6741.*xT.^(-0.626) + 0.005;
-% 
-% figure('Name','testBR')
-% hold on;
-% cc=lines(length(distribution_vector));
-% for j = 1:length(distribution_vector)
-% 
-%     xorigin = log(sample_vec)/log(2);
-%     yorigin = mean(dist_br0_track(:,:,j),1,'omitnan');
-%     stdevorigin = std(dist_br0_track(:,:,j),0,1,'omitnan');
-% 
-%     x = xorigin;
-%     y = yorigin;
-%     stdev = stdevorigin;
-% 
-%     curve1 = y + stdev;
-%     curve2 = y - stdev;
-% 
-%     x2 = [x, fliplr(x)];
-%     inBetween = [curve1, fliplr(curve2)];
-%     f = fill(x2, inBetween,cc(j,:));
-%     set(f,'facealpha',0.25)
-%     set(f,'edgealpha',0)
-% 
-% 
-%     h(j) = plot(x,y,'DisplayName',char(distribution_vector(j)),'Color',cc(j,:));
-% end
-% s = plot(log(xT)/log(2), T, 'k--','DisplayName','\Gamma');
-% bp = gca;
-% bp.XAxis.TickLabelInterpreter = 'latex';
-% % bp.xticklabel = labels;
-% bp.YAxis.Exponent = YexpScale;
-% xlabel('$log_{2}(x)$','Interpreter','latex')
-% ylabel('Threshold','Interpreter','latex')
-% legend([s,h])
-% 
-% figure('Name','testBR 2')
-% hold on;
-% cc=lines(length(distribution_vector));
-% for j = 1:length(distribution_vector)
-% 
-%     xorigin = log(sample_vec)/log(2);
-%     yorigin = mean(dist_br0_track(:,:,j),1,'omitnan');
-%     stdevorigin = std(dist_br0_track(:,:,j),0,1,'omitnan');
-% 
-%     x = xorigin;
-%     y = yorigin;
-%     stdev = stdevorigin;
-% 
-%     curve1 = y + stdev;
-%     curve2 = y - stdev;
-% 
-%     x2 = [x, fliplr(x)];
-%     inBetween = [curve1, fliplr(curve2)];
-%     f = fill(x2, inBetween,cc(j,:));
-%     set(f,'facealpha',0.25)
-%     set(f,'edgealpha',0)
-% 
-%     h(j) = plot(x,log(y),'DisplayName',char(distribution_vector(j)),'Color',cc(j,:));
-% end
-% s = plot(log(xT)/log(2), log(T), 'k--','DisplayName','\Gamma');
-% bp = gca;
-% bp.XAxis.TickLabelInterpreter = 'latex';
-% % bp.xticklabel = labels;
-% bp.YAxis.Exponent = YexpScale;
-% xlabel('$log_{2}(x)$','Interpreter','latex')
-% ylabel('log(Threshold)','Interpreter','latex')
-% legend([s,h])
+T = 2.*xT.^(0.33);
+
+%         p4 = 0.33;
+%         p5 = 2;
+
+figure('Name','testBR')
+hold on;
+cc=lines(length(distribution_vector));
+for j = 1:length(distribution_vector)
+
+    xorigin = log(sample_vec)/log(2);
+    yorigin = mean(dist_br0_track(:,:,j),1,'omitnan');
+    stdevorigin = std(dist_br0_track(:,:,j),0,1,'omitnan');
+
+    x = xorigin;
+    y = yorigin;
+    stdev = stdevorigin;
+
+    curve1 = y + stdev;
+    curve2 = y - stdev;
+
+    x2 = [x, fliplr(x)];
+    inBetween = [curve1, fliplr(curve2)];
+    f = fill(x2, inBetween,cc(j,:));
+    set(f,'facealpha',0.25)
+    set(f,'edgealpha',0)
+
+
+    h(j) = plot(x,y,'DisplayName',char(distribution_vector(j)),'Color',cc(j,:));
+end
+s = plot(log(xT)/log(2), T, 'k--','DisplayName','\Gamma');
+bp = gca;
+bp.XAxis.TickLabelInterpreter = 'latex';
+% bp.xticklabel = labels;
+bp.YAxis.Exponent = YexpScale;
+xlabel('$log_{2}(x)$','Interpreter','latex')
+ylabel('Threshold','Interpreter','latex')
+legend([s,h])
+
+figure('Name','testBR 2')
+hold on;
+cc=lines(length(distribution_vector));
+for j = 1:length(distribution_vector)
+
+    xorigin = log(sample_vec)/log(2);
+    yorigin = mean(dist_br0_track(:,:,j),1,'omitnan');
+    stdevorigin = std(dist_br0_track(:,:,j),0,1,'omitnan');
+
+    x = xorigin;
+    y = yorigin;
+    stdev = stdevorigin;
+
+    curve1 = y + stdev;
+    curve2 = y - stdev;
+
+    x2 = [x, fliplr(x)];
+    inBetween = [curve1, fliplr(curve2)];
+    f = fill(x2, inBetween,cc(j,:));
+    set(f,'facealpha',0.25)
+    set(f,'edgealpha',0)
+
+    h(j) = plot(x,log(y),'DisplayName',char(distribution_vector(j)),'Color',cc(j,:));
+end
+s = plot(log(xT)/log(2), log(T), 'k--','DisplayName','\Gamma');
+bp = gca;
+bp.XAxis.TickLabelInterpreter = 'latex';
+% bp.xticklabel = labels;
+bp.YAxis.Exponent = YexpScale;
+bp.YAxis.Scale ="log";
+xlabel('$log_{2}(x)$','Interpreter','latex')
+ylabel('log(Threshold)','Interpreter','latex')
+legend([s,h])
 
 % structure data to be written to CSV file with headers given by the
 % variable name

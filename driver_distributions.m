@@ -4,10 +4,11 @@ clc;clear all; close all;
 
 addpath("functions/")
 % addpath("compile_nmem/")
-addpath("compile_nmem_mv/")
+% addpath("compile_nmem_mv/")
+addpath("nmem/")
 
 % figure directory
-sub_dir = 'pset2_stable';
+sub_dir = 'pset7';
 fig_dir = fullfile('figures','hyper_parameters',sub_dir);
 status = mkdir(fig_dir);
 
@@ -49,9 +50,17 @@ x_resolution =              1000;
 cpu_type =                   '\';%<--- '\' or '/' for windows or linux
 
 
-distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
+% distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
+% distribution = distribution_vector';
+% names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
+
+distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable", "Stable2","Stable3"];
 distribution = distribution_vector';
-names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
+names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable", "Stable2","Stable3"];
+
+% distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
+% distribution = distribution_vector';
+% names = ["Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)"];
 
 % distribution_vector = ["Normal"];
 % distribution = distribution_vector';
@@ -65,15 +74,15 @@ names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", 
 %     "InverseGaussian","Trimodal-Normal","Stable",...
 %     "Stable2","Stable3","Stable1","BirnbaumSaunders-Stable"];
 
-distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5",...
-    "Bimodal-Normal",...
-    "Generalized-Pareto","Normal","Square-periodic",...
-    "Uniform","Uniform-Mix",...
-    "Trimodal-Normal","Stable",...
-    "Stable2","Stable3","Stable1","BirnbaumSaunders-Stable"];
-
-distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
-distribution_vector = ["Stable", "Stable2","Stable3","Stable1"];
+% distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5",...
+%     "Bimodal-Normal",...
+%     "Generalized-Pareto","Normal","Square-periodic",...
+%     "Uniform","Uniform-Mix",...
+%     "Trimodal-Normal","Stable",...
+%     "Stable2","Stable3","Stable1","BirnbaumSaunders-Stable"];
+% 
+% distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
+% distribution_vector = ["Stable", "Stable2","Stable3","Stable1"];
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -135,7 +144,7 @@ for j = 1:length(distribution_vector)
     sample_track = [];
 
     % Create vector of  samples
-    sample_vec = misc_functions.sample_pow(min_pow,max_pow,data_type_flag,step);
+    sample_vec = utils.sample_pow(min_pow,max_pow,data_type_flag,step);
 
     % create empty cells for plotting
     nse_pdfs = cell(length(distribution_vector), trials, length(sample_vec), 2);
@@ -199,12 +208,7 @@ for j = 1:length(distribution_vector)
 
             % nse object instantiation
             nse = NSE;
-            % NSE.stitch() method called to calcualted relevant parameters
 
-            % use ONLY for NSE_working_archived.m class code
-%             [fail_code,x_nse,SE_pdf,SE_cdf,SE_u,SE_SQR,nBlocks,...
-%                 rndom.Ns,binrndom.Ns, max_LG, sum_LG,T,BRlevel,BR0]...
-%                 = nse.stitch(sample);
 
             serial = false;
 

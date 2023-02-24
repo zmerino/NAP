@@ -2,6 +2,7 @@ classdef NSE
     properties (Constant)
 %         max_bs = 100000;
         p1 = 1;
+%         p2 = 0.5;
         p2 = 0.55;
         p3 = 1;
         p4 = 0.33;
@@ -72,7 +73,7 @@ classdef NSE
             end
 
             % --------------------------------------------- universal scoring function
-            logLikelihood = misc_functions.likelihood();
+            logLikelihood = utils.likelihood();
             xScore0 = logLikelihood(:,1);
             yCoverage0 = logLikelihood(:,2);
             xScore = xScore0;
@@ -291,6 +292,11 @@ classdef NSE
                 end
                 bounds{b} = tempStruc;
             end
+
+%             tempStruc.smooth = 100;
+%             tempStruc.LagrangeMax = 100;
+%             tempStruc.SURDTarget = 20;
+
             % run PDFestimator      section 13
             
             % initialize vector to hold all lagrainge mutiplers per block
@@ -610,7 +616,7 @@ classdef NSE
 
             % get scaled residual
             obj.sqr = sqrt(obj.N)*(obj.u - uref); % normal formula has sqrt(N+2) but N -> N-2
-            [obj.u,obj.sqr] = misc_functions.sqr(obj.sx,obj.sPDF,inputSample);
+            [obj.u,obj.sqr] = utils.sqr(obj.sx,obj.sPDF,inputSample);
         end
     end
 end

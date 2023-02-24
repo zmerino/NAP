@@ -114,7 +114,7 @@ for j = 1:length(distribution_vector)
     sample_track = [];
     
     % Create vector of  samples
-    sample_vec = misc_functions.sample_pow(min_pow,max_pow,data_type_flag,step);
+    sample_vec = utils.sample_pow(min_pow,max_pow,data_type_flag,step);
     cpu_vec_se = zeros(length(sample_vec),trials);
     cpu_vec_nmem = zeros(length(sample_vec),trials);
     kl_vec_se = zeros(length(sample_vec),trials);
@@ -259,7 +259,7 @@ for j = 1:length(distribution_vector)
                 ' failSE: ', num2str(fail_nse(k,i,j)), ' failNMEM: ', num2str(fail_nmem(k,i,j))])
             
             
-            [u_NMEM,sqr_NMEM] = misc_functions.sqr(x_NMEM,pdf_NMEM,sample);
+            [u_NMEM,sqr_NMEM] = utils.sqr(x_NMEM,pdf_NMEM,sample);
 
 
             disp(['Iteration:    j: ', num2str(j),'   k: ', num2str(k), '   i: ', num2str(i)])

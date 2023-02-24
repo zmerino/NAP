@@ -1,0 +1,36 @@
+pset5
+
+p1 = 1;
+p2 = 0.5;
+%p2 = 0.55;
+p3 = 1;
+p4 = 0.33;
+p5 = 2;
+p6 = 0.0625;
+%         p6 = 0.625;
+p7 = 0.5;
+p8 = 40;
+        
+
+tempStruc.smooth = 100;
+tempStruc.LagrangeMax = 100;
+tempStruc.SURDTarget = 20;
+            
+pset6
+
+p1 = 1;
+%p2 = 0.5;
+p2 = 0.55;
+p3 = 1;
+p4 = 0.33;
+p5 = 2;
+p6 = 0.0625;
+%         p6 = 0.625;
+p7 = 0.5;
+p8 = 40;
+        
+
+tempStruc.smooth = 100;
+tempStruc.LagrangeMax = 100;
+tempStruc.SURDTarget = 20;            
+                    

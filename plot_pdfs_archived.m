@@ -77,8 +77,8 @@ for i = 1:length(d_vec)
             nmem{i,j,k,5} = trapz(nmem_data{2,k}, nmem_data{3,k});
 
             % u and sqr
-            [nse{i,j,k,6}, nse{i,j,k,7}] = misc_functions.sqr(nse_data{2,k},nse_data{3,k},nse_data{1,k});
-            [nmem{i,j,k,6}, nmem{i,j,k,7}] = misc_functions.sqr(nmem_data{2,k},nmem_data{3,k},nmem_data{1,k});
+            [nse{i,j,k,6}, nse{i,j,k,7}] = utils.sqr(nse_data{2,k},nse_data{3,k},nse_data{1,k});
+            [nmem{i,j,k,6}, nmem{i,j,k,7}] = utils.sqr(nmem_data{2,k},nmem_data{3,k},nmem_data{1,k});
 
 
 

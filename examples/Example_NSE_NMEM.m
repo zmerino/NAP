@@ -53,7 +53,7 @@ for j = 1:length(distribution_vector)
     rndom = actual;
 
     % Create vector of  samples
-    sample_vec = misc_functions.sample_pow(min_pow,max_pow,data_type_flag,step);
+    sample_vec = utils.sample_pow(min_pow,max_pow,data_type_flag,step);
     actual = actual.dist_list();
     rndom.Ns = sample_vec;
 

@@ -7,6 +7,20 @@ q_min = 0.01;
 q_max = 0.99;
 
 quantiles = linspace(q_min, q_max, qnum);
+
+[Fs, a1, b1] = unique(Fs);
+xs = xs(a1);
+fs = fs(a1);
+
+% try 
+%     xq = interp1(Fs,xs,quantiles);
+% catch
+% 
+%     [test1, a1, b1] = unique(xs);
+%     [test2, a2, b2] = unique(Fs);
+%     test = 'test'
+% end
+
 xq = interp1(Fs,xs,quantiles);
 fq = interp1(xs,fs,xq);
 

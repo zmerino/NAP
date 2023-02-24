@@ -123,7 +123,7 @@ for j = 1:length(distribution_vector)
     sample_track = [];
 
     % Create vector of  samples
-    sample_vec = misc_functions.sample_pow(min_pow,max_pow,data_type_flag,step);
+    sample_vec = utils.sample_pow(min_pow,max_pow,data_type_flag,step);
 
     % create empty cells for plotting
     nse_pdfs = cell(length(distribution_vector), trials, length(sample_vec), 2);
