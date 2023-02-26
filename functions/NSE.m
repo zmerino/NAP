@@ -1,16 +1,33 @@
 classdef NSE
     properties (Constant)
-%         max_bs = 100000;
+% %         max_bs = 100000;
         p1 = 1;
-%         p2 = 0.5;
         p2 = 0.55;
         p3 = 1;
         p4 = 0.33;
         p5 = 2;
         p6 = 0.0625;
-%         p6 = 0.625;
         p7 = 0.5;
         p8 = 40;
+
+%         p1 = 1;
+%         p2 = 0.5;
+%         p3 = 1;
+%         p4 = 0.33;
+%         p5 = 2;
+%         p6 = 0.0625;
+%         p7 = 0.5;
+%         p8 = 40;
+
+%         p1 = 1;
+%         p2 = 1/2
+%         p3 = 1;
+%         p4 = 1/3;
+%         p5 = 2;
+%         p6 = 1/16;
+%         p7 = 1/2;
+%         p8 = 40;
+
     end
     properties (SetAccess = public)
         max_bs=1e5;
@@ -112,6 +129,13 @@ classdef NSE
             end
 
             x = sort(sample);
+            n_s = length(sample);
+            dxn = sample(2:end) - sample(1:end-1);
+            dxns = sort(dxn);
+
+%             dxs = sort(sample(2:end) - sample(1:end-1))';
+%             dxs(1:n_s-1) = sort(sample(2:n_s) - sample(1:n_s-1));
+
             obj.N = length(x);
             obj.binN = 15;
             if( obj.N < minNs )
@@ -134,6 +158,8 @@ classdef NSE
 
             obt_blocks = blocks;
             obt_blocks.sample = x;
+            obt_blocks.dx = dxn;
+            obt_blocks.dxs = dxns;
             obt_blocks.binNs = obj.binN;
             [j,obj.nBlocks,kBlockLower,kBlockUpper,kList,obj.T,obj.BRlevel,obj.BR0] = obt_blocks.bin_width_size(obt_blocks);
 

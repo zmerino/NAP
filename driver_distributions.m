@@ -8,7 +8,7 @@ addpath("functions/")
 addpath("nmem/")
 
 % figure directory
-sub_dir = 'pset7';
+sub_dir = 'pset_test_linear_w';
 fig_dir = fullfile('figures','hyper_parameters',sub_dir);
 status = mkdir(fig_dir);
 
@@ -37,8 +37,8 @@ data_type_flag =            true;   %<- true/false integer powers of 2/real powe
 save_figs =                 true;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 max_pow =                   17; %<---- maximum exponent to generate samples
-min_pow =                   11; %<---- minimum exponent to generate samples
-trials =                    3   ;  %<--- trials to run to generate heuristics for programs
+min_pow =                   17; %<---- minimum exponent to generate samples
+trials =                    1   ;  %<--- trials to run to generate heuristics for programs
 step =                      3;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -58,9 +58,13 @@ distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-
 distribution = distribution_vector';
 names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable", "Stable2","Stable3"];
 
-% distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
-% distribution = distribution_vector';
-% names = ["Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)"];
+distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
+distribution = distribution_vector';
+names = ["Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)"];
+
+distribution_vector = ["Normal","Beta-a0p5-b0p5"];
+distribution = distribution_vector';
+names = ["Normal","Beta(0.5,0.5)"];
 
 % distribution_vector = ["Normal"];
 % distribution = distribution_vector';
