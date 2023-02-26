@@ -8,6 +8,8 @@ classdef blocks < NAP % inherit properties i.e. p vector and max block size
     end
     properties
         sample;
+        dx;
+        dxs;
         Ns;
         window;
         binMin;
@@ -443,11 +445,18 @@ classdef blocks < NAP % inherit properties i.e. p vector and max block size
         end
 
         function r = get_ratio(obj, sample)
-            n = length(sample);
-            dx = zeros(1,n-1);
-            dx(1:n-1) = sample(2:n) - sample(1:n-1);
-            % REQUIRED to sort the magnitude of differences
-            dx = sort(dx');
+            % create boolean mask for subsample from entire sample
+            mask = (min(sample)<=obj.sample & max(sample)>=obj.sample);
+            % change one binary 1 value to 0 to create mask for difference array
+            % indexes where mask is true i.e. 1
+            mask_idx= find(mask==1);
+            % change last true value on the right to false
+            mask(mask_idx(end)) = 0;
+            mask = mask(1:end-1);
+            % get the dx values for this subsample in sorted order
+            sort_mask = ismember(obj.dxs, obj.dx(mask)');
+            dx = obj.dxs(sort_mask);
+
             dxMin = mean(dx(1:obj.window));
             dxMax = mean(dx(end-obj.window+1:end));
             % optional ratio condition
@@ -459,6 +468,7 @@ classdef blocks < NAP % inherit properties i.e. p vector and max block size
             % r -> inf, dxMin << dxMax and r -> 1, dxMin ~ dxMax
             % -------------------------------------------------------------
             r = dxMax/dxMin;
+
 
         end
 

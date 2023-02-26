@@ -14,7 +14,7 @@ classdef NAP
     end
     properties
         % possible outputs
-        p = [NSE.p1,NSE.p2,NSE.p3,NSE.p4,NSE.p5,NSE.p6,NSE.p7,NSE.p8];
+        p = [NAP.p1,NAP.p2,NAP.p3,NAP.p4,NAP.p5,NAP.p6,NAP.p7,NAP.p8];
         failed;
         sx;
         sPDF;
@@ -109,6 +109,9 @@ classdef NAP
             end
 
             x = sort(sample);
+            dxn = sample(2:end) - sample(1:end-1);
+            dxns = sort(dxn);
+
             obj.N = length(x);
             obj.binN = 15;
             if( obj.N < minNs )
@@ -129,6 +132,8 @@ classdef NAP
             % partition data into primary blocks
             obt_blocks = blocks;
             obt_blocks.sample = x;
+            obt_blocks.dx = dxn;
+            obt_blocks.dxs = dxns;
             obt_blocks.binNs = obj.binN;
             [j,obj.nBlocks,kBlockLower,kBlockUpper,kList,obj.T,obj.BRlevel,obj.BR0] = obt_blocks.bin_width_size(obt_blocks);
 
@@ -403,33 +408,19 @@ classdef NAP
                 [xb,indx] = unique(blockX{indexList(b)});
                 yb = blockPDF{indexList(b)}(indx);
                 PDFlower = interp1(xb,yb,xStitch);
-                zb = blockCDF{indexList(b)}(indx);
-                ub = interp1(xb,zb,xStitch);
 
-                %----------------------------------------------------------------------
+                 %----------------------------------------------------------------------
                 [xb1,indx] = unique(blockX{indexList(b+1)});
                 yb1 = blockPDF{indexList(b+1)}(indx);
                 PDFupper = interp1(xb1,yb1,xStitch);
-                zb1 = blockCDF{indexList(b+1)}(indx);
-                vb = interp1(xb1,zb1,xStitch);
-                %----------------------------------------------------------------------
-                u0 = min(ub);
-                u0 = min(ub) + 1e-10;
-                u1 = max(ub);
-                v0 = min(vb);
-                v0 = min(vb) + 1e-10;
-                v1 = max(vb);
 
-                u = (ub - u0)/(u1 - u0);
-                v = (vb - v0)/(v1 - v0);
-                power = 2;
+                power=2;
+                u = 0: (1/(length(xStitch)-1)) : 1;
                 aLower = (1 - u).^(power);
-                aUpper = v.^(power);
+                aUpper = u.^(power);
                 temp = aLower + aUpper;
-
                 f_lower = aLower./temp;
                 f_upper = aUpper./temp;
-
                 stitchPDF = PDFlower.*f_lower + PDFupper.*f_upper;
 
                 [~,indx] = min( abs(obj.sx-xmin) );
