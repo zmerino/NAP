@@ -1,9 +1,9 @@
 classdef NAP
     properties (Constant)
         p1 = 1;
-        p2 = 0.55;
+        p2 = 1/5;
         p3 = 1;
-        p4 = 0.33;
+        p4 = 1/3;
         p5 = 2;
         p6 = 0.0625;
         p7 = 0.5;
@@ -46,37 +46,24 @@ classdef NAP
             % initialze the obj.failed trip flag to false
             obj.failed = 0;
 
-            % Script Detailed output %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-            if ~exist('plt_blocksize','var')
-                plt_blocksize = false;
-            end
-            if ~exist('plt_blockpdf','var')
-                plt_blockpdf = false;
-            end
-            if ~exist('plt_stitchpdf','var')
-                plt_stitchpdf = false;
-            end
+            % user input
+            targetCoverage = round(70);
 
-            %%                                                              user input      section 1
-            targetCoverage = 40;
-            targetCoverage = round(targetCoverage);
-            minNs = 10;                                    % minimum number of samples
-            maxNs = 140000000;                        % larger makes program very slow
-            %%                                                     some error checking      section 2
+            % minimum number of allowed sample size
+            minNs = 50; 
+
+            % some error checking
             targetCoverage = sort(targetCoverage);
             nTargets = length(targetCoverage);
-            if( nTargets < 1 )
-                error('no targets specified');
-            end
 
-            % --------------------------------------------- universal scoring function
+            % universal scoring function
             logLikelihood = utils.likelihood();
             xScore0 = logLikelihood(:,1);
             yCoverage0 = logLikelihood(:,2);
             xScore = xScore0;
             yCoverage = 100*yCoverage0;
 
-            % define weights      section 3
+            % define weights
             tL = targetCoverage - 2.5;
             tH = targetCoverage + 2.5;
             if( tL < 0.099999 )
@@ -85,7 +72,8 @@ classdef NAP
             if( tH > 95.000001 )
                 error('A target coverage value is too high: Highest = 92.5');
             end
-            % --------------------------------------------------------- assign weights
+
+            % assign weights
             indx = 15:length(xScore)-15;
             dx = xScore(indx+14) - xScore(indx-14);
             dy = yCoverage(indx+14) - yCoverage(indx-14);
@@ -99,7 +87,7 @@ classdef NAP
             wtsum = sum(wt);
             wt = wt/wtsum;
 
-            % define qualitative descriptors      section 4
+            % define qualitative descriptors
             orginalSample = inputSample;
 
             sample = unique(orginalSample);
@@ -108,26 +96,24 @@ classdef NAP
                 warning(['Number of dupliates: ', num2str(numUnique)])
             end
 
+            % sort sample and delta-x array
             x = sort(sample);
             dxn = sample(2:end) - sample(1:end-1);
             dxns = sort(dxn);
 
             obj.N = length(x);
-            obj.binN = 15;
             if( obj.N < minNs )
                 error(['Sample size is too small. minNs = ',num2str(minNs)]);
-            elseif( obj.N > maxNs )
-                error(['Sample size is too large. maxNs = ',num2str(maxNs)]);
             end
-
-            if( maxNs > 999999999999 )
-                error('Do not let maxNs > 9999999');
-            end
+            obj.binN = 15;
 
             % OBSERVATION WINDOW: CDF Boundary Probabilities
-            pL = 0.5/obj.N;   % probability for data to be  left of window
-            pR = 0.5/obj.N;   % probability for data to be right of window
-            pNorm = 1 - pL - pR;          % probability for data to fall within window
+            % probability for data to be  left of window
+            pL = 0.5/obj.N;
+            % probability for data to be right of window
+            pR = 0.5/obj.N;
+            % probability for data to fall within window
+            pNorm = 1 - pL - pR;
 
             % partition data into primary blocks
             obt_blocks = blocks;
@@ -135,11 +121,14 @@ classdef NAP
             obt_blocks.dx = dxn;
             obt_blocks.dxs = dxns;
             obt_blocks.binNs = obj.binN;
-            [j,obj.nBlocks,kBlockLower,kBlockUpper,kList,obj.T,obj.BRlevel,obj.BR0] = obt_blocks.bin_width_size(obt_blocks);
+            [j,obj.nBlocks,kBlockLower,kBlockUpper,kList,obj.T,...
+                obj.BRlevel,obj.BR0] ...
+                = obt_blocks.bin_width_size(obt_blocks);
 
             % create staggered (secondary) blocks
             if( obj.nBlocks > 2 )
-                if( obj.nBlocks == 3 )          % block size of three is a special case
+                % block size of three is a special case
+                if( obj.nBlocks == 3 )
                     kBlockLower(1) = 1;
                     kBlockUpper(1) = kList(1);
                     kBlockLower(2) = round( ( 1  + kList(1) )/2 );
@@ -153,7 +142,8 @@ classdef NAP
                     kBlockLower(nB) = 1;
                     kBlockUpper(nB) = kList(1);
                     nB = nB + 1;
-                    % set edge positions for second sb as average first blocks (fb)
+                    % set edge positions for second sb as average first 
+                    % blocks (fb)
                     kBlockLower(nB) = round( ( 1 + kList(1) )/2 );
                     kBlockUpper(nB) = round( ( kList(1) + kList(2) )/2 );
 
@@ -187,7 +177,7 @@ classdef NAP
                 kBlockUpper(1) = obj.N;
             end
 
-            % Determine block sizes      section 8
+            % Determine block sizes
             blockSize = kBlockUpper - kBlockLower + 1;
             flag = 1;
             if( blockSize(1) < obj.binN )
@@ -238,7 +228,7 @@ classdef NAP
                 blockSize = kBlockUpper - kBlockLower + 1;
             end
 
-            % get length scale & shifts for each block      section 9
+            % get length scale & shifts for each block
             blockScale = zeros(1,obj.nBlocks);     % => length of x as the span of a block
             blockShift = zeros(1,obj.nBlocks);     % shift in x to center the span about 0
             for b=1:obj.nBlocks
@@ -252,7 +242,7 @@ classdef NAP
             obj.block_size = blockSize;
             obj.block_scale = blockScale;
 
-            % report with error checking      section 10
+            % report with error checking
             if( obj.nBlocks == 1 )
                 kL = 1;
                 kR = obj.N;
@@ -263,11 +253,11 @@ classdef NAP
                 end
             end
 
-            % set up probability factors      section 11
+            % set up probability factors
             nBs0 = blockSize - 1;
             nBs0(1) = nBs0(1) + 0.5;
             nBs0(obj.nBlocks) = nBs0(obj.nBlocks) + 0.5;
-            % divide problem into blocks      section 12
+            % divide problem into blocks
             totalCounts = obj.nBlocks*nTargets;
 
 
@@ -292,7 +282,7 @@ classdef NAP
                 end
                 bounds{b} = tempStruc;
             end
-            % run PDFestimator      section 13
+            % run PDFestimator
             
             % initialize vector to hold all lagrainge mutiplers per block
             LG = zeros(1,obj.nBlocks);
@@ -327,7 +317,7 @@ classdef NAP
             obj.LG_max = max(LG);
             obj.LG_sum = sum(LG);
 
-            % read files and combine different target PDFs per block      section 14
+            % read files and combine different target PDFs per block
             blockPDF = cell(1,obj.nBlocks);
             blockCDF = cell(1,obj.nBlocks);
             blockX = cell(1,obj.nBlocks);
@@ -338,7 +328,7 @@ classdef NAP
             indexList = [];
             while( b <= obj.nBlocks )
                 % get block data
-                blockX{b} = targetBlock{1,b}.data(:,1);        % same x for all targets
+                blockX{b} = targetBlock{1,b}.data(:,1); % same x for all targets
                 blockPDF{b} = wt(1)*targetBlock{1,b}.data(:,2);
                 blockCDF{b} = wt(1)*targetBlock{1,b}.data(:,3);
 
