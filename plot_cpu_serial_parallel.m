@@ -249,7 +249,7 @@ if save_figs
     saveas(bp, fullfile(dir_name, [fig_name, '.png']))
 end
 
-fig_name = 'NSE Max lagrange multiplier';
+fig_name = 'NAP Max lagrange multiplier';
 figure('Name',fig_name)
 b = boxchart(log(data_nse_parallel.sample_power)/log(2), data_nse_parallel.lagrange, 'GroupByColor',data_nse_parallel.distribution);
 bp = gca;

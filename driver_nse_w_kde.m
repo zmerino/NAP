@@ -3,17 +3,7 @@
 clc;clear all; close all;
 
 addpath("functions/")
-addpath("compile_nmem_mv/")
-
-
-% error handling
-status = mkdir('log');
-diary(fullfile('log','error_log_cpu_failure_distance.txt'))
-diary on;
-
-% empty text file used to track progress
-filename = ['cpu_failure_distance_script_run-',datestr(datetime(floor(now),'ConvertFrom','datenum')),'.txt'];
-full_file = fullfile('log',filename);
+addpath("cpp_code/")
 
 fid = fopen(full_file, 'w');
 fprintf(fid,['Cpu failure distance script started on: ',datestr(datetime(now,'ConvertFrom','datenum')),'/n']);
@@ -182,7 +172,7 @@ for j = 1:length(distribution_vector)
             % % % % % % % start of estimates % % % % % % % % %
             %==========================================================
 
-            %-- NSE w/ KDE start
+            %-- NAP w/ KDE start
 
             sendFileName1 = ['D_',char(actual.dist_name),cpu_type,char(rndom.filename),'.dat'];
             rndom.randomVSactual = "random";
@@ -191,8 +181,8 @@ for j = 1:length(distribution_vector)
 
             tintialSE = cputime;
 
-            % nse object instantiation
-            nse_kde = NSEkde;
+            % nap object instantiation
+            nse_kde = NAPkde;
             serial = true;
             nse_kde = nse_kde.stitch(sample, serial);
             
@@ -215,7 +205,7 @@ for j = 1:length(distribution_vector)
 %             tcpuSE = cputime-tintialSE;
 
 
-            %-- NSE w/o KDE start
+            %-- NAP w/o KDE start
 
             sendFileName1 = ['D_',char(actual.dist_name),cpu_type,char(rndom.filename),'.dat'];
             rndom.randomVSactual = "random";
@@ -224,26 +214,26 @@ for j = 1:length(distribution_vector)
 
             tintialSE = cputime;
 
-            % nse object instantiation
-            nse = NSE;
+            % nap object instantiation
+            nap = NAP;
             serial = true;
-            nse = nse.stitch(sample, serial);
+            nap = nap.stitch(sample, serial);
             
             % extract relevant parameters from object after stich() method
-            fail_code = nse.failed;
-            x_nse = nse.sx;
-            SE_pdf = nse.sPDF;
-            SE_cdf = nse.sCDF;
-            SE_u = nse.u;
-            SE_SQR = nse.sqr;
-            nBlocks = nse.nBlocks;
-            rndom.Ns = nse.N;
-            binrndom.Ns =  nse.binN;
-            max_LG = nse.LG_max;
-            sum_LG = nse.LG_sum;
-            T = nse.T;
-            BRlevel = nse.BRlevel;
-            BR0 = nse.BR0;
+            fail_code = nap.failed;
+            x_nse = nap.sx;
+            SE_pdf = nap.sPDF;
+            SE_cdf = nap.sCDF;
+            SE_u = nap.u;
+            SE_SQR = nap.sqr;
+            nBlocks = nap.nBlocks;
+            rndom.Ns = nap.N;
+            binrndom.Ns =  nap.binN;
+            max_LG = nap.LG_max;
+            sum_LG = nap.LG_sum;
+            T = nap.T;
+            BRlevel = nap.BRlevel;
+            BR0 = nap.BR0;
 
             tcpuSE = cputime-tintialSE;
 
@@ -284,7 +274,7 @@ for j = 1:length(distribution_vector)
 %                 plot( nse_kde.blocks_x{nse_kde.block_indx(b)} , nse_kde.blocks_pdf{nse_kde.block_indx(b)}, '-b' )
 %             end
 %             for b=1:length(nse_kde.block_indx)
-%                 plot( nse.blocks_x{nse.block_indx(b)} , nse.blocks_pdf{nse.block_indx(b)}, '-r')
+%                 plot( nap.blocks_x{nap.block_indx(b)} , nap.blocks_pdf{nap.block_indx(b)}, '-r')
 %             end
 %             ylabel('$\hat{f}(x)$','Interpreter','latex')
 %             xlabel('$x$','Interpreter','latex')
@@ -335,7 +325,7 @@ for j = 1:length(distribution_vector)
         hold on;
         for i = 1:trials
             plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
-            plot(nse_kde_pdfs{j,i,k,1}, nse_kde_pdfs{j,i,k,2}, '-b', DisplayName='$\hat{f}(x)_{NSE \ KDE}$')
+            plot(nse_kde_pdfs{j,i,k,1}, nse_kde_pdfs{j,i,k,2}, '-b', DisplayName='$\hat{f}(x)_{NAP \ KDE}$')
 
             if max(actual.x) > 3
                 xlim(xl2)
@@ -348,7 +338,7 @@ for j = 1:length(distribution_vector)
                 ylim(yl1)
             end
 
-            title('$\hat{f}(x)_{NSE \ KDE}$','interpreter','latex')
+            title('$\hat{f}(x)_{NAP \ KDE}$','interpreter','latex')
             ylabel('f(x)')
         end
         subplot(2,2,2)
@@ -374,7 +364,7 @@ for j = 1:length(distribution_vector)
         hold on;
         for i = 1:trials
             plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
-            plot(nse_pdfs{j,i,k,1}, nse_pdfs{j,i,k,2}, '-m', DisplayName='$\hat{f}(x)_{NSE}$')
+            plot(nse_pdfs{j,i,k,1}, nse_pdfs{j,i,k,2}, '-m', DisplayName='$\hat{f}(x)_{NAP}$')
 
             if max(actual.x) > 3
                 xlim(xl2)
@@ -387,7 +377,7 @@ for j = 1:length(distribution_vector)
                 ylim(yl1)
             end
 
-            title('$\hat{f}(x)_{NSE}$','interpreter','latex')
+            title('$\hat{f}(x)_{NAP}$','interpreter','latex')
             xlabel('x')
             ylabel('f(x)')
         end

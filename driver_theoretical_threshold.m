@@ -8,12 +8,8 @@ status = mkdir(dir_name);
 dir_name = fullfile('data','estimates');
 status = mkdir(dir_name);
 
-% error handling
-status = mkdir('log');
-diary(fullfile('log','error_log_threoretical_threshold.txt'))
+% error handlingdiary(fullfile('log','error_log_threoretical_threshold.txt'))
 diary on;
-
-% empty text file used to track progress
 filename = ['threshold_script_run-',datestr(datetime(floor(now),'ConvertFrom','datenum')),'.txt'];
 full_file = fullfile('log',filename);
 
@@ -163,15 +159,15 @@ for j = 1:length(distribution_vector)
             x = sort(sample);
             
             % Track T,BR per trial
-            nse = NSE;
-            nse.max_bs = 1e3;
+            nap = NAP;
+            nap.max_bs = 1e3;
             serial = false;
-            nse = nse.stitch(sample, serial);
+            nap = nap.stitch(sample, serial);
 
             obt_blocks = blocks;
             obt_blocks = obt_blocks.stitch(sample, serial);
             obt_blocks.sample = x;
-            obt_blocks.binNs = nse.binN;
+            obt_blocks.binNs = nap.binN;
             obt_blocks.Ns = length(x);
 
             [pList,T,BRlevel,BR0] = obt_blocks.r_tree(obt_blocks);

@@ -5,14 +5,6 @@ clc;clear all; close all;
 addpath("functions/")
 addpath("compile_nmem_mv/")
 
-% error handling
-status = mkdir('log');
-diary(fullfile('log','error_log_cpu_failure_distance.txt'))
-diary on;
-
-% empty text file used to track progress
-filename = ['cpu_failure_distance_script_run-',datestr(datetime(floor(now),'ConvertFrom','datenum')),'.txt'];
-full_file = fullfile('log',filename);
 
 fid = fopen(full_file, 'w');
 fprintf(fid,['Cpu failure distance script started on: ',datestr(datetime(now,'ConvertFrom','datenum')),'/n']);
@@ -139,7 +131,7 @@ for j = 1:length(distribution_vector)
     block_scale = zeros(4,length(sample_vec),trials);
     block_size = zeros(4,length(sample_vec),trials);
 
-    % store mse per block for all trials per distribution and sample size
+    % store utils_analysis.mse per block for all trials per distribution and sample size
     mse_dists_nse = cell(length(sample_vec),trials);
     mse_dists_nmem = cell(length(sample_vec),trials);
 
@@ -174,79 +166,79 @@ for j = 1:length(distribution_vector)
             %==========================================================
             tic
 
-            %-- NSE start
+            %-- NAP start
             sendFileName1 = ['D_',char(actual.dist_name),cpu_type,char(rndom.filename),'.dat'];
             rndom.randomVSactual = "random";
             rndom = dist_list(rndom);
             sample = rndom.rndData;
             
             tintialSE = cputime;
-            % NSE PARALLEL ------------------------------------------------
-            % nse object instantiation
-            nse = NSE;
-            nse.max_bs = 1e3;
+            % NAP PARALLEL ------------------------------------------------
+            % nap object instantiation
+            nap = NAP;
+            nap.max_bs = 1e3;
             serial = false;
-            nse = nse.stitch(sample, serial);
+            nap = nap.stitch(sample, serial);
             
             % extract relevant parameters from object after stich() method
-            fail_code = nse.failed;
-            SE_x = nse.sx;
-            SE_pdf = nse.sPDF;
-            SE_cdf = nse.sCDF;
-            SE_u = nse.u;
-            SE_SQR = nse.sqr;
-            nBlocks = nse.nBlocks;
-            rndom.Ns = nse.N;
-            binrndom.Ns =  nse.binN;
-            LG = nse.LG;
-            max_LG = nse.LG_max;
-            sum_LG = nse.LG_sum;
-            T = nse.T;
-            BRlevel = nse.BRlevel;
-            BR0 = nse.BR0;
+            fail_code = nap.failed;
+            SE_x = nap.sx;
+            SE_pdf = nap.sPDF;
+            SE_cdf = nap.sCDF;
+            SE_u = nap.u;
+            SE_SQR = nap.sqr;
+            nBlocks = nap.nBlocks;
+            rndom.Ns = nap.N;
+            binrndom.Ns =  nap.binN;
+            LG = nap.LG;
+            max_LG = nap.LG_max;
+            sum_LG = nap.LG_sum;
+            T = nap.T;
+            BRlevel = nap.BRlevel;
+            BR0 = nap.BR0;
 
             tcpuSE_parallel = cputime-tintialSE;
             fail_nse_parallel(k,i,j) = fail_code;
 
             tintialSE = cputime;
-            % NSE PARALLEL ------------------------------------------------
-            % nse object instantiation
-            nse_serial = NSE;
+            % NAP PARALLEL ------------------------------------------------
+            % nap object instantiation
+            nse_serial = NAP;
             nse_serial.max_bs = 1e3;
             serial = true;
-            nse_serial = nse.stitch(sample, serial);
+            nse_serial = nap.stitch(sample, serial);
             
             % extract relevant parameters from object after stich() method
             fail_code = nse_serial.failed;
-%             SE_x = nse.sx;
-%             SE_pdf = nse.sPDF;
-%             SE_cdf = nse.sCDF;
-%             SE_u = nse.u;
-%             SE_SQR = nse.sqr;
-%             nBlocks = nse.nBlocks;
-%             rndom.Ns = nse.N;
-%             binrndom.Ns =  nse.binN;
-%             LG = nse.LG;
-%             max_LG = nse.LG_max;
-%             sum_LG = nse.LG_sum;
-%             T = nse.T;
-%             BRlevel = nse.BRlevel;
-%             BR0 = nse.BR0;
+%             SE_x = nap.sx;
+%             SE_pdf = nap.sPDF;
+%             SE_cdf = nap.sCDF;
+%             SE_u = nap.u;
+%             SE_SQR = nap.sqr;
+%             nBlocks = nap.nBlocks;
+%             rndom.Ns = nap.N;
+%             binrndom.Ns =  nap.binN;
+%             LG = nap.LG;
+%             max_LG = nap.LG_max;
+%             sum_LG = nap.LG_sum;
+%             T = nap.T;
+%             BRlevel = nap.BRlevel;
+%             BR0 = nap.BR0;
 
             tcpuSE_serial = cputime-tintialSE;
 
             fail_nse_serial(k,i,j) = fail_code;
 
             % store information about block
-            block_size(1,k,i) = max(nse.block_size);
-            block_size(2,k,i) = min(nse.block_size);
-            block_size(3,k,i) = mean(nse.block_size);
-            block_size(4,k,i) = median(nse.block_size);
+            block_size(1,k,i) = max(nap.block_size);
+            block_size(2,k,i) = min(nap.block_size);
+            block_size(3,k,i) = mean(nap.block_size);
+            block_size(4,k,i) = median(nap.block_size);
 
-            block_scale(1,k,i) = max(nse.block_scale);
-            block_scale(2,k,i) = min(nse.block_scale);
-            block_scale(3,k,i) = mean(nse.block_scale);
-            block_scale(4,k,i) = median(nse.block_scale);
+            block_scale(1,k,i) = max(nap.block_scale);
+            block_scale(2,k,i) = min(nap.block_scale);
+            block_scale(3,k,i) = mean(nap.block_scale);
+            block_scale(4,k,i) = median(nap.block_scale);
 
             % NMEM --------------------------------------------------------
             try
@@ -278,7 +270,7 @@ for j = 1:length(distribution_vector)
             %%%%%%%%%%%%%%%% calculate LG multipliers %%%%%%%%%%%%%%%%%%%%%
             lagrange_nse_parallel(k,i,j) = sum(max_LG);
 
-            all_LG = nse.LG_vals;
+            all_LG = nap.LG_vals;
             vals = 0;
             nBlock = size(all_LG,2);
             for lg_idx =1:nBlock

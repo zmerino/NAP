@@ -9,12 +9,8 @@ addpath("compile_nmem_mv/")
 % use when driver.m is a script and not a function
 clc;clear; close all;
 
-% error handling
-status = mkdir('log');
-diary(fullfile('log','error_log_extrema.txt'))
+% error handlingdiary(fullfile('log','error_log_extrema.txt'))
 diary on;
-
-% empty text file used to track progress
 filename = ['extrema_script_run-',datestr(datetime(floor(now),'ConvertFrom','datenum')),'.txt'];
 full_file = fullfile('log',filename);
 
@@ -157,7 +153,7 @@ for j = 1:length(distribution_vector)
             % % % % % % % start of estimates % % % % % % % % %
             %==========================================================
             
-            %-- NSE start
+            %-- NAP start
             
             sendFileName1 = ['D_',char(actual.dist_name),cpu_type,char(rndom.filename),'.dat'];
             rndom.randomVSactual = "random";
@@ -166,25 +162,25 @@ for j = 1:length(distribution_vector)
             
             tintialSE = cputime;
 
-            % nse object instantiation
-            nse = NSE;
-            nse = nse.stitch(sample);
+            % nap object instantiation
+            nap = NAP;
+            nap = nap.stitch(sample);
             
             % extract relevant parameters from object after stich() method
-            fail_code = nse.failed;
-            SE_x = nse.sx;
-            SE_pdf = nse.sPDF;
-            SE_cdf = nse.sCDF;
-            SE_u = nse.u;
-            SE_SQR = nse.sqr;
-            nBlocks = nse.nBlocks;
-            rndom.Ns = nse.N;
-            binrndom.Ns =  nse.binN;
-            max_LG = nse.LG_max;
-            sum_LG = nse.LG_sum;
-            T = nse.T;
-            BRlevel = nse.BRlevel;
-            BR0 = nse.BR0;
+            fail_code = nap.failed;
+            SE_x = nap.sx;
+            SE_pdf = nap.sPDF;
+            SE_cdf = nap.sCDF;
+            SE_u = nap.u;
+            SE_SQR = nap.sqr;
+            nBlocks = nap.nBlocks;
+            rndom.Ns = nap.N;
+            binrndom.Ns =  nap.binN;
+            max_LG = nap.LG_max;
+            sum_LG = nap.LG_sum;
+            T = nap.T;
+            BRlevel = nap.BRlevel;
+            BR0 = nap.BR0;
 
             tcpuSE = cputime-tintialSE;
             

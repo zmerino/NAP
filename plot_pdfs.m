@@ -18,7 +18,7 @@ fig_dir = fullfile('figures','mse_kl_set1');
 status = mkdir(fig_dir);
 
 % choose to visualise figures or not
-fig_plot = 'off';
+fig_plot = 'on';
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Import data %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -53,9 +53,13 @@ d_vec = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","B
 % names = {'Beta(0.5,1.5)','Beta(2,0.5)', 'Beta(0.5,0.5)', 'Generalized-Pareto', 'Stable'}';
 names = ["Trimodal-Normal","Uniform","Normal","Beta(0.5,1.5)","Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto"];
 
+d_vec = ["Beta-a0p5-b0p5","Generalized-Pareto"];
+names = ["Beta(0.5,0.5)", "Generalized-Pareto"];
+
 
 % Trials per sample
 trials = 50;
+plt_trials = 3;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Load data %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -63,7 +67,7 @@ trials = 50;
 n = length(n_vec);
 d = length(d_vec);
 t = length(d_vec);
-nse = cell(d,n,t,7);
+nap = cell(d,n,t,7);
 nmem = cell(d,n,t,7);
 
 for i = 1:length(d_vec)
@@ -78,10 +82,10 @@ for i = 1:length(d_vec)
                 ' t: ',num2str(k),'/',num2str(trials)])
 
             % distribution names
-            nse{i,j,k,1} = d_vec(i);
+            nap{i,j,k,1} = d_vec(i);
             nmem{i,j,k,1} = d_vec(i);
             % sample size
-            nse{i,j,k,2} = n_vec(j);
+            nap{i,j,k,2} = n_vec(j);
             nmem{i,j,k,2} = n_vec(j);
 
             % Load data from estimate directory
@@ -92,19 +96,19 @@ for i = 1:length(d_vec)
             nse_data = nse_pdf_data;
             nmem_data = nmem_pdf_data;
 
-            nse{i,j,k,3} = nse_data{2,k}'; % make sure column vector
+            nap{i,j,k,3} = nse_data{2,k}'; % make sure column vector
             nmem{i,j,k,3} = nmem_data{2,k};
 
             % pdf
-            nse{i,j,k,4} = nse_data{3,k}'; % make sure column vector
+            nap{i,j,k,4} = nse_data{3,k}'; % make sure column vector
             nmem{i,j,k,4} = nmem_data{3,k};
 
             % cdf
-            nse{i,j,k,5} = trapz(nse_data{2,k}, nse_data{3,k});
-            nmem{i,j,k,5} = trapz(nmem_data{2,k}, nmem_data{3,k});
+            nap{i,j,k,5} = utils_analysis.trapz(nse_data{2,k}, nse_data{3,k});
+            nmem{i,j,k,5} = utils_analysis.trapz(nmem_data{2,k}, nmem_data{3,k});
 
             % u and sqr
-            [nse{i,j,k,6}, nse{i,j,k,7}] = utils.sqr(nse_data{2,k},nse_data{3,k},nse_data{1,k});
+            [nap{i,j,k,6}, nap{i,j,k,7}] = utils.sqr(nse_data{2,k},nse_data{3,k},nse_data{1,k});
             [nmem{i,j,k,6}, nmem{i,j,k,7}] = utils.sqr(nmem_data{2,k},nmem_data{3,k},nmem_data{1,k});
 
         end
@@ -117,25 +121,24 @@ end
 %%% MSE Plots %%%
 actual = distributions;
 actual.generate_data = false;
-% tracks kl/mse for entire sample
+% tracks kl/utils_analysis.mse for entire sample
 global_table = table();
 
 if plot_mse_dist
     
-    plt_trials = 10;
     qnum = 50;
 
     % x values for given quantiles
-    for d_idx = 1:size(nse, 1)
+    for d_idx = 1:size(nap, 1)
 
         % define distribution name for plotting and building a data table
         actual.dist_name = d_vec(d_idx);
 
-        mse_dist_nmem = zeros(size(nse, 2),plt_trials);
-        kl_dist_nmem = zeros(size(nse, 2),plt_trials);
-        mse_dist_nse = zeros(size(nse, 2),plt_trials);
-        kl_dist_nse = zeros(size(nse, 2),plt_trials);
-        for n_idx = 1:size(nse, 2)
+        mse_dist_nmem = zeros(size(nap, 2),plt_trials);
+        kl_dist_nmem = zeros(size(nap, 2),plt_trials);
+        mse_dist_nse = zeros(size(nap, 2),plt_trials);
+        kl_dist_nse = zeros(size(nap, 2),plt_trials);
+        for n_idx = 1:size(nap, 2)
 
             mse_dist_nse_per_q = zeros(qnum,plt_trials);
             mse_dist_nmem_per_q = zeros(qnum,plt_trials);
@@ -144,8 +147,8 @@ if plot_mse_dist
             for t_idx = 1:plt_trials
 
                 % track calculations
-                disp(['dist: ',num2str(d_idx),'/',num2str(size(nse, 1)),...
-                    ' s: ',num2str(n_idx),'/',num2str(size(nse, 2)),...
+                disp(['dist: ',num2str(d_idx),'/',num2str(size(nap, 1)),...
+                    ' s: ',num2str(n_idx),'/',num2str(size(nap, 2)),...
                     ' t: ',num2str(t_idx),'/',num2str(plt_trials)])
 
                % NMEM ------------------------------------------------------
@@ -167,19 +170,19 @@ if plot_mse_dist
                 end
                 
                % MSE per quantile
-                [mse_dist_nmem_per_q(:,t_idx), quantiles,xq,fq] = quant_metric(xs, fs, Fs, qnum, d_vec(d_idx),'MSE');
+                [mse_dist_nmem_per_q(:,t_idx), quantiles,xq,fq] = utils_analysis.quant_metric(xs, fs, Fs, qnum, d_vec(d_idx),'MSE');
                 % MSE per trial
-                mse_dist_nmem(n_idx, t_idx) = mse(actual.pdf_y, fs);
+                mse_dist_nmem(n_idx, t_idx) = utils_analysis.mse(actual.pdf_y, fs);
                 % KL per quantile
-                [kl_dist_nmem_per_q(:,t_idx), ~,~,~] = quant_metric(xs, fs, Fs, qnum, d_vec(d_idx),'KL');
+                [kl_dist_nmem_per_q(:,t_idx), ~,~,~] = utils_analysis.quant_metric(xs, fs, Fs, qnum, d_vec(d_idx),'KL');
                 % KL per trial
-                kl_dist_nmem(n_idx, t_idx) = KLDiv(actual.pdf_y, fs');
+                kl_dist_nmem(n_idx, t_idx) = utils_analysis.kl(actual.pdf_y, fs');
 
-               % NSE ------------------------------------------------------
+               % NAP ------------------------------------------------------
 
-                xs = nse{d_idx,n_idx,t_idx,3}(:,1);
-                fs = nse{d_idx,n_idx,t_idx,4}(:,1);
-                Fs = nse{d_idx,n_idx,t_idx,5}(:,1);
+                xs = nap{d_idx,n_idx,t_idx,3}(:,1);
+                fs = nap{d_idx,n_idx,t_idx,4}(:,1);
+                Fs = nap{d_idx,n_idx,t_idx,5}(:,1);
                 % get actual distribution
                 actual.min_limit = min(xs);
                 actual.max_limit = max(xs);
@@ -187,13 +190,13 @@ if plot_mse_dist
                 actual = actual.dist_list();
 
                % MSE per quantile
-                [mse_dist_nse_per_q(:,t_idx),~,~,~] = quant_metric(xs, fs, Fs, qnum, d_vec(d_idx),'MSE');
+                [mse_dist_nse_per_q(:,t_idx),~,~,~] = utils_analysis.quant_metric(xs, fs, Fs, qnum, d_vec(d_idx),'MSE');
                 % MSE per trial
-                mse_dist_nse(n_idx, t_idx) = mse(actual.pdf_y, fs);
+                mse_dist_nse(n_idx, t_idx) = utils_analysis.mse(actual.pdf_y, fs);
                 % KL per quantile
-                [kl_dist_nse_per_q(:,t_idx), ~,~,~] = quant_metric(xs, fs, Fs, qnum, d_vec(d_idx),'KL');
+                [kl_dist_nse_per_q(:,t_idx), ~,~,~] = utils_analysis.quant_metric(xs, fs, Fs, qnum, d_vec(d_idx),'KL');
                 % KL per trial
-                kl_dist_nse(n_idx, t_idx) = KLDiv(actual.pdf_y, fs');
+                kl_dist_nse(n_idx, t_idx) = utils_analysis.kl(actual.pdf_y, fs');
 
 
             end
@@ -217,7 +220,7 @@ if plot_mse_dist
             figure('Name',fig_name, 'visible',fig_plot)
             hold on;
             for t = 1:size(mse_dist_nse_per_q,2)
-                nse_h = plot(quantiles, mse_dist_nse_per_q(:,t), '-r', 'DisplayName', '$\hat{f}_i^{NSE}(x)$');
+                nse_h = plot(quantiles, mse_dist_nse_per_q(:,t), '-r', 'DisplayName', '$\hat{f}_i^{NAP}(x)$');
                 nmem_h = plot(quantiles, mse_dist_nmem_per_q(:,t), '-b', 'DisplayName', '$\hat{f}_i^{NMEM}(x)$');
             end
             bp = gca;
@@ -233,7 +236,7 @@ if plot_mse_dist
             fig_name = ['avg_mse_d_',convertStringsToChars(d_vec(d_idx)),'_s_',num2str(n_vec(n_idx))];
             figure('Name',fig_name, 'visible',fig_plot)
             hold on;
-            nse_h = plot(quantiles, mean(mse_dist_nse_per_q,2), '-r', 'DisplayName', '$\hat{f}_i^{NSE}(x)$');
+            nse_h = plot(quantiles, mean(mse_dist_nse_per_q,2), '-r', 'DisplayName', '$\hat{f}_i^{NAP}(x)$');
             nmem_h = plot(quantiles, mean(mse_dist_nmem_per_q,2), '-b', 'DisplayName', '$\hat{f}_i^{NMEM}(x)$');
             xlabel('x')
             ylabel('MSE(x)')
@@ -247,7 +250,7 @@ if plot_mse_dist
             figure('Name',fig_name, 'visible',fig_plot)
             hold on;
             for t = 1:size(kl_dist_nmem_per_q,2)
-                nse_h = plot(quantiles, kl_dist_nse_per_q(:,t), '-r', 'DisplayName', '$\hat{f}_i^{NSE}(x)$');
+                nse_h = plot(quantiles, kl_dist_nse_per_q(:,t), '-r', 'DisplayName', '$\hat{f}_i^{NAP}(x)$');
                 nmem_h = plot(quantiles, kl_dist_nmem_per_q(:,t), '-b', 'DisplayName', '$\hat{f}_i^{NMEM}(x)$');
             end
             bp = gca;
@@ -262,7 +265,7 @@ if plot_mse_dist
             fig_name = ['avg_kl_d_',convertStringsToChars(d_vec(d_idx)),'_s_',num2str(n_vec(n_idx))];
             figure('Name',fig_name, 'visible',fig_plot)
             hold on;
-            nse_h = plot(quantiles, mean(kl_dist_nse_per_q,2), '-r', 'DisplayName', '$\hat{f}_i^{NSE}(x)$');
+            nse_h = plot(quantiles, mean(kl_dist_nse_per_q,2), '-r', 'DisplayName', '$\hat{f}_i^{NAP}(x)$');
             nmem_h = plot(quantiles, mean(kl_dist_nmem_per_q,2), '-b', 'DisplayName', '$\hat{f}_i^{NMEM}(x)$');
             xlabel('x')
             ylabel('KL(x)')
@@ -293,7 +296,7 @@ if plot_mse_dist
         distribution = repelem(d_vec(d_idx), length(temp(:,2)))';
         name = repelem(names(d_idx), length(temp(:,2)))';
     
-        nse_label = repelem(["NSE"], size(utils.reshape_groups(n_vec',mse_dist_nse), 1));
+        nse_label = repelem(["NAP"], size(utils.reshape_groups(n_vec',mse_dist_nse), 1));
         nmem_label = repelem(["NMEM"], size(utils.reshape_groups(n_vec',mse_dist_nmem), 1));
 
 
@@ -386,26 +389,26 @@ end
 if plot_pdf
     % Plot data the order of indices corresponds to distribution, sample size,
     % trial. Plot all trials per sample per distrobution
-    for d_idx = 1:size(nse, 1)
+    for d_idx = 1:size(nap, 1)
 
-        for n_idx = 1:size(nse, 2)
+        for n_idx = 1:size(nap, 2)
 
             fig_name = ['PDF_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
             figure('Name',fig_name, 'visible',fig_plot)
             hold on;
             % Set actual distribution type
-            actual.dist_name = nse{d_idx,n_idx,1,1}(1,:);
+            actual.dist_name = nap{d_idx,n_idx,1,1}(1,:);
             % Set distrobution over specific range i.e. the x values from the
             % first trial estimate
 
-            actual.x = nse{d_idx,n_idx,1,3}(:,1);
+            actual.x = nap{d_idx,n_idx,1,3}(:,1);
             % Generate distrobution attributes
             actual = dist_list(actual);
 
             % Remove zeros in actual.pdf_y generated from inf/nan values
             [row,~] = find(actual.pdf_y > 0);
             for s_idx = 1:trials
-                nse_h = plot(nse{d_idx,n_idx,s_idx,3}, nse{d_idx,n_idx,s_idx,4},'-r', 'DisplayName', '$\hat{f}_i^{NSE}(x)$');
+                nse_h = plot(nap{d_idx,n_idx,s_idx,3}, nap{d_idx,n_idx,s_idx,4},'-r', 'DisplayName', '$\hat{f}_i^{NAP}(x)$');
                 nmem_h = plot(nmem{d_idx,n_idx,s_idx,3}, nmem{d_idx,n_idx,s_idx,4},'-b', 'DisplayName', '$\hat{f}_i^{NMEM}(x)$');
             end
             g = plot(actual.x(row,1), actual.pdf_y(row,1), '-k', 'DisplayName','$f(x)$');
@@ -431,18 +434,18 @@ end
 if plot_cdf
     % Plot data the order of indices corresponds to distribution, sample size,
     % trial. Plot all trials per sample per distrobution
-    for d_idx = 1:size(nse, 1)
+    for d_idx = 1:size(nap, 1)
 
-        for n_idx = 1:size(nse, 2)
+        for n_idx = 1:size(nap, 2)
 
             fig_name = ['CDF_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
             figure('Name',fig_name, 'visible',fig_plot)
             hold on;
             % Set actual distribution type
-            actual.dist_name = nse{d_idx,n_idx,1,1};
+            actual.dist_name = nap{d_idx,n_idx,1,1};
             % Set distrobution over specific range i.e. the x values from the
             % first trial estimate
-            actual.x = nse{d_idx,n_idx,1,3}(:,1);
+            actual.x = nap{d_idx,n_idx,1,3}(:,1);
             % Generate distrobution attributes
             actual = dist_list(actual);
 
@@ -451,7 +454,7 @@ if plot_cdf
 
             for s_idx = 1:trials
 
-                nse_h = plot(nse{d_idx,n_idx,s_idx,3}, nse{d_idx,n_idx,s_idx,5},'-r', 'DisplayName', '$\hat{F}_i^{NSE}(x)$');
+                nse_h = plot(nap{d_idx,n_idx,s_idx,3}, nap{d_idx,n_idx,s_idx,5},'-r', 'DisplayName', '$\hat{F}_i^{NAP}(x)$');
                 nmem_h = plot(nmem{d_idx,n_idx,s_idx,3}, nmem{d_idx,n_idx,s_idx,5},'-b', 'DisplayName', '$\hat{F}_i^{NMEM}(x)$');
             end
             g = plot(actual.x(row,1), actual.cdf_y(row,1), '-k', 'DisplayName','$F(x)$');
@@ -477,9 +480,9 @@ end
 if plot_sqr
     % Plot data the order of indices corresponds to distribution, sample size,
     % trial. Plot all trials per sample per distrobution
-    for d_idx = 1:size(nse, 1)
+    for d_idx = 1:size(nap, 1)
 
-        for n_idx = 1:size(nse, 2)
+        for n_idx = 1:size(nap, 2)
 
             fig_name = ['SQR_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
             figure('Name',fig_name, 'visible',fig_plot)
@@ -505,10 +508,10 @@ if plot_sqr
             plot(muLD,lemonDrop,'k--');
             plot(muLD,-lemonDrop,'k--');
             % Set actual distribution type
-            actual.dist_name = nse{d_idx,n_idx,1,1};
+            actual.dist_name = nap{d_idx,n_idx,1,1};
             % Set distrobution over specific range i.e. the x values from the
             % first trial estimate
-            actual.x = nse{d_idx,n_idx,1,3}(:,1);
+            actual.x = nap{d_idx,n_idx,1,3}(:,1);
             % Generate distrobution attributes
             actual = dist_list(actual);
 
@@ -516,7 +519,7 @@ if plot_sqr
             [row,~] = find(actual.pdf_y > 0);
 
             for s_idx = 1:trials
-                nse_h = plot(nse{d_idx,n_idx,s_idx,6}, nse{d_idx,n_idx,s_idx,7},'-r', 'DisplayName', '$\hat{sqr}_i^{NSE}(x)$');
+                nse_h = plot(nap{d_idx,n_idx,s_idx,6}, nap{d_idx,n_idx,s_idx,7},'-r', 'DisplayName', '$\hat{sqr}_i^{NAP}(x)$');
                 nmem_h = plot(nmem{d_idx,n_idx,s_idx,6}, nmem{d_idx,n_idx,s_idx,7},'-b', 'DisplayName', '$\hat{sqr}_i^{NMEM}(x)$');
             end
             bp = gca;
@@ -537,20 +540,20 @@ end
 if plot_heavy
     % Plot data the order of indices corresponds to distribution, sample size,
     % trial. Plot all trials per sample per distrobution
-    for d_idx = 1:size(nse, 1)
+    for d_idx = 1:size(nap, 1)
 
-        for n_idx = 1:size(nse, 2)
+        for n_idx = 1:size(nap, 2)
 
             fig_name = ['Heavy_Tails_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
             figure('Name',fig_name, 'visible',fig_plot)
             hold on;
-            for j = 1:size(nse{d_idx,n_idx,3}, 2)
+            for j = 1:size(nap{d_idx,n_idx,3}, 2)
 
                 % Set actual distribution type
-                actual.dist_name = nse{d_idx,n_idx,1,1};
+                actual.dist_name = nap{d_idx,n_idx,1,1};
                 % Set distrobution over specific range i.e. the x values from the
                 % first trial estimate
-                xs = nse{d_idx,n_idx,1,3}(:,1);
+                xs = nap{d_idx,n_idx,1,3}(:,1);
                 x_min = min(xs);
                 x_max = max(xs);
                 actual.x = linspace(x_min,x_max*2,1000);
@@ -561,18 +564,18 @@ if plot_heavy
                 [row,~] = find(actual.pdf_y > 0);
 
                 for s_idx = 1:trials
-                    [nse_htx, nse_hty, nse_htx_act, nse_hty_act] = heavy(nse{d_idx,n_idx,s_idx,3}(:,j),...
-                        nse{d_idx,n_idx,s_idx,5}(:,j), actual);
+                    [nse_htx, nse_hty, nse_htx_act, nse_hty_act] = utils_analysis.heavy(nap{d_idx,n_idx,s_idx,3}(:,j),...
+                        nap{d_idx,n_idx,s_idx,5}(:,j), actual);
 
 
                     test = nmem{d_idx,n_idx,s_idx,3}(:,j);
                     test2 = nmem{d_idx,n_idx,s_idx,5}(:,j);
                     test3 = nmem{d_idx,n_idx,s_idx,3};
                     test4 = nmem{d_idx,n_idx,s_idx,5};
-                    [nmem_htx, nmem_hty, nmem_htx_act, nmem_hty_act] = heavy(nmem{d_idx,n_idx,s_idx,3}(:,j),...
+                    [nmem_htx, nmem_hty, nmem_htx_act, nmem_hty_act] = utils_analysis.heavy(nmem{d_idx,n_idx,s_idx,3}(:,j),...
                         nmem{d_idx,n_idx,s_idx,5}(:,j), actual);
 
-                    nse_h = plot(real(nse_htx), real(nse_hty), '-r', 'DisplayName', '$\hat{f}_i^{NSE}(x)$');
+                    nse_h = plot(real(nse_htx), real(nse_hty), '-r', 'DisplayName', '$\hat{f}_i^{NAP}(x)$');
                     nmem_h = plot(real(nmem_htx), real(nmem_hty), '-b', 'DisplayName', '$\hat{f}_i^{NMEM}(x)$');
                 end
             end
