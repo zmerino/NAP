@@ -1,5 +1,6 @@
 classdef utils
     methods(Static)
+<<<<<<< HEAD
         function [u,sqr] = sqr(sx,sPDF,sample)
             Ns = length(sample);
             x = sort(sample);
@@ -70,11 +71,143 @@ classdef utils
             
             % Define a vector of samples to generate
             %--------------------------------------------------------------------------
+=======
+<<<<<<<< HEAD:nmem/misc_functions.m
+        function [outCounts] = countSQR(u, sqr)
+            outCounts = zeros(3, 1);
+            total = length(sqr);
+            [a99, a90, a75, ~, b75, b90, b99] = GetTargets(length(u));
+
+            idxOut = [find(sqr > a99), find(sqr < b99)];
+            outCounts(1) = length(idxOut) / total;
+
+            idxOut = [find(sqr > a90), find(sqr < b90)];
+            outCounts(2) = length(idxOut) / total;
+
+            idxOut = [find(sqr > a75), find(sqr < b75)];
+            outCounts(3) = length(idxOut) / total;
+        end
+        function plotBoth(y, py, u, sqr)
+            redColor = [[0.65,0.078,0.18]];
+            blueColor = [45/255, 66/255, 133/255];
+            hBoth = figure;
+            fBoth = axes('parent', hBoth);
+            hold on;
+            yyaxis(fBoth, 'right');
+            set(fBoth, 'ycolor', blueColor);
+            
+            [topThreshold, bottomThreshold] = PlotBeta(u, true);
+            idxOut = [find(sqr' > topThreshold), find(sqr' < bottomThreshold)];
+            idxIn =  intersect(find(sqr' < topThreshold), find(sqr' > bottomThreshold)); 
+            ylim(fBoth, [-2 2]);
+            plot([min(u), max(u)], [-2, -2], 'color', 'black');
+            ylabel('SQR');
+                     
+            plot(fBoth, u(idxOut), sqr(idxOut), '.', 'color', redColor);
+            plot(fBoth, u(idxIn), sqr(idxIn), '.', 'color', blueColor);                   
+            yyaxis(fBoth, 'left');
+            plot(fBoth, y, py, '-', 'color', 'black');                     
+                        
+            [~, idxUnique, ~] = unique(py);
+            if length(idxUnique) > 1
+                sampleOut = interp1(y(idxUnique), py(idxUnique), u(idxOut));
+                plot(fBoth, u(idxOut), sampleOut, '.', 'color', redColor);
+            end
+            
+            set(gca, 'SortMethod', 'depth');                         
+            fBoth.YColor = 'k';
+            ylabel('PDF');                 
+            xlabel('Sample Range');
+        end
+         function plotSQR(u, sqr)
+            redColor = [[0.65,0.078,0.18]];
+            blueColor = [45/255, 66/255, 133/255];
+            hSQR = figure;
+            fSQR = axes('parent', hSQR);
+            [topThreshold, bottomThreshold] = PlotBeta(u, false);
+            n = length(sqr);
+            dx = 1 / (n + 1);
+            x = dx:dx:(n * dx);
+            idxOut = [find(sqr' > topThreshold), find(sqr' < bottomThreshold)];
+            idxIn =  intersect(find(sqr' < topThreshold), find(sqr' > bottomThreshold)); 
+            if n > 1000
+                plot(fSQR, x(idxOut), sqr(idxOut), '.', 'color', redColor);
+                plot(fSQR, x(idxIn), sqr(idxIn), '.', 'color', blueColor);
+            else
+                plot(fSQR, x(idxOut), sqr(idxOut), '.', 'color', redColor, 'MarkerSize', 10);
+                plot(fSQR, x(idxIn), sqr(idxIn), '.', 'color', blueColor, 'MarkerSize', 10); 
+            end
+            xlabel('Mean');
+            ylabel('SQR');
+        end
+        function [u,sqr] = sqr(sx,sPDF,sample)
+========
+        function [u,sqr] = sqr(sx,pdf,sample)
+>>>>>>>> distro_code:functions/utils.m
+            Ns = length(sample);
+            x = sort(sample);
+            sx = sort(sx);
+            pL = (0.5)/Ns;
+            pR = (0.5)/Ns;
+            pNorm = 1 - pL - pR;
+            cdf = zeros( size(pdf) );
+
+            cdf(1) = 0;
+            kmax = length(cdf);
+            for k=2:kmax
+                fave = 0.5*( pdf(k) + pdf(k-1) );
+                area = fave*( sx(k) - sx(k-1) );
+<<<<<<<< HEAD:nmem/misc_functions.m
+                sCDF(k) = sCDF(k-1) + area;
+            end
+            temp = sCDF(kmax);
+            sCDF = pNorm*(sCDF/temp) + pL;  % recalling what pL, pR and pNorm are
+            sample = x;%(2:end-1);
+            sampleUpLim = max(sx);
+            sampleLoLim = min(sx);
+            [row, ~] = find(sample <= sampleUpLim & sample >= sampleLoLim);
+            u = interp1(sx,sCDF,sample);    % get corresponding u for each x in sample
+            %             u = interp1(sx,sCDF,sample(row));    % get corresponding u for each x in sample
+          
+           
+%             uref = (1:Ns-2)/(Ns - 1);
+            uref = (1:Ns)/(Ns + 1);
+            %             uref = (1:size(sample(row),1))/(size(sample(row),1) - 1);
+========
+                cdf(k) = cdf(k-1) + area;
+            end
+
+            % recalling what pL, pR and pNorm are
+            cdf = pNorm*(cdf/cdf(kmax)) + pL;
+            sample = x(2:end-1);
+
+            % get corresponding u for each x in sample
+            u = interp1(sx,cdf,sample);
+          
+            uref = (1:Ns-2)/(Ns - 1);
+>>>>>>>> distro_code:functions/utils.m
+            if( size(uref,1) ~= size(u,1) )
+                u = u';
+            end
+            u = sort(u);
+            sqr = sqrt(Ns)*(u - uref);
+        end
+        
+        function [sampleVec] = sample_pow(minSamplesExp,maxSamplesExp,...
+                dataTypeflag,step)
+            
+            % Define a vector of samples to generate
+>>>>>>> distro_code
             exponents = minSamplesExp:step:maxSamplesExp;
             sampleVec = zeros(1,length(exponents));
             if dataTypeflag
                 % Generates vector of samples from integer power 2
+<<<<<<< HEAD
                 sampleVec(1:length(exponents)) = 2.^exponents(1:length(exponents));
+=======
+                sampleVec(1:length(exponents)) = ...
+                    2.^exponents(1:length(exponents));
+>>>>>>> distro_code
             else
                 % Generates vector of samples from real power 2
                 for i = 1:length(exponents)
@@ -84,6 +217,7 @@ classdef utils
             end
         end
         
+<<<<<<< HEAD
         function stitch_results_plot(plotQQandSQR,uref,u,msgModelType,Ns,prefix,saveFIG,sqr)
             if plotQQandSQR
                 figure('Name','SQR and QQ Plots')
@@ -133,6 +267,10 @@ classdef utils
         
         function val = likelihood()
             % function to hold loglikelhood function data
+=======
+        function val = likelihood()
+            % hold loglikelhood function data
+>>>>>>> distro_code
             val = [-5.99230836533,4.57069309023e-06
                 -5.982836708,9.38049450812e-06
                 -5.97336505068,1.44855544081e-05
@@ -899,6 +1037,7 @@ classdef utils
                 0.0318370803853,0.99912100249];
         end
         
+<<<<<<< HEAD
         function n = mixSampling(N,p,mixtureType)
             % Probability Distribution Data Generation function
             % Created By: Zach D. Merino a MS candidate
@@ -915,11 +1054,34 @@ classdef utils
             % p = vector of probability weights for each distribution in the mixture
             
             switch mixtureType
+=======
+        function n = mixSampling(N,p,mix_type)
+            % Probability Distribution Data Generation function
+            %--------------------------------------------------------------
+            % This function generates the size of the sample to be taken 
+            % from each individual distrbution in a mixture.
+            % Random sampling from a binomial distribution is used. 
+            % Note: This method can easily be generalized to any size 
+            % mixture, but for practial use the option to created a
+            % mixture from 2-5 has been included.
+            %--------------------------------------------------------------
+            % n = vector of subsamples for each distribution in the mixture
+            % N = sample size to take from total mixture distribution
+            % p = vector of probability weights for each distribution in
+            % the mixture
+            
+            switch mix_type
+>>>>>>> distro_code
                 case "two"
                     
                     % get random sample from binomial distribution
                     n1 = binornd(N,p(1));
+<<<<<<< HEAD
                     % find sample points for last distribution in the mixture
+=======
+                    % find sample points for last distribution in the
+                    % mixture
+>>>>>>> distro_code
                     n2 = N - n1;
                     % save number of samples to take from each distribution
                     n = [n1,n2];
@@ -928,10 +1090,20 @@ classdef utils
                     
                     % get random sample from binomial distribution
                     n1 = binornd(N,p(1));
+<<<<<<< HEAD
                     % get random sample from binomial distribution with conditional
                     % probabilies
                     n2 = binornd(N-n1,p(2)/(p(2)+p(3)));
                     % find sample points for last distribution in the mixture
+=======
+                    % get random sample from binomial distribution with
+                    % conditional
+
+                    % probabilies
+                    n2 = binornd(N-n1,p(2)/(p(2)+p(3)));
+                    % find sample points for last distribution in the
+                    % mixture
+>>>>>>> distro_code
                     n3 = N - n1 - n2;
                     % save number of samples to take from each distribution
                     n = [n1,n2,n3];
@@ -940,11 +1112,22 @@ classdef utils
                     
                     % get random sample from binomial distribution
                     n1 = binornd(N,p(1));
+<<<<<<< HEAD
                     % get random sample from binomial distribution with conditional
                     % probabilies
                     n2 = binornd(N-n1,p(2)/(p(2)+p(3)+p(4)));
                     n3 = binornd(N-n1-n2,p(3)/(p(3)+p(4)));
                     % find sample points for last distribution in the mixture
+=======
+                    % get random sample from binomial distribution with
+                    % conditional
+
+                    % probabilies
+                    n2 = binornd(N-n1,p(2)/(p(2)+p(3)+p(4)));
+                    n3 = binornd(N-n1-n2,p(3)/(p(3)+p(4)));
+                    % find sample points for last distribution in the 
+                    % mixture
+>>>>>>> distro_code
                     n4 = N - n1 - n2 - n3;
                     % save number of samples to take from each distribution
                     n = [n1,n2,n3,n4];
@@ -953,12 +1136,23 @@ classdef utils
                     
                     % get random sample from binomial distribution
                     n1 = binornd(N,p(1));
+<<<<<<< HEAD
                     % get random sample from binomial distribution with conditional
+=======
+                    % get random sample from binomial distribution with
+                    % conditional
+
+>>>>>>> distro_code
                     % probabilies
                     n2 = binornd(N-n1,p(2)/(p(2)+p(3)+p(4)+p(5)));
                     n3 = binornd(N-n1-n2,p(3)/(p(3)+p(4)+p(5)));
                     n4 = binornd(N-n1-n2-n3,p(4)/(p(4)+p(5)));
+<<<<<<< HEAD
                     % find sample points for last distribution in the mixture
+=======
+                    % find sample points for last distribution in the
+                    % mixture
+>>>>>>> distro_code
                     n5 = N - n1 - n2 - n3 - n4;
                     % save number of samples to take from each distribution
                     n = [n1,n2,n3,n4,n5];
@@ -967,18 +1161,30 @@ classdef utils
                     
                     % get random sample from binomial distribution
                     n1 = binornd(N,p(1));
+<<<<<<< HEAD
                     % get random sample from binomial distribution with conditional
+=======
+                    % get random sample from binomial distribution with
+                    % conditional
+
+>>>>>>> distro_code
                     % probabilies
                     n2 = binornd(N-n1,p(2)/(p(2)+p(3)+p(4)+p(5)+p(6)));
                     n3 = binornd(N-n1-n2,p(3)/(p(3)+p(4)+p(5)+p(6)));
                     n4 = binornd(N-n1-n2-n3,p(4)/(p(4)+p(5)+p(6)));
                     n5 = binornd(N-n1-n2-n3-n4,p(5)/(p(5)+p(6)));
+<<<<<<< HEAD
                     % find sample points for last distribution in the mixture
+=======
+                    % find sample points for last distribution in the
+                    % mixture
+>>>>>>> distro_code
                     n6 = N - n1 - n2 - n3 - n4 - n5;
                     % save number of samples to take from each distribution
                     n = [n1,n2,n3,n4,n5,n6];
             end
         end
+<<<<<<< HEAD
     
         function C = reshape_groups(groups, data)
             [row, col] = size(data);
@@ -996,6 +1202,8 @@ classdef utils
                 C = [C; horzcat(group, new)];
             end
         end
+=======
+>>>>>>> distro_code
 
     end
 end    
