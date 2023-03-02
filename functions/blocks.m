@@ -1,475 +1,300 @@
 classdef blocks < NAP % inherit properties i.e. p vector and max block size
-    properties (Constant)
-        % plot anything
-        plt_figs = false;
-        % plot xi values per parition or number of branches per level
-        plt_xi = false;
-        plt_tree = true;
-    end
+
     properties
         sample;
         dx;
         dxs;
         Ns;
         window;
-        binMin;
-        binNs;
+        min_bin;
+        n_bin;
     end
     methods(Static)
-        function [j,nBlocks,kBlockLower,kBlockUpper,kList,T,BRlevel,BR0] = ...
+        function [j,n_blocks,p_list,gamma,xi_lvl,xi0] = ...
                 bin_width_size(obj)
 
             obj.Ns = length(obj.sample);
 
-            if( obj.Ns < obj.binNs )
-                nBlocks = 1;
+            if( obj.Ns < obj.n_bin )
+                n_blocks = 1;
             else
                 % determine number of blocks and their sizes
-                [kList,T,BRlevel,BR0] = obj.r_tree(obj);
+                [p_list,gamma,xi_lvl,xi0] = obj.r_tree(obj);
                 % remove tiny left and right
-                if( kList(1) < obj.binNs )
-                    kList = kList(2:end);
+                if( p_list(1) < obj.n_bin )
+                    p_list = p_list(2:end);
                 end
-                if( obj.Ns - kList(end) + 1 < obj.binNs )
-                    kList = kList(1:end-1);
+                if( obj.Ns - p_list(end) + 1 < obj.n_bin )
+                    p_list = p_list(1:end-1);
                 end
-                j = length(kList);
-                nBlocks = 2*j + 1;
-                kBlockLower = zeros(1,nBlocks);
-                kBlockUpper = zeros(1,nBlocks);
+                j = length(p_list);
+                n_blocks = 2*j + 1;
             end
         end
 
-        function [pList,T,BRlevel,BR0] = r_tree(obj)
-            % parameters vector--------------------------------------------
-            % p = [b, r, n, n-for-T, T-scale, window, maximum levels];
+        function [plist,gamma,xi_lvl,xi0] = r_tree(obj)
 
-            % create T threshold-------------------------------------------
-            %             xi = ( B^p(1)*R^p(2) ) / Ns^p(3);
-            T = obj.p(5)*obj.Ns^obj.p(4);
+            % create gamma threshold
+            gamma = obj.p(5)*obj.Ns^obj.p(4);
             obj.window = ceil(obj.p(6)*obj.Ns^obj.p(7));
             maxLevel = obj.p(8);
 
-            % minimum blocksize--------------------------------------------
-            obj.binMin = ceil(2*obj.window);
-            if obj.binMin > obj.Ns
+            % minimum blocksize
+            obj.min_bin = ceil(2*obj.window);
+            if obj.min_bin > obj.Ns
                 error('sample size too small for window size')
             end
 
             % track number of branches per level
             nbranch = 1;
+
+            % initialize vector to track all created partitions
+
             % set end points of sample length as partition left (pL) and
             % partion right (pR)
-            pL = 1;
-            pR = obj.Ns;
-            % initialize vector to track all created partitions
-            pList = [pL pR];
+            plist = [1 obj.Ns];
             % track every attempted partition for all levels
-            plevel = {{[1;obj.Ns]}};
+            plevel = {{[1; obj.Ns]}};
             % initialize array to track newly created partitions
             % for plotting purposes
-            pdiff = {[1;obj.Ns]};
+            pdiff = {[1; obj.Ns]};
             % calcualte inital BR of intire sample
             B0 = obj.Ns;
             R0 = obj.get_ratio(obj, obj.sample);
-            BR0 = obj.br_product(obj, B0, R0, obj.Ns);
+            xi0 = obj.br_product(obj, B0, R0, obj.Ns);
 
             % clear array to hold all BR values per block per level
-            BRlevel = {BR0};
+            xi_lvl = {xi0};
 
             % beggin level loop
-            if BR0 > T
+            if xi0 > gamma
                 for jj = 1:maxLevel
                     % vector to hold all attempted partitions per level
-                    plevHold = [];
+                    p_lvl_hold = [];
                     % vector to hold all BR values per level
-                    BRHold = [];
+                    xi_hold = [];
                     % beggin branch loop
                     for b = 1:nbranch
                         % define block size (B)
-                        B = pList(b+1) - pList(b);
-                        if obj.binMin >= B
+                        B = plist(b+1) - plist(b);
+                        if obj.min_bin >= B
                             continue
                         end
                         % update left
-                        boundryL = obj.binMin + 1;
-                        boundryR = B - obj.binMin;
+                        boundry_left = obj.min_bin + 1;
+                        boundry_right = B - obj.min_bin;
+
                         % block to small for for minimization
                         % given window size
-                        if boundryR - boundryL < 3
+                        if boundry_right - boundry_left < 3
                             break;
                         end
 
                         % golden ration bifraction minimization
-                        [brL,brR,partition] = obj.min_br_gold(obj, obj.sample(pList(b):pList(b+1)));
-
-                        % plot br and r for various paritions of whole
-                        % sample
-                        if jj == 1 && obj.plt_figs && obj.plt_xi
-                            r_left = [];
-                            r_right = [];
-                            b_left = [];
-                            b_right = [];
-                            br_left = [];
-                            br_right = [];
-                            x_partition_left = [];
-                            for n = 2*obj.window:Ns-2*obj.window
-                                B0 = n;
-                                b_left = [b_left, B0];
-                                R0 = obj.get_ratio(sample(1:B0),obj.window);
-                                r_left = [r_left, R0];
-                                BR0 = obj.br_product(obj, B0, R0, obj.Ns);
-                                br_left = [br_left, BR0];
-                                x_partition_left = [x_partition_left, n];
-                            end
-                            x_partition_right = [];
-                            for n = 2*obj.window:Ns-2*obj.window
-                                B0 = n;
-                                b_right = [b_right, B0];
-                                R0 = obj.get_ratio(sample(end-B0:end),obj.window);
-                                r_right = [r_right, R0];
-                                BR0 = obj.br_product(obj, B0, R0, obj.Ns);
-                                br_right = [br_right, BR0];
-                                x_partition_right = [x_partition_right, obj.Ns-n];
-                            end
-
-                            figure('Name', 'R verse partition')
-                            hold on;
-                            plot(x_partition_left, r_left, '-b')
-                            plot(x_partition_right, r_right, '-r')
-                            xlabel('Partition', Interpreter='latex')
-                            ylabel('R', Interpreter='latex')
-
-                            figure('Name', 'B verse partition')
-                            hold on;
-                            plot(x_partition_left, b_left, '-b')
-                            plot(x_partition_right, b_right, '-r')
-                            xlabel('Partition', Interpreter='latex')
-                            ylabel('Block Size', Interpreter='latex')
-
-                            figure('Name', 'BR verse partition')
-                            hold on;
-                            plot(x_partition_left, br_left, '--b')
-                            plot(x_partition_right, br_right, '--r')
-                            plot(x_partition_right, abs(br_right-flip(br_left)), '-k')
-                            xlabel('Partition', Interpreter='latex')
-                            ylabel('$| \delta \xi |$', Interpreter='latex')
-                        end
+                        [xi_left,xi_right,partition] =...
+                            obj.min_br_gold(obj,...
+                            obj.sample(plist(b):plist(b+1)));
 
                         % find minimum BR for two newly created blocks
-                        BR = min(brL,brR);
+                        BR = min(xi_left,xi_right);
+
                         % update block boundaries of sample with correctly
                         % placed partition
-                        newPar = pList(b) + partition;
+                        newPar = plist(b) + partition;
+
                         % hold all BRs per level for later evaluation
-                        BRHold = [BRHold,BR];
-                        % un-balanced tree-----------------------------
-                        %                         if BR <= T
-                        if BR >= T
-                            plevHold = [plevHold, newPar];
+                        xi_hold = [xi_hold,BR];
+
+                        % un-balanced tree
+                        if BR >= gamma
+                            p_lvl_hold = [p_lvl_hold, newPar];
                         end
                     end
-                    pList = sort([pList plevHold]);
+                    
+                    plist = sort([plist p_lvl_hold]);
                     % update nbranch
-                    nbranch = length(pList) - 1;
+                    nbranch = length(plist) - 1;
+
                     % assign partition list to array for plotting
-                    plevel{jj+1,1} = {pList'};
-                    % exit for special cases where B < binMin
-                    % or bRight - bLeft < 3
-                    if isempty(BRHold)
+                    plevel{jj+1,1} = {plist'};
+
+                    % exit for special cases where B < min_bin
+                    % or b_right - b_left < 3
+                    if isempty(xi_hold)
                         break;
                     end
                     % assign BR per level to array for plotting
-                    BRlevel{jj+1,1} = BRHold;
+                    xi_lvl{jj+1,1} = xi_hold;
+
                     % find newly accepted partitions
                     [C,~] = setdiff(plevel{jj+1,1}{1,1}(:,1),...
                         plevel{jj,1}{1,1}(:,1));
+
                     % STOP SEARCH: if no new partitions are accepted
                     if isempty(C)
                         break;
                     end
+
                     % update changes with newly created partitions
                     pdiff{jj+1,1} = C;
                 end
-                pList = pList';
+                plist = plist';
 
-                %SPLITTING ROUTINE FOR LARGE SAMPLES ======================
+                % SPLITTING ROUTINE FOR LARGE SAMPLES
+
                 % vector to to add new partitons too
-                LargNcheck = pList;
-                % vector to hold updated partition list
-                holder = pList;
-                % while loop flag
-                runSplit = true;
+                lrg_n_check = plist;
 
-                while runSplit
+                % vector to hold updated partition list
+                holder = plist;
+
+                % while loop flag
+                run_split = true;
+
+                while run_split
                     % triggers exit flag for while loop
-                    splitCount = 0;
+                    split_count = 0;
+
                     % loop over modified partition list (holder)
                     for k = 1:length(holder)-1
+
                         % add partion between elements when diff > max_bs
                         if holder(k+1)-holder(k) > obj.max_bs
+
                             split = floor((holder(k+1)-holder(k))/2);
                             % update new partiton list
-                            LargNcheck = [LargNcheck; LargNcheck(k)+ split];
+
+                            lrg_n_check = [lrg_n_check;...
+                                lrg_n_check(k)+ split];
                             % update counter: number of found splits
-                            splitCount = splitCount + 1;
+
+                            split_count = split_count + 1;
                         end
                     end
-                    LargNcheck = sort(LargNcheck);
-                    holder = LargNcheck;
+                    lrg_n_check = sort(lrg_n_check);
+                    holder = lrg_n_check;
+
                     % if no splits exit routine
-                    if splitCount == 0
-                        runSplit = false;
+                    if split_count == 0
+                        run_split = false;
                     end
                 end
-                pList = LargNcheck;
-            end
-
-            % FIGURES -----------------------------------------------------
-            if obj.plt_figs && obj.plt_tree
-                figure('Name','br values per level 1')
-                hold on
-                plot(0:size(plevel,1)-1,log(T*ones(size(plevel,1))), '-r');
-                for k = 1:size(BRlevel,1)
-                    plot((k-1)*ones(size(BRlevel{k,1}(1,:),1),1), log(BRlevel{k,1}(1,:)),...
-                        'o',...
-                        'MarkerEdgeColor',[0,0,0],...
-                        'MarkerFaceColor',[0,0,0],...
-                        'MarkerSize',4,'DisplayName','none')
-                    levelTrack = 1:size(plevel,1);
-                end
-                str = cell(1,size(levelTrack,2));
-                for ii = 1:length(levelTrack)-1
-                    str{ii} = sprintf('%1.0f',levelTrack(ii));
-                end
-                xticks(levelTrack)
-                xticklabels(str)
-                ylabel('ln(BR)')
-                xlabel('Tree Level')
-                legend('Threshold')
-
-                figure('Name','tree branching')
-                subplot(2,1,1)
-                histogram(obj.sample)
-                ylabel('Number of Data Points','Interpreter','latex')
-
-                subplot(2,1,2)
-                hold on
-                % branching level track markers
-                for k = 1:size(plevel,1)-1
-                    plot(obj.sample(plevel{k,1}{1,1}(:,1)),...
-                        (size(plevel,1)-k)*...
-                        ones(size(plevel{k,1}{1,1}(:,1),1),1),...
-                        'o',...
-                        'MarkerEdgeColor',[0.6,0.6,0.6],...
-                        'MarkerFaceColor',[0.6,0.6,0.6],...
-                        'MarkerSize',5)
-
-                    levelTrack = 0:size(plevel,1)-1;
-                end
-                plot(obj.sample(pList),...
-                    zeros(length(pList),1),...
-                    'o',...
-                    'MarkerEdgeColor',[1,0,0],...
-                    'MarkerFaceColor',[1,0,0],...
-                    'MarkerSize',5)
-
-                % boundries of sample markers
-                plot(obj.sample(pdiff{1,1}(:,1)),...
-                    (size(plevel,1)-1)*...
-                    ones(size(pdiff{1,1}(:,1),1),1),...
-                    'o',...
-                    'MarkerEdgeColor',[0,0,0],...
-                    'MarkerFaceColor',[0.6,0.6,0.6],...
-                    'MarkerSize',8)
-                % new partion markers
-                for k = 2:size(pdiff,1)
-                    plot(obj.sample(pdiff{k,1}(:,1)),...
-                        (size(plevel,1)-k)*...
-                        ones(size(pdiff{k,1}(:,1),1),1),...
-                        'o',...
-                        'MarkerEdgeColor',[0,0,0],...
-                        'MarkerFaceColor',[0,0,0],...
-                        'MarkerSize',8)
-                end
-
-                str = cell(1,size(levelTrack,2));
-                for ii = 1:length(levelTrack)
-                    str{ii} = sprintf('%1.0f',levelTrack(end+1-ii));
-                end
-
-                yticks(levelTrack)
-                yticklabels(str)
-                xlabel('x Range','Interpreter','latex')
-                ylabel('Tree Level','Interpreter','latex')
-            end
-
-
-        end
-
-        function [brL,brR,partition] = gss(obj, sample)
-
-            Ns = length(sample);
-            bLeft = 1 + obj.binMin;
-            bRight = Ns - obj.binMin;
-            goldenR = (1+sqrt(5))/2;
-            partition = ceil(Ns/2);
-
-            while bRight-bLeft > 2
-
-                % define partitions ---------------------------------------
-                bLeft1 = partition;
-                bRight1 = Ns - partition;
-                rRight1 = obj.get_ratio(obj, sample(partition:end));
-                rLeft1 = obj.get_ratio(obj, sample(1:partition));
-                dxbrC = abs(obj.br_product(obj, bLeft1, rLeft1, Ns)-obj.br_product(obj, bRight1, rRight1, Ns));
-                % --------------------
-                leftPar = partition - 1;
-                bLeft2 = leftPar;
-                bRight2 = Ns - leftPar ;
-                rRight2 = obj.get_ratio(obj, sample(leftPar:end));
-                rLeft2 = obj.get_ratio(obj, sample(1:leftPar));
-                dxbrL = abs(obj.br_product(obj, bLeft2,rLeft2,Ns)-obj.br_product(obj, bRight2,rRight2,Ns));
-                % --------------------
-                rightPar = partition + 1;
-                bLeft3 = rightPar;
-                bRight3 = Ns - rightPar;
-                rRight3 = obj.get_ratio(obj, sample(rightPar:end));
-                rLeft3 = obj.get_ratio(obj, sample(1:rightPar));
-                dxbrR = abs(obj.br_product(obj, bLeft3,rLeft3,Ns)-obj.br_product(obj, bRight3,rRight3,Ns));
-                % --------------------
-                dxCR = dxbrC - dxbrR;
-                dxLC = dxbrL - dxbrC;
-                dxLR = dxbrL - dxbrR;
-                
-                % dxbrC = dxbrL or dxbrR = dxbrC or dxbrC is smallest
-                if dxLC == 0 || dxCR == 0 || (dxLC > 0 && dxCR < 0) || bRight-bLeft <= 2
-                    brL = obj.br_product(obj, bLeft1,rLeft1,Ns);
-                    brR = obj.br_product(obj, bRight1, rRight1,Ns);
-                    partition = bLeft1;
-                    return
-                end
-
-                % parition update conditions ------------------------------
-                 % dxbrR is smallest
-                if dxCR >= 0 && dxLR > 0
-                    bLeft = leftPar;
-                    % Shrink --->
-                    partition = round((bLeft+bRight*goldenR)/(1+goldenR));
-                % dxbrL is smallest
-                elseif dxLC <= 0 && dxLR < 0
-                    bRight = rightPar;
-                    % <--- Shrink
-                    partition = round((bLeft*goldenR+bRight)/(1+goldenR));
-                end
+                plist = lrg_n_check;
             end
         end
 
-        function [brL,brR,partition] = min_br_gold(obj, sample)
+        function [xi_left,xi_right,partition] = min_br_gold(obj, sample)
 
             Ns = length(sample);
-            bLeft = 1 + obj.binMin;
-            bRight = Ns - obj.binMin;
-            goldenR = (1+sqrt(5))/2;
+            b_left = 1 + obj.min_bin;
+            b_right = Ns - obj.min_bin;
+            gold_ratio = (1+sqrt(5))/2;
             dxbr = [];
-            loopCount = 0;
+            loop_count = 0;
             partition = ceil(Ns/2);
 
-            while bRight-bLeft > 2
+            while b_right-b_left > 2
 
-                % define partitions ---------------------------------------
-                bLeft1 = partition;
-                bRight1 = Ns - partition;
-                rRight1 = obj.get_ratio(obj, sample(partition:end));
-                rLeft1 = obj.get_ratio(obj, sample(1:partition));
-                dxbrC = abs(obj.br_product(obj, bLeft1, rLeft1, Ns)-obj.br_product(obj, bRight1, rRight1, Ns));
+                % define partitions
+                b_left1 = partition;
+                b_right1 = Ns - partition;
+                r_right1 = obj.get_ratio(obj, sample(partition:end));
+                r_left1 = obj.get_ratio(obj, sample(1:partition));
+                dxbr_center = abs(obj.br_product(obj, b_left1, r_left1, Ns)...
+                    -obj.br_product(obj, b_right1, r_right1, Ns));
                 % --------------------
-                leftPar = partition - 1;
-                bLeft2 = leftPar;
-                bRight2 = Ns - leftPar ;
-                rRight2 = obj.get_ratio(obj, sample(leftPar:end));
-                rLeft2 = obj.get_ratio(obj, sample(1:leftPar));
-                dxbrL = abs(obj.br_product(obj, bLeft2,rLeft2,Ns)-obj.br_product(obj, bRight2,rRight2,Ns));
+                p_left = partition - 1;
+                b_left2 = p_left;
+                b_right2 = Ns - p_left ;
+                r_right2 = obj.get_ratio(obj, sample(p_left:end));
+                r_left2 = obj.get_ratio(obj, sample(1:p_left));
+                dxbr_left = abs(obj.br_product(obj, b_left2,r_left2,Ns)...
+                    -obj.br_product(obj, b_right2,r_right2,Ns));
                 % --------------------
-                rightPar = partition + 1;
-                bLeft3 = rightPar;
-                bRight3 = Ns - rightPar;
-                rRight3 = obj.get_ratio(obj, sample(rightPar:end));
-                rLeft3 = obj.get_ratio(obj, sample(1:rightPar));
-                dxbrR = abs(obj.br_product(obj, bLeft3,rLeft3,Ns)-obj.br_product(obj, bRight3,rRight3,Ns));
+                p_right = partition + 1;
+                b_left3 = p_right;
+                b_right3 = Ns - p_right;
+                r_right3 = obj.get_ratio(obj, sample(p_right:end));
+                r_left3 = obj.get_ratio(obj, sample(1:p_right));
+                dxbr_right = abs(obj.br_product(obj, b_left3,r_left3,Ns)...
+                    -obj.br_product(obj, b_right3,r_right3,Ns));
                 % --------------------
-                dxCR = dxbrC - dxbrR;
-                dxLC = dxbrL - dxbrC;
-                dxLR = dxbrL - dxbrR;
+                dx_cr = dxbr_center - dxbr_right;
+                dx_lc = dxbr_left - dxbr_center;
+                dx_lr = dxbr_left - dxbr_right;
 
-                % parition update conditions ------------------------------
-                % dxbrR is smallest
-                if dxCR >= 0 && dxLR > 0
-                    bLeft = leftPar;
-                    if bRight-bLeft < 2
-                        dxbr = horzcat(dxbr,[dxbrC;bLeft1;rLeft1;bRight1;rRight1]);
+                % parition update conditions
+                % dxbr_right is smallest
+                if dx_cr >= 0 && dx_lr > 0
+                    b_left = p_left;
+                    if b_right-b_left < 2
+                        dxbr = horzcat(dxbr,[dxbr_center;b_left1;r_left1;...
+                            b_right1;r_right1]);
                     else
                         % Shrink --->
-                        dxbr = horzcat(dxbr,[dxbrR;bLeft3;rLeft3;bRight3;rRight3]);
-                        partition = round((bLeft+bRight*goldenR)/(1+goldenR));
+                        dxbr = horzcat(dxbr,[dxbr_right;b_left3;r_left3;...
+                            b_right3;r_right3]);
+                        partition = round((b_left+b_right*gold_ratio)/...
+                            (1+gold_ratio));
                     end
                 end
-                % dxbrL is smallest
-                if dxLC <= 0 && dxLR < 0
-                    bRight = rightPar;
-                    if bRight-bLeft < 2
-                        dxbr = horzcat(dxbr,[dxbrC;bLeft1;rLeft1;bRight1;rRight1]);
+                % dxbr_left is smallest
+                if dx_lc <= 0 && dx_lr < 0
+                    b_right = p_right;
+                    if b_right-b_left < 2
+                        dxbr = horzcat(dxbr,[dxbr_center;b_left1;r_left1;...
+                            b_right1;r_right1]);
                     else
                         % <--- Shrink
-                        dxbr = horzcat(dxbr,[dxbrL;bLeft2;rLeft2;bRight2;rRight2]);
-                        partition = round((bLeft*goldenR+bRight)/(1+goldenR));
+                        dxbr = horzcat(dxbr,[dxbr_left;b_left2;r_left2;...
+                            b_right2;r_right2]);
+                        partition = round((b_left*gold_ratio+b_right)/...
+                            (1+gold_ratio));
                     end
                 end
-                % dxbrC is smallest
-                if dxLC > 0 && dxCR < 0
-                    dxbr = horzcat(dxbr,[dxbrC;bLeft1;rLeft1;bRight1;rRight1]);
+                % dxbr_center is smallest
+                if dx_lc > 0 && dx_cr < 0
+                    dxbr = horzcat(dxbr,[dxbr_center;b_left1;r_left1;...
+                        b_right1;r_right1]);
                     break
                 end
-                % dxbrC = dxbrL = dxbrR = 0
-                if dxLC == 0 || dxCR == 0 || dxLR == 0
-                    dxbr = horzcat(dxbr,[dxbrC;bLeft1;rLeft1;bRight1;rRight1]);
+                % dxbr_center = dxbr_left = dxbr_right = 0
+                if dx_lc == 0 || dx_cr == 0 || dx_lr == 0
+                    dxbr = horzcat(dxbr,[dxbr_center;b_left1;r_left1;...
+                        b_right1;r_right1]);
                     break
                 end
-                loopCount = loopCount + 1;
+                loop_count = loop_count + 1;
             end
 
             dxbr = dxbr';
-            brL = obj.br_product(obj, dxbr(end,2),dxbr(end,3),Ns);
-            brR = obj.br_product(obj, dxbr(end,4),dxbr(end,5),Ns);
+            xi_left = obj.br_product(obj, dxbr(end,2),dxbr(end,3),Ns);
+            xi_right = obj.br_product(obj, dxbr(end,4),dxbr(end,5),Ns);
             partition = dxbr(end,2);
         end
 
         function r = get_ratio(obj, sample)
             % create boolean mask for subsample from entire sample
             mask = (min(sample)<=obj.sample & max(sample)>=obj.sample);
-            % change one binary 1 value to 0 to create mask for difference array
-            % indexes where mask is true i.e. 1
+
+            % change one binary 1 value to 0 to create mask for difference
+            % array indexes where mask is true i.e. 1
             mask_idx= find(mask==1);
+
             % change last true value on the right to false
             mask(mask_idx(end)) = 0;
             mask = mask(1:end-1);
+
             % get the dx values for this subsample in sorted order
             sort_mask = ismember(obj.dxs, obj.dx(mask)');
             dx = obj.dxs(sort_mask);
 
             dxMin = mean(dx(1:obj.window));
             dxMax = mean(dx(end-obj.window+1:end));
-            % optional ratio condition
-            % -------------------------------------------------------------
-            % r -> 0, dxMin << dxMax and r -> 1, dxMin ~ dxMax
-            % -------------------------------------------------------------
-            %             r = dxMin/dxMax;
             % -------------------------------------------------------------
             % r -> inf, dxMin << dxMax and r -> 1, dxMin ~ dxMax
             % -------------------------------------------------------------
             r = dxMax/dxMin;
-
-
         end
 
         function BR = br_product(obj, b, r, n)

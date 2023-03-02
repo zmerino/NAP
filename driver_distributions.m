@@ -206,7 +206,7 @@ for j = 1:length(distribution_vector)
             sendFileName1 = ['D_',char(actual.dist_name),cpu_type,char(rndom.filename),'.dat'];
             rndom.randomVSactual = "random";
             rndom = dist_list(rndom);
-            sample = rndom.rndData;
+            sample = rndom.random_data;
 
             tintialSE = cputime;
 
@@ -221,23 +221,18 @@ for j = 1:length(distribution_vector)
             % extract relevant parameters from object after stich() method
             fail_code = nse.failed;
             x_nse = nse.sx;
-            SE_pdf = nse.sPDF;
-            SE_cdf = nse.sCDF;
+            SE_pdf = nse.pdf;
+            SE_cdf = nse.cdf;
             SE_u = nse.u;
             SE_SQR = nse.sqr;
-            nBlocks = nse.nBlocks;
+            n_blocks = nse.n_blocks;
             rndom.Ns = nse.N;
-            binrndom.Ns =  nse.binN;
-            max_LG = nse.LG_max;
-            sum_LG = nse.LG_sum;
-            nse_LG = nse.LG;
-            nse_LG_val = nse.LG_vals;
 
-            nse_lm{k,i} = nse.LG;
+            nse_lm{k,i} = nse.lagrange;
 
             T = nse.T;
-            BRlevel = nse.BRlevel;
-            BR0 = nse.BR0;
+            xi_lvl = nse.xi_lvl;
+            xi0 = nse.xi0;
 
             tcpuSE = cputime-tintialSE;
 

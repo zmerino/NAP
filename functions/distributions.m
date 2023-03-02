@@ -6,7 +6,7 @@ classdef distributions
         pdf_y
         cdf_y
         actual_data
-        rndData
+        random_data
         true_quantile
         smooth = 0.01;
         Ncdf = 1000000;
@@ -16,9 +16,8 @@ classdef distributions
         min_limit = 0;
         max_limit = 10;
         generate_data = false;
-        pVector = linspace(0,1,10000);
         dist_name
-        distInfo
+        dist_info
         randomVSactual = "actual"
         distributionList = ["Beta-a0p5-b1p5";"Beta-a2-b0p5";...
             "Beta-a0p5-b0p5";"Bimodal-Normal";"BirnbaumSaunders";...
@@ -43,14 +42,13 @@ classdef distributions
                     % Second shape obj
                     b = 1.5;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.distInfo = makedist('Beta','a',a,'b',b);
-                    obj.pdf_y = pdf(obj.distInfo,obj.x);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.dist_info = makedist('Beta','a',a,'b',b);
+                    obj.pdf_y = pdf(obj.dist_info,obj.x);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
                 case 'Beta-a2-b0p5'
                     % Beta2 Case Statement
                     % First shape obj
@@ -58,14 +56,13 @@ classdef distributions
                     % Second shape obj
                     b = 0.5;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.distInfo = makedist('Beta','a',a,'b',b);
-                    obj.pdf_y = pdf(obj.distInfo,obj.x);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.dist_info = makedist('Beta','a',a,'b',b);
+                    obj.pdf_y = pdf(obj.dist_info,obj.x);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
                 case 'Beta-a0p5-b0p5'
                     % Beta3 Case Statement
                     % First shape obj
@@ -73,15 +70,14 @@ classdef distributions
                     % Second shape obj
                     b = 0.5;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.distInfo = makedist('Beta','a',a,'b',b);
-                    obj.pdf_y = pdf(obj.distInfo,obj.x);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.dist_info = makedist('Beta','a',a,'b',b);
+                    obj.pdf_y = pdf(obj.dist_info,obj.x);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                case 'Bimodal-Normal' %------------------------------------------------- Mixture****
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+                case 'Bimodal-Normal' % Mixture****
                     % Normal Case Statement
                     % mixture weights
                     p1 = 0.65;
@@ -106,7 +102,7 @@ classdef distributions
                     % Mixture PDF Curve
                     obj.pdf_y = p(1)*pdfCurve1 + p(2)*pdfCurve2;
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
                     % generate random sample or actual pdf
                     if obj.randomVSactual == "random"
                         % mixture string array flag for mixSampling()
@@ -116,7 +112,7 @@ classdef distributions
                         % generate random sample
                         rndData1 = random(distInfo1,1,n(1));
                         rndData2 = random(distInfo2,1,n(2));
-                        obj.rndData = [rndData1,rndData2];
+                        obj.random_data = [rndData1,rndData2];
                     elseif obj.randomVSactual == "actual"
                         obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     end
@@ -135,16 +131,16 @@ classdef distributions
                     f = f(1:2:end);
                     s = s(1:2:end);
                     % generate distribution object
-                    obj.distInfo = ...
+                    obj.dist_info = ...
                         makedist('PiecewiseLinear','x',s,'Fx',f);
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
                     % create cdf/pdf from distribution object. 
                     % for debugging and vizualization.
                     if debug
                         if obj.randomVSactual == "actual"
                             xMix = linspace(obj.min_limit,...
                                 obj.max_limit,obj.Npdf);
-                            CDF = cdf(obj.distInfo,xMix);
+                            CDF = cdf(obj.dist_info,xMix);
                             % numerically differentiate CDF
                             PDF = zeros(1,size(CDF(1:end-1),2));
                             for i = 1:size(CDF,2)-1
@@ -166,7 +162,7 @@ classdef distributions
                             legend('cdf','pdf','smoothed-pdf')
                             % plot histogram for random sample
                             subplot(2,1,2)
-                            histogram(random(obj.distInfo,obj.Nhist,1),...
+                            histogram(random(obj.dist_info,obj.Nhist,1),...
                                 'Normalization','probability')
                             xlim([obj.min_limit,obj.max_limit])
                         end
@@ -179,15 +175,15 @@ classdef distributions
                     % Porbability of success for each trial
                     p = 0.2;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.distInfo = ...
+                    obj.dist_info = ...
                         makedist(obj.dist_name,'n',n,'p',p);
                     obj.pdf_y = binopdf(obj.x,n,p);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
                 case 'BirnbaumSaunders'
                     % BirnbaumSaunders Case Statement
                     % Scale parameter
@@ -195,16 +191,16 @@ classdef distributions
                     % Shape parameter
                     Gamma = 0.5;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.distInfo = makedist(obj.dist_name,...
+                    obj.dist_info = makedist(obj.dist_name,...
                         'Beta',Beta,'Gamma',Gamma);
-                    obj.pdf_y = pdf(obj.distInfo,obj.x);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.pdf_y = pdf(obj.dist_info,obj.x);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                case 'BirnbaumSaunders-Stable' %------------------------------------------------- Mixture****
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
+                case 'BirnbaumSaunders-Stable' % Mixture****
                     % BirnbaumSaunders Case Statement
                     % mixture weights
                     p1 = 0.35;
@@ -239,7 +235,7 @@ classdef distributions
                     % Mixture PDF Curve
                     obj.pdf_y = p(1)*pdfCurve1 + p(2)*pdfCurve2;
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
                     % generate random sample or actual pdf
                     if obj.randomVSactual == "random"
                         % mixture string array flag for utils.mixSampling()
@@ -249,7 +245,7 @@ classdef distributions
                         % generate random sample
                         rndData1 = random(distInfo1,1,n(1));
                         rndData2 = random(distInfo2,1,n(2));
-                        obj.rndData = [rndData1,rndData2];
+                        obj.random_data = [rndData1,rndData2];
                     elseif obj.randomVSactual == "actual"
                         obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     end
@@ -268,16 +264,16 @@ classdef distributions
                     f = f(1:2:end);
                     s = s(1:2:end);
                     % generate distribution object
-                    obj.distInfo = ...
+                    obj.dist_info = ...
                         makedist('PiecewiseLinear','x',s,'Fx',f);
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
                     % create cdf/pdf from distribution object. 
                     % for debugging and vizualization.
                     if debug
                         if obj.randomVSactual == "actual"
                             xMix = linspace(obj.min_limit,...
                                 obj.max_limit,obj.Npdf);
-                            CDF = cdf(obj.distInfo,xMix);
+                            CDF = cdf(obj.dist_info,xMix);
                             % numerically differentiate
                             PDF = zeros(1,size(CDF(1:end-1),2));
                             for i = 1:size(CDF,2)-1
@@ -299,7 +295,7 @@ classdef distributions
                             legend('cdf','pdf','smoothed-pdf')
                             % plot histogram for random sample
                             subplot(2,1,2)
-                            histogram(random(obj.distInfo,obj.Nhist,1),...
+                            histogram(random(obj.dist_info,obj.Nhist,1),...
                                 'Normalization','probability')
                             xlim([obj.min_limit,obj.max_limit])
                         end
@@ -314,40 +310,40 @@ classdef distributions
                     % Shape parameter two
                     k = 2;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.distInfo = makedist(obj.dist_name,...
+                    obj.dist_info = makedist(obj.dist_name,...
                         'Alpha',Alpha,'c',c,'k',k);
-                    obj.pdf_y = pdf(obj.distInfo,obj.x);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.pdf_y = pdf(obj.dist_info,obj.x);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
                 case 'Chisquare'
                     % Chisquare Case Statement
                     % Degrees of freedom
                     Nu = 4;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     obj.pdf_y = chi2pdf(obj.x,Nu);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
                 case 'Exponential'
                     % Exponential Case Statement
                     % Mean
                     Mu = 1;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.distInfo = makedist(obj.dist_name,'Mu',Mu);
-                    obj.pdf_y = pdf(obj.distInfo,obj.x);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.dist_info = makedist(obj.dist_name,'Mu',Mu);
+                    obj.pdf_y = pdf(obj.dist_info,obj.x);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
                 case 'Extreme-Value'
                     % Extreme Value Case Statement
                     % Location parameter
@@ -356,15 +352,15 @@ classdef distributions
                     Sigma = 2;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     distributionLabel = 'Extreme Value';
-                    obj.distInfo = makedist(distributionLabel,...
+                    obj.dist_info = makedist(distributionLabel,...
                         'Mu',Mu, 'Sigma', Sigma);
-                    obj.pdf_y = pdf(obj.distInfo,obj.x);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.pdf_y = pdf(obj.dist_info,obj.x);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
                 case 'Gamma'
                     % Gamma Case Statement
                     % Shape parameter
@@ -372,16 +368,16 @@ classdef distributions
                     % Scale parameter
                     b = 2;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.distInfo = ...
+                    obj.dist_info = ...
                         makedist(obj.dist_name,'a',a,'b',b);
-                    obj.pdf_y = pdf(obj.distInfo,obj.x);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.pdf_y = pdf(obj.dist_info,obj.x);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                case 'Generalized-Extreme-Value' %------------------------------------------------- Mixture****
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
+                case 'Generalized-Extreme-Value' % Mixture****
                     % Generalized Extreme Value Value Statement
                     % Shape parameter
                     k = 1;
@@ -391,16 +387,16 @@ classdef distributions
                     Mu = 2;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     distributionLabel = 'Generalized Extreme Value';
-                    obj.distInfo = makedist(distributionLabel,...
+                    obj.dist_info = makedist(distributionLabel,...
                         'k',k, 'Sigma', Sigma,'Mu',Mu);
-                    obj.pdf_y = pdf(obj.distInfo,obj.x);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.pdf_y = pdf(obj.dist_info,obj.x);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                case 'Generalized-Pareto' %------------------------------------------------- Mixture****
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
+                case 'Generalized-Pareto' % Mixture****
                     % Generalized Pareto Value Value Case Statement
                     % Tail MemTracker (shape) parameter
                     k = 2;
@@ -410,16 +406,16 @@ classdef distributions
                     theta = 0;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     distributionLabel = 'Generalized Pareto';
-                    obj.distInfo = makedist(distributionLabel,...
+                    obj.dist_info = makedist(distributionLabel,...
                         'k',k, 'Sigma', Sigma,'Theta', theta);
-                    obj.pdf_y = pdf(obj.distInfo,obj.x);
+                    obj.pdf_y = pdf(obj.dist_info,obj.x);
                     % Mu parameter is not recognized
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
                 case 'HalfNormal'
                     % Half Normal Value Case Statement
                     % Location parameter
@@ -427,15 +423,15 @@ classdef distributions
                     % Scale parameter
                     Sigma = 1;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.distInfo = makedist(obj.dist_name,...
+                    obj.dist_info = makedist(obj.dist_name,...
                         'Mu', Mu, 'Sigma', Sigma);
                     obj.pdf_y = pdf(obj.dist_name,obj.x);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
                 case 'InverseGaussian'
                     % Inverse Gaussian Case Statement
                     % Scale parameter
@@ -443,15 +439,15 @@ classdef distributions
                     % Shape parameter
                     Lambda = 1;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.distInfo = makedist(obj.dist_name,...
+                    obj.dist_info = makedist(obj.dist_name,...
                         'mu', Mu, 'lambda', Lambda);
-                    obj.pdf_y = pdf(obj.distInfo,obj.x);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.pdf_y = pdf(obj.dist_info,obj.x);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
                 case 'Normal'
                     % Normal Case Statement
                     % Mean
@@ -459,16 +455,16 @@ classdef distributions
                     % Standard deviation
                     Sigma = 1;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.distInfo = makedist(obj.dist_name,...
+                    obj.dist_info = makedist(obj.dist_name,...
                         'Mu', Mu, 'Sigma', Sigma);
-                    obj.pdf_y = pdf(obj.distInfo,obj.x);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.pdf_y = pdf(obj.dist_info,obj.x);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                case 'Normal-Contaminated' %------------------------------------------------- Mixture****
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
+                case 'Normal-Contaminated' % Mixture****
                     % Normal Case Statement
                     % mixture weights
                     p1 = 0.5;
@@ -493,7 +489,7 @@ classdef distributions
                     % Mixture PDF Curve
                     obj.pdf_y = p(1)*pdfCurve1 + p(2)*pdfCurve2;
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
                     % generate random sample or actual pdf
                     if obj.randomVSactual == "random"
                         % mixture string array flag for utils.mixSampling()
@@ -503,7 +499,7 @@ classdef distributions
                         % generate random sample
                         rndData1 = random(distInfo1,1,n(1));
                         rndData2 = random(distInfo2,1,n(2));
-                        obj.rndData = [rndData1,rndData2];
+                        obj.random_data = [rndData1,rndData2];
                     elseif obj.randomVSactual == "actual"
                         obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     end
@@ -522,16 +518,16 @@ classdef distributions
                     f = f(1:2:end);
                     s = s(1:2:end);
                     % generate distribution object
-                    obj.distInfo = ...
+                    obj.dist_info = ...
                         makedist('PiecewiseLinear','x',s,'Fx',f);
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
                     % create cdf/pdf from distribution object. 
                     % for debugging and vizualization.
                     if debug
                         if obj.randomVSactual == "actual"
                             xMix = linspace(obj.min_limit,...
                                 obj.max_limit,obj.Npdf);
-                            CDF = cdf(obj.distInfo,xMix);
+                            CDF = cdf(obj.dist_info,xMix);
                             % numerically differentiate
                             PDF = zeros(1,size(CDF(1:end-1),2));
                             for i = 1:size(CDF,2)-1
@@ -553,13 +549,13 @@ classdef distributions
                             legend('cdf','pdf','smoothed-pdf')
                             % plot histogram for random sample
                             subplot(2,1,2)
-                            histogram(random(obj.distInfo,obj.Nhist,1),...
+                            histogram(random(obj.dist_info,obj.Nhist,1),...
                                 'Normalization','probability')
                             xlim([obj.min_limit,obj.max_limit])
                         end
                     end
                     %------------------------------------------------------
-                case 'Square-periodic' %------------------------------------------------- Mixture****
+                case 'Square-periodic' % Mixture****
                     % Uniform Case Statement
                     % mixture weights
                     p1 = 1/6;
@@ -613,7 +609,7 @@ classdef distributions
                     obj.pdf_y = p(1)*pdfCurve1 + p(2)*pdfCurve2 +...
                         p(3)*pdfCurve3 + p(4)*pdfCurve4 +...
                         p(5)*pdfCurve5 + p(6)*pdfCurve6;
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
                     % generate random sample or actual pdf
                     if obj.randomVSactual == "random"
                         % mixture string array flag for utils.mixSampling()
@@ -627,7 +623,7 @@ classdef distributions
                         rndData4 = random(distInfo4,1,n(4));
                         rndData5 = random(distInfo5,1,n(5));
                         rndData6 = random(distInfo6,1,n(6));
-                        obj.rndData = [rndData1,rndData2,rndData3,...
+                        obj.random_data = [rndData1,rndData2,rndData3,...
                             rndData4,rndData5,rndData6];
                     elseif obj.randomVSactual == "actual"
                         obj.actual_data = vertcat(obj.x,obj.pdf_y);
@@ -652,16 +648,16 @@ classdef distributions
                     f = f(1:2:end);
                     s = s(1:2:end);
                     % generate distribution object
-                    obj.distInfo = ...
+                    obj.dist_info = ...
                         makedist('PiecewiseLinear','x',s,'Fx',f);
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
                     % create cdf/pdf from distribution object. 
                     % for debugging and vizualization.
                     if debug
                         if obj.randomVSactual == "actual"
                             xMix = linspace(obj.min_limit,...
                                 obj.max_limit,obj.Npdf);
-                            CDF = cdf(obj.distInfo,xMix);
+                            CDF = cdf(obj.dist_info,xMix);
                             % numerically differentiate
                             PDF = zeros(1,size(CDF(1:end-1),2));
                             for i = 1:size(CDF,2)-1
@@ -683,7 +679,7 @@ classdef distributions
                             legend('cdf','pdf','smoothed-pdf')
                             % plot histogram for random sample
                             subplot(2,1,2)
-                            histogram(random(obj.distInfo,obj.Nhist,1),...
+                            histogram(random(obj.dist_info,obj.Nhist,1),...
                                 'Normalization','probability')
                             xlim([obj.min_limit,obj.max_limit])
                         end
@@ -713,16 +709,16 @@ classdef distributions
                     % Location parameter
                     Delta = 4;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.distInfo = makedist(obj.dist_name,...
+                    obj.dist_info = makedist(obj.dist_name,...
                         'Alpha', Alpha,'Beta', Beta,...
                         'Gam', Gam, 'Delta', Delta);
-                    obj.pdf_y = pdf(obj.distInfo, obj.x);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.pdf_y = pdf(obj.dist_info, obj.x);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
                 case 'Stable1'
                     % Stable Case Statement
                     % First shape parameter
@@ -747,17 +743,17 @@ classdef distributions
                     Delta = 4;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                     distributionLabel = 'Stable';
-                    obj.distInfo = makedist(distributionLabel,...
+                    obj.dist_info = makedist(distributionLabel,...
                         'Alpha', Alpha,'Beta', Beta,...
                         'Gam', Gam, 'Delta', Delta);
-                    obj.pdf_y = pdf(obj.distInfo, obj.x);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.pdf_y = pdf(obj.dist_info, obj.x);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                case 'Stable2' %------------------------------------------------- Mixture****
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
+                case 'Stable2' % Mixture****
                     % mixture model for 2 stable distributions
                     % mixture weights
                     p1 = 0.25;
@@ -789,7 +785,7 @@ classdef distributions
                     pdfCurve2 = pdf(distInfo2, obj.x);
                     % Mixture PDF Curve
                     obj.pdf_y = p(1)*pdfCurve1 + p(2)*pdfCurve2;
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
                     % generate random sample or actual pdf
                     if obj.randomVSactual == "random"
                         % mixture string array flag for utils.mixSampling()
@@ -799,7 +795,7 @@ classdef distributions
                         % generate random sample
                         rndData1 = random(distInfo1,1,n(1));
                         rndData2 = random(distInfo2,1,n(2));
-                        obj.rndData = [rndData1,rndData2];
+                        obj.random_data = [rndData1,rndData2];
                     elseif obj.randomVSactual == "actual"
                         obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     end
@@ -818,16 +814,16 @@ classdef distributions
                     f = f(1:2:end);
                     s = s(1:2:end);
                     % generate distribution object
-                    obj.distInfo = ...
+                    obj.dist_info = ...
                         makedist('PiecewiseLinear','x',s,'Fx',f);
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
                     % create cdf/pdf from distribution object. 
                     % for debugging and vizualization.
                     if debug
                         if obj.randomVSactual == "actual"
                             xMix = linspace(obj.min_limit,...
                                 obj.max_limit,obj.Npdf);
-                            CDF = cdf(obj.distInfo,xMix);
+                            CDF = cdf(obj.dist_info,xMix);
                             % numerically differentiate
                             PDF = zeros(1,size(CDF(1:end-1),2));
                             for i = 1:size(CDF,2)-1
@@ -849,13 +845,13 @@ classdef distributions
                             legend('cdf','pdf','smoothed-pdf')
                             % plot histogram for random sample
                             subplot(2,1,2)
-                            histogram(random(obj.distInfo,obj.Nhist,1),...
+                            histogram(random(obj.dist_info,obj.Nhist,1),...
                                 'Normalization','probability')
                             xlim([obj.min_limit,obj.max_limit])
                         end
                     end
                     %------------------------------------------------------
-                case 'Stable3' %------------------------------------------------- Mixture****
+                case 'Stable3' % Mixture****
                     % mixture model for 3 stable distributions
                     % mixture weights
                     p1 = 0.25;
@@ -899,7 +895,7 @@ classdef distributions
                     % Mixture PDF Curve
                     obj.pdf_y = p(1)*pdfCurve1 +...
                         p(2)*pdfCurve2 + p(3)*pdfCurve3;
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
                     % generate random sample or actual pdf
                     if obj.randomVSactual == "random"
                         % mixture string array flag for utils.mixSampling()
@@ -910,7 +906,7 @@ classdef distributions
                         rndData1 = random(distInfo1,1,n(1));
                         rndData2 = random(distInfo2,1,n(2));
                         rndData3 = random(distInfo3,1,n(3));
-                        obj.rndData = [rndData1,rndData2,rndData3];
+                        obj.random_data = [rndData1,rndData2,rndData3];
                     elseif obj.randomVSactual == "actual"
                         obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     end
@@ -930,16 +926,16 @@ classdef distributions
                     f = f(1:2:end);
                     s = s(1:2:end);
                     % generate distribution object
-                    obj.distInfo = ...
+                    obj.dist_info = ...
                         makedist('PiecewiseLinear','x',s,'Fx',f);
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
                     % create cdf/pdf from distribution object. 
                     % for debugging and vizualization.
                     if debug
                         if obj.randomVSactual == "actual"
                             xMix = linspace(obj.min_limit,...
                                 obj.max_limit,obj.Npdf);
-                            CDF = cdf(obj.distInfo,xMix);
+                            CDF = cdf(obj.dist_info,xMix);
                             % numerically differentiate
                             PDF = zeros(1,size(CDF(1:end-1),2));
                             for i = 1:size(CDF,2)-1
@@ -961,13 +957,13 @@ classdef distributions
                             legend('cdf','pdf','smoothed-pdf')
                             % plot histogram for random sample
                             subplot(2,1,2)
-                            histogram(random(obj.distInfo,obj.Nhist,1),...
+                            histogram(random(obj.dist_info,obj.Nhist,1),...
                                 'Normalization','probability')
                             xlim([obj.min_limit,obj.max_limit])
                         end
                     end
                     %------------------------------------------------------
-                case 'Trimodal-Normal' %------------------------------------------------- Mixture****
+                case 'Trimodal-Normal' % Mixture****
                     % Normal Case Statement
                     % mixture weights
                     p1 = 0.33;
@@ -999,7 +995,7 @@ classdef distributions
                     % Mixture PDF Curve
                     obj.pdf_y = p(1)*pdfCurve1 +...
                         p(2)*pdfCurve2 + p(3)*pdfCurve3;
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
                     % generate random sample or actual pdf
                     if obj.randomVSactual == "random"
                         % mixture string array flag for utils.mixSampling()
@@ -1010,7 +1006,7 @@ classdef distributions
                         rndData1 = random(distInfo1,1,n(1));
                         rndData2 = random(distInfo2,1,n(2));
                         rndData3 = random(distInfo3,1,n(3));
-                        obj.rndData = [rndData1,rndData2,rndData3];
+                        obj.random_data = [rndData1,rndData2,rndData3];
                     elseif obj.randomVSactual == "actual"
                         obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     end
@@ -1030,16 +1026,16 @@ classdef distributions
                     f = f(1:2:end);
                     s = s(1:2:end);
                     % generate distribution object
-                    obj.distInfo = ...
+                    obj.dist_info = ...
                         makedist('PiecewiseLinear','x',s,'Fx',f);
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);               
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);               
                     % create cdf/pdf from distribution object. 
                     % for debugging and vizualization.
                     if debug
                         if obj.randomVSactual == "actual"
                             xMix = linspace(obj.min_limit,...
                                 obj.max_limit,obj.Npdf);
-                            CDF = cdf(obj.distInfo,xMix);
+                            CDF = cdf(obj.dist_info,xMix);
                             % numerically differentiate
                             PDF = zeros(1,size(CDF(1:end-1),2));
                             for i = 1:size(CDF,2)-1
@@ -1062,7 +1058,7 @@ classdef distributions
                             
                             % plot histogram for random sample
                             subplot(2,1,2)
-                            histogram(random(obj.distInfo,obj.Nhist,1),...
+                            histogram(random(obj.dist_info,obj.Nhist,1),...
                                 'Normalization','probability')
                             xlim([obj.min_limit,obj.max_limit])
                         end
@@ -1079,15 +1075,15 @@ classdef distributions
                     % Location parameter
                     % Delta = 3;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.distInfo = makedist(obj.dist_name,...
+                    obj.dist_info = makedist(obj.dist_name,...
                         'Mu', Mu, 'Sigma', Sigma, 'Nu', Nu);
-                    obj.pdf_y = pdf(obj.distInfo, obj.x);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.pdf_y = pdf(obj.dist_info, obj.x);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
                 case 'Uniform'
                     % Uniform Case Statement
                     % Lower bound
@@ -1095,19 +1091,19 @@ classdef distributions
                     % Upper Bound
                     Upper = 8;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.distInfo = makedist(obj.dist_name,...
+                    obj.dist_info = makedist(obj.dist_name,...
                         'Lower', Lower, 'Upper', Upper);
-                    obj.pdf_y = pdf(obj.distInfo,obj.x);
+                    obj.pdf_y = pdf(obj.dist_info,obj.x);
                     
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                case 'Uniform-Mix' %------------------------------------------------- Mixture****
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
+                case 'Uniform-Mix' % Mixture****
                     % Uniform Case Statement
                     % mixture weights
                     p1 = 0.1;
@@ -1139,7 +1135,7 @@ classdef distributions
                     % Mixture PDF Curve
                     obj.pdf_y = p(1)*pdfCurve1 +...
                         p(2)*pdfCurve2 + p(3)*pdfCurve3;
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
                     % generate random sample or actual pdf
                     if obj.randomVSactual == "random"
                         % mixture string array flag for utils.mixSampling()
@@ -1150,7 +1146,7 @@ classdef distributions
                         rndData1 = random(distInfo1,1,n(1));
                         rndData2 = random(distInfo2,1,n(2));
                         rndData3 = random(distInfo3,1,n(3));
-                        obj.rndData = [rndData1,rndData2,rndData3];
+                        obj.random_data = [rndData1,rndData2,rndData3];
                     elseif obj.randomVSactual == "actual"
                         obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     end
@@ -1170,16 +1166,16 @@ classdef distributions
                     f = f(1:2:end);
                     s = s(1:2:end);
                     % generate distribution object
-                    obj.distInfo = ...
+                    obj.dist_info = ...
                         makedist('PiecewiseLinear','x',s,'Fx',f);
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);   
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);   
                     % create cdf/pdf from distribution object. 
                     % for debugging and vizualization.
                     if debug
                         if obj.randomVSactual == "actual"
                             xMix = linspace(obj.min_limit,...
                                 obj.max_limit,obj.Npdf);
-                            CDF = cdf(obj.distInfo,xMix);
+                            CDF = cdf(obj.dist_info,xMix);
                             % numerically differentiate
                             PDF = zeros(1,size(CDF(1:end-1),2));
                             for i = 1:size(CDF,2)-1
@@ -1201,7 +1197,7 @@ classdef distributions
                             legend('cdf','pdf','smoothed-pdf')
                             % plot histogram for random sample
                             subplot(2,1,2)
-                            histogram(random(obj.distInfo,obj.Nhist,1),...
+                            histogram(random(obj.dist_info,obj.Nhist,1),...
                                 'Normalization','probability')
                             xlim([obj.min_limit,obj.max_limit])
                         end
@@ -1214,15 +1210,15 @@ classdef distributions
                     % Shape parameter
                     b = 2;
                     % PDF Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.distInfo = ...
+                    obj.dist_info = ...
                         makedist(obj.dist_name,'a', a, 'b', b);
-                    obj.pdf_y = pdf(obj.distInfo,obj.x);
-                    obj.rndData = random(obj.distInfo,1,obj.Ns);
+                    obj.pdf_y = pdf(obj.dist_info,obj.x);
+                    obj.random_data = random(obj.dist_info,1,obj.Ns);
                     obj.actual_data = vertcat(obj.x,obj.pdf_y);
                     % CDF and Q Curve \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-                    obj.cdf_y = cdf(obj.distInfo,obj.x);
-                    %obj.true_quantile = icdf(obj.distInfo,obj.pVector);
-                    %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                    obj.cdf_y = cdf(obj.dist_info,obj.x);
+
+
                 otherwise
                     % Warning Statement
                     warning('No distribution was picked')
@@ -1231,7 +1227,7 @@ classdef distributions
             if obj.generate_data
                 % Create obj.actual_data file
                 if obj.randomVSactual == "random"
-                    dataCreation(obj.rndData,obj.filename,obj.precision,1)
+                    dataCreation(obj.random_data,obj.filename,obj.precision,1)
                 elseif obj.randomVSactual == "actual"
                     dataCreation(obj.actual_data,obj.filename,obj.precision,1)
                 end

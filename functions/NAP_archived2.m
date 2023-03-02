@@ -136,123 +136,119 @@ classdef NAP
             partition_low = zeros(1,obj.n_blocks);
             partition_high = zeros(1,obj.n_blocks);
             % create staggered (secondary) blocks
-            if blocking == 'median'
-                if( obj.n_blocks > 2 )
-                    % block size of three is a special case
-                    if( obj.n_blocks == 3 )
-                        partition_low(1) = 1;
-                        partition_high(1) = p_list(1);
-                        partition_low(2) = round(0.5*(1  + p_list(1)));
-                        partition_high(2) = round(0.5*(p_list(1) + obj.N));
-                        partition_low(3) = p_list(1);
-                        partition_high(3) = obj.N;
-                    else
-                        % set index for staggered blocks (sb)
-                        sb_idx = 1;
-                        % set edge positions for first sb
-                        partition_low(sb_idx) = 1;
-                        partition_high(sb_idx) = p_list(1);
-                        sb_idx = sb_idx + 1;
-                        % set edge positions for second sb as average first 
-                        % blocks (fb)
-                        partition_low(sb_idx) = ...
-                            round(0.5*(1 + p_list(1)));
-                        partition_high(sb_idx) = ...
-                            round(0.5*(p_list(1) + p_list(2)));
-    
-                        % Loop to decide other sb edge positions
-                        for i=1:j-2
-                            % update indexer for kBlock indices
-                            sb_idx = sb_idx + 1;
-                            % set edge positions as first block for i-th sb
-                            partition_low(sb_idx) = p_list(i);
-                            partition_high(sb_idx) = p_list(i+1);
-                            % update indexer for kBlock indices
-                            sb_idx = sb_idx + 1;
-                            % set edge positions as average of fb positions
-                            % for i+1-th sb
-                            partition_low(sb_idx) = ...
-                                round(0.5*(p_list(i) + p_list(i+1)));
-                            partition_high(sb_idx) = ...
-                                round(0.5*( p_list(i+1) + p_list(i+2)));
-                        end
-                        sb_idx = sb_idx + 1;
-                        partition_low(sb_idx) = p_list(j-1);
-                        partition_high(sb_idx) = p_list(j);
-                        sb_idx = sb_idx + 1;
-                        partition_low(sb_idx) = ...
-                            round(0.5*(p_list(j-1) + p_list(j)));
-                        partition_high(sb_idx) = ...
-                            round(0.5*(p_list(j) + obj.N ));
-    
-                        partition_low(obj.n_blocks) = partition_high(end-2);
-                        partition_high(obj.n_blocks) = obj.N;
-                    end
-                else % => block size is 1
+            if( obj.n_blocks > 2 )
+                % block size of three is a special case
+                if( obj.n_blocks == 3 )
                     partition_low(1) = 1;
-                    partition_high(1) = obj.N;
-                end
-            else
-                if( obj.n_blocks > 2 )
-                    % block size of three is a special case
-                    if( obj.n_blocks == 3 )
-                        partition_low(1) = 1;
-                        partition_high(1) = p_list(1);
-                        partition_low(2) = round(0.5*(1  + p_list(1)));
-                        partition_high(2) = round(0.5*(p_list(1) + obj.N));
-                        partition_low(3) = p_list(1);
-                        partition_high(3) = obj.N;
+                    partition_high(1) = p_list(1);
+                    partition_low(2) = round(0.5*(1  + p_list(1)));
+                    partition_high(2) = round(0.5*(p_list(1) + obj.N));
+                    partition_low(3) = p_list(1);
+                    partition_high(3) = obj.N;
+                else
+                    % set index for staggered blocks (sb)
+                    sb_idx = 1;
+                    % set edge positions for first sb
+                    partition_low(sb_idx) = 1;
+                    partition_high(sb_idx) = p_list(1);
+                    sb_idx = sb_idx + 1;
+                    % set edge positions for second sb as average first 
+                    % blocks (fb)
+                    partition_low(sb_idx) = ...
+                        round(0.5*(1 + p_list(1)));
+                    partition_high(sb_idx) = ...
+                        round(0.5*(p_list(1) + p_list(2)));
 
-                        
-                    else
-                        % set index for staggered blocks (sb)
-                        sb_idx = 1;
-                        % set edge positions for first sb
-                        partition_low(sb_idx) = 1;
-                        partition_high(sb_idx) = p_list(1);
+                    % Loop to decide other sb edge positions
+                    for i=1:j-2
+                        % update indexer for kBlock indices
                         sb_idx = sb_idx + 1;
-                        % set edge positions for second sb as average first 
-                        % blocks (fb)
+                        % set edge positions as first block for i-th sb
+                        partition_low(sb_idx) = p_list(i);
+                        partition_high(sb_idx) = p_list(i+1);
+                        % update indexer for kBlock indices
+                        sb_idx = sb_idx + 1;
+                        % set edge positions as average of fb positions
+                        % for i+1-th sb
                         partition_low(sb_idx) = ...
-                            round(0.5*(1 + p_list(1)));
+                            round(0.5*(p_list(i) + p_list(i+1)));
                         partition_high(sb_idx) = ...
-                            round(0.5*(p_list(1) + p_list(2)));
-    
-                        % Loop to decide other sb edge positions
-                        for i=1:j-2
-                            % update indexer for kBlock indices
-                            sb_idx = sb_idx + 1;
-                            % set edge positions as first block for i-th sb
-                            partition_low(sb_idx) = p_list(i);
-                            partition_high(sb_idx) = p_list(i+1);
-                            % update indexer for kBlock indices
-                            sb_idx = sb_idx + 1;
-                            % set edge positions as average of fb positions
-                            % for i+1-th sb
-                            partition_low(sb_idx) = ...
-                                round(0.5*(p_list(i) + p_list(i+1)));
-                            partition_high(sb_idx) = ...
-                                round(0.5*( p_list(i+1) + p_list(i+2)));
-                        end
-                        sb_idx = sb_idx + 1;
-                        partition_low(sb_idx) = p_list(j-1);
-                        partition_high(sb_idx) = p_list(j);
-                        sb_idx = sb_idx + 1;
-                        partition_low(sb_idx) = ...
-                            round(0.5*(p_list(j-1) + p_list(j)));
-                        partition_high(sb_idx) = ...
-                            round(0.5*(p_list(j) + obj.N ));
-    
-                        partition_low(obj.n_blocks) = partition_high(end-2);
-                        partition_high(obj.n_blocks) = obj.N;
+                            round(0.5*( p_list(i+1) + p_list(i+2)));
                     end
-                else % => block size is 1
-                    partition_low(1) = 1;
-                    partition_high(1) = obj.N;
+                    sb_idx = sb_idx + 1;
+                    partition_low(sb_idx) = p_list(j-1);
+                    partition_high(sb_idx) = p_list(j);
+                    sb_idx = sb_idx + 1;
+                    partition_low(sb_idx) = ...
+                        round(0.5*(p_list(j-1) + p_list(j)));
+                    partition_high(sb_idx) = ...
+                        round(0.5*(p_list(j) + obj.N ));
+
+                    partition_low(obj.n_blocks) = partition_high(end-2);
+                    partition_high(obj.n_blocks) = obj.N;
                 end
+            else % => block size is 1
+                partition_low(1) = 1;
+                partition_high(1) = obj.N;
+            end
+
+            % TODO: update
+            % Determine block sizes
+            block_size_list = partition_high - partition_low + 1;
+            flag = 1;
+            if( block_size_list(1) < obj.binN )
+                flag = -1;
+                k = obj.binN - block_size_list(1);
+                tt = block_size_list - k;
+                for idx1=2:obj.n_blocks
+                    if( tt(idx1) > obj.binN )
+                        idx_ref = idx1;
+                        if( idx_ref == obj.n_blocks )
+                            error(['All blocks are too small! ',...
+                                'Sample is too hard']);
+                        end
+                        break;
+                    end
+                end
+                partition_low(1) = 1;
+                partition_high(1) = partition_high(1) + k;
+                for idx2=2:idx_ref-1
+                    partition_high(idx2) = partition_high(idx2) + k;
+                    partition_low(idx2) = partition_low(idx2) + k;
+                end
+                partition_low(idx_ref) = partition_low(idx_ref) + k;
+                partition_low(idx_ref+1) = partition_low(idx_ref+1) + k;
+            end
+            if( block_size_list(obj.n_blocks) < obj.binN )
+                flag = -1;
+                k = obj.binN - block_size_list(obj.n_blocks);
+                tt = block_size_list - k;
+                for idx3=obj.n_blocks-1:-1:1
+                    if( tt(idx3) > obj.binN )
+                        idx_ref = idx3;
+                        if( idx_ref == 1 )
+                            error(['All blocks are too small! ',...
+                                'Sample is too hard']);
+                        end
+                        break;
+                    end
+                end
+                partition_high(obj.n_blocks) = obj.N;
+                partition_low(obj.n_blocks) =...
+                    partition_low(obj.n_blocks) - k;
+                for idx4=obj.n_blocks-1:-1:idx_ref+1
+                    partition_high(idx4) = partition_high(idx4) - k;
+                    partition_low(idx4) = partition_low(idx4) - k;
+                end
+                partition_high(idx_ref) = partition_high(idx_ref) - k;
+                partition_high(idx_ref-1) = partition_high(idx_ref-1) - k;
+            end
+            if( flag < 0 )
+                block_size_list = partition_high - partition_low + 1;
             end
 
             % get length scale & shifts for each block
+
             % length of s_sorted as the span of a block
             blockScale = zeros(1,obj.n_blocks);
             % shift in s_sorted to center the span about 0
