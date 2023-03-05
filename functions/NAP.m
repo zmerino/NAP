@@ -1,36 +1,17 @@
 classdef NAP
     properties (Constant)
-        % pset1 - with no smoothing
-        %         p1 = 1;
-        %         p2 = 0.55;
-        %         p3 = 1;
-        %         p4 = 0.33;
-        %         p5 = 2;
-        %         p6 = 0.0625;
-        %         p7 = 0.5;
-        %         p8 = 40;
-        %         % pset2 - with smoothing
         p1 = 1;
         p2 = 0.5;
         p3 = 1;
-        p4 = 0.33;
+        p4 = 1/3;
         p5 = 2;
         p6 = 0.0625;
         p7 = 0.5;
         p8 = 40;
-        %         % pset3 - with smoothing
-        %         p1 = 1;
-        %         p2 = 1/2;
-        %         p3 = 1;
-        %         p4 = 1/3;
-        %         p5 = 2;
-        %         p6 = 1/16;
-        %         p7 = 1/2;
-        %         p8 = 40;
 
         mod_estimate = true;
         trgt_SURD = 20;
-        smooth = 0;
+        smooth = 100;
         max_lrg_mltply = 100;
 
     end
