@@ -2,20 +2,10 @@
 clc;clear;close all;
 
 addpath("functions/")
+addpath("cpp_code/")
 
-dir_name = fullfile('data','theoretical_threshold');
+dir_name = fullfile('data_2','theoretical_threshold');
 status = mkdir(dir_name);
-dir_name = fullfile('data','estimates');
-status = mkdir(dir_name);
-
-% error handlingdiary(fullfile('log','error_log_threoretical_threshold.txt'))
-diary on;
-filename = ['threshold_script_run-',datestr(datetime(floor(now),'ConvertFrom','datenum')),'.txt'];
-full_file = fullfile('log',filename);
-
-fid = fopen(full_file, 'w');
-fprintf(fid,['Threshold script started on: ',datestr(datetime(now,'ConvertFrom','datenum')),'/n']);
-fclose(fid);
 
 
 % class assignment
@@ -29,9 +19,9 @@ YexpScale = -2;
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   17; %<---- maximum exponent to generate samples
+max_pow =                   10; %<---- maximum exponent to generate samples
 min_pow =                   8; %<---- minimum exponent to generate samples
-trials =                    3;  %<--- trials to run to generate heuristics for programs
+trials =                    2;  %<--- trials to run to generate heuristics for programs
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % max_pow =                   20; %<---- maximum exponent to generate samples
 % min_pow =                   8; %<---- minimum exponent to generate samples
@@ -57,9 +47,11 @@ cpu_type =                   '\';%<--- '\' or '/' for windows or linux
     "InverseGaussian","Trimodal-Normal","Stable",...
     "Stable2","Stable3","Stable1","BirnbaumSaunders-Stable"];
 %}
-distribution_vector = ["Uniform-Mix","Generalized-Pareto","Stable","Trimodal-Normal","Normal", "Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
-distribution_vector = ["Trimodal-Normal","Normal", "Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
-distribution_vector = ["Normal","Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5"];
+distribution_vector = ["Generalized-Pareto","Stable", "Stable1", "Stable2", "Stable3","Trimodal-Normal","Normal", "Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
+distribution_vector = ["Generalized-Pareto","Stable","Trimodal-Normal","Normal", "Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
+% distribution_vector = ["Normal", "Uniform"];
+% distribution_vector = ["Trimodal-Normal","Normal", "Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
+% distribution_vector = ["Trimodal-Normal","Normal", "Uniform"];
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Main Function Call Loop used to lable plot figures
 
@@ -156,19 +148,23 @@ for j = 1:length(distribution_vector)
             
             tstart = tic;
             
-            x = sort(sample);
+            sample = sort(sample);
             
             % Track T,BR per trial
             nap = NAP;
             nap.max_bs = 1e3;
             serial = false;
             nap = nap.stitch(sample, serial);
-
+            dxn = sample(2:end) - sample(1:end-1);
+            dxns = sort(dxn);
+                
             obt_blocks = blocks;
             obt_blocks = obt_blocks.stitch(sample, serial);
-            obt_blocks.sample = x;
+            obt_blocks.sample = sample;
+            obt_blocks.dx = dxn;
+            obt_blocks.dxs = dxns;
             obt_blocks.binNs = nap.binN;
-            obt_blocks.Ns = length(x);
+            obt_blocks.Ns = length(sample);
 
             [pList,T,BRlevel,BR0] = obt_blocks.r_tree(obt_blocks);
 %             [pList,T,BRlevel,BR0] = block_def.r_tree(x,actual.min_limit,actual.max_limit,rndom.filename,p);
@@ -191,12 +187,6 @@ for j = 1:length(distribution_vector)
 
                 disp(meta_string)
 
-                fid = fopen(full_file, 'at');
-                fprintf(fid,'\n_____________________________________________________');
-                fprintf(fid, meta_string);
-                fprintf(fid,'\n=====================================================');
-                fclose(fid);
-
             elseif mod(i,10) ==0 && k == 1
                 meta_string = [char(actual.dist_name),...
                     ', Trial: ',num2str(i),'/', num2str(trials), ...
@@ -211,13 +201,6 @@ for j = 1:length(distribution_vector)
                     ' Percent Complete: ', num2str(PercentComplete),'%'])
                 
                 
-                fid = fopen(full_file, 'at');
-                fprintf(fid,'\n_____________________________________________________');
-                fprintf(fid, meta_string);
-                fprintf(fid,'\n=====================================================');
-                fprintf(fid,['\nTotal Elapsed Time: ', num2str(toc(tTotalStart)),...
-                    ', Percent Complete: ', num2str(PercentComplete),'%\n']);
-                fclose(fid);
             end
             
             BR0_track(k) = BR0;
@@ -317,43 +300,41 @@ legend([s,h])
 % variable name
 
 SamplePowers = log(sample_vec')/log(2);
+distribution_vector = ["Generalized-Pareto","Stable", "Stable1", "Stable2", "Stable3","Trimodal-Normal","Normal", "Uniform","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
 
-UniformMixMean = mean(dist_br0_track(:,:,1),1,'omitnan')';
-UniformMixStdev = std(dist_br0_track(:,:,1),0,1,'omitnan')';
+GeneralizedParetoMean = mean(dist_br0_track(:,:,1),1,'omitnan')';
+GeneralizedParetoStdev = std(dist_br0_track(:,:,1),0,1,'omitnan')';
 
-GeneralizedParetoMean =  mean(dist_br0_track(:,:,2),1,'omitnan')';
-GeneralizedParetoStdev =  std(dist_br0_track(:,:,2),0,1,'omitnan')';
+StableMean =  mean(dist_br0_track(:,:,2),1,'omitnan')';
+StableStdev =  std(dist_br0_track(:,:,2),0,1,'omitnan')';
 
-StableMean = mean(dist_br0_track(:,:,3),1,'omitnan')';
-StableStdev = std(dist_br0_track(:,:,3),0,1,'omitnan')';
+TrimodalNormalMean = mean(dist_br0_track(:,:,3),1,'omitnan')';
+TrimodalNormalStdev = std(dist_br0_track(:,:,3),0,1,'omitnan')';
 
-TrimodalNormalMean = mean(dist_br0_track(:,:,4),1,'omitnan')';
-TrimodalNormalStdev = std(dist_br0_track(:,:,4),0,1,'omitnan')';
+NormalMean = mean(dist_br0_track(:,:,4),1,'omitnan')';
+NormalStdev = std(dist_br0_track(:,:,4),0,1,'omitnan')';
 
-NormalMean = mean(dist_br0_track(:,:,5),1,'omitnan')';
-NormalStdev = std(dist_br0_track(:,:,5),0,1,'omitnan')';
+UniformMean = mean(dist_br0_track(:,:,5),1,'omitnan')';
+UniformStdev = std(dist_br0_track(:,:,5),0,1,'omitnan')';
 
-UniformMean = mean(dist_br0_track(:,:,6),1,'omitnan')';
-UniformStdev = std(dist_br0_track(:,:,6),0,1,'omitnan')';
+BetaA0p5B1p5Mean = mean(dist_br0_track(:,:,6),1,'omitnan')';
+BetaA0p5B1p5Stdev = std(dist_br0_track(:,:,6),0,1,'omitnan')';
 
-BetaA0p5B1p5Mean = mean(dist_br0_track(:,:,7),1,'omitnan')';
-BetaA0p5B1p5Stdev = std(dist_br0_track(:,:,7),0,1,'omitnan')';
+BetaA2B0p5Mean = mean(dist_br0_track(:,:,7),1,'omitnan')';
+BetaA2B0p5Stdev = std(dist_br0_track(:,:,7),0,1,'omitnan')';
 
-BetaA2B0p5Mean = mean(dist_br0_track(:,:,8),1,'omitnan')';
-BetaA2B0p5Stdev = std(dist_br0_track(:,:,8),0,1,'omitnan')';
-
-BetaA0p5B0p5Mean = mean(dist_br0_track(:,:,9),1,'omitnan')';
-BetaA0p5B0p5Stdev = std(dist_br0_track(:,:,9),0,1,'omitnan')';
+BetaA0p5B0p5Mean = mean(dist_br0_track(:,:,8),1,'omitnan')';
+BetaA0p5B0p5Stdev = std(dist_br0_track(:,:,8),0,1,'omitnan')';
 
 
-BR0_data_table = table(SamplePowers, UniformMixMean, UniformMixStdev,...
+BR0_data_table = table(SamplePowers,...
     GeneralizedParetoMean, GeneralizedParetoStdev, StableMean,...
-    StableStdev, TrimodalNormalMean, TrimodalNormalStdev, NormalMean,...
+    StableStdev,TrimodalNormalMean, TrimodalNormalStdev, NormalMean,...
     NormalStdev, UniformMean, UniformStdev, BetaA0p5B1p5Mean, ...
     BetaA0p5B1p5Stdev, BetaA2B0p5Mean, BetaA2B0p5Stdev, ...
     BetaA0p5B0p5Mean, BetaA0p5B0p5Stdev);
 
-writetable(BR0_data_table, fullfile('data','theoretical_threshold','br0_table.dat'))
+writetable(BR0_data_table, fullfile(dir_name,'br0_table.dat'))
 
 % END OF PROGRAM ==========================================================
 diary on

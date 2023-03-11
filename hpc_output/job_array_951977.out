@@ -1,0 +1,4621 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2022 The MathWorks, Inc.
+                  R2022b (9.13.0.2049777) 64-bit (glnxa64)
+                              August 24, 2022
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+
+distribution_vector = 
+
+    "Trimodal-Normal"
+
+
+names = 
+
+    "Tri-Modal-Normal"
+
+
+trials =
+
+   100
+
+
+min_pow =
+
+     8
+
+
+max_pow =
+
+    22
+
+
+cpu_n =
+
+    20
+
+
+cpp_code = 
+
+    "cpp_code_smooth/"
+
+
+dir_name =
+
+    'data_2/Trimodal-Normal_cpu_20_t_100'
+
+
+table_name =
+
+    'Trimodal-Normal_cpu_20_t_100.dat'
+
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to the parallel pool (number of workers: 12).
+Elapsed time is 28.018524 seconds.
+Trimodal-Normal, Trial: 1/100 sample size: 256
+estimate size: 1  2221
+Elapsed time is 0.829557 seconds.
+Trimodal-Normal, Trial: 2/100 sample size: 256
+estimate size: 1  6772
+Elapsed time is 0.938201 seconds.
+Trimodal-Normal, Trial: 3/100 sample size: 256
+estimate size: 1  6264
+Elapsed time is 0.470944 seconds.
+Trimodal-Normal, Trial: 4/100 sample size: 256
+estimate size: 1  3240
+Elapsed time is 0.444026 seconds.
+Trimodal-Normal, Trial: 5/100 sample size: 256
+estimate size: 1  5200
+Elapsed time is 0.384915 seconds.
+Trimodal-Normal, Trial: 6/100 sample size: 256
+estimate size: 1  2247
+Elapsed time is 0.418369 seconds.
+Trimodal-Normal, Trial: 7/100 sample size: 256
+estimate size: 1  3621
+Elapsed time is 0.340420 seconds.
+Trimodal-Normal, Trial: 8/100 sample size: 256
+estimate size: 1  2925
+Elapsed time is 0.251616 seconds.
+Trimodal-Normal, Trial: 9/100 sample size: 256
+estimate size: 1  3807
+Elapsed time is 0.320505 seconds.
+Trimodal-Normal, Trial: 10/100 sample size: 256
+estimate size: 1  3649
+Elapsed time is 0.402468 seconds.
+Trimodal-Normal, Trial: 11/100 sample size: 256
+estimate size: 1  4680
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 9
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function>make_general_channel/channel_general', '/apps/pkg/matlab/R2022b/toolbox/matlab/lang/parallel_function.m', 837)" style="font-weight:bold">parallel_function>make_general_channel/channel_general</a> (<a href="matlab: opentoline('/apps/pkg/matlab/R2022b/toolbox/matlab/lang/parallel_function.m',837,0)">line 837</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('remoteParallelFunction', '/apps/pkg/matlab/R2022b/toolbox/parallel/remoteParallelFunction.m', 67)" style="font-weight:bold">remoteParallelFunction</a> (<a href="matlab: opentoline('/apps/pkg/matlab/R2022b/toolbox/parallel/remoteParallelFunction.m',67,0)">line 67</a>)
+[Warning: Problem using function.  Assigning a value of 0. t: 1 b: 9] 
+[In parallel_function (line 494)
+In NAP/stitch (line 325)
+In driver_func (line 201)] 
+Elapsed time is 0.765666 seconds.
+Trimodal-Normal, Trial: 12/100 sample size: 256
+estimate size: 1  5788
+Elapsed time is 0.400438 seconds.
+Trimodal-Normal, Trial: 13/100 sample size: 256
+estimate size: 1  2988
+Elapsed time is 0.389045 seconds.
+Trimodal-Normal, Trial: 14/100 sample size: 256
+estimate size: 1  5266
+Elapsed time is 1.343825 seconds.
+Trimodal-Normal, Trial: 15/100 sample size: 256
+estimate size: 1  3707
+Elapsed time is 0.358945 seconds.
+Trimodal-Normal, Trial: 16/100 sample size: 256
+estimate size: 1  4609
+Elapsed time is 0.515600 seconds.
+Trimodal-Normal, Trial: 17/100 sample size: 256
+estimate size: 1  4618
+Elapsed time is 0.205484 seconds.
+Trimodal-Normal, Trial: 18/100 sample size: 256
+estimate size: 1  2302
+Elapsed time is 0.416261 seconds.
+Trimodal-Normal, Trial: 19/100 sample size: 256
+estimate size: 1  2423
+Elapsed time is 0.217415 seconds.
+Trimodal-Normal, Trial: 20/100 sample size: 256
+estimate size: 1  2249
+Elapsed time is 0.527247 seconds.
+Trimodal-Normal, Trial: 21/100 sample size: 256
+estimate size: 1  4378
+Elapsed time is 0.340892 seconds.
+Trimodal-Normal, Trial: 22/100 sample size: 256
+estimate size: 1  4601
+Elapsed time is 1.007240 seconds.
+Trimodal-Normal, Trial: 23/100 sample size: 256
+estimate size: 1  5378
+Elapsed time is 0.235744 seconds.
+Trimodal-Normal, Trial: 24/100 sample size: 256
+estimate size: 1  3747
+Elapsed time is 0.302454 seconds.
+Trimodal-Normal, Trial: 25/100 sample size: 256
+estimate size: 1  2229
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 13
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function>make_general_channel/channel_general', '/apps/pkg/matlab/R2022b/toolbox/matlab/lang/parallel_function.m', 837)" style="font-weight:bold">parallel_function>make_general_channel/channel_general</a> (<a href="matlab: opentoline('/apps/pkg/matlab/R2022b/toolbox/matlab/lang/parallel_function.m',837,0)">line 837</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('remoteParallelFunction', '/apps/pkg/matlab/R2022b/toolbox/parallel/remoteParallelFunction.m', 67)" style="font-weight:bold">remoteParallelFunction</a> (<a href="matlab: opentoline('/apps/pkg/matlab/R2022b/toolbox/parallel/remoteParallelFunction.m',67,0)">line 67</a>)
+original block: 1 (2.8733, 4.036)
+original block: 2 (3.7817, 4.5747)
+original block: 3 (4.0373, 4.9332)
+original block: 4 (4.5765, 4.9707)
+original block: 5 (4.9352, 4.994)
+original block: 6 (4.9712, 5.0739)
+original block: 7 (4.9941, 5.1481)
+original block: 8 (5.0741, 5.3512)
+original block: 9 (5.1485, 5.7431)
+original block: 10 (5.3518, 5.8083)
+original block: 11 (5.7446, 5.9289)
+original block: 12 (5.8094, 5.9434)
+original block: 13 (5.9437, 5.9437)
+original block: 14 (5.9437, 6.2514)
+    left block # = 12
+   right block # = 13
+            xmax = 5.9434
+            xmin = 5.9437
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In NAP/stitch (line 451)
+In driver_func (line 173)] 
+[Warning: Problem using function.  Assigning a value of 0. t: 1 b: 13] 
+[In parallel_function (line 494)
+In NAP/stitch (line 325)
+In driver_func (line 201)] 
+original block: 1 (2.8733, 4.036)
+original block: 2 (3.7817, 4.5747)
+original block: 3 (4.0373, 4.9332)
+original block: 4 (4.5765, 4.9707)
+original block: 5 (4.9352, 4.994)
+original block: 6 (4.9712, 5.0739)
+original block: 7 (4.9941, 5.1481)
+original block: 8 (5.0741, 5.3512)
+original block: 9 (5.1485, 5.7431)
+original block: 10 (5.3518, 5.8083)
+original block: 11 (5.7446, 5.9289)
+original block: 12 (5.8094, 5.9434)
+original block: 13 (5.9437, 5.9437)
+original block: 14 (5.9437, 6.2514)
+    left block # = 12
+   right block # = 13
+            xmax = 5.9434
+            xmin = 5.9437
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In NAP/stitch (line 451)
+In driver_func (line 201)] 
+Elapsed time is 5.839576 seconds.
+Trimodal-Normal, Trial: 26/100 sample size: 256
+estimate size: 1  5721
+Elapsed time is 0.255998 seconds.
+Trimodal-Normal, Trial: 27/100 sample size: 256
+estimate size: 1  3092
+Elapsed time is 0.389140 seconds.
+Trimodal-Normal, Trial: 28/100 sample size: 256
+estimate size: 1  3739
+Elapsed time is 0.342558 seconds.
+Trimodal-Normal, Trial: 29/100 sample size: 256
+estimate size: 1  1627
+Elapsed time is 0.250286 seconds.
+Trimodal-Normal, Trial: 30/100 sample size: 256
+estimate size: 1  2185
+Elapsed time is 0.356767 seconds.
+Trimodal-Normal, Trial: 31/100 sample size: 256
+estimate size: 1  2759
+Elapsed time is 0.327685 seconds.
+Trimodal-Normal, Trial: 32/100 sample size: 256
+estimate size: 1  1595
+Elapsed time is 0.316438 seconds.
+Trimodal-Normal, Trial: 33/100 sample size: 256
+estimate size: 1  1516
+Elapsed time is 0.307704 seconds.
+Trimodal-Normal, Trial: 34/100 sample size: 256
+estimate size: 1  2266
+Elapsed time is 0.351783 seconds.
+Trimodal-Normal, Trial: 35/100 sample size: 256
+estimate size: 1  2200
+Elapsed time is 0.352235 seconds.
+Trimodal-Normal, Trial: 36/100 sample size: 256
+estimate size: 1  4337
+Elapsed time is 0.478186 seconds.
+Trimodal-Normal, Trial: 37/100 sample size: 256
+estimate size: 1  3027
+Elapsed time is 0.297778 seconds.
+Trimodal-Normal, Trial: 38/100 sample size: 256
+estimate size: 1  3764
+Elapsed time is 0.321677 seconds.
+Trimodal-Normal, Trial: 39/100 sample size: 256
+estimate size: 1  3550
+Elapsed time is 0.579238 seconds.
+Trimodal-Normal, Trial: 40/100 sample size: 256
+estimate size: 1  4463
+Elapsed time is 0.362444 seconds.
+Trimodal-Normal, Trial: 41/100 sample size: 256
+estimate size: 1  3067
+Elapsed time is 0.401229 seconds.
+Trimodal-Normal, Trial: 42/100 sample size: 256
+estimate size: 1  2345
+Elapsed time is 0.350219 seconds.
+Trimodal-Normal, Trial: 43/100 sample size: 256
+estimate size: 1  3625
+Elapsed time is 0.721348 seconds.
+Trimodal-Normal, Trial: 44/100 sample size: 256
+estimate size: 1  5092
+Elapsed time is 0.738223 seconds.
+Trimodal-Normal, Trial: 45/100 sample size: 256
+estimate size: 1  3773
+Elapsed time is 0.325338 seconds.
+Trimodal-Normal, Trial: 46/100 sample size: 256
+estimate size: 1  3027
+Elapsed time is 0.446591 seconds.
+Trimodal-Normal, Trial: 47/100 sample size: 256
+estimate size: 1  2165
+Elapsed time is 0.402052 seconds.
+Trimodal-Normal, Trial: 48/100 sample size: 256
+estimate size: 1  2958
+Elapsed time is 0.332314 seconds.
+Trimodal-Normal, Trial: 49/100 sample size: 256
+estimate size: 1  3036
+Elapsed time is 0.278130 seconds.
+Trimodal-Normal, Trial: 50/100 sample size: 256
+estimate size: 1  4511
+Elapsed time is 0.233618 seconds.
+Trimodal-Normal, Trial: 51/100 sample size: 256
+estimate size: 1  3000
+Elapsed time is 0.328848 seconds.
+Trimodal-Normal, Trial: 52/100 sample size: 256
+estimate size: 1  3779
+Elapsed time is 0.361144 seconds.
+Trimodal-Normal, Trial: 53/100 sample size: 256
+estimate size: 1  3808
+Elapsed time is 0.335702 seconds.
+Trimodal-Normal, Trial: 54/100 sample size: 256
+estimate size: 1  4469
+Elapsed time is 0.466108 seconds.
+Trimodal-Normal, Trial: 55/100 sample size: 256
+estimate size: 1  2336
+Elapsed time is 0.436029 seconds.
+Trimodal-Normal, Trial: 56/100 sample size: 256
+estimate size: 1  3078
+Elapsed time is 0.408602 seconds.
+Trimodal-Normal, Trial: 57/100 sample size: 256
+estimate size: 1  4375
+Elapsed time is 0.291540 seconds.
+Trimodal-Normal, Trial: 58/100 sample size: 256
+estimate size: 1  3729
+Elapsed time is 0.491872 seconds.
+Trimodal-Normal, Trial: 59/100 sample size: 256
+estimate size: 1  4439
+Elapsed time is 0.327548 seconds.
+Trimodal-Normal, Trial: 60/100 sample size: 256
+estimate size: 1  2910
+Elapsed time is 0.311496 seconds.
+Trimodal-Normal, Trial: 61/100 sample size: 256
+estimate size: 1  2989
+Elapsed time is 0.309036 seconds.
+Trimodal-Normal, Trial: 62/100 sample size: 256
+estimate size: 1  4473
+Elapsed time is 0.272620 seconds.
+Trimodal-Normal, Trial: 63/100 sample size: 256
+estimate size: 1  2201
+Elapsed time is 0.222763 seconds.
+Trimodal-Normal, Trial: 64/100 sample size: 256
+estimate size: 1  2850
+Elapsed time is 0.480723 seconds.
+Trimodal-Normal, Trial: 65/100 sample size: 256
+estimate size: 1  5198
+Elapsed time is 0.481858 seconds.
+Trimodal-Normal, Trial: 66/100 sample size: 256
+estimate size: 1  3728
+Elapsed time is 0.673481 seconds.
+Trimodal-Normal, Trial: 67/100 sample size: 256
+estimate size: 1  4368
+Elapsed time is 0.408523 seconds.
+Trimodal-Normal, Trial: 68/100 sample size: 256
+estimate size: 1  3069
+Elapsed time is 0.327646 seconds.
+Trimodal-Normal, Trial: 69/100 sample size: 256
+estimate size: 1  4534
+Elapsed time is 0.650077 seconds.
+Trimodal-Normal, Trial: 70/100 sample size: 256
+estimate size: 1  4446
+Elapsed time is 0.914395 seconds.
+Trimodal-Normal, Trial: 71/100 sample size: 256
+estimate size: 1  3830
+Elapsed time is 0.306884 seconds.
+Trimodal-Normal, Trial: 72/100 sample size: 256
+estimate size: 1  4499
+Elapsed time is 0.314987 seconds.
+Trimodal-Normal, Trial: 73/100 sample size: 256
+estimate size: 1  2114
+Elapsed time is 0.378097 seconds.
+Trimodal-Normal, Trial: 74/100 sample size: 256
+estimate size: 1  2920
+Elapsed time is 0.333323 seconds.
+Trimodal-Normal, Trial: 75/100 sample size: 256
+estimate size: 1  3771
+Elapsed time is 0.315036 seconds.
+Trimodal-Normal, Trial: 76/100 sample size: 256
+estimate size: 1  1544
+Elapsed time is 0.568827 seconds.
+Trimodal-Normal, Trial: 77/100 sample size: 256
+estimate size: 1  4506
+Elapsed time is 0.422976 seconds.
+Trimodal-Normal, Trial: 78/100 sample size: 256
+estimate size: 1  2911
+Elapsed time is 0.227517 seconds.
+Trimodal-Normal, Trial: 79/100 sample size: 256
+estimate size: 1  3085
+Elapsed time is 0.417978 seconds.
+Trimodal-Normal, Trial: 80/100 sample size: 256
+estimate size: 1  2209
+Elapsed time is 0.382495 seconds.
+Trimodal-Normal, Trial: 81/100 sample size: 256
+estimate size: 1  2278
+Elapsed time is 0.289712 seconds.
+Trimodal-Normal, Trial: 82/100 sample size: 256
+estimate size: 1  3558
+Elapsed time is 0.391847 seconds.
+Trimodal-Normal, Trial: 83/100 sample size: 256
+estimate size: 1  1517
+Elapsed time is 0.410382 seconds.
+Trimodal-Normal, Trial: 84/100 sample size: 256
+estimate size: 1  1572
+Elapsed time is 0.275428 seconds.
+Trimodal-Normal, Trial: 85/100 sample size: 256
+estimate size: 1  5213
+Elapsed time is 0.424993 seconds.
+Trimodal-Normal, Trial: 86/100 sample size: 256
+estimate size: 1  3020
+Elapsed time is 0.393161 seconds.
+Trimodal-Normal, Trial: 87/100 sample size: 256
+estimate size: 1  3005
+Elapsed time is 0.265235 seconds.
+Trimodal-Normal, Trial: 88/100 sample size: 256
+estimate size: 1  6056
+Elapsed time is 0.309961 seconds.
+Trimodal-Normal, Trial: 89/100 sample size: 256
+estimate size: 1  3726
+Elapsed time is 0.229796 seconds.
+Trimodal-Normal, Trial: 90/100 sample size: 256
+estimate size: 1  3751
+Elapsed time is 0.312874 seconds.
+Trimodal-Normal, Trial: 91/100 sample size: 256
+estimate size: 1  2200
+Elapsed time is 0.423279 seconds.
+Trimodal-Normal, Trial: 92/100 sample size: 256
+estimate size: 1  2925
+Elapsed time is 0.361601 seconds.
+Trimodal-Normal, Trial: 93/100 sample size: 256
+estimate size: 1  2995
+Elapsed time is 0.313382 seconds.
+Trimodal-Normal, Trial: 94/100 sample size: 256
+estimate size: 1  3755
+Elapsed time is 0.428174 seconds.
+Trimodal-Normal, Trial: 95/100 sample size: 256
+estimate size: 1  3073
+Elapsed time is 0.353300 seconds.
+Trimodal-Normal, Trial: 96/100 sample size: 256
+estimate size: 1  3633
+Elapsed time is 0.221350 seconds.
+Trimodal-Normal, Trial: 97/100 sample size: 256
+estimate size: 1  2982
+Elapsed time is 0.210402 seconds.
+Trimodal-Normal, Trial: 98/100 sample size: 256
+estimate size: 1  3643
+Elapsed time is 0.321358 seconds.
+Trimodal-Normal, Trial: 99/100 sample size: 256
+estimate size: 1  3818
+Elapsed time is 0.280499 seconds.
+Trimodal-Normal, Trial: 100/100 sample size: 256
+estimate size: 1  3652
+Elapsed time is 0.485541 seconds.
+Trimodal-Normal, Trial: 1/100 sample size: 512
+estimate size: 1  2412
+Elapsed time is 0.330142 seconds.
+Trimodal-Normal, Trial: 2/100 sample size: 512
+estimate size: 1  3054
+Elapsed time is 0.399603 seconds.
+Trimodal-Normal, Trial: 3/100 sample size: 512
+estimate size: 1  3721
+Elapsed time is 0.322861 seconds.
+Trimodal-Normal, Trial: 4/100 sample size: 512
+estimate size: 1  3101
+Elapsed time is 0.538982 seconds.
+Trimodal-Normal, Trial: 5/100 sample size: 512
+estimate size: 1  2631
+Elapsed time is 0.367867 seconds.
+Trimodal-Normal, Trial: 6/100 sample size: 512
+estimate size: 1  3594
+Elapsed time is 0.493018 seconds.
+Trimodal-Normal, Trial: 7/100 sample size: 512
+estimate size: 1  4043
+Elapsed time is 0.446468 seconds.
+Trimodal-Normal, Trial: 8/100 sample size: 512
+estimate size: 1  2544
+Elapsed time is 0.436130 seconds.
+Trimodal-Normal, Trial: 9/100 sample size: 512
+estimate size: 1  3189
+Elapsed time is 0.389276 seconds.
+Trimodal-Normal, Trial: 10/100 sample size: 512
+estimate size: 1  4117
+Elapsed time is 0.496561 seconds.
+Trimodal-Normal, Trial: 11/100 sample size: 512
+estimate size: 1  2568
+Elapsed time is 0.464666 seconds.
+Trimodal-Normal, Trial: 12/100 sample size: 512
+estimate size: 1  2582
+Elapsed time is 0.331980 seconds.
+Trimodal-Normal, Trial: 13/100 sample size: 512
+estimate size: 1  2568
+Elapsed time is 0.429214 seconds.
+Trimodal-Normal, Trial: 14/100 sample size: 512
+estimate size: 1  3089
+Elapsed time is 0.377342 seconds.
+Trimodal-Normal, Trial: 15/100 sample size: 512
+estimate size: 1  3184
+Elapsed time is 0.408860 seconds.
+Trimodal-Normal, Trial: 16/100 sample size: 512
+estimate size: 1  3401
+Elapsed time is 0.432326 seconds.
+Trimodal-Normal, Trial: 17/100 sample size: 512
+estimate size: 1  3239
+Elapsed time is 0.423781 seconds.
+Trimodal-Normal, Trial: 18/100 sample size: 512
+estimate size: 1  3385
+Elapsed time is 0.499365 seconds.
+Trimodal-Normal, Trial: 19/100 sample size: 512
+estimate size: 1  3077
+Elapsed time is 0.461830 seconds.
+Trimodal-Normal, Trial: 20/100 sample size: 512
+estimate size: 1  3238
+Elapsed time is 0.390169 seconds.
+Trimodal-Normal, Trial: 21/100 sample size: 512
+estimate size: 1  3253
+Elapsed time is 0.425152 seconds.
+Trimodal-Normal, Trial: 22/100 sample size: 512
+estimate size: 1  4709
+Elapsed time is 0.443732 seconds.
+Trimodal-Normal, Trial: 23/100 sample size: 512
+estimate size: 1  3359
+Elapsed time is 0.406747 seconds.
+Trimodal-Normal, Trial: 24/100 sample size: 512
+estimate size: 1  3119
+Elapsed time is 0.454429 seconds.
+Trimodal-Normal, Trial: 25/100 sample size: 512
+estimate size: 1  3872
+Elapsed time is 0.370433 seconds.
+Trimodal-Normal, Trial: 26/100 sample size: 512
+estimate size: 1  2979
+Elapsed time is 0.278383 seconds.
+Trimodal-Normal, Trial: 27/100 sample size: 512
+estimate size: 1  3131
+Elapsed time is 0.713745 seconds.
+Trimodal-Normal, Trial: 28/100 sample size: 512
+estimate size: 1  4919
+Elapsed time is 0.474862 seconds.
+Trimodal-Normal, Trial: 29/100 sample size: 512
+estimate size: 1  3615
+Elapsed time is 0.379995 seconds.
+Trimodal-Normal, Trial: 30/100 sample size: 512
+estimate size: 1  3230
+Elapsed time is 0.344858 seconds.
+Trimodal-Normal, Trial: 31/100 sample size: 512
+estimate size: 1  2386
+Elapsed time is 0.369694 seconds.
+Trimodal-Normal, Trial: 32/100 sample size: 512
+estimate size: 1  3957
+Elapsed time is 0.346767 seconds.
+Trimodal-Normal, Trial: 33/100 sample size: 512
+estimate size: 1  3040
+Elapsed time is 0.382813 seconds.
+Trimodal-Normal, Trial: 34/100 sample size: 512
+estimate size: 1  3192
+Elapsed time is 0.365720 seconds.
+Trimodal-Normal, Trial: 35/100 sample size: 512
+estimate size: 1  3869
+Elapsed time is 0.361520 seconds.
+Trimodal-Normal, Trial: 36/100 sample size: 512
+estimate size: 1  3231
+Elapsed time is 0.391652 seconds.
+Trimodal-Normal, Trial: 37/100 sample size: 512
+estimate size: 1  3025
+Elapsed time is 0.417163 seconds.
+Trimodal-Normal, Trial: 38/100 sample size: 512
+estimate size: 1  3276
+Elapsed time is 0.434333 seconds.
+Trimodal-Normal, Trial: 39/100 sample size: 512
+estimate size: 1  3396
+Elapsed time is 0.396249 seconds.
+Trimodal-Normal, Trial: 40/100 sample size: 512
+estimate size: 1  4826
+Elapsed time is 0.464862 seconds.
+Trimodal-Normal, Trial: 41/100 sample size: 512
+estimate size: 1  3003
+Elapsed time is 0.388286 seconds.
+Trimodal-Normal, Trial: 42/100 sample size: 512
+estimate size: 1  3518
+Elapsed time is 0.454541 seconds.
+Trimodal-Normal, Trial: 43/100 sample size: 512
+estimate size: 1  3110
+Elapsed time is 0.407951 seconds.
+Trimodal-Normal, Trial: 44/100 sample size: 512
+estimate size: 1  3215
+Elapsed time is 0.336464 seconds.
+Trimodal-Normal, Trial: 45/100 sample size: 512
+estimate size: 1  3100
+Elapsed time is 0.435003 seconds.
+Trimodal-Normal, Trial: 46/100 sample size: 512
+estimate size: 1  2345
+Elapsed time is 0.400458 seconds.
+Trimodal-Normal, Trial: 47/100 sample size: 512
+estimate size: 1  3963
+Elapsed time is 0.465748 seconds.
+Trimodal-Normal, Trial: 48/100 sample size: 512
+estimate size: 1  2928
+Elapsed time is 0.525329 seconds.
+Trimodal-Normal, Trial: 49/100 sample size: 512
+estimate size: 1  2592
+Elapsed time is 0.424528 seconds.
+Trimodal-Normal, Trial: 50/100 sample size: 512
+estimate size: 1  3222
+Elapsed time is 0.423536 seconds.
+Trimodal-Normal, Trial: 51/100 sample size: 512
+estimate size: 1  2919
+Elapsed time is 0.390802 seconds.
+Trimodal-Normal, Trial: 52/100 sample size: 512
+estimate size: 1  3882
+Elapsed time is 0.497798 seconds.
+Trimodal-Normal, Trial: 53/100 sample size: 512
+estimate size: 1  3150
+Elapsed time is 0.311685 seconds.
+Trimodal-Normal, Trial: 54/100 sample size: 512
+estimate size: 1  3120
+Elapsed time is 0.395459 seconds.
+Trimodal-Normal, Trial: 55/100 sample size: 512
+estimate size: 1  4937
+Elapsed time is 0.436651 seconds.
+Trimodal-Normal, Trial: 56/100 sample size: 512
+estimate size: 1  3600
+Elapsed time is 0.327863 seconds.
+Trimodal-Normal, Trial: 57/100 sample size: 512
+estimate size: 1  3856
+Elapsed time is 0.352629 seconds.
+Trimodal-Normal, Trial: 58/100 sample size: 512
+estimate size: 1  2409
+Elapsed time is 0.452349 seconds.
+Trimodal-Normal, Trial: 59/100 sample size: 512
+estimate size: 1  3250
+Elapsed time is 0.383758 seconds.
+Trimodal-Normal, Trial: 60/100 sample size: 512
+estimate size: 1  2926
+Elapsed time is 0.531480 seconds.
+Trimodal-Normal, Trial: 61/100 sample size: 512
+estimate size: 1  2651
+Elapsed time is 0.468927 seconds.
+Trimodal-Normal, Trial: 62/100 sample size: 512
+estimate size: 1  1934
+Elapsed time is 0.423405 seconds.
+Trimodal-Normal, Trial: 63/100 sample size: 512
+estimate size: 1  3030
+Elapsed time is 0.254023 seconds.
+Trimodal-Normal, Trial: 64/100 sample size: 512
+estimate size: 1  2981
+Elapsed time is 0.402774 seconds.
+Trimodal-Normal, Trial: 65/100 sample size: 512
+estimate size: 1  4245
+Elapsed time is 0.429990 seconds.
+Trimodal-Normal, Trial: 66/100 sample size: 512
+estimate size: 1  3819
+Elapsed time is 0.317011 seconds.
+Trimodal-Normal, Trial: 67/100 sample size: 512
+estimate size: 1  3245
+Elapsed time is 0.412738 seconds.
+Trimodal-Normal, Trial: 68/100 sample size: 512
+estimate size: 1  3713
+Elapsed time is 0.529259 seconds.
+Trimodal-Normal, Trial: 69/100 sample size: 512
+estimate size: 1  4687
+Elapsed time is 0.414885 seconds.
+Trimodal-Normal, Trial: 70/100 sample size: 512
+estimate size: 1  3282
+Elapsed time is 0.433710 seconds.
+Trimodal-Normal, Trial: 71/100 sample size: 512
+estimate size: 1  3124
+Elapsed time is 0.395565 seconds.
+Trimodal-Normal, Trial: 72/100 sample size: 512
+estimate size: 1  2652
+Elapsed time is 0.518327 seconds.
+Trimodal-Normal, Trial: 73/100 sample size: 512
+estimate size: 1  3321
+Elapsed time is 0.470161 seconds.
+Trimodal-Normal, Trial: 74/100 sample size: 512
+estimate size: 1  5102
+Elapsed time is 0.454508 seconds.
+Trimodal-Normal, Trial: 75/100 sample size: 512
+estimate size: 1  3305
+Elapsed time is 0.401755 seconds.
+Trimodal-Normal, Trial: 76/100 sample size: 512
+estimate size: 1  3585
+Elapsed time is 0.453797 seconds.
+Trimodal-Normal, Trial: 77/100 sample size: 512
+estimate size: 1  2665
+Elapsed time is 0.309528 seconds.
+Trimodal-Normal, Trial: 78/100 sample size: 512
+estimate size: 1  3174
+Elapsed time is 0.492549 seconds.
+Trimodal-Normal, Trial: 79/100 sample size: 512
+estimate size: 1  3638
+Elapsed time is 0.432571 seconds.
+Trimodal-Normal, Trial: 80/100 sample size: 512
+estimate size: 1  3488
+Elapsed time is 0.442009 seconds.
+Trimodal-Normal, Trial: 81/100 sample size: 512
+estimate size: 1  3819
+Elapsed time is 0.436400 seconds.
+Trimodal-Normal, Trial: 82/100 sample size: 512
+estimate size: 1  2592
+Elapsed time is 0.375967 seconds.
+Trimodal-Normal, Trial: 83/100 sample size: 512
+estimate size: 1  3331
+Elapsed time is 0.385348 seconds.
+Trimodal-Normal, Trial: 84/100 sample size: 512
+estimate size: 1  3857
+Elapsed time is 0.454839 seconds.
+Trimodal-Normal, Trial: 85/100 sample size: 512
+estimate size: 1  3471
+Elapsed time is 0.439492 seconds.
+Trimodal-Normal, Trial: 86/100 sample size: 512
+estimate size: 1  3393
+Elapsed time is 0.470575 seconds.
+Trimodal-Normal, Trial: 87/100 sample size: 512
+estimate size: 1  3276
+Elapsed time is 0.452731 seconds.
+Trimodal-Normal, Trial: 88/100 sample size: 512
+estimate size: 1  3873
+Elapsed time is 0.362622 seconds.
+Trimodal-Normal, Trial: 89/100 sample size: 512
+estimate size: 1  2590
+Elapsed time is 0.320222 seconds.
+Trimodal-Normal, Trial: 90/100 sample size: 512
+estimate size: 1  3818
+Elapsed time is 0.455448 seconds.
+Trimodal-Normal, Trial: 91/100 sample size: 512
+estimate size: 1  3685
+Elapsed time is 0.397778 seconds.
+Trimodal-Normal, Trial: 92/100 sample size: 512
+estimate size: 1  3378
+Elapsed time is 0.392596 seconds.
+Trimodal-Normal, Trial: 93/100 sample size: 512
+estimate size: 1  3207
+Elapsed time is 0.427549 seconds.
+Trimodal-Normal, Trial: 94/100 sample size: 512
+estimate size: 1  4355
+Elapsed time is 0.399182 seconds.
+Trimodal-Normal, Trial: 95/100 sample size: 512
+estimate size: 1  2502
+Elapsed time is 0.354196 seconds.
+Trimodal-Normal, Trial: 96/100 sample size: 512
+estimate size: 1  3823
+Elapsed time is 0.463397 seconds.
+Trimodal-Normal, Trial: 97/100 sample size: 512
+estimate size: 1  3952
+Elapsed time is 0.399073 seconds.
+Trimodal-Normal, Trial: 98/100 sample size: 512
+estimate size: 1  3298
+Elapsed time is 0.486667 seconds.
+Trimodal-Normal, Trial: 99/100 sample size: 512
+estimate size: 1  2694
+Elapsed time is 0.368389 seconds.
+Trimodal-Normal, Trial: 100/100 sample size: 512
+estimate size: 1  3967
+Elapsed time is 0.461503 seconds.
+Trimodal-Normal, Trial: 1/100 sample size: 1024
+estimate size: 1  5284
+Elapsed time is 1.057389 seconds.
+Trimodal-Normal, Trial: 2/100 sample size: 1024
+estimate size: 1  4519
+Elapsed time is 0.505700 seconds.
+Trimodal-Normal, Trial: 3/100 sample size: 1024
+estimate size: 1  4371
+Elapsed time is 0.524548 seconds.
+Trimodal-Normal, Trial: 4/100 sample size: 1024
+estimate size: 1  5496
+Elapsed time is 0.664859 seconds.
+Trimodal-Normal, Trial: 5/100 sample size: 1024
+estimate size: 1  4924
+Elapsed time is 0.604540 seconds.
+Trimodal-Normal, Trial: 6/100 sample size: 1024
+estimate size: 1  5034
+Elapsed time is 0.566288 seconds.
+Trimodal-Normal, Trial: 7/100 sample size: 1024
+estimate size: 1  5195
+Elapsed time is 0.535242 seconds.
+Trimodal-Normal, Trial: 8/100 sample size: 1024
+estimate size: 1  4488
+Elapsed time is 0.561955 seconds.
+Trimodal-Normal, Trial: 9/100 sample size: 1024
+estimate size: 1  4268
+Elapsed time is 0.487196 seconds.
+Trimodal-Normal, Trial: 10/100 sample size: 1024
+estimate size: 1  4869
+Elapsed time is 0.566234 seconds.
+Trimodal-Normal, Trial: 11/100 sample size: 1024
+estimate size: 1  4437
+Elapsed time is 0.501636 seconds.
+Trimodal-Normal, Trial: 12/100 sample size: 1024
+estimate size: 1  4603
+Elapsed time is 0.501412 seconds.
+Trimodal-Normal, Trial: 13/100 sample size: 1024
+estimate size: 1  4979
+Elapsed time is 0.456891 seconds.
+Trimodal-Normal, Trial: 14/100 sample size: 1024
+estimate size: 1  4039
+Elapsed time is 0.594612 seconds.
+Trimodal-Normal, Trial: 15/100 sample size: 1024
+estimate size: 1  4420
+Elapsed time is 0.478246 seconds.
+Trimodal-Normal, Trial: 16/100 sample size: 1024
+estimate size: 1  4590
+Elapsed time is 0.469129 seconds.
+Trimodal-Normal, Trial: 17/100 sample size: 1024
+estimate size: 1  4328
+Elapsed time is 0.682212 seconds.
+Trimodal-Normal, Trial: 18/100 sample size: 1024
+estimate size: 1  5163
+Elapsed time is 0.556931 seconds.
+Trimodal-Normal, Trial: 19/100 sample size: 1024
+estimate size: 1  5306
+Elapsed time is 0.589340 seconds.
+Trimodal-Normal, Trial: 20/100 sample size: 1024
+estimate size: 1  5085
+Elapsed time is 0.527656 seconds.
+Trimodal-Normal, Trial: 21/100 sample size: 1024
+estimate size: 1  4706
+Elapsed time is 0.625679 seconds.
+Trimodal-Normal, Trial: 22/100 sample size: 1024
+estimate size: 1  4667
+Elapsed time is 0.718431 seconds.
+Trimodal-Normal, Trial: 23/100 sample size: 1024
+estimate size: 1  3948
+Elapsed time is 0.494418 seconds.
+Trimodal-Normal, Trial: 24/100 sample size: 1024
+estimate size: 1  4640
+Elapsed time is 0.519889 seconds.
+Trimodal-Normal, Trial: 25/100 sample size: 1024
+estimate size: 1  5201
+Elapsed time is 0.436273 seconds.
+Trimodal-Normal, Trial: 26/100 sample size: 1024
+estimate size: 1  4993
+Elapsed time is 0.445562 seconds.
+Trimodal-Normal, Trial: 27/100 sample size: 1024
+estimate size: 1  4712
+Elapsed time is 0.545910 seconds.
+Trimodal-Normal, Trial: 28/100 sample size: 1024
+estimate size: 1  5134
+Elapsed time is 0.420104 seconds.
+Trimodal-Normal, Trial: 29/100 sample size: 1024
+estimate size: 1  4327
+Elapsed time is 0.465299 seconds.
+Trimodal-Normal, Trial: 30/100 sample size: 1024
+estimate size: 1  3483
+Elapsed time is 0.454743 seconds.
+Trimodal-Normal, Trial: 31/100 sample size: 1024
+estimate size: 1  4823
+Elapsed time is 0.579311 seconds.
+Trimodal-Normal, Trial: 32/100 sample size: 1024
+estimate size: 1  5146
+Elapsed time is 0.542754 seconds.
+Trimodal-Normal, Trial: 33/100 sample size: 1024
+estimate size: 1  4733
+Elapsed time is 0.504405 seconds.
+Trimodal-Normal, Trial: 34/100 sample size: 1024
+estimate size: 1  5419
+Elapsed time is 0.524318 seconds.
+Trimodal-Normal, Trial: 35/100 sample size: 1024
+estimate size: 1  3813
+Elapsed time is 0.560013 seconds.
+Trimodal-Normal, Trial: 36/100 sample size: 1024
+estimate size: 1  4320
+Elapsed time is 0.525675 seconds.
+Trimodal-Normal, Trial: 37/100 sample size: 1024
+estimate size: 1  5098
+Elapsed time is 0.701274 seconds.
+Trimodal-Normal, Trial: 38/100 sample size: 1024
+estimate size: 1  3961
+Elapsed time is 0.419352 seconds.
+Trimodal-Normal, Trial: 39/100 sample size: 1024
+estimate size: 1  4339
+Elapsed time is 0.535590 seconds.
+Trimodal-Normal, Trial: 40/100 sample size: 1024
+estimate size: 1  3758
+Elapsed time is 0.442827 seconds.
+Trimodal-Normal, Trial: 41/100 sample size: 1024
+estimate size: 1  4812
+Elapsed time is 0.623435 seconds.
+Trimodal-Normal, Trial: 42/100 sample size: 1024
+estimate size: 1  4903
+Elapsed time is 0.472913 seconds.
+Trimodal-Normal, Trial: 43/100 sample size: 1024
+estimate size: 1  4926
+Elapsed time is 0.494941 seconds.
+Trimodal-Normal, Trial: 44/100 sample size: 1024
+estimate size: 1  4143
+Elapsed time is 0.450095 seconds.
+Trimodal-Normal, Trial: 45/100 sample size: 1024
+estimate size: 1  3961
+Elapsed time is 0.514782 seconds.
+Trimodal-Normal, Trial: 46/100 sample size: 1024
+estimate size: 1  5929
+Elapsed time is 0.474566 seconds.
+Trimodal-Normal, Trial: 47/100 sample size: 1024
+estimate size: 1  3971
+Elapsed time is 0.530912 seconds.
+Trimodal-Normal, Trial: 48/100 sample size: 1024
+estimate size: 1  4495
+Elapsed time is 0.536370 seconds.
+Trimodal-Normal, Trial: 49/100 sample size: 1024
+estimate size: 1  5533
+Elapsed time is 0.582126 seconds.
+Trimodal-Normal, Trial: 50/100 sample size: 1024
+estimate size: 1  4387
+Elapsed time is 0.543513 seconds.
+Trimodal-Normal, Trial: 51/100 sample size: 1024
+estimate size: 1  5995
+Elapsed time is 0.461874 seconds.
+Trimodal-Normal, Trial: 52/100 sample size: 1024
+estimate size: 1  5067
+Elapsed time is 0.534800 seconds.
+Trimodal-Normal, Trial: 53/100 sample size: 1024
+estimate size: 1  4824
+Elapsed time is 0.438286 seconds.
+Trimodal-Normal, Trial: 54/100 sample size: 1024
+estimate size: 1  4686
+Elapsed time is 0.476832 seconds.
+Trimodal-Normal, Trial: 55/100 sample size: 1024
+estimate size: 1  4109
+Elapsed time is 0.449571 seconds.
+Trimodal-Normal, Trial: 56/100 sample size: 1024
+estimate size: 1  3642
+Elapsed time is 0.520139 seconds.
+Trimodal-Normal, Trial: 57/100 sample size: 1024
+estimate size: 1  4438
+Elapsed time is 0.616979 seconds.
+Trimodal-Normal, Trial: 58/100 sample size: 1024
+estimate size: 1  5006
+Elapsed time is 0.551245 seconds.
+Trimodal-Normal, Trial: 59/100 sample size: 1024
+estimate size: 1  3628
+Elapsed time is 0.554458 seconds.
+Trimodal-Normal, Trial: 60/100 sample size: 1024
+estimate size: 1  5288
+Elapsed time is 0.509640 seconds.
+Trimodal-Normal, Trial: 61/100 sample size: 1024
+estimate size: 1  5251
+Elapsed time is 0.576318 seconds.
+Trimodal-Normal, Trial: 62/100 sample size: 1024
+estimate size: 1  4841
+Elapsed time is 0.466113 seconds.
+Trimodal-Normal, Trial: 63/100 sample size: 1024
+estimate size: 1  5252
+Elapsed time is 0.475609 seconds.
+Trimodal-Normal, Trial: 64/100 sample size: 1024
+estimate size: 1  4049
+Elapsed time is 0.629835 seconds.
+Trimodal-Normal, Trial: 65/100 sample size: 1024
+estimate size: 1  5642
+Elapsed time is 0.638105 seconds.
+Trimodal-Normal, Trial: 66/100 sample size: 1024
+estimate size: 1  6972
+Elapsed time is 0.535009 seconds.
+Trimodal-Normal, Trial: 67/100 sample size: 1024
+estimate size: 1  4664
+Elapsed time is 0.532727 seconds.
+Trimodal-Normal, Trial: 68/100 sample size: 1024
+estimate size: 1  5784
+Elapsed time is 0.554788 seconds.
+Trimodal-Normal, Trial: 69/100 sample size: 1024
+estimate size: 1  4522
+Elapsed time is 0.490085 seconds.
+Trimodal-Normal, Trial: 70/100 sample size: 1024
+estimate size: 1  4689
+Elapsed time is 0.577667 seconds.
+Trimodal-Normal, Trial: 71/100 sample size: 1024
+estimate size: 1  4540
+Elapsed time is 0.514997 seconds.
+Trimodal-Normal, Trial: 72/100 sample size: 1024
+estimate size: 1  4224
+Elapsed time is 0.476902 seconds.
+Trimodal-Normal, Trial: 73/100 sample size: 1024
+estimate size: 1  4943
+Elapsed time is 0.499764 seconds.
+Trimodal-Normal, Trial: 74/100 sample size: 1024
+estimate size: 1  3767
+Elapsed time is 0.441836 seconds.
+Trimodal-Normal, Trial: 75/100 sample size: 1024
+estimate size: 1  5042
+Elapsed time is 0.506843 seconds.
+Trimodal-Normal, Trial: 76/100 sample size: 1024
+estimate size: 1  5313
+Elapsed time is 0.501181 seconds.
+Trimodal-Normal, Trial: 77/100 sample size: 1024
+estimate size: 1  4525
+Elapsed time is 2.549677 seconds.
+Trimodal-Normal, Trial: 78/100 sample size: 1024
+estimate size: 1  5260
+Elapsed time is 0.511548 seconds.
+Trimodal-Normal, Trial: 79/100 sample size: 1024
+estimate size: 1  5895
+Elapsed time is 1.161722 seconds.
+Trimodal-Normal, Trial: 80/100 sample size: 1024
+estimate size: 1  4653
+Elapsed time is 0.516668 seconds.
+Trimodal-Normal, Trial: 81/100 sample size: 1024
+estimate size: 1  3796
+Elapsed time is 0.622258 seconds.
+Trimodal-Normal, Trial: 82/100 sample size: 1024
+estimate size: 1  5595
+Elapsed time is 0.588477 seconds.
+Trimodal-Normal, Trial: 83/100 sample size: 1024
+estimate size: 1  5043
+Elapsed time is 0.628408 seconds.
+Trimodal-Normal, Trial: 84/100 sample size: 1024
+estimate size: 1  5574
+Elapsed time is 0.623832 seconds.
+Trimodal-Normal, Trial: 85/100 sample size: 1024
+estimate size: 1  5429
+Elapsed time is 0.587692 seconds.
+Trimodal-Normal, Trial: 86/100 sample size: 1024
+estimate size: 1  5434
+Elapsed time is 0.659929 seconds.
+Trimodal-Normal, Trial: 87/100 sample size: 1024
+estimate size: 1  6713
+Elapsed time is 0.497241 seconds.
+Trimodal-Normal, Trial: 88/100 sample size: 1024
+estimate size: 1  4518
+Elapsed time is 0.600338 seconds.
+Trimodal-Normal, Trial: 89/100 sample size: 1024
+estimate size: 1  4478
+Elapsed time is 0.577266 seconds.
+Trimodal-Normal, Trial: 90/100 sample size: 1024
+estimate size: 1  6025
+Elapsed time is 0.449084 seconds.
+Trimodal-Normal, Trial: 91/100 sample size: 1024
+estimate size: 1  5104
+Elapsed time is 0.526868 seconds.
+Trimodal-Normal, Trial: 92/100 sample size: 1024
+estimate size: 1  4466
+Elapsed time is 0.539509 seconds.
+Trimodal-Normal, Trial: 93/100 sample size: 1024
+estimate size: 1  4534
+Elapsed time is 0.560834 seconds.
+Trimodal-Normal, Trial: 94/100 sample size: 1024
+estimate size: 1  4686
+Elapsed time is 0.567865 seconds.
+Trimodal-Normal, Trial: 95/100 sample size: 1024
+estimate size: 1  4440
+Elapsed time is 0.455899 seconds.
+Trimodal-Normal, Trial: 96/100 sample size: 1024
+estimate size: 1  4578
+Elapsed time is 0.522801 seconds.
+Trimodal-Normal, Trial: 97/100 sample size: 1024
+estimate size: 1  4802
+Elapsed time is 0.601476 seconds.
+Trimodal-Normal, Trial: 98/100 sample size: 1024
+estimate size: 1  4908
+Elapsed time is 0.492311 seconds.
+Trimodal-Normal, Trial: 99/100 sample size: 1024
+estimate size: 1  4394
+Elapsed time is 0.459701 seconds.
+Trimodal-Normal, Trial: 100/100 sample size: 1024
+estimate size: 1  3693
+Elapsed time is 0.825533 seconds.
+Trimodal-Normal, Trial: 1/100 sample size: 2048
+estimate size: 1  7511
+Elapsed time is 0.641245 seconds.
+Trimodal-Normal, Trial: 2/100 sample size: 2048
+estimate size: 1  6062
+Elapsed time is 0.789986 seconds.
+Trimodal-Normal, Trial: 3/100 sample size: 2048
+estimate size: 1  5361
+Elapsed time is 0.737208 seconds.
+Trimodal-Normal, Trial: 4/100 sample size: 2048
+estimate size: 1  4446
+Elapsed time is 0.835053 seconds.
+Trimodal-Normal, Trial: 5/100 sample size: 2048
+estimate size: 1  7078
+Elapsed time is 0.656516 seconds.
+Trimodal-Normal, Trial: 6/100 sample size: 2048
+estimate size: 1  5065
+Elapsed time is 0.543410 seconds.
+Trimodal-Normal, Trial: 7/100 sample size: 2048
+estimate size: 1  5482
+Elapsed time is 0.719334 seconds.
+Trimodal-Normal, Trial: 8/100 sample size: 2048
+estimate size: 1  6038
+Elapsed time is 0.674171 seconds.
+Trimodal-Normal, Trial: 9/100 sample size: 2048
+estimate size: 1  4457
+Elapsed time is 0.723271 seconds.
+Trimodal-Normal, Trial: 10/100 sample size: 2048
+estimate size: 1  7448
+Elapsed time is 0.786347 seconds.
+Trimodal-Normal, Trial: 11/100 sample size: 2048
+estimate size: 1  6704
+Elapsed time is 0.649150 seconds.
+Trimodal-Normal, Trial: 12/100 sample size: 2048
+estimate size: 1  7116
+Elapsed time is 0.541703 seconds.
+Trimodal-Normal, Trial: 13/100 sample size: 2048
+estimate size: 1  5637
+Elapsed time is 0.697306 seconds.
+Trimodal-Normal, Trial: 14/100 sample size: 2048
+estimate size: 1  6887
+Elapsed time is 0.736335 seconds.
+Trimodal-Normal, Trial: 15/100 sample size: 2048
+estimate size: 1  6296
+Elapsed time is 0.731151 seconds.
+Trimodal-Normal, Trial: 16/100 sample size: 2048
+estimate size: 1  7403
+Elapsed time is 0.652438 seconds.
+Trimodal-Normal, Trial: 17/100 sample size: 2048
+estimate size: 1  4205
+Elapsed time is 0.698271 seconds.
+Trimodal-Normal, Trial: 18/100 sample size: 2048
+estimate size: 1  6025
+Elapsed time is 0.645611 seconds.
+Trimodal-Normal, Trial: 19/100 sample size: 2048
+estimate size: 1  5932
+Elapsed time is 0.722979 seconds.
+Trimodal-Normal, Trial: 20/100 sample size: 2048
+estimate size: 1  7310
+Elapsed time is 0.626430 seconds.
+Trimodal-Normal, Trial: 21/100 sample size: 2048
+estimate size: 1  6847
+Elapsed time is 0.742385 seconds.
+Trimodal-Normal, Trial: 22/100 sample size: 2048
+estimate size: 1  6132
+Elapsed time is 0.627120 seconds.
+Trimodal-Normal, Trial: 23/100 sample size: 2048
+estimate size: 1  6597
+Elapsed time is 0.789328 seconds.
+Trimodal-Normal, Trial: 24/100 sample size: 2048
+estimate size: 1  5862
+Elapsed time is 0.574007 seconds.
+Trimodal-Normal, Trial: 25/100 sample size: 2048
+estimate size: 1  5587
+Elapsed time is 0.713640 seconds.
+Trimodal-Normal, Trial: 26/100 sample size: 2048
+estimate size: 1  5614
+Elapsed time is 0.577492 seconds.
+Trimodal-Normal, Trial: 27/100 sample size: 2048
+estimate size: 1  6207
+Elapsed time is 0.740092 seconds.
+Trimodal-Normal, Trial: 28/100 sample size: 2048
+estimate size: 1  5982
+Elapsed time is 0.725995 seconds.
+Trimodal-Normal, Trial: 29/100 sample size: 2048
+estimate size: 1  5304
+Elapsed time is 0.580183 seconds.
+Trimodal-Normal, Trial: 30/100 sample size: 2048
+estimate size: 1  6490
+Elapsed time is 0.603746 seconds.
+Trimodal-Normal, Trial: 31/100 sample size: 2048
+estimate size: 1  5524
+Elapsed time is 0.748085 seconds.
+Trimodal-Normal, Trial: 32/100 sample size: 2048
+estimate size: 1  5251
+Elapsed time is 0.657604 seconds.
+Trimodal-Normal, Trial: 33/100 sample size: 2048
+estimate size: 1  4423
+Elapsed time is 0.608904 seconds.
+Trimodal-Normal, Trial: 34/100 sample size: 2048
+estimate size: 1  5468
+Elapsed time is 0.726105 seconds.
+Trimodal-Normal, Trial: 35/100 sample size: 2048
+estimate size: 1  4428
+Elapsed time is 0.681085 seconds.
+Trimodal-Normal, Trial: 36/100 sample size: 2048
+estimate size: 1  6387
+Elapsed time is 0.677597 seconds.
+Trimodal-Normal, Trial: 37/100 sample size: 2048
+estimate size: 1  4308
+Elapsed time is 0.782015 seconds.
+Trimodal-Normal, Trial: 38/100 sample size: 2048
+estimate size: 1  6864
+Elapsed time is 0.617634 seconds.
+Trimodal-Normal, Trial: 39/100 sample size: 2048
+estimate size: 1  4549
+Elapsed time is 0.800776 seconds.
+Trimodal-Normal, Trial: 40/100 sample size: 2048
+estimate size: 1  5698
+Elapsed time is 0.623807 seconds.
+Trimodal-Normal, Trial: 41/100 sample size: 2048
+estimate size: 1  4768
+Elapsed time is 0.866958 seconds.
+Trimodal-Normal, Trial: 42/100 sample size: 2048
+estimate size: 1  5956
+Elapsed time is 0.700405 seconds.
+Trimodal-Normal, Trial: 43/100 sample size: 2048
+estimate size: 1  5814
+Elapsed time is 0.692873 seconds.
+Trimodal-Normal, Trial: 44/100 sample size: 2048
+estimate size: 1  4536
+Elapsed time is 0.670917 seconds.
+Trimodal-Normal, Trial: 45/100 sample size: 2048
+estimate size: 1  6029
+Elapsed time is 0.819553 seconds.
+Trimodal-Normal, Trial: 46/100 sample size: 2048
+estimate size: 1  7066
+Elapsed time is 0.675733 seconds.
+Trimodal-Normal, Trial: 47/100 sample size: 2048
+estimate size: 1  5103
+Elapsed time is 0.581794 seconds.
+Trimodal-Normal, Trial: 48/100 sample size: 2048
+estimate size: 1  4569
+Elapsed time is 0.642773 seconds.
+Trimodal-Normal, Trial: 49/100 sample size: 2048
+estimate size: 1  5602
+Elapsed time is 0.663276 seconds.
+Trimodal-Normal, Trial: 50/100 sample size: 2048
+estimate size: 1  4576
+Elapsed time is 1.101572 seconds.
+Trimodal-Normal, Trial: 51/100 sample size: 2048
+estimate size: 1  6493
+Elapsed time is 0.680001 seconds.
+Trimodal-Normal, Trial: 52/100 sample size: 2048
+estimate size: 1  5993
+Elapsed time is 0.701235 seconds.
+Trimodal-Normal, Trial: 53/100 sample size: 2048
+estimate size: 1  5503
+Elapsed time is 0.769744 seconds.
+Trimodal-Normal, Trial: 54/100 sample size: 2048
+estimate size: 1  4168
+Elapsed time is 0.810229 seconds.
+Trimodal-Normal, Trial: 55/100 sample size: 2048
+estimate size: 1  4498
+Elapsed time is 0.779583 seconds.
+Trimodal-Normal, Trial: 56/100 sample size: 2048
+estimate size: 1  4925
+Elapsed time is 0.720389 seconds.
+Trimodal-Normal, Trial: 57/100 sample size: 2048
+estimate size: 1  5019
+Elapsed time is 0.665773 seconds.
+Trimodal-Normal, Trial: 58/100 sample size: 2048
+estimate size: 1  6315
+Elapsed time is 0.653923 seconds.
+Trimodal-Normal, Trial: 59/100 sample size: 2048
+estimate size: 1  5760
+Elapsed time is 0.657146 seconds.
+Trimodal-Normal, Trial: 60/100 sample size: 2048
+estimate size: 1  4449
+Elapsed time is 0.776248 seconds.
+Trimodal-Normal, Trial: 61/100 sample size: 2048
+estimate size: 1  6347
+Elapsed time is 0.861346 seconds.
+Trimodal-Normal, Trial: 62/100 sample size: 2048
+estimate size: 1  4541
+Elapsed time is 0.758489 seconds.
+Trimodal-Normal, Trial: 63/100 sample size: 2048
+estimate size: 1  4461
+Elapsed time is 0.806301 seconds.
+Trimodal-Normal, Trial: 64/100 sample size: 2048
+estimate size: 1  6607
+Elapsed time is 0.615547 seconds.
+Trimodal-Normal, Trial: 65/100 sample size: 2048
+estimate size: 1  5073
+Elapsed time is 0.828336 seconds.
+Trimodal-Normal, Trial: 66/100 sample size: 2048
+estimate size: 1  7005
+Elapsed time is 0.700453 seconds.
+Trimodal-Normal, Trial: 67/100 sample size: 2048
+estimate size: 1  5344
+Elapsed time is 0.837828 seconds.
+Trimodal-Normal, Trial: 68/100 sample size: 2048
+estimate size: 1  4317
+Elapsed time is 0.761088 seconds.
+Trimodal-Normal, Trial: 69/100 sample size: 2048
+estimate size: 1  4511
+Elapsed time is 0.598797 seconds.
+Trimodal-Normal, Trial: 70/100 sample size: 2048
+estimate size: 1  5363
+Elapsed time is 0.714012 seconds.
+Trimodal-Normal, Trial: 71/100 sample size: 2048
+estimate size: 1  6478
+Elapsed time is 0.895951 seconds.
+Trimodal-Normal, Trial: 72/100 sample size: 2048
+estimate size: 1  6107
+Elapsed time is 0.693951 seconds.
+Trimodal-Normal, Trial: 73/100 sample size: 2048
+estimate size: 1  6825
+Elapsed time is 0.639342 seconds.
+Trimodal-Normal, Trial: 74/100 sample size: 2048
+estimate size: 1  6404
+Elapsed time is 0.800695 seconds.
+Trimodal-Normal, Trial: 75/100 sample size: 2048
+estimate size: 1  5328
+Elapsed time is 0.687228 seconds.
+Trimodal-Normal, Trial: 76/100 sample size: 2048
+estimate size: 1  5956
+Elapsed time is 0.678691 seconds.
+Trimodal-Normal, Trial: 77/100 sample size: 2048
+estimate size: 1  6445
+Elapsed time is 0.685798 seconds.
+Trimodal-Normal, Trial: 78/100 sample size: 2048
+estimate size: 1  5322
+Elapsed time is 0.665436 seconds.
+Trimodal-Normal, Trial: 79/100 sample size: 2048
+estimate size: 1  5747
+Elapsed time is 0.748988 seconds.
+Trimodal-Normal, Trial: 80/100 sample size: 2048
+estimate size: 1  7082
+Elapsed time is 0.783844 seconds.
+Trimodal-Normal, Trial: 81/100 sample size: 2048
+estimate size: 1  4589
+Elapsed time is 0.714493 seconds.
+Trimodal-Normal, Trial: 82/100 sample size: 2048
+estimate size: 1  6050
+Elapsed time is 0.736641 seconds.
+Trimodal-Normal, Trial: 83/100 sample size: 2048
+estimate size: 1  7016
+Elapsed time is 0.723989 seconds.
+Trimodal-Normal, Trial: 84/100 sample size: 2048
+estimate size: 1  4868
+Elapsed time is 0.705841 seconds.
+Trimodal-Normal, Trial: 85/100 sample size: 2048
+estimate size: 1  6257
+Elapsed time is 0.674675 seconds.
+Trimodal-Normal, Trial: 86/100 sample size: 2048
+estimate size: 1  7009
+Elapsed time is 0.686849 seconds.
+Trimodal-Normal, Trial: 87/100 sample size: 2048
+estimate size: 1  4522
+Elapsed time is 0.622800 seconds.
+Trimodal-Normal, Trial: 88/100 sample size: 2048
+estimate size: 1  6109
+Elapsed time is 0.668464 seconds.
+Trimodal-Normal, Trial: 89/100 sample size: 2048
+estimate size: 1  7504
+Elapsed time is 0.647324 seconds.
+Trimodal-Normal, Trial: 90/100 sample size: 2048
+estimate size: 1  4749
+Elapsed time is 0.705585 seconds.
+Trimodal-Normal, Trial: 91/100 sample size: 2048
+estimate size: 1  5529
+Elapsed time is 0.734483 seconds.
+Trimodal-Normal, Trial: 92/100 sample size: 2048
+estimate size: 1  6746
+Elapsed time is 0.686891 seconds.
+Trimodal-Normal, Trial: 93/100 sample size: 2048
+estimate size: 1  6020
+Elapsed time is 0.704800 seconds.
+Trimodal-Normal, Trial: 94/100 sample size: 2048
+estimate size: 1  5985
+Elapsed time is 0.672207 seconds.
+Trimodal-Normal, Trial: 95/100 sample size: 2048
+estimate size: 1  6155
+Elapsed time is 0.661647 seconds.
+Trimodal-Normal, Trial: 96/100 sample size: 2048
+estimate size: 1  4549
+Elapsed time is 0.643521 seconds.
+Trimodal-Normal, Trial: 97/100 sample size: 2048
+estimate size: 1  6323
+Elapsed time is 0.763655 seconds.
+Trimodal-Normal, Trial: 98/100 sample size: 2048
+estimate size: 1  5953
+Elapsed time is 0.626074 seconds.
+Trimodal-Normal, Trial: 99/100 sample size: 2048
+estimate size: 1  6231
+Elapsed time is 0.762541 seconds.
+Trimodal-Normal, Trial: 100/100 sample size: 2048
+estimate size: 1  6969
+Elapsed time is 0.976374 seconds.
+Trimodal-Normal, Trial: 1/100 sample size: 4096
+estimate size: 1  6996
+Elapsed time is 1.002455 seconds.
+Trimodal-Normal, Trial: 2/100 sample size: 4096
+estimate size: 1  8314
+Elapsed time is 0.886829 seconds.
+Trimodal-Normal, Trial: 3/100 sample size: 4096
+estimate size: 1  5834
+Elapsed time is 0.780018 seconds.
+Trimodal-Normal, Trial: 4/100 sample size: 4096
+estimate size: 1  6429
+Elapsed time is 0.891941 seconds.
+Trimodal-Normal, Trial: 5/100 sample size: 4096
+estimate size: 1  6490
+Elapsed time is 0.881713 seconds.
+Trimodal-Normal, Trial: 6/100 sample size: 4096
+estimate size: 1  7501
+Elapsed time is 0.866735 seconds.
+Trimodal-Normal, Trial: 7/100 sample size: 4096
+estimate size: 1  6182
+Elapsed time is 0.952698 seconds.
+Trimodal-Normal, Trial: 8/100 sample size: 4096
+estimate size: 1  8219
+Elapsed time is 0.925575 seconds.
+Trimodal-Normal, Trial: 9/100 sample size: 4096
+estimate size: 1  6910
+Elapsed time is 0.753916 seconds.
+Trimodal-Normal, Trial: 10/100 sample size: 4096
+estimate size: 1  8609
+Elapsed time is 0.847718 seconds.
+Trimodal-Normal, Trial: 11/100 sample size: 4096
+estimate size: 1  4360
+Elapsed time is 0.723038 seconds.
+Trimodal-Normal, Trial: 12/100 sample size: 4096
+estimate size: 1  9065
+Elapsed time is 1.028229 seconds.
+Trimodal-Normal, Trial: 13/100 sample size: 4096
+estimate size: 1  7222
+Elapsed time is 0.943538 seconds.
+Trimodal-Normal, Trial: 14/100 sample size: 4096
+estimate size: 1  8116
+Elapsed time is 0.848938 seconds.
+Trimodal-Normal, Trial: 15/100 sample size: 4096
+estimate size: 1  8554
+Elapsed time is 0.797549 seconds.
+Trimodal-Normal, Trial: 16/100 sample size: 4096
+estimate size: 1  6415
+Elapsed time is 0.936621 seconds.
+Trimodal-Normal, Trial: 17/100 sample size: 4096
+estimate size: 1  7367
+Elapsed time is 0.837643 seconds.
+Trimodal-Normal, Trial: 18/100 sample size: 4096
+estimate size: 1  6722
+Elapsed time is 0.941148 seconds.
+Trimodal-Normal, Trial: 19/100 sample size: 4096
+estimate size: 1  7965
+Elapsed time is 0.831034 seconds.
+Trimodal-Normal, Trial: 20/100 sample size: 4096
+estimate size: 1  5897
+Elapsed time is 0.901263 seconds.
+Trimodal-Normal, Trial: 21/100 sample size: 4096
+estimate size: 1  7580
+Elapsed time is 0.799297 seconds.
+Trimodal-Normal, Trial: 22/100 sample size: 4096
+estimate size: 1  8693
+Elapsed time is 0.994302 seconds.
+Trimodal-Normal, Trial: 23/100 sample size: 4096
+estimate size: 1  10544
+Elapsed time is 0.799395 seconds.
+Trimodal-Normal, Trial: 24/100 sample size: 4096
+estimate size: 1  9199
+Elapsed time is 0.812516 seconds.
+Trimodal-Normal, Trial: 25/100 sample size: 4096
+estimate size: 1  6765
+Elapsed time is 0.986609 seconds.
+Trimodal-Normal, Trial: 26/100 sample size: 4096
+estimate size: 1  7903
+Elapsed time is 0.940599 seconds.
+Trimodal-Normal, Trial: 27/100 sample size: 4096
+estimate size: 1  7061
+Elapsed time is 0.882234 seconds.
+Trimodal-Normal, Trial: 28/100 sample size: 4096
+estimate size: 1  6003
+Elapsed time is 0.833060 seconds.
+Trimodal-Normal, Trial: 29/100 sample size: 4096
+estimate size: 1  7019
+Elapsed time is 0.792216 seconds.
+Trimodal-Normal, Trial: 30/100 sample size: 4096
+estimate size: 1  8200
+Elapsed time is 0.881799 seconds.
+Trimodal-Normal, Trial: 31/100 sample size: 4096
+estimate size: 1  4361
+Elapsed time is 1.077354 seconds.
+Trimodal-Normal, Trial: 32/100 sample size: 4096
+estimate size: 1  6216
+Elapsed time is 0.809052 seconds.
+Trimodal-Normal, Trial: 33/100 sample size: 4096
+estimate size: 1  5562
+Elapsed time is 0.914382 seconds.
+Trimodal-Normal, Trial: 34/100 sample size: 4096
+estimate size: 1  4380
+Elapsed time is 0.992607 seconds.
+Trimodal-Normal, Trial: 35/100 sample size: 4096
+estimate size: 1  5731
+Elapsed time is 0.890138 seconds.
+Trimodal-Normal, Trial: 36/100 sample size: 4096
+estimate size: 1  7497
+Elapsed time is 0.955994 seconds.
+Trimodal-Normal, Trial: 37/100 sample size: 4096
+estimate size: 1  7557
+Elapsed time is 0.847789 seconds.
+Trimodal-Normal, Trial: 38/100 sample size: 4096
+estimate size: 1  6318
+Elapsed time is 0.922595 seconds.
+Trimodal-Normal, Trial: 39/100 sample size: 4096
+estimate size: 1  5368
+Elapsed time is 0.959480 seconds.
+Trimodal-Normal, Trial: 40/100 sample size: 4096
+estimate size: 1  5658
+Elapsed time is 0.901123 seconds.
+Trimodal-Normal, Trial: 41/100 sample size: 4096
+estimate size: 1  4401
+Elapsed time is 0.827580 seconds.
+Trimodal-Normal, Trial: 42/100 sample size: 4096
+estimate size: 1  8067
+Elapsed time is 0.841563 seconds.
+Trimodal-Normal, Trial: 43/100 sample size: 4096
+estimate size: 1  4275
+Elapsed time is 0.877294 seconds.
+Trimodal-Normal, Trial: 44/100 sample size: 4096
+estimate size: 1  4383
+Elapsed time is 0.878647 seconds.
+Trimodal-Normal, Trial: 45/100 sample size: 4096
+estimate size: 1  4576
+Elapsed time is 0.945820 seconds.
+Trimodal-Normal, Trial: 46/100 sample size: 4096
+estimate size: 1  5855
+Elapsed time is 0.838069 seconds.
+Trimodal-Normal, Trial: 47/100 sample size: 4096
+estimate size: 1  8299
+Elapsed time is 0.848317 seconds.
+Trimodal-Normal, Trial: 48/100 sample size: 4096
+estimate size: 1  6021
+Elapsed time is 0.975643 seconds.
+Trimodal-Normal, Trial: 49/100 sample size: 4096
+estimate size: 1  7915
+Elapsed time is 0.844122 seconds.
+Trimodal-Normal, Trial: 50/100 sample size: 4096
+estimate size: 1  5878
+Elapsed time is 1.000925 seconds.
+Trimodal-Normal, Trial: 51/100 sample size: 4096
+estimate size: 1  6442
+Elapsed time is 0.929549 seconds.
+Trimodal-Normal, Trial: 52/100 sample size: 4096
+estimate size: 1  8374
+Elapsed time is 0.950752 seconds.
+Trimodal-Normal, Trial: 53/100 sample size: 4096
+estimate size: 1  5848
+Elapsed time is 0.906968 seconds.
+Trimodal-Normal, Trial: 54/100 sample size: 4096
+estimate size: 1  6610
+Elapsed time is 0.891688 seconds.
+Trimodal-Normal, Trial: 55/100 sample size: 4096
+estimate size: 1  8346
+Elapsed time is 1.050950 seconds.
+Trimodal-Normal, Trial: 56/100 sample size: 4096
+estimate size: 1  6450
+Elapsed time is 0.736821 seconds.
+Trimodal-Normal, Trial: 57/100 sample size: 4096
+estimate size: 1  9143
+Elapsed time is 0.970257 seconds.
+Trimodal-Normal, Trial: 58/100 sample size: 4096
+estimate size: 1  5576
+Elapsed time is 0.772792 seconds.
+Trimodal-Normal, Trial: 59/100 sample size: 4096
+estimate size: 1  4322
+Elapsed time is 0.862595 seconds.
+Trimodal-Normal, Trial: 60/100 sample size: 4096
+estimate size: 1  7943
+Elapsed time is 0.810452 seconds.
+Trimodal-Normal, Trial: 61/100 sample size: 4096
+estimate size: 1  6771
+Elapsed time is 0.904953 seconds.
+Trimodal-Normal, Trial: 62/100 sample size: 4096
+estimate size: 1  8128
+Elapsed time is 0.744747 seconds.
+Trimodal-Normal, Trial: 63/100 sample size: 4096
+estimate size: 1  7688
+Elapsed time is 1.055833 seconds.
+Trimodal-Normal, Trial: 64/100 sample size: 4096
+estimate size: 1  8958
+Elapsed time is 1.115650 seconds.
+Trimodal-Normal, Trial: 65/100 sample size: 4096
+estimate size: 1  6555
+Elapsed time is 0.912594 seconds.
+Trimodal-Normal, Trial: 66/100 sample size: 4096
+estimate size: 1  6934
+Elapsed time is 0.826693 seconds.
+Trimodal-Normal, Trial: 67/100 sample size: 4096
+estimate size: 1  5673
+Elapsed time is 1.087003 seconds.
+Trimodal-Normal, Trial: 68/100 sample size: 4096
+estimate size: 1  7997
+Elapsed time is 0.848182 seconds.
+Trimodal-Normal, Trial: 69/100 sample size: 4096
+estimate size: 1  6523
+Elapsed time is 0.970988 seconds.
+Trimodal-Normal, Trial: 70/100 sample size: 4096
+estimate size: 1  8201
+Elapsed time is 0.786513 seconds.
+Trimodal-Normal, Trial: 71/100 sample size: 4096
+estimate size: 1  4411
+Elapsed time is 0.784802 seconds.
+Trimodal-Normal, Trial: 72/100 sample size: 4096
+estimate size: 1  8644
+Elapsed time is 0.935790 seconds.
+Trimodal-Normal, Trial: 73/100 sample size: 4096
+estimate size: 1  7207
+Elapsed time is 0.929361 seconds.
+Trimodal-Normal, Trial: 74/100 sample size: 4096
+estimate size: 1  9228
+Elapsed time is 0.835907 seconds.
+Trimodal-Normal, Trial: 75/100 sample size: 4096
+estimate size: 1  8080
+Elapsed time is 0.903424 seconds.
+Trimodal-Normal, Trial: 76/100 sample size: 4096
+estimate size: 1  6512
+Elapsed time is 0.973155 seconds.
+Trimodal-Normal, Trial: 77/100 sample size: 4096
+estimate size: 1  8080
+Elapsed time is 0.918058 seconds.
+Trimodal-Normal, Trial: 78/100 sample size: 4096
+estimate size: 1  8634
+Elapsed time is 0.901643 seconds.
+Trimodal-Normal, Trial: 79/100 sample size: 4096
+estimate size: 1  5453
+Elapsed time is 0.959712 seconds.
+Trimodal-Normal, Trial: 80/100 sample size: 4096
+estimate size: 1  9095
+Elapsed time is 0.850157 seconds.
+Trimodal-Normal, Trial: 81/100 sample size: 4096
+estimate size: 1  8725
+Elapsed time is 0.930483 seconds.
+Trimodal-Normal, Trial: 82/100 sample size: 4096
+estimate size: 1  8966
+Elapsed time is 0.840006 seconds.
+Trimodal-Normal, Trial: 83/100 sample size: 4096
+estimate size: 1  6890
+Elapsed time is 0.887659 seconds.
+Trimodal-Normal, Trial: 84/100 sample size: 4096
+estimate size: 1  7078
+Elapsed time is 0.929630 seconds.
+Trimodal-Normal, Trial: 85/100 sample size: 4096
+estimate size: 1  6431
+Elapsed time is 0.855336 seconds.
+Trimodal-Normal, Trial: 86/100 sample size: 4096
+estimate size: 1  7421
+Elapsed time is 0.928397 seconds.
+Trimodal-Normal, Trial: 87/100 sample size: 4096
+estimate size: 1  5447
+Elapsed time is 0.934806 seconds.
+Trimodal-Normal, Trial: 88/100 sample size: 4096
+estimate size: 1  6843
+Elapsed time is 1.029348 seconds.
+Trimodal-Normal, Trial: 89/100 sample size: 4096
+estimate size: 1  7833
+Elapsed time is 1.030392 seconds.
+Trimodal-Normal, Trial: 90/100 sample size: 4096
+estimate size: 1  7181
+Elapsed time is 0.976402 seconds.
+Trimodal-Normal, Trial: 91/100 sample size: 4096
+estimate size: 1  9124
+Elapsed time is 0.984846 seconds.
+Trimodal-Normal, Trial: 92/100 sample size: 4096
+estimate size: 1  8995
+Elapsed time is 1.029326 seconds.
+Trimodal-Normal, Trial: 93/100 sample size: 4096
+estimate size: 1  6683
+Elapsed time is 0.936257 seconds.
+Trimodal-Normal, Trial: 94/100 sample size: 4096
+estimate size: 1  6239
+Elapsed time is 0.887744 seconds.
+Trimodal-Normal, Trial: 95/100 sample size: 4096
+estimate size: 1  5484
+Elapsed time is 0.895805 seconds.
+Trimodal-Normal, Trial: 96/100 sample size: 4096
+estimate size: 1  5618
+Elapsed time is 0.822256 seconds.
+Trimodal-Normal, Trial: 97/100 sample size: 4096
+estimate size: 1  6804
+Elapsed time is 0.921401 seconds.
+Trimodal-Normal, Trial: 98/100 sample size: 4096
+estimate size: 1  8908
+Elapsed time is 0.846810 seconds.
+Trimodal-Normal, Trial: 99/100 sample size: 4096
+estimate size: 1  7488
+Elapsed time is 0.774877 seconds.
+Trimodal-Normal, Trial: 100/100 sample size: 4096
+estimate size: 1  4445
+Elapsed time is 1.130012 seconds.
+Trimodal-Normal, Trial: 1/100 sample size: 8192
+estimate size: 1  6795
+Elapsed time is 1.432455 seconds.
+Trimodal-Normal, Trial: 2/100 sample size: 8192
+estimate size: 1  7985
+Elapsed time is 1.173797 seconds.
+Trimodal-Normal, Trial: 3/100 sample size: 8192
+estimate size: 1  8324
+Elapsed time is 1.147237 seconds.
+Trimodal-Normal, Trial: 4/100 sample size: 8192
+estimate size: 1  4483
+Elapsed time is 1.179356 seconds.
+Trimodal-Normal, Trial: 5/100 sample size: 8192
+estimate size: 1  9264
+Elapsed time is 1.115684 seconds.
+Trimodal-Normal, Trial: 6/100 sample size: 8192
+estimate size: 1  9180
+Elapsed time is 1.219755 seconds.
+Trimodal-Normal, Trial: 7/100 sample size: 8192
+estimate size: 1  6364
+Elapsed time is 1.310698 seconds.
+Trimodal-Normal, Trial: 8/100 sample size: 8192
+estimate size: 1  5615
+Elapsed time is 1.231079 seconds.
+Trimodal-Normal, Trial: 9/100 sample size: 8192
+estimate size: 1  6752
+Elapsed time is 1.265888 seconds.
+Trimodal-Normal, Trial: 10/100 sample size: 8192
+estimate size: 1  6390
+Elapsed time is 1.203209 seconds.
+Trimodal-Normal, Trial: 11/100 sample size: 8192
+estimate size: 1  8135
+Elapsed time is 1.148325 seconds.
+Trimodal-Normal, Trial: 12/100 sample size: 8192
+estimate size: 1  8150
+Elapsed time is 1.137081 seconds.
+Trimodal-Normal, Trial: 13/100 sample size: 8192
+estimate size: 1  9379
+Elapsed time is 1.116665 seconds.
+Trimodal-Normal, Trial: 14/100 sample size: 8192
+estimate size: 1  6947
+Elapsed time is 1.229538 seconds.
+Trimodal-Normal, Trial: 15/100 sample size: 8192
+estimate size: 1  6850
+Elapsed time is 1.197295 seconds.
+Trimodal-Normal, Trial: 16/100 sample size: 8192
+estimate size: 1  7944
+Elapsed time is 1.307053 seconds.
+Trimodal-Normal, Trial: 17/100 sample size: 8192
+estimate size: 1  6071
+Elapsed time is 1.198969 seconds.
+Trimodal-Normal, Trial: 18/100 sample size: 8192
+estimate size: 1  8592
+Elapsed time is 1.278138 seconds.
+Trimodal-Normal, Trial: 19/100 sample size: 8192
+estimate size: 1  9411
+Elapsed time is 1.238659 seconds.
+Trimodal-Normal, Trial: 20/100 sample size: 8192
+estimate size: 1  5690
+Elapsed time is 1.249433 seconds.
+Trimodal-Normal, Trial: 21/100 sample size: 8192
+estimate size: 1  7805
+Elapsed time is 1.230167 seconds.
+Trimodal-Normal, Trial: 22/100 sample size: 8192
+estimate size: 1  6847
+Elapsed time is 1.128564 seconds.
+Trimodal-Normal, Trial: 23/100 sample size: 8192
+estimate size: 1  5587
+Elapsed time is 1.176979 seconds.
+Trimodal-Normal, Trial: 24/100 sample size: 8192
+estimate size: 1  5691
+Elapsed time is 1.093256 seconds.
+Trimodal-Normal, Trial: 25/100 sample size: 8192
+estimate size: 1  6884
+Elapsed time is 1.197153 seconds.
+Trimodal-Normal, Trial: 26/100 sample size: 8192
+estimate size: 1  6790
+Elapsed time is 1.235416 seconds.
+Trimodal-Normal, Trial: 27/100 sample size: 8192
+estimate size: 1  7091
+Elapsed time is 1.175490 seconds.
+Trimodal-Normal, Trial: 28/100 sample size: 8192
+estimate size: 1  6372
+Elapsed time is 1.123224 seconds.
+Trimodal-Normal, Trial: 29/100 sample size: 8192
+estimate size: 1  4342
+Elapsed time is 1.086486 seconds.
+Trimodal-Normal, Trial: 30/100 sample size: 8192
+estimate size: 1  8135
+Elapsed time is 1.150431 seconds.
+Trimodal-Normal, Trial: 31/100 sample size: 8192
+estimate size: 1  5655
+Elapsed time is 1.220070 seconds.
+Trimodal-Normal, Trial: 32/100 sample size: 8192
+estimate size: 1  4401
+Elapsed time is 1.183212 seconds.
+Trimodal-Normal, Trial: 33/100 sample size: 8192
+estimate size: 1  5589
+Elapsed time is 1.206632 seconds.
+Trimodal-Normal, Trial: 34/100 sample size: 8192
+estimate size: 1  7759
+Elapsed time is 1.196896 seconds.
+Trimodal-Normal, Trial: 35/100 sample size: 8192
+estimate size: 1  4423
+Elapsed time is 1.122449 seconds.
+Trimodal-Normal, Trial: 36/100 sample size: 8192
+estimate size: 1  5649
+Elapsed time is 1.247543 seconds.
+Trimodal-Normal, Trial: 37/100 sample size: 8192
+estimate size: 1  5831
+Elapsed time is 1.164421 seconds.
+Trimodal-Normal, Trial: 38/100 sample size: 8192
+estimate size: 1  6604
+Elapsed time is 1.213528 seconds.
+Trimodal-Normal, Trial: 39/100 sample size: 8192
+estimate size: 1  5628
+Elapsed time is 1.303774 seconds.
+Trimodal-Normal, Trial: 40/100 sample size: 8192
+estimate size: 1  5786
+Elapsed time is 1.219198 seconds.
+Trimodal-Normal, Trial: 41/100 sample size: 8192
+estimate size: 1  9277
+Elapsed time is 1.320629 seconds.
+Trimodal-Normal, Trial: 42/100 sample size: 8192
+estimate size: 1  5488
+Elapsed time is 1.244911 seconds.
+Trimodal-Normal, Trial: 43/100 sample size: 8192
+estimate size: 1  6536
+Elapsed time is 1.009512 seconds.
+Trimodal-Normal, Trial: 44/100 sample size: 8192
+estimate size: 1  8106
+Elapsed time is 1.286128 seconds.
+Trimodal-Normal, Trial: 45/100 sample size: 8192
+estimate size: 1  5617
+Elapsed time is 1.242873 seconds.
+Trimodal-Normal, Trial: 46/100 sample size: 8192
+estimate size: 1  9437
+Elapsed time is 1.157068 seconds.
+Trimodal-Normal, Trial: 47/100 sample size: 8192
+estimate size: 1  9851
+Elapsed time is 1.201831 seconds.
+Trimodal-Normal, Trial: 48/100 sample size: 8192
+estimate size: 1  6669
+Elapsed time is 1.091177 seconds.
+Trimodal-Normal, Trial: 49/100 sample size: 8192
+estimate size: 1  6826
+Elapsed time is 1.477572 seconds.
+Trimodal-Normal, Trial: 50/100 sample size: 8192
+estimate size: 1  8204
+Elapsed time is 1.156065 seconds.
+Trimodal-Normal, Trial: 51/100 sample size: 8192
+estimate size: 1  6967
+Elapsed time is 1.310414 seconds.
+Trimodal-Normal, Trial: 52/100 sample size: 8192
+estimate size: 1  5728
+Elapsed time is 1.181918 seconds.
+Trimodal-Normal, Trial: 53/100 sample size: 8192
+estimate size: 1  9573
+Elapsed time is 1.150065 seconds.
+Trimodal-Normal, Trial: 54/100 sample size: 8192
+estimate size: 1  9011
+Elapsed time is 1.420842 seconds.
+Trimodal-Normal, Trial: 55/100 sample size: 8192
+estimate size: 1  5671
+Elapsed time is 1.151117 seconds.
+Trimodal-Normal, Trial: 56/100 sample size: 8192
+estimate size: 1  5677
+Elapsed time is 1.305485 seconds.
+Trimodal-Normal, Trial: 57/100 sample size: 8192
+estimate size: 1  6998
+Elapsed time is 1.136872 seconds.
+Trimodal-Normal, Trial: 58/100 sample size: 8192
+estimate size: 1  6826
+Elapsed time is 1.142135 seconds.
+Trimodal-Normal, Trial: 59/100 sample size: 8192
+estimate size: 1  4471
+Elapsed time is 1.173652 seconds.
+Trimodal-Normal, Trial: 60/100 sample size: 8192
+estimate size: 1  8399
+Elapsed time is 1.212452 seconds.
+Trimodal-Normal, Trial: 61/100 sample size: 8192
+estimate size: 1  7612
+Elapsed time is 1.124614 seconds.
+Trimodal-Normal, Trial: 62/100 sample size: 8192
+estimate size: 1  7877
+Elapsed time is 1.295982 seconds.
+Trimodal-Normal, Trial: 63/100 sample size: 8192
+estimate size: 1  9389
+Elapsed time is 1.248996 seconds.
+Trimodal-Normal, Trial: 64/100 sample size: 8192
+estimate size: 1  5670
+Elapsed time is 1.100435 seconds.
+Trimodal-Normal, Trial: 65/100 sample size: 8192
+estimate size: 1  7786
+Elapsed time is 1.036857 seconds.
+Trimodal-Normal, Trial: 66/100 sample size: 8192
+estimate size: 1  9607
+Elapsed time is 1.197725 seconds.
+Trimodal-Normal, Trial: 67/100 sample size: 8192
+estimate size: 1  6814
+Elapsed time is 0.937178 seconds.
+Trimodal-Normal, Trial: 68/100 sample size: 8192
+estimate size: 1  6788
+Elapsed time is 1.282423 seconds.
+Trimodal-Normal, Trial: 69/100 sample size: 8192
+estimate size: 1  5425
+Elapsed time is 1.199635 seconds.
+Trimodal-Normal, Trial: 70/100 sample size: 8192
+estimate size: 1  7853
+Elapsed time is 1.443408 seconds.
+Trimodal-Normal, Trial: 71/100 sample size: 8192
+estimate size: 1  5621
+Elapsed time is 1.238781 seconds.
+Trimodal-Normal, Trial: 72/100 sample size: 8192
+estimate size: 1  8169
+Elapsed time is 1.186304 seconds.
+Trimodal-Normal, Trial: 73/100 sample size: 8192
+estimate size: 1  5582
+Elapsed time is 1.226437 seconds.
+Trimodal-Normal, Trial: 74/100 sample size: 8192
+estimate size: 1  7931
+Elapsed time is 1.326965 seconds.
+Trimodal-Normal, Trial: 75/100 sample size: 8192
+estimate size: 1  5839
+Elapsed time is 1.213002 seconds.
+Trimodal-Normal, Trial: 76/100 sample size: 8192
+estimate size: 1  5726
+Elapsed time is 1.248553 seconds.
+Trimodal-Normal, Trial: 77/100 sample size: 8192
+estimate size: 1  7503
+Elapsed time is 1.192130 seconds.
+Trimodal-Normal, Trial: 78/100 sample size: 8192
+estimate size: 1  8283
+Elapsed time is 1.137950 seconds.
+Trimodal-Normal, Trial: 79/100 sample size: 8192
+estimate size: 1  8096
+Elapsed time is 1.292597 seconds.
+Trimodal-Normal, Trial: 80/100 sample size: 8192
+estimate size: 1  8705
+Elapsed time is 1.375790 seconds.
+Trimodal-Normal, Trial: 81/100 sample size: 8192
+estimate size: 1  7982
+Elapsed time is 1.177483 seconds.
+Trimodal-Normal, Trial: 82/100 sample size: 8192
+estimate size: 1  9199
+Elapsed time is 1.244982 seconds.
+Trimodal-Normal, Trial: 83/100 sample size: 8192
+estimate size: 1  5767
+Elapsed time is 1.221294 seconds.
+Trimodal-Normal, Trial: 84/100 sample size: 8192
+estimate size: 1  6841
+Elapsed time is 1.035948 seconds.
+Trimodal-Normal, Trial: 85/100 sample size: 8192
+estimate size: 1  6889
+Elapsed time is 1.292556 seconds.
+Trimodal-Normal, Trial: 86/100 sample size: 8192
+estimate size: 1  4460
+Elapsed time is 1.133010 seconds.
+Trimodal-Normal, Trial: 87/100 sample size: 8192
+estimate size: 1  6922
+Elapsed time is 1.460089 seconds.
+Trimodal-Normal, Trial: 88/100 sample size: 8192
+estimate size: 1  9363
+Elapsed time is 1.295893 seconds.
+Trimodal-Normal, Trial: 89/100 sample size: 8192
+estimate size: 1  4443
+Elapsed time is 1.176431 seconds.
+Trimodal-Normal, Trial: 90/100 sample size: 8192
+estimate size: 1  8297
+Elapsed time is 1.243915 seconds.
+Trimodal-Normal, Trial: 91/100 sample size: 8192
+estimate size: 1  9945
+Elapsed time is 1.196352 seconds.
+Trimodal-Normal, Trial: 92/100 sample size: 8192
+estimate size: 1  5430
+Elapsed time is 1.174040 seconds.
+Trimodal-Normal, Trial: 93/100 sample size: 8192
+estimate size: 1  8320
+Elapsed time is 1.106858 seconds.
+Trimodal-Normal, Trial: 94/100 sample size: 8192
+estimate size: 1  6994
+Elapsed time is 1.178540 seconds.
+Trimodal-Normal, Trial: 95/100 sample size: 8192
+estimate size: 1  8067
+Elapsed time is 1.094332 seconds.
+Trimodal-Normal, Trial: 96/100 sample size: 8192
+estimate size: 1  5711
+Elapsed time is 1.318800 seconds.
+Trimodal-Normal, Trial: 97/100 sample size: 8192
+estimate size: 1  8528
+Elapsed time is 1.226960 seconds.
+Trimodal-Normal, Trial: 98/100 sample size: 8192
+estimate size: 1  7916
+Elapsed time is 1.208810 seconds.
+Trimodal-Normal, Trial: 99/100 sample size: 8192
+estimate size: 1  5616
+Elapsed time is 1.187397 seconds.
+Trimodal-Normal, Trial: 100/100 sample size: 8192
+estimate size: 1  8845
+Elapsed time is 1.586656 seconds.
+Trimodal-Normal, Trial: 1/100 sample size: 16384
+estimate size: 1  9431
+Elapsed time is 1.703307 seconds.
+Trimodal-Normal, Trial: 2/100 sample size: 16384
+estimate size: 1  8207
+Elapsed time is 1.483977 seconds.
+Trimodal-Normal, Trial: 3/100 sample size: 16384
+estimate size: 1  4621
+Elapsed time is 1.717495 seconds.
+Trimodal-Normal, Trial: 4/100 sample size: 16384
+estimate size: 1  8107
+Elapsed time is 1.549291 seconds.
+Trimodal-Normal, Trial: 5/100 sample size: 16384
+estimate size: 1  9224
+Elapsed time is 1.667712 seconds.
+Trimodal-Normal, Trial: 6/100 sample size: 16384
+estimate size: 1  9314
+Elapsed time is 1.501770 seconds.
+Trimodal-Normal, Trial: 7/100 sample size: 16384
+estimate size: 1  9402
+Elapsed time is 1.563277 seconds.
+Trimodal-Normal, Trial: 8/100 sample size: 16384
+estimate size: 1  8139
+Elapsed time is 1.682196 seconds.
+Trimodal-Normal, Trial: 9/100 sample size: 16384
+estimate size: 1  8092
+Elapsed time is 1.625733 seconds.
+Trimodal-Normal, Trial: 10/100 sample size: 16384
+estimate size: 1  6979
+Elapsed time is 1.716183 seconds.
+Trimodal-Normal, Trial: 11/100 sample size: 16384
+estimate size: 1  6929
+Elapsed time is 1.669362 seconds.
+Trimodal-Normal, Trial: 12/100 sample size: 16384
+estimate size: 1  6869
+Elapsed time is 1.622718 seconds.
+Trimodal-Normal, Trial: 13/100 sample size: 16384
+estimate size: 1  9335
+Elapsed time is 1.815356 seconds.
+Trimodal-Normal, Trial: 14/100 sample size: 16384
+estimate size: 1  7024
+Elapsed time is 1.694969 seconds.
+Trimodal-Normal, Trial: 15/100 sample size: 16384
+estimate size: 1  9660
+Elapsed time is 1.577570 seconds.
+Trimodal-Normal, Trial: 16/100 sample size: 16384
+estimate size: 1  8975
+Elapsed time is 1.451830 seconds.
+Trimodal-Normal, Trial: 17/100 sample size: 16384
+estimate size: 1  9423
+Elapsed time is 1.551403 seconds.
+Trimodal-Normal, Trial: 18/100 sample size: 16384
+estimate size: 1  9457
+Elapsed time is 1.658922 seconds.
+Trimodal-Normal, Trial: 19/100 sample size: 16384
+estimate size: 1  5902
+Elapsed time is 1.524275 seconds.
+Trimodal-Normal, Trial: 20/100 sample size: 16384
+estimate size: 1  7950
+Elapsed time is 1.724769 seconds.
+Trimodal-Normal, Trial: 21/100 sample size: 16384
+estimate size: 1  8229
+Elapsed time is 1.591734 seconds.
+Trimodal-Normal, Trial: 22/100 sample size: 16384
+estimate size: 1  6613
+Elapsed time is 1.699978 seconds.
+Trimodal-Normal, Trial: 23/100 sample size: 16384
+estimate size: 1  9208
+Elapsed time is 1.667223 seconds.
+Trimodal-Normal, Trial: 24/100 sample size: 16384
+estimate size: 1  8116
+Elapsed time is 1.653778 seconds.
+Trimodal-Normal, Trial: 25/100 sample size: 16384
+estimate size: 1  9318
+Elapsed time is 1.533042 seconds.
+Trimodal-Normal, Trial: 26/100 sample size: 16384
+estimate size: 1  9436
+Elapsed time is 1.611538 seconds.
+Trimodal-Normal, Trial: 27/100 sample size: 16384
+estimate size: 1  6982
+Elapsed time is 1.695088 seconds.
+Trimodal-Normal, Trial: 28/100 sample size: 16384
+estimate size: 1  5923
+Elapsed time is 1.444912 seconds.
+Trimodal-Normal, Trial: 29/100 sample size: 16384
+estimate size: 1  9406
+Elapsed time is 1.517127 seconds.
+Trimodal-Normal, Trial: 30/100 sample size: 16384
+estimate size: 1  9086
+Elapsed time is 1.666756 seconds.
+Trimodal-Normal, Trial: 31/100 sample size: 16384
+estimate size: 1  9295
+Elapsed time is 1.763437 seconds.
+Trimodal-Normal, Trial: 32/100 sample size: 16384
+estimate size: 1  8172
+Elapsed time is 1.802439 seconds.
+Trimodal-Normal, Trial: 33/100 sample size: 16384
+estimate size: 1  8196
+Elapsed time is 1.733941 seconds.
+Trimodal-Normal, Trial: 34/100 sample size: 16384
+estimate size: 1  8067
+Elapsed time is 1.606531 seconds.
+Trimodal-Normal, Trial: 35/100 sample size: 16384
+estimate size: 1  7082
+Elapsed time is 2.042242 seconds.
+Trimodal-Normal, Trial: 36/100 sample size: 16384
+estimate size: 1  9484
+Elapsed time is 1.692366 seconds.
+Trimodal-Normal, Trial: 37/100 sample size: 16384
+estimate size: 1  8345
+Elapsed time is 1.718010 seconds.
+Trimodal-Normal, Trial: 38/100 sample size: 16384
+estimate size: 1  8319
+Elapsed time is 1.669843 seconds.
+Trimodal-Normal, Trial: 39/100 sample size: 16384
+estimate size: 1  8176
+Elapsed time is 1.684782 seconds.
+Trimodal-Normal, Trial: 40/100 sample size: 16384
+estimate size: 1  8114
+Elapsed time is 1.585706 seconds.
+Trimodal-Normal, Trial: 41/100 sample size: 16384
+estimate size: 1  9508
+Elapsed time is 1.676226 seconds.
+Trimodal-Normal, Trial: 42/100 sample size: 16384
+estimate size: 1  8242
+Elapsed time is 1.705041 seconds.
+Trimodal-Normal, Trial: 43/100 sample size: 16384
+estimate size: 1  5806
+Elapsed time is 1.532507 seconds.
+Trimodal-Normal, Trial: 44/100 sample size: 16384
+estimate size: 1  8218
+Elapsed time is 1.626616 seconds.
+Trimodal-Normal, Trial: 45/100 sample size: 16384
+estimate size: 1  5817
+Elapsed time is 1.543932 seconds.
+Trimodal-Normal, Trial: 46/100 sample size: 16384
+estimate size: 1  9421
+Elapsed time is 1.581801 seconds.
+Trimodal-Normal, Trial: 47/100 sample size: 16384
+estimate size: 1  6971
+Elapsed time is 1.488530 seconds.
+Trimodal-Normal, Trial: 48/100 sample size: 16384
+estimate size: 1  6922
+Elapsed time is 1.646305 seconds.
+Trimodal-Normal, Trial: 49/100 sample size: 16384
+estimate size: 1  8282
+Elapsed time is 1.687003 seconds.
+Trimodal-Normal, Trial: 50/100 sample size: 16384
+estimate size: 1  8192
+Elapsed time is 1.574050 seconds.
+Trimodal-Normal, Trial: 51/100 sample size: 16384
+estimate size: 1  8104
+Elapsed time is 1.779617 seconds.
+Trimodal-Normal, Trial: 52/100 sample size: 16384
+estimate size: 1  7075
+Elapsed time is 1.635077 seconds.
+Trimodal-Normal, Trial: 53/100 sample size: 16384
+estimate size: 1  9447
+Elapsed time is 1.682290 seconds.
+Trimodal-Normal, Trial: 54/100 sample size: 16384
+estimate size: 1  8192
+Elapsed time is 1.888727 seconds.
+Trimodal-Normal, Trial: 55/100 sample size: 16384
+estimate size: 1  7172
+Elapsed time is 1.517814 seconds.
+Trimodal-Normal, Trial: 56/100 sample size: 16384
+estimate size: 1  9343
+Elapsed time is 1.549711 seconds.
+Trimodal-Normal, Trial: 57/100 sample size: 16384
+estimate size: 1  8133
+Elapsed time is 1.606622 seconds.
+Trimodal-Normal, Trial: 58/100 sample size: 16384
+estimate size: 1  9348
+Elapsed time is 1.755038 seconds.
+Trimodal-Normal, Trial: 59/100 sample size: 16384
+estimate size: 1  7113
+Elapsed time is 1.621436 seconds.
+Trimodal-Normal, Trial: 60/100 sample size: 16384
+estimate size: 1  9335
+Elapsed time is 1.708910 seconds.
+Trimodal-Normal, Trial: 61/100 sample size: 16384
+estimate size: 1  8159
+Elapsed time is 1.661379 seconds.
+Trimodal-Normal, Trial: 62/100 sample size: 16384
+estimate size: 1  8114
+Elapsed time is 1.573135 seconds.
+Trimodal-Normal, Trial: 63/100 sample size: 16384
+estimate size: 1  7118
+Elapsed time is 1.656439 seconds.
+Trimodal-Normal, Trial: 64/100 sample size: 16384
+estimate size: 1  7036
+Elapsed time is 1.751272 seconds.
+Trimodal-Normal, Trial: 65/100 sample size: 16384
+estimate size: 1  8202
+Elapsed time is 1.798330 seconds.
+Trimodal-Normal, Trial: 66/100 sample size: 16384
+estimate size: 1  5927
+Elapsed time is 1.650189 seconds.
+Trimodal-Normal, Trial: 67/100 sample size: 16384
+estimate size: 1  6985
+Elapsed time is 1.589960 seconds.
+Trimodal-Normal, Trial: 68/100 sample size: 16384
+estimate size: 1  7076
+Elapsed time is 1.638252 seconds.
+Trimodal-Normal, Trial: 69/100 sample size: 16384
+estimate size: 1  8203
+Elapsed time is 1.618533 seconds.
+Trimodal-Normal, Trial: 70/100 sample size: 16384
+estimate size: 1  8170
+Elapsed time is 1.539361 seconds.
+Trimodal-Normal, Trial: 71/100 sample size: 16384
+estimate size: 1  8111
+Elapsed time is 1.510843 seconds.
+Trimodal-Normal, Trial: 72/100 sample size: 16384
+estimate size: 1  6893
+Elapsed time is 1.826411 seconds.
+Trimodal-Normal, Trial: 73/100 sample size: 16384
+estimate size: 1  9366
+Elapsed time is 1.590162 seconds.
+Trimodal-Normal, Trial: 74/100 sample size: 16384
+estimate size: 1  8190
+Elapsed time is 1.519694 seconds.
+Trimodal-Normal, Trial: 75/100 sample size: 16384
+estimate size: 1  7041
+Elapsed time is 1.720546 seconds.
+Trimodal-Normal, Trial: 76/100 sample size: 16384
+estimate size: 1  9482
+Elapsed time is 1.830348 seconds.
+Trimodal-Normal, Trial: 77/100 sample size: 16384
+estimate size: 1  9391
+Elapsed time is 1.599691 seconds.
+Trimodal-Normal, Trial: 78/100 sample size: 16384
+estimate size: 1  9298
+Elapsed time is 1.657682 seconds.
+Trimodal-Normal, Trial: 79/100 sample size: 16384
+estimate size: 1  8398
+Elapsed time is 1.788420 seconds.
+Trimodal-Normal, Trial: 80/100 sample size: 16384
+estimate size: 1  9564
+Elapsed time is 1.683189 seconds.
+Trimodal-Normal, Trial: 81/100 sample size: 16384
+estimate size: 1  8124
+Elapsed time is 1.541076 seconds.
+Trimodal-Normal, Trial: 82/100 sample size: 16384
+estimate size: 1  8110
+Elapsed time is 1.627995 seconds.
+Trimodal-Normal, Trial: 83/100 sample size: 16384
+estimate size: 1  9351
+Elapsed time is 1.554043 seconds.
+Trimodal-Normal, Trial: 84/100 sample size: 16384
+estimate size: 1  6961
+Elapsed time is 1.611682 seconds.
+Trimodal-Normal, Trial: 85/100 sample size: 16384
+estimate size: 1  4625
+Elapsed time is 1.749975 seconds.
+Trimodal-Normal, Trial: 86/100 sample size: 16384
+estimate size: 1  9384
+Elapsed time is 1.489685 seconds.
+Trimodal-Normal, Trial: 87/100 sample size: 16384
+estimate size: 1  9081
+Elapsed time is 1.745681 seconds.
+Trimodal-Normal, Trial: 88/100 sample size: 16384
+estimate size: 1  9498
+Elapsed time is 1.893360 seconds.
+Trimodal-Normal, Trial: 89/100 sample size: 16384
+estimate size: 1  9246
+Elapsed time is 1.631793 seconds.
+Trimodal-Normal, Trial: 90/100 sample size: 16384
+estimate size: 1  6928
+Elapsed time is 1.606507 seconds.
+Trimodal-Normal, Trial: 91/100 sample size: 16384
+estimate size: 1  8109
+Elapsed time is 1.650691 seconds.
+Trimodal-Normal, Trial: 92/100 sample size: 16384
+estimate size: 1  9714
+Elapsed time is 1.536556 seconds.
+Trimodal-Normal, Trial: 93/100 sample size: 16384
+estimate size: 1  7910
+Elapsed time is 1.656120 seconds.
+Trimodal-Normal, Trial: 94/100 sample size: 16384
+estimate size: 1  8110
+Elapsed time is 1.585419 seconds.
+Trimodal-Normal, Trial: 95/100 sample size: 16384
+estimate size: 1  8144
+Elapsed time is 1.483432 seconds.
+Trimodal-Normal, Trial: 96/100 sample size: 16384
+estimate size: 1  9358
+Elapsed time is 1.491887 seconds.
+Trimodal-Normal, Trial: 97/100 sample size: 16384
+estimate size: 1  4602
+Elapsed time is 1.669286 seconds.
+Trimodal-Normal, Trial: 98/100 sample size: 16384
+estimate size: 1  9532
+Elapsed time is 1.717321 seconds.
+Trimodal-Normal, Trial: 99/100 sample size: 16384
+estimate size: 1  5819
+Elapsed time is 1.781458 seconds.
+Trimodal-Normal, Trial: 100/100 sample size: 16384
+estimate size: 1  8078
+Elapsed time is 2.457530 seconds.
+Trimodal-Normal, Trial: 1/100 sample size: 32768
+estimate size: 1  8570
+Elapsed time is 2.438224 seconds.
+Trimodal-Normal, Trial: 2/100 sample size: 32768
+estimate size: 1  8588
+Elapsed time is 2.548258 seconds.
+Trimodal-Normal, Trial: 3/100 sample size: 32768
+estimate size: 1  7382
+Elapsed time is 2.647606 seconds.
+Trimodal-Normal, Trial: 4/100 sample size: 32768
+estimate size: 1  9873
+Elapsed time is 2.367714 seconds.
+Trimodal-Normal, Trial: 5/100 sample size: 32768
+estimate size: 1  7422
+Elapsed time is 2.243495 seconds.
+Trimodal-Normal, Trial: 6/100 sample size: 32768
+estimate size: 1  7338
+Elapsed time is 2.360621 seconds.
+Trimodal-Normal, Trial: 7/100 sample size: 32768
+estimate size: 1  8612
+Elapsed time is 2.498541 seconds.
+Trimodal-Normal, Trial: 8/100 sample size: 32768
+estimate size: 1  9828
+Elapsed time is 2.352592 seconds.
+Trimodal-Normal, Trial: 9/100 sample size: 32768
+estimate size: 1  8528
+Elapsed time is 2.667241 seconds.
+Trimodal-Normal, Trial: 10/100 sample size: 32768
+estimate size: 1  9862
+Elapsed time is 2.241969 seconds.
+Trimodal-Normal, Trial: 11/100 sample size: 32768
+estimate size: 1  8600
+Elapsed time is 2.564387 seconds.
+Trimodal-Normal, Trial: 12/100 sample size: 32768
+estimate size: 1  9843
+Elapsed time is 2.346729 seconds.
+Trimodal-Normal, Trial: 13/100 sample size: 32768
+estimate size: 1  8550
+Elapsed time is 2.473893 seconds.
+Trimodal-Normal, Trial: 14/100 sample size: 32768
+estimate size: 1  9755
+Elapsed time is 2.323634 seconds.
+Trimodal-Normal, Trial: 15/100 sample size: 32768
+estimate size: 1  9735
+Elapsed time is 2.375395 seconds.
+Trimodal-Normal, Trial: 16/100 sample size: 32768
+estimate size: 1  7428
+Elapsed time is 2.391940 seconds.
+Trimodal-Normal, Trial: 17/100 sample size: 32768
+estimate size: 1  8562
+Elapsed time is 2.395369 seconds.
+Trimodal-Normal, Trial: 18/100 sample size: 32768
+estimate size: 1  9750
+Elapsed time is 2.512764 seconds.
+Trimodal-Normal, Trial: 19/100 sample size: 32768
+estimate size: 1  9482
+Elapsed time is 2.198733 seconds.
+Trimodal-Normal, Trial: 20/100 sample size: 32768
+estimate size: 1  6155
+Elapsed time is 2.337647 seconds.
+Trimodal-Normal, Trial: 21/100 sample size: 32768
+estimate size: 1  6238
+Elapsed time is 2.388114 seconds.
+Trimodal-Normal, Trial: 22/100 sample size: 32768
+estimate size: 1  9862
+Elapsed time is 2.382420 seconds.
+Trimodal-Normal, Trial: 23/100 sample size: 32768
+estimate size: 1  8616
+Elapsed time is 2.477171 seconds.
+Trimodal-Normal, Trial: 24/100 sample size: 32768
+estimate size: 1  8601
+Elapsed time is 2.447204 seconds.
+Trimodal-Normal, Trial: 25/100 sample size: 32768
+estimate size: 1  9824
+Elapsed time is 2.427167 seconds.
+Trimodal-Normal, Trial: 26/100 sample size: 32768
+estimate size: 1  8539
+Elapsed time is 2.397667 seconds.
+Trimodal-Normal, Trial: 27/100 sample size: 32768
+estimate size: 1  9503
+Elapsed time is 2.493350 seconds.
+Trimodal-Normal, Trial: 28/100 sample size: 32768
+estimate size: 1  8381
+Elapsed time is 2.475195 seconds.
+Trimodal-Normal, Trial: 29/100 sample size: 32768
+estimate size: 1  7415
+Elapsed time is 2.399204 seconds.
+Trimodal-Normal, Trial: 30/100 sample size: 32768
+estimate size: 1  8600
+Elapsed time is 2.536796 seconds.
+Trimodal-Normal, Trial: 31/100 sample size: 32768
+estimate size: 1  6319
+Elapsed time is 2.544000 seconds.
+Trimodal-Normal, Trial: 32/100 sample size: 32768
+estimate size: 1  8638
+Elapsed time is 2.324711 seconds.
+Trimodal-Normal, Trial: 33/100 sample size: 32768
+estimate size: 1  7378
+Elapsed time is 2.184170 seconds.
+Trimodal-Normal, Trial: 34/100 sample size: 32768
+estimate size: 1  5114
+Elapsed time is 2.176684 seconds.
+Trimodal-Normal, Trial: 35/100 sample size: 32768
+estimate size: 1  9742
+Elapsed time is 2.480562 seconds.
+Trimodal-Normal, Trial: 36/100 sample size: 32768
+estimate size: 1  8614
+Elapsed time is 2.336702 seconds.
+Trimodal-Normal, Trial: 37/100 sample size: 32768
+estimate size: 1  8532
+Elapsed time is 2.540373 seconds.
+Trimodal-Normal, Trial: 38/100 sample size: 32768
+estimate size: 1  7414
+Elapsed time is 2.561373 seconds.
+Trimodal-Normal, Trial: 39/100 sample size: 32768
+estimate size: 1  9779
+Elapsed time is 2.141088 seconds.
+Trimodal-Normal, Trial: 40/100 sample size: 32768
+estimate size: 1  7385
+Elapsed time is 2.388058 seconds.
+Trimodal-Normal, Trial: 41/100 sample size: 32768
+estimate size: 1  7342
+Elapsed time is 2.319845 seconds.
+Trimodal-Normal, Trial: 42/100 sample size: 32768
+estimate size: 1  8515
+Elapsed time is 2.441643 seconds.
+Trimodal-Normal, Trial: 43/100 sample size: 32768
+estimate size: 1  8601
+Elapsed time is 2.366244 seconds.
+Trimodal-Normal, Trial: 44/100 sample size: 32768
+estimate size: 1  7326
+Elapsed time is 2.509194 seconds.
+Trimodal-Normal, Trial: 45/100 sample size: 32768
+estimate size: 1  9734
+Elapsed time is 2.445499 seconds.
+Trimodal-Normal, Trial: 46/100 sample size: 32768
+estimate size: 1  8643
+Elapsed time is 2.435702 seconds.
+Trimodal-Normal, Trial: 47/100 sample size: 32768
+estimate size: 1  7522
+Elapsed time is 2.287066 seconds.
+Trimodal-Normal, Trial: 48/100 sample size: 32768
+estimate size: 1  8605
+Elapsed time is 2.432257 seconds.
+Trimodal-Normal, Trial: 49/100 sample size: 32768
+estimate size: 1  7395
+Elapsed time is 2.413785 seconds.
+Trimodal-Normal, Trial: 50/100 sample size: 32768
+estimate size: 1  9799
+Elapsed time is 2.491629 seconds.
+Trimodal-Normal, Trial: 51/100 sample size: 32768
+estimate size: 1  9727
+Elapsed time is 2.531515 seconds.
+Trimodal-Normal, Trial: 52/100 sample size: 32768
+estimate size: 1  9748
+Elapsed time is 2.438402 seconds.
+Trimodal-Normal, Trial: 53/100 sample size: 32768
+estimate size: 1  7490
+Elapsed time is 2.448699 seconds.
+Trimodal-Normal, Trial: 54/100 sample size: 32768
+estimate size: 1  9744
+Elapsed time is 2.414962 seconds.
+Trimodal-Normal, Trial: 55/100 sample size: 32768
+estimate size: 1  9744
+Elapsed time is 2.417041 seconds.
+Trimodal-Normal, Trial: 56/100 sample size: 32768
+estimate size: 1  7415
+Elapsed time is 2.435806 seconds.
+Trimodal-Normal, Trial: 57/100 sample size: 32768
+estimate size: 1  9777
+Elapsed time is 2.407767 seconds.
+Trimodal-Normal, Trial: 58/100 sample size: 32768
+estimate size: 1  7539
+Elapsed time is 2.579860 seconds.
+Trimodal-Normal, Trial: 59/100 sample size: 32768
+estimate size: 1  8534
+Elapsed time is 2.718052 seconds.
+Trimodal-Normal, Trial: 60/100 sample size: 32768
+estimate size: 1  8622
+Elapsed time is 2.170175 seconds.
+Trimodal-Normal, Trial: 61/100 sample size: 32768
+estimate size: 1  8591
+Elapsed time is 2.470474 seconds.
+Trimodal-Normal, Trial: 62/100 sample size: 32768
+estimate size: 1  7422
+Elapsed time is 2.254658 seconds.
+Trimodal-Normal, Trial: 63/100 sample size: 32768
+estimate size: 1  7426
+Elapsed time is 2.268146 seconds.
+Trimodal-Normal, Trial: 64/100 sample size: 32768
+estimate size: 1  8557
+Elapsed time is 2.373362 seconds.
+Trimodal-Normal, Trial: 65/100 sample size: 32768
+estimate size: 1  8626
+Elapsed time is 2.622565 seconds.
+Trimodal-Normal, Trial: 66/100 sample size: 32768
+estimate size: 1  7433
+Elapsed time is 2.630706 seconds.
+Trimodal-Normal, Trial: 67/100 sample size: 32768
+estimate size: 1  9806
+Elapsed time is 2.324903 seconds.
+Trimodal-Normal, Trial: 68/100 sample size: 32768
+estimate size: 1  7369
+Elapsed time is 2.529311 seconds.
+Trimodal-Normal, Trial: 69/100 sample size: 32768
+estimate size: 1  8655
+Elapsed time is 2.498325 seconds.
+Trimodal-Normal, Trial: 70/100 sample size: 32768
+estimate size: 1  8641
+Elapsed time is 2.494788 seconds.
+Trimodal-Normal, Trial: 71/100 sample size: 32768
+estimate size: 1  8558
+Elapsed time is 2.601723 seconds.
+Trimodal-Normal, Trial: 72/100 sample size: 32768
+estimate size: 1  9756
+Elapsed time is 2.341292 seconds.
+Trimodal-Normal, Trial: 73/100 sample size: 32768
+estimate size: 1  8649
+Elapsed time is 2.489049 seconds.
+Trimodal-Normal, Trial: 74/100 sample size: 32768
+estimate size: 1  7472
+Elapsed time is 2.303066 seconds.
+Trimodal-Normal, Trial: 75/100 sample size: 32768
+estimate size: 1  5145
+Elapsed time is 2.508160 seconds.
+Trimodal-Normal, Trial: 76/100 sample size: 32768
+estimate size: 1  8497
+Elapsed time is 2.312524 seconds.
+Trimodal-Normal, Trial: 77/100 sample size: 32768
+estimate size: 1  9756
+Elapsed time is 2.428714 seconds.
+Trimodal-Normal, Trial: 78/100 sample size: 32768
+estimate size: 1  8606
+Elapsed time is 2.645478 seconds.
+Trimodal-Normal, Trial: 79/100 sample size: 32768
+estimate size: 1  9830
+Elapsed time is 2.263373 seconds.
+Trimodal-Normal, Trial: 80/100 sample size: 32768
+estimate size: 1  8496
+Elapsed time is 2.489822 seconds.
+Trimodal-Normal, Trial: 81/100 sample size: 32768
+estimate size: 1  9796
+Elapsed time is 2.603145 seconds.
+Trimodal-Normal, Trial: 82/100 sample size: 32768
+estimate size: 1  7602
+Elapsed time is 2.265761 seconds.
+Trimodal-Normal, Trial: 83/100 sample size: 32768
+estimate size: 1  7509
+Elapsed time is 2.387921 seconds.
+Trimodal-Normal, Trial: 84/100 sample size: 32768
+estimate size: 1  9783
+Elapsed time is 2.393132 seconds.
+Trimodal-Normal, Trial: 85/100 sample size: 32768
+estimate size: 1  8564
+Elapsed time is 2.333437 seconds.
+Trimodal-Normal, Trial: 86/100 sample size: 32768
+estimate size: 1  8486
+Elapsed time is 2.305892 seconds.
+Trimodal-Normal, Trial: 87/100 sample size: 32768
+estimate size: 1  8521
+Elapsed time is 2.417232 seconds.
+Trimodal-Normal, Trial: 88/100 sample size: 32768
+estimate size: 1  7467
+Elapsed time is 2.465031 seconds.
+Trimodal-Normal, Trial: 89/100 sample size: 32768
+estimate size: 1  7374
+Elapsed time is 2.250863 seconds.
+Trimodal-Normal, Trial: 90/100 sample size: 32768
+estimate size: 1  9808
+Elapsed time is 2.509842 seconds.
+Trimodal-Normal, Trial: 91/100 sample size: 32768
+estimate size: 1  7406
+Elapsed time is 2.343530 seconds.
+Trimodal-Normal, Trial: 92/100 sample size: 32768
+estimate size: 1  8587
+Elapsed time is 2.365470 seconds.
+Trimodal-Normal, Trial: 93/100 sample size: 32768
+estimate size: 1  9803
+Elapsed time is 2.470445 seconds.
+Trimodal-Normal, Trial: 94/100 sample size: 32768
+estimate size: 1  9894
+Elapsed time is 2.145736 seconds.
+Trimodal-Normal, Trial: 95/100 sample size: 32768
+estimate size: 1  7332
+Elapsed time is 2.275895 seconds.
+Trimodal-Normal, Trial: 96/100 sample size: 32768
+estimate size: 1  8552
+Elapsed time is 2.324240 seconds.
+Trimodal-Normal, Trial: 97/100 sample size: 32768
+estimate size: 1  9815
+Elapsed time is 2.286463 seconds.
+Trimodal-Normal, Trial: 98/100 sample size: 32768
+estimate size: 1  9561
+Elapsed time is 2.322578 seconds.
+Trimodal-Normal, Trial: 99/100 sample size: 32768
+estimate size: 1  8477
+Elapsed time is 2.439403 seconds.
+Trimodal-Normal, Trial: 100/100 sample size: 32768
+estimate size: 1  8622
+Elapsed time is 3.834905 seconds.
+Trimodal-Normal, Trial: 1/100 sample size: 65536
+estimate size: 1  9535
+Elapsed time is 3.747783 seconds.
+Trimodal-Normal, Trial: 2/100 sample size: 65536
+estimate size: 1  9458
+Elapsed time is 3.951136 seconds.
+Trimodal-Normal, Trial: 3/100 sample size: 65536
+estimate size: 1  10713
+Elapsed time is 3.796514 seconds.
+Trimodal-Normal, Trial: 4/100 sample size: 65536
+estimate size: 1  8343
+Elapsed time is 3.705438 seconds.
+Trimodal-Normal, Trial: 5/100 sample size: 65536
+estimate size: 1  8310
+Elapsed time is 3.765322 seconds.
+Trimodal-Normal, Trial: 6/100 sample size: 65536
+estimate size: 1  9464
+Elapsed time is 4.099040 seconds.
+Trimodal-Normal, Trial: 7/100 sample size: 65536
+estimate size: 1  10682
+Elapsed time is 4.035392 seconds.
+Trimodal-Normal, Trial: 8/100 sample size: 65536
+estimate size: 1  9496
+Elapsed time is 3.375466 seconds.
+Trimodal-Normal, Trial: 9/100 sample size: 65536
+estimate size: 1  9443
+Elapsed time is 3.628092 seconds.
+Trimodal-Normal, Trial: 10/100 sample size: 65536
+estimate size: 1  9397
+Elapsed time is 3.895378 seconds.
+Trimodal-Normal, Trial: 11/100 sample size: 65536
+estimate size: 1  10706
+Elapsed time is 3.625118 seconds.
+Trimodal-Normal, Trial: 12/100 sample size: 65536
+estimate size: 1  9448
+Elapsed time is 3.770281 seconds.
+Trimodal-Normal, Trial: 13/100 sample size: 65536
+estimate size: 1  10750
+Elapsed time is 3.815533 seconds.
+Trimodal-Normal, Trial: 14/100 sample size: 65536
+estimate size: 1  10607
+Elapsed time is 3.873228 seconds.
+Trimodal-Normal, Trial: 15/100 sample size: 65536
+estimate size: 1  10643
+Elapsed time is 3.831076 seconds.
+Trimodal-Normal, Trial: 16/100 sample size: 65536
+estimate size: 1  10634
+Elapsed time is 3.669887 seconds.
+Trimodal-Normal, Trial: 17/100 sample size: 65536
+estimate size: 1  9547
+Elapsed time is 4.143406 seconds.
+Trimodal-Normal, Trial: 18/100 sample size: 65536
+estimate size: 1  8297
+Elapsed time is 4.033879 seconds.
+Trimodal-Normal, Trial: 19/100 sample size: 65536
+estimate size: 1  8377
+Elapsed time is 3.784643 seconds.
+Trimodal-Normal, Trial: 20/100 sample size: 65536
+estimate size: 1  10670
+Elapsed time is 3.852431 seconds.
+Trimodal-Normal, Trial: 21/100 sample size: 65536
+estimate size: 1  9476
+Elapsed time is 3.676271 seconds.
+Trimodal-Normal, Trial: 22/100 sample size: 65536
+estimate size: 1  9485
+Elapsed time is 4.073204 seconds.
+Trimodal-Normal, Trial: 23/100 sample size: 65536
+estimate size: 1  10711
+Elapsed time is 3.504802 seconds.
+Trimodal-Normal, Trial: 24/100 sample size: 65536
+estimate size: 1  9504
+Elapsed time is 3.844421 seconds.
+Trimodal-Normal, Trial: 25/100 sample size: 65536
+estimate size: 1  10651
+Elapsed time is 3.698976 seconds.
+Trimodal-Normal, Trial: 26/100 sample size: 65536
+estimate size: 1  9462
+Elapsed time is 3.983265 seconds.
+Trimodal-Normal, Trial: 27/100 sample size: 65536
+estimate size: 1  10629
+Elapsed time is 4.164805 seconds.
+Trimodal-Normal, Trial: 28/100 sample size: 65536
+estimate size: 1  10697
+Elapsed time is 3.956121 seconds.
+Trimodal-Normal, Trial: 29/100 sample size: 65536
+estimate size: 1  10747
+Elapsed time is 3.674745 seconds.
+Trimodal-Normal, Trial: 30/100 sample size: 65536
+estimate size: 1  9425
+Elapsed time is 3.855670 seconds.
+Trimodal-Normal, Trial: 31/100 sample size: 65536
+estimate size: 1  10692
+Elapsed time is 4.072952 seconds.
+Trimodal-Normal, Trial: 32/100 sample size: 65536
+estimate size: 1  10621
+Elapsed time is 3.993895 seconds.
+Trimodal-Normal, Trial: 33/100 sample size: 65536
+estimate size: 1  10780
+Elapsed time is 3.976737 seconds.
+Trimodal-Normal, Trial: 34/100 sample size: 65536
+estimate size: 1  10756
+Elapsed time is 3.879947 seconds.
+Trimodal-Normal, Trial: 35/100 sample size: 65536
+estimate size: 1  10679
+Elapsed time is 4.025405 seconds.
+Trimodal-Normal, Trial: 36/100 sample size: 65536
+estimate size: 1  9528
+Elapsed time is 3.754613 seconds.
+Trimodal-Normal, Trial: 37/100 sample size: 65536
+estimate size: 1  9542
+Elapsed time is 3.860906 seconds.
+Trimodal-Normal, Trial: 38/100 sample size: 65536
+estimate size: 1  10693
+Elapsed time is 3.838276 seconds.
+Trimodal-Normal, Trial: 39/100 sample size: 65536
+estimate size: 1  10692
+Elapsed time is 3.908191 seconds.
+Trimodal-Normal, Trial: 40/100 sample size: 65536
+estimate size: 1  10627
+Elapsed time is 4.117134 seconds.
+Trimodal-Normal, Trial: 41/100 sample size: 65536
+estimate size: 1  9481
+Elapsed time is 3.218365 seconds.
+Trimodal-Normal, Trial: 42/100 sample size: 65536
+estimate size: 1  6057
+Elapsed time is 3.833754 seconds.
+Trimodal-Normal, Trial: 43/100 sample size: 65536
+estimate size: 1  10727
+Elapsed time is 3.938012 seconds.
+Trimodal-Normal, Trial: 44/100 sample size: 65536
+estimate size: 1  10628
+Elapsed time is 4.030116 seconds.
+Trimodal-Normal, Trial: 45/100 sample size: 65536
+estimate size: 1  10749
+Elapsed time is 3.673031 seconds.
+Trimodal-Normal, Trial: 46/100 sample size: 65536
+estimate size: 1  10659
+Elapsed time is 3.541210 seconds.
+Trimodal-Normal, Trial: 47/100 sample size: 65536
+estimate size: 1  9428
+Elapsed time is 3.829675 seconds.
+Trimodal-Normal, Trial: 48/100 sample size: 65536
+estimate size: 1  8328
+Elapsed time is 3.945316 seconds.
+Trimodal-Normal, Trial: 49/100 sample size: 65536
+estimate size: 1  10679
+Elapsed time is 3.853130 seconds.
+Trimodal-Normal, Trial: 50/100 sample size: 65536
+estimate size: 1  10723
+Elapsed time is 3.913842 seconds.
+Trimodal-Normal, Trial: 51/100 sample size: 65536
+estimate size: 1  10623
+Elapsed time is 3.761323 seconds.
+Trimodal-Normal, Trial: 52/100 sample size: 65536
+estimate size: 1  8286
+Elapsed time is 3.751805 seconds.
+Trimodal-Normal, Trial: 53/100 sample size: 65536
+estimate size: 1  7146
+Elapsed time is 3.707225 seconds.
+Trimodal-Normal, Trial: 54/100 sample size: 65536
+estimate size: 1  10651
+Elapsed time is 4.138060 seconds.
+Trimodal-Normal, Trial: 55/100 sample size: 65536
+estimate size: 1  10778
+Elapsed time is 3.607547 seconds.
+Trimodal-Normal, Trial: 56/100 sample size: 65536
+estimate size: 1  9502
+Elapsed time is 4.150071 seconds.
+Trimodal-Normal, Trial: 57/100 sample size: 65536
+estimate size: 1  9457
+Elapsed time is 3.842406 seconds.
+Trimodal-Normal, Trial: 58/100 sample size: 65536
+estimate size: 1  9494
+Elapsed time is 3.874372 seconds.
+Trimodal-Normal, Trial: 59/100 sample size: 65536
+estimate size: 1  10720
+Elapsed time is 4.055355 seconds.
+Trimodal-Normal, Trial: 60/100 sample size: 65536
+estimate size: 1  10619
+Elapsed time is 3.759203 seconds.
+Trimodal-Normal, Trial: 61/100 sample size: 65536
+estimate size: 1  10740
+Elapsed time is 3.614396 seconds.
+Trimodal-Normal, Trial: 62/100 sample size: 65536
+estimate size: 1  9553
+Elapsed time is 3.632839 seconds.
+Trimodal-Normal, Trial: 63/100 sample size: 65536
+estimate size: 1  10647
+Elapsed time is 3.892110 seconds.
+Trimodal-Normal, Trial: 64/100 sample size: 65536
+estimate size: 1  10703
+Elapsed time is 3.924914 seconds.
+Trimodal-Normal, Trial: 65/100 sample size: 65536
+estimate size: 1  10687
+Elapsed time is 3.761351 seconds.
+Trimodal-Normal, Trial: 66/100 sample size: 65536
+estimate size: 1  8385
+Elapsed time is 3.688733 seconds.
+Trimodal-Normal, Trial: 67/100 sample size: 65536
+estimate size: 1  10629
+Elapsed time is 3.760050 seconds.
+Trimodal-Normal, Trial: 68/100 sample size: 65536
+estimate size: 1  10769
+Elapsed time is 4.084362 seconds.
+Trimodal-Normal, Trial: 69/100 sample size: 65536
+estimate size: 1  10746
+Elapsed time is 3.797755 seconds.
+Trimodal-Normal, Trial: 70/100 sample size: 65536
+estimate size: 1  8290
+Elapsed time is 3.485850 seconds.
+Trimodal-Normal, Trial: 71/100 sample size: 65536
+estimate size: 1  8182
+Elapsed time is 3.664069 seconds.
+Trimodal-Normal, Trial: 72/100 sample size: 65536
+estimate size: 1  10673
+Elapsed time is 3.612851 seconds.
+Trimodal-Normal, Trial: 73/100 sample size: 65536
+estimate size: 1  8274
+Elapsed time is 3.699203 seconds.
+Trimodal-Normal, Trial: 74/100 sample size: 65536
+estimate size: 1  9468
+Elapsed time is 4.035553 seconds.
+Trimodal-Normal, Trial: 75/100 sample size: 65536
+estimate size: 1  10606
+Elapsed time is 4.018944 seconds.
+Trimodal-Normal, Trial: 76/100 sample size: 65536
+estimate size: 1  9442
+Elapsed time is 3.803688 seconds.
+Trimodal-Normal, Trial: 77/100 sample size: 65536
+estimate size: 1  9479
+Elapsed time is 3.598517 seconds.
+Trimodal-Normal, Trial: 78/100 sample size: 65536
+estimate size: 1  9439
+Elapsed time is 3.782021 seconds.
+Trimodal-Normal, Trial: 79/100 sample size: 65536
+estimate size: 1  10742
+Elapsed time is 3.682497 seconds.
+Trimodal-Normal, Trial: 80/100 sample size: 65536
+estimate size: 1  10703
+Elapsed time is 3.710234 seconds.
+Trimodal-Normal, Trial: 81/100 sample size: 65536
+estimate size: 1  7132
+Elapsed time is 3.728413 seconds.
+Trimodal-Normal, Trial: 82/100 sample size: 65536
+estimate size: 1  8284
+Elapsed time is 3.870513 seconds.
+Trimodal-Normal, Trial: 83/100 sample size: 65536
+estimate size: 1  10633
+Elapsed time is 3.755847 seconds.
+Trimodal-Normal, Trial: 84/100 sample size: 65536
+estimate size: 1  10717
+Elapsed time is 3.552726 seconds.
+Trimodal-Normal, Trial: 85/100 sample size: 65536
+estimate size: 1  10714
+Elapsed time is 3.893559 seconds.
+Trimodal-Normal, Trial: 86/100 sample size: 65536
+estimate size: 1  8304
+Elapsed time is 4.086370 seconds.
+Trimodal-Normal, Trial: 87/100 sample size: 65536
+estimate size: 1  10702
+Elapsed time is 3.840899 seconds.
+Trimodal-Normal, Trial: 88/100 sample size: 65536
+estimate size: 1  10684
+Elapsed time is 3.604049 seconds.
+Trimodal-Normal, Trial: 89/100 sample size: 65536
+estimate size: 1  10604
+Elapsed time is 4.064424 seconds.
+Trimodal-Normal, Trial: 90/100 sample size: 65536
+estimate size: 1  9538
+Elapsed time is 3.559673 seconds.
+Trimodal-Normal, Trial: 91/100 sample size: 65536
+estimate size: 1  10679
+Elapsed time is 3.338730 seconds.
+Trimodal-Normal, Trial: 92/100 sample size: 65536
+estimate size: 1  9474
+Elapsed time is 3.709350 seconds.
+Trimodal-Normal, Trial: 93/100 sample size: 65536
+estimate size: 1  10708
+Elapsed time is 3.938489 seconds.
+Trimodal-Normal, Trial: 94/100 sample size: 65536
+estimate size: 1  10758
+Elapsed time is 3.742983 seconds.
+Trimodal-Normal, Trial: 95/100 sample size: 65536
+estimate size: 1  10671
+Elapsed time is 3.774915 seconds.
+Trimodal-Normal, Trial: 96/100 sample size: 65536
+estimate size: 1  10691
+Elapsed time is 3.852435 seconds.
+Trimodal-Normal, Trial: 97/100 sample size: 65536
+estimate size: 1  10694
+Elapsed time is 3.867695 seconds.
+Trimodal-Normal, Trial: 98/100 sample size: 65536
+estimate size: 1  9442
+Elapsed time is 4.129153 seconds.
+Trimodal-Normal, Trial: 99/100 sample size: 65536
+estimate size: 1  10691
+Elapsed time is 3.871346 seconds.
+Trimodal-Normal, Trial: 100/100 sample size: 65536
+estimate size: 1  10693
+Elapsed time is 6.648921 seconds.
+Trimodal-Normal, Trial: 1/100 sample size: 131072
+estimate size: 1  11268
+Elapsed time is 6.661773 seconds.
+Trimodal-Normal, Trial: 2/100 sample size: 131072
+estimate size: 1  12581
+Elapsed time is 6.252508 seconds.
+Trimodal-Normal, Trial: 3/100 sample size: 131072
+estimate size: 1  11262
+Elapsed time is 6.511866 seconds.
+Trimodal-Normal, Trial: 4/100 sample size: 131072
+estimate size: 1  12589
+Elapsed time is 7.164471 seconds.
+Trimodal-Normal, Trial: 5/100 sample size: 131072
+estimate size: 1  11359
+Elapsed time is 6.857662 seconds.
+Trimodal-Normal, Trial: 6/100 sample size: 131072
+estimate size: 1  12567
+Elapsed time is 6.443770 seconds.
+Trimodal-Normal, Trial: 7/100 sample size: 131072
+estimate size: 1  11304
+Elapsed time is 6.644179 seconds.
+Trimodal-Normal, Trial: 8/100 sample size: 131072
+estimate size: 1  12583
+Elapsed time is 7.351615 seconds.
+Trimodal-Normal, Trial: 9/100 sample size: 131072
+estimate size: 1  11318
+Elapsed time is 6.788520 seconds.
+Trimodal-Normal, Trial: 10/100 sample size: 131072
+estimate size: 1  11300
+Elapsed time is 6.495764 seconds.
+Trimodal-Normal, Trial: 11/100 sample size: 131072
+estimate size: 1  12551
+Elapsed time is 6.420690 seconds.
+Trimodal-Normal, Trial: 12/100 sample size: 131072
+estimate size: 1  10251
+Elapsed time is 6.611440 seconds.
+Trimodal-Normal, Trial: 13/100 sample size: 131072
+estimate size: 1  12571
+Elapsed time is 7.044982 seconds.
+Trimodal-Normal, Trial: 14/100 sample size: 131072
+estimate size: 1  12539
+Elapsed time is 6.282523 seconds.
+Trimodal-Normal, Trial: 15/100 sample size: 131072
+estimate size: 1  11359
+Elapsed time is 6.487566 seconds.
+Trimodal-Normal, Trial: 16/100 sample size: 131072
+estimate size: 1  12484
+Elapsed time is 6.688533 seconds.
+Trimodal-Normal, Trial: 17/100 sample size: 131072
+estimate size: 1  12573
+Elapsed time is 6.881954 seconds.
+Trimodal-Normal, Trial: 18/100 sample size: 131072
+estimate size: 1  12518
+Elapsed time is 6.351881 seconds.
+Trimodal-Normal, Trial: 19/100 sample size: 131072
+estimate size: 1  12546
+Elapsed time is 6.684211 seconds.
+Trimodal-Normal, Trial: 20/100 sample size: 131072
+estimate size: 1  12461
+Elapsed time is 6.559061 seconds.
+Trimodal-Normal, Trial: 21/100 sample size: 131072
+estimate size: 1  12517
+Elapsed time is 6.679039 seconds.
+Trimodal-Normal, Trial: 22/100 sample size: 131072
+estimate size: 1  11345
+Elapsed time is 6.895017 seconds.
+Trimodal-Normal, Trial: 23/100 sample size: 131072
+estimate size: 1  12582
+Elapsed time is 6.620281 seconds.
+Trimodal-Normal, Trial: 24/100 sample size: 131072
+estimate size: 1  11291
+Elapsed time is 6.520782 seconds.
+Trimodal-Normal, Trial: 25/100 sample size: 131072
+estimate size: 1  10121
+Elapsed time is 6.415112 seconds.
+Trimodal-Normal, Trial: 26/100 sample size: 131072
+estimate size: 1  10129
+Elapsed time is 6.905559 seconds.
+Trimodal-Normal, Trial: 27/100 sample size: 131072
+estimate size: 1  12586
+Elapsed time is 6.560109 seconds.
+Trimodal-Normal, Trial: 28/100 sample size: 131072
+estimate size: 1  12595
+Elapsed time is 6.941814 seconds.
+Trimodal-Normal, Trial: 29/100 sample size: 131072
+estimate size: 1  12568
+Elapsed time is 6.571184 seconds.
+Trimodal-Normal, Trial: 30/100 sample size: 131072
+estimate size: 1  12524
+Elapsed time is 6.908610 seconds.
+Trimodal-Normal, Trial: 31/100 sample size: 131072
+estimate size: 1  12585
+Elapsed time is 6.637556 seconds.
+Trimodal-Normal, Trial: 32/100 sample size: 131072
+estimate size: 1  11273
+Elapsed time is 7.252389 seconds.
+Trimodal-Normal, Trial: 33/100 sample size: 131072
+estimate size: 1  12583
+Elapsed time is 6.592341 seconds.
+Trimodal-Normal, Trial: 34/100 sample size: 131072
+estimate size: 1  11313
+Elapsed time is 6.708119 seconds.
+Trimodal-Normal, Trial: 35/100 sample size: 131072
+estimate size: 1  11344
+Elapsed time is 6.534002 seconds.
+Trimodal-Normal, Trial: 36/100 sample size: 131072
+estimate size: 1  12599
+Elapsed time is 6.734905 seconds.
+Trimodal-Normal, Trial: 37/100 sample size: 131072
+estimate size: 1  11333
+Elapsed time is 6.391850 seconds.
+Trimodal-Normal, Trial: 38/100 sample size: 131072
+estimate size: 1  12470
+Elapsed time is 7.002008 seconds.
+Trimodal-Normal, Trial: 39/100 sample size: 131072
+estimate size: 1  11391
+Elapsed time is 6.373643 seconds.
+Trimodal-Normal, Trial: 40/100 sample size: 131072
+estimate size: 1  11310
+Elapsed time is 6.679066 seconds.
+Trimodal-Normal, Trial: 41/100 sample size: 131072
+estimate size: 1  11362
+Elapsed time is 6.213309 seconds.
+Trimodal-Normal, Trial: 42/100 sample size: 131072
+estimate size: 1  12494
+Elapsed time is 7.261889 seconds.
+Trimodal-Normal, Trial: 43/100 sample size: 131072
+estimate size: 1  12516
+Elapsed time is 7.027153 seconds.
+Trimodal-Normal, Trial: 44/100 sample size: 131072
+estimate size: 1  12503
+Elapsed time is 6.303959 seconds.
+Trimodal-Normal, Trial: 45/100 sample size: 131072
+estimate size: 1  12495
+Elapsed time is 6.630487 seconds.
+Trimodal-Normal, Trial: 46/100 sample size: 131072
+estimate size: 1  12576
+Elapsed time is 6.824058 seconds.
+Trimodal-Normal, Trial: 47/100 sample size: 131072
+estimate size: 1  12583
+Elapsed time is 6.368196 seconds.
+Trimodal-Normal, Trial: 48/100 sample size: 131072
+estimate size: 1  11035
+Elapsed time is 7.117046 seconds.
+Trimodal-Normal, Trial: 49/100 sample size: 131072
+estimate size: 1  12519
+Elapsed time is 6.634591 seconds.
+Trimodal-Normal, Trial: 50/100 sample size: 131072
+estimate size: 1  10099
+Elapsed time is 6.895884 seconds.
+Trimodal-Normal, Trial: 51/100 sample size: 131072
+estimate size: 1  11338
+Elapsed time is 6.619935 seconds.
+Trimodal-Normal, Trial: 52/100 sample size: 131072
+estimate size: 1  11369
+Elapsed time is 6.565534 seconds.
+Trimodal-Normal, Trial: 53/100 sample size: 131072
+estimate size: 1  12540
+Elapsed time is 6.829435 seconds.
+Trimodal-Normal, Trial: 54/100 sample size: 131072
+estimate size: 1  12561
+Elapsed time is 6.436785 seconds.
+Trimodal-Normal, Trial: 55/100 sample size: 131072
+estimate size: 1  10120
+Elapsed time is 6.732012 seconds.
+Trimodal-Normal, Trial: 56/100 sample size: 131072
+estimate size: 1  12589
+Elapsed time is 6.389019 seconds.
+Trimodal-Normal, Trial: 57/100 sample size: 131072
+estimate size: 1  12482
+Elapsed time is 6.937129 seconds.
+Trimodal-Normal, Trial: 58/100 sample size: 131072
+estimate size: 1  12580
+Elapsed time is 6.265570 seconds.
+Trimodal-Normal, Trial: 59/100 sample size: 131072
+estimate size: 1  11309
+Elapsed time is 7.442901 seconds.
+Trimodal-Normal, Trial: 60/100 sample size: 131072
+estimate size: 1  12586
+Elapsed time is 6.905196 seconds.
+Trimodal-Normal, Trial: 61/100 sample size: 131072
+estimate size: 1  11369
+Elapsed time is 6.911885 seconds.
+Trimodal-Normal, Trial: 62/100 sample size: 131072
+estimate size: 1  12575
+Elapsed time is 6.416688 seconds.
+Trimodal-Normal, Trial: 63/100 sample size: 131072
+estimate size: 1  12544
+Elapsed time is 6.900586 seconds.
+Trimodal-Normal, Trial: 64/100 sample size: 131072
+estimate size: 1  12563
+Elapsed time is 6.160302 seconds.
+Trimodal-Normal, Trial: 65/100 sample size: 131072
+estimate size: 1  10090
+Elapsed time is 5.985325 seconds.
+Trimodal-Normal, Trial: 66/100 sample size: 131072
+estimate size: 1  11329
+Elapsed time is 6.294272 seconds.
+Trimodal-Normal, Trial: 67/100 sample size: 131072
+estimate size: 1  10101
+Elapsed time is 6.238359 seconds.
+Trimodal-Normal, Trial: 68/100 sample size: 131072
+estimate size: 1  11349
+Elapsed time is 6.085347 seconds.
+Trimodal-Normal, Trial: 69/100 sample size: 131072
+estimate size: 1  11338
+Elapsed time is 6.935130 seconds.
+Trimodal-Normal, Trial: 70/100 sample size: 131072
+estimate size: 1  11335
+Elapsed time is 6.539892 seconds.
+Trimodal-Normal, Trial: 71/100 sample size: 131072
+estimate size: 1  10158
+Elapsed time is 6.815978 seconds.
+Trimodal-Normal, Trial: 72/100 sample size: 131072
+estimate size: 1  11320
+Elapsed time is 6.211662 seconds.
+Trimodal-Normal, Trial: 73/100 sample size: 131072
+estimate size: 1  12620
+Elapsed time is 7.491380 seconds.
+Trimodal-Normal, Trial: 74/100 sample size: 131072
+estimate size: 1  11356
+Elapsed time is 6.767981 seconds.
+Trimodal-Normal, Trial: 75/100 sample size: 131072
+estimate size: 1  9046
+Elapsed time is 6.671707 seconds.
+Trimodal-Normal, Trial: 76/100 sample size: 131072
+estimate size: 1  11310
+Elapsed time is 6.990902 seconds.
+Trimodal-Normal, Trial: 77/100 sample size: 131072
+estimate size: 1  12529
+Elapsed time is 7.221663 seconds.
+Trimodal-Normal, Trial: 78/100 sample size: 131072
+estimate size: 1  11317
+Elapsed time is 6.263863 seconds.
+Trimodal-Normal, Trial: 79/100 sample size: 131072
+estimate size: 1  11283
+Elapsed time is 6.545747 seconds.
+Trimodal-Normal, Trial: 80/100 sample size: 131072
+estimate size: 1  12501
+Elapsed time is 6.319503 seconds.
+Trimodal-Normal, Trial: 81/100 sample size: 131072
+estimate size: 1  12598
+Elapsed time is 6.411711 seconds.
+Trimodal-Normal, Trial: 82/100 sample size: 131072
+estimate size: 1  11342
+Elapsed time is 6.679174 seconds.
+Trimodal-Normal, Trial: 83/100 sample size: 131072
+estimate size: 1  11353
+Elapsed time is 6.595077 seconds.
+Trimodal-Normal, Trial: 84/100 sample size: 131072
+estimate size: 1  11342
+Elapsed time is 6.491496 seconds.
+Trimodal-Normal, Trial: 85/100 sample size: 131072
+estimate size: 1  12525
+Elapsed time is 7.204439 seconds.
+Trimodal-Normal, Trial: 86/100 sample size: 131072
+estimate size: 1  11335
+Elapsed time is 6.155140 seconds.
+Trimodal-Normal, Trial: 87/100 sample size: 131072
+estimate size: 1  12533
+Elapsed time is 6.262524 seconds.
+Trimodal-Normal, Trial: 88/100 sample size: 131072
+estimate size: 1  10186
+Elapsed time is 6.487087 seconds.
+Trimodal-Normal, Trial: 89/100 sample size: 131072
+estimate size: 1  11330
+Elapsed time is 6.609823 seconds.
+Trimodal-Normal, Trial: 90/100 sample size: 131072
+estimate size: 1  12503
+Elapsed time is 6.418151 seconds.
+Trimodal-Normal, Trial: 91/100 sample size: 131072
+estimate size: 1  12605
+Elapsed time is 5.741441 seconds.
+Trimodal-Normal, Trial: 92/100 sample size: 131072
+estimate size: 1  7945
+Elapsed time is 6.445218 seconds.
+Trimodal-Normal, Trial: 93/100 sample size: 131072
+estimate size: 1  11363
+Elapsed time is 6.375580 seconds.
+Trimodal-Normal, Trial: 94/100 sample size: 131072
+estimate size: 1  12572
+Elapsed time is 6.426210 seconds.
+Trimodal-Normal, Trial: 95/100 sample size: 131072
+estimate size: 1  11306
+Elapsed time is 6.389997 seconds.
+Trimodal-Normal, Trial: 96/100 sample size: 131072
+estimate size: 1  11317
+Elapsed time is 6.863121 seconds.
+Trimodal-Normal, Trial: 97/100 sample size: 131072
+estimate size: 1  12591
+Elapsed time is 6.407295 seconds.
+Trimodal-Normal, Trial: 98/100 sample size: 131072
+estimate size: 1  12560
+Elapsed time is 6.822649 seconds.
+Trimodal-Normal, Trial: 99/100 sample size: 131072
+estimate size: 1  12576
+Elapsed time is 6.346027 seconds.
+Trimodal-Normal, Trial: 100/100 sample size: 131072
+estimate size: 1  11261
+Elapsed time is 13.005429 seconds.
+Trimodal-Normal, Trial: 1/100 sample size: 262144
+estimate size: 1  15100
+Elapsed time is 13.075107 seconds.
+Trimodal-Normal, Trial: 2/100 sample size: 262144
+estimate size: 1  15024
+Elapsed time is 13.129768 seconds.
+Trimodal-Normal, Trial: 3/100 sample size: 262144
+estimate size: 1  15072
+Elapsed time is 12.755032 seconds.
+Trimodal-Normal, Trial: 4/100 sample size: 262144
+estimate size: 1  15115
+Elapsed time is 12.449623 seconds.
+Trimodal-Normal, Trial: 5/100 sample size: 262144
+estimate size: 1  16378
+Elapsed time is 12.986658 seconds.
+Trimodal-Normal, Trial: 6/100 sample size: 262144
+estimate size: 1  16374
+Elapsed time is 12.698588 seconds.
+Trimodal-Normal, Trial: 7/100 sample size: 262144
+estimate size: 1  16333
+Elapsed time is 12.739544 seconds.
+Trimodal-Normal, Trial: 8/100 sample size: 262144
+estimate size: 1  16319
+Elapsed time is 13.885775 seconds.
+Trimodal-Normal, Trial: 9/100 sample size: 262144
+estimate size: 1  16262
+Elapsed time is 12.490951 seconds.
+Trimodal-Normal, Trial: 10/100 sample size: 262144
+estimate size: 1  14972
+Elapsed time is 13.250865 seconds.
+Trimodal-Normal, Trial: 11/100 sample size: 262144
+estimate size: 1  14962
+Elapsed time is 12.811193 seconds.
+Trimodal-Normal, Trial: 12/100 sample size: 262144
+estimate size: 1  16239
+Elapsed time is 14.560737 seconds.
+Trimodal-Normal, Trial: 13/100 sample size: 262144
+estimate size: 1  15014
+Elapsed time is 13.467132 seconds.
+Trimodal-Normal, Trial: 14/100 sample size: 262144
+estimate size: 1  16174
+Elapsed time is 13.158884 seconds.
+Trimodal-Normal, Trial: 15/100 sample size: 262144
+estimate size: 1  13795
+Elapsed time is 13.390175 seconds.
+Trimodal-Normal, Trial: 16/100 sample size: 262144
+estimate size: 1  16250
+Elapsed time is 12.712928 seconds.
+Trimodal-Normal, Trial: 17/100 sample size: 262144
+estimate size: 1  15696
+Elapsed time is 13.382283 seconds.
+Trimodal-Normal, Trial: 18/100 sample size: 262144
+estimate size: 1  15094
+Elapsed time is 13.774509 seconds.
+Trimodal-Normal, Trial: 19/100 sample size: 262144
+estimate size: 1  15031
+Elapsed time is 13.113986 seconds.
+Trimodal-Normal, Trial: 20/100 sample size: 262144
+estimate size: 1  13794
+Elapsed time is 12.573561 seconds.
+Trimodal-Normal, Trial: 21/100 sample size: 262144
+estimate size: 1  16269
+Elapsed time is 13.356309 seconds.
+Trimodal-Normal, Trial: 22/100 sample size: 262144
+estimate size: 1  16390
+Elapsed time is 13.066196 seconds.
+Trimodal-Normal, Trial: 23/100 sample size: 262144
+estimate size: 1  16242
+Elapsed time is 13.151265 seconds.
+Trimodal-Normal, Trial: 24/100 sample size: 262144
+estimate size: 1  16284
+Elapsed time is 13.086919 seconds.
+Trimodal-Normal, Trial: 25/100 sample size: 262144
+estimate size: 1  16278
+Elapsed time is 13.229252 seconds.
+Trimodal-Normal, Trial: 26/100 sample size: 262144
+estimate size: 1  16189
+Elapsed time is 13.152977 seconds.
+Trimodal-Normal, Trial: 27/100 sample size: 262144
+estimate size: 1  16340
+Elapsed time is 13.934875 seconds.
+Trimodal-Normal, Trial: 28/100 sample size: 262144
+estimate size: 1  15121
+Elapsed time is 12.842205 seconds.
+Trimodal-Normal, Trial: 29/100 sample size: 262144
+estimate size: 1  16380
+Elapsed time is 12.868530 seconds.
+Trimodal-Normal, Trial: 30/100 sample size: 262144
+estimate size: 1  15189
+Elapsed time is 12.451347 seconds.
+Trimodal-Normal, Trial: 31/100 sample size: 262144
+estimate size: 1  15042
+Elapsed time is 13.603605 seconds.
+Trimodal-Normal, Trial: 32/100 sample size: 262144
+estimate size: 1  16360
+Elapsed time is 12.452244 seconds.
+Trimodal-Normal, Trial: 33/100 sample size: 262144
+estimate size: 1  15123
+Elapsed time is 12.820899 seconds.
+Trimodal-Normal, Trial: 34/100 sample size: 262144
+estimate size: 1  16271
+Elapsed time is 12.372416 seconds.
+Trimodal-Normal, Trial: 35/100 sample size: 262144
+estimate size: 1  14979
+Elapsed time is 12.651120 seconds.
+Trimodal-Normal, Trial: 36/100 sample size: 262144
+estimate size: 1  13811
+Elapsed time is 13.083731 seconds.
+Trimodal-Normal, Trial: 37/100 sample size: 262144
+estimate size: 1  16230
+Elapsed time is 13.469958 seconds.
+Trimodal-Normal, Trial: 38/100 sample size: 262144
+estimate size: 1  16324
+Elapsed time is 12.790468 seconds.
+Trimodal-Normal, Trial: 39/100 sample size: 262144
+estimate size: 1  15098
+Elapsed time is 13.438601 seconds.
+Trimodal-Normal, Trial: 40/100 sample size: 262144
+estimate size: 1  16081
+Elapsed time is 13.346740 seconds.
+Trimodal-Normal, Trial: 41/100 sample size: 262144
+estimate size: 1  16299
+Elapsed time is 13.252437 seconds.
+Trimodal-Normal, Trial: 42/100 sample size: 262144
+estimate size: 1  15006
+Elapsed time is 13.529131 seconds.
+Trimodal-Normal, Trial: 43/100 sample size: 262144
+estimate size: 1  15118
+Elapsed time is 12.515937 seconds.
+Trimodal-Normal, Trial: 44/100 sample size: 262144
+estimate size: 1  15031
+Elapsed time is 12.630525 seconds.
+Trimodal-Normal, Trial: 45/100 sample size: 262144
+estimate size: 1  15036
+Elapsed time is 12.151496 seconds.
+Trimodal-Normal, Trial: 46/100 sample size: 262144
+estimate size: 1  15018
+Elapsed time is 12.693491 seconds.
+Trimodal-Normal, Trial: 47/100 sample size: 262144
+estimate size: 1  14995
+Elapsed time is 12.767449 seconds.
+Trimodal-Normal, Trial: 48/100 sample size: 262144
+estimate size: 1  16344
+Elapsed time is 13.493783 seconds.
+Trimodal-Normal, Trial: 49/100 sample size: 262144
+estimate size: 1  15012
+Elapsed time is 13.153109 seconds.
+Trimodal-Normal, Trial: 50/100 sample size: 262144
+estimate size: 1  16229
+Elapsed time is 12.431284 seconds.
+Trimodal-Normal, Trial: 51/100 sample size: 262144
+estimate size: 1  15108
+Elapsed time is 11.552213 seconds.
+Trimodal-Normal, Trial: 52/100 sample size: 262144
+estimate size: 1  16207
+Elapsed time is 13.107241 seconds.
+Trimodal-Normal, Trial: 53/100 sample size: 262144
+estimate size: 1  16283
+Elapsed time is 12.085913 seconds.
+Trimodal-Normal, Trial: 54/100 sample size: 262144
+estimate size: 1  15051
+Elapsed time is 12.502442 seconds.
+Trimodal-Normal, Trial: 55/100 sample size: 262144
+estimate size: 1  15045
+Elapsed time is 12.467775 seconds.
+Trimodal-Normal, Trial: 56/100 sample size: 262144
+estimate size: 1  16324
+Elapsed time is 12.491974 seconds.
+Trimodal-Normal, Trial: 57/100 sample size: 262144
+estimate size: 1  16305
+Elapsed time is 12.531557 seconds.
+Trimodal-Normal, Trial: 58/100 sample size: 262144
+estimate size: 1  15101
+Elapsed time is 12.808090 seconds.
+Trimodal-Normal, Trial: 59/100 sample size: 262144
+estimate size: 1  16386
+Elapsed time is 13.168824 seconds.
+Trimodal-Normal, Trial: 60/100 sample size: 262144
+estimate size: 1  16280
+Elapsed time is 13.446360 seconds.
+Trimodal-Normal, Trial: 61/100 sample size: 262144
+estimate size: 1  15018
+Elapsed time is 12.576731 seconds.
+Trimodal-Normal, Trial: 62/100 sample size: 262144
+estimate size: 1  16352
+Elapsed time is 13.814187 seconds.
+Trimodal-Normal, Trial: 63/100 sample size: 262144
+estimate size: 1  16329
+Elapsed time is 12.783863 seconds.
+Trimodal-Normal, Trial: 64/100 sample size: 262144
+estimate size: 1  16347
+Elapsed time is 12.790411 seconds.
+Trimodal-Normal, Trial: 65/100 sample size: 262144
+estimate size: 1  15014
+Elapsed time is 13.301823 seconds.
+Trimodal-Normal, Trial: 66/100 sample size: 262144
+estimate size: 1  15079
+Elapsed time is 12.655540 seconds.
+Trimodal-Normal, Trial: 67/100 sample size: 262144
+estimate size: 1  15001
+Elapsed time is 13.205300 seconds.
+Trimodal-Normal, Trial: 68/100 sample size: 262144
+estimate size: 1  16327
+Elapsed time is 12.466232 seconds.
+Trimodal-Normal, Trial: 69/100 sample size: 262144
+estimate size: 1  16292
+Elapsed time is 13.073424 seconds.
+Trimodal-Normal, Trial: 70/100 sample size: 262144
+estimate size: 1  16342
+Elapsed time is 12.557186 seconds.
+Trimodal-Normal, Trial: 71/100 sample size: 262144
+estimate size: 1  13812
+Elapsed time is 12.475246 seconds.
+Trimodal-Normal, Trial: 72/100 sample size: 262144
+estimate size: 1  16331
+Elapsed time is 12.176250 seconds.
+Trimodal-Normal, Trial: 73/100 sample size: 262144
+estimate size: 1  15084
+Elapsed time is 13.350340 seconds.
+Trimodal-Normal, Trial: 74/100 sample size: 262144
+estimate size: 1  16364
+Elapsed time is 12.697804 seconds.
+Trimodal-Normal, Trial: 75/100 sample size: 262144
+estimate size: 1  15028
+Elapsed time is 13.329667 seconds.
+Trimodal-Normal, Trial: 76/100 sample size: 262144
+estimate size: 1  15110
+Elapsed time is 12.745951 seconds.
+Trimodal-Normal, Trial: 77/100 sample size: 262144
+estimate size: 1  13817
+Elapsed time is 12.698485 seconds.
+Trimodal-Normal, Trial: 78/100 sample size: 262144
+estimate size: 1  16253
+Elapsed time is 13.454014 seconds.
+Trimodal-Normal, Trial: 79/100 sample size: 262144
+estimate size: 1  14994
+Elapsed time is 13.363936 seconds.
+Trimodal-Normal, Trial: 80/100 sample size: 262144
+estimate size: 1  16426
+Elapsed time is 12.482303 seconds.
+Trimodal-Normal, Trial: 81/100 sample size: 262144
+estimate size: 1  16290
+Elapsed time is 12.700492 seconds.
+Trimodal-Normal, Trial: 82/100 sample size: 262144
+estimate size: 1  16332
+Elapsed time is 13.410484 seconds.
+Trimodal-Normal, Trial: 83/100 sample size: 262144
+estimate size: 1  15019
+Elapsed time is 12.937886 seconds.
+Trimodal-Normal, Trial: 84/100 sample size: 262144
+estimate size: 1  15141
+Elapsed time is 13.605171 seconds.
+Trimodal-Normal, Trial: 85/100 sample size: 262144
+estimate size: 1  16344
+Elapsed time is 13.590115 seconds.
+Trimodal-Normal, Trial: 86/100 sample size: 262144
+estimate size: 1  15066
+Elapsed time is 13.370170 seconds.
+Trimodal-Normal, Trial: 87/100 sample size: 262144
+estimate size: 1  14998
+Elapsed time is 12.758429 seconds.
+Trimodal-Normal, Trial: 88/100 sample size: 262144
+estimate size: 1  15029
+Elapsed time is 13.046515 seconds.
+Trimodal-Normal, Trial: 89/100 sample size: 262144
+estimate size: 1  16253
+Elapsed time is 13.603285 seconds.
+Trimodal-Normal, Trial: 90/100 sample size: 262144
+estimate size: 1  16312
+Elapsed time is 12.266758 seconds.
+Trimodal-Normal, Trial: 91/100 sample size: 262144
+estimate size: 1  13781
+Elapsed time is 12.269870 seconds.
+Trimodal-Normal, Trial: 92/100 sample size: 262144
+estimate size: 1  15094
+Elapsed time is 12.753021 seconds.
+Trimodal-Normal, Trial: 93/100 sample size: 262144
+estimate size: 1  13893
+Elapsed time is 11.936792 seconds.
+Trimodal-Normal, Trial: 94/100 sample size: 262144
+estimate size: 1  16268
+Elapsed time is 12.728982 seconds.
+Trimodal-Normal, Trial: 95/100 sample size: 262144
+estimate size: 1  16251
+Elapsed time is 11.890845 seconds.
+Trimodal-Normal, Trial: 96/100 sample size: 262144
+estimate size: 1  16335
+Elapsed time is 12.992072 seconds.
+Trimodal-Normal, Trial: 97/100 sample size: 262144
+estimate size: 1  16271
+Elapsed time is 11.915632 seconds.
+Trimodal-Normal, Trial: 98/100 sample size: 262144
+estimate size: 1  14975
+Elapsed time is 12.084483 seconds.
+Trimodal-Normal, Trial: 99/100 sample size: 262144
+estimate size: 1  16359
+Elapsed time is 12.537298 seconds.
+Trimodal-Normal, Trial: 100/100 sample size: 262144
+estimate size: 1  16250
+Elapsed time is 21.793185 seconds.
+Trimodal-Normal, Trial: 1/100 sample size: 524288
+estimate size: 1  27313
+Elapsed time is 22.748636 seconds.
+Trimodal-Normal, Trial: 2/100 sample size: 524288
+estimate size: 1  26085
+Elapsed time is 20.196322 seconds.
+Trimodal-Normal, Trial: 3/100 sample size: 524288
+estimate size: 1  24602
+Elapsed time is 22.010491 seconds.
+Trimodal-Normal, Trial: 4/100 sample size: 524288
+estimate size: 1  25981
+Elapsed time is 20.347024 seconds.
+Trimodal-Normal, Trial: 5/100 sample size: 524288
+estimate size: 1  27240
+Elapsed time is 22.121605 seconds.
+Trimodal-Normal, Trial: 6/100 sample size: 524288
+estimate size: 1  27389
+Elapsed time is 22.151863 seconds.
+Trimodal-Normal, Trial: 7/100 sample size: 524288
+estimate size: 1  24828
+Elapsed time is 21.089946 seconds.
+Trimodal-Normal, Trial: 8/100 sample size: 524288
+estimate size: 1  26008
+Elapsed time is 21.838960 seconds.
+Trimodal-Normal, Trial: 9/100 sample size: 524288
+estimate size: 1  26074
+Elapsed time is 22.329458 seconds.
+Trimodal-Normal, Trial: 10/100 sample size: 524288
+estimate size: 1  27308
+Elapsed time is 20.558001 seconds.
+Trimodal-Normal, Trial: 11/100 sample size: 524288
+estimate size: 1  26030
+Elapsed time is 21.618891 seconds.
+Trimodal-Normal, Trial: 12/100 sample size: 524288
+estimate size: 1  26105
+Elapsed time is 21.317575 seconds.
+Trimodal-Normal, Trial: 13/100 sample size: 524288
+estimate size: 1  24123
+Elapsed time is 20.755047 seconds.
+Trimodal-Normal, Trial: 14/100 sample size: 524288
+estimate size: 1  26008
+Elapsed time is 20.443040 seconds.
+Trimodal-Normal, Trial: 15/100 sample size: 524288
+estimate size: 1  26182
+Elapsed time is 21.748415 seconds.
+Trimodal-Normal, Trial: 16/100 sample size: 524288
+estimate size: 1  27388
+Elapsed time is 21.998621 seconds.
+Trimodal-Normal, Trial: 17/100 sample size: 524288
+estimate size: 1  27320
+Elapsed time is 20.798524 seconds.
+Trimodal-Normal, Trial: 18/100 sample size: 524288
+estimate size: 1  27296
+Elapsed time is 21.868296 seconds.
+Trimodal-Normal, Trial: 19/100 sample size: 524288
+estimate size: 1  25916
+Elapsed time is 21.888770 seconds.
+Trimodal-Normal, Trial: 20/100 sample size: 524288
+estimate size: 1  25971
+Elapsed time is 21.960090 seconds.
+Trimodal-Normal, Trial: 21/100 sample size: 524288
+estimate size: 1  27412
+Elapsed time is 21.077459 seconds.
+Trimodal-Normal, Trial: 22/100 sample size: 524288
+estimate size: 1  27311
+Elapsed time is 22.279964 seconds.
+Trimodal-Normal, Trial: 23/100 sample size: 524288
+estimate size: 1  25003
+Elapsed time is 21.991407 seconds.
+Trimodal-Normal, Trial: 24/100 sample size: 524288
+estimate size: 1  26084
+Elapsed time is 21.332688 seconds.
+Trimodal-Normal, Trial: 25/100 sample size: 524288
+estimate size: 1  26110
+Elapsed time is 20.848440 seconds.
+Trimodal-Normal, Trial: 26/100 sample size: 524288
+estimate size: 1  23887
+Elapsed time is 21.795911 seconds.
+Trimodal-Normal, Trial: 27/100 sample size: 524288
+estimate size: 1  26109
+Elapsed time is 22.171310 seconds.
+Trimodal-Normal, Trial: 28/100 sample size: 524288
+estimate size: 1  26077
+Elapsed time is 21.487016 seconds.
+Trimodal-Normal, Trial: 29/100 sample size: 524288
+estimate size: 1  27419
+Elapsed time is 22.545623 seconds.
+Trimodal-Normal, Trial: 30/100 sample size: 524288
+estimate size: 1  26091
+Elapsed time is 21.984878 seconds.
+Trimodal-Normal, Trial: 31/100 sample size: 524288
+estimate size: 1  27383
+Elapsed time is 20.808629 seconds.
+Trimodal-Normal, Trial: 32/100 sample size: 524288
+estimate size: 1  28629
+Elapsed time is 20.957796 seconds.
+Trimodal-Normal, Trial: 33/100 sample size: 524288
+estimate size: 1  25952
+Elapsed time is 21.058279 seconds.
+Trimodal-Normal, Trial: 34/100 sample size: 524288
+estimate size: 1  26048
+Elapsed time is 21.164200 seconds.
+Trimodal-Normal, Trial: 35/100 sample size: 524288
+estimate size: 1  28588
+Elapsed time is 21.822781 seconds.
+Trimodal-Normal, Trial: 36/100 sample size: 524288
+estimate size: 1  27244
+Elapsed time is 20.916068 seconds.
+Trimodal-Normal, Trial: 37/100 sample size: 524288
+estimate size: 1  26146
+Elapsed time is 22.187915 seconds.
+Trimodal-Normal, Trial: 38/100 sample size: 524288
+estimate size: 1  26118
+Elapsed time is 23.022018 seconds.
+Trimodal-Normal, Trial: 39/100 sample size: 524288
+estimate size: 1  24768
+Elapsed time is 22.280429 seconds.
+Trimodal-Normal, Trial: 40/100 sample size: 524288
+estimate size: 1  27385
+Elapsed time is 22.752018 seconds.
+Trimodal-Normal, Trial: 41/100 sample size: 524288
+estimate size: 1  27379
+Elapsed time is 22.046568 seconds.
+Trimodal-Normal, Trial: 42/100 sample size: 524288
+estimate size: 1  28562
+Elapsed time is 21.370809 seconds.
+Trimodal-Normal, Trial: 43/100 sample size: 524288
+estimate size: 1  26156
+Elapsed time is 21.489016 seconds.
+Trimodal-Normal, Trial: 44/100 sample size: 524288
+estimate size: 1  26124
+Elapsed time is 23.289721 seconds.
+Trimodal-Normal, Trial: 45/100 sample size: 524288
+estimate size: 1  27317
+Elapsed time is 23.689672 seconds.
+Trimodal-Normal, Trial: 46/100 sample size: 524288
+estimate size: 1  27328
+Elapsed time is 22.392731 seconds.
+Trimodal-Normal, Trial: 47/100 sample size: 524288
+estimate size: 1  26010
+Elapsed time is 22.461682 seconds.
+Trimodal-Normal, Trial: 48/100 sample size: 524288
+estimate size: 1  28609
+Elapsed time is 21.698969 seconds.
+Trimodal-Normal, Trial: 49/100 sample size: 524288
+estimate size: 1  26020
+Elapsed time is 22.118762 seconds.
+Trimodal-Normal, Trial: 50/100 sample size: 524288
+estimate size: 1  26125
+Elapsed time is 21.094822 seconds.
+Trimodal-Normal, Trial: 51/100 sample size: 524288
+estimate size: 1  27313
+Elapsed time is 22.980779 seconds.
+Trimodal-Normal, Trial: 52/100 sample size: 524288
+estimate size: 1  26030
+Elapsed time is 22.234222 seconds.
+Trimodal-Normal, Trial: 53/100 sample size: 524288
+estimate size: 1  25963
+Elapsed time is 21.850730 seconds.
+Trimodal-Normal, Trial: 54/100 sample size: 524288
+estimate size: 1  27371
+Elapsed time is 22.389188 seconds.
+Trimodal-Normal, Trial: 55/100 sample size: 524288
+estimate size: 1  28556
+Elapsed time is 22.078411 seconds.
+Trimodal-Normal, Trial: 56/100 sample size: 524288
+estimate size: 1  26030
+Elapsed time is 22.493137 seconds.
+Trimodal-Normal, Trial: 57/100 sample size: 524288
+estimate size: 1  27415
+Elapsed time is 20.642393 seconds.
+Trimodal-Normal, Trial: 58/100 sample size: 524288
+estimate size: 1  26004
+Elapsed time is 20.985845 seconds.
+Trimodal-Normal, Trial: 59/100 sample size: 524288
+estimate size: 1  27257
+Elapsed time is 20.977461 seconds.
+Trimodal-Normal, Trial: 60/100 sample size: 524288
+estimate size: 1  24728
+Elapsed time is 21.781747 seconds.
+Trimodal-Normal, Trial: 61/100 sample size: 524288
+estimate size: 1  25979
+Elapsed time is 20.679987 seconds.
+Trimodal-Normal, Trial: 62/100 sample size: 524288
+estimate size: 1  26215
+Elapsed time is 21.380011 seconds.
+Trimodal-Normal, Trial: 63/100 sample size: 524288
+estimate size: 1  28624
+Elapsed time is 22.065275 seconds.
+Trimodal-Normal, Trial: 64/100 sample size: 524288
+estimate size: 1  27286
+Elapsed time is 20.167303 seconds.
+Trimodal-Normal, Trial: 65/100 sample size: 524288
+estimate size: 1  25916
+Elapsed time is 22.401721 seconds.
+Trimodal-Normal, Trial: 66/100 sample size: 524288
+estimate size: 1  27350
+Elapsed time is 20.413581 seconds.
+Trimodal-Normal, Trial: 67/100 sample size: 524288
+estimate size: 1  25907
+Elapsed time is 20.443220 seconds.
+Trimodal-Normal, Trial: 68/100 sample size: 524288
+estimate size: 1  24750
+Elapsed time is 22.591406 seconds.
+Trimodal-Normal, Trial: 69/100 sample size: 524288
+estimate size: 1  27332
+Elapsed time is 21.304184 seconds.
+Trimodal-Normal, Trial: 70/100 sample size: 524288
+estimate size: 1  26202
+Elapsed time is 21.589348 seconds.
+Trimodal-Normal, Trial: 71/100 sample size: 524288
+estimate size: 1  26096
+Elapsed time is 21.579763 seconds.
+Trimodal-Normal, Trial: 72/100 sample size: 524288
+estimate size: 1  24959
+Elapsed time is 21.766465 seconds.
+Trimodal-Normal, Trial: 73/100 sample size: 524288
+estimate size: 1  26028
+Elapsed time is 22.063264 seconds.
+Trimodal-Normal, Trial: 74/100 sample size: 524288
+estimate size: 1  23899
+Elapsed time is 21.680807 seconds.
+Trimodal-Normal, Trial: 75/100 sample size: 524288
+estimate size: 1  26007
+Elapsed time is 21.669386 seconds.
+Trimodal-Normal, Trial: 76/100 sample size: 524288
+estimate size: 1  27333
+Elapsed time is 21.547619 seconds.
+Trimodal-Normal, Trial: 77/100 sample size: 524288
+estimate size: 1  24855
+Elapsed time is 21.939472 seconds.
+Trimodal-Normal, Trial: 78/100 sample size: 524288
+estimate size: 1  27341
+Elapsed time is 21.228637 seconds.
+Trimodal-Normal, Trial: 79/100 sample size: 524288
+estimate size: 1  27386
+Elapsed time is 21.473644 seconds.
+Trimodal-Normal, Trial: 80/100 sample size: 524288
+estimate size: 1  26129
+Elapsed time is 22.426424 seconds.
+Trimodal-Normal, Trial: 81/100 sample size: 524288
+estimate size: 1  27376
+Elapsed time is 21.160558 seconds.
+Trimodal-Normal, Trial: 82/100 sample size: 524288
+estimate size: 1  27310
+Elapsed time is 21.367531 seconds.
+Trimodal-Normal, Trial: 83/100 sample size: 524288
+estimate size: 1  24744
+Elapsed time is 21.970023 seconds.
+Trimodal-Normal, Trial: 84/100 sample size: 524288
+estimate size: 1  25981
+Elapsed time is 21.482475 seconds.
+Trimodal-Normal, Trial: 85/100 sample size: 524288
+estimate size: 1  26200
+Elapsed time is 22.071690 seconds.
+Trimodal-Normal, Trial: 86/100 sample size: 524288
+estimate size: 1  25964
+Elapsed time is 22.993986 seconds.
+Trimodal-Normal, Trial: 87/100 sample size: 524288
+estimate size: 1  27391
+Elapsed time is 23.165299 seconds.
+Trimodal-Normal, Trial: 88/100 sample size: 524288
+estimate size: 1  28603
+Elapsed time is 22.590164 seconds.
+Trimodal-Normal, Trial: 89/100 sample size: 524288
+estimate size: 1  27274
+Elapsed time is 21.387469 seconds.
+Trimodal-Normal, Trial: 90/100 sample size: 524288
+estimate size: 1  24580
+Elapsed time is 22.710783 seconds.
+Trimodal-Normal, Trial: 91/100 sample size: 524288
+estimate size: 1  26137
+Elapsed time is 21.966784 seconds.
+Trimodal-Normal, Trial: 92/100 sample size: 524288
+estimate size: 1  27289
+Elapsed time is 20.905798 seconds.
+Trimodal-Normal, Trial: 93/100 sample size: 524288
+estimate size: 1  26129
+Elapsed time is 21.166109 seconds.
+Trimodal-Normal, Trial: 94/100 sample size: 524288
+estimate size: 1  27355
+Elapsed time is 21.659476 seconds.
+Trimodal-Normal, Trial: 95/100 sample size: 524288
+estimate size: 1  27323
+Elapsed time is 22.337271 seconds.
+Trimodal-Normal, Trial: 96/100 sample size: 524288
+estimate size: 1  28536
+Elapsed time is 21.293410 seconds.
+Trimodal-Normal, Trial: 97/100 sample size: 524288
+estimate size: 1  27397
+Elapsed time is 21.900058 seconds.
+Trimodal-Normal, Trial: 98/100 sample size: 524288
+estimate size: 1  26074
+Elapsed time is 21.751542 seconds.
+Trimodal-Normal, Trial: 99/100 sample size: 524288
+estimate size: 1  27297
+Elapsed time is 22.401050 seconds.
+Trimodal-Normal, Trial: 100/100 sample size: 524288
+estimate size: 1  25862
+Elapsed time is 40.457681 seconds.
+Trimodal-Normal, Trial: 1/100 sample size: 1048576
+estimate size: 1  48159
+Elapsed time is 40.409477 seconds.
+Trimodal-Normal, Trial: 2/100 sample size: 1048576
+estimate size: 1  49498
+Elapsed time is 39.231387 seconds.
+Trimodal-Normal, Trial: 3/100 sample size: 1048576
+estimate size: 1  48159
+Elapsed time is 40.782105 seconds.
+Trimodal-Normal, Trial: 4/100 sample size: 1048576
+estimate size: 1  49453
+Elapsed time is 40.999507 seconds.
+Trimodal-Normal, Trial: 5/100 sample size: 1048576
+estimate size: 1  51992
+Elapsed time is 42.538064 seconds.
+Trimodal-Normal, Trial: 6/100 sample size: 1048576
+estimate size: 1  49588
+Elapsed time is 41.577146 seconds.
+Trimodal-Normal, Trial: 7/100 sample size: 1048576
+estimate size: 1  49539
+Elapsed time is 41.563834 seconds.
+Trimodal-Normal, Trial: 8/100 sample size: 1048576
+estimate size: 1  53464
+Elapsed time is 42.426240 seconds.
+Trimodal-Normal, Trial: 9/100 sample size: 1048576
+estimate size: 1  52002
+Elapsed time is 41.831633 seconds.
+Trimodal-Normal, Trial: 10/100 sample size: 1048576
+estimate size: 1  50935
+Elapsed time is 40.728031 seconds.
+Trimodal-Normal, Trial: 11/100 sample size: 1048576
+estimate size: 1  50890
+Elapsed time is 38.904864 seconds.
+Trimodal-Normal, Trial: 12/100 sample size: 1048576
+estimate size: 1  51927
+Elapsed time is 42.084949 seconds.
+Trimodal-Normal, Trial: 13/100 sample size: 1048576
+estimate size: 1  49553
+Elapsed time is 39.751661 seconds.
+Trimodal-Normal, Trial: 14/100 sample size: 1048576
+estimate size: 1  49580
+Elapsed time is 40.035787 seconds.
+Trimodal-Normal, Trial: 15/100 sample size: 1048576
+estimate size: 1  53558
+Elapsed time is 41.294161 seconds.
+Trimodal-Normal, Trial: 16/100 sample size: 1048576
+estimate size: 1  51096
+Elapsed time is 42.272792 seconds.
+Trimodal-Normal, Trial: 17/100 sample size: 1048576
+estimate size: 1  50905
+Elapsed time is 41.041055 seconds.
+Trimodal-Normal, Trial: 18/100 sample size: 1048576
+estimate size: 1  50321
+Elapsed time is 42.499339 seconds.
+Trimodal-Normal, Trial: 19/100 sample size: 1048576
+estimate size: 1  50744
+Elapsed time is 42.804179 seconds.
+Trimodal-Normal, Trial: 20/100 sample size: 1048576
+estimate size: 1  51102
+Elapsed time is 41.784295 seconds.
+Trimodal-Normal, Trial: 21/100 sample size: 1048576
+estimate size: 1  53627
+Elapsed time is 40.434382 seconds.
+Trimodal-Normal, Trial: 22/100 sample size: 1048576
+estimate size: 1  50967
+Elapsed time is 41.432519 seconds.
+Trimodal-Normal, Trial: 23/100 sample size: 1048576
+estimate size: 1  47264
+Elapsed time is 42.614379 seconds.
+Trimodal-Normal, Trial: 24/100 sample size: 1048576
+estimate size: 1  51870
+Elapsed time is 41.346546 seconds.
+Trimodal-Normal, Trial: 25/100 sample size: 1048576
+estimate size: 1  51200
+Elapsed time is 41.775660 seconds.
+Trimodal-Normal, Trial: 26/100 sample size: 1048576
+estimate size: 1  53345
+Elapsed time is 40.656399 seconds.
+Trimodal-Normal, Trial: 27/100 sample size: 1048576
+estimate size: 1  49492
+Elapsed time is 42.613333 seconds.
+Trimodal-Normal, Trial: 28/100 sample size: 1048576
+estimate size: 1  53371
+Elapsed time is 39.629204 seconds.
+Trimodal-Normal, Trial: 29/100 sample size: 1048576
+estimate size: 1  49648
+Elapsed time is 41.318771 seconds.
+Trimodal-Normal, Trial: 30/100 sample size: 1048576
+estimate size: 1  50926
+Elapsed time is 41.988641 seconds.
+Trimodal-Normal, Trial: 31/100 sample size: 1048576
+estimate size: 1  52008
+Elapsed time is 46.684042 seconds.
+Trimodal-Normal, Trial: 32/100 sample size: 1048576
+estimate size: 1  49540
+Elapsed time is 42.746011 seconds.
+Trimodal-Normal, Trial: 33/100 sample size: 1048576
+estimate size: 1  49417
+Elapsed time is 42.925016 seconds.
+Trimodal-Normal, Trial: 34/100 sample size: 1048576
+estimate size: 1  51110
+Elapsed time is 41.156230 seconds.
+Trimodal-Normal, Trial: 35/100 sample size: 1048576
+estimate size: 1  51906
+Elapsed time is 44.541956 seconds.
+Trimodal-Normal, Trial: 36/100 sample size: 1048576
+estimate size: 1  53392
+Elapsed time is 42.689443 seconds.
+Trimodal-Normal, Trial: 37/100 sample size: 1048576
+estimate size: 1  51823
+Elapsed time is 42.238752 seconds.
+Trimodal-Normal, Trial: 38/100 sample size: 1048576
+estimate size: 1  51793
+Elapsed time is 42.021395 seconds.
+Trimodal-Normal, Trial: 39/100 sample size: 1048576
+estimate size: 1  49664
+Elapsed time is 42.182385 seconds.
+Trimodal-Normal, Trial: 40/100 sample size: 1048576
+estimate size: 1  50320
+Elapsed time is 41.320992 seconds.
+Trimodal-Normal, Trial: 41/100 sample size: 1048576
+estimate size: 1  52031
+Elapsed time is 42.744760 seconds.
+Trimodal-Normal, Trial: 42/100 sample size: 1048576
+estimate size: 1  48946
+Elapsed time is 42.211520 seconds.
+Trimodal-Normal, Trial: 43/100 sample size: 1048576
+estimate size: 1  53483
+Elapsed time is 42.224329 seconds.
+Trimodal-Normal, Trial: 44/100 sample size: 1048576
+estimate size: 1  48385
+Elapsed time is 40.879891 seconds.
+Trimodal-Normal, Trial: 45/100 sample size: 1048576
+estimate size: 1  52202
+Elapsed time is 43.359094 seconds.
+Trimodal-Normal, Trial: 46/100 sample size: 1048576
+estimate size: 1  49397
+Elapsed time is 40.723901 seconds.
+Trimodal-Normal, Trial: 47/100 sample size: 1048576
+estimate size: 1  49431
+Elapsed time is 42.970989 seconds.
+Trimodal-Normal, Trial: 48/100 sample size: 1048576
+estimate size: 1  49561
+Elapsed time is 43.278548 seconds.
+Trimodal-Normal, Trial: 49/100 sample size: 1048576
+estimate size: 1  53456
+Elapsed time is 41.759876 seconds.
+Trimodal-Normal, Trial: 50/100 sample size: 1048576
+estimate size: 1  53425
+Elapsed time is 41.268627 seconds.
+Trimodal-Normal, Trial: 51/100 sample size: 1048576
+estimate size: 1  49586
+Elapsed time is 41.669446 seconds.
+Trimodal-Normal, Trial: 52/100 sample size: 1048576
+estimate size: 1  53496
+Elapsed time is 41.115281 seconds.
+Trimodal-Normal, Trial: 53/100 sample size: 1048576
+estimate size: 1  49340
+Elapsed time is 40.933561 seconds.
+Trimodal-Normal, Trial: 54/100 sample size: 1048576
+estimate size: 1  49394
+Elapsed time is 40.499918 seconds.
+Trimodal-Normal, Trial: 55/100 sample size: 1048576
+estimate size: 1  51970
+Elapsed time is 41.606446 seconds.
+Trimodal-Normal, Trial: 56/100 sample size: 1048576
+estimate size: 1  52100
+Elapsed time is 42.246574 seconds.
+Trimodal-Normal, Trial: 57/100 sample size: 1048576
+estimate size: 1  50929
+Elapsed time is 42.802253 seconds.
+Trimodal-Normal, Trial: 58/100 sample size: 1048576
+estimate size: 1  50387
+Elapsed time is 44.332063 seconds.
+Trimodal-Normal, Trial: 59/100 sample size: 1048576
+estimate size: 1  53098
+Elapsed time is 42.929728 seconds.
+Trimodal-Normal, Trial: 60/100 sample size: 1048576
+estimate size: 1  49564
+Elapsed time is 40.977767 seconds.
+Trimodal-Normal, Trial: 61/100 sample size: 1048576
+estimate size: 1  49685
+Elapsed time is 41.062389 seconds.
+Trimodal-Normal, Trial: 62/100 sample size: 1048576
+estimate size: 1  53418
+Elapsed time is 40.951502 seconds.
+Trimodal-Normal, Trial: 63/100 sample size: 1048576
+estimate size: 1  53263
+Elapsed time is 41.239766 seconds.
+Trimodal-Normal, Trial: 64/100 sample size: 1048576
+estimate size: 1  51897
+Elapsed time is 41.217474 seconds.
+Trimodal-Normal, Trial: 65/100 sample size: 1048576
+estimate size: 1  50578
+Elapsed time is 39.665480 seconds.
+Trimodal-Normal, Trial: 66/100 sample size: 1048576
+estimate size: 1  51969
+Elapsed time is 40.095692 seconds.
+Trimodal-Normal, Trial: 67/100 sample size: 1048576
+estimate size: 1  48048
+Elapsed time is 43.085797 seconds.
+Trimodal-Normal, Trial: 68/100 sample size: 1048576
+estimate size: 1  53359
+Elapsed time is 41.210509 seconds.
+Trimodal-Normal, Trial: 69/100 sample size: 1048576
+estimate size: 1  50984
+Elapsed time is 41.879141 seconds.
+Trimodal-Normal, Trial: 70/100 sample size: 1048576
+estimate size: 1  53373
+Elapsed time is 41.603550 seconds.
+Trimodal-Normal, Trial: 71/100 sample size: 1048576
+estimate size: 1  51054
+Elapsed time is 43.006353 seconds.
+Trimodal-Normal, Trial: 72/100 sample size: 1048576
+estimate size: 1  48689
+Elapsed time is 39.450794 seconds.
+Trimodal-Normal, Trial: 73/100 sample size: 1048576
+estimate size: 1  49452
+Elapsed time is 44.252478 seconds.
+Trimodal-Normal, Trial: 74/100 sample size: 1048576
+estimate size: 1  51967
+Elapsed time is 44.180351 seconds.
+Trimodal-Normal, Trial: 75/100 sample size: 1048576
+estimate size: 1  50907
+Elapsed time is 41.513378 seconds.
+Trimodal-Normal, Trial: 76/100 sample size: 1048576
+estimate size: 1  50447
+Elapsed time is 42.334104 seconds.
+Trimodal-Normal, Trial: 77/100 sample size: 1048576
+estimate size: 1  50965
+Elapsed time is 43.666147 seconds.
+Trimodal-Normal, Trial: 78/100 sample size: 1048576
+estimate size: 1  50957
+Elapsed time is 40.587675 seconds.
+Trimodal-Normal, Trial: 79/100 sample size: 1048576
+estimate size: 1  51000
+Elapsed time is 42.064041 seconds.
+Trimodal-Normal, Trial: 80/100 sample size: 1048576
+estimate size: 1  49402
+Elapsed time is 40.539907 seconds.
+Trimodal-Normal, Trial: 81/100 sample size: 1048576
+estimate size: 1  49420
+Elapsed time is 42.849172 seconds.
+Trimodal-Normal, Trial: 82/100 sample size: 1048576
+estimate size: 1  49366
+Elapsed time is 40.489642 seconds.
+Trimodal-Normal, Trial: 83/100 sample size: 1048576
+estimate size: 1  49389
+Elapsed time is 42.050263 seconds.
+Trimodal-Normal, Trial: 84/100 sample size: 1048576
+estimate size: 1  50471
+Elapsed time is 44.537100 seconds.
+Trimodal-Normal, Trial: 85/100 sample size: 1048576
+estimate size: 1  53239
+Elapsed time is 41.038342 seconds.
+Trimodal-Normal, Trial: 86/100 sample size: 1048576
+estimate size: 1  51146
+Elapsed time is 44.066015 seconds.
+Trimodal-Normal, Trial: 87/100 sample size: 1048576
+estimate size: 1  49718
+Elapsed time is 41.102539 seconds.
+Trimodal-Normal, Trial: 88/100 sample size: 1048576
+estimate size: 1  49462
+Elapsed time is 41.982350 seconds.
+Trimodal-Normal, Trial: 89/100 sample size: 1048576
+estimate size: 1  49641
+Elapsed time is 41.350450 seconds.
+Trimodal-Normal, Trial: 90/100 sample size: 1048576
+estimate size: 1  49741
+Elapsed time is 43.388566 seconds.
+Trimodal-Normal, Trial: 91/100 sample size: 1048576
+estimate size: 1  47797
+Elapsed time is 41.349723 seconds.
+Trimodal-Normal, Trial: 92/100 sample size: 1048576
+estimate size: 1  51003
+Elapsed time is 41.591046 seconds.
+Trimodal-Normal, Trial: 93/100 sample size: 1048576
+estimate size: 1  51102
+Elapsed time is 41.563478 seconds.
+Trimodal-Normal, Trial: 94/100 sample size: 1048576
+estimate size: 1  51891
+Elapsed time is 44.391162 seconds.
+Trimodal-Normal, Trial: 95/100 sample size: 1048576
+estimate size: 1  51033
+Elapsed time is 42.746700 seconds.
+Trimodal-Normal, Trial: 96/100 sample size: 1048576
+estimate size: 1  49531
+Elapsed time is 43.471193 seconds.
+Trimodal-Normal, Trial: 97/100 sample size: 1048576
+estimate size: 1  51022
+Elapsed time is 42.097160 seconds.
+Trimodal-Normal, Trial: 98/100 sample size: 1048576
+estimate size: 1  52012
+Elapsed time is 40.791470 seconds.
+Trimodal-Normal, Trial: 99/100 sample size: 1048576
+estimate size: 1  49578
+Elapsed time is 42.714866 seconds.
+Trimodal-Normal, Trial: 100/100 sample size: 1048576
+estimate size: 1  53170
+Elapsed time is 89.005324 seconds.
+Trimodal-Normal, Trial: 1/100 sample size: 2097152
+estimate size: 1  105914
+Elapsed time is 84.558150 seconds.
+Trimodal-Normal, Trial: 2/100 sample size: 2097152
+estimate size: 1  99247
+Elapsed time is 88.499322 seconds.
+Trimodal-Normal, Trial: 3/100 sample size: 2097152
+estimate size: 1  103668
+Elapsed time is 86.996604 seconds.
+Trimodal-Normal, Trial: 4/100 sample size: 2097152
+estimate size: 1  103661
+Elapsed time is 89.909466 seconds.
+Trimodal-Normal, Trial: 5/100 sample size: 2097152
+estimate size: 1  105304
+Elapsed time is 87.132479 seconds.
+Trimodal-Normal, Trial: 6/100 sample size: 2097152
+estimate size: 1  99219
+Elapsed time is 87.293136 seconds.
+Trimodal-Normal, Trial: 7/100 sample size: 2097152
+estimate size: 1  100816
+Elapsed time is 82.841021 seconds.
+Trimodal-Normal, Trial: 8/100 sample size: 2097152
+estimate size: 1  104157
+Elapsed time is 85.081944 seconds.
+Trimodal-Normal, Trial: 9/100 sample size: 2097152
+estimate size: 1  103863
+Elapsed time is 85.164408 seconds.
+Trimodal-Normal, Trial: 10/100 sample size: 2097152
+estimate size: 1  99339
+Elapsed time is 88.258014 seconds.
+Trimodal-Normal, Trial: 11/100 sample size: 2097152
+estimate size: 1  102411
+Elapsed time is 85.841484 seconds.
+Trimodal-Normal, Trial: 12/100 sample size: 2097152
+estimate size: 1  98003
+Elapsed time is 85.764582 seconds.
+Trimodal-Normal, Trial: 13/100 sample size: 2097152
+estimate size: 1  105628
+Elapsed time is 88.410211 seconds.
+Trimodal-Normal, Trial: 14/100 sample size: 2097152
+estimate size: 1  105259
+Elapsed time is 84.917204 seconds.
+Trimodal-Normal, Trial: 15/100 sample size: 2097152
+estimate size: 1  105195
+Elapsed time is 86.761995 seconds.
+Trimodal-Normal, Trial: 16/100 sample size: 2097152
+estimate size: 1  104226
+Elapsed time is 82.011602 seconds.
+Trimodal-Normal, Trial: 17/100 sample size: 2097152
+estimate size: 1  97019
+Elapsed time is 82.306089 seconds.
+Trimodal-Normal, Trial: 18/100 sample size: 2097152
+estimate size: 1  104228
+Elapsed time is 82.012945 seconds.
+Trimodal-Normal, Trial: 19/100 sample size: 2097152
+estimate size: 1  103613
+Elapsed time is 83.257366 seconds.
+Trimodal-Normal, Trial: 20/100 sample size: 2097152
+estimate size: 1  97837
+Elapsed time is 81.542852 seconds.
+Trimodal-Normal, Trial: 21/100 sample size: 2097152
+estimate size: 1  103939
+Elapsed time is 81.792909 seconds.
+Trimodal-Normal, Trial: 22/100 sample size: 2097152
+estimate size: 1  100407
+Elapsed time is 84.407937 seconds.
+Trimodal-Normal, Trial: 23/100 sample size: 2097152
+estimate size: 1  99343
+Elapsed time is 83.108164 seconds.
+Trimodal-Normal, Trial: 24/100 sample size: 2097152
+estimate size: 1  103713
+Elapsed time is 85.183899 seconds.
+Trimodal-Normal, Trial: 25/100 sample size: 2097152
+estimate size: 1  104114
+Elapsed time is 80.846258 seconds.
+Trimodal-Normal, Trial: 26/100 sample size: 2097152
+estimate size: 1  102771
+Elapsed time is 84.585417 seconds.
+Trimodal-Normal, Trial: 27/100 sample size: 2097152
+estimate size: 1  99617
+Elapsed time is 83.930388 seconds.
+Trimodal-Normal, Trial: 28/100 sample size: 2097152
+estimate size: 1  104234
+Elapsed time is 80.486497 seconds.
+Trimodal-Normal, Trial: 29/100 sample size: 2097152
+estimate size: 1  99119
+Elapsed time is 85.498294 seconds.
+Trimodal-Normal, Trial: 30/100 sample size: 2097152
+estimate size: 1  99456
+Elapsed time is 83.078596 seconds.
+Trimodal-Normal, Trial: 31/100 sample size: 2097152
+estimate size: 1  103944
+Elapsed time is 81.249640 seconds.
+Trimodal-Normal, Trial: 32/100 sample size: 2097152
+estimate size: 1  105548
+Elapsed time is 76.035034 seconds.
+Trimodal-Normal, Trial: 33/100 sample size: 2097152
+estimate size: 1  102459
+Elapsed time is 84.424138 seconds.
+Trimodal-Normal, Trial: 34/100 sample size: 2097152
+estimate size: 1  104065
+Elapsed time is 85.605565 seconds.
+Trimodal-Normal, Trial: 35/100 sample size: 2097152
+estimate size: 1  105557
+Elapsed time is 82.188613 seconds.
+Trimodal-Normal, Trial: 36/100 sample size: 2097152
+estimate size: 1  103841
+Elapsed time is 82.019733 seconds.
+Trimodal-Normal, Trial: 37/100 sample size: 2097152
+estimate size: 1  102816
+Elapsed time is 80.938526 seconds.
+Trimodal-Normal, Trial: 38/100 sample size: 2097152
+estimate size: 1  104230
+Elapsed time is 73.983221 seconds.
+Trimodal-Normal, Trial: 39/100 sample size: 2097152
+estimate size: 1  92821
+Elapsed time is 77.566976 seconds.
+Trimodal-Normal, Trial: 40/100 sample size: 2097152
+estimate size: 1  95357
+Elapsed time is 80.731916 seconds.
+Trimodal-Normal, Trial: 41/100 sample size: 2097152
+estimate size: 1  102615
+Elapsed time is 84.111972 seconds.
+Trimodal-Normal, Trial: 42/100 sample size: 2097152
+estimate size: 1  99130
+Elapsed time is 78.254362 seconds.
+Trimodal-Normal, Trial: 43/100 sample size: 2097152
+estimate size: 1  102652
+Elapsed time is 82.527673 seconds.
+Trimodal-Normal, Trial: 44/100 sample size: 2097152
+estimate size: 1  104083
+Elapsed time is 85.083794 seconds.
+Trimodal-Normal, Trial: 45/100 sample size: 2097152
+estimate size: 1  103784
+Elapsed time is 85.313072 seconds.
+Trimodal-Normal, Trial: 46/100 sample size: 2097152
+estimate size: 1  105408
+Elapsed time is 72.831872 seconds.
+Trimodal-Normal, Trial: 47/100 sample size: 2097152
+estimate size: 1  103524
+Elapsed time is 85.594168 seconds.
+Trimodal-Normal, Trial: 48/100 sample size: 2097152
+estimate size: 1  99075
+Elapsed time is 85.653338 seconds.
+Trimodal-Normal, Trial: 49/100 sample size: 2097152
+estimate size: 1  103898
+Elapsed time is 82.156785 seconds.
+Trimodal-Normal, Trial: 50/100 sample size: 2097152
+estimate size: 1  104077
+Elapsed time is 84.688219 seconds.
+Trimodal-Normal, Trial: 51/100 sample size: 2097152
+estimate size: 1  105270
+Elapsed time is 92.897620 seconds.
+Trimodal-Normal, Trial: 52/100 sample size: 2097152
+estimate size: 1  104179
+Elapsed time is 89.718927 seconds.
+Trimodal-Normal, Trial: 53/100 sample size: 2097152
+estimate size: 1  105148
+Elapsed time is 88.438726 seconds.
+Trimodal-Normal, Trial: 54/100 sample size: 2097152
+estimate size: 1  98260
+Elapsed time is 88.361264 seconds.
+Trimodal-Normal, Trial: 55/100 sample size: 2097152
+estimate size: 1  97738
+Elapsed time is 89.593362 seconds.
+Trimodal-Normal, Trial: 56/100 sample size: 2097152
+estimate size: 1  102352
+Elapsed time is 89.452580 seconds.
+Trimodal-Normal, Trial: 57/100 sample size: 2097152
+estimate size: 1  99253
+Elapsed time is 83.655667 seconds.
+Trimodal-Normal, Trial: 58/100 sample size: 2097152
+estimate size: 1  104018
+Elapsed time is 85.219855 seconds.
+Trimodal-Normal, Trial: 59/100 sample size: 2097152
+estimate size: 1  102648
+Elapsed time is 86.649130 seconds.
+Trimodal-Normal, Trial: 60/100 sample size: 2097152
+estimate size: 1  102345
+Elapsed time is 91.712965 seconds.
+Trimodal-Normal, Trial: 61/100 sample size: 2097152
+estimate size: 1  103822
+Elapsed time is 89.212849 seconds.
+Trimodal-Normal, Trial: 62/100 sample size: 2097152
+estimate size: 1  104024
+Elapsed time is 84.855554 seconds.
+Trimodal-Normal, Trial: 63/100 sample size: 2097152
+estimate size: 1  102568
+Elapsed time is 84.792160 seconds.
+Trimodal-Normal, Trial: 64/100 sample size: 2097152
+estimate size: 1  102644
+Elapsed time is 88.315516 seconds.
+Trimodal-Normal, Trial: 65/100 sample size: 2097152
+estimate size: 1  103895
+Elapsed time is 95.137760 seconds.
+Trimodal-Normal, Trial: 66/100 sample size: 2097152
+estimate size: 1  105348
+Elapsed time is 87.409429 seconds.
+Trimodal-Normal, Trial: 67/100 sample size: 2097152
+estimate size: 1  102877
+Elapsed time is 87.353780 seconds.
+Trimodal-Normal, Trial: 68/100 sample size: 2097152
+estimate size: 1  104417
+Elapsed time is 83.564723 seconds.
+Trimodal-Normal, Trial: 69/100 sample size: 2097152
+estimate size: 1  102222
+Elapsed time is 87.672965 seconds.
+Trimodal-Normal, Trial: 70/100 sample size: 2097152
+estimate size: 1  102672
+Elapsed time is 91.927665 seconds.
+Trimodal-Normal, Trial: 71/100 sample size: 2097152
+estimate size: 1  104171
+Elapsed time is 86.814619 seconds.
+Trimodal-Normal, Trial: 72/100 sample size: 2097152
+estimate size: 1  104278
+Elapsed time is 88.058018 seconds.
+Trimodal-Normal, Trial: 73/100 sample size: 2097152
+estimate size: 1  105513
+Elapsed time is 92.663035 seconds.
+Trimodal-Normal, Trial: 74/100 sample size: 2097152
+estimate size: 1  99257
+Elapsed time is 88.944571 seconds.
+Trimodal-Normal, Trial: 75/100 sample size: 2097152
+estimate size: 1  104359
+Elapsed time is 84.230714 seconds.
+Trimodal-Normal, Trial: 76/100 sample size: 2097152
+estimate size: 1  103989
+Elapsed time is 93.417446 seconds.
+Trimodal-Normal, Trial: 77/100 sample size: 2097152
+estimate size: 1  105534
+Elapsed time is 83.487589 seconds.
+Trimodal-Normal, Trial: 78/100 sample size: 2097152
+estimate size: 1  99457
+Elapsed time is 79.938969 seconds.
+Trimodal-Normal, Trial: 79/100 sample size: 2097152
+estimate size: 1  98072
+Elapsed time is 83.175716 seconds.
+Trimodal-Normal, Trial: 80/100 sample size: 2097152
+estimate size: 1  98172
+Elapsed time is 86.790991 seconds.
+Trimodal-Normal, Trial: 81/100 sample size: 2097152
+estimate size: 1  104545
+Elapsed time is 88.456714 seconds.
+Trimodal-Normal, Trial: 82/100 sample size: 2097152
+estimate size: 1  99428
+Elapsed time is 88.583978 seconds.
+Trimodal-Normal, Trial: 83/100 sample size: 2097152
+estimate size: 1  104137
+Elapsed time is 92.818250 seconds.
+Trimodal-Normal, Trial: 84/100 sample size: 2097152
+estimate size: 1  103590
+Elapsed time is 88.628280 seconds.
+Trimodal-Normal, Trial: 85/100 sample size: 2097152
+estimate size: 1  104132
+Elapsed time is 88.698708 seconds.
+Trimodal-Normal, Trial: 86/100 sample size: 2097152
+estimate size: 1  103994
+Elapsed time is 89.841430 seconds.
+Trimodal-Normal, Trial: 87/100 sample size: 2097152
+estimate size: 1  104962
+Elapsed time is 84.448071 seconds.
+Trimodal-Normal, Trial: 88/100 sample size: 2097152
+estimate size: 1  102474
+Elapsed time is 86.270382 seconds.
+Trimodal-Normal, Trial: 89/100 sample size: 2097152
+estimate size: 1  103809
+Elapsed time is 87.147090 seconds.
+Trimodal-Normal, Trial: 90/100 sample size: 2097152
+estimate size: 1  103868
+Elapsed time is 88.608744 seconds.
+Trimodal-Normal, Trial: 91/100 sample size: 2097152
+estimate size: 1  99301
+Elapsed time is 93.098172 seconds.
+Trimodal-Normal, Trial: 92/100 sample size: 2097152
+estimate size: 1  103603
+Elapsed time is 93.249928 seconds.
+Trimodal-Normal, Trial: 93/100 sample size: 2097152
+estimate size: 1  105492
+Elapsed time is 83.709086 seconds.
+Trimodal-Normal, Trial: 94/100 sample size: 2097152
+estimate size: 1  102941
+Elapsed time is 86.212740 seconds.
+Trimodal-Normal, Trial: 95/100 sample size: 2097152
+estimate size: 1  103837
+Elapsed time is 88.216380 seconds.
+Trimodal-Normal, Trial: 96/100 sample size: 2097152
+estimate size: 1  103961
+Elapsed time is 87.994323 seconds.
+Trimodal-Normal, Trial: 97/100 sample size: 2097152
+estimate size: 1  102511
+Elapsed time is 89.610842 seconds.
+Trimodal-Normal, Trial: 98/100 sample size: 2097152
+estimate size: 1  101119
+Elapsed time is 83.425452 seconds.
+Trimodal-Normal, Trial: 99/100 sample size: 2097152
+estimate size: 1  102606
+Elapsed time is 86.827337 seconds.
+Trimodal-Normal, Trial: 100/100 sample size: 2097152
+estimate size: 1  103780
+Elapsed time is 177.623226 seconds.
+Trimodal-Normal, Trial: 1/100 sample size: 4194304
+estimate size: 1  209040
+Elapsed time is 176.151428 seconds.
+Trimodal-Normal, Trial: 2/100 sample size: 4194304
+estimate size: 1  207807
+Elapsed time is 180.468123 seconds.
+Trimodal-Normal, Trial: 3/100 sample size: 4194304
+estimate size: 1  208548
+Elapsed time is 184.000999 seconds.
+Trimodal-Normal, Trial: 4/100 sample size: 4194304
+estimate size: 1  209456
+Elapsed time is 177.367651 seconds.
+Trimodal-Normal, Trial: 5/100 sample size: 4194304
+estimate size: 1  186544
+Elapsed time is 186.956731 seconds.
+Trimodal-Normal, Trial: 6/100 sample size: 4194304
+estimate size: 1  187984
+Elapsed time is 177.849628 seconds.
+Trimodal-Normal, Trial: 7/100 sample size: 4194304
+estimate size: 1  194007
+Elapsed time is 180.128530 seconds.
+Trimodal-Normal, Trial: 8/100 sample size: 4194304
+estimate size: 1  208108
+Elapsed time is 170.545999 seconds.
+Trimodal-Normal, Trial: 9/100 sample size: 4194304
+estimate size: 1  199967
+Elapsed time is 185.593119 seconds.
+Trimodal-Normal, Trial: 10/100 sample size: 4194304
+estimate size: 1  206408
+Elapsed time is 178.055942 seconds.
+Trimodal-Normal, Trial: 11/100 sample size: 4194304
+estimate size: 1  206983
+Elapsed time is 174.207899 seconds.
+Trimodal-Normal, Trial: 12/100 sample size: 4194304
+estimate size: 1  208370
+Elapsed time is 183.205787 seconds.
+Trimodal-Normal, Trial: 13/100 sample size: 4194304
+estimate size: 1  208375
+Elapsed time is 176.645837 seconds.
+Trimodal-Normal, Trial: 14/100 sample size: 4194304
+estimate size: 1  208253
+Elapsed time is 180.586545 seconds.
+Trimodal-Normal, Trial: 15/100 sample size: 4194304
+estimate size: 1  208428
+Elapsed time is 184.447908 seconds.
+Trimodal-Normal, Trial: 16/100 sample size: 4194304
+estimate size: 1  207640
+Elapsed time is 173.859029 seconds.
+Trimodal-Normal, Trial: 17/100 sample size: 4194304
+estimate size: 1  207734
+Elapsed time is 177.966200 seconds.
+Trimodal-Normal, Trial: 18/100 sample size: 4194304
+estimate size: 1  209125
+Elapsed time is 175.154487 seconds.
+Trimodal-Normal, Trial: 19/100 sample size: 4194304
+estimate size: 1  209970
+Elapsed time is 176.279545 seconds.
+Trimodal-Normal, Trial: 20/100 sample size: 4194304
+estimate size: 1  207568
+Elapsed time is 179.048608 seconds.
+Trimodal-Normal, Trial: 21/100 sample size: 4194304
+estimate size: 1  208297
+Elapsed time is 170.324655 seconds.
+Trimodal-Normal, Trial: 22/100 sample size: 4194304
+estimate size: 1  208429
+Elapsed time is 173.645462 seconds.
+Trimodal-Normal, Trial: 23/100 sample size: 4194304
+estimate size: 1  206968
+Elapsed time is 167.813041 seconds.
+Trimodal-Normal, Trial: 24/100 sample size: 4194304
+estimate size: 1  206695
+Elapsed time is 157.583249 seconds.
+Trimodal-Normal, Trial: 25/100 sample size: 4194304
+estimate size: 1  207076
+Elapsed time is 164.749989 seconds.
+Trimodal-Normal, Trial: 26/100 sample size: 4194304
+estimate size: 1  207373
+Elapsed time is 171.546808 seconds.
+Trimodal-Normal, Trial: 27/100 sample size: 4194304
+estimate size: 1  182748
+Elapsed time is 169.454827 seconds.
+Trimodal-Normal, Trial: 28/100 sample size: 4194304
+estimate size: 1  208604
+Elapsed time is 178.345259 seconds.
+Trimodal-Normal, Trial: 29/100 sample size: 4194304
+estimate size: 1  208076
+Elapsed time is 178.680515 seconds.
+Trimodal-Normal, Trial: 30/100 sample size: 4194304
+estimate size: 1  207332
+Elapsed time is 166.936910 seconds.
+Trimodal-Normal, Trial: 31/100 sample size: 4194304
+estimate size: 1  208198
+Elapsed time is 167.600154 seconds.
+Trimodal-Normal, Trial: 32/100 sample size: 4194304
+estimate size: 1  197202
+Elapsed time is 165.024158 seconds.
+Trimodal-Normal, Trial: 33/100 sample size: 4194304
+estimate size: 1  207463
+Elapsed time is 171.811108 seconds.
+Trimodal-Normal, Trial: 34/100 sample size: 4194304
+estimate size: 1  206640
+Elapsed time is 168.479636 seconds.
+Trimodal-Normal, Trial: 35/100 sample size: 4194304
+estimate size: 1  208970
+Elapsed time is 151.469921 seconds.
+Trimodal-Normal, Trial: 36/100 sample size: 4194304
+estimate size: 1  206541
+Elapsed time is 169.596079 seconds.
+Trimodal-Normal, Trial: 37/100 sample size: 4194304
+estimate size: 1  199077
+Elapsed time is 163.404942 seconds.
+Trimodal-Normal, Trial: 38/100 sample size: 4194304
+estimate size: 1  198581
+Elapsed time is 164.430014 seconds.
+Trimodal-Normal, Trial: 39/100 sample size: 4194304
+estimate size: 1  206906
+Elapsed time is 171.538321 seconds.
+Trimodal-Normal, Trial: 40/100 sample size: 4194304
+estimate size: 1  208117
+Elapsed time is 162.657659 seconds.
+Trimodal-Normal, Trial: 41/100 sample size: 4194304
+estimate size: 1  206941
+Elapsed time is 163.372842 seconds.
+Trimodal-Normal, Trial: 42/100 sample size: 4194304
+estimate size: 1  208162
+Elapsed time is 170.278064 seconds.
+Trimodal-Normal, Trial: 43/100 sample size: 4194304
+estimate size: 1  208454
+Elapsed time is 167.928479 seconds.
+Trimodal-Normal, Trial: 44/100 sample size: 4194304
+estimate size: 1  198764
+Elapsed time is 167.362720 seconds.
+Trimodal-Normal, Trial: 45/100 sample size: 4194304
+estimate size: 1  204006
+Elapsed time is 160.316549 seconds.
+Trimodal-Normal, Trial: 46/100 sample size: 4194304
+estimate size: 1  198443
+Elapsed time is 151.442772 seconds.
+Trimodal-Normal, Trial: 47/100 sample size: 4194304
+estimate size: 1  207187
+Elapsed time is 160.347053 seconds.
+Trimodal-Normal, Trial: 48/100 sample size: 4194304
+estimate size: 1  199005
+Elapsed time is 165.102048 seconds.
+Trimodal-Normal, Trial: 49/100 sample size: 4194304
+estimate size: 1  207320
+Elapsed time is 173.243337 seconds.
+Trimodal-Normal, Trial: 50/100 sample size: 4194304
+estimate size: 1  208689
+Elapsed time is 156.196156 seconds.
+Trimodal-Normal, Trial: 51/100 sample size: 4194304
+estimate size: 1  208038
+Elapsed time is 162.069617 seconds.
+Trimodal-Normal, Trial: 52/100 sample size: 4194304
+estimate size: 1  198329
+Elapsed time is 163.087578 seconds.
+Trimodal-Normal, Trial: 53/100 sample size: 4194304
+estimate size: 1  206027
+Elapsed time is 169.860584 seconds.
+Trimodal-Normal, Trial: 54/100 sample size: 4194304
+estimate size: 1  207965
+Elapsed time is 172.397694 seconds.
+Trimodal-Normal, Trial: 55/100 sample size: 4194304
+estimate size: 1  199405
+Elapsed time is 175.341723 seconds.
+Trimodal-Normal, Trial: 56/100 sample size: 4194304
+estimate size: 1  209496
+Elapsed time is 166.393933 seconds.
+Trimodal-Normal, Trial: 57/100 sample size: 4194304
+estimate size: 1  205927
+Elapsed time is 163.115180 seconds.
+Trimodal-Normal, Trial: 58/100 sample size: 4194304
+estimate size: 1  196908
+Elapsed time is 156.172963 seconds.
+Trimodal-Normal, Trial: 59/100 sample size: 4194304
+estimate size: 1  207008
+Elapsed time is 163.334492 seconds.
+Trimodal-Normal, Trial: 60/100 sample size: 4194304
+estimate size: 1  206606
+Elapsed time is 165.363647 seconds.
+Trimodal-Normal, Trial: 61/100 sample size: 4194304
+estimate size: 1  206719
+Elapsed time is 159.441184 seconds.
+Trimodal-Normal, Trial: 62/100 sample size: 4194304
+estimate size: 1  206993
+Elapsed time is 174.016298 seconds.
+Trimodal-Normal, Trial: 63/100 sample size: 4194304
+estimate size: 1  208526
+Elapsed time is 164.615471 seconds.
+Trimodal-Normal, Trial: 64/100 sample size: 4194304
+estimate size: 1  208504
+Elapsed time is 162.762416 seconds.
+Trimodal-Normal, Trial: 65/100 sample size: 4194304
+estimate size: 1  206983
+Elapsed time is 168.012256 seconds.
+Trimodal-Normal, Trial: 66/100 sample size: 4194304
+estimate size: 1  199268
+Elapsed time is 170.033358 seconds.
+Trimodal-Normal, Trial: 67/100 sample size: 4194304
+estimate size: 1  198866
+Elapsed time is 163.698583 seconds.
+Trimodal-Normal, Trial: 68/100 sample size: 4194304
+estimate size: 1  207516
+Elapsed time is 161.163218 seconds.
+Trimodal-Normal, Trial: 69/100 sample size: 4194304
+estimate size: 1  207257
+Elapsed time is 157.438193 seconds.
+Trimodal-Normal, Trial: 70/100 sample size: 4194304
+estimate size: 1  206585
+Elapsed time is 160.299898 seconds.
+Trimodal-Normal, Trial: 71/100 sample size: 4194304
+estimate size: 1  206438
+Elapsed time is 168.554009 seconds.
+Trimodal-Normal, Trial: 72/100 sample size: 4194304
+estimate size: 1  208213
+Elapsed time is 170.440105 seconds.
+Trimodal-Normal, Trial: 73/100 sample size: 4194304
+estimate size: 1  207445
+Elapsed time is 169.649369 seconds.
+Trimodal-Normal, Trial: 74/100 sample size: 4194304
+estimate size: 1  193266
+Elapsed time is 168.764709 seconds.
+Trimodal-Normal, Trial: 75/100 sample size: 4194304
+estimate size: 1  207860
+Elapsed time is 161.180272 seconds.
+Trimodal-Normal, Trial: 76/100 sample size: 4194304
+estimate size: 1  207712
+Elapsed time is 174.606667 seconds.
+Trimodal-Normal, Trial: 77/100 sample size: 4194304
+estimate size: 1  208585
+Elapsed time is 159.826830 seconds.
+Trimodal-Normal, Trial: 78/100 sample size: 4194304
+estimate size: 1  206415
+Elapsed time is 171.099699 seconds.
+Trimodal-Normal, Trial: 79/100 sample size: 4194304
+estimate size: 1  207865
+Elapsed time is 167.811424 seconds.
+Trimodal-Normal, Trial: 80/100 sample size: 4194304
+estimate size: 1  198965
+Elapsed time is 166.428312 seconds.
+Trimodal-Normal, Trial: 81/100 sample size: 4194304
+estimate size: 1  207203
+Elapsed time is 153.552681 seconds.
+Trimodal-Normal, Trial: 82/100 sample size: 4194304
+estimate size: 1  206865
+Elapsed time is 176.412332 seconds.
+Trimodal-Normal, Trial: 83/100 sample size: 4194304
+estimate size: 1  207758
+Elapsed time is 168.545882 seconds.
+Trimodal-Normal, Trial: 84/100 sample size: 4194304
+estimate size: 1  208633
+Elapsed time is 159.005417 seconds.
+Trimodal-Normal, Trial: 85/100 sample size: 4194304
+estimate size: 1  207810
+Elapsed time is 168.716160 seconds.
+Trimodal-Normal, Trial: 86/100 sample size: 4194304
+estimate size: 1  207332
+Elapsed time is 173.279222 seconds.
+Trimodal-Normal, Trial: 87/100 sample size: 4194304
+estimate size: 1  208049
+Elapsed time is 153.953952 seconds.
+Trimodal-Normal, Trial: 88/100 sample size: 4194304
+estimate size: 1  197716
+Elapsed time is 170.292269 seconds.
+Trimodal-Normal, Trial: 89/100 sample size: 4194304
+estimate size: 1  208563
+Elapsed time is 165.845186 seconds.
+Trimodal-Normal, Trial: 90/100 sample size: 4194304
+estimate size: 1  208132
+Elapsed time is 160.193950 seconds.
+Trimodal-Normal, Trial: 91/100 sample size: 4194304
+estimate size: 1  207577
+Elapsed time is 163.375576 seconds.
+Trimodal-Normal, Trial: 92/100 sample size: 4194304
+estimate size: 1  208229
+Elapsed time is 169.419562 seconds.
+Trimodal-Normal, Trial: 93/100 sample size: 4194304
+estimate size: 1  208443
+Elapsed time is 168.243694 seconds.
+Trimodal-Normal, Trial: 94/100 sample size: 4194304
+estimate size: 1  198885
+Elapsed time is 162.335559 seconds.
+Trimodal-Normal, Trial: 95/100 sample size: 4194304
+estimate size: 1  207113
+Elapsed time is 170.024417 seconds.
+Trimodal-Normal, Trial: 96/100 sample size: 4194304
+estimate size: 1  207388
+Elapsed time is 162.821208 seconds.
+Trimodal-Normal, Trial: 97/100 sample size: 4194304
+estimate size: 1  206470
+Elapsed time is 166.171645 seconds.
+Trimodal-Normal, Trial: 98/100 sample size: 4194304
+estimate size: 1  206586
+Elapsed time is 157.631752 seconds.
+Trimodal-Normal, Trial: 99/100 sample size: 4194304
+estimate size: 1  207963
+Elapsed time is 164.041550 seconds.
+Trimodal-Normal, Trial: 100/100 sample size: 4194304
+estimate size: 1  208017
+[Warning: Variable 'nse_pdf_data' was not saved. For variables larger than 2GB
+use MAT-file version 7.3 or later.] 
+[> In driver_func (line 316)] 
+[Warning: Variable 'nmem_pdf_data' was not saved. For variables larger than 2GB
+use MAT-file version 7.3 or later.] 
+[> In driver_func (line 317)] 

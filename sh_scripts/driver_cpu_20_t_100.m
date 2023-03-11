@@ -19,9 +19,9 @@ actual.generate_data = false;
 % script switching board
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   17; %<---- maximum exponent to generate samples
+max_pow =                   22; %<---- maximum exponent to generate samples
 min_pow =                   8; %<---- minimum exponent to generate samples
-trials =                    2   ;  %<--- trials to run to generate heuristics for programs
+trials =                    100   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -32,23 +32,23 @@ x_resolution =              1000;
 % Univariant Random Sample Generator available on zmerino's github
 cpu_type =                   '\';%<--- '\' or '/' for windows or linux
 
-distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
-distribution = distribution_vector';
-names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
-
-
-distribution_vector = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b0p5","Generalized-Pareto"];
-distribution = distribution_vector';
-names = ["Tri-Modal-Normal","Uniform", "Normal", "Beta(0.5,0.5)", "Generalized-Pareto"];
-
-
-distribution_vector = ["Generalized-Pareto"];
-distribution = distribution_vector';
-names = [ "Generalized-Pareto"];
-
-distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto", "Stable"];
-distribution = distribution_vector';
-names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
+% distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
+% distribution = distribution_vector';
+% names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
+% 
+% 
+% distribution_vector = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b0p5","Generalized-Pareto"];
+% distribution = distribution_vector';
+% names = ["Tri-Modal-Normal","Uniform", "Normal", "Beta(0.5,0.5)", "Generalized-Pareto"];
+% 
+% 
+% distribution_vector = ["Generalized-Pareto"];
+% distribution = distribution_vector';
+% names = [ "Generalized-Pareto"];
+% 
+% distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto", "Stable"];
+% distribution = distribution_vector';
+% names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
 
 distribution_vector = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable","Stable2","Stable3"];
 distribution = distribution_vector';

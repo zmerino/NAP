@@ -2,9 +2,13 @@
 % use when driver.m is a script and not a function
 clc;clear all; close all;
 
+
 addpath("functions/")
-% addpath("cpp_code/")
-addpath("cpp_code_smooth/")
+addpath("functions_plotting/")
+addpath("cpp_code/")
+% addpath("cpp_code_smooth/")
+
+publicationQuality();
 
 % figure directory
 sub_dir = 'pset7';
@@ -17,15 +21,15 @@ actual.generate_data = false;
 
 % User Options ============================================================
 % script switching board
-estimator_call_flag =       true;   %<- true/false call SE on/off
+estimator_call_flag =       false;   %<- true/false call SE on/off
 estimator_plot_flag =       false;   %<- true/false plot SE results on/off
-data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
-save_figs =                 true;   %<- true/false save .png of plots on/off
+data_type_flag =            false;   %<- true/false integer powers of 2/real powers of 2
+save_figs =                 false;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   17; %<---- maximum exponent to generate samples
-min_pow =                   10; %<---- minimum exponent to generate samples
-trials =                    2   ;  %<--- trials to run to generate heuristics for programs
-step =                      7;  %<---- control synthetic rndom samples to skip being created
+max_pow =                   9; %<---- maximum exponent to generate samples
+min_pow =                   9; %<---- minimum exponent to generate samples
+trials =                    10   ;  %<--- trials to run to generate heuristics for programs
+step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
 temp_max_limit =            1000; %<---- set upper limit for both
@@ -45,10 +49,37 @@ distribution = distribution_vector';
 names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable", "Stable2","Stable3"];
 
 
-distribution_vector = ["Beta-a0p5-b0p5","Normal","Trimodal-Normal","Uniform","Uniform-Mix"];
-distribution = distribution_vector';
-names = ["Beta(0.5,0.5)","Normal","Tri-Modal-Normal","Uniform","Uniform-Mix"];
-
+% distribution_vector = ["Beta-a0p5-b0p5","Normal","Trimodal-Normal","Uniform","Uniform-Mix"];
+% distribution = distribution_vector';
+% names = ["Beta(0.5,0.5)","Normal","Tri-Modal-Normal","Uniform","Uniform-Mix"];
+% 
+% 
+% distribution_vector = ["Normal","Beta-a0p5-b0p5", "Stable1"];
+% distribution = distribution_vector';
+% names = [ "Normal","Beta(0.5,0.5)","Stable1"];
+% 
+% 
+% distribution_vector = ["Normal","Beta-a0p5-b0p5"];
+% distribution = distribution_vector';
+% names = [ "Normal","Beta(0.5,0.5)"];
+% 
+% 
+% 
+% distribution_vector = ["Stable", "Stable2","Stable3","Stable1"];
+% distribution = distribution_vector';
+% names = ["Stable", "Stable2","Stable3","Stable1"];
+% % 
+% distribution_vector = ["Stable1"];
+% distribution = distribution_vector';
+% names = ["Stable1"];
+% 
+% 
+% distribution_vector = ["Uniform"];
+% distribution = distribution_vector';
+% names = ["Uniform"];
+% distribution_vector = ["Uniform-Mix"];
+% distribution = distribution_vector';
+% names = ["Uniform-Mix"];
 
 % distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
 % distribution = distribution_vector';
@@ -136,7 +167,7 @@ for j = 1:length(distribution_vector)
     sample_track = [];
 
     % Create vector of  samples
-    sample_vec = utils.sample_pow(min_pow,max_pow,data_type_flag,step);
+    sample_vec = utils.sample_pow(min_pow,max_pow,true,step);
 
     % create empty cells for plotting
     nse_pdfs = cell(length(distribution_vector), trials, length(sample_vec), 2);

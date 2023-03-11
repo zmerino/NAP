@@ -3,13 +3,12 @@
 clc;clear all; close all;
 
 addpath("functions/")
+addpath("functions_plotting/")
 addpath("cpp_code/")
 
-fid = fopen(full_file, 'w');
-fprintf(fid,['Cpu failure distance script started on: ',datestr(datetime(now,'ConvertFrom','datenum')),'/n']);
-fclose(fid);
+publicationQuality();
 
-dir_name = fullfile('figures','kde_pdfs');
+dir_name = fullfile('figures_manuscript','kde_pdfs');
 % dir_name = fullfile('figures','kde_pdfs_mod');
 status = mkdir(dir_name);
 
@@ -119,7 +118,7 @@ for j = 1:length(distribution_vector)
     nse_pdfs = cell(length(distribution_vector), trials, length(sample_vec), 2);
     nse_cdfs = cell(length(distribution_vector), trials, length(sample_vec), 2);
     nse_sqrs = cell(length(distribution_vector), trials, length(sample_vec), 2);
-    
+
     nse_kde_pdfs = cell(length(distribution_vector), trials, length(sample_vec), 2);
     nse_kde_cdfs = cell(length(distribution_vector), trials, length(sample_vec), 2);
     nse_kde_sqrs = cell(length(distribution_vector), trials, length(sample_vec), 2);
@@ -185,24 +184,24 @@ for j = 1:length(distribution_vector)
             nse_kde = NAPkde;
             serial = true;
             nse_kde = nse_kde.stitch(sample, serial);
-            
+
             % extract relevant parameters from object after stich() method
             fail_code = nse_kde.failed;
             x_nse_kde = nse_kde.sx;
             SE_pdf_kde = nse_kde.sPDF;
-%             SE_cdf = nse_kde.sCDF;
-%             SE_u = nse_kde.u;
-%             SE_SQR = nse_kde.sqr;
-%             nBlocks = nse_kde.nBlocks;
+            %             SE_cdf = nse_kde.sCDF;
+            %             SE_u = nse_kde.u;
+            %             SE_SQR = nse_kde.sqr;
+            %             nBlocks = nse_kde.nBlocks;
             rndom.Ns = nse_kde.N;
             binrndom.Ns =  nse_kde.binN;
-%             max_LG = nse_kde.LG_max;
-%             sum_LG = nse_kde.LG_sum;
-%             T = nse_kde.T;
-%             BRlevel = nse_kde.BRlevel;
-%             BR0 = nse_kde.BR0;
-% 
-%             tcpuSE = cputime-tintialSE;
+            %             max_LG = nse_kde.LG_max;
+            %             sum_LG = nse_kde.LG_sum;
+            %             T = nse_kde.T;
+            %             BRlevel = nse_kde.BRlevel;
+            %             BR0 = nse_kde.BR0;
+            %
+            %             tcpuSE = cputime-tintialSE;
 
 
             %-- NAP w/o KDE start
@@ -218,7 +217,7 @@ for j = 1:length(distribution_vector)
             nap = NAP;
             serial = true;
             nap = nap.stitch(sample, serial);
-            
+
             % extract relevant parameters from object after stich() method
             fail_code = nap.failed;
             x_nse = nap.sx;
@@ -265,29 +264,8 @@ for j = 1:length(distribution_vector)
                 % don't record cpu time if estimator failed
                 tcpuNMEM = NaN;
             end
-            
+
             % Stitching ---
-
-%             figure('Name','plt_blockpdf')
-%             hold on
-%             for b=1:length(nse_kde.block_indx)
-%                 plot( nse_kde.blocks_x{nse_kde.block_indx(b)} , nse_kde.blocks_pdf{nse_kde.block_indx(b)}, '-b' )
-%             end
-%             for b=1:length(nse_kde.block_indx)
-%                 plot( nap.blocks_x{nap.block_indx(b)} , nap.blocks_pdf{nap.block_indx(b)}, '-r')
-%             end
-%             ylabel('$\hat{f}(x)$','Interpreter','latex')
-%             xlabel('$x$','Interpreter','latex')
-%             if max( nse_kde.blocks_x{nse_kde.block_indx(length(nse_kde.block_indx))}) < 1.1
-%                 ylim([0,6])
-%             else
-%                 ylim([0,1])
-%             end
-
-            %==========================================================
-            % % % % % % % % end of estimate % % % % % % % % %
-            %==========================================================
-
 
             % SAVING estimates into table ---------------------------------
 
@@ -318,6 +296,7 @@ for j = 1:length(distribution_vector)
     yl2 = [-0.1, 6];
     for k = 1:length(sample_vec)
 
+        % subplots --------------------------------------------------------
         fig_name = sprintf('pdf_d_%s_%s', convertCharsToStrings(distribution_vector(j)), num2str(sample_vec(k)));
         figure('Name',fig_name)
 
@@ -325,7 +304,7 @@ for j = 1:length(distribution_vector)
         hold on;
         for i = 1:trials
             plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
-            plot(nse_kde_pdfs{j,i,k,1}, nse_kde_pdfs{j,i,k,2}, '-b', DisplayName='$\hat{f}(x)_{NAP \ KDE}$')
+            plot(nse_kde_pdfs{j,i,k,1}, nse_kde_pdfs{j,i,k,2}, '-m', DisplayName='$\hat{f}(x)_{NAP \ KDE}$')
 
             if max(actual.x) > 3
                 xlim(xl2)
@@ -339,7 +318,7 @@ for j = 1:length(distribution_vector)
             end
 
             title('$\hat{f}(x)_{NAP \ KDE}$','interpreter','latex')
-            ylabel('f(x)')
+            ylabel('$\hat{f}(x)$', Interpreter='latex')
         end
         subplot(2,2,2)
         hold on;
@@ -364,7 +343,7 @@ for j = 1:length(distribution_vector)
         hold on;
         for i = 1:trials
             plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
-            plot(nse_pdfs{j,i,k,1}, nse_pdfs{j,i,k,2}, '-m', DisplayName='$\hat{f}(x)_{NAP}$')
+            plot(nse_pdfs{j,i,k,1}, nse_pdfs{j,i,k,2}, '-r', DisplayName='$\hat{f}(x)_{NAP}$')
 
             if max(actual.x) > 3
                 xlim(xl2)
@@ -378,14 +357,14 @@ for j = 1:length(distribution_vector)
             end
 
             title('$\hat{f}(x)_{NAP}$','interpreter','latex')
-            xlabel('x')
-            ylabel('f(x)')
+            xlabel('$x$', Interpreter='latex')
+            ylabel('$\hat{f}(x)$', Interpreter='latex')
         end
         subplot(2,2,4)
         hold on;
         for i = 1:trials
             plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
-            plot(nmem_pdfs{j,i,k,1}, nmem_pdfs{j,i,k,2}, '-r', DisplayName='$\hat{f}(x)_{NMEM}$')
+            plot(nmem_pdfs{j,i,k,1}, nmem_pdfs{j,i,k,2}, '-b', DisplayName='$\hat{f}(x)_{NMEM}$')
 
             if max(actual.x) > 3
                 xlim(xl2)
@@ -400,10 +379,125 @@ for j = 1:length(distribution_vector)
 
             title('$\hat{f}(x)_{NMEM}$','interpreter','latex')
         end
-        xlabel('x')
+        xlabel('$x$', Interpreter='latex')
         bp = gca;
         if save_figs
             saveas(bp, fullfile(dir_name, [fig_name, '.png']))
+        end
+
+        % individual figures ----------------------------------------------
+        fig_name = sprintf('pdf_d_%s_%s', convertCharsToStrings(distribution_vector(j)), num2str(sample_vec(k)));
+        fig_name_mod = ['NAP_KDE_',fig_name];
+
+        figure('Name',fig_name_mod)
+        hold on;
+        for i = 1:trials
+            plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
+            plot(nse_kde_pdfs{j,i,k,1}, nse_kde_pdfs{j,i,k,2}, '-m', DisplayName='$\hat{f}(x)_{NAP \ KDE}$')
+
+            if max(actual.x) > 3
+                xlim(xl2)
+            else
+                xlim(xl1)
+            end
+            if max(actual.pdf_y) > 1
+                ylim(yl2)
+            else
+                ylim(yl1)
+            end
+
+            %             title('$\hat{f}(x)_{NAP \ KDE}$','interpreter','latex')
+            xlabel('$x$', Interpreter='latex')
+            ylabel('$\hat{f}(x)$', Interpreter='latex')
+            bp = gca;
+            if save_figs
+                saveas(bp, fullfile(dir_name, [fig_name_mod, '.png']))
+            end
+        end
+
+        fig_name_mod = ['KDE_',fig_name];
+
+        figure('Name',fig_name_mod)
+        hold on;
+        for i = 1:trials
+            plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
+            plot(kde_pdfs{j,i,k,1}, kde_pdfs{j,i,k,2}, '-g', DisplayName='$\hat{f}(x)_{KDE}$')
+
+            if max(actual.x) > 3
+                xlim(xl2)
+            else
+                xlim(xl1)
+            end
+            if max(actual.pdf_y) > 1
+                ylim(yl2)
+            else
+                ylim(yl1)
+            end
+
+            %             title('$\hat{f}(x)_{KDE}$','interpreter','latex')
+            xlabel('$x$', Interpreter='latex')
+            ylabel('$\hat{f}(x)$', Interpreter='latex')
+            bp = gca;
+            if save_figs
+                saveas(bp, fullfile(dir_name, [fig_name_mod, '.png']))
+            end
+        end
+
+        fig_name_mod = ['NAP_',fig_name];
+
+        figure('Name',fig_name_mod)
+        hold on;
+        for i = 1:trials
+            plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
+            plot(nse_pdfs{j,i,k,1}, nse_pdfs{j,i,k,2}, '-r', DisplayName='$\hat{f}(x)_{NAP}$')
+
+            if max(actual.x) > 3
+                xlim(xl2)
+            else
+                xlim(xl1)
+            end
+            if max(actual.pdf_y) > 1
+                ylim(yl2)
+            else
+                ylim(yl1)
+            end
+
+            %             title('$\hat{f}(x)_{NAP}$','interpreter','latex')
+            xlabel('$x$', Interpreter='latex')
+            ylabel('$\hat{f}(x)$', Interpreter='latex')
+            bp = gca;
+            if save_figs
+                saveas(bp, fullfile(dir_name, [fig_name_mod, '.png']))
+            end
+        end
+
+
+        fig_name_mod = ['NMEM_',fig_name];
+
+        figure('Name',fig_name_mod)
+        hold on;
+        for i = 1:trials
+            plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
+            plot(nmem_pdfs{j,i,k,1}, nmem_pdfs{j,i,k,2}, '-b', DisplayName='$\hat{f}(x)_{NMEM}$')
+
+            if max(actual.x) > 3
+                xlim(xl2)
+            else
+                xlim(xl1)
+            end
+            if max(actual.pdf_y) > 1
+                ylim(yl2)
+            else
+                ylim(yl1)
+            end
+
+            %             title('$\hat{f}(x)_{NMEM}$','interpreter','latex')
+        end
+        xlabel('$x$', Interpreter='latex')
+        ylabel('$\hat{f}(x)$', Interpreter='latex')
+        bp = gca;
+        if save_figs
+            saveas(bp, fullfile(dir_name, [fig_name_mod, '.png']))
         end
     end
 

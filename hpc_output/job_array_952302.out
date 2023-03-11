@@ -1,0 +1,4775 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2022 The MathWorks, Inc.
+                  R2022b (9.13.0.2049777) 64-bit (glnxa64)
+                              August 24, 2022
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+
+distribution_vector = 
+
+    "Beta-a2-b0p5"
+
+
+names = 
+
+    "Beta(2,0.5)"
+
+
+trials =
+
+   100
+
+
+min_pow =
+
+     8
+
+
+max_pow =
+
+    22
+
+
+cpu_n =
+
+    20
+
+
+cpp_code = 
+
+    "cpp_code_smooth/"
+
+
+dir_name =
+
+    'data_2/Beta-a2-b0p5_cpu_20_t_100'
+
+
+table_name =
+
+    'Beta-a2-b0p5_cpu_20_t_100.dat'
+
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to the parallel pool (number of workers: 12).
+Elapsed time is 30.401834 seconds.
+Beta-a2-b0p5, Trial: 1/100 sample size: 256
+estimate size: 1  3982
+Elapsed time is 0.238773 seconds.
+Beta-a2-b0p5, Trial: 2/100 sample size: 256
+estimate size: 1  3115
+Elapsed time is 0.230530 seconds.
+Beta-a2-b0p5, Trial: 3/100 sample size: 256
+estimate size: 1  1575
+Elapsed time is 0.547298 seconds.
+Beta-a2-b0p5, Trial: 4/100 sample size: 256
+estimate size: 1  2277
+Elapsed time is 0.552802 seconds.
+Beta-a2-b0p5, Trial: 5/100 sample size: 256
+estimate size: 1  2471
+Elapsed time is 0.314968 seconds.
+Beta-a2-b0p5, Trial: 6/100 sample size: 256
+estimate size: 1  2305
+Elapsed time is 0.302523 seconds.
+Beta-a2-b0p5, Trial: 7/100 sample size: 256
+estimate size: 1  6122
+Elapsed time is 0.250621 seconds.
+Beta-a2-b0p5, Trial: 8/100 sample size: 256
+estimate size: 1  2259
+Elapsed time is 0.290110 seconds.
+Beta-a2-b0p5, Trial: 9/100 sample size: 256
+estimate size: 1  3157
+Elapsed time is 0.227827 seconds.
+Beta-a2-b0p5, Trial: 10/100 sample size: 256
+estimate size: 1  3063
+Elapsed time is 0.140797 seconds.
+Beta-a2-b0p5, Trial: 11/100 sample size: 256
+estimate size: 1  2318
+Elapsed time is 0.629759 seconds.
+Beta-a2-b0p5, Trial: 12/100 sample size: 256
+estimate size: 1  6170
+Elapsed time is 0.434065 seconds.
+Beta-a2-b0p5, Trial: 13/100 sample size: 256
+estimate size: 1  6066
+Elapsed time is 0.211833 seconds.
+Beta-a2-b0p5, Trial: 14/100 sample size: 256
+estimate size: 1  2370
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 5
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function>make_general_channel/channel_general', '/apps/pkg/matlab/R2022b/toolbox/matlab/lang/parallel_function.m', 837)" style="font-weight:bold">parallel_function>make_general_channel/channel_general</a> (<a href="matlab: opentoline('/apps/pkg/matlab/R2022b/toolbox/matlab/lang/parallel_function.m',837,0)">line 837</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('remoteParallelFunction', '/apps/pkg/matlab/R2022b/toolbox/parallel/remoteParallelFunction.m', 67)" style="font-weight:bold">remoteParallelFunction</a> (<a href="matlab: opentoline('/apps/pkg/matlab/R2022b/toolbox/parallel/remoteParallelFunction.m',67,0)">line 67</a>)
+original block: 1 (0.084087, 0.69958)
+original block: 2 (0.54914, 0.71597)
+original block: 3 (0.70087, 0.74321)
+original block: 4 (0.71637, 0.74615)
+original block: 5 (0.74621, 0.74622)
+original block: 6 (0.74622, 0.85085)
+original block: 7 (0.74798, 0.89889)
+original block: 8 (0.85105, 0.94486)
+original block: 9 (0.89919, 0.97229)
+original block: 10 (0.94506, 0.98568)
+original block: 11 (0.97246, 0.99348)
+original block: 12 (0.98577, 0.99796)
+    left block # = 4
+   right block # = 5
+            xmax = 0.74615
+            xmin = 0.74621
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In NAP/stitch (line 451)
+In driver_func (line 173)] 
+[Warning: Problem using function.  Assigning a value of 0. t: 1 b: 5] 
+[In parallel_function (line 494)
+In NAP/stitch (line 325)
+In driver_func (line 201)] 
+original block: 1 (0.084087, 0.69958)
+original block: 2 (0.54914, 0.71597)
+original block: 3 (0.70087, 0.74321)
+original block: 4 (0.71637, 0.74615)
+original block: 5 (0.74621, 0.74622)
+original block: 6 (0.74622, 0.85085)
+original block: 7 (0.74798, 0.89889)
+original block: 8 (0.85105, 0.94486)
+original block: 9 (0.89919, 0.97229)
+original block: 10 (0.94506, 0.98568)
+original block: 11 (0.97246, 0.99348)
+original block: 12 (0.98577, 0.99796)
+    left block # = 4
+   right block # = 5
+            xmax = 0.74615
+            xmin = 0.74621
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In NAP/stitch (line 451)
+In driver_func (line 201)] 
+Elapsed time is 7.393924 seconds.
+Beta-a2-b0p5, Trial: 15/100 sample size: 256
+estimate size: 1  5135
+Elapsed time is 0.217607 seconds.
+Beta-a2-b0p5, Trial: 16/100 sample size: 256
+estimate size: 1  3712
+Elapsed time is 0.263456 seconds.
+Beta-a2-b0p5, Trial: 17/100 sample size: 256
+estimate size: 1  3776
+Elapsed time is 0.270687 seconds.
+Beta-a2-b0p5, Trial: 18/100 sample size: 256
+estimate size: 1  2310
+Elapsed time is 0.372909 seconds.
+Beta-a2-b0p5, Trial: 19/100 sample size: 256
+estimate size: 1  3107
+Elapsed time is 0.371807 seconds.
+Beta-a2-b0p5, Trial: 20/100 sample size: 256
+estimate size: 1  3823
+Elapsed time is 0.505078 seconds.
+Beta-a2-b0p5, Trial: 21/100 sample size: 256
+estimate size: 1  4551
+Elapsed time is 0.304039 seconds.
+Beta-a2-b0p5, Trial: 22/100 sample size: 256
+estimate size: 1  4322
+Elapsed time is 0.247443 seconds.
+Beta-a2-b0p5, Trial: 23/100 sample size: 256
+estimate size: 1  1546
+Elapsed time is 0.292017 seconds.
+Beta-a2-b0p5, Trial: 24/100 sample size: 256
+estimate size: 1  3055
+Elapsed time is 0.251199 seconds.
+Beta-a2-b0p5, Trial: 25/100 sample size: 256
+estimate size: 1  3172
+Elapsed time is 0.806160 seconds.
+Beta-a2-b0p5, Trial: 26/100 sample size: 256
+estimate size: 1  4711
+Elapsed time is 0.436997 seconds.
+Beta-a2-b0p5, Trial: 27/100 sample size: 256
+estimate size: 1  3699
+Elapsed time is 0.160609 seconds.
+Beta-a2-b0p5, Trial: 28/100 sample size: 256
+estimate size: 1  2283
+Elapsed time is 0.400480 seconds.
+Beta-a2-b0p5, Trial: 29/100 sample size: 256
+estimate size: 1  4522
+Elapsed time is 0.298633 seconds.
+Beta-a2-b0p5, Trial: 30/100 sample size: 256
+estimate size: 1  5206
+Elapsed time is 0.147900 seconds.
+Beta-a2-b0p5, Trial: 31/100 sample size: 256
+estimate size: 1  3787
+Elapsed time is 1.371157 seconds.
+Beta-a2-b0p5, Trial: 32/100 sample size: 256
+estimate size: 1  4561
+Elapsed time is 0.491597 seconds.
+Beta-a2-b0p5, Trial: 33/100 sample size: 256
+estimate size: 1  3789
+Elapsed time is 0.529378 seconds.
+Beta-a2-b0p5, Trial: 34/100 sample size: 256
+estimate size: 1  4679
+Elapsed time is 0.142524 seconds.
+Beta-a2-b0p5, Trial: 35/100 sample size: 256
+estimate size: 1  3140
+Elapsed time is 0.160592 seconds.
+Beta-a2-b0p5, Trial: 36/100 sample size: 256
+estimate size: 1  3866
+Elapsed time is 0.208995 seconds.
+Beta-a2-b0p5, Trial: 37/100 sample size: 256
+estimate size: 1  2349
+Elapsed time is 0.980183 seconds.
+Beta-a2-b0p5, Trial: 38/100 sample size: 256
+estimate size: 1  6312
+Elapsed time is 0.235945 seconds.
+Beta-a2-b0p5, Trial: 39/100 sample size: 256
+estimate size: 1  3808
+Elapsed time is 0.357533 seconds.
+Beta-a2-b0p5, Trial: 40/100 sample size: 256
+estimate size: 1  3787
+Elapsed time is 1.186913 seconds.
+Beta-a2-b0p5, Trial: 41/100 sample size: 256
+estimate size: 1  5237
+Elapsed time is 1.108144 seconds.
+Beta-a2-b0p5, Trial: 42/100 sample size: 256
+estimate size: 1  3657
+Elapsed time is 1.006824 seconds.
+Beta-a2-b0p5, Trial: 43/100 sample size: 256
+estimate size: 1  2386
+Elapsed time is 0.221067 seconds.
+Beta-a2-b0p5, Trial: 44/100 sample size: 256
+estimate size: 1  3902
+Elapsed time is 0.140820 seconds.
+Beta-a2-b0p5, Trial: 45/100 sample size: 256
+estimate size: 1  3842
+Elapsed time is 0.684056 seconds.
+Beta-a2-b0p5, Trial: 46/100 sample size: 256
+estimate size: 1  5292
+Elapsed time is 0.784563 seconds.
+Beta-a2-b0p5, Trial: 47/100 sample size: 256
+estimate size: 1  6861
+Elapsed time is 3.110803 seconds.
+Beta-a2-b0p5, Trial: 48/100 sample size: 256
+estimate size: 1  3700
+Elapsed time is 0.181377 seconds.
+Beta-a2-b0p5, Trial: 49/100 sample size: 256
+estimate size: 1  2277
+Elapsed time is 0.157143 seconds.
+Beta-a2-b0p5, Trial: 50/100 sample size: 256
+estimate size: 1  3057
+Elapsed time is 0.293445 seconds.
+Beta-a2-b0p5, Trial: 51/100 sample size: 256
+estimate size: 1  2362
+Elapsed time is 0.255265 seconds.
+Beta-a2-b0p5, Trial: 52/100 sample size: 256
+estimate size: 1  3101
+Elapsed time is 0.260244 seconds.
+Beta-a2-b0p5, Trial: 53/100 sample size: 256
+estimate size: 1  1615
+Elapsed time is 0.249981 seconds.
+Beta-a2-b0p5, Trial: 54/100 sample size: 256
+estimate size: 1  3966
+Elapsed time is 0.322871 seconds.
+Beta-a2-b0p5, Trial: 55/100 sample size: 256
+estimate size: 1  5151
+Elapsed time is 0.306026 seconds.
+Beta-a2-b0p5, Trial: 56/100 sample size: 256
+estimate size: 1  3127
+Elapsed time is 0.204665 seconds.
+Beta-a2-b0p5, Trial: 57/100 sample size: 256
+estimate size: 1  3043
+Elapsed time is 0.911685 seconds.
+Beta-a2-b0p5, Trial: 58/100 sample size: 256
+estimate size: 1  3072
+Elapsed time is 0.117299 seconds.
+Beta-a2-b0p5, Trial: 59/100 sample size: 256
+estimate size: 1  2331
+Elapsed time is 0.710531 seconds.
+Beta-a2-b0p5, Trial: 60/100 sample size: 256
+estimate size: 1  5256
+Elapsed time is 0.213820 seconds.
+Beta-a2-b0p5, Trial: 61/100 sample size: 256
+estimate size: 1  1560
+Elapsed time is 0.213858 seconds.
+Beta-a2-b0p5, Trial: 62/100 sample size: 256
+estimate size: 1  3772
+Elapsed time is 0.228065 seconds.
+Beta-a2-b0p5, Trial: 63/100 sample size: 256
+estimate size: 1  3132
+Elapsed time is 0.135122 seconds.
+Beta-a2-b0p5, Trial: 64/100 sample size: 256
+estimate size: 1  3910
+Elapsed time is 0.167147 seconds.
+Beta-a2-b0p5, Trial: 65/100 sample size: 256
+estimate size: 1  3105
+Elapsed time is 0.815249 seconds.
+Beta-a2-b0p5, Trial: 66/100 sample size: 256
+estimate size: 1  4474
+Elapsed time is 1.418875 seconds.
+Beta-a2-b0p5, Trial: 67/100 sample size: 256
+estimate size: 1  2994
+Elapsed time is 0.197974 seconds.
+Beta-a2-b0p5, Trial: 68/100 sample size: 256
+estimate size: 1  3834
+Elapsed time is 0.121583 seconds.
+Beta-a2-b0p5, Trial: 69/100 sample size: 256
+estimate size: 1  3029
+Elapsed time is 0.267120 seconds.
+Beta-a2-b0p5, Trial: 70/100 sample size: 256
+estimate size: 1  2887
+Elapsed time is 0.755075 seconds.
+Beta-a2-b0p5, Trial: 71/100 sample size: 256
+estimate size: 1  3769
+Elapsed time is 0.322720 seconds.
+Beta-a2-b0p5, Trial: 72/100 sample size: 256
+estimate size: 1  3096
+Elapsed time is 0.490272 seconds.
+Beta-a2-b0p5, Trial: 73/100 sample size: 256
+estimate size: 1  3766
+Elapsed time is 0.670193 seconds.
+Beta-a2-b0p5, Trial: 74/100 sample size: 256
+estimate size: 1  5167
+Elapsed time is 0.547765 seconds.
+Beta-a2-b0p5, Trial: 75/100 sample size: 256
+estimate size: 1  4597
+Elapsed time is 0.262446 seconds.
+Beta-a2-b0p5, Trial: 76/100 sample size: 256
+estimate size: 1  2377
+Elapsed time is 0.177015 seconds.
+Beta-a2-b0p5, Trial: 77/100 sample size: 256
+estimate size: 1  2366
+Elapsed time is 0.155261 seconds.
+Beta-a2-b0p5, Trial: 78/100 sample size: 256
+estimate size: 1  2289
+Elapsed time is 0.267576 seconds.
+Beta-a2-b0p5, Trial: 79/100 sample size: 256
+estimate size: 1  4430
+Elapsed time is 0.369879 seconds.
+Beta-a2-b0p5, Trial: 80/100 sample size: 256
+estimate size: 1  3725
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 3
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function>make_general_channel/channel_general', '/apps/pkg/matlab/R2022b/toolbox/matlab/lang/parallel_function.m', 837)" style="font-weight:bold">parallel_function>make_general_channel/channel_general</a> (<a href="matlab: opentoline('/apps/pkg/matlab/R2022b/toolbox/matlab/lang/parallel_function.m',837,0)">line 837</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('remoteParallelFunction', '/apps/pkg/matlab/R2022b/toolbox/parallel/remoteParallelFunction.m', 67)" style="font-weight:bold">remoteParallelFunction</a> (<a href="matlab: opentoline('/apps/pkg/matlab/R2022b/toolbox/parallel/remoteParallelFunction.m',67,0)">line 67</a>)
+original block: 1 (0.0031031, 0.43859)
+original block: 2 (0.32648, 0.4732)
+original block: 3 (0.47337, 0.47357)
+original block: 4 (0.47357, 0.5312)
+original block: 5 (0.47357, 0.58061)
+original block: 6 (0.53135, 0.71495)
+original block: 7 (0.58087, 0.8536)
+original block: 8 (0.71527, 0.94693)
+original block: 9 (0.85411, 0.99181)
+original block: 10 (0.94749, 0.99481)
+original block: 11 (0.99211, 0.99896)
+original block: 12 (0.99492, 0.99983)
+    left block # = 2
+   right block # = 3
+            xmax = 0.4732
+            xmin = 0.47337
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In NAP/stitch (line 451)
+In driver_func (line 173)] 
+original block: 1 (0.0031031, 0.43859)
+original block: 2 (0.32648, 0.4732)
+original block: 3 (0.47337, 0.47357)
+original block: 4 (0.47357, 0.5312)
+original block: 5 (0.47357, 0.58061)
+original block: 6 (0.53135, 0.71495)
+original block: 7 (0.58087, 0.8536)
+original block: 8 (0.71527, 0.94693)
+original block: 9 (0.85411, 0.99181)
+original block: 10 (0.94749, 0.99481)
+original block: 11 (0.99211, 0.99896)
+original block: 12 (0.99492, 0.99983)
+    left block # = 3
+   right block # = 4
+            xmax = 0.47357
+            xmin = 0.47357
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In NAP/stitch (line 451)
+In driver_func (line 173)] 
+[Warning: Problem using function.  Assigning a value of 0. t: 1 b: 3] 
+[In parallel_function (line 494)
+In NAP/stitch (line 325)
+In driver_func (line 201)] 
+original block: 1 (0.0031031, 0.43859)
+original block: 2 (0.32648, 0.4732)
+original block: 3 (0.47337, 0.47357)
+original block: 4 (0.47357, 0.5312)
+original block: 5 (0.47357, 0.58061)
+original block: 6 (0.53135, 0.71495)
+original block: 7 (0.58087, 0.8536)
+original block: 8 (0.71527, 0.94693)
+original block: 9 (0.85411, 0.99181)
+original block: 10 (0.94749, 0.99481)
+original block: 11 (0.99211, 0.99896)
+original block: 12 (0.99492, 0.99983)
+    left block # = 2
+   right block # = 3
+            xmax = 0.4732
+            xmin = 0.47337
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In NAP/stitch (line 451)
+In driver_func (line 201)] 
+original block: 1 (0.0031031, 0.43859)
+original block: 2 (0.32648, 0.4732)
+original block: 3 (0.47337, 0.47357)
+original block: 4 (0.47357, 0.5312)
+original block: 5 (0.47357, 0.58061)
+original block: 6 (0.53135, 0.71495)
+original block: 7 (0.58087, 0.8536)
+original block: 8 (0.71527, 0.94693)
+original block: 9 (0.85411, 0.99181)
+original block: 10 (0.94749, 0.99481)
+original block: 11 (0.99211, 0.99896)
+original block: 12 (0.99492, 0.99983)
+    left block # = 3
+   right block # = 4
+            xmax = 0.47357
+            xmin = 0.47357
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In NAP/stitch (line 451)
+In driver_func (line 201)] 
+Elapsed time is 1.858725 seconds.
+Beta-a2-b0p5, Trial: 81/100 sample size: 256
+estimate size: 1  5161
+Elapsed time is 0.780450 seconds.
+Beta-a2-b0p5, Trial: 82/100 sample size: 256
+estimate size: 1  3019
+Elapsed time is 0.896487 seconds.
+Beta-a2-b0p5, Trial: 83/100 sample size: 256
+estimate size: 1  4657
+Elapsed time is 0.640125 seconds.
+Beta-a2-b0p5, Trial: 84/100 sample size: 256
+estimate size: 1  3622
+Elapsed time is 0.203281 seconds.
+Beta-a2-b0p5, Trial: 85/100 sample size: 256
+estimate size: 1  3083
+Elapsed time is 0.431597 seconds.
+Beta-a2-b0p5, Trial: 86/100 sample size: 256
+estimate size: 1  3897
+Elapsed time is 0.171233 seconds.
+Beta-a2-b0p5, Trial: 87/100 sample size: 256
+estimate size: 1  3650
+Elapsed time is 0.172929 seconds.
+Beta-a2-b0p5, Trial: 88/100 sample size: 256
+estimate size: 1  3867
+Elapsed time is 0.608201 seconds.
+Beta-a2-b0p5, Trial: 89/100 sample size: 256
+estimate size: 1  5302
+Elapsed time is 0.268826 seconds.
+Beta-a2-b0p5, Trial: 90/100 sample size: 256
+estimate size: 1  3113
+Elapsed time is 1.140413 seconds.
+Beta-a2-b0p5, Trial: 91/100 sample size: 256
+estimate size: 1  6171
+Elapsed time is 0.243452 seconds.
+Beta-a2-b0p5, Trial: 92/100 sample size: 256
+estimate size: 1  3157
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 5
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function>make_general_channel/channel_general', '/apps/pkg/matlab/R2022b/toolbox/matlab/lang/parallel_function.m', 837)" style="font-weight:bold">parallel_function>make_general_channel/channel_general</a> (<a href="matlab: opentoline('/apps/pkg/matlab/R2022b/toolbox/matlab/lang/parallel_function.m',837,0)">line 837</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('remoteParallelFunction', '/apps/pkg/matlab/R2022b/toolbox/parallel/remoteParallelFunction.m', 67)" style="font-weight:bold">remoteParallelFunction</a> (<a href="matlab: opentoline('/apps/pkg/matlab/R2022b/toolbox/parallel/remoteParallelFunction.m',67,0)">line 67</a>)
+[Warning: Problem using function.  Assigning a value of 0. t: 1 b: 5] 
+[In parallel_function (line 494)
+In NAP/stitch (line 325)
+In driver_func (line 201)] 
+Elapsed time is 0.315720 seconds.
+Beta-a2-b0p5, Trial: 93/100 sample size: 256
+estimate size: 1  4305
+Elapsed time is 0.208845 seconds.
+Beta-a2-b0p5, Trial: 94/100 sample size: 256
+estimate size: 1  3754
+Elapsed time is 0.152606 seconds.
+Beta-a2-b0p5, Trial: 95/100 sample size: 256
+estimate size: 1  2288
+Warning: Problem using function.  Assigning a value of 0. t: 1 b: 11
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel_function>make_general_channel/channel_general', '/apps/pkg/matlab/R2022b/toolbox/matlab/lang/parallel_function.m', 837)" style="font-weight:bold">parallel_function>make_general_channel/channel_general</a> (<a href="matlab: opentoline('/apps/pkg/matlab/R2022b/toolbox/matlab/lang/parallel_function.m',837,0)">line 837</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('remoteParallelFunction', '/apps/pkg/matlab/R2022b/toolbox/parallel/remoteParallelFunction.m', 67)" style="font-weight:bold">remoteParallelFunction</a> (<a href="matlab: opentoline('/apps/pkg/matlab/R2022b/toolbox/parallel/remoteParallelFunction.m',67,0)">line 67</a>)
+original block: 1 (0.067415, 0.66036)
+original block: 2 (0.43856, 0.71316)
+original block: 3 (0.66173, 0.74425)
+original block: 4 (0.71385, 0.85306)
+original block: 5 (0.74444, 0.91543)
+original block: 6 (0.85339, 0.9577)
+original block: 7 (0.91578, 0.98097)
+original block: 8 (0.95794, 0.99213)
+original block: 9 (0.98113, 0.99665)
+original block: 10 (0.9922, 0.99687)
+original block: 11 (0.99688, 0.99688)
+original block: 12 (0.99688, 0.99909)
+    left block # = 10
+   right block # = 11
+            xmax = 0.99687
+            xmin = 0.99688
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In NAP/stitch (line 451)
+In driver_func (line 173)] 
+[Warning: Problem using function.  Assigning a value of 0. t: 1 b: 11] 
+[In parallel_function (line 494)
+In NAP/stitch (line 325)
+In driver_func (line 201)] 
+original block: 1 (0.067415, 0.66036)
+original block: 2 (0.43856, 0.71316)
+original block: 3 (0.66173, 0.74425)
+original block: 4 (0.71385, 0.85306)
+original block: 5 (0.74444, 0.91543)
+original block: 6 (0.85339, 0.9577)
+original block: 7 (0.91578, 0.98097)
+original block: 8 (0.95794, 0.99213)
+original block: 9 (0.98113, 0.99665)
+original block: 10 (0.9922, 0.99687)
+original block: 11 (0.99688, 0.99688)
+original block: 12 (0.99688, 0.99909)
+    left block # = 10
+   right block # = 11
+            xmax = 0.99687
+            xmin = 0.99688
+         overlap = 0
+[Warning: overlap is too small!] 
+[> In NAP/stitch (line 451)
+In driver_func (line 201)] 
+Elapsed time is 0.464542 seconds.
+Beta-a2-b0p5, Trial: 96/100 sample size: 256
+estimate size: 1  5131
+Elapsed time is 0.778338 seconds.
+Beta-a2-b0p5, Trial: 97/100 sample size: 256
+estimate size: 1  3863
+Elapsed time is 0.310363 seconds.
+Beta-a2-b0p5, Trial: 98/100 sample size: 256
+estimate size: 1  2363
+Elapsed time is 0.150064 seconds.
+Beta-a2-b0p5, Trial: 99/100 sample size: 256
+estimate size: 1  2946
+Elapsed time is 0.191360 seconds.
+Beta-a2-b0p5, Trial: 100/100 sample size: 256
+estimate size: 1  2292
+Elapsed time is 0.253341 seconds.
+Beta-a2-b0p5, Trial: 1/100 sample size: 512
+estimate size: 1  3201
+Elapsed time is 0.313810 seconds.
+Beta-a2-b0p5, Trial: 2/100 sample size: 512
+estimate size: 1  3210
+Elapsed time is 0.363740 seconds.
+Beta-a2-b0p5, Trial: 3/100 sample size: 512
+estimate size: 1  2834
+Elapsed time is 0.306960 seconds.
+Beta-a2-b0p5, Trial: 4/100 sample size: 512
+estimate size: 1  3458
+Elapsed time is 0.265224 seconds.
+Beta-a2-b0p5, Trial: 5/100 sample size: 512
+estimate size: 1  3360
+Elapsed time is 0.360866 seconds.
+Beta-a2-b0p5, Trial: 6/100 sample size: 512
+estimate size: 1  3184
+Elapsed time is 0.395199 seconds.
+Beta-a2-b0p5, Trial: 7/100 sample size: 512
+estimate size: 1  3422
+Elapsed time is 0.173415 seconds.
+Beta-a2-b0p5, Trial: 8/100 sample size: 512
+estimate size: 1  2699
+Elapsed time is 0.278569 seconds.
+Beta-a2-b0p5, Trial: 9/100 sample size: 512
+estimate size: 1  3276
+Elapsed time is 1.652074 seconds.
+Beta-a2-b0p5, Trial: 10/100 sample size: 512
+estimate size: 1  4847
+Elapsed time is 0.288554 seconds.
+Beta-a2-b0p5, Trial: 11/100 sample size: 512
+estimate size: 1  2787
+Elapsed time is 0.447104 seconds.
+Beta-a2-b0p5, Trial: 12/100 sample size: 512
+estimate size: 1  4495
+Elapsed time is 0.236221 seconds.
+Beta-a2-b0p5, Trial: 13/100 sample size: 512
+estimate size: 1  3287
+Elapsed time is 0.401285 seconds.
+Beta-a2-b0p5, Trial: 14/100 sample size: 512
+estimate size: 1  3192
+Elapsed time is 0.424601 seconds.
+Beta-a2-b0p5, Trial: 15/100 sample size: 512
+estimate size: 1  2152
+Elapsed time is 1.203400 seconds.
+Beta-a2-b0p5, Trial: 16/100 sample size: 512
+estimate size: 1  4111
+Elapsed time is 0.429223 seconds.
+Beta-a2-b0p5, Trial: 17/100 sample size: 512
+estimate size: 1  2774
+Elapsed time is 0.361238 seconds.
+Beta-a2-b0p5, Trial: 18/100 sample size: 512
+estimate size: 1  4464
+Elapsed time is 0.238140 seconds.
+Beta-a2-b0p5, Trial: 19/100 sample size: 512
+estimate size: 1  3365
+Elapsed time is 0.376788 seconds.
+Beta-a2-b0p5, Trial: 20/100 sample size: 512
+estimate size: 1  4156
+Elapsed time is 0.445134 seconds.
+Beta-a2-b0p5, Trial: 21/100 sample size: 512
+estimate size: 1  2704
+Elapsed time is 0.190909 seconds.
+Beta-a2-b0p5, Trial: 22/100 sample size: 512
+estimate size: 1  3143
+Elapsed time is 0.279197 seconds.
+Beta-a2-b0p5, Trial: 23/100 sample size: 512
+estimate size: 1  3191
+Elapsed time is 0.490066 seconds.
+Beta-a2-b0p5, Trial: 24/100 sample size: 512
+estimate size: 1  3336
+Elapsed time is 1.843835 seconds.
+Beta-a2-b0p5, Trial: 25/100 sample size: 512
+estimate size: 1  3888
+Elapsed time is 0.205314 seconds.
+Beta-a2-b0p5, Trial: 26/100 sample size: 512
+estimate size: 1  3375
+Elapsed time is 1.450017 seconds.
+Beta-a2-b0p5, Trial: 27/100 sample size: 512
+estimate size: 1  3467
+Elapsed time is 0.642334 seconds.
+Beta-a2-b0p5, Trial: 28/100 sample size: 512
+estimate size: 1  5601
+Elapsed time is 0.924535 seconds.
+Beta-a2-b0p5, Trial: 29/100 sample size: 512
+estimate size: 1  3463
+Elapsed time is 0.423824 seconds.
+Beta-a2-b0p5, Trial: 30/100 sample size: 512
+estimate size: 1  2649
+Elapsed time is 0.418890 seconds.
+Beta-a2-b0p5, Trial: 31/100 sample size: 512
+estimate size: 1  3483
+Elapsed time is 0.427743 seconds.
+Beta-a2-b0p5, Trial: 32/100 sample size: 512
+estimate size: 1  2010
+Elapsed time is 0.433062 seconds.
+Beta-a2-b0p5, Trial: 33/100 sample size: 512
+estimate size: 1  3987
+Elapsed time is 0.388645 seconds.
+Beta-a2-b0p5, Trial: 34/100 sample size: 512
+estimate size: 1  5401
+Elapsed time is 0.422320 seconds.
+Beta-a2-b0p5, Trial: 35/100 sample size: 512
+estimate size: 1  3315
+Elapsed time is 0.311224 seconds.
+Beta-a2-b0p5, Trial: 36/100 sample size: 512
+estimate size: 1  4571
+Elapsed time is 0.325481 seconds.
+Beta-a2-b0p5, Trial: 37/100 sample size: 512
+estimate size: 1  3293
+Elapsed time is 0.388484 seconds.
+Beta-a2-b0p5, Trial: 38/100 sample size: 512
+estimate size: 1  4252
+Elapsed time is 0.385838 seconds.
+Beta-a2-b0p5, Trial: 39/100 sample size: 512
+estimate size: 1  2618
+Elapsed time is 0.471906 seconds.
+Beta-a2-b0p5, Trial: 40/100 sample size: 512
+estimate size: 1  3879
+Elapsed time is 0.378044 seconds.
+Beta-a2-b0p5, Trial: 41/100 sample size: 512
+estimate size: 1  2106
+Elapsed time is 0.245052 seconds.
+Beta-a2-b0p5, Trial: 42/100 sample size: 512
+estimate size: 1  2510
+Elapsed time is 0.550901 seconds.
+Beta-a2-b0p5, Trial: 43/100 sample size: 512
+estimate size: 1  3608
+Elapsed time is 0.965036 seconds.
+Beta-a2-b0p5, Trial: 44/100 sample size: 512
+estimate size: 1  3881
+Elapsed time is 0.213685 seconds.
+Beta-a2-b0p5, Trial: 45/100 sample size: 512
+estimate size: 1  3502
+Elapsed time is 0.484777 seconds.
+Beta-a2-b0p5, Trial: 46/100 sample size: 512
+estimate size: 1  3292
+Elapsed time is 0.483214 seconds.
+Beta-a2-b0p5, Trial: 47/100 sample size: 512
+estimate size: 1  3996
+Elapsed time is 0.275581 seconds.
+Beta-a2-b0p5, Trial: 48/100 sample size: 512
+estimate size: 1  3491
+Elapsed time is 0.360036 seconds.
+Beta-a2-b0p5, Trial: 49/100 sample size: 512
+estimate size: 1  3768
+Elapsed time is 0.279035 seconds.
+Beta-a2-b0p5, Trial: 50/100 sample size: 512
+estimate size: 1  3295
+Elapsed time is 0.423055 seconds.
+Beta-a2-b0p5, Trial: 51/100 sample size: 512
+estimate size: 1  3310
+Elapsed time is 0.490427 seconds.
+Beta-a2-b0p5, Trial: 52/100 sample size: 512
+estimate size: 1  5014
+Elapsed time is 0.174680 seconds.
+Beta-a2-b0p5, Trial: 53/100 sample size: 512
+estimate size: 1  2813
+Elapsed time is 0.311140 seconds.
+Beta-a2-b0p5, Trial: 54/100 sample size: 512
+estimate size: 1  3627
+Elapsed time is 0.346891 seconds.
+Beta-a2-b0p5, Trial: 55/100 sample size: 512
+estimate size: 1  3538
+Elapsed time is 0.258250 seconds.
+Beta-a2-b0p5, Trial: 56/100 sample size: 512
+estimate size: 1  3415
+Elapsed time is 1.368318 seconds.
+Beta-a2-b0p5, Trial: 57/100 sample size: 512
+estimate size: 1  4338
+Elapsed time is 0.343174 seconds.
+Beta-a2-b0p5, Trial: 58/100 sample size: 512
+estimate size: 1  2899
+Elapsed time is 0.236680 seconds.
+Beta-a2-b0p5, Trial: 59/100 sample size: 512
+estimate size: 1  3463
+Elapsed time is 0.355324 seconds.
+Beta-a2-b0p5, Trial: 60/100 sample size: 512
+estimate size: 1  2730
+Elapsed time is 0.375704 seconds.
+Beta-a2-b0p5, Trial: 61/100 sample size: 512
+estimate size: 1  2663
+Elapsed time is 0.247315 seconds.
+Beta-a2-b0p5, Trial: 62/100 sample size: 512
+estimate size: 1  3378
+Elapsed time is 0.359358 seconds.
+Beta-a2-b0p5, Trial: 63/100 sample size: 512
+estimate size: 1  2481
+Elapsed time is 0.315256 seconds.
+Beta-a2-b0p5, Trial: 64/100 sample size: 512
+estimate size: 1  2756
+Elapsed time is 0.172996 seconds.
+Beta-a2-b0p5, Trial: 65/100 sample size: 512
+estimate size: 1  2804
+Elapsed time is 0.410101 seconds.
+Beta-a2-b0p5, Trial: 66/100 sample size: 512
+estimate size: 1  4189
+Elapsed time is 0.328632 seconds.
+Beta-a2-b0p5, Trial: 67/100 sample size: 512
+estimate size: 1  3990
+Elapsed time is 0.940105 seconds.
+Beta-a2-b0p5, Trial: 68/100 sample size: 512
+estimate size: 1  2519
+Elapsed time is 0.428386 seconds.
+Beta-a2-b0p5, Trial: 69/100 sample size: 512
+estimate size: 1  3275
+Elapsed time is 0.407257 seconds.
+Beta-a2-b0p5, Trial: 70/100 sample size: 512
+estimate size: 1  3418
+Elapsed time is 0.264405 seconds.
+Beta-a2-b0p5, Trial: 71/100 sample size: 512
+estimate size: 1  3317
+Elapsed time is 0.815250 seconds.
+Beta-a2-b0p5, Trial: 72/100 sample size: 512
+estimate size: 1  4103
+Elapsed time is 0.402905 seconds.
+Beta-a2-b0p5, Trial: 73/100 sample size: 512
+estimate size: 1  3972
+Elapsed time is 1.161024 seconds.
+Beta-a2-b0p5, Trial: 74/100 sample size: 512
+estimate size: 1  3179
+Elapsed time is 0.469919 seconds.
+Beta-a2-b0p5, Trial: 75/100 sample size: 512
+estimate size: 1  3297
+Elapsed time is 1.080929 seconds.
+Beta-a2-b0p5, Trial: 76/100 sample size: 512
+estimate size: 1  4137
+Elapsed time is 0.308757 seconds.
+Beta-a2-b0p5, Trial: 77/100 sample size: 512
+estimate size: 1  2629
+Elapsed time is 0.195664 seconds.
+Beta-a2-b0p5, Trial: 78/100 sample size: 512
+estimate size: 1  3487
+Elapsed time is 0.435434 seconds.
+Beta-a2-b0p5, Trial: 79/100 sample size: 512
+estimate size: 1  4281
+Elapsed time is 0.215785 seconds.
+Beta-a2-b0p5, Trial: 80/100 sample size: 512
+estimate size: 1  3492
+Elapsed time is 0.419012 seconds.
+Beta-a2-b0p5, Trial: 81/100 sample size: 512
+estimate size: 1  1979
+Elapsed time is 0.501270 seconds.
+Beta-a2-b0p5, Trial: 82/100 sample size: 512
+estimate size: 1  1955
+Elapsed time is 0.264693 seconds.
+Beta-a2-b0p5, Trial: 83/100 sample size: 512
+estimate size: 1  3314
+Elapsed time is 0.366958 seconds.
+Beta-a2-b0p5, Trial: 84/100 sample size: 512
+estimate size: 1  3388
+Elapsed time is 0.236926 seconds.
+Beta-a2-b0p5, Trial: 85/100 sample size: 512
+estimate size: 1  2744
+Elapsed time is 0.429715 seconds.
+Beta-a2-b0p5, Trial: 86/100 sample size: 512
+estimate size: 1  4188
+Elapsed time is 0.798601 seconds.
+Beta-a2-b0p5, Trial: 87/100 sample size: 512
+estimate size: 1  3664
+Elapsed time is 2.379674 seconds.
+Beta-a2-b0p5, Trial: 88/100 sample size: 512
+estimate size: 1  3418
+Elapsed time is 0.471516 seconds.
+Beta-a2-b0p5, Trial: 89/100 sample size: 512
+estimate size: 1  3231
+Elapsed time is 0.314061 seconds.
+Beta-a2-b0p5, Trial: 90/100 sample size: 512
+estimate size: 1  2681
+Elapsed time is 0.413102 seconds.
+Beta-a2-b0p5, Trial: 91/100 sample size: 512
+estimate size: 1  2989
+Elapsed time is 0.256820 seconds.
+Beta-a2-b0p5, Trial: 92/100 sample size: 512
+estimate size: 1  3540
+Elapsed time is 0.369779 seconds.
+Beta-a2-b0p5, Trial: 93/100 sample size: 512
+estimate size: 1  3424
+Elapsed time is 0.319706 seconds.
+Beta-a2-b0p5, Trial: 94/100 sample size: 512
+estimate size: 1  3450
+Elapsed time is 1.100162 seconds.
+Beta-a2-b0p5, Trial: 95/100 sample size: 512
+estimate size: 1  3384
+Elapsed time is 0.226655 seconds.
+Beta-a2-b0p5, Trial: 96/100 sample size: 512
+estimate size: 1  3615
+Elapsed time is 0.373168 seconds.
+Beta-a2-b0p5, Trial: 97/100 sample size: 512
+estimate size: 1  3155
+Elapsed time is 0.299945 seconds.
+Beta-a2-b0p5, Trial: 98/100 sample size: 512
+estimate size: 1  3421
+Elapsed time is 0.282740 seconds.
+Beta-a2-b0p5, Trial: 99/100 sample size: 512
+estimate size: 1  4300
+Elapsed time is 0.246637 seconds.
+Beta-a2-b0p5, Trial: 100/100 sample size: 512
+estimate size: 1  2761
+Elapsed time is 0.796779 seconds.
+Beta-a2-b0p5, Trial: 1/100 sample size: 1024
+estimate size: 1  4107
+Elapsed time is 0.563724 seconds.
+Beta-a2-b0p5, Trial: 2/100 sample size: 1024
+estimate size: 1  4508
+Elapsed time is 0.490199 seconds.
+Beta-a2-b0p5, Trial: 3/100 sample size: 1024
+estimate size: 1  5656
+Elapsed time is 0.833369 seconds.
+Beta-a2-b0p5, Trial: 4/100 sample size: 1024
+estimate size: 1  4382
+Elapsed time is 0.527468 seconds.
+Beta-a2-b0p5, Trial: 5/100 sample size: 1024
+estimate size: 1  5554
+Elapsed time is 0.576299 seconds.
+Beta-a2-b0p5, Trial: 6/100 sample size: 1024
+estimate size: 1  4379
+Elapsed time is 0.505927 seconds.
+Beta-a2-b0p5, Trial: 7/100 sample size: 1024
+estimate size: 1  3957
+Elapsed time is 0.702975 seconds.
+Beta-a2-b0p5, Trial: 8/100 sample size: 1024
+estimate size: 1  6494
+Elapsed time is 0.392468 seconds.
+Beta-a2-b0p5, Trial: 9/100 sample size: 1024
+estimate size: 1  3936
+Elapsed time is 0.536057 seconds.
+Beta-a2-b0p5, Trial: 10/100 sample size: 1024
+estimate size: 1  7152
+Elapsed time is 0.621246 seconds.
+Beta-a2-b0p5, Trial: 11/100 sample size: 1024
+estimate size: 1  3739
+Elapsed time is 0.308611 seconds.
+Beta-a2-b0p5, Trial: 12/100 sample size: 1024
+estimate size: 1  4361
+Elapsed time is 0.454510 seconds.
+Beta-a2-b0p5, Trial: 13/100 sample size: 1024
+estimate size: 1  3887
+Elapsed time is 0.573971 seconds.
+Beta-a2-b0p5, Trial: 14/100 sample size: 1024
+estimate size: 1  4196
+Elapsed time is 0.502907 seconds.
+Beta-a2-b0p5, Trial: 15/100 sample size: 1024
+estimate size: 1  5012
+Elapsed time is 0.562200 seconds.
+Beta-a2-b0p5, Trial: 16/100 sample size: 1024
+estimate size: 1  4509
+Elapsed time is 0.450028 seconds.
+Beta-a2-b0p5, Trial: 17/100 sample size: 1024
+estimate size: 1  4260
+Elapsed time is 0.519383 seconds.
+Beta-a2-b0p5, Trial: 18/100 sample size: 1024
+estimate size: 1  5131
+Elapsed time is 0.354953 seconds.
+Beta-a2-b0p5, Trial: 19/100 sample size: 1024
+estimate size: 1  5430
+Elapsed time is 1.001596 seconds.
+Beta-a2-b0p5, Trial: 20/100 sample size: 1024
+estimate size: 1  4055
+Elapsed time is 0.507460 seconds.
+Beta-a2-b0p5, Trial: 21/100 sample size: 1024
+estimate size: 1  5066
+Elapsed time is 0.622027 seconds.
+Beta-a2-b0p5, Trial: 22/100 sample size: 1024
+estimate size: 1  5679
+Elapsed time is 0.475817 seconds.
+Beta-a2-b0p5, Trial: 23/100 sample size: 1024
+estimate size: 1  5088
+Elapsed time is 0.421527 seconds.
+Beta-a2-b0p5, Trial: 24/100 sample size: 1024
+estimate size: 1  5423
+Elapsed time is 0.407923 seconds.
+Beta-a2-b0p5, Trial: 25/100 sample size: 1024
+estimate size: 1  4513
+Elapsed time is 0.540299 seconds.
+Beta-a2-b0p5, Trial: 26/100 sample size: 1024
+estimate size: 1  5803
+Elapsed time is 0.468101 seconds.
+Beta-a2-b0p5, Trial: 27/100 sample size: 1024
+estimate size: 1  4969
+Elapsed time is 0.541612 seconds.
+Beta-a2-b0p5, Trial: 28/100 sample size: 1024
+estimate size: 1  5996
+Elapsed time is 0.508860 seconds.
+Beta-a2-b0p5, Trial: 29/100 sample size: 1024
+estimate size: 1  4902
+Elapsed time is 0.524113 seconds.
+Beta-a2-b0p5, Trial: 30/100 sample size: 1024
+estimate size: 1  4632
+Elapsed time is 0.700939 seconds.
+Beta-a2-b0p5, Trial: 31/100 sample size: 1024
+estimate size: 1  5830
+Elapsed time is 0.624214 seconds.
+Beta-a2-b0p5, Trial: 32/100 sample size: 1024
+estimate size: 1  6122
+Elapsed time is 0.551002 seconds.
+Beta-a2-b0p5, Trial: 33/100 sample size: 1024
+estimate size: 1  4307
+Elapsed time is 0.503705 seconds.
+Beta-a2-b0p5, Trial: 34/100 sample size: 1024
+estimate size: 1  4540
+Elapsed time is 0.412863 seconds.
+Beta-a2-b0p5, Trial: 35/100 sample size: 1024
+estimate size: 1  3729
+Elapsed time is 0.962010 seconds.
+Beta-a2-b0p5, Trial: 36/100 sample size: 1024
+estimate size: 1  6408
+Elapsed time is 0.642492 seconds.
+Beta-a2-b0p5, Trial: 37/100 sample size: 1024
+estimate size: 1  5334
+Elapsed time is 0.673310 seconds.
+Beta-a2-b0p5, Trial: 38/100 sample size: 1024
+estimate size: 1  5122
+Elapsed time is 1.347286 seconds.
+Beta-a2-b0p5, Trial: 39/100 sample size: 1024
+estimate size: 1  4722
+Elapsed time is 0.419147 seconds.
+Beta-a2-b0p5, Trial: 40/100 sample size: 1024
+estimate size: 1  4356
+Elapsed time is 0.411616 seconds.
+Beta-a2-b0p5, Trial: 41/100 sample size: 1024
+estimate size: 1  6758
+Elapsed time is 0.690304 seconds.
+Beta-a2-b0p5, Trial: 42/100 sample size: 1024
+estimate size: 1  5350
+Elapsed time is 0.542388 seconds.
+Beta-a2-b0p5, Trial: 43/100 sample size: 1024
+estimate size: 1  5205
+Elapsed time is 0.431813 seconds.
+Beta-a2-b0p5, Trial: 44/100 sample size: 1024
+estimate size: 1  4011
+Elapsed time is 0.563155 seconds.
+Beta-a2-b0p5, Trial: 45/100 sample size: 1024
+estimate size: 1  6434
+Elapsed time is 0.588150 seconds.
+Beta-a2-b0p5, Trial: 46/100 sample size: 1024
+estimate size: 1  4180
+Elapsed time is 1.393478 seconds.
+Beta-a2-b0p5, Trial: 47/100 sample size: 1024
+estimate size: 1  5646
+Elapsed time is 0.644556 seconds.
+Beta-a2-b0p5, Trial: 48/100 sample size: 1024
+estimate size: 1  5737
+Elapsed time is 0.661081 seconds.
+Beta-a2-b0p5, Trial: 49/100 sample size: 1024
+estimate size: 1  4878
+Elapsed time is 0.391319 seconds.
+Beta-a2-b0p5, Trial: 50/100 sample size: 1024
+estimate size: 1  4361
+Elapsed time is 0.881326 seconds.
+Beta-a2-b0p5, Trial: 51/100 sample size: 1024
+estimate size: 1  5050
+Elapsed time is 0.772642 seconds.
+Beta-a2-b0p5, Trial: 52/100 sample size: 1024
+estimate size: 1  5449
+Elapsed time is 1.765391 seconds.
+Beta-a2-b0p5, Trial: 53/100 sample size: 1024
+estimate size: 1  5117
+Elapsed time is 0.925244 seconds.
+Beta-a2-b0p5, Trial: 54/100 sample size: 1024
+estimate size: 1  5757
+Elapsed time is 0.674736 seconds.
+Beta-a2-b0p5, Trial: 55/100 sample size: 1024
+estimate size: 1  3764
+Elapsed time is 0.431232 seconds.
+Beta-a2-b0p5, Trial: 56/100 sample size: 1024
+estimate size: 1  5343
+Elapsed time is 0.632508 seconds.
+Beta-a2-b0p5, Trial: 57/100 sample size: 1024
+estimate size: 1  4398
+Elapsed time is 0.606582 seconds.
+Beta-a2-b0p5, Trial: 58/100 sample size: 1024
+estimate size: 1  4736
+Elapsed time is 0.663709 seconds.
+Beta-a2-b0p5, Trial: 59/100 sample size: 1024
+estimate size: 1  6101
+Elapsed time is 0.494963 seconds.
+Beta-a2-b0p5, Trial: 60/100 sample size: 1024
+estimate size: 1  4775
+Elapsed time is 0.623242 seconds.
+Beta-a2-b0p5, Trial: 61/100 sample size: 1024
+estimate size: 1  3894
+Elapsed time is 0.626380 seconds.
+Beta-a2-b0p5, Trial: 62/100 sample size: 1024
+estimate size: 1  4767
+Elapsed time is 0.762602 seconds.
+Beta-a2-b0p5, Trial: 63/100 sample size: 1024
+estimate size: 1  3918
+Elapsed time is 0.563171 seconds.
+Beta-a2-b0p5, Trial: 64/100 sample size: 1024
+estimate size: 1  3825
+Elapsed time is 0.753560 seconds.
+Beta-a2-b0p5, Trial: 65/100 sample size: 1024
+estimate size: 1  6419
+Elapsed time is 1.049895 seconds.
+Beta-a2-b0p5, Trial: 66/100 sample size: 1024
+estimate size: 1  6854
+Elapsed time is 1.171556 seconds.
+Beta-a2-b0p5, Trial: 67/100 sample size: 1024
+estimate size: 1  5331
+Elapsed time is 0.893824 seconds.
+Beta-a2-b0p5, Trial: 68/100 sample size: 1024
+estimate size: 1  4846
+Elapsed time is 0.433552 seconds.
+Beta-a2-b0p5, Trial: 69/100 sample size: 1024
+estimate size: 1  5226
+Elapsed time is 0.687062 seconds.
+Beta-a2-b0p5, Trial: 70/100 sample size: 1024
+estimate size: 1  3956
+Elapsed time is 0.570882 seconds.
+Beta-a2-b0p5, Trial: 71/100 sample size: 1024
+estimate size: 1  5239
+Elapsed time is 0.590213 seconds.
+Beta-a2-b0p5, Trial: 72/100 sample size: 1024
+estimate size: 1  5968
+Elapsed time is 0.776990 seconds.
+Beta-a2-b0p5, Trial: 73/100 sample size: 1024
+estimate size: 1  4157
+Elapsed time is 0.648463 seconds.
+Beta-a2-b0p5, Trial: 74/100 sample size: 1024
+estimate size: 1  4684
+Elapsed time is 0.579685 seconds.
+Beta-a2-b0p5, Trial: 75/100 sample size: 1024
+estimate size: 1  5332
+Elapsed time is 0.608181 seconds.
+Beta-a2-b0p5, Trial: 76/100 sample size: 1024
+estimate size: 1  4369
+Elapsed time is 0.633306 seconds.
+Beta-a2-b0p5, Trial: 77/100 sample size: 1024
+estimate size: 1  5691
+Elapsed time is 0.755969 seconds.
+Beta-a2-b0p5, Trial: 78/100 sample size: 1024
+estimate size: 1  4903
+Elapsed time is 0.837935 seconds.
+Beta-a2-b0p5, Trial: 79/100 sample size: 1024
+estimate size: 1  4618
+Elapsed time is 0.851831 seconds.
+Beta-a2-b0p5, Trial: 80/100 sample size: 1024
+estimate size: 1  5846
+Elapsed time is 0.603182 seconds.
+Beta-a2-b0p5, Trial: 81/100 sample size: 1024
+estimate size: 1  4127
+Elapsed time is 2.539157 seconds.
+Beta-a2-b0p5, Trial: 82/100 sample size: 1024
+estimate size: 1  5516
+Elapsed time is 0.800091 seconds.
+Beta-a2-b0p5, Trial: 83/100 sample size: 1024
+estimate size: 1  4791
+Elapsed time is 0.387210 seconds.
+Beta-a2-b0p5, Trial: 84/100 sample size: 1024
+estimate size: 1  4190
+Elapsed time is 0.460890 seconds.
+Beta-a2-b0p5, Trial: 85/100 sample size: 1024
+estimate size: 1  5784
+Elapsed time is 0.465071 seconds.
+Beta-a2-b0p5, Trial: 86/100 sample size: 1024
+estimate size: 1  4610
+Elapsed time is 0.585159 seconds.
+Beta-a2-b0p5, Trial: 87/100 sample size: 1024
+estimate size: 1  4139
+Elapsed time is 0.506446 seconds.
+Beta-a2-b0p5, Trial: 88/100 sample size: 1024
+estimate size: 1  5590
+Elapsed time is 0.743137 seconds.
+Beta-a2-b0p5, Trial: 89/100 sample size: 1024
+estimate size: 1  4528
+Elapsed time is 0.641971 seconds.
+Beta-a2-b0p5, Trial: 90/100 sample size: 1024
+estimate size: 1  4407
+Elapsed time is 0.599077 seconds.
+Beta-a2-b0p5, Trial: 91/100 sample size: 1024
+estimate size: 1  4605
+Elapsed time is 0.458305 seconds.
+Beta-a2-b0p5, Trial: 92/100 sample size: 1024
+estimate size: 1  4939
+Elapsed time is 0.631129 seconds.
+Beta-a2-b0p5, Trial: 93/100 sample size: 1024
+estimate size: 1  4179
+Elapsed time is 0.737504 seconds.
+Beta-a2-b0p5, Trial: 94/100 sample size: 1024
+estimate size: 1  4780
+Elapsed time is 0.786617 seconds.
+Beta-a2-b0p5, Trial: 95/100 sample size: 1024
+estimate size: 1  4562
+Elapsed time is 0.499040 seconds.
+Beta-a2-b0p5, Trial: 96/100 sample size: 1024
+estimate size: 1  5266
+Elapsed time is 0.815603 seconds.
+Beta-a2-b0p5, Trial: 97/100 sample size: 1024
+estimate size: 1  5334
+Elapsed time is 0.902228 seconds.
+Beta-a2-b0p5, Trial: 98/100 sample size: 1024
+estimate size: 1  4408
+Elapsed time is 1.317974 seconds.
+Beta-a2-b0p5, Trial: 99/100 sample size: 1024
+estimate size: 1  4611
+Elapsed time is 0.439788 seconds.
+Beta-a2-b0p5, Trial: 100/100 sample size: 1024
+estimate size: 1  5148
+Elapsed time is 1.256896 seconds.
+Beta-a2-b0p5, Trial: 1/100 sample size: 2048
+estimate size: 1  5684
+Elapsed time is 0.986708 seconds.
+Beta-a2-b0p5, Trial: 2/100 sample size: 2048
+estimate size: 1  6102
+Elapsed time is 1.149170 seconds.
+Beta-a2-b0p5, Trial: 3/100 sample size: 2048
+estimate size: 1  5653
+Elapsed time is 0.950768 seconds.
+Beta-a2-b0p5, Trial: 4/100 sample size: 2048
+estimate size: 1  5510
+Elapsed time is 1.141324 seconds.
+Beta-a2-b0p5, Trial: 5/100 sample size: 2048
+estimate size: 1  6909
+Elapsed time is 1.267285 seconds.
+Beta-a2-b0p5, Trial: 6/100 sample size: 2048
+estimate size: 1  4490
+Elapsed time is 1.343308 seconds.
+Beta-a2-b0p5, Trial: 7/100 sample size: 2048
+estimate size: 1  6346
+Elapsed time is 0.715630 seconds.
+Beta-a2-b0p5, Trial: 8/100 sample size: 2048
+estimate size: 1  5687
+Elapsed time is 0.968402 seconds.
+Beta-a2-b0p5, Trial: 9/100 sample size: 2048
+estimate size: 1  4604
+Elapsed time is 0.511424 seconds.
+Beta-a2-b0p5, Trial: 10/100 sample size: 2048
+estimate size: 1  4847
+Elapsed time is 0.967027 seconds.
+Beta-a2-b0p5, Trial: 11/100 sample size: 2048
+estimate size: 1  7526
+Elapsed time is 0.770455 seconds.
+Beta-a2-b0p5, Trial: 12/100 sample size: 2048
+estimate size: 1  5832
+Elapsed time is 0.919814 seconds.
+Beta-a2-b0p5, Trial: 13/100 sample size: 2048
+estimate size: 1  5420
+Elapsed time is 0.962283 seconds.
+Beta-a2-b0p5, Trial: 14/100 sample size: 2048
+estimate size: 1  7027
+Elapsed time is 0.789388 seconds.
+Beta-a2-b0p5, Trial: 15/100 sample size: 2048
+estimate size: 1  5777
+Elapsed time is 0.887035 seconds.
+Beta-a2-b0p5, Trial: 16/100 sample size: 2048
+estimate size: 1  4920
+Elapsed time is 0.981758 seconds.
+Beta-a2-b0p5, Trial: 17/100 sample size: 2048
+estimate size: 1  4681
+Elapsed time is 1.023952 seconds.
+Beta-a2-b0p5, Trial: 18/100 sample size: 2048
+estimate size: 1  4602
+Elapsed time is 1.214944 seconds.
+Beta-a2-b0p5, Trial: 19/100 sample size: 2048
+estimate size: 1  4175
+Elapsed time is 0.926496 seconds.
+Beta-a2-b0p5, Trial: 20/100 sample size: 2048
+estimate size: 1  5685
+Elapsed time is 1.006371 seconds.
+Beta-a2-b0p5, Trial: 21/100 sample size: 2048
+estimate size: 1  6813
+Elapsed time is 0.747992 seconds.
+Beta-a2-b0p5, Trial: 22/100 sample size: 2048
+estimate size: 1  7618
+Elapsed time is 1.172335 seconds.
+Beta-a2-b0p5, Trial: 23/100 sample size: 2048
+estimate size: 1  7351
+Elapsed time is 1.085090 seconds.
+Beta-a2-b0p5, Trial: 24/100 sample size: 2048
+estimate size: 1  4645
+Elapsed time is 0.973497 seconds.
+Beta-a2-b0p5, Trial: 25/100 sample size: 2048
+estimate size: 1  4717
+Elapsed time is 1.213147 seconds.
+Beta-a2-b0p5, Trial: 26/100 sample size: 2048
+estimate size: 1  6230
+Elapsed time is 1.173221 seconds.
+Beta-a2-b0p5, Trial: 27/100 sample size: 2048
+estimate size: 1  5172
+Elapsed time is 1.116424 seconds.
+Beta-a2-b0p5, Trial: 28/100 sample size: 2048
+estimate size: 1  7991
+Elapsed time is 1.125269 seconds.
+Beta-a2-b0p5, Trial: 29/100 sample size: 2048
+estimate size: 1  5728
+Elapsed time is 1.194508 seconds.
+Beta-a2-b0p5, Trial: 30/100 sample size: 2048
+estimate size: 1  6497
+Elapsed time is 0.905786 seconds.
+Beta-a2-b0p5, Trial: 31/100 sample size: 2048
+estimate size: 1  4858
+Elapsed time is 1.247311 seconds.
+Beta-a2-b0p5, Trial: 32/100 sample size: 2048
+estimate size: 1  6497
+Elapsed time is 1.012604 seconds.
+Beta-a2-b0p5, Trial: 33/100 sample size: 2048
+estimate size: 1  7086
+Elapsed time is 1.199548 seconds.
+Beta-a2-b0p5, Trial: 34/100 sample size: 2048
+estimate size: 1  5432
+Elapsed time is 1.323914 seconds.
+Beta-a2-b0p5, Trial: 35/100 sample size: 2048
+estimate size: 1  4575
+Elapsed time is 1.079294 seconds.
+Beta-a2-b0p5, Trial: 36/100 sample size: 2048
+estimate size: 1  5389
+Elapsed time is 1.167541 seconds.
+Beta-a2-b0p5, Trial: 37/100 sample size: 2048
+estimate size: 1  5733
+Elapsed time is 0.875026 seconds.
+Beta-a2-b0p5, Trial: 38/100 sample size: 2048
+estimate size: 1  7415
+Elapsed time is 0.819470 seconds.
+Beta-a2-b0p5, Trial: 39/100 sample size: 2048
+estimate size: 1  5594
+Elapsed time is 1.053301 seconds.
+Beta-a2-b0p5, Trial: 40/100 sample size: 2048
+estimate size: 1  5171
+Elapsed time is 0.941662 seconds.
+Beta-a2-b0p5, Trial: 41/100 sample size: 2048
+estimate size: 1  6954
+Elapsed time is 0.903333 seconds.
+Beta-a2-b0p5, Trial: 42/100 sample size: 2048
+estimate size: 1  7577
+Elapsed time is 1.174536 seconds.
+Beta-a2-b0p5, Trial: 43/100 sample size: 2048
+estimate size: 1  4812
+Elapsed time is 1.285575 seconds.
+Beta-a2-b0p5, Trial: 44/100 sample size: 2048
+estimate size: 1  5411
+Elapsed time is 0.932079 seconds.
+Beta-a2-b0p5, Trial: 45/100 sample size: 2048
+estimate size: 1  5754
+Elapsed time is 1.106693 seconds.
+Beta-a2-b0p5, Trial: 46/100 sample size: 2048
+estimate size: 1  4699
+Elapsed time is 1.081552 seconds.
+Beta-a2-b0p5, Trial: 47/100 sample size: 2048
+estimate size: 1  6097
+Elapsed time is 0.859325 seconds.
+Beta-a2-b0p5, Trial: 48/100 sample size: 2048
+estimate size: 1  5431
+Elapsed time is 1.242470 seconds.
+Beta-a2-b0p5, Trial: 49/100 sample size: 2048
+estimate size: 1  7473
+Elapsed time is 1.151901 seconds.
+Beta-a2-b0p5, Trial: 50/100 sample size: 2048
+estimate size: 1  5604
+Elapsed time is 0.954483 seconds.
+Beta-a2-b0p5, Trial: 51/100 sample size: 2048
+estimate size: 1  6834
+Elapsed time is 1.059609 seconds.
+Beta-a2-b0p5, Trial: 52/100 sample size: 2048
+estimate size: 1  5874
+Elapsed time is 0.914687 seconds.
+Beta-a2-b0p5, Trial: 53/100 sample size: 2048
+estimate size: 1  4866
+Elapsed time is 0.915241 seconds.
+Beta-a2-b0p5, Trial: 54/100 sample size: 2048
+estimate size: 1  7323
+Elapsed time is 1.086923 seconds.
+Beta-a2-b0p5, Trial: 55/100 sample size: 2048
+estimate size: 1  6520
+Elapsed time is 0.865835 seconds.
+Beta-a2-b0p5, Trial: 56/100 sample size: 2048
+estimate size: 1  5547
+Elapsed time is 0.895534 seconds.
+Beta-a2-b0p5, Trial: 57/100 sample size: 2048
+estimate size: 1  6615
+Elapsed time is 1.026741 seconds.
+Beta-a2-b0p5, Trial: 58/100 sample size: 2048
+estimate size: 1  5764
+Elapsed time is 1.002152 seconds.
+Beta-a2-b0p5, Trial: 59/100 sample size: 2048
+estimate size: 1  5208
+Elapsed time is 0.911907 seconds.
+Beta-a2-b0p5, Trial: 60/100 sample size: 2048
+estimate size: 1  6325
+Elapsed time is 0.758824 seconds.
+Beta-a2-b0p5, Trial: 61/100 sample size: 2048
+estimate size: 1  5869
+Elapsed time is 0.643769 seconds.
+Beta-a2-b0p5, Trial: 62/100 sample size: 2048
+estimate size: 1  5864
+Elapsed time is 0.784206 seconds.
+Beta-a2-b0p5, Trial: 63/100 sample size: 2048
+estimate size: 1  6687
+Elapsed time is 1.030394 seconds.
+Beta-a2-b0p5, Trial: 64/100 sample size: 2048
+estimate size: 1  5184
+Elapsed time is 0.982503 seconds.
+Beta-a2-b0p5, Trial: 65/100 sample size: 2048
+estimate size: 1  4482
+Elapsed time is 0.943697 seconds.
+Beta-a2-b0p5, Trial: 66/100 sample size: 2048
+estimate size: 1  6488
+Elapsed time is 0.672221 seconds.
+Beta-a2-b0p5, Trial: 67/100 sample size: 2048
+estimate size: 1  5160
+Elapsed time is 0.949065 seconds.
+Beta-a2-b0p5, Trial: 68/100 sample size: 2048
+estimate size: 1  4402
+Elapsed time is 0.985846 seconds.
+Beta-a2-b0p5, Trial: 69/100 sample size: 2048
+estimate size: 1  6205
+Elapsed time is 2.302564 seconds.
+Beta-a2-b0p5, Trial: 70/100 sample size: 2048
+estimate size: 1  7153
+Elapsed time is 0.882993 seconds.
+Beta-a2-b0p5, Trial: 71/100 sample size: 2048
+estimate size: 1  5968
+Elapsed time is 0.919523 seconds.
+Beta-a2-b0p5, Trial: 72/100 sample size: 2048
+estimate size: 1  6122
+Elapsed time is 1.056884 seconds.
+Beta-a2-b0p5, Trial: 73/100 sample size: 2048
+estimate size: 1  6649
+Elapsed time is 0.960101 seconds.
+Beta-a2-b0p5, Trial: 74/100 sample size: 2048
+estimate size: 1  7332
+Elapsed time is 0.976686 seconds.
+Beta-a2-b0p5, Trial: 75/100 sample size: 2048
+estimate size: 1  7148
+Elapsed time is 0.930352 seconds.
+Beta-a2-b0p5, Trial: 76/100 sample size: 2048
+estimate size: 1  6252
+Elapsed time is 1.077179 seconds.
+Beta-a2-b0p5, Trial: 77/100 sample size: 2048
+estimate size: 1  6168
+Elapsed time is 1.250005 seconds.
+Beta-a2-b0p5, Trial: 78/100 sample size: 2048
+estimate size: 1  6925
+Elapsed time is 0.784404 seconds.
+Beta-a2-b0p5, Trial: 79/100 sample size: 2048
+estimate size: 1  4725
+Elapsed time is 0.962231 seconds.
+Beta-a2-b0p5, Trial: 80/100 sample size: 2048
+estimate size: 1  4518
+Elapsed time is 0.910891 seconds.
+Beta-a2-b0p5, Trial: 81/100 sample size: 2048
+estimate size: 1  4652
+Elapsed time is 0.938241 seconds.
+Beta-a2-b0p5, Trial: 82/100 sample size: 2048
+estimate size: 1  5491
+Elapsed time is 0.913895 seconds.
+Beta-a2-b0p5, Trial: 83/100 sample size: 2048
+estimate size: 1  7688
+Elapsed time is 1.412780 seconds.
+Beta-a2-b0p5, Trial: 84/100 sample size: 2048
+estimate size: 1  5773
+Elapsed time is 0.747783 seconds.
+Beta-a2-b0p5, Trial: 85/100 sample size: 2048
+estimate size: 1  5549
+Elapsed time is 1.022036 seconds.
+Beta-a2-b0p5, Trial: 86/100 sample size: 2048
+estimate size: 1  5785
+Elapsed time is 0.696026 seconds.
+Beta-a2-b0p5, Trial: 87/100 sample size: 2048
+estimate size: 1  4665
+Elapsed time is 0.658679 seconds.
+Beta-a2-b0p5, Trial: 88/100 sample size: 2048
+estimate size: 1  4319
+Elapsed time is 1.379792 seconds.
+Beta-a2-b0p5, Trial: 89/100 sample size: 2048
+estimate size: 1  6610
+Elapsed time is 0.936431 seconds.
+Beta-a2-b0p5, Trial: 90/100 sample size: 2048
+estimate size: 1  5945
+Elapsed time is 0.702230 seconds.
+Beta-a2-b0p5, Trial: 91/100 sample size: 2048
+estimate size: 1  5329
+Elapsed time is 0.838225 seconds.
+Beta-a2-b0p5, Trial: 92/100 sample size: 2048
+estimate size: 1  5893
+Elapsed time is 0.909588 seconds.
+Beta-a2-b0p5, Trial: 93/100 sample size: 2048
+estimate size: 1  6753
+Elapsed time is 1.006419 seconds.
+Beta-a2-b0p5, Trial: 94/100 sample size: 2048
+estimate size: 1  5465
+Elapsed time is 1.104548 seconds.
+Beta-a2-b0p5, Trial: 95/100 sample size: 2048
+estimate size: 1  4749
+Elapsed time is 0.950067 seconds.
+Beta-a2-b0p5, Trial: 96/100 sample size: 2048
+estimate size: 1  5565
+Elapsed time is 1.144760 seconds.
+Beta-a2-b0p5, Trial: 97/100 sample size: 2048
+estimate size: 1  5036
+Elapsed time is 0.885268 seconds.
+Beta-a2-b0p5, Trial: 98/100 sample size: 2048
+estimate size: 1  4638
+Elapsed time is 1.944650 seconds.
+Beta-a2-b0p5, Trial: 99/100 sample size: 2048
+estimate size: 1  6220
+Elapsed time is 0.801330 seconds.
+Beta-a2-b0p5, Trial: 100/100 sample size: 2048
+estimate size: 1  4547
+Elapsed time is 1.958815 seconds.
+Beta-a2-b0p5, Trial: 1/100 sample size: 4096
+estimate size: 1  5654
+Elapsed time is 1.802408 seconds.
+Beta-a2-b0p5, Trial: 2/100 sample size: 4096
+estimate size: 1  5530
+Elapsed time is 1.462940 seconds.
+Beta-a2-b0p5, Trial: 3/100 sample size: 4096
+estimate size: 1  4194
+Elapsed time is 1.882325 seconds.
+Beta-a2-b0p5, Trial: 4/100 sample size: 4096
+estimate size: 1  8149
+Elapsed time is 1.252670 seconds.
+Beta-a2-b0p5, Trial: 5/100 sample size: 4096
+estimate size: 1  5457
+Elapsed time is 2.233051 seconds.
+Beta-a2-b0p5, Trial: 6/100 sample size: 4096
+estimate size: 1  6751
+Elapsed time is 1.599403 seconds.
+Beta-a2-b0p5, Trial: 7/100 sample size: 4096
+estimate size: 1  9876
+Elapsed time is 2.121715 seconds.
+Beta-a2-b0p5, Trial: 8/100 sample size: 4096
+estimate size: 1  7969
+Elapsed time is 1.739994 seconds.
+Beta-a2-b0p5, Trial: 9/100 sample size: 4096
+estimate size: 1  9569
+Elapsed time is 1.747028 seconds.
+Beta-a2-b0p5, Trial: 10/100 sample size: 4096
+estimate size: 1  8209
+Elapsed time is 1.763539 seconds.
+Beta-a2-b0p5, Trial: 11/100 sample size: 4096
+estimate size: 1  4266
+Elapsed time is 1.583481 seconds.
+Beta-a2-b0p5, Trial: 12/100 sample size: 4096
+estimate size: 1  5847
+Elapsed time is 2.055589 seconds.
+Beta-a2-b0p5, Trial: 13/100 sample size: 4096
+estimate size: 1  4340
+Elapsed time is 1.635437 seconds.
+Beta-a2-b0p5, Trial: 14/100 sample size: 4096
+estimate size: 1  5570
+Elapsed time is 1.325332 seconds.
+Beta-a2-b0p5, Trial: 15/100 sample size: 4096
+estimate size: 1  6678
+Elapsed time is 2.128907 seconds.
+Beta-a2-b0p5, Trial: 16/100 sample size: 4096
+estimate size: 1  8674
+Elapsed time is 1.918202 seconds.
+Beta-a2-b0p5, Trial: 17/100 sample size: 4096
+estimate size: 1  8280
+Elapsed time is 2.505899 seconds.
+Beta-a2-b0p5, Trial: 18/100 sample size: 4096
+estimate size: 1  8428
+Elapsed time is 1.476987 seconds.
+Beta-a2-b0p5, Trial: 19/100 sample size: 4096
+estimate size: 1  8770
+Elapsed time is 1.493868 seconds.
+Beta-a2-b0p5, Trial: 20/100 sample size: 4096
+estimate size: 1  7155
+Elapsed time is 1.729168 seconds.
+Beta-a2-b0p5, Trial: 21/100 sample size: 4096
+estimate size: 1  4472
+Elapsed time is 2.086843 seconds.
+Beta-a2-b0p5, Trial: 22/100 sample size: 4096
+estimate size: 1  6292
+Elapsed time is 1.292672 seconds.
+Beta-a2-b0p5, Trial: 23/100 sample size: 4096
+estimate size: 1  7302
+Elapsed time is 1.737767 seconds.
+Beta-a2-b0p5, Trial: 24/100 sample size: 4096
+estimate size: 1  6013
+Elapsed time is 2.058090 seconds.
+Beta-a2-b0p5, Trial: 25/100 sample size: 4096
+estimate size: 1  6816
+Elapsed time is 1.484267 seconds.
+Beta-a2-b0p5, Trial: 26/100 sample size: 4096
+estimate size: 1  9293
+Elapsed time is 1.795243 seconds.
+Beta-a2-b0p5, Trial: 27/100 sample size: 4096
+estimate size: 1  9004
+Elapsed time is 2.069466 seconds.
+Beta-a2-b0p5, Trial: 28/100 sample size: 4096
+estimate size: 1  7858
+Elapsed time is 1.654184 seconds.
+Beta-a2-b0p5, Trial: 29/100 sample size: 4096
+estimate size: 1  5959
+Elapsed time is 1.354136 seconds.
+Beta-a2-b0p5, Trial: 30/100 sample size: 4096
+estimate size: 1  4395
+Elapsed time is 1.878761 seconds.
+Beta-a2-b0p5, Trial: 31/100 sample size: 4096
+estimate size: 1  5404
+Elapsed time is 1.260049 seconds.
+Beta-a2-b0p5, Trial: 32/100 sample size: 4096
+estimate size: 1  4472
+Elapsed time is 2.379210 seconds.
+Beta-a2-b0p5, Trial: 33/100 sample size: 4096
+estimate size: 1  5665
+Elapsed time is 1.838078 seconds.
+Beta-a2-b0p5, Trial: 34/100 sample size: 4096
+estimate size: 1  5779
+Elapsed time is 2.586098 seconds.
+Beta-a2-b0p5, Trial: 35/100 sample size: 4096
+estimate size: 1  5739
+Elapsed time is 1.813240 seconds.
+Beta-a2-b0p5, Trial: 36/100 sample size: 4096
+estimate size: 1  7715
+Elapsed time is 2.268347 seconds.
+Beta-a2-b0p5, Trial: 37/100 sample size: 4096
+estimate size: 1  8066
+Elapsed time is 1.607154 seconds.
+Beta-a2-b0p5, Trial: 38/100 sample size: 4096
+estimate size: 1  6840
+Elapsed time is 2.013329 seconds.
+Beta-a2-b0p5, Trial: 39/100 sample size: 4096
+estimate size: 1  9492
+Elapsed time is 2.044717 seconds.
+Beta-a2-b0p5, Trial: 40/100 sample size: 4096
+estimate size: 1  6038
+Elapsed time is 1.750728 seconds.
+Beta-a2-b0p5, Trial: 41/100 sample size: 4096
+estimate size: 1  7702
+Elapsed time is 1.396179 seconds.
+Beta-a2-b0p5, Trial: 42/100 sample size: 4096
+estimate size: 1  6586
+Elapsed time is 1.614642 seconds.
+Beta-a2-b0p5, Trial: 43/100 sample size: 4096
+estimate size: 1  6917
+Elapsed time is 2.273768 seconds.
+Beta-a2-b0p5, Trial: 44/100 sample size: 4096
+estimate size: 1  6693
+Elapsed time is 1.712387 seconds.
+Beta-a2-b0p5, Trial: 45/100 sample size: 4096
+estimate size: 1  8316
+Elapsed time is 1.675750 seconds.
+Beta-a2-b0p5, Trial: 46/100 sample size: 4096
+estimate size: 1  6871
+Elapsed time is 1.828245 seconds.
+Beta-a2-b0p5, Trial: 47/100 sample size: 4096
+estimate size: 1  4481
+Elapsed time is 1.586299 seconds.
+Beta-a2-b0p5, Trial: 48/100 sample size: 4096
+estimate size: 1  7961
+Elapsed time is 1.679877 seconds.
+Beta-a2-b0p5, Trial: 49/100 sample size: 4096
+estimate size: 1  4369
+Elapsed time is 1.650882 seconds.
+Beta-a2-b0p5, Trial: 50/100 sample size: 4096
+estimate size: 1  4419
+Elapsed time is 1.506764 seconds.
+Beta-a2-b0p5, Trial: 51/100 sample size: 4096
+estimate size: 1  4462
+Elapsed time is 2.037694 seconds.
+Beta-a2-b0p5, Trial: 52/100 sample size: 4096
+estimate size: 1  7926
+Elapsed time is 1.447378 seconds.
+Beta-a2-b0p5, Trial: 53/100 sample size: 4096
+estimate size: 1  4418
+Elapsed time is 1.662108 seconds.
+Beta-a2-b0p5, Trial: 54/100 sample size: 4096
+estimate size: 1  6737
+Elapsed time is 1.386094 seconds.
+Beta-a2-b0p5, Trial: 55/100 sample size: 4096
+estimate size: 1  8115
+Elapsed time is 1.752919 seconds.
+Beta-a2-b0p5, Trial: 56/100 sample size: 4096
+estimate size: 1  6759
+Elapsed time is 1.753886 seconds.
+Beta-a2-b0p5, Trial: 57/100 sample size: 4096
+estimate size: 1  4353
+Elapsed time is 1.827329 seconds.
+Beta-a2-b0p5, Trial: 58/100 sample size: 4096
+estimate size: 1  6397
+Elapsed time is 1.800846 seconds.
+Beta-a2-b0p5, Trial: 59/100 sample size: 4096
+estimate size: 1  6868
+Elapsed time is 2.001462 seconds.
+Beta-a2-b0p5, Trial: 60/100 sample size: 4096
+estimate size: 1  5671
+Elapsed time is 1.955195 seconds.
+Beta-a2-b0p5, Trial: 61/100 sample size: 4096
+estimate size: 1  6809
+Elapsed time is 2.242710 seconds.
+Beta-a2-b0p5, Trial: 62/100 sample size: 4096
+estimate size: 1  4293
+Elapsed time is 1.698692 seconds.
+Beta-a2-b0p5, Trial: 63/100 sample size: 4096
+estimate size: 1  8299
+Elapsed time is 1.718200 seconds.
+Beta-a2-b0p5, Trial: 64/100 sample size: 4096
+estimate size: 1  4358
+Elapsed time is 1.791912 seconds.
+Beta-a2-b0p5, Trial: 65/100 sample size: 4096
+estimate size: 1  4413
+Elapsed time is 1.796949 seconds.
+Beta-a2-b0p5, Trial: 66/100 sample size: 4096
+estimate size: 1  5843
+Elapsed time is 1.930719 seconds.
+Beta-a2-b0p5, Trial: 67/100 sample size: 4096
+estimate size: 1  5890
+Elapsed time is 1.734345 seconds.
+Beta-a2-b0p5, Trial: 68/100 sample size: 4096
+estimate size: 1  5482
+Elapsed time is 1.375797 seconds.
+Beta-a2-b0p5, Trial: 69/100 sample size: 4096
+estimate size: 1  7238
+Elapsed time is 1.607894 seconds.
+Beta-a2-b0p5, Trial: 70/100 sample size: 4096
+estimate size: 1  8047
+Elapsed time is 1.988060 seconds.
+Beta-a2-b0p5, Trial: 71/100 sample size: 4096
+estimate size: 1  5474
+Elapsed time is 1.979801 seconds.
+Beta-a2-b0p5, Trial: 72/100 sample size: 4096
+estimate size: 1  4540
+Elapsed time is 1.263316 seconds.
+Beta-a2-b0p5, Trial: 73/100 sample size: 4096
+estimate size: 1  6961
+Elapsed time is 1.466666 seconds.
+Beta-a2-b0p5, Trial: 74/100 sample size: 4096
+estimate size: 1  9792
+Elapsed time is 2.266807 seconds.
+Beta-a2-b0p5, Trial: 75/100 sample size: 4096
+estimate size: 1  8429
+Elapsed time is 1.379285 seconds.
+Beta-a2-b0p5, Trial: 76/100 sample size: 4096
+estimate size: 1  7229
+Elapsed time is 1.547313 seconds.
+Beta-a2-b0p5, Trial: 77/100 sample size: 4096
+estimate size: 1  6803
+Elapsed time is 1.643006 seconds.
+Beta-a2-b0p5, Trial: 78/100 sample size: 4096
+estimate size: 1  5639
+Elapsed time is 2.014238 seconds.
+Beta-a2-b0p5, Trial: 79/100 sample size: 4096
+estimate size: 1  8452
+Elapsed time is 1.646531 seconds.
+Beta-a2-b0p5, Trial: 80/100 sample size: 4096
+estimate size: 1  6697
+Elapsed time is 1.570412 seconds.
+Beta-a2-b0p5, Trial: 81/100 sample size: 4096
+estimate size: 1  5463
+Elapsed time is 1.754518 seconds.
+Beta-a2-b0p5, Trial: 82/100 sample size: 4096
+estimate size: 1  6718
+Elapsed time is 2.086164 seconds.
+Beta-a2-b0p5, Trial: 83/100 sample size: 4096
+estimate size: 1  9706
+Elapsed time is 1.581100 seconds.
+Beta-a2-b0p5, Trial: 84/100 sample size: 4096
+estimate size: 1  7541
+Elapsed time is 1.764299 seconds.
+Beta-a2-b0p5, Trial: 85/100 sample size: 4096
+estimate size: 1  5417
+Elapsed time is 1.891812 seconds.
+Beta-a2-b0p5, Trial: 86/100 sample size: 4096
+estimate size: 1  4408
+Elapsed time is 1.841575 seconds.
+Beta-a2-b0p5, Trial: 87/100 sample size: 4096
+estimate size: 1  5751
+Elapsed time is 1.653082 seconds.
+Beta-a2-b0p5, Trial: 88/100 sample size: 4096
+estimate size: 1  8367
+Elapsed time is 1.103069 seconds.
+Beta-a2-b0p5, Trial: 89/100 sample size: 4096
+estimate size: 1  6640
+Elapsed time is 1.358949 seconds.
+Beta-a2-b0p5, Trial: 90/100 sample size: 4096
+estimate size: 1  6904
+Elapsed time is 1.466717 seconds.
+Beta-a2-b0p5, Trial: 91/100 sample size: 4096
+estimate size: 1  6437
+Elapsed time is 1.706405 seconds.
+Beta-a2-b0p5, Trial: 92/100 sample size: 4096
+estimate size: 1  7710
+Elapsed time is 1.683141 seconds.
+Beta-a2-b0p5, Trial: 93/100 sample size: 4096
+estimate size: 1  6707
+Elapsed time is 1.269089 seconds.
+Beta-a2-b0p5, Trial: 94/100 sample size: 4096
+estimate size: 1  4376
+Elapsed time is 1.470648 seconds.
+Beta-a2-b0p5, Trial: 95/100 sample size: 4096
+estimate size: 1  5993
+Elapsed time is 2.017429 seconds.
+Beta-a2-b0p5, Trial: 96/100 sample size: 4096
+estimate size: 1  6104
+Elapsed time is 1.727808 seconds.
+Beta-a2-b0p5, Trial: 97/100 sample size: 4096
+estimate size: 1  9333
+Elapsed time is 1.803263 seconds.
+Beta-a2-b0p5, Trial: 98/100 sample size: 4096
+estimate size: 1  9095
+Elapsed time is 1.952139 seconds.
+Beta-a2-b0p5, Trial: 99/100 sample size: 4096
+estimate size: 1  10010
+Elapsed time is 1.580562 seconds.
+Beta-a2-b0p5, Trial: 100/100 sample size: 4096
+estimate size: 1  9178
+Elapsed time is 3.313063 seconds.
+Beta-a2-b0p5, Trial: 1/100 sample size: 8192
+estimate size: 1  6618
+Elapsed time is 2.928608 seconds.
+Beta-a2-b0p5, Trial: 2/100 sample size: 8192
+estimate size: 1  9390
+Elapsed time is 2.656940 seconds.
+Beta-a2-b0p5, Trial: 3/100 sample size: 8192
+estimate size: 1  6534
+Elapsed time is 2.789356 seconds.
+Beta-a2-b0p5, Trial: 4/100 sample size: 8192
+estimate size: 1  7081
+Elapsed time is 2.967763 seconds.
+Beta-a2-b0p5, Trial: 5/100 sample size: 8192
+estimate size: 1  5312
+Elapsed time is 2.992161 seconds.
+Beta-a2-b0p5, Trial: 6/100 sample size: 8192
+estimate size: 1  5558
+Elapsed time is 2.768692 seconds.
+Beta-a2-b0p5, Trial: 7/100 sample size: 8192
+estimate size: 1  5541
+Elapsed time is 2.969462 seconds.
+Beta-a2-b0p5, Trial: 8/100 sample size: 8192
+estimate size: 1  4374
+Elapsed time is 3.808291 seconds.
+Beta-a2-b0p5, Trial: 9/100 sample size: 8192
+estimate size: 1  5503
+Elapsed time is 3.441118 seconds.
+Beta-a2-b0p5, Trial: 10/100 sample size: 8192
+estimate size: 1  5540
+Elapsed time is 3.153411 seconds.
+Beta-a2-b0p5, Trial: 11/100 sample size: 8192
+estimate size: 1  7661
+Elapsed time is 3.365735 seconds.
+Beta-a2-b0p5, Trial: 12/100 sample size: 8192
+estimate size: 1  6734
+Elapsed time is 3.212587 seconds.
+Beta-a2-b0p5, Trial: 13/100 sample size: 8192
+estimate size: 1  8068
+Elapsed time is 3.028267 seconds.
+Beta-a2-b0p5, Trial: 14/100 sample size: 8192
+estimate size: 1  8065
+Elapsed time is 3.290294 seconds.
+Beta-a2-b0p5, Trial: 15/100 sample size: 8192
+estimate size: 1  5533
+Elapsed time is 2.802588 seconds.
+Beta-a2-b0p5, Trial: 16/100 sample size: 8192
+estimate size: 1  6408
+Elapsed time is 2.633714 seconds.
+Beta-a2-b0p5, Trial: 17/100 sample size: 8192
+estimate size: 1  6922
+Elapsed time is 3.255528 seconds.
+Beta-a2-b0p5, Trial: 18/100 sample size: 8192
+estimate size: 1  5583
+Elapsed time is 2.598229 seconds.
+Beta-a2-b0p5, Trial: 19/100 sample size: 8192
+estimate size: 1  5540
+Elapsed time is 3.296440 seconds.
+Beta-a2-b0p5, Trial: 20/100 sample size: 8192
+estimate size: 1  5509
+Elapsed time is 2.898497 seconds.
+Beta-a2-b0p5, Trial: 21/100 sample size: 8192
+estimate size: 1  8231
+Elapsed time is 3.457674 seconds.
+Beta-a2-b0p5, Trial: 22/100 sample size: 8192
+estimate size: 1  6573
+Elapsed time is 3.388361 seconds.
+Beta-a2-b0p5, Trial: 23/100 sample size: 8192
+estimate size: 1  6856
+Elapsed time is 3.106523 seconds.
+Beta-a2-b0p5, Trial: 24/100 sample size: 8192
+estimate size: 1  8170
+Elapsed time is 3.376917 seconds.
+Beta-a2-b0p5, Trial: 25/100 sample size: 8192
+estimate size: 1  6859
+Elapsed time is 3.178322 seconds.
+Beta-a2-b0p5, Trial: 26/100 sample size: 8192
+estimate size: 1  4367
+Elapsed time is 2.937645 seconds.
+Beta-a2-b0p5, Trial: 27/100 sample size: 8192
+estimate size: 1  5599
+Elapsed time is 2.628230 seconds.
+Beta-a2-b0p5, Trial: 28/100 sample size: 8192
+estimate size: 1  4375
+Elapsed time is 2.955161 seconds.
+Beta-a2-b0p5, Trial: 29/100 sample size: 8192
+estimate size: 1  6905
+Elapsed time is 2.818386 seconds.
+Beta-a2-b0p5, Trial: 30/100 sample size: 8192
+estimate size: 1  7661
+Elapsed time is 3.601240 seconds.
+Beta-a2-b0p5, Trial: 31/100 sample size: 8192
+estimate size: 1  5577
+Elapsed time is 3.089386 seconds.
+Beta-a2-b0p5, Trial: 32/100 sample size: 8192
+estimate size: 1  6454
+Elapsed time is 3.217397 seconds.
+Beta-a2-b0p5, Trial: 33/100 sample size: 8192
+estimate size: 1  5520
+Elapsed time is 2.955897 seconds.
+Beta-a2-b0p5, Trial: 34/100 sample size: 8192
+estimate size: 1  6921
+Elapsed time is 3.201566 seconds.
+Beta-a2-b0p5, Trial: 35/100 sample size: 8192
+estimate size: 1  4405
+Elapsed time is 3.186175 seconds.
+Beta-a2-b0p5, Trial: 36/100 sample size: 8192
+estimate size: 1  7001
+Elapsed time is 2.889982 seconds.
+Beta-a2-b0p5, Trial: 37/100 sample size: 8192
+estimate size: 1  6764
+Elapsed time is 3.359740 seconds.
+Beta-a2-b0p5, Trial: 38/100 sample size: 8192
+estimate size: 1  6853
+Elapsed time is 4.010601 seconds.
+Beta-a2-b0p5, Trial: 39/100 sample size: 8192
+estimate size: 1  4307
+Elapsed time is 3.057056 seconds.
+Beta-a2-b0p5, Trial: 40/100 sample size: 8192
+estimate size: 1  9244
+Elapsed time is 2.889534 seconds.
+Beta-a2-b0p5, Trial: 41/100 sample size: 8192
+estimate size: 1  7748
+Elapsed time is 2.960208 seconds.
+Beta-a2-b0p5, Trial: 42/100 sample size: 8192
+estimate size: 1  7006
+Elapsed time is 3.032853 seconds.
+Beta-a2-b0p5, Trial: 43/100 sample size: 8192
+estimate size: 1  7747
+Elapsed time is 3.127564 seconds.
+Beta-a2-b0p5, Trial: 44/100 sample size: 8192
+estimate size: 1  5492
+Elapsed time is 3.014038 seconds.
+Beta-a2-b0p5, Trial: 45/100 sample size: 8192
+estimate size: 1  6660
+Elapsed time is 3.105450 seconds.
+Beta-a2-b0p5, Trial: 46/100 sample size: 8192
+estimate size: 1  8012
+Elapsed time is 2.951100 seconds.
+Beta-a2-b0p5, Trial: 47/100 sample size: 8192
+estimate size: 1  7116
+Elapsed time is 3.079081 seconds.
+Beta-a2-b0p5, Trial: 48/100 sample size: 8192
+estimate size: 1  5550
+Elapsed time is 3.220307 seconds.
+Beta-a2-b0p5, Trial: 49/100 sample size: 8192
+estimate size: 1  6937
+Elapsed time is 3.004648 seconds.
+Beta-a2-b0p5, Trial: 50/100 sample size: 8192
+estimate size: 1  6577
+Elapsed time is 3.375172 seconds.
+Beta-a2-b0p5, Trial: 51/100 sample size: 8192
+estimate size: 1  5246
+Elapsed time is 3.269815 seconds.
+Beta-a2-b0p5, Trial: 52/100 sample size: 8192
+estimate size: 1  6548
+Elapsed time is 3.126726 seconds.
+Beta-a2-b0p5, Trial: 53/100 sample size: 8192
+estimate size: 1  7712
+Elapsed time is 3.280190 seconds.
+Beta-a2-b0p5, Trial: 54/100 sample size: 8192
+estimate size: 1  4357
+Elapsed time is 3.192520 seconds.
+Beta-a2-b0p5, Trial: 55/100 sample size: 8192
+estimate size: 1  7928
+Elapsed time is 3.139845 seconds.
+Beta-a2-b0p5, Trial: 56/100 sample size: 8192
+estimate size: 1  5620
+Elapsed time is 2.874423 seconds.
+Beta-a2-b0p5, Trial: 57/100 sample size: 8192
+estimate size: 1  4388
+Elapsed time is 2.536216 seconds.
+Beta-a2-b0p5, Trial: 58/100 sample size: 8192
+estimate size: 1  6876
+Elapsed time is 2.521020 seconds.
+Beta-a2-b0p5, Trial: 59/100 sample size: 8192
+estimate size: 1  6346
+Elapsed time is 3.013822 seconds.
+Beta-a2-b0p5, Trial: 60/100 sample size: 8192
+estimate size: 1  4357
+Elapsed time is 3.049813 seconds.
+Beta-a2-b0p5, Trial: 61/100 sample size: 8192
+estimate size: 1  8091
+Elapsed time is 2.953960 seconds.
+Beta-a2-b0p5, Trial: 62/100 sample size: 8192
+estimate size: 1  6829
+Elapsed time is 3.503967 seconds.
+Beta-a2-b0p5, Trial: 63/100 sample size: 8192
+estimate size: 1  8174
+Elapsed time is 2.890751 seconds.
+Beta-a2-b0p5, Trial: 64/100 sample size: 8192
+estimate size: 1  6933
+Elapsed time is 2.839247 seconds.
+Beta-a2-b0p5, Trial: 65/100 sample size: 8192
+estimate size: 1  7355
+Elapsed time is 2.849393 seconds.
+Beta-a2-b0p5, Trial: 66/100 sample size: 8192
+estimate size: 1  6565
+Elapsed time is 2.850057 seconds.
+Beta-a2-b0p5, Trial: 67/100 sample size: 8192
+estimate size: 1  5750
+Elapsed time is 2.794879 seconds.
+Beta-a2-b0p5, Trial: 68/100 sample size: 8192
+estimate size: 1  6666
+Elapsed time is 3.378422 seconds.
+Beta-a2-b0p5, Trial: 69/100 sample size: 8192
+estimate size: 1  7011
+Elapsed time is 3.089967 seconds.
+Beta-a2-b0p5, Trial: 70/100 sample size: 8192
+estimate size: 1  6631
+Elapsed time is 2.975114 seconds.
+Beta-a2-b0p5, Trial: 71/100 sample size: 8192
+estimate size: 1  4309
+Elapsed time is 2.965102 seconds.
+Beta-a2-b0p5, Trial: 72/100 sample size: 8192
+estimate size: 1  5611
+Elapsed time is 3.549857 seconds.
+Beta-a2-b0p5, Trial: 73/100 sample size: 8192
+estimate size: 1  5286
+Elapsed time is 2.438845 seconds.
+Beta-a2-b0p5, Trial: 74/100 sample size: 8192
+estimate size: 1  4372
+Elapsed time is 2.470314 seconds.
+Beta-a2-b0p5, Trial: 75/100 sample size: 8192
+estimate size: 1  6517
+Elapsed time is 3.034178 seconds.
+Beta-a2-b0p5, Trial: 76/100 sample size: 8192
+estimate size: 1  6615
+Elapsed time is 3.690844 seconds.
+Beta-a2-b0p5, Trial: 77/100 sample size: 8192
+estimate size: 1  5625
+Elapsed time is 3.412667 seconds.
+Beta-a2-b0p5, Trial: 78/100 sample size: 8192
+estimate size: 1  5637
+Elapsed time is 3.022394 seconds.
+Beta-a2-b0p5, Trial: 79/100 sample size: 8192
+estimate size: 1  6728
+Elapsed time is 2.978356 seconds.
+Beta-a2-b0p5, Trial: 80/100 sample size: 8192
+estimate size: 1  4319
+Elapsed time is 2.933914 seconds.
+Beta-a2-b0p5, Trial: 81/100 sample size: 8192
+estimate size: 1  4433
+Elapsed time is 2.767759 seconds.
+Beta-a2-b0p5, Trial: 82/100 sample size: 8192
+estimate size: 1  5677
+Elapsed time is 2.979349 seconds.
+Beta-a2-b0p5, Trial: 83/100 sample size: 8192
+estimate size: 1  6921
+Elapsed time is 3.026510 seconds.
+Beta-a2-b0p5, Trial: 84/100 sample size: 8192
+estimate size: 1  6909
+Elapsed time is 3.725136 seconds.
+Beta-a2-b0p5, Trial: 85/100 sample size: 8192
+estimate size: 1  6590
+Elapsed time is 3.062750 seconds.
+Beta-a2-b0p5, Trial: 86/100 sample size: 8192
+estimate size: 1  5566
+Elapsed time is 2.904375 seconds.
+Beta-a2-b0p5, Trial: 87/100 sample size: 8192
+estimate size: 1  4368
+Elapsed time is 2.840586 seconds.
+Beta-a2-b0p5, Trial: 88/100 sample size: 8192
+estimate size: 1  5421
+Elapsed time is 3.206840 seconds.
+Beta-a2-b0p5, Trial: 89/100 sample size: 8192
+estimate size: 1  9171
+Elapsed time is 3.463146 seconds.
+Beta-a2-b0p5, Trial: 90/100 sample size: 8192
+estimate size: 1  7954
+Elapsed time is 2.833728 seconds.
+Beta-a2-b0p5, Trial: 91/100 sample size: 8192
+estimate size: 1  6782
+Elapsed time is 2.978073 seconds.
+Beta-a2-b0p5, Trial: 92/100 sample size: 8192
+estimate size: 1  7960
+Elapsed time is 2.927444 seconds.
+Beta-a2-b0p5, Trial: 93/100 sample size: 8192
+estimate size: 1  5305
+Elapsed time is 3.488067 seconds.
+Beta-a2-b0p5, Trial: 94/100 sample size: 8192
+estimate size: 1  4357
+Elapsed time is 2.839956 seconds.
+Beta-a2-b0p5, Trial: 95/100 sample size: 8192
+estimate size: 1  9034
+Elapsed time is 3.090565 seconds.
+Beta-a2-b0p5, Trial: 96/100 sample size: 8192
+estimate size: 1  7176
+Elapsed time is 2.801003 seconds.
+Beta-a2-b0p5, Trial: 97/100 sample size: 8192
+estimate size: 1  7961
+Elapsed time is 3.408906 seconds.
+Beta-a2-b0p5, Trial: 98/100 sample size: 8192
+estimate size: 1  5526
+Elapsed time is 3.044815 seconds.
+Beta-a2-b0p5, Trial: 99/100 sample size: 8192
+estimate size: 1  5179
+Elapsed time is 4.144487 seconds.
+Beta-a2-b0p5, Trial: 100/100 sample size: 8192
+estimate size: 1  5543
+Elapsed time is 5.555949 seconds.
+Beta-a2-b0p5, Trial: 1/100 sample size: 16384
+estimate size: 1  6888
+Elapsed time is 5.075548 seconds.
+Beta-a2-b0p5, Trial: 2/100 sample size: 16384
+estimate size: 1  7021
+Elapsed time is 6.198084 seconds.
+Beta-a2-b0p5, Trial: 3/100 sample size: 16384
+estimate size: 1  7011
+Elapsed time is 4.716435 seconds.
+Beta-a2-b0p5, Trial: 4/100 sample size: 16384
+estimate size: 1  8025
+Elapsed time is 4.471949 seconds.
+Beta-a2-b0p5, Trial: 5/100 sample size: 16384
+estimate size: 1  5778
+Elapsed time is 4.675135 seconds.
+Beta-a2-b0p5, Trial: 6/100 sample size: 16384
+estimate size: 1  4570
+Elapsed time is 4.380072 seconds.
+Beta-a2-b0p5, Trial: 7/100 sample size: 16384
+estimate size: 1  8013
+Elapsed time is 6.108769 seconds.
+Beta-a2-b0p5, Trial: 8/100 sample size: 16384
+estimate size: 1  9267
+Elapsed time is 5.091142 seconds.
+Beta-a2-b0p5, Trial: 9/100 sample size: 16384
+estimate size: 1  9133
+Elapsed time is 4.073835 seconds.
+Beta-a2-b0p5, Trial: 10/100 sample size: 16384
+estimate size: 1  5712
+Elapsed time is 5.650770 seconds.
+Beta-a2-b0p5, Trial: 11/100 sample size: 16384
+estimate size: 1  6648
+Elapsed time is 6.552734 seconds.
+Beta-a2-b0p5, Trial: 12/100 sample size: 16384
+estimate size: 1  6832
+Elapsed time is 6.919446 seconds.
+Beta-a2-b0p5, Trial: 13/100 sample size: 16384
+estimate size: 1  6921
+Elapsed time is 4.911045 seconds.
+Beta-a2-b0p5, Trial: 14/100 sample size: 16384
+estimate size: 1  6806
+Elapsed time is 5.082211 seconds.
+Beta-a2-b0p5, Trial: 15/100 sample size: 16384
+estimate size: 1  5710
+Elapsed time is 4.351018 seconds.
+Beta-a2-b0p5, Trial: 16/100 sample size: 16384
+estimate size: 1  6866
+Elapsed time is 5.264686 seconds.
+Beta-a2-b0p5, Trial: 17/100 sample size: 16384
+estimate size: 1  6840
+Elapsed time is 5.492837 seconds.
+Beta-a2-b0p5, Trial: 18/100 sample size: 16384
+estimate size: 1  8191
+Elapsed time is 5.388923 seconds.
+Beta-a2-b0p5, Trial: 19/100 sample size: 16384
+estimate size: 1  9268
+Elapsed time is 4.724405 seconds.
+Beta-a2-b0p5, Trial: 20/100 sample size: 16384
+estimate size: 1  7822
+Elapsed time is 5.944761 seconds.
+Beta-a2-b0p5, Trial: 21/100 sample size: 16384
+estimate size: 1  9330
+Elapsed time is 4.108319 seconds.
+Beta-a2-b0p5, Trial: 22/100 sample size: 16384
+estimate size: 1  6888
+Elapsed time is 5.066768 seconds.
+Beta-a2-b0p5, Trial: 23/100 sample size: 16384
+estimate size: 1  9266
+Elapsed time is 5.249198 seconds.
+Beta-a2-b0p5, Trial: 24/100 sample size: 16384
+estimate size: 1  8076
+Elapsed time is 5.116837 seconds.
+Beta-a2-b0p5, Trial: 25/100 sample size: 16384
+estimate size: 1  9126
+Elapsed time is 4.307953 seconds.
+Beta-a2-b0p5, Trial: 26/100 sample size: 16384
+estimate size: 1  6840
+Elapsed time is 5.085523 seconds.
+Beta-a2-b0p5, Trial: 27/100 sample size: 16384
+estimate size: 1  8110
+Elapsed time is 4.425365 seconds.
+Beta-a2-b0p5, Trial: 28/100 sample size: 16384
+estimate size: 1  5726
+Elapsed time is 5.008538 seconds.
+Beta-a2-b0p5, Trial: 29/100 sample size: 16384
+estimate size: 1  5782
+Elapsed time is 4.993560 seconds.
+Beta-a2-b0p5, Trial: 30/100 sample size: 16384
+estimate size: 1  8911
+Elapsed time is 4.336493 seconds.
+Beta-a2-b0p5, Trial: 31/100 sample size: 16384
+estimate size: 1  7947
+Elapsed time is 6.216830 seconds.
+Beta-a2-b0p5, Trial: 32/100 sample size: 16384
+estimate size: 1  6897
+Elapsed time is 4.863122 seconds.
+Beta-a2-b0p5, Trial: 33/100 sample size: 16384
+estimate size: 1  9327
+Elapsed time is 4.831666 seconds.
+Beta-a2-b0p5, Trial: 34/100 sample size: 16384
+estimate size: 1  4537
+Elapsed time is 4.757441 seconds.
+Beta-a2-b0p5, Trial: 35/100 sample size: 16384
+estimate size: 1  5747
+Elapsed time is 5.277032 seconds.
+Beta-a2-b0p5, Trial: 36/100 sample size: 16384
+estimate size: 1  5814
+Elapsed time is 4.442607 seconds.
+Beta-a2-b0p5, Trial: 37/100 sample size: 16384
+estimate size: 1  6862
+Elapsed time is 4.481583 seconds.
+Beta-a2-b0p5, Trial: 38/100 sample size: 16384
+estimate size: 1  9281
+Elapsed time is 5.313802 seconds.
+Beta-a2-b0p5, Trial: 39/100 sample size: 16384
+estimate size: 1  8195
+Elapsed time is 5.171394 seconds.
+Beta-a2-b0p5, Trial: 40/100 sample size: 16384
+estimate size: 1  9229
+Elapsed time is 4.681186 seconds.
+Beta-a2-b0p5, Trial: 41/100 sample size: 16384
+estimate size: 1  8139
+Elapsed time is 4.425407 seconds.
+Beta-a2-b0p5, Trial: 42/100 sample size: 16384
+estimate size: 1  9213
+Elapsed time is 5.538004 seconds.
+Beta-a2-b0p5, Trial: 43/100 sample size: 16384
+estimate size: 1  5763
+Elapsed time is 5.460076 seconds.
+Beta-a2-b0p5, Trial: 44/100 sample size: 16384
+estimate size: 1  6927
+Elapsed time is 4.333129 seconds.
+Beta-a2-b0p5, Trial: 45/100 sample size: 16384
+estimate size: 1  9266
+Elapsed time is 4.076407 seconds.
+Beta-a2-b0p5, Trial: 46/100 sample size: 16384
+estimate size: 1  5719
+Elapsed time is 4.765017 seconds.
+Beta-a2-b0p5, Trial: 47/100 sample size: 16384
+estimate size: 1  5736
+Elapsed time is 4.424988 seconds.
+Beta-a2-b0p5, Trial: 48/100 sample size: 16384
+estimate size: 1  5732
+Elapsed time is 6.640790 seconds.
+Beta-a2-b0p5, Trial: 49/100 sample size: 16384
+estimate size: 1  6990
+Elapsed time is 4.761280 seconds.
+Beta-a2-b0p5, Trial: 50/100 sample size: 16384
+estimate size: 1  8057
+Elapsed time is 4.134593 seconds.
+Beta-a2-b0p5, Trial: 51/100 sample size: 16384
+estimate size: 1  9250
+Elapsed time is 4.884861 seconds.
+Beta-a2-b0p5, Trial: 52/100 sample size: 16384
+estimate size: 1  8201
+Elapsed time is 4.806470 seconds.
+Beta-a2-b0p5, Trial: 53/100 sample size: 16384
+estimate size: 1  6875
+Elapsed time is 6.292072 seconds.
+Beta-a2-b0p5, Trial: 54/100 sample size: 16384
+estimate size: 1  5440
+Elapsed time is 4.360289 seconds.
+Beta-a2-b0p5, Trial: 55/100 sample size: 16384
+estimate size: 1  7003
+Elapsed time is 4.876037 seconds.
+Beta-a2-b0p5, Trial: 56/100 sample size: 16384
+estimate size: 1  6861
+Elapsed time is 5.557245 seconds.
+Beta-a2-b0p5, Trial: 57/100 sample size: 16384
+estimate size: 1  9091
+Elapsed time is 3.901707 seconds.
+Beta-a2-b0p5, Trial: 58/100 sample size: 16384
+estimate size: 1  6706
+Elapsed time is 5.979442 seconds.
+Beta-a2-b0p5, Trial: 59/100 sample size: 16384
+estimate size: 1  8010
+Elapsed time is 5.023329 seconds.
+Beta-a2-b0p5, Trial: 60/100 sample size: 16384
+estimate size: 1  5816
+Elapsed time is 4.578031 seconds.
+Beta-a2-b0p5, Trial: 61/100 sample size: 16384
+estimate size: 1  7487
+Elapsed time is 4.625703 seconds.
+Beta-a2-b0p5, Trial: 62/100 sample size: 16384
+estimate size: 1  8045
+Elapsed time is 4.673337 seconds.
+Beta-a2-b0p5, Trial: 63/100 sample size: 16384
+estimate size: 1  5823
+Elapsed time is 5.264810 seconds.
+Beta-a2-b0p5, Trial: 64/100 sample size: 16384
+estimate size: 1  5738
+Elapsed time is 4.837910 seconds.
+Beta-a2-b0p5, Trial: 65/100 sample size: 16384
+estimate size: 1  6885
+Elapsed time is 4.905696 seconds.
+Beta-a2-b0p5, Trial: 66/100 sample size: 16384
+estimate size: 1  6962
+Elapsed time is 5.618185 seconds.
+Beta-a2-b0p5, Trial: 67/100 sample size: 16384
+estimate size: 1  6984
+Elapsed time is 4.967660 seconds.
+Beta-a2-b0p5, Trial: 68/100 sample size: 16384
+estimate size: 1  8145
+Elapsed time is 5.011818 seconds.
+Beta-a2-b0p5, Trial: 69/100 sample size: 16384
+estimate size: 1  4553
+Elapsed time is 5.153942 seconds.
+Beta-a2-b0p5, Trial: 70/100 sample size: 16384
+estimate size: 1  8120
+Elapsed time is 4.010587 seconds.
+Beta-a2-b0p5, Trial: 71/100 sample size: 16384
+estimate size: 1  5728
+Elapsed time is 4.917989 seconds.
+Beta-a2-b0p5, Trial: 72/100 sample size: 16384
+estimate size: 1  4597
+Elapsed time is 4.082135 seconds.
+Beta-a2-b0p5, Trial: 73/100 sample size: 16384
+estimate size: 1  6937
+Elapsed time is 4.398394 seconds.
+Beta-a2-b0p5, Trial: 74/100 sample size: 16384
+estimate size: 1  6889
+Elapsed time is 4.446476 seconds.
+Beta-a2-b0p5, Trial: 75/100 sample size: 16384
+estimate size: 1  6615
+Elapsed time is 5.188621 seconds.
+Beta-a2-b0p5, Trial: 76/100 sample size: 16384
+estimate size: 1  5718
+Elapsed time is 4.550683 seconds.
+Beta-a2-b0p5, Trial: 77/100 sample size: 16384
+estimate size: 1  6874
+Elapsed time is 4.193690 seconds.
+Beta-a2-b0p5, Trial: 78/100 sample size: 16384
+estimate size: 1  6892
+Elapsed time is 5.294254 seconds.
+Beta-a2-b0p5, Trial: 79/100 sample size: 16384
+estimate size: 1  8099
+Elapsed time is 6.171138 seconds.
+Beta-a2-b0p5, Trial: 80/100 sample size: 16384
+estimate size: 1  6855
+Elapsed time is 4.493633 seconds.
+Beta-a2-b0p5, Trial: 81/100 sample size: 16384
+estimate size: 1  6664
+Elapsed time is 4.809965 seconds.
+Beta-a2-b0p5, Trial: 82/100 sample size: 16384
+estimate size: 1  9277
+Elapsed time is 4.887550 seconds.
+Beta-a2-b0p5, Trial: 83/100 sample size: 16384
+estimate size: 1  8159
+Elapsed time is 5.779141 seconds.
+Beta-a2-b0p5, Trial: 84/100 sample size: 16384
+estimate size: 1  9378
+Elapsed time is 4.049014 seconds.
+Beta-a2-b0p5, Trial: 85/100 sample size: 16384
+estimate size: 1  9236
+Elapsed time is 4.725189 seconds.
+Beta-a2-b0p5, Trial: 86/100 sample size: 16384
+estimate size: 1  4503
+Elapsed time is 4.816172 seconds.
+Beta-a2-b0p5, Trial: 87/100 sample size: 16384
+estimate size: 1  7979
+Elapsed time is 4.704763 seconds.
+Beta-a2-b0p5, Trial: 88/100 sample size: 16384
+estimate size: 1  8141
+Elapsed time is 5.528513 seconds.
+Beta-a2-b0p5, Trial: 89/100 sample size: 16384
+estimate size: 1  5705
+Elapsed time is 5.866292 seconds.
+Beta-a2-b0p5, Trial: 90/100 sample size: 16384
+estimate size: 1  6928
+Elapsed time is 6.190730 seconds.
+Beta-a2-b0p5, Trial: 91/100 sample size: 16384
+estimate size: 1  8004
+Elapsed time is 4.405427 seconds.
+Beta-a2-b0p5, Trial: 92/100 sample size: 16384
+estimate size: 1  6871
+Elapsed time is 5.301719 seconds.
+Beta-a2-b0p5, Trial: 93/100 sample size: 16384
+estimate size: 1  6974
+Elapsed time is 4.971061 seconds.
+Beta-a2-b0p5, Trial: 94/100 sample size: 16384
+estimate size: 1  9252
+Elapsed time is 6.275209 seconds.
+Beta-a2-b0p5, Trial: 95/100 sample size: 16384
+estimate size: 1  8067
+Elapsed time is 5.331853 seconds.
+Beta-a2-b0p5, Trial: 96/100 sample size: 16384
+estimate size: 1  4557
+Elapsed time is 4.804670 seconds.
+Beta-a2-b0p5, Trial: 97/100 sample size: 16384
+estimate size: 1  5703
+Elapsed time is 4.680326 seconds.
+Beta-a2-b0p5, Trial: 98/100 sample size: 16384
+estimate size: 1  6928
+Elapsed time is 4.270609 seconds.
+Beta-a2-b0p5, Trial: 99/100 sample size: 16384
+estimate size: 1  5710
+Elapsed time is 4.511866 seconds.
+Beta-a2-b0p5, Trial: 100/100 sample size: 16384
+estimate size: 1  8092
+Elapsed time is 8.361905 seconds.
+Beta-a2-b0p5, Trial: 1/100 sample size: 32768
+estimate size: 1  4995
+Elapsed time is 9.031212 seconds.
+Beta-a2-b0p5, Trial: 2/100 sample size: 32768
+estimate size: 1  4964
+Elapsed time is 9.233766 seconds.
+Beta-a2-b0p5, Trial: 3/100 sample size: 32768
+estimate size: 1  8530
+Elapsed time is 8.966833 seconds.
+Beta-a2-b0p5, Trial: 4/100 sample size: 32768
+estimate size: 1  7330
+Elapsed time is 8.351142 seconds.
+Beta-a2-b0p5, Trial: 5/100 sample size: 32768
+estimate size: 1  6165
+Elapsed time is 9.561915 seconds.
+Beta-a2-b0p5, Trial: 6/100 sample size: 32768
+estimate size: 1  7357
+Elapsed time is 8.980092 seconds.
+Beta-a2-b0p5, Trial: 7/100 sample size: 32768
+estimate size: 1  6168
+Elapsed time is 11.691426 seconds.
+Beta-a2-b0p5, Trial: 8/100 sample size: 32768
+estimate size: 1  6196
+Elapsed time is 8.020516 seconds.
+Beta-a2-b0p5, Trial: 9/100 sample size: 32768
+estimate size: 1  7259
+Elapsed time is 9.647485 seconds.
+Beta-a2-b0p5, Trial: 10/100 sample size: 32768
+estimate size: 1  7360
+Elapsed time is 9.613244 seconds.
+Beta-a2-b0p5, Trial: 11/100 sample size: 32768
+estimate size: 1  5000
+Elapsed time is 8.851716 seconds.
+Beta-a2-b0p5, Trial: 12/100 sample size: 32768
+estimate size: 1  8499
+Elapsed time is 10.954263 seconds.
+Beta-a2-b0p5, Trial: 13/100 sample size: 32768
+estimate size: 1  8549
+Elapsed time is 9.174441 seconds.
+Beta-a2-b0p5, Trial: 14/100 sample size: 32768
+estimate size: 1  6204
+Elapsed time is 9.125173 seconds.
+Beta-a2-b0p5, Trial: 15/100 sample size: 32768
+estimate size: 1  7282
+Elapsed time is 9.340454 seconds.
+Beta-a2-b0p5, Trial: 16/100 sample size: 32768
+estimate size: 1  6147
+Elapsed time is 9.549145 seconds.
+Beta-a2-b0p5, Trial: 17/100 sample size: 32768
+estimate size: 1  8535
+Elapsed time is 9.410172 seconds.
+Beta-a2-b0p5, Trial: 18/100 sample size: 32768
+estimate size: 1  7346
+Elapsed time is 8.275992 seconds.
+Beta-a2-b0p5, Trial: 19/100 sample size: 32768
+estimate size: 1  6162
+Elapsed time is 9.355944 seconds.
+Beta-a2-b0p5, Trial: 20/100 sample size: 32768
+estimate size: 1  8446
+Elapsed time is 8.642733 seconds.
+Beta-a2-b0p5, Trial: 21/100 sample size: 32768
+estimate size: 1  7297
+Elapsed time is 9.870393 seconds.
+Beta-a2-b0p5, Trial: 22/100 sample size: 32768
+estimate size: 1  8512
+Elapsed time is 8.876506 seconds.
+Beta-a2-b0p5, Trial: 23/100 sample size: 32768
+estimate size: 1  6192
+Elapsed time is 11.015184 seconds.
+Beta-a2-b0p5, Trial: 24/100 sample size: 32768
+estimate size: 1  8455
+Elapsed time is 8.538184 seconds.
+Beta-a2-b0p5, Trial: 25/100 sample size: 32768
+estimate size: 1  8575
+Elapsed time is 9.369249 seconds.
+Beta-a2-b0p5, Trial: 26/100 sample size: 32768
+estimate size: 1  8340
+Elapsed time is 8.557013 seconds.
+Beta-a2-b0p5, Trial: 27/100 sample size: 32768
+estimate size: 1  8504
+Elapsed time is 9.655201 seconds.
+Beta-a2-b0p5, Trial: 28/100 sample size: 32768
+estimate size: 1  5008
+Elapsed time is 9.498548 seconds.
+Beta-a2-b0p5, Trial: 29/100 sample size: 32768
+estimate size: 1  6222
+Elapsed time is 11.247714 seconds.
+Beta-a2-b0p5, Trial: 30/100 sample size: 32768
+estimate size: 1  5008
+Elapsed time is 9.676820 seconds.
+Beta-a2-b0p5, Trial: 31/100 sample size: 32768
+estimate size: 1  6130
+Elapsed time is 10.173124 seconds.
+Beta-a2-b0p5, Trial: 32/100 sample size: 32768
+estimate size: 1  8415
+Elapsed time is 10.773888 seconds.
+Beta-a2-b0p5, Trial: 33/100 sample size: 32768
+estimate size: 1  6180
+Elapsed time is 10.589750 seconds.
+Beta-a2-b0p5, Trial: 34/100 sample size: 32768
+estimate size: 1  8495
+Elapsed time is 10.400179 seconds.
+Beta-a2-b0p5, Trial: 35/100 sample size: 32768
+estimate size: 1  6163
+Elapsed time is 9.611878 seconds.
+Beta-a2-b0p5, Trial: 36/100 sample size: 32768
+estimate size: 1  8574
+Elapsed time is 8.242813 seconds.
+Beta-a2-b0p5, Trial: 37/100 sample size: 32768
+estimate size: 1  8464
+Elapsed time is 9.158380 seconds.
+Beta-a2-b0p5, Trial: 38/100 sample size: 32768
+estimate size: 1  6133
+Elapsed time is 8.642159 seconds.
+Beta-a2-b0p5, Trial: 39/100 sample size: 32768
+estimate size: 1  7283
+Elapsed time is 10.108464 seconds.
+Beta-a2-b0p5, Trial: 40/100 sample size: 32768
+estimate size: 1  9662
+Elapsed time is 10.438058 seconds.
+Beta-a2-b0p5, Trial: 41/100 sample size: 32768
+estimate size: 1  9659
+Elapsed time is 8.839551 seconds.
+Beta-a2-b0p5, Trial: 42/100 sample size: 32768
+estimate size: 1  7329
+Elapsed time is 8.891913 seconds.
+Beta-a2-b0p5, Trial: 43/100 sample size: 32768
+estimate size: 1  7341
+Elapsed time is 9.282798 seconds.
+Beta-a2-b0p5, Trial: 44/100 sample size: 32768
+estimate size: 1  7308
+Elapsed time is 9.041799 seconds.
+Beta-a2-b0p5, Trial: 45/100 sample size: 32768
+estimate size: 1  7287
+Elapsed time is 11.700297 seconds.
+Beta-a2-b0p5, Trial: 46/100 sample size: 32768
+estimate size: 1  7320
+Elapsed time is 12.542500 seconds.
+Beta-a2-b0p5, Trial: 47/100 sample size: 32768
+estimate size: 1  8532
+Elapsed time is 10.421368 seconds.
+Beta-a2-b0p5, Trial: 48/100 sample size: 32768
+estimate size: 1  8528
+Elapsed time is 9.248025 seconds.
+Beta-a2-b0p5, Trial: 49/100 sample size: 32768
+estimate size: 1  7402
+Elapsed time is 9.414589 seconds.
+Beta-a2-b0p5, Trial: 50/100 sample size: 32768
+estimate size: 1  6166
+Elapsed time is 11.541130 seconds.
+Beta-a2-b0p5, Trial: 51/100 sample size: 32768
+estimate size: 1  8515
+Elapsed time is 10.830170 seconds.
+Beta-a2-b0p5, Trial: 52/100 sample size: 32768
+estimate size: 1  8515
+Elapsed time is 9.132301 seconds.
+Beta-a2-b0p5, Trial: 53/100 sample size: 32768
+estimate size: 1  4978
+Elapsed time is 9.402172 seconds.
+Beta-a2-b0p5, Trial: 54/100 sample size: 32768
+estimate size: 1  8490
+Elapsed time is 9.749717 seconds.
+Beta-a2-b0p5, Trial: 55/100 sample size: 32768
+estimate size: 1  7359
+Elapsed time is 8.810517 seconds.
+Beta-a2-b0p5, Trial: 56/100 sample size: 32768
+estimate size: 1  7387
+Elapsed time is 8.784870 seconds.
+Beta-a2-b0p5, Trial: 57/100 sample size: 32768
+estimate size: 1  6211
+Elapsed time is 10.229524 seconds.
+Beta-a2-b0p5, Trial: 58/100 sample size: 32768
+estimate size: 1  7311
+Elapsed time is 8.112128 seconds.
+Beta-a2-b0p5, Trial: 59/100 sample size: 32768
+estimate size: 1  7351
+Elapsed time is 9.078387 seconds.
+Beta-a2-b0p5, Trial: 60/100 sample size: 32768
+estimate size: 1  7312
+Elapsed time is 9.825643 seconds.
+Beta-a2-b0p5, Trial: 61/100 sample size: 32768
+estimate size: 1  8208
+Elapsed time is 10.229669 seconds.
+Beta-a2-b0p5, Trial: 62/100 sample size: 32768
+estimate size: 1  7311
+Elapsed time is 10.803011 seconds.
+Beta-a2-b0p5, Trial: 63/100 sample size: 32768
+estimate size: 1  6105
+Elapsed time is 9.622002 seconds.
+Beta-a2-b0p5, Trial: 64/100 sample size: 32768
+estimate size: 1  7296
+Elapsed time is 12.870814 seconds.
+Beta-a2-b0p5, Trial: 65/100 sample size: 32768
+estimate size: 1  7308
+Elapsed time is 10.328363 seconds.
+Beta-a2-b0p5, Trial: 66/100 sample size: 32768
+estimate size: 1  7269
+Elapsed time is 9.236129 seconds.
+Beta-a2-b0p5, Trial: 67/100 sample size: 32768
+estimate size: 1  7360
+Elapsed time is 9.948237 seconds.
+Beta-a2-b0p5, Trial: 68/100 sample size: 32768
+estimate size: 1  9761
+Elapsed time is 8.753182 seconds.
+Beta-a2-b0p5, Trial: 69/100 sample size: 32768
+estimate size: 1  7317
+Elapsed time is 9.452843 seconds.
+Beta-a2-b0p5, Trial: 70/100 sample size: 32768
+estimate size: 1  4950
+Elapsed time is 7.709441 seconds.
+Beta-a2-b0p5, Trial: 71/100 sample size: 32768
+estimate size: 1  7315
+Elapsed time is 11.148079 seconds.
+Beta-a2-b0p5, Trial: 72/100 sample size: 32768
+estimate size: 1  6051
+Elapsed time is 9.058349 seconds.
+Beta-a2-b0p5, Trial: 73/100 sample size: 32768
+estimate size: 1  7310
+Elapsed time is 9.037442 seconds.
+Beta-a2-b0p5, Trial: 74/100 sample size: 32768
+estimate size: 1  7318
+Elapsed time is 10.204198 seconds.
+Beta-a2-b0p5, Trial: 75/100 sample size: 32768
+estimate size: 1  7317
+Elapsed time is 10.127489 seconds.
+Beta-a2-b0p5, Trial: 76/100 sample size: 32768
+estimate size: 1  7291
+Elapsed time is 9.814010 seconds.
+Beta-a2-b0p5, Trial: 77/100 sample size: 32768
+estimate size: 1  8494
+Elapsed time is 8.607028 seconds.
+Beta-a2-b0p5, Trial: 78/100 sample size: 32768
+estimate size: 1  7265
+Elapsed time is 10.686796 seconds.
+Beta-a2-b0p5, Trial: 79/100 sample size: 32768
+estimate size: 1  6148
+Elapsed time is 10.606912 seconds.
+Beta-a2-b0p5, Trial: 80/100 sample size: 32768
+estimate size: 1  8521
+Elapsed time is 9.641533 seconds.
+Beta-a2-b0p5, Trial: 81/100 sample size: 32768
+estimate size: 1  8434
+Elapsed time is 7.557415 seconds.
+Beta-a2-b0p5, Trial: 82/100 sample size: 32768
+estimate size: 1  7271
+Elapsed time is 11.199172 seconds.
+Beta-a2-b0p5, Trial: 83/100 sample size: 32768
+estimate size: 1  8480
+Elapsed time is 11.672778 seconds.
+Beta-a2-b0p5, Trial: 84/100 sample size: 32768
+estimate size: 1  8495
+Elapsed time is 10.072778 seconds.
+Beta-a2-b0p5, Trial: 85/100 sample size: 32768
+estimate size: 1  6196
+Elapsed time is 10.245674 seconds.
+Beta-a2-b0p5, Trial: 86/100 sample size: 32768
+estimate size: 1  8496
+Elapsed time is 11.232129 seconds.
+Beta-a2-b0p5, Trial: 87/100 sample size: 32768
+estimate size: 1  7324
+Elapsed time is 10.663985 seconds.
+Beta-a2-b0p5, Trial: 88/100 sample size: 32768
+estimate size: 1  6200
+Elapsed time is 13.886510 seconds.
+Beta-a2-b0p5, Trial: 89/100 sample size: 32768
+estimate size: 1  7342
+Elapsed time is 9.076238 seconds.
+Beta-a2-b0p5, Trial: 90/100 sample size: 32768
+estimate size: 1  7333
+Elapsed time is 9.216045 seconds.
+Beta-a2-b0p5, Trial: 91/100 sample size: 32768
+estimate size: 1  9676
+Elapsed time is 9.175685 seconds.
+Beta-a2-b0p5, Trial: 92/100 sample size: 32768
+estimate size: 1  6154
+Elapsed time is 10.066152 seconds.
+Beta-a2-b0p5, Trial: 93/100 sample size: 32768
+estimate size: 1  6163
+Elapsed time is 9.280394 seconds.
+Beta-a2-b0p5, Trial: 94/100 sample size: 32768
+estimate size: 1  4974
+Elapsed time is 8.982750 seconds.
+Beta-a2-b0p5, Trial: 95/100 sample size: 32768
+estimate size: 1  7421
+Elapsed time is 9.580299 seconds.
+Beta-a2-b0p5, Trial: 96/100 sample size: 32768
+estimate size: 1  7131
+Elapsed time is 10.771523 seconds.
+Beta-a2-b0p5, Trial: 97/100 sample size: 32768
+estimate size: 1  6185
+Elapsed time is 10.398712 seconds.
+Beta-a2-b0p5, Trial: 98/100 sample size: 32768
+estimate size: 1  8499
+Elapsed time is 11.346406 seconds.
+Beta-a2-b0p5, Trial: 99/100 sample size: 32768
+estimate size: 1  8523
+Elapsed time is 9.993758 seconds.
+Beta-a2-b0p5, Trial: 100/100 sample size: 32768
+estimate size: 1  8492
+Elapsed time is 23.188093 seconds.
+Beta-a2-b0p5, Trial: 1/100 sample size: 65536
+estimate size: 1  8240
+Elapsed time is 21.883465 seconds.
+Beta-a2-b0p5, Trial: 2/100 sample size: 65536
+estimate size: 1  10591
+Elapsed time is 25.466284 seconds.
+Beta-a2-b0p5, Trial: 3/100 sample size: 65536
+estimate size: 1  10608
+Elapsed time is 25.159500 seconds.
+Beta-a2-b0p5, Trial: 4/100 sample size: 65536
+estimate size: 1  8262
+Elapsed time is 17.126071 seconds.
+Beta-a2-b0p5, Trial: 5/100 sample size: 65536
+estimate size: 1  8200
+Elapsed time is 23.149049 seconds.
+Beta-a2-b0p5, Trial: 6/100 sample size: 65536
+estimate size: 1  8215
+Elapsed time is 17.699220 seconds.
+Beta-a2-b0p5, Trial: 7/100 sample size: 65536
+estimate size: 1  8230
+Elapsed time is 22.535245 seconds.
+Beta-a2-b0p5, Trial: 8/100 sample size: 65536
+estimate size: 1  7104
+Elapsed time is 22.495656 seconds.
+Beta-a2-b0p5, Trial: 9/100 sample size: 65536
+estimate size: 1  7087
+Elapsed time is 23.195897 seconds.
+Beta-a2-b0p5, Trial: 10/100 sample size: 65536
+estimate size: 1  9398
+Elapsed time is 24.069865 seconds.
+Beta-a2-b0p5, Trial: 11/100 sample size: 65536
+estimate size: 1  10636
+Elapsed time is 24.201847 seconds.
+Beta-a2-b0p5, Trial: 12/100 sample size: 65536
+estimate size: 1  8213
+Elapsed time is 21.537838 seconds.
+Beta-a2-b0p5, Trial: 13/100 sample size: 65536
+estimate size: 1  9467
+Elapsed time is 20.560045 seconds.
+Beta-a2-b0p5, Trial: 14/100 sample size: 65536
+estimate size: 1  8246
+Elapsed time is 20.996412 seconds.
+Beta-a2-b0p5, Trial: 15/100 sample size: 65536
+estimate size: 1  8304
+Elapsed time is 22.426373 seconds.
+Beta-a2-b0p5, Trial: 16/100 sample size: 65536
+estimate size: 1  9436
+Elapsed time is 17.337169 seconds.
+Beta-a2-b0p5, Trial: 17/100 sample size: 65536
+estimate size: 1  8287
+Elapsed time is 18.954392 seconds.
+Beta-a2-b0p5, Trial: 18/100 sample size: 65536
+estimate size: 1  5857
+Elapsed time is 22.344418 seconds.
+Beta-a2-b0p5, Trial: 19/100 sample size: 65536
+estimate size: 1  6988
+Elapsed time is 22.752786 seconds.
+Beta-a2-b0p5, Trial: 20/100 sample size: 65536
+estimate size: 1  8261
+Elapsed time is 20.044796 seconds.
+Beta-a2-b0p5, Trial: 21/100 sample size: 65536
+estimate size: 1  7129
+Elapsed time is 22.618322 seconds.
+Beta-a2-b0p5, Trial: 22/100 sample size: 65536
+estimate size: 1  8229
+Elapsed time is 21.958744 seconds.
+Beta-a2-b0p5, Trial: 23/100 sample size: 65536
+estimate size: 1  8212
+Elapsed time is 21.829224 seconds.
+Beta-a2-b0p5, Trial: 24/100 sample size: 65536
+estimate size: 1  10576
+Elapsed time is 20.569064 seconds.
+Beta-a2-b0p5, Trial: 25/100 sample size: 65536
+estimate size: 1  8230
+Elapsed time is 21.789814 seconds.
+Beta-a2-b0p5, Trial: 26/100 sample size: 65536
+estimate size: 1  8320
+Elapsed time is 23.689563 seconds.
+Beta-a2-b0p5, Trial: 27/100 sample size: 65536
+estimate size: 1  8212
+Elapsed time is 19.922136 seconds.
+Beta-a2-b0p5, Trial: 28/100 sample size: 65536
+estimate size: 1  7074
+Elapsed time is 21.848844 seconds.
+Beta-a2-b0p5, Trial: 29/100 sample size: 65536
+estimate size: 1  9482
+Elapsed time is 22.424866 seconds.
+Beta-a2-b0p5, Trial: 30/100 sample size: 65536
+estimate size: 1  10595
+Elapsed time is 24.636492 seconds.
+Beta-a2-b0p5, Trial: 31/100 sample size: 65536
+estimate size: 1  10644
+Elapsed time is 18.341275 seconds.
+Beta-a2-b0p5, Trial: 32/100 sample size: 65536
+estimate size: 1  8226
+Elapsed time is 24.659973 seconds.
+Beta-a2-b0p5, Trial: 33/100 sample size: 65536
+estimate size: 1  8266
+Elapsed time is 21.646560 seconds.
+Beta-a2-b0p5, Trial: 34/100 sample size: 65536
+estimate size: 1  9517
+Elapsed time is 22.482166 seconds.
+Beta-a2-b0p5, Trial: 35/100 sample size: 65536
+estimate size: 1  10600
+Elapsed time is 22.649426 seconds.
+Beta-a2-b0p5, Trial: 36/100 sample size: 65536
+estimate size: 1  9420
+Elapsed time is 19.133917 seconds.
+Beta-a2-b0p5, Trial: 37/100 sample size: 65536
+estimate size: 1  8221
+Elapsed time is 22.520767 seconds.
+Beta-a2-b0p5, Trial: 38/100 sample size: 65536
+estimate size: 1  9406
+Elapsed time is 19.838830 seconds.
+Beta-a2-b0p5, Trial: 39/100 sample size: 65536
+estimate size: 1  8245
+Elapsed time is 18.531383 seconds.
+Beta-a2-b0p5, Trial: 40/100 sample size: 65536
+estimate size: 1  10642
+Elapsed time is 23.862612 seconds.
+Beta-a2-b0p5, Trial: 41/100 sample size: 65536
+estimate size: 1  5825
+Elapsed time is 21.338750 seconds.
+Beta-a2-b0p5, Trial: 42/100 sample size: 65536
+estimate size: 1  9429
+Elapsed time is 19.675133 seconds.
+Beta-a2-b0p5, Trial: 43/100 sample size: 65536
+estimate size: 1  8255
+Elapsed time is 23.540939 seconds.
+Beta-a2-b0p5, Trial: 44/100 sample size: 65536
+estimate size: 1  8218
+Elapsed time is 23.845410 seconds.
+Beta-a2-b0p5, Trial: 45/100 sample size: 65536
+estimate size: 1  10546
+Elapsed time is 21.923193 seconds.
+Beta-a2-b0p5, Trial: 46/100 sample size: 65536
+estimate size: 1  7095
+Elapsed time is 21.295364 seconds.
+Beta-a2-b0p5, Trial: 47/100 sample size: 65536
+estimate size: 1  10567
+Elapsed time is 19.654574 seconds.
+Beta-a2-b0p5, Trial: 48/100 sample size: 65536
+estimate size: 1  9415
+Elapsed time is 20.004612 seconds.
+Beta-a2-b0p5, Trial: 49/100 sample size: 65536
+estimate size: 1  9462
+Elapsed time is 26.430308 seconds.
+Beta-a2-b0p5, Trial: 50/100 sample size: 65536
+estimate size: 1  8239
+Elapsed time is 24.460535 seconds.
+Beta-a2-b0p5, Trial: 51/100 sample size: 65536
+estimate size: 1  8227
+Elapsed time is 24.931640 seconds.
+Beta-a2-b0p5, Trial: 52/100 sample size: 65536
+estimate size: 1  9443
+Elapsed time is 22.507666 seconds.
+Beta-a2-b0p5, Trial: 53/100 sample size: 65536
+estimate size: 1  9463
+Elapsed time is 22.869419 seconds.
+Beta-a2-b0p5, Trial: 54/100 sample size: 65536
+estimate size: 1  10564
+Elapsed time is 21.370517 seconds.
+Beta-a2-b0p5, Trial: 55/100 sample size: 65536
+estimate size: 1  8235
+Elapsed time is 25.489875 seconds.
+Beta-a2-b0p5, Trial: 56/100 sample size: 65536
+estimate size: 1  9407
+Elapsed time is 24.050895 seconds.
+Beta-a2-b0p5, Trial: 57/100 sample size: 65536
+estimate size: 1  9456
+Elapsed time is 21.231302 seconds.
+Beta-a2-b0p5, Trial: 58/100 sample size: 65536
+estimate size: 1  10651
+Elapsed time is 23.064496 seconds.
+Beta-a2-b0p5, Trial: 59/100 sample size: 65536
+estimate size: 1  8287
+Elapsed time is 24.299373 seconds.
+Beta-a2-b0p5, Trial: 60/100 sample size: 65536
+estimate size: 1  9458
+Elapsed time is 21.749158 seconds.
+Beta-a2-b0p5, Trial: 61/100 sample size: 65536
+estimate size: 1  10613
+Elapsed time is 22.513468 seconds.
+Beta-a2-b0p5, Trial: 62/100 sample size: 65536
+estimate size: 1  10588
+Elapsed time is 23.852972 seconds.
+Beta-a2-b0p5, Trial: 63/100 sample size: 65536
+estimate size: 1  10629
+Elapsed time is 21.921033 seconds.
+Beta-a2-b0p5, Trial: 64/100 sample size: 65536
+estimate size: 1  9439
+Elapsed time is 16.394029 seconds.
+Beta-a2-b0p5, Trial: 65/100 sample size: 65536
+estimate size: 1  7136
+Elapsed time is 20.781015 seconds.
+Beta-a2-b0p5, Trial: 66/100 sample size: 65536
+estimate size: 1  8231
+Elapsed time is 17.272949 seconds.
+Beta-a2-b0p5, Trial: 67/100 sample size: 65536
+estimate size: 1  9413
+Elapsed time is 21.481597 seconds.
+Beta-a2-b0p5, Trial: 68/100 sample size: 65536
+estimate size: 1  8154
+Elapsed time is 23.223627 seconds.
+Beta-a2-b0p5, Trial: 69/100 sample size: 65536
+estimate size: 1  9434
+Elapsed time is 22.597612 seconds.
+Beta-a2-b0p5, Trial: 70/100 sample size: 65536
+estimate size: 1  9445
+Elapsed time is 23.787423 seconds.
+Beta-a2-b0p5, Trial: 71/100 sample size: 65536
+estimate size: 1  8275
+Elapsed time is 23.084980 seconds.
+Beta-a2-b0p5, Trial: 72/100 sample size: 65536
+estimate size: 1  10637
+Elapsed time is 23.060104 seconds.
+Beta-a2-b0p5, Trial: 73/100 sample size: 65536
+estimate size: 1  10617
+Elapsed time is 23.518335 seconds.
+Beta-a2-b0p5, Trial: 74/100 sample size: 65536
+estimate size: 1  8325
+Elapsed time is 17.924068 seconds.
+Beta-a2-b0p5, Trial: 75/100 sample size: 65536
+estimate size: 1  7082
+Elapsed time is 23.921589 seconds.
+Beta-a2-b0p5, Trial: 76/100 sample size: 65536
+estimate size: 1  9405
+Elapsed time is 26.106950 seconds.
+Beta-a2-b0p5, Trial: 77/100 sample size: 65536
+estimate size: 1  9446
+Elapsed time is 25.260134 seconds.
+Beta-a2-b0p5, Trial: 78/100 sample size: 65536
+estimate size: 1  9443
+Elapsed time is 24.963691 seconds.
+Beta-a2-b0p5, Trial: 79/100 sample size: 65536
+estimate size: 1  7117
+Elapsed time is 19.279860 seconds.
+Beta-a2-b0p5, Trial: 80/100 sample size: 65536
+estimate size: 1  9418
+Elapsed time is 22.661811 seconds.
+Beta-a2-b0p5, Trial: 81/100 sample size: 65536
+estimate size: 1  8240
+Elapsed time is 21.418648 seconds.
+Beta-a2-b0p5, Trial: 82/100 sample size: 65536
+estimate size: 1  7024
+Elapsed time is 23.011504 seconds.
+Beta-a2-b0p5, Trial: 83/100 sample size: 65536
+estimate size: 1  9153
+Elapsed time is 24.259181 seconds.
+Beta-a2-b0p5, Trial: 84/100 sample size: 65536
+estimate size: 1  10545
+Elapsed time is 20.997191 seconds.
+Beta-a2-b0p5, Trial: 85/100 sample size: 65536
+estimate size: 1  7063
+Elapsed time is 22.324390 seconds.
+Beta-a2-b0p5, Trial: 86/100 sample size: 65536
+estimate size: 1  9456
+Elapsed time is 24.213782 seconds.
+Beta-a2-b0p5, Trial: 87/100 sample size: 65536
+estimate size: 1  7076
+Elapsed time is 22.562393 seconds.
+Beta-a2-b0p5, Trial: 88/100 sample size: 65536
+estimate size: 1  9388
+Elapsed time is 18.138547 seconds.
+Beta-a2-b0p5, Trial: 89/100 sample size: 65536
+estimate size: 1  9456
+Elapsed time is 25.800085 seconds.
+Beta-a2-b0p5, Trial: 90/100 sample size: 65536
+estimate size: 1  9451
+Elapsed time is 25.518571 seconds.
+Beta-a2-b0p5, Trial: 91/100 sample size: 65536
+estimate size: 1  8215
+Elapsed time is 25.309995 seconds.
+Beta-a2-b0p5, Trial: 92/100 sample size: 65536
+estimate size: 1  7053
+Elapsed time is 25.275894 seconds.
+Beta-a2-b0p5, Trial: 93/100 sample size: 65536
+estimate size: 1  10655
+Elapsed time is 24.458986 seconds.
+Beta-a2-b0p5, Trial: 94/100 sample size: 65536
+estimate size: 1  9476
+Elapsed time is 18.262757 seconds.
+Beta-a2-b0p5, Trial: 95/100 sample size: 65536
+estimate size: 1  9446
+Elapsed time is 20.783151 seconds.
+Beta-a2-b0p5, Trial: 96/100 sample size: 65536
+estimate size: 1  8232
+Elapsed time is 21.707818 seconds.
+Beta-a2-b0p5, Trial: 97/100 sample size: 65536
+estimate size: 1  10540
+Elapsed time is 18.335377 seconds.
+Beta-a2-b0p5, Trial: 98/100 sample size: 65536
+estimate size: 1  9399
+Elapsed time is 24.525471 seconds.
+Beta-a2-b0p5, Trial: 99/100 sample size: 65536
+estimate size: 1  9400
+Elapsed time is 20.269703 seconds.
+Beta-a2-b0p5, Trial: 100/100 sample size: 65536
+estimate size: 1  9419
+Elapsed time is 35.621799 seconds.
+Beta-a2-b0p5, Trial: 1/100 sample size: 131072
+estimate size: 1  10048
+Elapsed time is 34.725506 seconds.
+Beta-a2-b0p5, Trial: 2/100 sample size: 131072
+estimate size: 1  10044
+Elapsed time is 35.854396 seconds.
+Beta-a2-b0p5, Trial: 3/100 sample size: 131072
+estimate size: 1  10065
+Elapsed time is 36.100498 seconds.
+Beta-a2-b0p5, Trial: 4/100 sample size: 131072
+estimate size: 1  8875
+Elapsed time is 36.043085 seconds.
+Beta-a2-b0p5, Trial: 5/100 sample size: 131072
+estimate size: 1  10128
+Elapsed time is 36.288947 seconds.
+Beta-a2-b0p5, Trial: 6/100 sample size: 131072
+estimate size: 1  10074
+Elapsed time is 36.061015 seconds.
+Beta-a2-b0p5, Trial: 7/100 sample size: 131072
+estimate size: 1  11308
+Elapsed time is 36.722864 seconds.
+Beta-a2-b0p5, Trial: 8/100 sample size: 131072
+estimate size: 1  10097
+Elapsed time is 37.588735 seconds.
+Beta-a2-b0p5, Trial: 9/100 sample size: 131072
+estimate size: 1  10068
+Elapsed time is 35.602805 seconds.
+Beta-a2-b0p5, Trial: 10/100 sample size: 131072
+estimate size: 1  10054
+Elapsed time is 36.709463 seconds.
+Beta-a2-b0p5, Trial: 11/100 sample size: 131072
+estimate size: 1  12522
+Elapsed time is 37.071078 seconds.
+Beta-a2-b0p5, Trial: 12/100 sample size: 131072
+estimate size: 1  11317
+Elapsed time is 36.242492 seconds.
+Beta-a2-b0p5, Trial: 13/100 sample size: 131072
+estimate size: 1  10089
+Elapsed time is 37.363539 seconds.
+Beta-a2-b0p5, Trial: 14/100 sample size: 131072
+estimate size: 1  10055
+Elapsed time is 36.820022 seconds.
+Beta-a2-b0p5, Trial: 15/100 sample size: 131072
+estimate size: 1  11288
+Elapsed time is 37.780430 seconds.
+Beta-a2-b0p5, Trial: 16/100 sample size: 131072
+estimate size: 1  10122
+Elapsed time is 37.139592 seconds.
+Beta-a2-b0p5, Trial: 17/100 sample size: 131072
+estimate size: 1  11286
+Elapsed time is 36.072247 seconds.
+Beta-a2-b0p5, Trial: 18/100 sample size: 131072
+estimate size: 1  10122
+Elapsed time is 33.538089 seconds.
+Beta-a2-b0p5, Trial: 19/100 sample size: 131072
+estimate size: 1  10045
+Elapsed time is 36.967226 seconds.
+Beta-a2-b0p5, Trial: 20/100 sample size: 131072
+estimate size: 1  12481
+Elapsed time is 35.371792 seconds.
+Beta-a2-b0p5, Trial: 21/100 sample size: 131072
+estimate size: 1  11296
+Elapsed time is 35.943541 seconds.
+Beta-a2-b0p5, Trial: 22/100 sample size: 131072
+estimate size: 1  11261
+Elapsed time is 35.160395 seconds.
+Beta-a2-b0p5, Trial: 23/100 sample size: 131072
+estimate size: 1  10062
+Elapsed time is 35.793121 seconds.
+Beta-a2-b0p5, Trial: 24/100 sample size: 131072
+estimate size: 1  12495
+Elapsed time is 36.705086 seconds.
+Beta-a2-b0p5, Trial: 25/100 sample size: 131072
+estimate size: 1  10017
+Elapsed time is 34.129130 seconds.
+Beta-a2-b0p5, Trial: 26/100 sample size: 131072
+estimate size: 1  10142
+Elapsed time is 36.272542 seconds.
+Beta-a2-b0p5, Trial: 27/100 sample size: 131072
+estimate size: 1  11211
+Elapsed time is 35.098648 seconds.
+Beta-a2-b0p5, Trial: 28/100 sample size: 131072
+estimate size: 1  11244
+Elapsed time is 33.847774 seconds.
+Beta-a2-b0p5, Trial: 29/100 sample size: 131072
+estimate size: 1  8930
+Elapsed time is 34.340273 seconds.
+Beta-a2-b0p5, Trial: 30/100 sample size: 131072
+estimate size: 1  12478
+Elapsed time is 36.898486 seconds.
+Beta-a2-b0p5, Trial: 31/100 sample size: 131072
+estimate size: 1  10047
+Elapsed time is 37.395760 seconds.
+Beta-a2-b0p5, Trial: 32/100 sample size: 131072
+estimate size: 1  12493
+Elapsed time is 33.453979 seconds.
+Beta-a2-b0p5, Trial: 33/100 sample size: 131072
+estimate size: 1  11279
+Elapsed time is 34.144250 seconds.
+Beta-a2-b0p5, Trial: 34/100 sample size: 131072
+estimate size: 1  11266
+Elapsed time is 35.099982 seconds.
+Beta-a2-b0p5, Trial: 35/100 sample size: 131072
+estimate size: 1  10078
+Elapsed time is 37.822639 seconds.
+Beta-a2-b0p5, Trial: 36/100 sample size: 131072
+estimate size: 1  10066
+Elapsed time is 37.421412 seconds.
+Beta-a2-b0p5, Trial: 37/100 sample size: 131072
+estimate size: 1  11280
+Elapsed time is 36.743691 seconds.
+Beta-a2-b0p5, Trial: 38/100 sample size: 131072
+estimate size: 1  10023
+Elapsed time is 37.982831 seconds.
+Beta-a2-b0p5, Trial: 39/100 sample size: 131072
+estimate size: 1  8884
+Elapsed time is 37.193146 seconds.
+Beta-a2-b0p5, Trial: 40/100 sample size: 131072
+estimate size: 1  11052
+Elapsed time is 39.286650 seconds.
+Beta-a2-b0p5, Trial: 41/100 sample size: 131072
+estimate size: 1  10009
+Elapsed time is 38.032859 seconds.
+Beta-a2-b0p5, Trial: 42/100 sample size: 131072
+estimate size: 1  11302
+Elapsed time is 36.245045 seconds.
+Beta-a2-b0p5, Trial: 43/100 sample size: 131072
+estimate size: 1  10066
+Elapsed time is 37.380588 seconds.
+Beta-a2-b0p5, Trial: 44/100 sample size: 131072
+estimate size: 1  8888
+Elapsed time is 38.132168 seconds.
+Beta-a2-b0p5, Trial: 45/100 sample size: 131072
+estimate size: 1  12495
+Elapsed time is 37.543819 seconds.
+Beta-a2-b0p5, Trial: 46/100 sample size: 131072
+estimate size: 1  10000
+Elapsed time is 37.101511 seconds.
+Beta-a2-b0p5, Trial: 47/100 sample size: 131072
+estimate size: 1  10046
+Elapsed time is 38.559743 seconds.
+Beta-a2-b0p5, Trial: 48/100 sample size: 131072
+estimate size: 1  10003
+Elapsed time is 37.383818 seconds.
+Beta-a2-b0p5, Trial: 49/100 sample size: 131072
+estimate size: 1  10076
+Elapsed time is 38.401258 seconds.
+Beta-a2-b0p5, Trial: 50/100 sample size: 131072
+estimate size: 1  11330
+Elapsed time is 35.134226 seconds.
+Beta-a2-b0p5, Trial: 51/100 sample size: 131072
+estimate size: 1  11294
+Elapsed time is 33.476962 seconds.
+Beta-a2-b0p5, Trial: 52/100 sample size: 131072
+estimate size: 1  12527
+Elapsed time is 36.505814 seconds.
+Beta-a2-b0p5, Trial: 53/100 sample size: 131072
+estimate size: 1  10132
+Elapsed time is 36.743515 seconds.
+Beta-a2-b0p5, Trial: 54/100 sample size: 131072
+estimate size: 1  10046
+Elapsed time is 36.054903 seconds.
+Beta-a2-b0p5, Trial: 55/100 sample size: 131072
+estimate size: 1  12435
+Elapsed time is 38.740280 seconds.
+Beta-a2-b0p5, Trial: 56/100 sample size: 131072
+estimate size: 1  12516
+Elapsed time is 37.303248 seconds.
+Beta-a2-b0p5, Trial: 57/100 sample size: 131072
+estimate size: 1  12515
+Elapsed time is 38.190441 seconds.
+Beta-a2-b0p5, Trial: 58/100 sample size: 131072
+estimate size: 1  8908
+Elapsed time is 35.850540 seconds.
+Beta-a2-b0p5, Trial: 59/100 sample size: 131072
+estimate size: 1  10025
+Elapsed time is 37.014780 seconds.
+Beta-a2-b0p5, Trial: 60/100 sample size: 131072
+estimate size: 1  10093
+Elapsed time is 37.747743 seconds.
+Beta-a2-b0p5, Trial: 61/100 sample size: 131072
+estimate size: 1  10039
+Elapsed time is 35.219523 seconds.
+Beta-a2-b0p5, Trial: 62/100 sample size: 131072
+estimate size: 1  11303
+Elapsed time is 39.132659 seconds.
+Beta-a2-b0p5, Trial: 63/100 sample size: 131072
+estimate size: 1  11232
+Elapsed time is 39.489528 seconds.
+Beta-a2-b0p5, Trial: 64/100 sample size: 131072
+estimate size: 1  12451
+Elapsed time is 38.758477 seconds.
+Beta-a2-b0p5, Trial: 65/100 sample size: 131072
+estimate size: 1  10094
+Elapsed time is 39.689419 seconds.
+Beta-a2-b0p5, Trial: 66/100 sample size: 131072
+estimate size: 1  10089
+Elapsed time is 38.835463 seconds.
+Beta-a2-b0p5, Trial: 67/100 sample size: 131072
+estimate size: 1  10006
+Elapsed time is 34.545083 seconds.
+Beta-a2-b0p5, Trial: 68/100 sample size: 131072
+estimate size: 1  8883
+Elapsed time is 34.227695 seconds.
+Beta-a2-b0p5, Trial: 69/100 sample size: 131072
+estimate size: 1  10076
+Elapsed time is 37.337554 seconds.
+Beta-a2-b0p5, Trial: 70/100 sample size: 131072
+estimate size: 1  10077
+Elapsed time is 41.157223 seconds.
+Beta-a2-b0p5, Trial: 71/100 sample size: 131072
+estimate size: 1  8898
+Elapsed time is 35.366796 seconds.
+Beta-a2-b0p5, Trial: 72/100 sample size: 131072
+estimate size: 1  10011
+Elapsed time is 35.185772 seconds.
+Beta-a2-b0p5, Trial: 73/100 sample size: 131072
+estimate size: 1  10055
+Elapsed time is 34.733028 seconds.
+Beta-a2-b0p5, Trial: 74/100 sample size: 131072
+estimate size: 1  10181
+Elapsed time is 34.465027 seconds.
+Beta-a2-b0p5, Trial: 75/100 sample size: 131072
+estimate size: 1  10051
+Elapsed time is 40.328443 seconds.
+Beta-a2-b0p5, Trial: 76/100 sample size: 131072
+estimate size: 1  10021
+Elapsed time is 36.755390 seconds.
+Beta-a2-b0p5, Trial: 77/100 sample size: 131072
+estimate size: 1  8957
+Elapsed time is 35.345032 seconds.
+Beta-a2-b0p5, Trial: 78/100 sample size: 131072
+estimate size: 1  10080
+Elapsed time is 38.823257 seconds.
+Beta-a2-b0p5, Trial: 79/100 sample size: 131072
+estimate size: 1  12550
+Elapsed time is 40.158872 seconds.
+Beta-a2-b0p5, Trial: 80/100 sample size: 131072
+estimate size: 1  11367
+Elapsed time is 38.189387 seconds.
+Beta-a2-b0p5, Trial: 81/100 sample size: 131072
+estimate size: 1  11316
+Elapsed time is 34.966879 seconds.
+Beta-a2-b0p5, Trial: 82/100 sample size: 131072
+estimate size: 1  10088
+Elapsed time is 37.257998 seconds.
+Beta-a2-b0p5, Trial: 83/100 sample size: 131072
+estimate size: 1  10112
+Elapsed time is 39.534273 seconds.
+Beta-a2-b0p5, Trial: 84/100 sample size: 131072
+estimate size: 1  11258
+Elapsed time is 36.136444 seconds.
+Beta-a2-b0p5, Trial: 85/100 sample size: 131072
+estimate size: 1  12227
+Elapsed time is 35.187569 seconds.
+Beta-a2-b0p5, Trial: 86/100 sample size: 131072
+estimate size: 1  9998
+Elapsed time is 37.824484 seconds.
+Beta-a2-b0p5, Trial: 87/100 sample size: 131072
+estimate size: 1  10096
+Elapsed time is 37.159909 seconds.
+Beta-a2-b0p5, Trial: 88/100 sample size: 131072
+estimate size: 1  12199
+Elapsed time is 35.546726 seconds.
+Beta-a2-b0p5, Trial: 89/100 sample size: 131072
+estimate size: 1  8915
+Elapsed time is 40.703656 seconds.
+Beta-a2-b0p5, Trial: 90/100 sample size: 131072
+estimate size: 1  10083
+Elapsed time is 37.454096 seconds.
+Beta-a2-b0p5, Trial: 91/100 sample size: 131072
+estimate size: 1  11273
+Elapsed time is 39.223992 seconds.
+Beta-a2-b0p5, Trial: 92/100 sample size: 131072
+estimate size: 1  10085
+Elapsed time is 38.628914 seconds.
+Beta-a2-b0p5, Trial: 93/100 sample size: 131072
+estimate size: 1  11303
+Elapsed time is 38.788312 seconds.
+Beta-a2-b0p5, Trial: 94/100 sample size: 131072
+estimate size: 1  10015
+Elapsed time is 36.606209 seconds.
+Beta-a2-b0p5, Trial: 95/100 sample size: 131072
+estimate size: 1  11314
+Elapsed time is 34.841455 seconds.
+Beta-a2-b0p5, Trial: 96/100 sample size: 131072
+estimate size: 1  10167
+Elapsed time is 36.476860 seconds.
+Beta-a2-b0p5, Trial: 97/100 sample size: 131072
+estimate size: 1  12496
+Elapsed time is 36.399129 seconds.
+Beta-a2-b0p5, Trial: 98/100 sample size: 131072
+estimate size: 1  10067
+Elapsed time is 39.532743 seconds.
+Beta-a2-b0p5, Trial: 99/100 sample size: 131072
+estimate size: 1  10189
+Elapsed time is 38.977220 seconds.
+Beta-a2-b0p5, Trial: 100/100 sample size: 131072
+estimate size: 1  10050
+Elapsed time is 92.581671 seconds.
+Beta-a2-b0p5, Trial: 1/100 sample size: 262144
+estimate size: 1  15011
+Elapsed time is 86.895146 seconds.
+Beta-a2-b0p5, Trial: 2/100 sample size: 262144
+estimate size: 1  13625
+Elapsed time is 85.731542 seconds.
+Beta-a2-b0p5, Trial: 3/100 sample size: 262144
+estimate size: 1  13698
+Elapsed time is 85.008739 seconds.
+Beta-a2-b0p5, Trial: 4/100 sample size: 262144
+estimate size: 1  13900
+Elapsed time is 92.723794 seconds.
+Beta-a2-b0p5, Trial: 5/100 sample size: 262144
+estimate size: 1  13916
+Elapsed time is 94.195334 seconds.
+Beta-a2-b0p5, Trial: 6/100 sample size: 262144
+estimate size: 1  16240
+Elapsed time is 82.104123 seconds.
+Beta-a2-b0p5, Trial: 7/100 sample size: 262144
+estimate size: 1  13681
+Elapsed time is 79.491739 seconds.
+Beta-a2-b0p5, Trial: 8/100 sample size: 262144
+estimate size: 1  13709
+Elapsed time is 80.262518 seconds.
+Beta-a2-b0p5, Trial: 9/100 sample size: 262144
+estimate size: 1  13644
+Elapsed time is 76.100631 seconds.
+Beta-a2-b0p5, Trial: 10/100 sample size: 262144
+estimate size: 1  13766
+Elapsed time is 81.425807 seconds.
+Beta-a2-b0p5, Trial: 11/100 sample size: 262144
+estimate size: 1  16237
+Elapsed time is 84.117100 seconds.
+Beta-a2-b0p5, Trial: 12/100 sample size: 262144
+estimate size: 1  14984
+Elapsed time is 82.087084 seconds.
+Beta-a2-b0p5, Trial: 13/100 sample size: 262144
+estimate size: 1  13653
+Elapsed time is 84.391866 seconds.
+Beta-a2-b0p5, Trial: 14/100 sample size: 262144
+estimate size: 1  13858
+Elapsed time is 75.432442 seconds.
+Beta-a2-b0p5, Trial: 15/100 sample size: 262144
+estimate size: 1  13729
+Elapsed time is 89.984951 seconds.
+Beta-a2-b0p5, Trial: 16/100 sample size: 262144
+estimate size: 1  13669
+Elapsed time is 90.199037 seconds.
+Beta-a2-b0p5, Trial: 17/100 sample size: 262144
+estimate size: 1  13611
+Elapsed time is 79.946918 seconds.
+Beta-a2-b0p5, Trial: 18/100 sample size: 262144
+estimate size: 1  15117
+Elapsed time is 90.240751 seconds.
+Beta-a2-b0p5, Trial: 19/100 sample size: 262144
+estimate size: 1  15024
+Elapsed time is 79.162612 seconds.
+Beta-a2-b0p5, Trial: 20/100 sample size: 262144
+estimate size: 1  15030
+Elapsed time is 83.980440 seconds.
+Beta-a2-b0p5, Trial: 21/100 sample size: 262144
+estimate size: 1  13703
+Elapsed time is 79.896108 seconds.
+Beta-a2-b0p5, Trial: 22/100 sample size: 262144
+estimate size: 1  13703
+Elapsed time is 91.121229 seconds.
+Beta-a2-b0p5, Trial: 23/100 sample size: 262144
+estimate size: 1  16253
+Elapsed time is 89.912132 seconds.
+Beta-a2-b0p5, Trial: 24/100 sample size: 262144
+estimate size: 1  16273
+Elapsed time is 76.365466 seconds.
+Beta-a2-b0p5, Trial: 25/100 sample size: 262144
+estimate size: 1  14995
+Elapsed time is 75.484082 seconds.
+Beta-a2-b0p5, Trial: 26/100 sample size: 262144
+estimate size: 1  13739
+Elapsed time is 84.505681 seconds.
+Beta-a2-b0p5, Trial: 27/100 sample size: 262144
+estimate size: 1  16303
+Elapsed time is 90.963900 seconds.
+Beta-a2-b0p5, Trial: 28/100 sample size: 262144
+estimate size: 1  13729
+Elapsed time is 92.241152 seconds.
+Beta-a2-b0p5, Trial: 29/100 sample size: 262144
+estimate size: 1  13682
+Elapsed time is 79.680024 seconds.
+Beta-a2-b0p5, Trial: 30/100 sample size: 262144
+estimate size: 1  13763
+Elapsed time is 73.501184 seconds.
+Beta-a2-b0p5, Trial: 31/100 sample size: 262144
+estimate size: 1  13754
+Elapsed time is 75.241314 seconds.
+Beta-a2-b0p5, Trial: 32/100 sample size: 262144
+estimate size: 1  13849
+Elapsed time is 71.069458 seconds.
+Beta-a2-b0p5, Trial: 33/100 sample size: 262144
+estimate size: 1  12459
+Elapsed time is 79.156750 seconds.
+Beta-a2-b0p5, Trial: 34/100 sample size: 262144
+estimate size: 1  16262
+Elapsed time is 78.381721 seconds.
+Beta-a2-b0p5, Trial: 35/100 sample size: 262144
+estimate size: 1  12537
+Elapsed time is 83.972124 seconds.
+Beta-a2-b0p5, Trial: 36/100 sample size: 262144
+estimate size: 1  16270
+Elapsed time is 68.331639 seconds.
+Beta-a2-b0p5, Trial: 37/100 sample size: 262144
+estimate size: 1  13656
+Elapsed time is 79.988380 seconds.
+Beta-a2-b0p5, Trial: 38/100 sample size: 262144
+estimate size: 1  15045
+Elapsed time is 72.834020 seconds.
+Beta-a2-b0p5, Trial: 39/100 sample size: 262144
+estimate size: 1  15032
+Elapsed time is 83.119091 seconds.
+Beta-a2-b0p5, Trial: 40/100 sample size: 262144
+estimate size: 1  14863
+Elapsed time is 86.404127 seconds.
+Beta-a2-b0p5, Trial: 41/100 sample size: 262144
+estimate size: 1  13664
+Elapsed time is 73.027846 seconds.
+Beta-a2-b0p5, Trial: 42/100 sample size: 262144
+estimate size: 1  13665
+Elapsed time is 82.300099 seconds.
+Beta-a2-b0p5, Trial: 43/100 sample size: 262144
+estimate size: 1  13663
+Elapsed time is 79.106958 seconds.
+Beta-a2-b0p5, Trial: 44/100 sample size: 262144
+estimate size: 1  13691
+Elapsed time is 74.907802 seconds.
+Beta-a2-b0p5, Trial: 45/100 sample size: 262144
+estimate size: 1  15110
+Elapsed time is 82.554921 seconds.
+Beta-a2-b0p5, Trial: 46/100 sample size: 262144
+estimate size: 1  16226
+Elapsed time is 76.731333 seconds.
+Beta-a2-b0p5, Trial: 47/100 sample size: 262144
+estimate size: 1  13851
+Elapsed time is 81.005965 seconds.
+Beta-a2-b0p5, Trial: 48/100 sample size: 262144
+estimate size: 1  13744
+Elapsed time is 82.673864 seconds.
+Beta-a2-b0p5, Trial: 49/100 sample size: 262144
+estimate size: 1  16300
+Elapsed time is 73.882424 seconds.
+Beta-a2-b0p5, Trial: 50/100 sample size: 262144
+estimate size: 1  13736
+Elapsed time is 83.387680 seconds.
+Beta-a2-b0p5, Trial: 51/100 sample size: 262144
+estimate size: 1  13679
+Elapsed time is 82.896906 seconds.
+Beta-a2-b0p5, Trial: 52/100 sample size: 262144
+estimate size: 1  13688
+Elapsed time is 76.131965 seconds.
+Beta-a2-b0p5, Trial: 53/100 sample size: 262144
+estimate size: 1  16266
+Elapsed time is 83.271496 seconds.
+Beta-a2-b0p5, Trial: 54/100 sample size: 262144
+estimate size: 1  13648
+Elapsed time is 73.940057 seconds.
+Beta-a2-b0p5, Trial: 55/100 sample size: 262144
+estimate size: 1  13625
+Elapsed time is 82.491318 seconds.
+Beta-a2-b0p5, Trial: 56/100 sample size: 262144
+estimate size: 1  13722
+Elapsed time is 82.068928 seconds.
+Beta-a2-b0p5, Trial: 57/100 sample size: 262144
+estimate size: 1  13636
+Elapsed time is 80.012102 seconds.
+Beta-a2-b0p5, Trial: 58/100 sample size: 262144
+estimate size: 1  16276
+Elapsed time is 78.943235 seconds.
+Beta-a2-b0p5, Trial: 59/100 sample size: 262144
+estimate size: 1  13671
+Elapsed time is 75.072499 seconds.
+Beta-a2-b0p5, Trial: 60/100 sample size: 262144
+estimate size: 1  16229
+Elapsed time is 83.435425 seconds.
+Beta-a2-b0p5, Trial: 61/100 sample size: 262144
+estimate size: 1  13678
+Elapsed time is 75.345083 seconds.
+Beta-a2-b0p5, Trial: 62/100 sample size: 262144
+estimate size: 1  16236
+Elapsed time is 82.271113 seconds.
+Beta-a2-b0p5, Trial: 63/100 sample size: 262144
+estimate size: 1  13698
+Elapsed time is 73.420318 seconds.
+Beta-a2-b0p5, Trial: 64/100 sample size: 262144
+estimate size: 1  14985
+Elapsed time is 77.261134 seconds.
+Beta-a2-b0p5, Trial: 65/100 sample size: 262144
+estimate size: 1  13690
+Elapsed time is 85.904540 seconds.
+Beta-a2-b0p5, Trial: 66/100 sample size: 262144
+estimate size: 1  13739
+Elapsed time is 70.780561 seconds.
+Beta-a2-b0p5, Trial: 67/100 sample size: 262144
+estimate size: 1  15051
+Elapsed time is 76.786829 seconds.
+Beta-a2-b0p5, Trial: 68/100 sample size: 262144
+estimate size: 1  13722
+Elapsed time is 88.653091 seconds.
+Beta-a2-b0p5, Trial: 69/100 sample size: 262144
+estimate size: 1  13649
+Elapsed time is 86.216672 seconds.
+Beta-a2-b0p5, Trial: 70/100 sample size: 262144
+estimate size: 1  13723
+Elapsed time is 88.637107 seconds.
+Beta-a2-b0p5, Trial: 71/100 sample size: 262144
+estimate size: 1  16246
+Elapsed time is 88.595939 seconds.
+Beta-a2-b0p5, Trial: 72/100 sample size: 262144
+estimate size: 1  15055
+Elapsed time is 80.591783 seconds.
+Beta-a2-b0p5, Trial: 73/100 sample size: 262144
+estimate size: 1  16240
+Elapsed time is 81.408738 seconds.
+Beta-a2-b0p5, Trial: 74/100 sample size: 262144
+estimate size: 1  14992
+Elapsed time is 85.883036 seconds.
+Beta-a2-b0p5, Trial: 75/100 sample size: 262144
+estimate size: 1  13667
+Elapsed time is 93.693895 seconds.
+Beta-a2-b0p5, Trial: 76/100 sample size: 262144
+estimate size: 1  16222
+Elapsed time is 88.367569 seconds.
+Beta-a2-b0p5, Trial: 77/100 sample size: 262144
+estimate size: 1  13685
+Elapsed time is 90.425022 seconds.
+Beta-a2-b0p5, Trial: 78/100 sample size: 262144
+estimate size: 1  14868
+Elapsed time is 77.510660 seconds.
+Beta-a2-b0p5, Trial: 79/100 sample size: 262144
+estimate size: 1  13687
+Elapsed time is 86.008186 seconds.
+Beta-a2-b0p5, Trial: 80/100 sample size: 262144
+estimate size: 1  13857
+Elapsed time is 86.801029 seconds.
+Beta-a2-b0p5, Trial: 81/100 sample size: 262144
+estimate size: 1  12554
+Elapsed time is 79.116207 seconds.
+Beta-a2-b0p5, Trial: 82/100 sample size: 262144
+estimate size: 1  14913
+Elapsed time is 80.831155 seconds.
+Beta-a2-b0p5, Trial: 83/100 sample size: 262144
+estimate size: 1  16246
+Elapsed time is 86.691423 seconds.
+Beta-a2-b0p5, Trial: 84/100 sample size: 262144
+estimate size: 1  13659
+Elapsed time is 85.596904 seconds.
+Beta-a2-b0p5, Trial: 85/100 sample size: 262144
+estimate size: 1  13693
+Elapsed time is 87.249930 seconds.
+Beta-a2-b0p5, Trial: 86/100 sample size: 262144
+estimate size: 1  13672
+Elapsed time is 74.275068 seconds.
+Beta-a2-b0p5, Trial: 87/100 sample size: 262144
+estimate size: 1  16260
+Elapsed time is 75.841304 seconds.
+Beta-a2-b0p5, Trial: 88/100 sample size: 262144
+estimate size: 1  15108
+Elapsed time is 91.423405 seconds.
+Beta-a2-b0p5, Trial: 89/100 sample size: 262144
+estimate size: 1  15027
+Elapsed time is 78.357530 seconds.
+Beta-a2-b0p5, Trial: 90/100 sample size: 262144
+estimate size: 1  13684
+Elapsed time is 83.207611 seconds.
+Beta-a2-b0p5, Trial: 91/100 sample size: 262144
+estimate size: 1  13667
+Elapsed time is 87.999217 seconds.
+Beta-a2-b0p5, Trial: 92/100 sample size: 262144
+estimate size: 1  13650
+Elapsed time is 90.608352 seconds.
+Beta-a2-b0p5, Trial: 93/100 sample size: 262144
+estimate size: 1  14991
+Elapsed time is 80.671993 seconds.
+Beta-a2-b0p5, Trial: 94/100 sample size: 262144
+estimate size: 1  16138
+Elapsed time is 77.487839 seconds.
+Beta-a2-b0p5, Trial: 95/100 sample size: 262144
+estimate size: 1  16316
+Elapsed time is 83.827937 seconds.
+Beta-a2-b0p5, Trial: 96/100 sample size: 262144
+estimate size: 1  15155
+Elapsed time is 77.146090 seconds.
+Beta-a2-b0p5, Trial: 97/100 sample size: 262144
+estimate size: 1  14872
+Elapsed time is 81.156766 seconds.
+Beta-a2-b0p5, Trial: 98/100 sample size: 262144
+estimate size: 1  14940
+Elapsed time is 89.321566 seconds.
+Beta-a2-b0p5, Trial: 99/100 sample size: 262144
+estimate size: 1  16277
+Elapsed time is 90.008753 seconds.
+Beta-a2-b0p5, Trial: 100/100 sample size: 262144
+estimate size: 1  13829
+Elapsed time is 103.620310 seconds.
+Beta-a2-b0p5, Trial: 1/100 sample size: 524288
+estimate size: 1  22232
+Elapsed time is 100.310626 seconds.
+Beta-a2-b0p5, Trial: 2/100 sample size: 524288
+estimate size: 1  22332
+Elapsed time is 104.468969 seconds.
+Beta-a2-b0p5, Trial: 3/100 sample size: 524288
+estimate size: 1  23461
+Elapsed time is 89.652535 seconds.
+Beta-a2-b0p5, Trial: 4/100 sample size: 524288
+estimate size: 1  22211
+Elapsed time is 101.625575 seconds.
+Beta-a2-b0p5, Trial: 5/100 sample size: 524288
+estimate size: 1  22277
+Elapsed time is 101.676362 seconds.
+Beta-a2-b0p5, Trial: 6/100 sample size: 524288
+estimate size: 1  23779
+Elapsed time is 102.955580 seconds.
+Beta-a2-b0p5, Trial: 7/100 sample size: 524288
+estimate size: 1  22256
+Elapsed time is 99.390423 seconds.
+Beta-a2-b0p5, Trial: 8/100 sample size: 524288
+estimate size: 1  22282
+Elapsed time is 91.119511 seconds.
+Beta-a2-b0p5, Trial: 9/100 sample size: 524288
+estimate size: 1  22178
+Elapsed time is 92.843638 seconds.
+Beta-a2-b0p5, Trial: 10/100 sample size: 524288
+estimate size: 1  22176
+Elapsed time is 101.960025 seconds.
+Beta-a2-b0p5, Trial: 11/100 sample size: 524288
+estimate size: 1  23419
+Elapsed time is 104.106515 seconds.
+Beta-a2-b0p5, Trial: 12/100 sample size: 524288
+estimate size: 1  22257
+Elapsed time is 95.931306 seconds.
+Beta-a2-b0p5, Trial: 13/100 sample size: 524288
+estimate size: 1  23750
+Elapsed time is 104.925806 seconds.
+Beta-a2-b0p5, Trial: 14/100 sample size: 524288
+estimate size: 1  22225
+Elapsed time is 99.738062 seconds.
+Beta-a2-b0p5, Trial: 15/100 sample size: 524288
+estimate size: 1  22218
+Elapsed time is 107.965609 seconds.
+Beta-a2-b0p5, Trial: 16/100 sample size: 524288
+estimate size: 1  23804
+Elapsed time is 100.190744 seconds.
+Beta-a2-b0p5, Trial: 17/100 sample size: 524288
+estimate size: 1  22304
+Elapsed time is 103.854786 seconds.
+Beta-a2-b0p5, Trial: 18/100 sample size: 524288
+estimate size: 1  23764
+Elapsed time is 104.425689 seconds.
+Beta-a2-b0p5, Trial: 19/100 sample size: 524288
+estimate size: 1  22238
+Elapsed time is 104.196272 seconds.
+Beta-a2-b0p5, Trial: 20/100 sample size: 524288
+estimate size: 1  22330
+Elapsed time is 103.118009 seconds.
+Beta-a2-b0p5, Trial: 21/100 sample size: 524288
+estimate size: 1  22264
+Elapsed time is 92.766045 seconds.
+Beta-a2-b0p5, Trial: 22/100 sample size: 524288
+estimate size: 1  22168
+Elapsed time is 89.570188 seconds.
+Beta-a2-b0p5, Trial: 23/100 sample size: 524288
+estimate size: 1  22230
+Elapsed time is 96.440652 seconds.
+Beta-a2-b0p5, Trial: 24/100 sample size: 524288
+estimate size: 1  24997
+Elapsed time is 84.714684 seconds.
+Beta-a2-b0p5, Trial: 25/100 sample size: 524288
+estimate size: 1  22215
+Elapsed time is 96.255964 seconds.
+Beta-a2-b0p5, Trial: 26/100 sample size: 524288
+estimate size: 1  22309
+Elapsed time is 96.403372 seconds.
+Beta-a2-b0p5, Trial: 27/100 sample size: 524288
+estimate size: 1  23780
+Elapsed time is 91.897786 seconds.
+Beta-a2-b0p5, Trial: 28/100 sample size: 524288
+estimate size: 1  22246
+Elapsed time is 100.925077 seconds.
+Beta-a2-b0p5, Trial: 29/100 sample size: 524288
+estimate size: 1  22201
+Elapsed time is 97.342857 seconds.
+Beta-a2-b0p5, Trial: 30/100 sample size: 524288
+estimate size: 1  21793
+Elapsed time is 94.451387 seconds.
+Beta-a2-b0p5, Trial: 31/100 sample size: 524288
+estimate size: 1  23484
+Elapsed time is 98.157786 seconds.
+Beta-a2-b0p5, Trial: 32/100 sample size: 524288
+estimate size: 1  25002
+Elapsed time is 93.708753 seconds.
+Beta-a2-b0p5, Trial: 33/100 sample size: 524288
+estimate size: 1  22266
+Elapsed time is 95.289512 seconds.
+Beta-a2-b0p5, Trial: 34/100 sample size: 524288
+estimate size: 1  22208
+Elapsed time is 95.639174 seconds.
+Beta-a2-b0p5, Trial: 35/100 sample size: 524288
+estimate size: 1  22231
+Elapsed time is 93.196744 seconds.
+Beta-a2-b0p5, Trial: 36/100 sample size: 524288
+estimate size: 1  22238
+Elapsed time is 93.326180 seconds.
+Beta-a2-b0p5, Trial: 37/100 sample size: 524288
+estimate size: 1  22300
+Elapsed time is 82.235150 seconds.
+Beta-a2-b0p5, Trial: 38/100 sample size: 524288
+estimate size: 1  22228
+Elapsed time is 94.517701 seconds.
+Beta-a2-b0p5, Trial: 39/100 sample size: 524288
+estimate size: 1  23455
+Elapsed time is 99.055839 seconds.
+Beta-a2-b0p5, Trial: 40/100 sample size: 524288
+estimate size: 1  22252
+Elapsed time is 95.803439 seconds.
+Beta-a2-b0p5, Trial: 41/100 sample size: 524288
+estimate size: 1  22329
+[Warning: Number of dupliates: 1] 
+[> In NAP/stitch (line 114)
+In driver_func (line 173)] 
+[Warning: Number of dupliates: 1] 
+[> In NAP/stitch (line 114)
+In driver_func (line 201)] 
+Elapsed time is 84.917190 seconds.
+Beta-a2-b0p5, Trial: 42/100 sample size: 524288
+estimate size: 1  22315
+Elapsed time is 90.848661 seconds.
+Beta-a2-b0p5, Trial: 43/100 sample size: 524288
+estimate size: 1  23704
+Elapsed time is 88.965826 seconds.
+Beta-a2-b0p5, Trial: 44/100 sample size: 524288
+estimate size: 1  22242
+Elapsed time is 86.394932 seconds.
+Beta-a2-b0p5, Trial: 45/100 sample size: 524288
+estimate size: 1  22266
+Elapsed time is 94.853752 seconds.
+Beta-a2-b0p5, Trial: 46/100 sample size: 524288
+estimate size: 1  22279
+Elapsed time is 95.592715 seconds.
+Beta-a2-b0p5, Trial: 47/100 sample size: 524288
+estimate size: 1  23345
+Elapsed time is 97.356273 seconds.
+Beta-a2-b0p5, Trial: 48/100 sample size: 524288
+estimate size: 1  22187
+Elapsed time is 94.797092 seconds.
+Beta-a2-b0p5, Trial: 49/100 sample size: 524288
+estimate size: 1  23422
+Elapsed time is 86.800308 seconds.
+Beta-a2-b0p5, Trial: 50/100 sample size: 524288
+estimate size: 1  22247
+Elapsed time is 96.721184 seconds.
+Beta-a2-b0p5, Trial: 51/100 sample size: 524288
+estimate size: 1  23788
+Elapsed time is 84.680451 seconds.
+Beta-a2-b0p5, Trial: 52/100 sample size: 524288
+estimate size: 1  22308
+Elapsed time is 90.567313 seconds.
+Beta-a2-b0p5, Trial: 53/100 sample size: 524288
+estimate size: 1  22284
+Elapsed time is 92.707471 seconds.
+Beta-a2-b0p5, Trial: 54/100 sample size: 524288
+estimate size: 1  22321
+Elapsed time is 83.121511 seconds.
+Beta-a2-b0p5, Trial: 55/100 sample size: 524288
+estimate size: 1  23345
+Elapsed time is 91.341411 seconds.
+Beta-a2-b0p5, Trial: 56/100 sample size: 524288
+estimate size: 1  23733
+Elapsed time is 86.573067 seconds.
+Beta-a2-b0p5, Trial: 57/100 sample size: 524288
+estimate size: 1  23725
+Elapsed time is 84.153492 seconds.
+Beta-a2-b0p5, Trial: 58/100 sample size: 524288
+estimate size: 1  23747
+Elapsed time is 87.659314 seconds.
+Beta-a2-b0p5, Trial: 59/100 sample size: 524288
+estimate size: 1  23375
+Elapsed time is 93.246761 seconds.
+Beta-a2-b0p5, Trial: 60/100 sample size: 524288
+estimate size: 1  22246
+Elapsed time is 84.273086 seconds.
+Beta-a2-b0p5, Trial: 61/100 sample size: 524288
+estimate size: 1  23716
+Elapsed time is 88.363261 seconds.
+Beta-a2-b0p5, Trial: 62/100 sample size: 524288
+estimate size: 1  23753
+Elapsed time is 85.633737 seconds.
+Beta-a2-b0p5, Trial: 63/100 sample size: 524288
+estimate size: 1  22258
+Elapsed time is 91.419608 seconds.
+Beta-a2-b0p5, Trial: 64/100 sample size: 524288
+estimate size: 1  22292
+Elapsed time is 84.024399 seconds.
+Beta-a2-b0p5, Trial: 65/100 sample size: 524288
+estimate size: 1  22143
+Elapsed time is 92.933646 seconds.
+Beta-a2-b0p5, Trial: 66/100 sample size: 524288
+estimate size: 1  23716
+Elapsed time is 85.459648 seconds.
+Beta-a2-b0p5, Trial: 67/100 sample size: 524288
+estimate size: 1  22230
+Elapsed time is 85.133872 seconds.
+Beta-a2-b0p5, Trial: 68/100 sample size: 524288
+estimate size: 1  23427
+Elapsed time is 85.069569 seconds.
+Beta-a2-b0p5, Trial: 69/100 sample size: 524288
+estimate size: 1  22208
+Elapsed time is 92.438045 seconds.
+Beta-a2-b0p5, Trial: 70/100 sample size: 524288
+estimate size: 1  23297
+Elapsed time is 88.976324 seconds.
+Beta-a2-b0p5, Trial: 71/100 sample size: 524288
+estimate size: 1  22224
+Elapsed time is 85.821533 seconds.
+Beta-a2-b0p5, Trial: 72/100 sample size: 524288
+estimate size: 1  22175
+Elapsed time is 89.777807 seconds.
+Beta-a2-b0p5, Trial: 73/100 sample size: 524288
+estimate size: 1  23439
+Elapsed time is 94.305313 seconds.
+Beta-a2-b0p5, Trial: 74/100 sample size: 524288
+estimate size: 1  22198
+Elapsed time is 89.967082 seconds.
+Beta-a2-b0p5, Trial: 75/100 sample size: 524288
+estimate size: 1  23348
+Elapsed time is 93.434337 seconds.
+Beta-a2-b0p5, Trial: 76/100 sample size: 524288
+estimate size: 1  22216
+Elapsed time is 81.319636 seconds.
+Beta-a2-b0p5, Trial: 77/100 sample size: 524288
+estimate size: 1  22179
+Elapsed time is 86.877456 seconds.
+Beta-a2-b0p5, Trial: 78/100 sample size: 524288
+estimate size: 1  22258
+Elapsed time is 85.125421 seconds.
+Beta-a2-b0p5, Trial: 79/100 sample size: 524288
+estimate size: 1  22242
+Elapsed time is 84.058126 seconds.
+Beta-a2-b0p5, Trial: 80/100 sample size: 524288
+estimate size: 1  22237
+Elapsed time is 86.395815 seconds.
+Beta-a2-b0p5, Trial: 81/100 sample size: 524288
+estimate size: 1  23317
+Elapsed time is 88.086880 seconds.
+Beta-a2-b0p5, Trial: 82/100 sample size: 524288
+estimate size: 1  23765
+Elapsed time is 88.216962 seconds.
+Beta-a2-b0p5, Trial: 83/100 sample size: 524288
+estimate size: 1  22136
+Elapsed time is 85.637832 seconds.
+Beta-a2-b0p5, Trial: 84/100 sample size: 524288
+estimate size: 1  23701
+Elapsed time is 84.638036 seconds.
+Beta-a2-b0p5, Trial: 85/100 sample size: 524288
+estimate size: 1  22242
+Elapsed time is 90.218103 seconds.
+Beta-a2-b0p5, Trial: 86/100 sample size: 524288
+estimate size: 1  22263
+Elapsed time is 90.238540 seconds.
+Beta-a2-b0p5, Trial: 87/100 sample size: 524288
+estimate size: 1  22227
+Elapsed time is 84.407307 seconds.
+Beta-a2-b0p5, Trial: 88/100 sample size: 524288
+estimate size: 1  22232
+Elapsed time is 90.296904 seconds.
+Beta-a2-b0p5, Trial: 89/100 sample size: 524288
+estimate size: 1  22290
+Elapsed time is 88.354031 seconds.
+Beta-a2-b0p5, Trial: 90/100 sample size: 524288
+estimate size: 1  22290
+Elapsed time is 87.217338 seconds.
+Beta-a2-b0p5, Trial: 91/100 sample size: 524288
+estimate size: 1  22273
+Elapsed time is 86.806395 seconds.
+Beta-a2-b0p5, Trial: 92/100 sample size: 524288
+estimate size: 1  22247
+Elapsed time is 90.264971 seconds.
+Beta-a2-b0p5, Trial: 93/100 sample size: 524288
+estimate size: 1  22237
+Elapsed time is 91.794672 seconds.
+Beta-a2-b0p5, Trial: 94/100 sample size: 524288
+estimate size: 1  22456
+Elapsed time is 87.290972 seconds.
+Beta-a2-b0p5, Trial: 95/100 sample size: 524288
+estimate size: 1  23417
+Elapsed time is 85.022079 seconds.
+Beta-a2-b0p5, Trial: 96/100 sample size: 524288
+estimate size: 1  22224
+Elapsed time is 83.490100 seconds.
+Beta-a2-b0p5, Trial: 97/100 sample size: 524288
+estimate size: 1  22278
+Elapsed time is 88.360536 seconds.
+Beta-a2-b0p5, Trial: 98/100 sample size: 524288
+estimate size: 1  22318
+Elapsed time is 88.922631 seconds.
+Beta-a2-b0p5, Trial: 99/100 sample size: 524288
+estimate size: 1  22276
+Elapsed time is 85.578115 seconds.
+Beta-a2-b0p5, Trial: 100/100 sample size: 524288
+estimate size: 1  22303
+Elapsed time is 115.649287 seconds.
+Beta-a2-b0p5, Trial: 1/100 sample size: 1048576
+estimate size: 1  46843
+Elapsed time is 112.777147 seconds.
+Beta-a2-b0p5, Trial: 2/100 sample size: 1048576
+estimate size: 1  44454
+Elapsed time is 108.301796 seconds.
+Beta-a2-b0p5, Trial: 3/100 sample size: 1048576
+estimate size: 1  44767
+Elapsed time is 112.198595 seconds.
+Beta-a2-b0p5, Trial: 4/100 sample size: 1048576
+estimate size: 1  44451
+Elapsed time is 118.291830 seconds.
+Beta-a2-b0p5, Trial: 5/100 sample size: 1048576
+estimate size: 1  44614
+Elapsed time is 119.856937 seconds.
+Beta-a2-b0p5, Trial: 6/100 sample size: 1048576
+estimate size: 1  46721
+Elapsed time is 115.995859 seconds.
+Beta-a2-b0p5, Trial: 7/100 sample size: 1048576
+estimate size: 1  44668
+Elapsed time is 109.384656 seconds.
+Beta-a2-b0p5, Trial: 8/100 sample size: 1048576
+estimate size: 1  44413
+Elapsed time is 111.109625 seconds.
+Beta-a2-b0p5, Trial: 9/100 sample size: 1048576
+estimate size: 1  44459
+Elapsed time is 118.712230 seconds.
+Beta-a2-b0p5, Trial: 10/100 sample size: 1048576
+estimate size: 1  44560
+Elapsed time is 108.518303 seconds.
+Beta-a2-b0p5, Trial: 11/100 sample size: 1048576
+estimate size: 1  46386
+Elapsed time is 115.586297 seconds.
+Beta-a2-b0p5, Trial: 12/100 sample size: 1048576
+estimate size: 1  44707
+Elapsed time is 115.568213 seconds.
+Beta-a2-b0p5, Trial: 13/100 sample size: 1048576
+estimate size: 1  46856
+Elapsed time is 115.948810 seconds.
+Beta-a2-b0p5, Trial: 14/100 sample size: 1048576
+estimate size: 1  44589
+Elapsed time is 116.552367 seconds.
+Beta-a2-b0p5, Trial: 15/100 sample size: 1048576
+estimate size: 1  44552
+Elapsed time is 115.357983 seconds.
+Beta-a2-b0p5, Trial: 16/100 sample size: 1048576
+estimate size: 1  44325
+Elapsed time is 116.343209 seconds.
+Beta-a2-b0p5, Trial: 17/100 sample size: 1048576
+estimate size: 1  46869
+Elapsed time is 113.050917 seconds.
+Beta-a2-b0p5, Trial: 18/100 sample size: 1048576
+estimate size: 1  44701
+Elapsed time is 117.820162 seconds.
+Beta-a2-b0p5, Trial: 19/100 sample size: 1048576
+estimate size: 1  43738
+Elapsed time is 115.248019 seconds.
+Beta-a2-b0p5, Trial: 20/100 sample size: 1048576
+estimate size: 1  44546
+Elapsed time is 121.014345 seconds.
+Beta-a2-b0p5, Trial: 21/100 sample size: 1048576
+estimate size: 1  46984
+Elapsed time is 112.289398 seconds.
+Beta-a2-b0p5, Trial: 22/100 sample size: 1048576
+estimate size: 1  44680
+Elapsed time is 113.368596 seconds.
+Beta-a2-b0p5, Trial: 23/100 sample size: 1048576
+estimate size: 1  47063
+Elapsed time is 116.447508 seconds.
+Beta-a2-b0p5, Trial: 24/100 sample size: 1048576
+estimate size: 1  46813
+Elapsed time is 120.832080 seconds.
+Beta-a2-b0p5, Trial: 25/100 sample size: 1048576
+estimate size: 1  46808
+Elapsed time is 112.005840 seconds.
+Beta-a2-b0p5, Trial: 26/100 sample size: 1048576
+estimate size: 1  44663
+Elapsed time is 119.106391 seconds.
+Beta-a2-b0p5, Trial: 27/100 sample size: 1048576
+estimate size: 1  46927
+Elapsed time is 118.789179 seconds.
+Beta-a2-b0p5, Trial: 28/100 sample size: 1048576
+estimate size: 1  46641
+Elapsed time is 117.931241 seconds.
+Beta-a2-b0p5, Trial: 29/100 sample size: 1048576
+estimate size: 1  44597
+Elapsed time is 115.233963 seconds.
+Beta-a2-b0p5, Trial: 30/100 sample size: 1048576
+estimate size: 1  44367
+Elapsed time is 111.757795 seconds.
+Beta-a2-b0p5, Trial: 31/100 sample size: 1048576
+estimate size: 1  44480
+Elapsed time is 113.705957 seconds.
+Beta-a2-b0p5, Trial: 32/100 sample size: 1048576
+estimate size: 1  44551
+Elapsed time is 112.872649 seconds.
+Beta-a2-b0p5, Trial: 33/100 sample size: 1048576
+estimate size: 1  43784
+Elapsed time is 113.726602 seconds.
+Beta-a2-b0p5, Trial: 34/100 sample size: 1048576
+estimate size: 1  46744
+Elapsed time is 122.563794 seconds.
+Beta-a2-b0p5, Trial: 35/100 sample size: 1048576
+estimate size: 1  46690
+Elapsed time is 115.448325 seconds.
+Beta-a2-b0p5, Trial: 36/100 sample size: 1048576
+estimate size: 1  44573
+Elapsed time is 118.923076 seconds.
+Beta-a2-b0p5, Trial: 37/100 sample size: 1048576
+estimate size: 1  44446
+Elapsed time is 117.912963 seconds.
+Beta-a2-b0p5, Trial: 38/100 sample size: 1048576
+estimate size: 1  46691
+Elapsed time is 113.034968 seconds.
+Beta-a2-b0p5, Trial: 39/100 sample size: 1048576
+estimate size: 1  44473
+Elapsed time is 110.484197 seconds.
+Beta-a2-b0p5, Trial: 40/100 sample size: 1048576
+estimate size: 1  46679
+Elapsed time is 117.717648 seconds.
+Beta-a2-b0p5, Trial: 41/100 sample size: 1048576
+estimate size: 1  44749
+Elapsed time is 121.479440 seconds.
+Beta-a2-b0p5, Trial: 42/100 sample size: 1048576
+estimate size: 1  46798
+Elapsed time is 116.116398 seconds.
+Beta-a2-b0p5, Trial: 43/100 sample size: 1048576
+estimate size: 1  47170
+Elapsed time is 118.832254 seconds.
+Beta-a2-b0p5, Trial: 44/100 sample size: 1048576
+estimate size: 1  46986
+Elapsed time is 113.166564 seconds.
+Beta-a2-b0p5, Trial: 45/100 sample size: 1048576
+estimate size: 1  44554
+Elapsed time is 121.118643 seconds.
+Beta-a2-b0p5, Trial: 46/100 sample size: 1048576
+estimate size: 1  46681
+Elapsed time is 110.252046 seconds.
+Beta-a2-b0p5, Trial: 47/100 sample size: 1048576
+estimate size: 1  44509
+Elapsed time is 119.137773 seconds.
+Beta-a2-b0p5, Trial: 48/100 sample size: 1048576
+estimate size: 1  44460
+Elapsed time is 120.428817 seconds.
+Beta-a2-b0p5, Trial: 49/100 sample size: 1048576
+estimate size: 1  46827
+Elapsed time is 121.112724 seconds.
+Beta-a2-b0p5, Trial: 50/100 sample size: 1048576
+estimate size: 1  44380
+Elapsed time is 120.617809 seconds.
+Beta-a2-b0p5, Trial: 51/100 sample size: 1048576
+estimate size: 1  44298
+Elapsed time is 115.502047 seconds.
+Beta-a2-b0p5, Trial: 52/100 sample size: 1048576
+estimate size: 1  43671
+Elapsed time is 114.060115 seconds.
+Beta-a2-b0p5, Trial: 53/100 sample size: 1048576
+estimate size: 1  44490
+Elapsed time is 116.793100 seconds.
+Beta-a2-b0p5, Trial: 54/100 sample size: 1048576
+estimate size: 1  46896
+Elapsed time is 114.002904 seconds.
+Beta-a2-b0p5, Trial: 55/100 sample size: 1048576
+estimate size: 1  44579
+Elapsed time is 119.018278 seconds.
+Beta-a2-b0p5, Trial: 56/100 sample size: 1048576
+estimate size: 1  46777
+Elapsed time is 114.600214 seconds.
+Beta-a2-b0p5, Trial: 57/100 sample size: 1048576
+estimate size: 1  46853
+Elapsed time is 120.845822 seconds.
+Beta-a2-b0p5, Trial: 58/100 sample size: 1048576
+estimate size: 1  47055
+Elapsed time is 114.741585 seconds.
+Beta-a2-b0p5, Trial: 59/100 sample size: 1048576
+estimate size: 1  46923
+Elapsed time is 120.713184 seconds.
+Beta-a2-b0p5, Trial: 60/100 sample size: 1048576
+estimate size: 1  44514
+Elapsed time is 119.467191 seconds.
+Beta-a2-b0p5, Trial: 61/100 sample size: 1048576
+estimate size: 1  44424
+Elapsed time is 117.699964 seconds.
+Beta-a2-b0p5, Trial: 62/100 sample size: 1048576
+estimate size: 1  44452
+Elapsed time is 114.472036 seconds.
+Beta-a2-b0p5, Trial: 63/100 sample size: 1048576
+estimate size: 1  46842
+Elapsed time is 120.538627 seconds.
+Beta-a2-b0p5, Trial: 64/100 sample size: 1048576
+estimate size: 1  44352
+Elapsed time is 115.445496 seconds.
+Beta-a2-b0p5, Trial: 65/100 sample size: 1048576
+estimate size: 1  45821
+Elapsed time is 116.430150 seconds.
+Beta-a2-b0p5, Trial: 66/100 sample size: 1048576
+estimate size: 1  44533
+Elapsed time is 111.486436 seconds.
+Beta-a2-b0p5, Trial: 67/100 sample size: 1048576
+estimate size: 1  44517
+Elapsed time is 112.010979 seconds.
+Beta-a2-b0p5, Trial: 68/100 sample size: 1048576
+estimate size: 1  44137
+Elapsed time is 105.483099 seconds.
+Beta-a2-b0p5, Trial: 69/100 sample size: 1048576
+estimate size: 1  44452
+Elapsed time is 127.729793 seconds.
+Beta-a2-b0p5, Trial: 70/100 sample size: 1048576
+estimate size: 1  44556
+Elapsed time is 121.644849 seconds.
+Beta-a2-b0p5, Trial: 71/100 sample size: 1048576
+estimate size: 1  44479
+Elapsed time is 116.092914 seconds.
+Beta-a2-b0p5, Trial: 72/100 sample size: 1048576
+estimate size: 1  43610
+Elapsed time is 120.459460 seconds.
+Beta-a2-b0p5, Trial: 73/100 sample size: 1048576
+estimate size: 1  44548
+Elapsed time is 113.193267 seconds.
+Beta-a2-b0p5, Trial: 74/100 sample size: 1048576
+estimate size: 1  44577
+Elapsed time is 117.961908 seconds.
+Beta-a2-b0p5, Trial: 75/100 sample size: 1048576
+estimate size: 1  44441
+Elapsed time is 113.143586 seconds.
+Beta-a2-b0p5, Trial: 76/100 sample size: 1048576
+estimate size: 1  44584
+Elapsed time is 119.780561 seconds.
+Beta-a2-b0p5, Trial: 77/100 sample size: 1048576
+estimate size: 1  43832
+Elapsed time is 112.255066 seconds.
+Beta-a2-b0p5, Trial: 78/100 sample size: 1048576
+estimate size: 1  44459
+Elapsed time is 115.443594 seconds.
+Beta-a2-b0p5, Trial: 79/100 sample size: 1048576
+estimate size: 1  44418
+Elapsed time is 119.965869 seconds.
+Beta-a2-b0p5, Trial: 80/100 sample size: 1048576
+estimate size: 1  44328
+Elapsed time is 122.705945 seconds.
+Beta-a2-b0p5, Trial: 81/100 sample size: 1048576
+estimate size: 1  44474
+Elapsed time is 116.956292 seconds.
+Beta-a2-b0p5, Trial: 82/100 sample size: 1048576
+estimate size: 1  44443
+Elapsed time is 121.602253 seconds.
+Beta-a2-b0p5, Trial: 83/100 sample size: 1048576
+estimate size: 1  44502
+Elapsed time is 118.433585 seconds.
+Beta-a2-b0p5, Trial: 84/100 sample size: 1048576
+estimate size: 1  46835
+Elapsed time is 113.550947 seconds.
+Beta-a2-b0p5, Trial: 85/100 sample size: 1048576
+estimate size: 1  46770
+Elapsed time is 117.199041 seconds.
+Beta-a2-b0p5, Trial: 86/100 sample size: 1048576
+estimate size: 1  49090
+Elapsed time is 119.907818 seconds.
+Beta-a2-b0p5, Trial: 87/100 sample size: 1048576
+estimate size: 1  44370
+Elapsed time is 110.609394 seconds.
+Beta-a2-b0p5, Trial: 88/100 sample size: 1048576
+estimate size: 1  43896
+Elapsed time is 115.666068 seconds.
+Beta-a2-b0p5, Trial: 89/100 sample size: 1048576
+estimate size: 1  48171
+Elapsed time is 117.259903 seconds.
+Beta-a2-b0p5, Trial: 90/100 sample size: 1048576
+estimate size: 1  44463
+Elapsed time is 122.580935 seconds.
+Beta-a2-b0p5, Trial: 91/100 sample size: 1048576
+estimate size: 1  46825
+Elapsed time is 128.988583 seconds.
+Beta-a2-b0p5, Trial: 92/100 sample size: 1048576
+estimate size: 1  46979
+Elapsed time is 109.744645 seconds.
+Beta-a2-b0p5, Trial: 93/100 sample size: 1048576
+estimate size: 1  44493
+Elapsed time is 118.455231 seconds.
+Beta-a2-b0p5, Trial: 94/100 sample size: 1048576
+estimate size: 1  46683
+Elapsed time is 117.130715 seconds.
+Beta-a2-b0p5, Trial: 95/100 sample size: 1048576
+estimate size: 1  44439
+Elapsed time is 117.619085 seconds.
+Beta-a2-b0p5, Trial: 96/100 sample size: 1048576
+estimate size: 1  44402
+Elapsed time is 124.996772 seconds.
+Beta-a2-b0p5, Trial: 97/100 sample size: 1048576
+estimate size: 1  44264
+Elapsed time is 125.304831 seconds.
+Beta-a2-b0p5, Trial: 98/100 sample size: 1048576
+estimate size: 1  44636
+Elapsed time is 114.169067 seconds.
+Beta-a2-b0p5, Trial: 99/100 sample size: 1048576
+estimate size: 1  44621
+Elapsed time is 118.910289 seconds.
+Beta-a2-b0p5, Trial: 100/100 sample size: 1048576
+estimate size: 1  44546
+Elapsed time is 164.911274 seconds.
+Beta-a2-b0p5, Trial: 1/100 sample size: 2097152
+estimate size: 1  90889
+Elapsed time is 159.913976 seconds.
+Beta-a2-b0p5, Trial: 2/100 sample size: 2097152
+estimate size: 1  90891
+Elapsed time is 162.802337 seconds.
+Beta-a2-b0p5, Trial: 3/100 sample size: 2097152
+estimate size: 1  95686
+Elapsed time is 155.649838 seconds.
+Beta-a2-b0p5, Trial: 4/100 sample size: 2097152
+estimate size: 1  90716
+Elapsed time is 158.448502 seconds.
+Beta-a2-b0p5, Trial: 5/100 sample size: 2097152
+estimate size: 1  91027
+Elapsed time is 162.397760 seconds.
+Beta-a2-b0p5, Trial: 6/100 sample size: 2097152
+estimate size: 1  90846
+Elapsed time is 153.424619 seconds.
+Beta-a2-b0p5, Trial: 7/100 sample size: 2097152
+estimate size: 1  95575
+Elapsed time is 154.482421 seconds.
+Beta-a2-b0p5, Trial: 8/100 sample size: 2097152
+estimate size: 1  95203
+Elapsed time is 156.792373 seconds.
+Beta-a2-b0p5, Trial: 9/100 sample size: 2097152
+estimate size: 1  90631
+Elapsed time is 159.738831 seconds.
+Beta-a2-b0p5, Trial: 10/100 sample size: 2097152
+estimate size: 1  89903
+Elapsed time is 160.335942 seconds.
+Beta-a2-b0p5, Trial: 11/100 sample size: 2097152
+estimate size: 1  88498
+Elapsed time is 164.796346 seconds.
+Beta-a2-b0p5, Trial: 12/100 sample size: 2097152
+estimate size: 1  90514
+Elapsed time is 158.780148 seconds.
+Beta-a2-b0p5, Trial: 13/100 sample size: 2097152
+estimate size: 1  90577
+Elapsed time is 163.716407 seconds.
+Beta-a2-b0p5, Trial: 14/100 sample size: 2097152
+estimate size: 1  90924
+Elapsed time is 164.515530 seconds.
+Beta-a2-b0p5, Trial: 15/100 sample size: 2097152
+estimate size: 1  90605
+Elapsed time is 171.148167 seconds.
+Beta-a2-b0p5, Trial: 16/100 sample size: 2097152
+estimate size: 1  90858
+Elapsed time is 170.487213 seconds.
+Beta-a2-b0p5, Trial: 17/100 sample size: 2097152
+estimate size: 1  95506
+Elapsed time is 170.474497 seconds.
+Beta-a2-b0p5, Trial: 18/100 sample size: 2097152
+estimate size: 1  91054
+Elapsed time is 179.316328 seconds.
+Beta-a2-b0p5, Trial: 19/100 sample size: 2097152
+estimate size: 1  95196
+Elapsed time is 174.880025 seconds.
+Beta-a2-b0p5, Trial: 20/100 sample size: 2097152
+estimate size: 1  90856
+Elapsed time is 171.035683 seconds.
+Beta-a2-b0p5, Trial: 21/100 sample size: 2097152
+estimate size: 1  90814
+Elapsed time is 181.929783 seconds.
+Beta-a2-b0p5, Trial: 22/100 sample size: 2097152
+estimate size: 1  95193
+Elapsed time is 170.536948 seconds.
+Beta-a2-b0p5, Trial: 23/100 sample size: 2097152
+estimate size: 1  90519
+Elapsed time is 176.782384 seconds.
+Beta-a2-b0p5, Trial: 24/100 sample size: 2097152
+estimate size: 1  90713
+Elapsed time is 174.959021 seconds.
+Beta-a2-b0p5, Trial: 25/100 sample size: 2097152
+estimate size: 1  95556
+Elapsed time is 170.780714 seconds.
+Beta-a2-b0p5, Trial: 26/100 sample size: 2097152
+estimate size: 1  95564
+Elapsed time is 170.429417 seconds.
+Beta-a2-b0p5, Trial: 27/100 sample size: 2097152
+estimate size: 1  91002
+Elapsed time is 170.668562 seconds.
+Beta-a2-b0p5, Trial: 28/100 sample size: 2097152
+estimate size: 1  90710
+Elapsed time is 168.929200 seconds.
+Beta-a2-b0p5, Trial: 29/100 sample size: 2097152
+estimate size: 1  90654
+Elapsed time is 172.171551 seconds.
+Beta-a2-b0p5, Trial: 30/100 sample size: 2097152
+estimate size: 1  90889
+Elapsed time is 171.354344 seconds.
+Beta-a2-b0p5, Trial: 31/100 sample size: 2097152
+estimate size: 1  90845
+Elapsed time is 164.309409 seconds.
+Beta-a2-b0p5, Trial: 32/100 sample size: 2097152
+estimate size: 1  90360
+Elapsed time is 164.175265 seconds.
+Beta-a2-b0p5, Trial: 33/100 sample size: 2097152
+estimate size: 1  95707
+Elapsed time is 153.533859 seconds.
+Beta-a2-b0p5, Trial: 34/100 sample size: 2097152
+estimate size: 1  95296
+Elapsed time is 156.952057 seconds.
+Beta-a2-b0p5, Trial: 35/100 sample size: 2097152
+estimate size: 1  95434
+[Warning: Number of dupliates: 1] 
+[> In NAP/stitch (line 114)
+In driver_func (line 173)] 
+[Warning: Number of dupliates: 1] 
+[> In NAP/stitch (line 114)
+In driver_func (line 201)] 
+Elapsed time is 155.171927 seconds.
+Beta-a2-b0p5, Trial: 36/100 sample size: 2097152
+estimate size: 1  90775
+Elapsed time is 160.552529 seconds.
+Beta-a2-b0p5, Trial: 37/100 sample size: 2097152
+estimate size: 1  90588
+Elapsed time is 167.405187 seconds.
+Beta-a2-b0p5, Trial: 38/100 sample size: 2097152
+estimate size: 1  90555
+Elapsed time is 162.306758 seconds.
+Beta-a2-b0p5, Trial: 39/100 sample size: 2097152
+estimate size: 1  90657
+Elapsed time is 164.136693 seconds.
+Beta-a2-b0p5, Trial: 40/100 sample size: 2097152
+estimate size: 1  91887
+Elapsed time is 152.021563 seconds.
+Beta-a2-b0p5, Trial: 41/100 sample size: 2097152
+estimate size: 1  90720
+Elapsed time is 164.885036 seconds.
+Beta-a2-b0p5, Trial: 42/100 sample size: 2097152
+estimate size: 1  90927
+Elapsed time is 160.885381 seconds.
+Beta-a2-b0p5, Trial: 43/100 sample size: 2097152
+estimate size: 1  95427
+Elapsed time is 160.459605 seconds.
+Beta-a2-b0p5, Trial: 44/100 sample size: 2097152
+estimate size: 1  95601
+Elapsed time is 162.294196 seconds.
+Beta-a2-b0p5, Trial: 45/100 sample size: 2097152
+estimate size: 1  90806
+Elapsed time is 165.418672 seconds.
+Beta-a2-b0p5, Trial: 46/100 sample size: 2097152
+estimate size: 1  95589
+Elapsed time is 163.274725 seconds.
+Beta-a2-b0p5, Trial: 47/100 sample size: 2097152
+estimate size: 1  90869
+Elapsed time is 169.041650 seconds.
+Beta-a2-b0p5, Trial: 48/100 sample size: 2097152
+estimate size: 1  90605
+Elapsed time is 167.889824 seconds.
+Beta-a2-b0p5, Trial: 49/100 sample size: 2097152
+estimate size: 1  90625
+Elapsed time is 171.917548 seconds.
+Beta-a2-b0p5, Trial: 50/100 sample size: 2097152
+estimate size: 1  100191
+Elapsed time is 157.112403 seconds.
+Beta-a2-b0p5, Trial: 51/100 sample size: 2097152
+estimate size: 1  90664
+Elapsed time is 162.171310 seconds.
+Beta-a2-b0p5, Trial: 52/100 sample size: 2097152
+estimate size: 1  95585
+Elapsed time is 178.019098 seconds.
+Beta-a2-b0p5, Trial: 53/100 sample size: 2097152
+estimate size: 1  95100
+Elapsed time is 163.774265 seconds.
+Beta-a2-b0p5, Trial: 54/100 sample size: 2097152
+estimate size: 1  90950
+Elapsed time is 159.993179 seconds.
+Beta-a2-b0p5, Trial: 55/100 sample size: 2097152
+estimate size: 1  90608
+Elapsed time is 158.775076 seconds.
+Beta-a2-b0p5, Trial: 56/100 sample size: 2097152
+estimate size: 1  95781
+Elapsed time is 156.158291 seconds.
+Beta-a2-b0p5, Trial: 57/100 sample size: 2097152
+estimate size: 1  88572
+Elapsed time is 163.216960 seconds.
+Beta-a2-b0p5, Trial: 58/100 sample size: 2097152
+estimate size: 1  90885
+Elapsed time is 170.383454 seconds.
+Beta-a2-b0p5, Trial: 59/100 sample size: 2097152
+estimate size: 1  100120
+Elapsed time is 170.666238 seconds.
+Beta-a2-b0p5, Trial: 60/100 sample size: 2097152
+estimate size: 1  95191
+Elapsed time is 162.091885 seconds.
+Beta-a2-b0p5, Trial: 61/100 sample size: 2097152
+estimate size: 1  90632
+Elapsed time is 164.672884 seconds.
+Beta-a2-b0p5, Trial: 62/100 sample size: 2097152
+estimate size: 1  94726
+Elapsed time is 164.576715 seconds.
+Beta-a2-b0p5, Trial: 63/100 sample size: 2097152
+estimate size: 1  90529
+Elapsed time is 162.204720 seconds.
+Beta-a2-b0p5, Trial: 64/100 sample size: 2097152
+estimate size: 1  90352
+Elapsed time is 169.218122 seconds.
+Beta-a2-b0p5, Trial: 65/100 sample size: 2097152
+estimate size: 1  91040
+Elapsed time is 162.493069 seconds.
+Beta-a2-b0p5, Trial: 66/100 sample size: 2097152
+estimate size: 1  90984
+Elapsed time is 175.994345 seconds.
+Beta-a2-b0p5, Trial: 67/100 sample size: 2097152
+estimate size: 1  95396
+Elapsed time is 169.941350 seconds.
+Beta-a2-b0p5, Trial: 68/100 sample size: 2097152
+estimate size: 1  91048
+Elapsed time is 179.500829 seconds.
+Beta-a2-b0p5, Trial: 69/100 sample size: 2097152
+estimate size: 1  95322
+Elapsed time is 173.872108 seconds.
+Beta-a2-b0p5, Trial: 70/100 sample size: 2097152
+estimate size: 1  91016
+Elapsed time is 171.778911 seconds.
+Beta-a2-b0p5, Trial: 71/100 sample size: 2097152
+estimate size: 1  90671
+Elapsed time is 175.950430 seconds.
+Beta-a2-b0p5, Trial: 72/100 sample size: 2097152
+estimate size: 1  90745
+Elapsed time is 163.696299 seconds.
+Beta-a2-b0p5, Trial: 73/100 sample size: 2097152
+estimate size: 1  90977
+Elapsed time is 171.119825 seconds.
+Beta-a2-b0p5, Trial: 74/100 sample size: 2097152
+estimate size: 1  89280
+Elapsed time is 171.634095 seconds.
+Beta-a2-b0p5, Trial: 75/100 sample size: 2097152
+estimate size: 1  95679
+Elapsed time is 169.347539 seconds.
+Beta-a2-b0p5, Trial: 76/100 sample size: 2097152
+estimate size: 1  95758
+Elapsed time is 177.225742 seconds.
+Beta-a2-b0p5, Trial: 77/100 sample size: 2097152
+estimate size: 1  90683
+Elapsed time is 176.321661 seconds.
+Beta-a2-b0p5, Trial: 78/100 sample size: 2097152
+estimate size: 1  90674
+Elapsed time is 172.439766 seconds.
+Beta-a2-b0p5, Trial: 79/100 sample size: 2097152
+estimate size: 1  90596
+Elapsed time is 169.020660 seconds.
+Beta-a2-b0p5, Trial: 80/100 sample size: 2097152
+estimate size: 1  90617
+Elapsed time is 178.629325 seconds.
+Beta-a2-b0p5, Trial: 81/100 sample size: 2097152
+estimate size: 1  90777
+Elapsed time is 169.661791 seconds.
+Beta-a2-b0p5, Trial: 82/100 sample size: 2097152
+estimate size: 1  90963
+Elapsed time is 178.428321 seconds.
+Beta-a2-b0p5, Trial: 83/100 sample size: 2097152
+estimate size: 1  95059
+Elapsed time is 160.704888 seconds.
+Beta-a2-b0p5, Trial: 84/100 sample size: 2097152
+estimate size: 1  95726
+Elapsed time is 177.619445 seconds.
+Beta-a2-b0p5, Trial: 85/100 sample size: 2097152
+estimate size: 1  90042
+Elapsed time is 169.049410 seconds.
+Beta-a2-b0p5, Trial: 86/100 sample size: 2097152
+estimate size: 1  90914
+Elapsed time is 167.819718 seconds.
+Beta-a2-b0p5, Trial: 87/100 sample size: 2097152
+estimate size: 1  90435
+Elapsed time is 163.066094 seconds.
+Beta-a2-b0p5, Trial: 88/100 sample size: 2097152
+estimate size: 1  90931
+Elapsed time is 166.434924 seconds.
+Beta-a2-b0p5, Trial: 89/100 sample size: 2097152
+estimate size: 1  90833
+Elapsed time is 172.839647 seconds.
+Beta-a2-b0p5, Trial: 90/100 sample size: 2097152
+estimate size: 1  90861
+Elapsed time is 176.483055 seconds.
+Beta-a2-b0p5, Trial: 91/100 sample size: 2097152
+estimate size: 1  95799
+Elapsed time is 169.843698 seconds.
+Beta-a2-b0p5, Trial: 92/100 sample size: 2097152
+estimate size: 1  90801
+Elapsed time is 173.928877 seconds.
+Beta-a2-b0p5, Trial: 93/100 sample size: 2097152
+estimate size: 1  95021
+Elapsed time is 176.411182 seconds.
+Beta-a2-b0p5, Trial: 94/100 sample size: 2097152
+estimate size: 1  95731
+Elapsed time is 172.987240 seconds.
+Beta-a2-b0p5, Trial: 95/100 sample size: 2097152
+estimate size: 1  90693
+Elapsed time is 175.060961 seconds.
+Beta-a2-b0p5, Trial: 96/100 sample size: 2097152
+estimate size: 1  90794
+Elapsed time is 172.615280 seconds.
+Beta-a2-b0p5, Trial: 97/100 sample size: 2097152
+estimate size: 1  90584
+Elapsed time is 168.601945 seconds.
+Beta-a2-b0p5, Trial: 98/100 sample size: 2097152
+estimate size: 1  95563
+Elapsed time is 174.574972 seconds.
+Beta-a2-b0p5, Trial: 99/100 sample size: 2097152
+estimate size: 1  89200
+Elapsed time is 171.885691 seconds.
+Beta-a2-b0p5, Trial: 100/100 sample size: 2097152
+estimate size: 1  90705
+Elapsed time is 261.489014 seconds.
+Beta-a2-b0p5, Trial: 1/100 sample size: 4194304
+estimate size: 1  192074
+Elapsed time is 255.161954 seconds.
+Beta-a2-b0p5, Trial: 2/100 sample size: 4194304
+estimate size: 1  183759
+Elapsed time is 270.845770 seconds.
+Beta-a2-b0p5, Trial: 3/100 sample size: 4194304
+estimate size: 1  183520
+Elapsed time is 277.993940 seconds.
+Beta-a2-b0p5, Trial: 4/100 sample size: 4194304
+estimate size: 1  192794
+Elapsed time is 252.478615 seconds.
+Beta-a2-b0p5, Trial: 5/100 sample size: 4194304
+estimate size: 1  192976
+Elapsed time is 249.298649 seconds.
+Beta-a2-b0p5, Trial: 6/100 sample size: 4194304
+estimate size: 1  183413
+Elapsed time is 253.536253 seconds.
+Beta-a2-b0p5, Trial: 7/100 sample size: 4194304
+estimate size: 1  183214
+Elapsed time is 259.264932 seconds.
+Beta-a2-b0p5, Trial: 8/100 sample size: 4194304
+estimate size: 1  183852
+Elapsed time is 269.325040 seconds.
+Beta-a2-b0p5, Trial: 9/100 sample size: 4194304
+estimate size: 1  192654
+Elapsed time is 261.320684 seconds.
+Beta-a2-b0p5, Trial: 10/100 sample size: 4194304
+estimate size: 1  191542
+Elapsed time is 229.743319 seconds.
+Beta-a2-b0p5, Trial: 11/100 sample size: 4194304
+estimate size: 1  192706
+Elapsed time is 241.551787 seconds.
+Beta-a2-b0p5, Trial: 12/100 sample size: 4194304
+estimate size: 1  192597
+Elapsed time is 253.933520 seconds.
+Beta-a2-b0p5, Trial: 13/100 sample size: 4194304
+estimate size: 1  183645
+Elapsed time is 263.736871 seconds.
+Beta-a2-b0p5, Trial: 14/100 sample size: 4194304
+estimate size: 1  183251
+Elapsed time is 250.385843 seconds.
+Beta-a2-b0p5, Trial: 15/100 sample size: 4194304
+estimate size: 1  183549
+Elapsed time is 256.208328 seconds.
+Beta-a2-b0p5, Trial: 16/100 sample size: 4194304
+estimate size: 1  183422
+Elapsed time is 260.676237 seconds.
+Beta-a2-b0p5, Trial: 17/100 sample size: 4194304
+estimate size: 1  201745
+Elapsed time is 258.001201 seconds.
+Beta-a2-b0p5, Trial: 18/100 sample size: 4194304
+estimate size: 1  183307
+Elapsed time is 273.491746 seconds.
+Beta-a2-b0p5, Trial: 19/100 sample size: 4194304
+estimate size: 1  183064
+Elapsed time is 273.110751 seconds.
+Beta-a2-b0p5, Trial: 20/100 sample size: 4194304
+estimate size: 1  202318
+Elapsed time is 265.849368 seconds.
+Beta-a2-b0p5, Trial: 21/100 sample size: 4194304
+estimate size: 1  183302
+Elapsed time is 260.783760 seconds.
+Beta-a2-b0p5, Trial: 22/100 sample size: 4194304
+estimate size: 1  184077
+Elapsed time is 262.970244 seconds.
+Beta-a2-b0p5, Trial: 23/100 sample size: 4194304
+estimate size: 1  183610
+Elapsed time is 252.389594 seconds.
+Beta-a2-b0p5, Trial: 24/100 sample size: 4194304
+estimate size: 1  192900
+Elapsed time is 240.860776 seconds.
+Beta-a2-b0p5, Trial: 25/100 sample size: 4194304
+estimate size: 1  173941
+Elapsed time is 255.709451 seconds.
+Beta-a2-b0p5, Trial: 26/100 sample size: 4194304
+estimate size: 1  182940
+Elapsed time is 257.387292 seconds.
+Beta-a2-b0p5, Trial: 27/100 sample size: 4194304
+estimate size: 1  183491
+Elapsed time is 248.451005 seconds.
+Beta-a2-b0p5, Trial: 28/100 sample size: 4194304
+estimate size: 1  192578
+Elapsed time is 257.500486 seconds.
+Beta-a2-b0p5, Trial: 29/100 sample size: 4194304
+estimate size: 1  183396
+Elapsed time is 251.556507 seconds.
+Beta-a2-b0p5, Trial: 30/100 sample size: 4194304
+estimate size: 1  183363
+Elapsed time is 271.561493 seconds.
+Beta-a2-b0p5, Trial: 31/100 sample size: 4194304
+estimate size: 1  192705
+Elapsed time is 253.215687 seconds.
+Beta-a2-b0p5, Trial: 32/100 sample size: 4194304
+estimate size: 1  181696
+Elapsed time is 262.071893 seconds.
+Beta-a2-b0p5, Trial: 33/100 sample size: 4194304
+estimate size: 1  192880
+Elapsed time is 259.558306 seconds.
+Beta-a2-b0p5, Trial: 34/100 sample size: 4194304
+estimate size: 1  192258
+Elapsed time is 257.838447 seconds.
+Beta-a2-b0p5, Trial: 35/100 sample size: 4194304
+estimate size: 1  183396
+Elapsed time is 265.240200 seconds.
+Beta-a2-b0p5, Trial: 36/100 sample size: 4194304
+estimate size: 1  201522
+Elapsed time is 261.080065 seconds.
+Beta-a2-b0p5, Trial: 37/100 sample size: 4194304
+estimate size: 1  183189
+[Warning: Number of dupliates: 1] 
+[> In NAP/stitch (line 114)
+In driver_func (line 173)] 
+[Warning: Number of dupliates: 1] 
+[> In NAP/stitch (line 114)
+In driver_func (line 201)] 
+Elapsed time is 269.503740 seconds.
+Beta-a2-b0p5, Trial: 38/100 sample size: 4194304
+estimate size: 1  192877
+Elapsed time is 266.306104 seconds.
+Beta-a2-b0p5, Trial: 39/100 sample size: 4194304
+estimate size: 1  202066
+Elapsed time is 252.380675 seconds.
+Beta-a2-b0p5, Trial: 40/100 sample size: 4194304
+estimate size: 1  182916
+Elapsed time is 258.135876 seconds.
+Beta-a2-b0p5, Trial: 41/100 sample size: 4194304
+estimate size: 1  193108
+Elapsed time is 256.720356 seconds.
+Beta-a2-b0p5, Trial: 42/100 sample size: 4194304
+estimate size: 1  192837
+Elapsed time is 261.279008 seconds.
+Beta-a2-b0p5, Trial: 43/100 sample size: 4194304
+estimate size: 1  193281
+Elapsed time is 255.232502 seconds.
+Beta-a2-b0p5, Trial: 44/100 sample size: 4194304
+estimate size: 1  192636
+Elapsed time is 261.500779 seconds.
+Beta-a2-b0p5, Trial: 45/100 sample size: 4194304
+estimate size: 1  182831
+Elapsed time is 258.799198 seconds.
+Beta-a2-b0p5, Trial: 46/100 sample size: 4194304
+estimate size: 1  192230
+Elapsed time is 250.616772 seconds.
+Beta-a2-b0p5, Trial: 47/100 sample size: 4194304
+estimate size: 1  192323
+Elapsed time is 255.531031 seconds.
+Beta-a2-b0p5, Trial: 48/100 sample size: 4194304
+estimate size: 1  201755
+Elapsed time is 246.040288 seconds.
+Beta-a2-b0p5, Trial: 49/100 sample size: 4194304
+estimate size: 1  183143
+Elapsed time is 239.957440 seconds.
+Beta-a2-b0p5, Trial: 50/100 sample size: 4194304
+estimate size: 1  192558
+Elapsed time is 254.498826 seconds.
+Beta-a2-b0p5, Trial: 51/100 sample size: 4194304
+estimate size: 1  183452
+Elapsed time is 265.149371 seconds.
+Beta-a2-b0p5, Trial: 52/100 sample size: 4194304
+estimate size: 1  192595
+Elapsed time is 281.376247 seconds.
+Beta-a2-b0p5, Trial: 53/100 sample size: 4194304
+estimate size: 1  192408
+Elapsed time is 279.794500 seconds.
+Beta-a2-b0p5, Trial: 54/100 sample size: 4194304
+estimate size: 1  192897
+Elapsed time is 275.277034 seconds.
+Beta-a2-b0p5, Trial: 55/100 sample size: 4194304
+estimate size: 1  183592
+Elapsed time is 277.385461 seconds.
+Beta-a2-b0p5, Trial: 56/100 sample size: 4194304
+estimate size: 1  192654
+Elapsed time is 266.128662 seconds.
+Beta-a2-b0p5, Trial: 57/100 sample size: 4194304
+estimate size: 1  182961
+Elapsed time is 259.395960 seconds.
+Beta-a2-b0p5, Trial: 58/100 sample size: 4194304
+estimate size: 1  183166
+Elapsed time is 268.141850 seconds.
+Beta-a2-b0p5, Trial: 59/100 sample size: 4194304
+estimate size: 1  192221
+Elapsed time is 271.124715 seconds.
+Beta-a2-b0p5, Trial: 60/100 sample size: 4194304
+estimate size: 1  192345
+Elapsed time is 284.718861 seconds.
+Beta-a2-b0p5, Trial: 61/100 sample size: 4194304
+estimate size: 1  183064
+Elapsed time is 276.887967 seconds.
+Beta-a2-b0p5, Trial: 62/100 sample size: 4194304
+estimate size: 1  192335
+Elapsed time is 284.745283 seconds.
+Beta-a2-b0p5, Trial: 63/100 sample size: 4194304
+estimate size: 1  192807
+[Warning: Number of dupliates: 1] 
+[> In NAP/stitch (line 114)
+In driver_func (line 173)] 
+[Warning: Number of dupliates: 1] 
+[> In NAP/stitch (line 114)
+In driver_func (line 201)] 
+Elapsed time is 286.010463 seconds.
+Beta-a2-b0p5, Trial: 64/100 sample size: 4194304
+estimate size: 1  193292
+Elapsed time is 276.815607 seconds.
+Beta-a2-b0p5, Trial: 65/100 sample size: 4194304
+estimate size: 1  182950
+Elapsed time is 288.035207 seconds.
+Beta-a2-b0p5, Trial: 66/100 sample size: 4194304
+estimate size: 1  185657
+Elapsed time is 255.243686 seconds.
+Beta-a2-b0p5, Trial: 67/100 sample size: 4194304
+estimate size: 1  178973
+Elapsed time is 266.902331 seconds.
+Beta-a2-b0p5, Trial: 68/100 sample size: 4194304
+estimate size: 1  192539
+Elapsed time is 271.317444 seconds.
+Beta-a2-b0p5, Trial: 69/100 sample size: 4194304
+estimate size: 1  183698
+Elapsed time is 263.636411 seconds.
+Beta-a2-b0p5, Trial: 70/100 sample size: 4194304
+estimate size: 1  192866
+Elapsed time is 262.633833 seconds.
+Beta-a2-b0p5, Trial: 71/100 sample size: 4194304
+estimate size: 1  183340
+Elapsed time is 271.671664 seconds.
+Beta-a2-b0p5, Trial: 72/100 sample size: 4194304
+estimate size: 1  193230
+Elapsed time is 262.378572 seconds.
+Beta-a2-b0p5, Trial: 73/100 sample size: 4194304
+estimate size: 1  192021
+Elapsed time is 258.240825 seconds.
+Beta-a2-b0p5, Trial: 74/100 sample size: 4194304
+estimate size: 1  202004
+Elapsed time is 281.786146 seconds.
+Beta-a2-b0p5, Trial: 75/100 sample size: 4194304
+estimate size: 1  192987
+Elapsed time is 262.964025 seconds.
+Beta-a2-b0p5, Trial: 76/100 sample size: 4194304
+estimate size: 1  192637
+Elapsed time is 263.894694 seconds.
+Beta-a2-b0p5, Trial: 77/100 sample size: 4194304
+estimate size: 1  193335
+Elapsed time is 273.585806 seconds.
+Beta-a2-b0p5, Trial: 78/100 sample size: 4194304
+estimate size: 1  193000
+Elapsed time is 264.316303 seconds.
+Beta-a2-b0p5, Trial: 79/100 sample size: 4194304
+estimate size: 1  201623
+Elapsed time is 263.808839 seconds.
+Beta-a2-b0p5, Trial: 80/100 sample size: 4194304
+estimate size: 1  192901
+Elapsed time is 250.831663 seconds.
+Beta-a2-b0p5, Trial: 81/100 sample size: 4194304
+estimate size: 1  192844
+Elapsed time is 279.350981 seconds.
+Beta-a2-b0p5, Trial: 82/100 sample size: 4194304
+estimate size: 1  193495
+Elapsed time is 273.196065 seconds.
+Beta-a2-b0p5, Trial: 83/100 sample size: 4194304
+estimate size: 1  192459
+Elapsed time is 269.450547 seconds.
+Beta-a2-b0p5, Trial: 84/100 sample size: 4194304
+estimate size: 1  183484
+Elapsed time is 254.852543 seconds.
+Beta-a2-b0p5, Trial: 85/100 sample size: 4194304
+estimate size: 1  182803
+Elapsed time is 282.302368 seconds.
+Beta-a2-b0p5, Trial: 86/100 sample size: 4194304
+estimate size: 1  183515
+Elapsed time is 261.251773 seconds.
+Beta-a2-b0p5, Trial: 87/100 sample size: 4194304
+estimate size: 1  192702
+Elapsed time is 274.419110 seconds.
+Beta-a2-b0p5, Trial: 88/100 sample size: 4194304
+estimate size: 1  193320
+Elapsed time is 269.238327 seconds.
+Beta-a2-b0p5, Trial: 89/100 sample size: 4194304
+estimate size: 1  192975
+Elapsed time is 263.194011 seconds.
+Beta-a2-b0p5, Trial: 90/100 sample size: 4194304
+estimate size: 1  183861
+Elapsed time is 266.569143 seconds.
+Beta-a2-b0p5, Trial: 91/100 sample size: 4194304
+estimate size: 1  183294
+Elapsed time is 288.221459 seconds.
+Beta-a2-b0p5, Trial: 92/100 sample size: 4194304
+estimate size: 1  192435
+Elapsed time is 275.529922 seconds.
+Beta-a2-b0p5, Trial: 93/100 sample size: 4194304
+estimate size: 1  193142
+Elapsed time is 285.077562 seconds.
+Beta-a2-b0p5, Trial: 94/100 sample size: 4194304
+estimate size: 1  192667
+Elapsed time is 279.916157 seconds.
+Beta-a2-b0p5, Trial: 95/100 sample size: 4194304
+estimate size: 1  192301
+Elapsed time is 273.647506 seconds.
+Beta-a2-b0p5, Trial: 96/100 sample size: 4194304
+estimate size: 1  201808
+Elapsed time is 269.632635 seconds.
+Beta-a2-b0p5, Trial: 97/100 sample size: 4194304
+estimate size: 1  192478
+Elapsed time is 251.656810 seconds.
+Beta-a2-b0p5, Trial: 98/100 sample size: 4194304
+estimate size: 1  183818
+Elapsed time is 267.114273 seconds.
+Beta-a2-b0p5, Trial: 99/100 sample size: 4194304
+estimate size: 1  191378
+Elapsed time is 258.517703 seconds.
+Beta-a2-b0p5, Trial: 100/100 sample size: 4194304
+estimate size: 1  193292
+[Warning: Variable 'nse_pdf_data' was not saved. For variables larger than 2GB
+use MAT-file version 7.3 or later.] 
+[> In driver_func (line 316)] 
+[Warning: Variable 'nmem_pdf_data' was not saved. For variables larger than 2GB
+use MAT-file version 7.3 or later.] 
+[> In driver_func (line 317)] 

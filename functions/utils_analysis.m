@@ -31,24 +31,24 @@ classdef utils_analysis
                 if (size(P,2)==size(Q,1) && size(P,1)==size(Q,2)) || (size(P,1)==size(Q,2) && size(P,2)==size(Q,1))
                     P = P';
                 else
-                    disp('P')
-                    size(P)
-                    disp('Q')
-                    size(Q)
+%                     disp('P')
+%                     size(P)
+%                     disp('Q')
+%                     size(Q)
                     error('the number of columns in P and Q should be the same');
                 end
             end
             if sum(~isfinite(P(:))) + sum(~isfinite(Q(:)))
-                sum(~isfinite(P(:)))
-                sum(~isfinite(Q(:)))
-                fail1 = P';
-                fail2 = Q';
-                fail1(~isfinite(fail1))
-                fail2(~isfinite(fail2))
-                min(P)
-                max(P)
-                min(Q)
-                max(Q)
+%                 sum(~isfinite(P(:)))
+%                 sum(~isfinite(Q(:)))
+%                 fail1 = P';
+%                 fail2 = Q';
+%                 fail1(~isfinite(fail1))
+%                 fail2(~isfinite(fail2))
+%                 min(P)
+%                 max(P)
+%                 min(Q)
+%                 max(Q)
                 error('the inputs contain non-finite values!')
             end
             % normalizing the P and Q

@@ -1,13 +1,30 @@
 
-% use when driver.m is a script and not a function
-clc;clear all; close all;
+function driver_func(distribution_vector,names,trials, min_pow,max_pow,cpu_n,cpp_code)
+
+
+
+% disp(['Variables: ',distribution_vector,', ',names,', ',num2str(trials),', ',...
+%     num2str(min_pow),', ',num2str(max_pow),', ',num2str(cpu_n),', ',cpp_code])
 
 addpath("functions/")
-% addpath("cpp_code/")
-addpath("cpp_code_smooth/")
 
-dir_name = fullfile('data','cpu_20_t_100');
-table_name = 'cpu_20_t_100.dat';
+% JOB ARRAY VARIABLES ------------------------
+
+% cast characters to strings or to ints for relevant variables
+distribution_vector = string(distribution_vector)
+names = string(names)
+trials = str2num(trials)
+min_pow = str2num(min_pow)
+max_pow = str2num(max_pow)
+cpu_n = str2num(cpu_n)
+cpp_code = string(cpp_code)
+
+%---------------------------------------------
+
+addpath(cpp_code)
+
+dir_name = fullfile('data',sprintf('%s_cpu_%d_t_%d', distribution_vector, cpu_n, trials))
+table_name = sprintf('%s_cpu_%d_t_%d.dat', distribution_vector, cpu_n, trials)
 
 status = mkdir(dir_name);
 
@@ -19,9 +36,6 @@ actual.generate_data = false;
 % script switching board
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   17; %<---- maximum exponent to generate samples
-min_pow =                   8; %<---- minimum exponent to generate samples
-trials =                    2   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -32,27 +46,9 @@ x_resolution =              1000;
 % Univariant Random Sample Generator available on zmerino's github
 cpu_type =                   '\';%<--- '\' or '/' for windows or linux
 
-distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
+% distribution_vector = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable","Stable2","Stable3"];
 distribution = distribution_vector';
-names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
-
-
-distribution_vector = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b0p5","Generalized-Pareto"];
-distribution = distribution_vector';
-names = ["Tri-Modal-Normal","Uniform", "Normal", "Beta(0.5,0.5)", "Generalized-Pareto"];
-
-
-distribution_vector = ["Generalized-Pareto"];
-distribution = distribution_vector';
-names = [ "Generalized-Pareto"];
-
-distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto", "Stable"];
-distribution = distribution_vector';
-names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
-
-distribution_vector = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable","Stable2","Stable3"];
-distribution = distribution_vector';
-names = ["Tri-Modal-Normal","Uniform", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto","Stable","Stable2","Stable3"];
+% names = ["Tri-Modal-Normal","Uniform", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto","Stable","Stable2","Stable3"];
 
 % distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto"];
 % distribution = distribution_vector';
@@ -103,10 +99,10 @@ for j = 1:length(distribution_vector)
     actual.dist_name = distribution_vector(j);
     % file name for actual distribution. "A_" puts at the top of the folder.
     actual.filename = sprintf(['A_', char(actual.dist_name),'_Act']);
-    
+
     % creat rndom object
     rndom = actual;
-    
+
     T_track = zeros(max_pow-min_pow,1);
     BR_track = zeros(max_pow-min_pow,trials);
     BR0_track = zeros(max_pow-min_pow,trials);
@@ -114,7 +110,7 @@ for j = 1:length(distribution_vector)
     cpu_time_se = [];
     cpu_time_nmem = [];
     sample_track = [];
-    
+
     % Create vector of  samples
     sample_vec = utils.sample_pow(min_pow,max_pow,data_type_flag,step);
     cpu_vec_se_parallel = zeros(length(sample_vec),trials);
@@ -140,23 +136,23 @@ for j = 1:length(distribution_vector)
     for k = 1:length(sample_vec)
 
         % generate empty cell arrays to save pdf estiamtes and samples
-        
+
         nse_pdf_data = {};
         nmem_pdf_data = {};
 
         for i = 1:trials
-                    
+
             % initialize to 0. used to count number of failed NMEM pdfe
             fail_flag = 0;
-            
+
             rndom.Ns = sample_vec(k);
             realx = linspace(actual.min_limit,actual.max_limit,rndom.Ns);
             % p-vector definition for Rtree
             p = [1,0.55,1,0.33,2,ceil(0.0625*rndom.Ns^0.5),40];
-            
+
             % Create rndom.filename for each distribtuion
             rndom.filename = sprintf(['D_', char(actual.dist_name),'_T_','%d', '_S_','%d'],i, rndom.Ns);
-            
+
             %==========================================================
             % % % % % % % start of estimates % % % % % % % % %
             %==========================================================
@@ -167,7 +163,7 @@ for j = 1:length(distribution_vector)
             rndom.randomVSactual = "random";
             rndom = dist_list(rndom);
             sample = rndom.rndData;
-            
+
             tintialSE = cputime;
             % NAP PARALLEL ------------------------------------------------
             % nap object instantiation
@@ -175,7 +171,7 @@ for j = 1:length(distribution_vector)
             nap.max_bs = 1e3;
             serial = false;
             nap = nap.stitch(sample, serial);
-            
+
             % extract relevant parameters from object after stich() method
             fail_code = nap.failed;
             SE_x = nap.sx;
@@ -203,23 +199,23 @@ for j = 1:length(distribution_vector)
             nse_serial.max_bs = 1e3;
             serial = true;
             nse_serial = nap.stitch(sample, serial);
-            
+
             % extract relevant parameters from object after stich() method
             fail_code = nse_serial.failed;
-%             SE_x = nap.sx;
-%             SE_pdf = nap.sPDF;
-%             SE_cdf = nap.sCDF;
-%             SE_u = nap.u;
-%             SE_SQR = nap.sqr;
-%             nBlocks = nap.nBlocks;
-%             rndom.Ns = nap.N;
-%             binrndom.Ns =  nap.binN;
-%             LG = nap.LG;
-%             max_LG = nap.LG_max;
-%             sum_LG = nap.LG_sum;
-%             T = nap.T;
-%             BRlevel = nap.BRlevel;
-%             BR0 = nap.BR0;
+            %             SE_x = nap.sx;
+            %             SE_pdf = nap.sPDF;
+            %             SE_cdf = nap.sCDF;
+            %             SE_u = nap.u;
+            %             SE_SQR = nap.sqr;
+            %             nBlocks = nap.nBlocks;
+            %             rndom.Ns = nap.N;
+            %             binrndom.Ns =  nap.binN;
+            %             LG = nap.LG;
+            %             max_LG = nap.LG_max;
+            %             sum_LG = nap.LG_sum;
+            %             T = nap.T;
+            %             BRlevel = nap.BRlevel;
+            %             BR0 = nap.BR0;
 
             tcpuSE_serial = cputime-tintialSE;
 
@@ -239,11 +235,11 @@ for j = 1:length(distribution_vector)
             % NMEM --------------------------------------------------------
             try
                 tintialNMEM = cputime;
-                % [FAILED, XI, F, CDF, SQR, LAGRANGE, SCORE, CONFIDENCE, SURD] = EstimatePDF(X) 
+                % [FAILED, XI, F, CDF, SQR, LAGRANGE, SCORE, CONFIDENCE, SURD] = EstimatePDF(X)
                 [failed, x_NMEM, pdf_NMEM, cdf_NMEM,sqr_NMEM, lagrange_multipler,score, confidence, surd] = EstimatePDF(sample);
                 fail_nmem(k,i,j) = 0;
                 tcpuNMEM = cputime-tintialNMEM;
-            
+
                 n = length(sqr_NMEM);
                 dx = 1 / (n + 1);
                 u_NMEM = dx:dx:(n * dx);
@@ -257,12 +253,12 @@ for j = 1:length(distribution_vector)
                 % don't record cpu time if estimator failed
                 tcpuNMEM = NaN;
             end
-            
+
             toc
             %==========================================================
             % % % % % % % % end of estimate % % % % % % % % %
             %==========================================================
-            
+
             %%%%%%%%%%%%%%%% calculate LG multipliers %%%%%%%%%%%%%%%%%%%%%
             lagrange_nse_parallel(k,i,j) = sum(max_LG);
 
@@ -286,7 +282,7 @@ for j = 1:length(distribution_vector)
 
             % read in actual distribution
             rndom.dist_list();
-            
+
             % Create final answer file
             rndom.filename = sprintf(['D_', char(rndom.dist_name), ...
                 '_T_','%d', '_S_','%d'],i, rndom.Ns);
@@ -299,8 +295,8 @@ for j = 1:length(distribution_vector)
             disp([char(actual.dist_name),...
                 ', Trial: ',num2str(i),'/', num2str(trials), ...
                 ' sample size: ',num2str(sample_vec(k))])
-            
-            disp(['estimate size: ',num2str(size(SE_pdf))])
+
+%             disp(['estimate size: ',num2str(size(SE_pdf))])
 
             nse_pdf_data{1,i} = sample;
             nse_pdf_data{2,i} = SE_x;
@@ -309,16 +305,17 @@ for j = 1:length(distribution_vector)
             nmem_pdf_data{1,i} = sample;
             nmem_pdf_data{2,i} = x_NMEM;
             nmem_pdf_data{3,i} = pdf_NMEM;
-            
-            
-        end
-        
-        filename = [char(actual.dist_name),...
-                '_t_', num2str(trials), ...
-                '_s_',num2str(sample_vec(k))];
 
-        save(fullfile(dir_name,['nse_', filename, '.mat']), 'nse_pdf_data')
-        save(fullfile(dir_name,['nmem_', filename, '.mat']), 'nmem_pdf_data')
+
+        end
+
+        filename = [char(actual.dist_name),...
+            '_t_', num2str(trials), ...
+            '_s_',num2str(sample_vec(k))];
+
+        % add -v7.3 to save mat files larger than 2GB
+        save(fullfile(dir_name,['nse_', filename, '.mat']), 'nse_pdf_data','-v7.3')
+        save(fullfile(dir_name,['nmem_', filename, '.mat']), 'nmem_pdf_data','-v7.3')
     end
 
     % cpu time
@@ -327,7 +324,7 @@ for j = 1:length(distribution_vector)
 
     avgCPUtimeSE = horzcat(sample_vec',mean(cpu_vec_se_parallel,2));
     avgCPUtimeNMEM = horzcat(sample_vec',mean(cpu_vec_nmem,2));
-        
+
     cpu.stdTimeSE{j} = horzcat(sample_vec',std(cpu_vec_se_parallel,[],2));
     cpu.stdTimeNMEM{j} = horzcat(sample_vec',std(cpu_vec_nmem,[],2));
 
@@ -347,7 +344,7 @@ for j = 1:length(distribution_vector)
     sample_power = temp(:,1);
     cpu_time = temp(:,2);
 
-    % Distributions 
+    % Distributions
     distribution = repelem(distribution_vector(j), length(temp(:,2)))';
     name = repelem(names(j), length(temp(:,2)))';
 
@@ -357,27 +354,27 @@ for j = 1:length(distribution_vector)
 
     % Failed
     temp = vertcat(utils.reshape_groups(sample_vec',fail_nse_parallel(:,:,j)),...
-                utils.reshape_groups(sample_vec',fail_nse_serial(:,:,j)),...
-                utils.reshape_groups(sample_vec',fail_nmem(:,:,j)));
+        utils.reshape_groups(sample_vec',fail_nse_serial(:,:,j)),...
+        utils.reshape_groups(sample_vec',fail_nmem(:,:,j)));
 
-    fail = temp(:,2);   
+    fail = temp(:,2);
 
     % Lagragian
     temp = vertcat(utils.reshape_groups(sample_vec',lagrange_nse_parallel(:,:,j)),...
-            utils.reshape_groups(sample_vec',lagrange_nse_serial(:,:,j)),...
-            utils.reshape_groups(sample_vec',lagrange_nmem(:,:,j)));
-    lagrange = temp(:,2);    
-    
+        utils.reshape_groups(sample_vec',lagrange_nse_serial(:,:,j)),...
+        utils.reshape_groups(sample_vec',lagrange_nmem(:,:,j)));
+    lagrange = temp(:,2);
+
     estimator = vertcat(nse_label_parallel',nse_label_serial', nmem_label');
-    
+
     % padding NMEM with NaNs because there are no scale/size infromation
     padding = utils.reshape_groups(sample_vec',NaN(length(sample_vec),trials));
 
     % average Lagragian for all blocks, group in lagrange for nmem
     temp = vertcat(utils.reshape_groups(sample_vec',avg_lagrange_nse_parallel(:,:,j)),...
-            padding,...
-            utils.reshape_groups(sample_vec',lagrange_nmem(:,:,j)));
-    avg_lagrange = temp(:,2);  
+        padding,...
+        utils.reshape_groups(sample_vec',lagrange_nmem(:,:,j)));
+    avg_lagrange = temp(:,2);
 
     % block size ------------------------
 
@@ -454,7 +451,7 @@ for j = 1:length(distribution_vector)
 
     blockscale = table(max_scale, min_scale, mean_scale, median_scale, std_scale);
 
-%     dist_table = table(distribution, name, estimator, sample_power, cpu_time, fail, lagrange, blocksize, blockscale);
+    %     dist_table = table(distribution, name, estimator, sample_power, cpu_time, fail, lagrange, blocksize, blockscale);
     dist_table = table(distribution, name, estimator, sample_power, cpu_time, fail, lagrange, avg_lagrange, blocksize, blockscale);
     dist_table = splitvars(dist_table);
 
@@ -468,3 +465,4 @@ writetable(global_table,fullfile('data',table_name))
 
 
 
+end
