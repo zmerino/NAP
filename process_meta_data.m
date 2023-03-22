@@ -7,9 +7,7 @@ addpath("functions/")
 file_dir = fullfile('data_4');
 write_data = fullfile('data_4', 'meta_data_100.dat');
 
-% distribution_vector = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable","Stable2","Stable3"];
 distribution_vector = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
-
 trials = 100;
 cpu_n = 20;
 
@@ -30,6 +28,5 @@ for idx = 1:length(distribution_vector)
     large_table = [large_table; data];
 
 end
-
 
 writetable(large_table, write_data)

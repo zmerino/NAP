@@ -3,13 +3,8 @@ close all;
 
 addpath("functions/")
 addpath("functions_plotting/")
-% addpath("data/")
-addpath("data_2/")
-
 
 publicationQuality();
-
-
 save_figs = true;
 
 % dir_name = fullfile('figures_manuscript','cpu_v1');
@@ -18,7 +13,6 @@ status = mkdir(dir_name);
 
 % Import data table
 filename = fullfile('data_large_n', 'meta_data_1.dat');
-
 data = readtable(filename);
 
 % temporary fix: added inpuut sample size to data table
@@ -33,26 +27,7 @@ for i = 1:rows
     idx = idx + 1;
 end
 
-test = 'test'
-
 % Define labels for figures
-
-% names = ["Tri-Modal-Normal","Uniform", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto"];
-% % names = ["Tri-Modal-Normal","Uniform", "Normal"];
-% % names = [ "Normal", "Beta(0.5,0.5)", "Generalized-Pareto"];
-% % names = ["Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto"];
-% names = ["Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)"];
-% 
-% labels = {'$2^{8}$', '$2^{9}$', '$2^{10}$', '$2^{11}$', '$2^{12}$',...
-%     '$2^{13}$', '$2^{14}$', '$2^{15}$', '$2^{16}$', '$2^{17}$', '$2^{18}$'};
-% 
-% label_val = [8,9,10,11,12,13,14,15,16,17,18];
-% 
-% % labels = {'$2^{8}$', '$2^{9}$', '$2^{10}$', '$2^{11}$', '$2^{12}$',...
-% %     '$2^{13}$', '$2^{14}$', '$2^{15}$', '$2^{16}$', '$2^{17}$', '$2^{18}$', '$2^{19}$', '$2^{20}$'};
-% % 
-% % label_val = [8,9,10,11,12,13,14,15,16,17,18,19,20];
-
 names = ["Beta(0.5,1.5)", "Generalized-Pareto"];
 labels = {'$2^{10}$', '$2^{11}$', '$2^{12}$',...
     '$2^{13}$', '$2^{14}$', '$2^{15}$', '$2^{16}$', '$2^{17}$',...

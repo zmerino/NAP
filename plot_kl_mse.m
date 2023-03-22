@@ -5,56 +5,27 @@ addpath("functions_plotting/")
 
 publicationQuality();
 
-
 plot_mse_dist = false;
+save_figs = true;
+
 table_name = 'mse_kl_100.dat';
-write_dir = fullfile('data_3','kl_mse_data');
 fig_dir = fullfile('figures_manuscript','kl_mse_quantiles');
-
-
-table_name = 'mse_kl_100.dat';
 write_dir = fullfile('data_3','kl_mse_data');
 
 status = mkdir(write_dir);
 status = mkdir(fig_dir);
 
-save_figs = true;
-
-
-
-
 data = readtable(fullfile(write_dir,table_name));
 data_nap = data('NAP'==convertCharsToStrings(data.estimator),:);
 data_nmem = data('NMEM'==convertCharsToStrings(data.estimator),:);
 
-
-names = ["Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)"];
-
-labels = {'$2^{8}$', '$2^{9}$', '$2^{10}$', '$2^{11}$', '$2^{12}$',...
-    '$2^{13}$', '$2^{14}$', '$2^{15}$', '$2^{16}$', '$2^{17}$', '$2^{18}$'};
-label_val = [8,9,10,11,12,13,14,15,16,17,18];
-
-labels = {'$2^{10}$', '$2^{11}$', '$2^{12}$',...
-    '$2^{13}$', '$2^{14}$', '$2^{15}$', '$2^{16}$', '$2^{17}$',...
-    '$2^{18}$', '$2^{19}$', '$2^{20}$', '$2^{21}$', '$2^{22}$'};
-n_vec = 2.^[10,11,12,13,14,15,16,17,18,19,20,21,22];
-
-
 d_vec = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
-names = ["Trimodal-Normal","Uniform", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
-labels = {'$2^{8}$', '$2^{9}$', '$2^{10}$', '$2^{11}$', '$2^{12}$',...
-    '$2^{13}$'};
-n_vec = 2.^[10,11,12,13];
-
-
 names = ["Trimodal-Normal","Uniform", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
 labels = {'$2^{10}$', '$2^{11}$', '$2^{12}$',...
     '$2^{13}$', '$2^{14}$', '$2^{15}$', '$2^{16}$', '$2^{17}$',...
     '$2^{18}$', '$2^{19}$', '$2^{20}$', '$2^{21}$', '$2^{22}$'};
 n_vec = 2.^[8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
 
-% labels = {'$2^{10}$', '$2^{15}$'};
-% label_val = [10,15];
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Quantiles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];

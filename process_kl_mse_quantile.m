@@ -40,35 +40,10 @@ write_name = fullfile('data_4','kl_mse_cpu_20_t_100');
 % Define the etimates to plot
 
 % Sample range
-% n_vec = 2.^[8,9,10,11,12,13,14,15,16,17,18];
-n_vec = 2.^[14];
 n_vec = 2.^[8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
-% n_vec = 2.^[10,11,12,13,14,15,16,17,18,19,20,21,22];
-% n_vec = 2.^[8,,11,12,13];
-% n_vec = 2.^[10,15];
-% Distribution range
-% d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
-% d_vec = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
+
 d_vec = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
-% d_vec = ["Trimodal-Normal","Uniform","Normal"];
-% d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto"];
-% d_vec = ["Normal"];
-
-% Define labels for figures
-% names = {'Uniform-Mix', 'Generalized-Pareto', 'Stable',...
-%     'Tri-Modal-Normal', 'Normal', 'Uniform', 'Beta(0.5,1.5)',...
-%     'Beta(2,0.5)', 'Beta(0.5,0.5)'}';
-% names = {'Beta(0.5,1.5)','Beta(2,0.5)', 'Beta(0.5,0.5)', 'Generalized-Pareto', 'Stable'}';
 names = ["Trimodal-Normal","Uniform","Normal","Beta(0.5,1.5)","Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto","Stable"];
-
-% d_vec = ["Beta-a0p5-b0p5","Generalized-Pareto"];
-% names = ["Beta(0.5,0.5)", "Generalized-Pareto"];
-%
-% d_vec = ["Uniform","Trimodal-Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
-% names = ["Uniform","Trimodal-Normal","Beta(0.5,1.5)","Beta(2,0.5)", "Beta(0.5,0.5)"];
-%
-% d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
-% names = ["Beta(0.5,1.5)","Beta(2,0.5)", "Beta(0.5,0.5)"];
 
 % Trials per sample
 trials = 100;

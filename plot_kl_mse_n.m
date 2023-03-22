@@ -5,17 +5,15 @@ addpath("functions_plotting/")
 
 publicationQuality();
 
-
 plot_mse_dist = false;
+save_figs = true;
 
-fig_dir = fullfile('figures_manuscript_n','kl_mse_quantiles');
 table_name = 'mse_kl_1.dat';
+fig_dir = fullfile('figures_manuscript_n','kl_mse_quantiles');
 write_dir = fullfile('data_large_n','kl_mse_cpu_40_t_1');
 
 status = mkdir(write_dir);
 status = mkdir(fig_dir);
-
-save_figs = true;
 
 data = readtable(fullfile(write_dir,table_name));
 data_nap = data('NAP'==convertCharsToStrings(data.estimator),:);
@@ -29,11 +27,7 @@ labels = {'$2^{10}$', '$2^{11}$', '$2^{12}$',...
     '$2^{23}$', '$2^{24}$', '$2^{25}$', '$2^{26}$', '$2^{27}$'};
 n_vec = 2.^[8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27];
 
-% labels = {'$2^{10}$', '$2^{15}$'};
-% label_val = [10,15];
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Quantiles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
 trials = 100;
 plot_q = false;
 

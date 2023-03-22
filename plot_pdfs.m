@@ -16,14 +16,14 @@ plot_sqr = false;
 plot_heavy = false;
 save_figs = true;
 
-% figure directory
-fig_dir = fullfile('figures_manuscript','100_trials_v2');
-status = mkdir(fig_dir);
-
 % choose to visualise figures or not
 fig_plot = 'on';
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Import data %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% figure directory
+fig_dir = fullfile('figures_manuscript','100_trials_v2');
+status = mkdir(fig_dir);
 
 % Create actual distrobution onjects
 actual = distributions;
@@ -38,10 +38,8 @@ dir_name = fullfile('data','cpu_20_t_100');
 n_vec = 2.^[10,15];
 
 % Distribution range
-d_vec = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"]
+d_vec = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
 names = ["Trimodal-Normal","Uniform","Normal","Beta(0.5,1.5)","Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto","Stable"];
-
-
 
 % Trials per sample
 trials = 100;
