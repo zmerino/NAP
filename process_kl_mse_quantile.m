@@ -9,7 +9,7 @@ addpath("functions_plotting/")
 
 plot_mse_dist = false;
 table_name = 'mse_kl_100.dat';
-write_dir = fullfile('data_4','kl_mse_data');
+write_dir = fullfile('data_cpu_20_wall_2','kl_mse_data');
 status = mkdir(write_dir);
 
 plot_pdf = true;
@@ -34,8 +34,8 @@ actual = distributions;
 
 % Path to directory
 % dir_name = fullfile('data','pdf_estimates');
-dir_name = fullfile('data_4','cpu_20_t_100');
-write_name = fullfile('data_4','kl_mse_cpu_20_t_100');
+dir_name = fullfile('data_cpu_20_wall_2','cpu_20_t_100');
+write_name = fullfile('data_cpu_20_wall_2','kl_mse_cpu_20_t_100');
 
 % Define the etimates to plot
 
