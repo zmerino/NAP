@@ -2,14 +2,10 @@
 
 function driver_func_n(distribution_vector,names,trials, min_pow,max_pow,cpu_n,cpp_code)
 
-
-
-% disp(['Variables: ',distribution_vector,', ',names,', ',num2str(trials),', ',...
-%     num2str(min_pow),', ',num2str(max_pow),', ',num2str(cpu_n),', ',cpp_code])
-
+% include function files
 addpath("functions/")
 
-% JOB ARRAY VARIABLES ------------------------
+% JOB ARRAY VARIABLES -----------------------------------------------------
 
 % cast characters to strings or to ints for relevant variables
 distribution_vector = string(distribution_vector)
@@ -20,38 +16,40 @@ max_pow = str2num(max_pow)
 cpu_n = str2num(cpu_n)
 cpp_code = string(cpp_code)
 
+%%%%%%%%%%%%%%%%% COMMENT OUT IF RUNNING LOCALLY %%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% create parallel process with given parameters
+% create parallel process on cluster
 
 % create a local cluster object
-% pc = parcluster('local')
-%  
-% % explicitly set the JobStorageLocation to the temp directory that was
-% % created in your sbatch script
-% pc.JobStorageLocation = strcat('/home/zmerino/.matlab/temp_cluster_jobs/', getenv('SLURM_JOB_ID'))
+pc = parcluster('local')
+ 
+% explicitly set the JobStorageLocation to the temp directory that was
+% created in your sbatch script
+pc.JobStorageLocation = strcat('/home/zmerino/.matlab/temp_cluster_jobs/', getenv('SLURM_JOB_ID'))
 
 % start the matlabpool with maximum available workers
 % control how many workers by setting ntasks in your sbatch script
-% parpool(pc, str2num(getenv('SLURM_CPUS_ON_NODE')))
+poolobj = gcp('nocreate'); % get the pool object, and do it avoiding creating a new one.
+if isempty(poolobj) % check if there is not a pool.
+    % create parallel process with given parameters
+    parpool(pc, str2num(getenv('SLURM_CPUS_ON_NODE')), 'IdleTimeout', Inf)
+else
+    delete( gcp('nocreate')); % delete the current pool object.
+    % create parallel process with given parameters
+    parpool(pc, str2num(getenv('SLURM_CPUS_ON_NODE')), 'IdleTimeout', Inf)
+end
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% poolobj = gcp('nocreate'); % get the pool object, and do it avoiding creating a new one.
-% if isempty(poolobj) % check if there is not a pool.
-%     % create parallel process with given parameters
-%     parpool(pc, str2num(getenv('SLURM_CPUS_ON_NODE')), 'IdleTimeout', Inf)
-% else
-%     delete( gcp('nocreate')); % delete the current pool object.
-%     % create parallel process with given parameters
-%     parpool(pc, str2num(getenv('SLURM_CPUS_ON_NODE')), 'IdleTimeout', Inf)
-% end
-
-
-
+% add C++ code mex file to workspace
 addpath(cpp_code)
-dir_name = fullfile('data_large_n_test',sprintf('%s_cpu_%d_t_%d_large_n', distribution_vector, cpu_n, trials))
+% location to save data
+write_dir = fullfile('data_large_n_test',sprintf('%s_cpu_%d_t_%d_large_n', distribution_vector, cpu_n, trials))
+% name of data table to save
 table_name = sprintf('%s_cpu_%d_t_%d.mat', distribution_vector, cpu_n, trials)
 
-status = mkdir(dir_name);
+% make directory if doesn't exist
+status = mkdir(write_dir);
 
 % class assignment
 actual = distributions;
@@ -280,7 +278,7 @@ for j = 1:length(distribution_vector)
                 '_t_', num2str(trials), ...
                 '_s_',num2str(sample_vec(k))];
 
-        save(fullfile(dir_name,['nse_', filename, '.mat']), 'nse_pdf_data','-v7.3')
+        save(fullfile(write_dir,['nse_', filename, '.mat']), 'nse_pdf_data','-v7.3')
     end
 
     % cpu time
@@ -413,7 +411,7 @@ for j = 1:length(distribution_vector)
 
 end
 
-writetable(global_table,fullfile(dir_name,table_name))
+writetable(global_table,fullfile(write_dir,table_name))
 
 
 

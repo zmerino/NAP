@@ -1,4 +1,0 @@
-ArrayTaskID     distribution_vector`    names                   trials  min_pow     max_pow     cpu_n   cpp_code
-1
-Stable                  Stable                  100     9           22          20      cpp_code_smooth/
-2               Stable1                 Stable1                 100     9           22          20      cpp_code_smooth/

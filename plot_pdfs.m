@@ -1,22 +1,23 @@
 clc; clear; close all;
 
 addpath("functions/")
+addpath("functions_plotting/")
 
-
+publicationQuality();
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% To Plot %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 plot_mse_dist = true;
 table_name = 'mse_kl_set0.dat';
 
-plot_pdf = true;
+plot_pdf = false;
 plot_cdf = false;
-plot_sqr = true;
-plot_heavy = true;
+plot_sqr = false;
+plot_heavy = false;
 save_figs = true;
 
 % figure directory
-fig_dir = fullfile('figures','mse_kl_set1');
+fig_dir = fullfile('figures_manuscript','100_trials_v2');
 status = mkdir(fig_dir);
 
 % choose to visualise figures or not
@@ -28,39 +29,19 @@ fig_plot = 'on';
 actual = distributions;
 
 % Path to directory
-% dir_name = fullfile('data','pdf_estimates');
-dir_name = fullfile('data','cpu_20_t_50_maxN_22_pdf_estimates');
-
-dir_name = fullfile('data','cpu_20_t_50_set_1');
 dir_name = fullfile('data','cpu_20_t_100');
 
 % Define the etimates to plot
 
 % Sample range
-% n_vec = 2.^[8,9,10,11,12,13,14,15,16,17,18];
-n_vec = 2.^[14];
-n_vec = 2.^[8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
-n_vec = 2.^[14];
+% n_vec = 2.^[8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
+n_vec = 2.^[10,15];
+
 % Distribution range
-% d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
-% d_vec = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
-d_vec = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto"];
-% d_vec = ["Trimodal-Normal","Uniform","Normal"];
-% d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto"];
-% d_vec = ["Normal"];
+d_vec = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"]
+names = ["Trimodal-Normal","Uniform","Normal","Beta(0.5,1.5)","Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto","Stable"];
 
-% Define labels for figures
-% names = {'Uniform-Mix', 'Generalized-Pareto', 'Stable',...
-%     'Tri-Modal-Normal', 'Normal', 'Uniform', 'Beta(0.5,1.5)',...
-%     'Beta(2,0.5)', 'Beta(0.5,0.5)'}';
-% names = {'Beta(0.5,1.5)','Beta(2,0.5)', 'Beta(0.5,0.5)', 'Generalized-Pareto', 'Stable'}';
-names = ["Trimodal-Normal","Uniform","Normal","Beta(0.5,1.5)","Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto"];
 
-d_vec = ["Beta-a0p5-b0p5","Generalized-Pareto"];
-names = ["Beta(0.5,0.5)", "Generalized-Pareto"];
-
-d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
-names = ["Uniform","Normal","Beta(0.5,1.5)","Beta(2,0.5)", "Beta(0.5,0.5)"];
 
 % Trials per sample
 trials = 100;
@@ -132,6 +113,8 @@ global_table = table();
 if plot_mse_dist
     
     qnum = 50;
+%     qnum = 20;
+%     qnum = 100;
 
     % x values for given quantiles
     for d_idx = 1:size(nap, 1)
@@ -152,7 +135,7 @@ if plot_mse_dist
             for t_idx = 1:plt_trials
 
                 % track calculations
-                disp(['dist: ',num2str(d_idx),'/',num2str(size(nap, 1)),...
+                disp(['quantile dist: ',num2str(d_idx),'/',num2str(size(nap, 1)),...
                     ' s: ',num2str(n_idx),'/',num2str(size(nap, 2)),...
                     ' t: ',num2str(t_idx),'/',num2str(plt_trials)])
 
@@ -219,6 +202,7 @@ if plot_mse_dist
             bp = gca;
             if save_figs
                 saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
             end
 
             fig_name = ['mse_d_',convertStringsToChars(d_vec(d_idx)),'_s_',num2str(n_vec(n_idx))];
@@ -237,6 +221,7 @@ if plot_mse_dist
             legend([nse_h(1),nmem_h(1)],'Interpreter','latex')
             if save_figs
                 saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
             end
 
 
@@ -249,8 +234,10 @@ if plot_mse_dist
             ylabel('MSE(x)')
             legend([nse_h(1),nmem_h(1)],'Interpreter','latex')
             bp = gca;
+%             bp.YAxis.Scale ="log";
             if save_figs
                 saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
             end
 
             fig_name = ['kl_d_',convertStringsToChars(d_vec(d_idx)),'_s_',num2str(n_vec(n_idx))];
@@ -267,6 +254,7 @@ if plot_mse_dist
             legend([nse_h(1),nmem_h(1)],'Interpreter','latex')
             if save_figs
                 saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
             end
 
             fig_name = ['avg_kl_d_',convertStringsToChars(d_vec(d_idx)),'_s_',num2str(n_vec(n_idx))];
@@ -278,8 +266,10 @@ if plot_mse_dist
             ylabel('KL(x)')
             legend([nse_h(1),nmem_h(1)],'Interpreter','latex')
             bp = gca;
+%             bp.YAxis.Scale ="log";
             if save_figs
                 saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
             end
         end
 
@@ -400,7 +390,75 @@ if plot_pdf
 
         for n_idx = 1:size(nap, 2)
 
-            fig_name = ['PDF_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
+            fig_name = ['nmem_PDF_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
+            figure('Name',fig_name, 'visible',fig_plot)
+            hold on;
+            % Set actual distribution type
+            actual.dist_name = nap{d_idx,n_idx,1,1}(1,:);
+            % Set distrobution over specific range i.e. the x values from the
+            % first trial estimate
+
+            actual.x = nap{d_idx,n_idx,1,3}(:,1);
+            % Generate distrobution attributes
+            actual = dist_list(actual);
+
+            % Remove zeros in actual.pdf_y generated from inf/nan values
+            [row,~] = find(actual.pdf_y > 0);
+            for s_idx = 1:trials
+                nmem_h = plot(nmem{d_idx,n_idx,s_idx,3}, nmem{d_idx,n_idx,s_idx,4},'-', 'DisplayName', '$\hat{f}_i^{NMEM}(x)$');
+            end
+            g = plot(actual.x(row,1), actual.pdf_y(row,1), '-k', 'DisplayName','$f(x)$');
+            bp = gca;
+            xlabel('$x$','Interpreter','latex')
+            ylabel('$\hat{f}(x)$','Interpreter','latex')
+            if ismember(actual.dist_name, ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"])
+                xlim([0,1])
+                ylim([0,10])
+            else
+                xlim([0,10])
+                ylim([0,1])
+            end
+            legend([g],'Interpreter','latex')
+            if save_figs
+                saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+            end
+
+
+            fig_name = ['nap_PDF_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
+            figure('Name',fig_name, 'visible',fig_plot)
+            hold on;
+            % Set actual distribution type
+            actual.dist_name = nap{d_idx,n_idx,1,1}(1,:);
+            % Set distrobution over specific range i.e. the x values from the
+            % first trial estimate
+
+            actual.x = nap{d_idx,n_idx,1,3}(:,1);
+            % Generate distrobution attributes
+            actual = dist_list(actual);
+
+            % Remove zeros in actual.pdf_y generated from inf/nan values
+            [row,~] = find(actual.pdf_y > 0);
+            for s_idx = 1:trials
+                nse_h = plot(nap{d_idx,n_idx,s_idx,3}, nap{d_idx,n_idx,s_idx,4},'-', 'DisplayName', '$\hat{f}_i^{NAP}(x)$');
+            end
+            g = plot(actual.x(row,1), actual.pdf_y(row,1), '-k', 'DisplayName','$f(x)$');
+            bp = gca;
+            xlabel('$x$','Interpreter','latex')
+            ylabel('$\hat{f}(x)$','Interpreter','latex')
+            if ismember(actual.dist_name, ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"])
+                xlim([0,1])
+                ylim([0,10])
+            else
+                xlim([0,10])
+                ylim([0,1])
+            end
+            legend([g],'Interpreter','latex')
+            if save_figs
+                saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+            end
+
+
+            fig_name = ['combined_PDF_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
             figure('Name',fig_name, 'visible',fig_plot)
             hold on;
             % Set actual distribution type
@@ -494,29 +552,10 @@ if plot_sqr
 
         for n_idx = 1:size(nap, 2)
 
-            fig_name = ['SQR_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
+            fig_name = ['nmem_SQR_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
             figure('Name',fig_name, 'visible',fig_plot)
             hold on;
-            smallN = 256;
-            smallN2 = 258;
-            graymax = 240;
-            range = 0:1/(smallN+1):1;
-            muLD = range*(smallN + 1) / (smallN + 1);
-            lemonDrop = sqrt(muLD.*(1-muLD)) * 3.4;
-            sampleCount2 = (smallN + 2):-1:1;
-            colorRange = (255-graymax)*sampleCount2/(smallN + 2);
-            base = repmat(graymax, smallN + 2, 1);
-            col = (base + colorRange') / 255;
-            rgb = [col col col];
-            count2 = 1;
-            for ii = ceil(smallN2/2):smallN2-1
-                ix = [ii ii+1 smallN2-ii smallN2-ii+1];
-                fill(range(ix), lemonDrop(ix), rgb(count2, :),'edgecolor','none')
-                fill(range(ix), -lemonDrop(ix), rgb(count2, :),'edgecolor','none')
-                count2 = count2 + 2;
-            end
-            plot(muLD,lemonDrop,'k--');
-            plot(muLD,-lemonDrop,'k--');
+            lemondrop();
             % Set actual distribution type
             actual.dist_name = nap{d_idx,n_idx,1,1};
             % Set distrobution over specific range i.e. the x values from the
@@ -529,17 +568,43 @@ if plot_sqr
             [row,~] = find(actual.pdf_y > 0);
 
             for s_idx = 1:trials
-                nse_h = plot(nap{d_idx,n_idx,s_idx,6}, nap{d_idx,n_idx,s_idx,7},'-r', 'DisplayName', '$\hat{sqr}_i^{NAP}(x)$');
-            end
-            for s_idx = 1:trials
-                nmem_h = plot(nmem{d_idx,n_idx,s_idx,6}, nmem{d_idx,n_idx,s_idx,7},'-b', 'DisplayName', '$\hat{sqr}_i^{NMEM}(x)$');
+                nmem_h = plot(nmem{d_idx,n_idx,s_idx,6}, nmem{d_idx,n_idx,s_idx,7},'-', 'DisplayName', '$\hat{SQR}_i^{NMEM}(x)$');
             end
             bp = gca;
             xlabel('$x$','Interpreter','latex')
             ylabel('$\hat{SQR}(x)$','Interpreter','latex')
-            legend([nse_h(1),nmem_h(1)],'Interpreter','latex')
+%             legend([nmem_h(1)],'Interpreter','latex')
             xlabel('$x$','Interpreter','latex')
             ylabel('$sqr(x)$','Interpreter','latex')
+            if save_figs
+                saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+            end
+
+
+            fig_name = ['nap_SQR_d',convertStringsToChars(d_vec(d_idx)),num2str(d_idx),'_s_',num2str(n_vec(n_idx)),'_t_',num2str(trials)];
+            figure('Name',fig_name, 'visible',fig_plot)
+            hold on;
+            lemondrop();
+            % Set actual distribution type
+            actual.dist_name = nap{d_idx,n_idx,1,1};
+            % Set distrobution over specific range i.e. the x values from the
+            % first trial estimate
+            actual.x = nap{d_idx,n_idx,1,3}(:,1);
+            % Generate distrobution attributes
+            actual = dist_list(actual);
+
+            % Remove zeros in actual.pdf_y generated from inf/nan values
+            [row,~] = find(actual.pdf_y > 0);
+
+            for s_idx = 1:trials
+                nse_h = plot(nap{d_idx,n_idx,s_idx,6}, nap{d_idx,n_idx,s_idx,7},'-', 'DisplayName', '$\hat{SQR}_i^{NAP}(x)$');
+            end
+            bp = gca;
+            xlabel('$x$','Interpreter','latex')
+            ylabel('$\hat{SQR}(x)$','Interpreter','latex')
+%             legend([nse_h(1)],'Interpreter','latex')
+            xlabel('$x$','Interpreter','latex')
+            ylabel('$SQR(x)$','Interpreter','latex')
             if save_figs
                 saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
             end
@@ -563,36 +628,70 @@ if plot_heavy
 
                 % Set actual distribution type
                 actual.dist_name = nap{d_idx,n_idx,1,1};
-                % Set distrobution over specific range i.e. the x values from the
-                % first trial estimate
-                xs = nap{d_idx,n_idx,1,3}(:,1);
-                x_min = min(xs);
-                x_max = max(xs);
-                actual.x = linspace(x_min,x_max*2,1000);
-                % Generate distrobution attributes
-                actual = dist_list(actual);
+%                 % Set distrobution over specific range i.e. the x values from the
+%                 % first trial estimate
+%                 xs = nap{d_idx,n_idx,1,3}(:,1);
+%                 x_min = min(xs);
+%                 x_max = max(xs);
+% 
+%                 actual.x = linspace(x_min,x_max*2,1000);
+%                 % Generate distrobution attributes
+%                 actual = dist_list(actual);
 
                 % Remove zeros in actual.pdf_y generated from inf/nan values
-                [row,~] = find(actual.pdf_y > 0);
+%                 [row,~] = find(actual.pdf_y > 0);
 
                 for s_idx = 1:trials
+                    % Set distrobution over specific range i.e. the x values from the
+                    % first trial estimate
+                    xs = nap{d_idx,n_idx,1,3}(:,1);
+                    x_min = min(xs);
+                    x_max = max(xs);
+
+                    actual.x = linspace(x_min,x_max*2,1000);
+                    % Generate distrobution attributes
+                    actual = dist_list(actual);
+
                     [nse_htx, nse_hty, nse_htx_act, nse_hty_act] = utils_analysis.heavy(nap{d_idx,n_idx,s_idx,3}(:,j),...
                         nap{d_idx,n_idx,s_idx,5}(:,j), actual);
 
                     [nmem_htx, nmem_hty, nmem_htx_act, nmem_hty_act] = utils_analysis.heavy(nmem{d_idx,n_idx,s_idx,3}(:,j),...
                         nmem{d_idx,n_idx,s_idx,5}(:,j), actual);
 
-                    nse_h = plot(real(nse_htx), real(nse_hty), '-r', 'DisplayName', '$\hat{f}_i^{NAP}(x)$');
-                    nmem_h = plot(real(nmem_htx), real(nmem_hty), '-b', 'DisplayName', '$\hat{f}_i^{NMEM}(x)$');
+                    nse_h = plot(real(nse_htx), real(nse_hty), '-r', 'DisplayName', '$\hat{F}_i^{NAP}(x)$');
+                    nmem_h = plot(real(nmem_htx), real(nmem_hty), '-b', 'DisplayName', '$\hat{F}_i^{NMEM}(x)$');
+
+                    xs = nap{d_idx,n_idx,s_idx,3}(:,1);
+
+                    % update x-limits for actual cdf
+                    if s_idx == 1
+                        x_min_act = min(nse_htx_act);
+                        x_max_act = max(nse_htx_act);
+                    else
+                        if min(nse_htx_act) < x_min_act
+                            x_min_act = min(nse_htx_act);
+                        end
+                        if max(nse_htx_act) > x_max_act
+                            x_max_act = max(nse_htx_act);
+                        end
+                    end
+
                 end
+
+                actual.x = linspace(x_min_act*2,x_max_act*2,1000);
+                % Generate distrobution attributes
+                actual = dist_list(actual);
+
+
+                htx_act = log(actual.x);
+                hty_act = log(1-actual.cdf_y);
+
+                g = plot(nse_htx_act,nse_hty_act,'-k', 'DisplayName','$F(x)$');
             end
-            g = plot(nse_htx_act,nse_hty_act,'-k', 'DisplayName','$f(x)$');
             bp = gca;
-            set(bp, 'YScale', 'log')
+            set(bp,  'YScale', 'log')
             xlabel('$x$','Interpreter','latex')
             ylabel('$log(1 - \hat{F}(x))$','Interpreter','latex')
-            %             xlim([min(nse_htx),max(nse_htx) + 0.1*(max(nse_htx) - min(nse_htx))])
-            %             ylim([min(nse_hty),max(nse_hty) + 0.1*(max(nse_hty) - min(nse_hty))])
             legend([nse_h(1),nmem_h(1), g],'Interpreter','latex', 'Location','southwest')
             if save_figs
                 saveas(bp, fullfile(fig_dir, [fig_name, '.png']))

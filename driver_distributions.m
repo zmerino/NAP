@@ -8,9 +8,6 @@ addpath("functions_plotting/")
 addpath("cpp_code/")
 % addpath("cpp_code_smooth/")
 
-nap = NAP;
-NAP
-
 publicationQuality();
 
 % figure directory
@@ -43,82 +40,9 @@ x_resolution =              1000;
 % Univariant Random Sample Generator available on zmerino's github
 cpu_type =                   '\';%<--- '\' or '/' for windows or linux
 
-
-% distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
-% distribution = distribution_vector';
-% names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
-
-distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable", "Stable2","Stable3"];
+distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
 distribution = distribution_vector';
-names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable", "Stable2","Stable3"];
-
-
-% distribution_vector = ["Beta-a0p5-b0p5","Normal","Trimodal-Normal","Uniform","Uniform-Mix"];
-% distribution = distribution_vector';
-% names = ["Beta(0.5,0.5)","Normal","Tri-Modal-Normal","Uniform","Uniform-Mix"];
-% 
-% 
-% distribution_vector = ["Normal","Beta-a0p5-b0p5", "Stable1"];
-% distribution = distribution_vector';
-% names = [ "Normal","Beta(0.5,0.5)","Stable1"];
-% 
-% 
-distribution_vector = ["Normal","Trimodal-Normal","Beta-a0p5-b0p5"];
-distribution = distribution_vector';
-names = [ "Normal","Trimodal-Normal","Beta(0.5,0.5)"];
-
-distribution_vector = ["Trimodal-Normal"];
-distribution = distribution_vector';
-names = ["Trimodal-Normal"];
-
-distribution_vector = ["Normal"];
-distribution = distribution_vector';
-names = ["Normal"];
-% 
-% 
-% 
-% distribution_vector = ["Stable", "Stable2","Stable3","Stable1"];
-% distribution = distribution_vector';
-% names = ["Stable", "Stable2","Stable3","Stable1"];
-% % 
-% distribution_vector = ["Stable1"];
-% distribution = distribution_vector';
-% names = ["Stable1"];
-% 
-% 
-% distribution_vector = ["Uniform"];
-% distribution = distribution_vector';
-% names = ["Uniform"];
-% distribution_vector = ["Uniform-Mix"];
-% distribution = distribution_vector';
-% names = ["Uniform-Mix"];
-
-% distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
-% distribution = distribution_vector';
-% names = ["Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)"];
-
-% distribution_vector = ["Normal"];
-% distribution = distribution_vector';
-% names = ["Normal"];
-
-% distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5",...
-%     "Bimodal-Normal","BirnbaumSaunders","Burr",...
-%     "Exponential","Extreme-Value","Gamma","Generalized-Extreme-Value",...
-%     "Generalized-Pareto","HalfNormal","Normal","Square-periodic",...
-%     "tLocationScale","Uniform","Uniform-Mix","Weibull","Chisquare",...
-%     "InverseGaussian","Trimodal-Normal","Stable",...
-%     "Stable2","Stable3","Stable1","BirnbaumSaunders-Stable"];
-
-% distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5",...
-%     "Bimodal-Normal",...
-%     "Generalized-Pareto","Normal","Square-periodic",...
-%     "Uniform","Uniform-Mix",...
-%     "Trimodal-Normal","Stable",...
-%     "Stable2","Stable3","Stable1","BirnbaumSaunders-Stable"];
-% 
-% distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
-% distribution_vector = ["Stable", "Stable2","Stable3","Stable1"];
-
+names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Main Function Call Loop used to lable plot figures
@@ -138,11 +62,6 @@ for a = 1:size(distribution_vector,2)
 end
 
 % only works for division with no remainders
-
-% fail_nmem = zeros((max_pow-min_pow+1)/step, trials,length(distribution_vector));
-% fail_nse = zeros((max_pow-min_pow+1)/step, trials,length(distribution_vector));
-% lagrange_nse = zeros((max_pow-min_pow+1)/step, trials,length(distribution_vector));
-% lagrange_nmem = zeros((max_pow-min_pow+1)/step, trials,length(distribution_vector));
 fail_nmem = zeros((max_pow-min_pow)/step, trials,length(distribution_vector));
 fail_nse = zeros((max_pow-min_pow)/step, trials,length(distribution_vector));
 lagrange_nse = zeros((max_pow-min_pow)/step, trials,length(distribution_vector));

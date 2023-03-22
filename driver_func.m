@@ -1,10 +1,10 @@
 
 function driver_func(distribution_vector,names,trials, min_pow,max_pow,cpu_n,cpp_code)
 
-
+% include function files
 addpath("functions/")
 
-% JOB ARRAY VARIABLES ------------------------
+% JOB ARRAY VARIABLES -----------------------------------------------------
 
 % cast characters to strings or to ints for relevant variables
 distribution_vector = string(distribution_vector)
@@ -15,17 +15,41 @@ max_pow = str2num(max_pow)
 cpu_n = str2num(cpu_n)
 cpp_code = string(cpp_code)
 
-% create parallel process with given parameters
-parpool('Processes', cpu_n, 'IdleTimeout', 180)
+%%%%%%%%%%%%%%%%% COMMENT OUT IF RUNNING LOCALLY %%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%---------------------------------------------
+% create parallel process on cluster
 
+% create a local cluster object
+pc = parcluster('local')
+ 
+% explicitly set the JobStorageLocation to the temp directory that was
+% created in your sbatch script
+pc.JobStorageLocation = strcat('/home/zmerino/.matlab/temp_cluster_jobs/', getenv('SLURM_JOB_ID'))
+
+% start the matlabpool with maximum available workers
+% control how many workers by setting ntasks in your sbatch script
+poolobj = gcp('nocreate'); % get the pool object, and do it avoiding creating a new one.
+if isempty(poolobj) % check if there is not a pool.
+    % create parallel process with given parameters
+    parpool(pc, str2num(getenv('SLURM_CPUS_ON_NODE')), 'IdleTimeout', Inf)
+else
+    delete( gcp('nocreate')); % delete the current pool object.
+    % create parallel process with given parameters
+    parpool(pc, str2num(getenv('SLURM_CPUS_ON_NODE')), 'IdleTimeout', Inf)
+end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% add C++ code mex file to workspace
 addpath(cpp_code)
 parent_dir = 'data_wall'
-dir_name = fullfile(parent_dir,sprintf('%s_cpu_%d_t_%d', distribution_vector, cpu_n, trials))
+% location to save data
+write_dir = fullfile(parent_dir,sprintf('%s_cpu_%d_t_%d', distribution_vector, cpu_n, trials))
+% name of data table to save
 table_name = sprintf('%s_cpu_%d_t_%d.dat', distribution_vector, cpu_n, trials)
 
-status = mkdir(dir_name);
+% make directory if doesn't exist
+status = mkdir(write_dir);
 
 % class assignment
 actual = distributions;
@@ -332,8 +356,8 @@ for j = 1:length(distribution_vector)
             '_s_',num2str(sample_vec(k))];
 
         % add -v7.3 to save mat files larger than 2GB
-        save(fullfile(dir_name,['nse_', filename, '.mat']), 'nse_pdf_data','-v7.3')
-        save(fullfile(dir_name,['nmem_', filename, '.mat']), 'nmem_pdf_data','-v7.3')
+        save(fullfile(write_dir,['nse_', filename, '.mat']), 'nse_pdf_data','-v7.3')
+        save(fullfile(write_dir,['nmem_', filename, '.mat']), 'nmem_pdf_data','-v7.3')
     end
 
     % cpu time

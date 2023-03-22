@@ -3,13 +3,8 @@ close all;
 
 addpath("functions/")
 addpath("functions_plotting/")
-% addpath("data/")
-addpath("data_2/")
-
 
 publicationQuality();
-
-
 save_figs = true;
 
 % dir_name = fullfile('figures_manuscript','cpu_v1');

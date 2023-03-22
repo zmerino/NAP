@@ -318,8 +318,6 @@ classdef NAP
 
 
                     tempStruc.partition = 0;                   % {any number, zero for no partitioning}
-                    %                 tempStruc.debug = false;                   % {true, false}
-                    %                 tempStruc.scoreType = 'QZ';                % {'QZ', 'LL'}
                     tempStruc.outlierCutoff = 0;               % {number >= 0, zero to keep all outliers}
 
                     bounds{b} = tempStruc;
