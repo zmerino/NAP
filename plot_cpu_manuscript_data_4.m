@@ -7,11 +7,14 @@ addpath("data_2/")
 
 save_figs = true;
 
-dir_name = fullfile('figures_manuscript','cpu_v1');
+% dir_name = fullfile('figures_manuscript','cpu_v1');
+dir_name = fullfile('figures_manuscript_test','cpu_v1');
 status = mkdir(dir_name);
 
 % Import data table
-filename = fullfile('data_3','meta_data_100.dat');
+% filename = fullfile('data_3','meta_data_100.dat');
+filename = fullfile('data_test', 'meta_data_4.dat');
+filename = fullfile('data_4', 'meta_data_100.dat');
 
 data = readtable(filename);
 
@@ -45,6 +48,11 @@ labels = {'$2^{8}$', '$2^{9}$', '$2^{10}$', '$2^{11}$', '$2^{12}$',...
     '$2^{18}$', '$2^{19}$', '$2^{20}$', '$2^{21}$', '$2^{22}$'};
 label_val = [8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
 
+
+% names = [ "Beta(0.5,0.5)"];
+% labels = {'$2^{13}$', '$2^{14}$', '$2^{15}$', '$2^{16}$', '$2^{17}$'};
+% label_val = [13,14,15,16,17];
+
 % labels = {'$2^{8}$', '$2^{9}$', '$2^{10}$', '$2^{11}$', '$2^{12}$',...
 %     '$2^{13}$', '$2^{14}$', '$2^{15}$', '$2^{16}$', '$2^{17}$',...
 %     '$2^{18}$', '$2^{19}$', '$2^{20}$', '$2^{21}$', '$2^{22}$',...
@@ -65,6 +73,17 @@ if save_figs
 end
 
 
+fig_name = 'Wall Time';
+figure('Name',fig_name)
+b = boxchart(log(data.sample_power)/log(2), data.wall_time, 'GroupByColor',data.estimator);
+bp = gca;
+bp.XAxis.TickLabelInterpreter = 'latex';
+xlabel('$log_{2}(N)$','Interpreter','latex')
+ylabel('Wall Time','Interpreter','latex')
+legend('Location','northwest')
+if save_figs
+    saveas(bp, fullfile('figures', [fig_name, '.png']))
+end
 
 fig_name = 'Failure Rate';
 figure('Name',fig_name)

@@ -17,11 +17,11 @@
 #SBATCH --mail-type=FAIL
 
 ### setup job array
-#SBATCH --array=1-2
+#SBATCH --array=1-10
 #SBATCH --output=job_array_%j.out
 
 # Specify the path to the config file
-config=/users/zmerino/nse_versions/nse_current/sh_scripts/config.txt
+config=/users/zmerino/nse_versions/nse_current/sh_scripts/config_archive_2.txt
 
 # Extract the variables for current $SLURM_ARRAY_TASK_ID
 distribution_vector=$(awk -v ArrayTaskID=$SLURM_ARRAY_TASK_ID '$1==ArrayTaskID {print $2}' $config)

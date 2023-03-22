@@ -1,12 +1,12 @@
 #!/bin/sh
 
 #SBATCH --partition=Orion
-#SBATCH --job-name=cpu_20
+#SBATCH --job-name=large_n
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=20        # cpu-cores per task (>1 if multi-threaded tasks)
+#SBATCH --cpus-per-task=40        # cpu-cores per task (>1 if multi-threaded tasks)
 #SBATCH --mem-per-cpu=4G
-#SBATCH --time=48:00:00 
+#SBATCH --time=96:00:00 
 
 ### email notification
 
@@ -17,11 +17,11 @@
 #SBATCH --mail-type=FAIL
 
 ### setup job array
-#SBATCH --array=1-2
-#SBATCH --output=job_array_%j.out
+#SBATCH --array=1-10
+#SBATCH --output=n_job_array_%j.out
 
 # Specify the path to the config file
-config=/users/zmerino/nse_versions/nse_current/sh_scripts/config.txt
+config=/users/zmerino/nse_versions/nse_current/sh_scripts/config_n.txt
 
 # Extract the variables for current $SLURM_ARRAY_TASK_ID
 distribution_vector=$(awk -v ArrayTaskID=$SLURM_ARRAY_TASK_ID '$1==ArrayTaskID {print $2}' $config)
@@ -33,7 +33,7 @@ cpu_n=$(awk -v ArrayTaskID=$SLURM_ARRAY_TASK_ID '$1==ArrayTaskID {print $7}' $co
 cpp_code=$(awk -v ArrayTaskID=$SLURM_ARRAY_TASK_ID '$1==ArrayTaskID {print $8}' $config)
 
 # Print to a file a message that includes the current $SLURM_ARRAY_TASK_ID, the same name, and the sex of the sample
-echo "This is array task ${SLURM_ARRAY_TASK_ID}, for variables: ${distribution_vector}, ${names}, ${trials}, ${max_pow}, ${min_pow}, ${cpu_n}, ${cpp_code}" >> job_array_output.txt
+echo "This is array task ${SLURM_ARRAY_TASK_ID}, for variables: ${distribution_vector}, ${names}, ${trials}, ${max_pow}, ${min_pow}, ${cpu_n}, ${cpp_code}" >> n_job_array_output.txt
 
 ### select version of Matlab
 VER=R2022b
@@ -43,5 +43,5 @@ module load matlab/${VER}
 cd /users/zmerino/nse_versions/nse_current
 
 ### Change Directory and run MainScript
-matlab -nodisplay -nosplash -r "driver_func ${distribution_vector} ${names} ${trials} ${min_pow} ${max_pow} ${cpu_n} ${cpp_code}"
+matlab -nodisplay -nosplash -r "driver_func_n ${distribution_vector} ${names} ${trials} ${min_pow} ${max_pow} ${cpu_n} ${cpp_code}"
 

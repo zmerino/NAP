@@ -2,10 +2,6 @@
 function driver_func(distribution_vector,names,trials, min_pow,max_pow,cpu_n,cpp_code)
 
 
-
-% disp(['Variables: ',distribution_vector,', ',names,', ',num2str(trials),', ',...
-%     num2str(min_pow),', ',num2str(max_pow),', ',num2str(cpu_n),', ',cpp_code])
-
 addpath("functions/")
 
 % JOB ARRAY VARIABLES ------------------------
@@ -19,11 +15,14 @@ max_pow = str2num(max_pow)
 cpu_n = str2num(cpu_n)
 cpp_code = string(cpp_code)
 
+% create parallel process with given parameters
+parpool('Processes', cpu_n, 'IdleTimeout', 180)
+
 %---------------------------------------------
 
 addpath(cpp_code)
-
-dir_name = fullfile('data',sprintf('%s_cpu_%d_t_%d', distribution_vector, cpu_n, trials))
+parent_dir = 'data_wall'
+dir_name = fullfile(parent_dir,sprintf('%s_cpu_%d_t_%d', distribution_vector, cpu_n, trials))
 table_name = sprintf('%s_cpu_%d_t_%d.dat', distribution_vector, cpu_n, trials)
 
 status = mkdir(dir_name);
@@ -116,6 +115,9 @@ for j = 1:length(distribution_vector)
     cpu_vec_se_parallel = zeros(length(sample_vec),trials);
     cpu_vec_se_serial = zeros(length(sample_vec),trials);
     cpu_vec_nmem = zeros(length(sample_vec),trials);
+    wall_vec_se_parallel = zeros(length(sample_vec),trials);
+    wall_vec_se_serial = zeros(length(sample_vec),trials);
+    wall_vec_nmem = zeros(length(sample_vec),trials);
     kl_vec_se = zeros(length(sample_vec),trials);
     kl_vec_nmem = zeros(length(sample_vec),trials);
     mse_vec_se = zeros(length(sample_vec),trials);
@@ -164,7 +166,10 @@ for j = 1:length(distribution_vector)
             rndom = dist_list(rndom);
             sample = rndom.rndData;
 
+            % cpu time
             tintialSE = cputime;
+            % wall time
+            tic
             % NAP PARALLEL ------------------------------------------------
             % nap object instantiation
             nap = NAP;
@@ -190,9 +195,13 @@ for j = 1:length(distribution_vector)
             BR0 = nap.BR0;
 
             tcpuSE_parallel = cputime-tintialSE;
+            twallSE_parallel = toc;
             fail_nse_parallel(k,i,j) = fail_code;
 
+            % cpu time
             tintialSE = cputime;
+            % wall time
+            tic
             % NAP PARALLEL ------------------------------------------------
             % nap object instantiation
             nse_serial = NAP;
@@ -218,6 +227,7 @@ for j = 1:length(distribution_vector)
             %             BR0 = nap.BR0;
 
             tcpuSE_serial = cputime-tintialSE;
+            twallSE_serial = toc;
 
             fail_nse_serial(k,i,j) = fail_code;
 
@@ -234,11 +244,15 @@ for j = 1:length(distribution_vector)
 
             % NMEM --------------------------------------------------------
             try
+                % cpu time
                 tintialNMEM = cputime;
+                % wall time
+                tic
                 % [FAILED, XI, F, CDF, SQR, LAGRANGE, SCORE, CONFIDENCE, SURD] = EstimatePDF(X)
                 [failed, x_NMEM, pdf_NMEM, cdf_NMEM,sqr_NMEM, lagrange_multipler,score, confidence, surd] = EstimatePDF(sample);
                 fail_nmem(k,i,j) = 0;
                 tcpuNMEM = cputime-tintialNMEM;
+                twallNMEM = toc;
 
                 n = length(sqr_NMEM);
                 dx = 1 / (n + 1);
@@ -252,6 +266,7 @@ for j = 1:length(distribution_vector)
                 fail_nmem(k,i,j) = 1;
                 % don't record cpu time if estimator failed
                 tcpuNMEM = NaN;
+                twallNMEM = NaN;
             end
 
             toc
@@ -289,8 +304,11 @@ for j = 1:length(distribution_vector)
 
             % store time of computation
             cpu_vec_se_parallel(k,i) = tcpuSE_parallel;
+            wall_vec_se_parallel(k,i) = twallSE_parallel;
             cpu_vec_se_serial(k,i) = tcpuSE_serial;
+            wall_vec_se_serial(k,i) = twallSE_serial;
             cpu_vec_nmem(k,i) = tcpuNMEM;
+            wall_vec_nmem(k,i) = twallNMEM;
 
             disp([char(actual.dist_name),...
                 ', Trial: ',num2str(i),'/', num2str(trials), ...
@@ -343,6 +361,13 @@ for j = 1:length(distribution_vector)
 
     sample_power = temp(:,1);
     cpu_time = temp(:,2);
+
+    % WALL TIME cpu_vec_se_serial
+    temp = vertcat(utils.reshape_groups(sample_vec',wall_vec_se_parallel),...
+        utils.reshape_groups(sample_vec',wall_vec_se_serial),...
+        utils.reshape_groups(sample_vec',wall_vec_nmem));
+
+    wall_time = temp(:,2);
 
     % Distributions
     distribution = repelem(distribution_vector(j), length(temp(:,2)))';
@@ -452,7 +477,7 @@ for j = 1:length(distribution_vector)
     blockscale = table(max_scale, min_scale, mean_scale, median_scale, std_scale);
 
     %     dist_table = table(distribution, name, estimator, sample_power, cpu_time, fail, lagrange, blocksize, blockscale);
-    dist_table = table(distribution, name, estimator, sample_power, cpu_time, fail, lagrange, avg_lagrange, blocksize, blockscale);
+    dist_table = table(distribution, name, estimator, sample_power, wall_time, cpu_time, fail, lagrange, avg_lagrange, blocksize, blockscale);
     dist_table = splitvars(dist_table);
 
     % append table per distribution to global table containing data for all
@@ -461,7 +486,7 @@ for j = 1:length(distribution_vector)
 
 end
 
-writetable(global_table,fullfile('data',table_name))
+writetable(global_table,fullfile(parent_dir,table_name))
 
 
 

@@ -8,8 +8,8 @@ addpath("functions_plotting/")
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% To Plot %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 plot_mse_dist = false;
-table_name = 'mse_kl_100.dat';
-write_dir = fullfile('data_4','kl_mse_data');
+table_name = 'mse_kl_1.dat';
+write_dir = fullfile('data_large_n','kl_mse_cpu_40_t_1');
 status = mkdir(write_dir);
 
 plot_pdf = true;
@@ -21,7 +21,7 @@ save_figs = false;
 calc_q = false;
 
 % figure directory
-fig_dir = fullfile('figures_manuscript','100_trials_v1');
+fig_dir = fullfile('figures_manuscript_large_n','1_trials');
 status = mkdir(fig_dir);
 
 % choose to visualise figures or not
@@ -34,8 +34,9 @@ actual = distributions;
 
 % Path to directory
 % dir_name = fullfile('data','pdf_estimates');
-dir_name = fullfile('data_4','cpu_20_t_100');
-write_name = fullfile('data_4','kl_mse_cpu_20_t_100');
+dir_name = fullfile('data_large_n','cpu_40_t_1');
+write_name = fullfile('data_large_n','kl_mse_cpu_40_t_1');
+status = mkdir(write_name);
 
 % Define the etimates to plot
 
@@ -43,6 +44,7 @@ write_name = fullfile('data_4','kl_mse_cpu_20_t_100');
 % n_vec = 2.^[8,9,10,11,12,13,14,15,16,17,18];
 n_vec = 2.^[14];
 n_vec = 2.^[8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
+n_vec = 2.^[8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27];
 % n_vec = 2.^[10,11,12,13,14,15,16,17,18,19,20,21,22];
 % n_vec = 2.^[8,,11,12,13];
 % n_vec = 2.^[10,15];
@@ -50,6 +52,7 @@ n_vec = 2.^[8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
 % d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
 % d_vec = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
 d_vec = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
+d_vec = ["Beta-a0p5-b1p5"];
 % d_vec = ["Trimodal-Normal","Uniform","Normal"];
 % d_vec = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto"];
 % d_vec = ["Normal"];
@@ -60,6 +63,7 @@ d_vec = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","B
 %     'Beta(2,0.5)', 'Beta(0.5,0.5)'}';
 % names = {'Beta(0.5,1.5)','Beta(2,0.5)', 'Beta(0.5,0.5)', 'Generalized-Pareto', 'Stable'}';
 names = ["Trimodal-Normal","Uniform","Normal","Beta(0.5,1.5)","Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto","Stable"];
+names = ["Beta(0.5,1.5)"];
 
 % d_vec = ["Beta-a0p5-b0p5","Generalized-Pareto"];
 % names = ["Beta(0.5,0.5)", "Generalized-Pareto"];
@@ -71,8 +75,8 @@ names = ["Trimodal-Normal","Uniform","Normal","Beta(0.5,1.5)","Beta(2,0.5)", "Be
 % names = ["Beta(0.5,1.5)","Beta(2,0.5)", "Beta(0.5,0.5)"];
 
 % Trials per sample
-trials = 100;
-plt_trials = 10;
+trials = 1;
+plt_trials = 1;
 % number of quantile segments
 qnum = 50;
 
@@ -111,52 +115,19 @@ for i = 1:length(d_vec)
 
             % Load data from estimate directory
             load(fullfile(dir_name,['nse_',num2str(d_vec(i)),'_t_',num2str(trials),'_s_', num2str(n_vec(j)),'.mat']));
-            load(fullfile(dir_name,['nmem_',num2str(d_vec(i)),'_t_',num2str(trials),'_s_', num2str(n_vec(j)),'.mat']));
 
             % x
             nse_data = nse_pdf_data;
-            nmem_data = nmem_pdf_data;
 
             nap_x = nse_data{2,k}'; % make sure column vector
-            nmem_x = nmem_data{2,k};
 
             % pdf
             nap_pdf = nse_data{3,k}'; % make sure column vector
-            nmem_pdf = nmem_data{3,k};
 
             % cdf
             nap_cdf = utils_analysis.trapz(nse_data{2,k}, nse_data{3,k});
-            nmem_cdf = utils_analysis.trapz(nmem_data{2,k}, nmem_data{3,k});
 
             % calcualte kl,mse,quantile -----------------------------------
-            % NMEM --------------------------------------------------------
-            xs = nmem_x;
-            fs = nmem_pdf;
-            Fs = nmem_cdf;
-            % get actual distribution
-            actual.min_limit = min(xs);
-            actual.max_limit = max(xs);
-            actual.x = xs;
-            actual = actual.dist_list();
-
-            if sum(~isfinite(xs)) || sum(~isfinite(fs))|| sum(~isfinite(Fs))
-                warning('non-finite values')
-                test = 'test';
-            end
-
-            % MSE per quantile
-            if calc_q
-                [mse_dist_nmem_per_q(:,k), quantiles,xq,fq] = utils_analysis.quant_metric(xs, fs, Fs, qnum, d_vec(i),'MSE');
-            end
-            % MSE per trial
-            mse_dist_nmem(j, k) = utils_analysis.mse(actual.pdf_y, fs);
-            % KL per quantile
-            if calc_q
-                [kl_dist_nmem_per_q(:,k), ~,~,~] = utils_analysis.quant_metric(xs, fs, Fs, qnum, d_vec(i),'KL');
-            end
-            % KL per trial
-            kl_dist_nmem(j, k) = utils_analysis.kl(actual.pdf_y, fs');
-
 
             % NAP ------------------------------------------------------
             %
@@ -195,12 +166,10 @@ for i = 1:length(d_vec)
             filename = sprintf('kl_per_q_%s_n_%s_t_%s.mat',d_vec(i), num2str(n_vec(j)), num2str(trials));
 
             save(fullfile(write_dir,['nse_', filename]), 'kl_dist_nse_per_q')
-            save(fullfile(write_dir,['nmem_', filename]), 'kl_dist_nmem_per_q')
 
             filename = sprintf('mse_per_q_%s_n_%s_t_%s.mat',d_vec(i), num2str(n_vec(j)), num2str(trials));
 
             save(fullfile(write_dir,['nse_', filename]), 'mse_dist_nse_per_q')
-            save(fullfile(write_dir,['nmem_', filename]), 'mse_dist_nmem_per_q')
         end
 
 
@@ -210,15 +179,13 @@ for i = 1:length(d_vec)
 
 
     % MSE
-    temp = vertcat(utils.reshape_groups(n_vec',mse_dist_nse),...
-        utils.reshape_groups(n_vec',mse_dist_nmem));
+    temp = utils.reshape_groups(n_vec',mse_dist_nse);
 
     sample_power = temp(:,1);
     mse_total = temp(:,2);
 
     % KL
-    temp = vertcat(utils.reshape_groups(n_vec',kl_dist_nse),...
-        utils.reshape_groups(n_vec',kl_dist_nmem));
+    temp = utils.reshape_groups(n_vec',kl_dist_nse);
 
     kl_total = temp(:,2);
 
@@ -227,10 +194,9 @@ for i = 1:length(d_vec)
     name = repelem(names(i), length(temp(:,2)))';
 
     nse_label = repelem(["NAP"], size(utils.reshape_groups(n_vec',mse_dist_nse), 1));
-    nmem_label = repelem(["NMEM"], size(utils.reshape_groups(n_vec',mse_dist_nmem), 1));
 
 
-    estimator = vertcat(nse_label', nmem_label');
+    estimator = nse_label';
 
 
     dist_table = table(distribution, name, estimator, sample_power, mse_total,kl_total);
@@ -243,3 +209,5 @@ end
 
 
 writetable(global_table,fullfile(write_dir,table_name))
+
+test = 'test'

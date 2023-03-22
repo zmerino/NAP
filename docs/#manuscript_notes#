@@ -2,9 +2,13 @@
 
 Figures:
 1) normal/tri-modal 512 and 32k samples size
-2) trimodal-normal block distrobution along with threshold iteration
+2) trimodal-normal block distibution along with threshold iteration
 3) xi verse partion - optimal search
-4)
+4) theoretical threshold
+5) cpu times
+6) KL/MSE
+7) MSE/KL vs quantile
+8) KDE and NAP
 
 
 

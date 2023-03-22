@@ -1,13 +1,5 @@
 classdef NAP
     properties (Constant)
-        %         p1 = 1;
-        %         p2 = 0.5;
-        %         p3 = 1;
-        %         p4 = 1/3;
-        %         p5 = 2;
-        %         p6 = 0.0625;
-        %         p7 = 0.5;
-        %         p8 = 40;
         p1 = 1;
         p2 = 0.55;
         p3 = 1;
@@ -74,6 +66,10 @@ classdef NAP
                 obj.failed = 0;
 
                 % Script Detailed output %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                save_figs = true;
+                if ~exist('plt_stitchpdf','var')
+                    plt_stitchpdf = false;
+                end
                 if ~exist('plt_blocksize','var')
                     plt_blocksize = false;
                 end
@@ -83,6 +79,8 @@ classdef NAP
                 if ~exist('plt_stitchpdf','var')
                     plt_stitchpdf = false;
                 end
+
+%                 plt_stitchpdf = true;
 
                 %%                                                              user input      section 1
                 targetCoverage = obj.trgt_SURD;
@@ -340,21 +338,46 @@ classdef NAP
                 else
                     parforArg = Inf;
                 end
-                parfor (b=1:obj.nBlocks, parforArg)
-                    lagrange = [];
-                    for t=1:nTargets
-                        try
-                            [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b}, bounds{b});
-                        catch
-                            warning(['Problem using function.  Assigning a value of 0.',' t: ',num2str(t),' b: ',num2str(b)]);
-                            lagrange = 0;
-                            targetBlock{t,b}.data(:,1) = linspace(min(MatPDFsample{b}),max(MatPDFsample{b}),100);
-                            targetBlock{t,b}.data(:,2) = 0*ones(100,1);
-                            targetBlock{t,b}.data(:,3) = 0*ones(100,1);
+%                 parfor (b=1:obj.nBlocks, parforArg)
+
+                if serial
+                    for b=1:obj.nBlocks
+                        lagrange = [];
+                        for t=1:nTargets
+                            try
+                                [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b}, bounds{b});
+                            catch
+                                warning(['Problem using function.  Assigning a value of 0.',' t: ',num2str(t),' b: ',num2str(b)]);
+                                lagrange = 0;
+                                targetBlock{t,b}.data(:,1) = linspace(min(MatPDFsample{b}),max(MatPDFsample{b}),100);
+                                targetBlock{t,b}.data(:,2) = 0*ones(100,1);
+                                targetBlock{t,b}.data(:,3) = 0*ones(100,1);
+                            end
+                            LG(1,b) = size(lagrange,1);
+                            LG_vals{b} = lagrange;
                         end
-                        LG(1,b) = size(lagrange,1);
-                        LG_vals{b} = lagrange;
                     end
+                else
+                    ticBytes(gcp);
+                    parfor b=1:obj.nBlocks
+                        lagrange = [];
+                        for t=1:nTargets
+                            try
+                                [~, targetBlock{t,b}.data(:,1), targetBlock{t,b}.data(:,2), targetBlock{t,b}.data(:,3), ~,lagrange] = EstimatePDF(MatPDFsample{b}, bounds{b});
+                            catch
+                                warning(['Problem using function.  Assigning a value of 0.',' t: ',num2str(t),' b: ',num2str(b)]);
+                                lagrange = 0;
+                                targetBlock{t,b}.data(:,1) = linspace(min(MatPDFsample{b}),max(MatPDFsample{b}),100);
+                                targetBlock{t,b}.data(:,2) = 0*ones(100,1);
+                                targetBlock{t,b}.data(:,3) = 0*ones(100,1);
+                            end
+                            LG(1,b) = size(lagrange,1);
+                            LG_vals{b} = lagrange;
+                        end
+                    end
+                    mem_bytes = tocBytes(gcp);
+
+                    fprintf('Mega Bytes per parfor: %.2i MB\n', mem_bytes*1e-6)
                 end
 
                 % track meta data
@@ -403,7 +426,11 @@ classdef NAP
                 obj.blocks_cdf = blockCDF;
                 obj.block_indx = indexList;
                 if plt_blockpdf
-                    figure('Name','plt_blockpdf')
+
+                    fig_dir = fullfile('figures_manuscript','obt_figs');
+
+                    fig_name = 'plt_blockpdf';
+                    figure('Name',fig_name)
                     hold on
                     for b=1:length(indexList)
                         plot( obj.blocks_x{obj.block_indx(b)} , obj.blocks_pdf{obj.block_indx(b)} )
@@ -414,6 +441,11 @@ classdef NAP
                         ylim([0,6])
                     else
                         ylim([0,1])
+                    end
+                    bp = gca;
+                    if save_figs
+                        saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                        saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
                     end
                 end
 
@@ -625,7 +657,11 @@ classdef NAP
 
 
                         if plt_stitchpdf
-                            figure('Name','CDF & PDF Stitching')
+                            fig_dir = fullfile('figures_manuscript','obt_figs');
+                            publicationQuality();
+
+                            fig_name = ['cdf_pdf_stitching_b_',num2str(b)];
+                            figure('Name',fig_name)
                             subplot(1,3,1)
                             plot(xStitch,f_lower,'r');
                             hold on;
@@ -650,6 +686,103 @@ classdef NAP
                             xlabel('x','Interpreter','latex')
                             %         legend('$\hat{f}_k(x)$','$\hat{f}_{k+1}(x)$','CDF-Stitch $\hat{f}_s(x)$',Interpreter='latex')
                             title('(c)','Interpreter','latex')
+                            bp = gca;
+                            if save_figs
+                                saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                                saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
+                            end
+
+                            set(0,'DefaultFigureColor','white')
+%                             fig.InvertHardcopy = 'off';
+                            width = 2;                                                                 % Width in inches
+                            height = 4;                                                                % Height in inches
+                            alw = 1.5;                                                                 % AxesLineWidth 
+                            fsz = 14;                                                                  % Fontsize 
+                            lw = 1.5;                                                                  % LineWidth 
+                            msz = 8;                                                                   % MarkerSize 
+                            set(0,'defaultAxesFontSize',fsz); 
+                            set(0,'defaultLineLineWidth',lw);   
+                            set(0,'defaultLineMarkerSize',msz); 
+                            set(0,'defaultAxesLineWidth',alw);
+                            defpos = get(0,'defaultFigurePosition');
+                            set(0,'defaultFigurePosition', [defpos(1) defpos(2) width*100, height*100]); 
+                            set(0,'defaultFigurePosition', [400, 50, width*100, height*110]); 
+
+                            fig_name = ['cdf_pdf_stitching_cdf_b_',num2str(b)];
+                            figure('Name',fig_name)
+                            plot(xStitch,f_lower,'r');
+                            hold on;
+                            plot(xStitch,f_upper,'b');
+                            ylabel('$\hat{F}(x)$','Interpreter','latex')
+                            xlabel('$x$','Interpreter','latex')
+                            bp = gca;
+                            if save_figs
+                                saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                                saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
+                            end
+                            %----------------------------------------------
+                            fig_name = ['cdf_pdf_stitching_stitches_b_',num2str(b)];
+                            figure('Name',fig_name)
+                            plot(xStitch,PDFlower,'r');
+                            hold on;
+                            plot(xStitch,PDFupper,'b');
+                            plot(xStitch,stitchPDF,'k');
+                            ylabel('$\hat{f}(x)$','Interpreter','latex')
+                            xlabel('$x$','Interpreter','latex')
+                            bp = gca;
+                            if save_figs
+                                saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                                saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
+                            end
+                            %----------------------------------------------
+                            fig_name = ['cdf_pdf_stitching_stitched_b_',num2str(b)];
+                            figure('Name',fig_name)
+                            plot(xStitch,stitchPDF,'k');
+                            ylabel('$\hat{f}(x)$','Interpreter','latex')
+                            xlabel('$x$','Interpreter','latex')
+                            bp = gca;
+                            if save_figs
+                                saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                                saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
+                            end
+
+
+                            set(0,'DefaultFigureColor','white')
+                            %                             fig.InvertHardcopy = 'off';
+                            width = 4;                                                                 % Width in inches
+                            height = 4;                                                                % Height in inches
+                            alw = 1.5;                                                                 % AxesLineWidth
+                            fsz = 14;                                                                  % Fontsize
+                            lw = 1.5;                                                                  % LineWidth
+                            msz = 8;                                                                   % MarkerSize
+                            set(0,'defaultAxesFontSize',fsz);
+                            set(0,'defaultLineLineWidth',lw);
+                            set(0,'defaultLineMarkerSize',msz);
+                            set(0,'defaultAxesLineWidth',alw);
+                            defpos = get(0,'defaultFigurePosition');
+                            set(0,'defaultFigurePosition', [defpos(1) defpos(2) width*100, height*100]);
+                            set(0,'defaultFigurePosition', [400, 50, width*100, height*110]);
+
+
+                            %----------------------------------------------
+                            fig_name = ['cdf_pdf_stitching_stitches_wide_b_',num2str(b)];
+                            figure('Name',fig_name)
+                            plot(xStitch,PDFlower,'r');
+                            hold on;
+                            plot(xStitch,PDFupper,'b');
+                            plot(xStitch,stitchPDF,'k');
+                            ylabel('$\hat{f}(x)$','Interpreter','latex')
+                            xlabel('$x$','Interpreter','latex')
+                            bp = gca;
+                            if save_figs
+                                saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                                saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
+                            end
+
+
+                            publicationQuality();
+
+
                         end
 
 

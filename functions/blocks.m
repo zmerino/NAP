@@ -4,7 +4,8 @@ classdef blocks < NAP % inherit NAP properties i.e. p vector and max block size
         plt_figs = false;
         % plot xi values per parition or number of branches per level
         plt_xi = false;
-        plt_tree = true;
+        plt_tree = false;
+        save_figs = false;
     end
     properties
         sample;
@@ -113,21 +114,33 @@ classdef blocks < NAP % inherit NAP properties i.e. p vector and max block size
                             b_right = [];
                             br_left = [];
                             br_right = [];
+
+
+                            hw = waitbar(0,'Calculate Left Partions: ');
+
                             x_partition_left = [];
-                            for n = 2*obj.window:Ns-2*obj.window
+                            for n = 2*obj.window:obj.Ns-2*obj.window
+
+                                waitbar(n /obj.Ns,hw, sprintf('Calculate Left Partions: %i/%i',n, obj.Ns));
                                 B0 = n;
                                 b_left = [b_left, B0];
-                                R0 = obj.get_ratio(sample(1:B0),obj.window);
+                                R0 = obj.get_ratio(obj, obj.sample(1:B0));
                                 r_left = [r_left, R0];
                                 BR0 = obj.br_product(obj, B0, R0, obj.Ns);
                                 br_left = [br_left, BR0];
                                 x_partition_left = [x_partition_left, n];
                             end
+
+                            hw = waitbar(0,'Calculate Right Partions: ');
+
                             x_partition_right = [];
-                            for n = 2*obj.window:Ns-2*obj.window
+                            for n = 2*obj.window:obj.Ns-2*obj.window
+
+                                waitbar(n /obj.Ns,hw, sprintf('Calculate Right Partions: %i/%i',n, obj.Ns));
+
                                 B0 = n;
                                 b_right = [b_right, B0];
-                                R0 = obj.get_ratio(sample(end-B0:end),obj.window);
+                                R0 = obj.get_ratio(obj, obj.sample(end-B0:end));
                                 r_right = [r_right, R0];
                                 BR0 = obj.br_product(obj, B0, R0, obj.Ns);
                                 br_right = [br_right, BR0];
@@ -148,13 +161,25 @@ classdef blocks < NAP % inherit NAP properties i.e. p vector and max block size
                             xlabel('Partition', Interpreter='latex')
                             ylabel('Block Size', Interpreter='latex')
 
-                            figure('Name', 'BR verse partition')
+            
+                            fig_dir = fullfile('figures_manuscript','obt_figs');
+            
+                            fig_name = 'br_verse_partition';
+                            figure('Name',fig_name)
                             hold on;
                             plot(x_partition_left, br_left, '--b')
                             plot(x_partition_right, br_right, '--r')
                             plot(x_partition_right, abs(br_right-flip(br_left)), '-k')
                             xlabel('Partition', Interpreter='latex')
-                            ylabel('$| \delta \xi |$', Interpreter='latex')
+                            ylabel('$| \Delta \xi |$', Interpreter='latex')
+                            xlim([min(x_partition_right),max(x_partition_right)])
+                            bp = gca;
+                            bp.YAxis.Exponent = 3;
+                            bp.XAxis.Exponent = 3;
+                            if obj.save_figs
+                                saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                                saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
+                            end
                         end
 
                         % find minimum BR for two newly created blocks
@@ -228,9 +253,13 @@ classdef blocks < NAP % inherit NAP properties i.e. p vector and max block size
 
             % FIGURES -----------------------------------------------------
             if obj.plt_figs && obj.plt_tree
-                figure('Name','br values per level 1')
+                
+                fig_dir = fullfile('figures_manuscript','obt_figs');
+
+                fig_name = 'br_values_per_level';
+                figure('Name',fig_name)
                 hold on
-                plot(0:size(plevel,1)-1,log(T*ones(size(plevel,1))), '-r');
+                plot(0:size(plevel,1)-1,log(T*ones(size(plevel,1))), '--r');
                 for k = 1:size(BRlevel,1)
                     plot((k-1)*ones(size(BRlevel{k,1}(1,:),1),1), log(BRlevel{k,1}(1,:)),...
                         'o',...
@@ -245,14 +274,30 @@ classdef blocks < NAP % inherit NAP properties i.e. p vector and max block size
                 end
                 xticks(levelTrack)
                 xticklabels(str)
-                ylabel('ln(BR)')
-                xlabel('Tree Level')
-                legend('Threshold')
+                ylabel('ln($\xi$)', 'Interpreter','latex')
+                xlabel('Tree Level', 'Interpreter','latex')
+                legend('$\Gamma$', 'Interpreter','latex')
+                bp = gca;
+                if obj.save_figs
+                    saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                    saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
+                end
 
-                figure('Name','tree branching')
+                % set common x limits for subplots
+                sample_boundry = obj.sample(pdiff{1,1}(:,1));
+                x_min = min(sample_boundry);
+                x_max = max(sample_boundry);
+
+                fig_name = 'tree_branching';
+                figure('Name',fig_name)
                 subplot(2,1,1)
                 histogram(obj.sample)
-                ylabel('Number of Data Points','Interpreter','latex')
+                bp = gca;
+%                 bp.YAxis.Scale ="log";
+                bp.YAxis.Exponent = 3;
+                ylabel('Number per Bin','Interpreter','latex')
+                xlim([x_min x_max])
+
 
                 subplot(2,1,2)
                 hold on
@@ -303,6 +348,13 @@ classdef blocks < NAP % inherit NAP properties i.e. p vector and max block size
                 yticklabels(str)
                 xlabel('x Range','Interpreter','latex')
                 ylabel('Tree Level','Interpreter','latex')
+                xlim([x_min x_max])
+
+                bp = gca;
+                if obj.save_figs
+                    saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                    saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
+                end
             end
 
 

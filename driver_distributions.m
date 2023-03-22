@@ -8,12 +8,16 @@ addpath("functions_plotting/")
 addpath("cpp_code/")
 % addpath("cpp_code_smooth/")
 
+nap = NAP;
+NAP
+
 publicationQuality();
 
 % figure directory
 sub_dir = 'pset7';
-fig_dir = fullfile('figures','hyper_parameters',sub_dir);
+fig_dir = fullfile('figures_manuscript','obt_figs');
 status = mkdir(fig_dir);
+fig_save = true;
 
 % class assignment
 actual = distributions;
@@ -24,11 +28,11 @@ actual.generate_data = false;
 estimator_call_flag =       false;   %<- true/false call SE on/off
 estimator_plot_flag =       false;   %<- true/false plot SE results on/off
 data_type_flag =            false;   %<- true/false integer powers of 2/real powers of 2
-save_figs =                 false;   %<- true/false save .png of plots on/off
+save_figs =                 true;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   9; %<---- maximum exponent to generate samples
-min_pow =                   9; %<---- minimum exponent to generate samples
-trials =                    10   ;  %<--- trials to run to generate heuristics for programs
+max_pow =                   13; %<---- maximum exponent to generate samples
+min_pow =                   13  ; %<---- minimum exponent to generate samples
+trials =                    1   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -59,9 +63,17 @@ names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", 
 % names = [ "Normal","Beta(0.5,0.5)","Stable1"];
 % 
 % 
-% distribution_vector = ["Normal","Beta-a0p5-b0p5"];
-% distribution = distribution_vector';
-% names = [ "Normal","Beta(0.5,0.5)"];
+distribution_vector = ["Normal","Trimodal-Normal","Beta-a0p5-b0p5"];
+distribution = distribution_vector';
+names = [ "Normal","Trimodal-Normal","Beta(0.5,0.5)"];
+
+distribution_vector = ["Trimodal-Normal"];
+distribution = distribution_vector';
+names = ["Trimodal-Normal"];
+
+distribution_vector = ["Normal"];
+distribution = distribution_vector';
+names = ["Normal"];
 % 
 % 
 % 
@@ -258,7 +270,8 @@ for j = 1:length(distribution_vector)
             BRlevel = nap.BRlevel;
             BR0 = nap.BR0;
 
-            figure('Name','plt_blockpdf')
+            fig_name = [sub_dir,'_plt_blockpdf_d_',convertStringsToChars(distribution_vector(j)),'_s_',num2str(sample_vec(k))];
+            figure('Name',fig_name)
             hold on
             for b=1:length(nap.block_indx)
                 plot( nap.blocks_x{nap.block_indx(b)} , nap.blocks_pdf{nap.block_indx(b)} )
@@ -269,6 +282,11 @@ for j = 1:length(distribution_vector)
                 ylim([0,6])
             else
                 ylim([0,1])
+            end
+            bp = gca;
+            if save_figs
+                saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
             end
 
             tcpuSE = cputime-tintialSE;
@@ -410,11 +428,11 @@ for j = 1:length(distribution_vector)
         figure('Name',fig_name)
         hold on;
         for i = 1:trials
-            nmem_h = plot(nmem_pdfs{j,i,k,1}, nmem_pdfs{j,i,k,2}, '-','Color',[0 0 0]+0.8, DisplayName='pdf nmem');
+%             nmem_h = plot(nmem_pdfs{j,i,k,1}, nmem_pdfs{j,i,k,2}, '-','Color',[0 0 0]+0.8, DisplayName='pdf nmem');
             nse_h = plot(nse_pdfs{j,i,k,1}, nse_pdfs{j,i,k,2}, '-k', DisplayName='pdf nap');
         end
-        xlabel('x')
-        ylabel('f(x)')
+        xlabel('$x$','Interpreter','latex')
+        ylabel('$\hat{f}(x)$','Interpreter','latex')
         if max(nse_pdfs{j,1,1,1}) > 20
             xlim([0,20])
         end
@@ -423,10 +441,11 @@ for j = 1:length(distribution_vector)
         else
             ylim([0,1])
         end
-        legend([nmem_h(1),nse_h(1)],'Location','best')
+%         legend([nmem_h(1),nse_h(1)],'Location','best')
         bp = gca;
         if save_figs
             saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+            saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
         end
     end
     

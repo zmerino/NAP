@@ -7,51 +7,27 @@ publicationQuality();
 
 
 plot_mse_dist = false;
-table_name = 'mse_kl_100.dat';
-write_dir = fullfile('data_3','kl_mse_data');
-fig_dir = fullfile('figures_manuscript','kl_mse_quantiles');
 
-
-table_name = 'mse_kl_100.dat';
-write_dir = fullfile('data_3','kl_mse_data');
+fig_dir = fullfile('figures_manuscript_n','kl_mse_quantiles');
+table_name = 'mse_kl_1.dat';
+write_dir = fullfile('data_large_n','kl_mse_cpu_40_t_1');
 
 status = mkdir(write_dir);
 status = mkdir(fig_dir);
 
 save_figs = true;
 
-
-
-
 data = readtable(fullfile(write_dir,table_name));
 data_nap = data('NAP'==convertCharsToStrings(data.estimator),:);
-data_nmem = data('NMEM'==convertCharsToStrings(data.estimator),:);
 
 
-names = ["Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)"];
-
-labels = {'$2^{8}$', '$2^{9}$', '$2^{10}$', '$2^{11}$', '$2^{12}$',...
-    '$2^{13}$', '$2^{14}$', '$2^{15}$', '$2^{16}$', '$2^{17}$', '$2^{18}$'};
-label_val = [8,9,10,11,12,13,14,15,16,17,18];
-
+d_vec = ["Beta-a0p5-b1p5"];
+names = ["Beta(0.5,1.5)"];
 labels = {'$2^{10}$', '$2^{11}$', '$2^{12}$',...
     '$2^{13}$', '$2^{14}$', '$2^{15}$', '$2^{16}$', '$2^{17}$',...
-    '$2^{18}$', '$2^{19}$', '$2^{20}$', '$2^{21}$', '$2^{22}$'};
-n_vec = 2.^[10,11,12,13,14,15,16,17,18,19,20,21,22];
-
-
-d_vec = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
-names = ["Trimodal-Normal","Uniform", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
-labels = {'$2^{8}$', '$2^{9}$', '$2^{10}$', '$2^{11}$', '$2^{12}$',...
-    '$2^{13}$'};
-n_vec = 2.^[10,11,12,13];
-
-
-names = ["Trimodal-Normal","Uniform", "Normal", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
-labels = {'$2^{10}$', '$2^{11}$', '$2^{12}$',...
-    '$2^{13}$', '$2^{14}$', '$2^{15}$', '$2^{16}$', '$2^{17}$',...
-    '$2^{18}$', '$2^{19}$', '$2^{20}$', '$2^{21}$', '$2^{22}$'};
-n_vec = 2.^[8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
+    '$2^{18}$', '$2^{19}$', '$2^{20}$', '$2^{21}$', '$2^{22}$',...
+    '$2^{23}$', '$2^{24}$', '$2^{25}$', '$2^{26}$', '$2^{27}$'};
+n_vec = 2.^[8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27];
 
 % labels = {'$2^{10}$', '$2^{15}$'};
 % label_val = [10,15];
@@ -168,19 +144,6 @@ if plot_q
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MSE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-fig_name = 'MSE All Distributions';
-figure('Name',fig_name)
-b = boxchart(log(data.sample_power)/log(2), data.mse_total, 'GroupByColor',data.estimator);
-bp = gca;
-bp.XAxis.TickLabelInterpreter = 'latex';
-xlabel('$log_{2}(N)$','Interpreter','latex')
-ylabel('MSE','Interpreter','latex')
-legend('Location','northwest')
-if save_figs
-    saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
-    saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
-end
-
 fig_name = 'NAP MSE Per Distribution';
 figure('Name',fig_name)
 b = boxchart(log(data_nap.sample_power)/log(2), data_nap.mse_total, 'GroupByColor',data_nap.distribution);
@@ -193,20 +156,6 @@ if save_figs
     saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
     saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
 end
-
-fig_name = 'NMEM MSE Per Distribution';
-figure('Name',fig_name)
-b = boxchart(log(data_nmem.sample_power)/log(2), data_nmem.mse_total, 'GroupByColor',data_nmem.distribution);
-bp = gca;
-bp.XAxis.TickLabelInterpreter = 'latex';
-xlabel('$log_{2}(N)$','Interpreter','latex')
-ylabel('MSE','Interpreter','latex')
-legend('Location','northwest')
-if save_figs
-    saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
-    saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
-end
-
 
 
 for idx = 1:length(names)
@@ -236,36 +185,9 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% KL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-fig_name = 'KL All Distributions';
-figure('Name',fig_name)
-b = boxchart(log(data.sample_power)/log(2), data.kl_total, 'GroupByColor',data.estimator);
-bp = gca;
-bp.XAxis.TickLabelInterpreter = 'latex';
-xlabel('$log_{2}(N)$','Interpreter','latex')
-ylabel('KL','Interpreter','latex')
-legend('Location','northwest')
-if save_figs
-    saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
-    saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
-end
-
-
 fig_name = 'NAP KL Per Distribution';
 figure('Name',fig_name)
 b = boxchart(log(data_nap.sample_power)/log(2), data_nap.kl_total, 'GroupByColor',data_nap.distribution);
-bp = gca;
-bp.XAxis.TickLabelInterpreter = 'latex';
-xlabel('$log_{2}(N)$','Interpreter','latex')
-ylabel('KL','Interpreter','latex')
-legend('Location','northwest')
-if save_figs
-    saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
-    saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
-end
-
-fig_name = 'NMEM KL Per Distribution';
-figure('Name',fig_name)
-b = boxchart(log(data_nmem.sample_power)/log(2), data_nmem.kl_total, 'GroupByColor',data_nmem.distribution);
 bp = gca;
 bp.XAxis.TickLabelInterpreter = 'latex';
 xlabel('$log_{2}(N)$','Interpreter','latex')

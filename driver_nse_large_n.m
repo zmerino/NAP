@@ -3,14 +3,9 @@
 clc;clear all; close all;
 
 addpath("functions/")
-addpath("compile_nmem_mv/")
+addpath("cpp_code/")
 
-
-fid = fopen(full_file, 'w');
-fprintf(fid,['Cpu failure distance script started on: ',datestr(datetime(now,'ConvertFrom','datenum')),'/n']);
-fclose(fid);
-
-dir_name = fullfile('data','nse_pdf_estimates');
+dir_name = fullfile('data_large_n','nse_pdf_estimates');
 status = mkdir(dir_name);
 
 % class assignment
@@ -23,7 +18,7 @@ data_type_flag =            true;   %<- true/false integer powers of 2/real powe
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 max_pow =                   27; %<---- maximum exponent to generate samples
 min_pow =                   8; %<---- minimum exponent to generate samples
-trials =                    3   ;  %<--- trials to run to generate heuristics for programs
+trials =                    10   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
 actual.min_limit =          temp_min_limit;  %<--- lower limit to plot
@@ -235,7 +230,7 @@ for j = 1:length(distribution_vector)
                 '_t_', num2str(trials), ...
                 '_s_',num2str(sample_vec(k))];
 
-        save(fullfile(dir_name,['nse_', filename, '.mat']), 'nse_pdf_data')
+        save(fullfile(dir_name,['nse_', filename, '.mat']), 'nse_pdf_data','-v7.3')
     end
 
     % cpu time

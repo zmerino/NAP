@@ -7,13 +7,14 @@ addpath("data_2/")
 save_figs = true;
 
 % Import data table
-file_dir = fullfile('data_3');
-write_data = fullfile('data_3', 'meta_data_100.dat');
+file_dir = fullfile('data_test');
+write_data = fullfile('data_test', 'meta_data_3.dat');
 
 % distribution_vector = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable","Stable2","Stable3"];
 distribution_vector = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
 % distribution_vector = ["Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5"];
-trials = 100;
+distribution_vector = ["Beta-a0p5-b0p5"];
+trials = 3;
 cpu_n = 20;
 
 large_table = table();
