@@ -1,4 +1,4 @@
-# Non-parametric Adaptive Parition (NAP) Desnity Estimation
+# Non-parametric Adaptive Parition (NAP) Density Estimation
 
 The NAP estimator adaptively paritions a sample of univariant data, finds PDF estimates for all of the paritioned samples, and stitches the estiamtes together using a data driven method. The NAP estimator was developed for applications to large datasets with varying distributions in the data, as well as, applications to distributions that are notoriously difficult to estimate.
 
