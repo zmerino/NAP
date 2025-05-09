@@ -28,6 +28,13 @@ MANIFEST
 # Directories
 data/
 figures/
+figures_manuscript/
+figures_manuscript_final/
+functions_plotting/
+data_cpu_20_wall/
+data_cpu_40_wall/
+Normal_cpu_20_t_3_large_n/
+data_wall/
 xinning_data/
 
 # Data files
