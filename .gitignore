@@ -1,7 +1,7 @@
 # Directories
 data/
 figures/
-xinning_data/
+
 
 # Data files
 *.mat
