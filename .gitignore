@@ -5,7 +5,7 @@ figures/
 
 # Data files
 *.mat
-*.txt
+
 *.dat
 
 # Figure files
