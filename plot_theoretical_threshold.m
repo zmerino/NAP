@@ -8,7 +8,7 @@ publicationQuality();
 
 plot_mse_dist = false;
 table_name = 'br0_table.dat';
-data_dir = fullfile('data_3','theoretical_threshold');
+data_dir = fullfile('data_cpu_20','theoretical_threshold');
 fig_dir = fullfile('figures_manuscript','threshold');
 
 
@@ -37,11 +37,12 @@ figure('Name','testBR')
 hold on;
 cc=lines(distro_n);
 col_n = 2;
-for j = 1:distro_n-2
+for j = 1:distro_n
 
     xorigin = sample_vec;
     yorigin = table2array(data(:,col_n));
     stdevorigin = table2array(data(:,col_n+1));
+    column_name = data.Properties.VariableNames
 
     x = xorigin;
     y = yorigin;
@@ -55,9 +56,9 @@ for j = 1:distro_n-2
 %     f = fill(x2, inBetween,cc(j,:));
 %     set(f,'facealpha',0.25)
 %     set(f,'edgealpha',0)
+    label = erase(char(col_names(col_n)),"Mean");
 
-
-    h(j) = plot(x,y,'DisplayName',char(names(j)),'Color',cc(j,:));
+    h(j) = plot(x,y,'DisplayName',label,'Color',cc(j,:));
 
     col_n = col_n+2;
 end
@@ -65,9 +66,9 @@ s = plot(log(xT)/log(2), T, 'k--','DisplayName','\Gamma');
 bp = gca;
 bp.XAxis.TickLabelInterpreter = 'latex';
 % bp.xticklabel = labels;
-% bp.YAxis.Exponent = YexpScale;
+bp.YAxis.Scale = "log";
 xlabel('$log_{2}(x)$','Interpreter','latex')
-ylabel('Threshold','Interpreter','latex')
+ylabel('$\xi_0$','Interpreter','latex')
 legend([s,h])
 
 

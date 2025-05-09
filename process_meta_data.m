@@ -4,12 +4,13 @@ close all;
 addpath("functions/")
 
 % Import data table
-file_dir = fullfile('data_4');
-write_data = fullfile('data_4', 'meta_data_100.dat');
+file_dir = fullfile('data_cpu_40_wall');
+file_dir = fullfile('data_cpu_40_wall', 'large_n');
+write_data = fullfile('data_cpu_40_wall', 'meta_data_100_n.dat');
 
 distribution_vector = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
-trials = 100;
-cpu_n = 20;
+trials = 1;
+cpu_n = 40;
 
 large_table = table();
 

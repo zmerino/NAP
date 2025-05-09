@@ -9,7 +9,7 @@ classdef NAP
         p7 = 0.5;
         p8 = 40;
 
-        mod_estimate = false;
+        mod_estimate = true;
         trgt_SURD = 20;
         smooth = 100;
         max_lrg_mltply = 100;
@@ -66,7 +66,7 @@ classdef NAP
                 obj.failed = 0;
 
                 % Script Detailed output %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                save_figs = true;
+                save_figs = false;
                 if ~exist('plt_stitchpdf','var')
                     plt_stitchpdf = false;
                 end
@@ -148,7 +148,7 @@ classdef NAP
                 % partition data into primary blocks      section 6
                 % [j,obj.nBlocks,kBlockLower,kBlockUpper,kList,T,obj.BRlevel,BR0] = block_definition.bin_width_size(obj.N,obj.binN,x);
 
-                obt_blocks = blocks;
+                obt_blocks = blocksJ;
                 obt_blocks.sample = x;
                 obt_blocks.dx = dxn;
                 obt_blocks.dxs = dxns;
@@ -317,7 +317,7 @@ classdef NAP
                     end
 
 
-                    tempStruc.partition = 0;                   % {any number, zero for no partitioning}
+%                     tempStruc.partition = 0;                   % {any number, zero for no partitioning}
                     tempStruc.outlierCutoff = 0;               % {number >= 0, zero to keep all outliers}
 
                     bounds{b} = tempStruc;
@@ -423,6 +423,11 @@ classdef NAP
                 obj.blocks_pdf = blockPDF;
                 obj.blocks_cdf = blockCDF;
                 obj.block_indx = indexList;
+
+                plt_blockpdf = false;
+                plt_blocksize = false;
+                plt_stitchpdf = false;
+                
                 if plt_blockpdf
 
                     fig_dir = fullfile('figures_manuscript','obt_figs');
@@ -651,7 +656,6 @@ classdef NAP
 
                             disp('test')
                         end
-
 
 
                         if plt_stitchpdf

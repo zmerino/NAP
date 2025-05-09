@@ -5,10 +5,12 @@ clc;clear all; close all;
 addpath("functions/")
 addpath("functions_plotting/")
 addpath("cpp_code/")
+% addpath("cpp_code_smooth/")
 
 publicationQuality();
 
-dir_name = fullfile('figures_manuscript','kde_pdfs');
+% dir_name = fullfile('figures_manuscript','kde_pdfs_CDF_stitch');
+dir_name = fullfile('figures_manuscript','kde_pdfs_Jf_changes');
 % dir_name = fullfile('figures','kde_pdfs_mod');
 status = mkdir(dir_name);
 
@@ -23,8 +25,8 @@ estimator_plot_flag =       false;   %<- true/false plot SE results on/off
 data_type_flag =            true;   %<- true/false integer powers of 2/real powers of 2
 save_figs =                 true;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   14; %<---- maximum exponent to generate samples
-min_pow =                   14; %<---- minimum exponent to generate samples
+max_pow =                   18; %<---- maximum exponent to generate samples
+min_pow =                   10; %<---- minimum exponent to generate samples
 trials =                    1   ;  %<--- trials to run to generate heuristics for programs
 step =                      4;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
@@ -47,9 +49,9 @@ distribution = distribution_vector';
 names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
 
 
-% distribution_vector = ["Normal"];
+% distribution_vector = ["Beta-a0p5-b0p5"];
 % distribution = distribution_vector';
-% names = ["Normal"];
+% names = ["Beta(0.5,0.5)"];
 
 
 
@@ -298,52 +300,33 @@ for j = 1:length(distribution_vector)
 
         % subplots --------------------------------------------------------
         fig_name = sprintf('pdf_d_%s_%s', convertCharsToStrings(distribution_vector(j)), num2str(sample_vec(k)));
-        figure('Name',fig_name)
+        f = figure('Name',fig_name);
 
-        subplot(2,2,1)
-        hold on;
-        for i = 1:trials
-            plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
-            plot(nse_kde_pdfs{j,i,k,1}, nse_kde_pdfs{j,i,k,2}, '-m', DisplayName='$\hat{f}(x)_{NAP \ KDE}$')
-
-            if max(actual.x) > 3
-                xlim(xl2)
-            else
-                xlim(xl1)
-            end
-            if max(actual.pdf_y) > 1
-                ylim(yl2)
-            else
-                ylim(yl1)
-            end
-
-            title('$\hat{f}(x)_{NAP \ KDE}$','interpreter','latex')
-            ylabel('$\hat{f}(x)$', Interpreter='latex')
-        end
-        subplot(2,2,2)
-        hold on;
-        for i = 1:trials
-            plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
-            plot(kde_pdfs{j,i,k,1}, kde_pdfs{j,i,k,2}, '-g', DisplayName='$\hat{f}(x)_{KDE}$')
-
-            if max(actual.x) > 3
-                xlim(xl2)
-            else
-                xlim(xl1)
-            end
-            if max(actual.pdf_y) > 1
-                ylim(yl2)
-            else
-                ylim(yl1)
-            end
-
-            title('$\hat{f}(x)_{KDE}$','interpreter','latex')
-        end
         subplot(2,2,3)
         hold on;
         for i = 1:trials
-            plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
-            plot(nse_pdfs{j,i,k,1}, nse_pdfs{j,i,k,2}, '-r', DisplayName='$\hat{f}(x)_{NAP}$')
+            plot(actual.x, actual.pdf_y, '--k')
+            p1 = plot(nse_kde_pdfs{j,i,k,1}, nse_kde_pdfs{j,i,k,2}, '-m', DisplayName='$NAPS(KDE)$');
+
+            if max(actual.x) > 3
+                xlim(xl2)
+            else
+                xlim(xl1)
+            end
+            if max(actual.pdf_y) > 1
+                ylim(yl2)
+            else
+                ylim(yl1)
+            end
+        end
+        xlabel('$x$', 'interpreter','latex')
+        ylabel('$\hat{f}(x)$', 'interpreter','latex')
+        legend([p1],'Location','north','interpreter','latex')
+        subplot(2,2,1)
+        hold on;
+        for i = 1:trials
+            plot(actual.x, actual.pdf_y, '--k')
+            p2 = plot(kde_pdfs{j,i,k,1}, kde_pdfs{j,i,k,2}, '-g', DisplayName='$KDE$');
 
             if max(actual.x) > 3
                 xlim(xl2)
@@ -356,15 +339,14 @@ for j = 1:length(distribution_vector)
                 ylim(yl1)
             end
 
-            title('$\hat{f}(x)_{NAP}$','interpreter','latex')
-            xlabel('$x$', Interpreter='latex')
-            ylabel('$\hat{f}(x)$', Interpreter='latex')
         end
+        ylabel('$\hat{f}(x)$', 'interpreter','latex')
+        legend([p2],'Location','north','interpreter','latex')
         subplot(2,2,4)
         hold on;
         for i = 1:trials
-            plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
-            plot(nmem_pdfs{j,i,k,1}, nmem_pdfs{j,i,k,2}, '-b', DisplayName='$\hat{f}(x)_{NMEM}$')
+            plot(actual.x, actual.pdf_y, '--k')
+            p3 = plot(nse_pdfs{j,i,k,1}, nse_pdfs{j,i,k,2}, '-r', DisplayName='$NAPS$');
 
             if max(actual.x) > 3
                 xlim(xl2)
@@ -377,23 +359,43 @@ for j = 1:length(distribution_vector)
                 ylim(yl1)
             end
 
-            title('$\hat{f}(x)_{NMEM}$','interpreter','latex')
         end
-        xlabel('$x$', Interpreter='latex')
+        xlabel('$x$', 'interpreter','latex')
+        legend([p3],'Location','north','interpreter','latex')
+        subplot(2,2,2)
+        hold on;
+        for i = 1:trials
+            plot(actual.x, actual.pdf_y, '--k')
+            p4 = plot(nmem_pdfs{j,i,k,1}, nmem_pdfs{j,i,k,2}, '-b', DisplayName='$NMEM$');
+
+            if max(actual.x) > 3
+                xlim(xl2)
+            else
+                xlim(xl1)
+            end
+            if max(actual.pdf_y) > 1
+                ylim(yl2)
+            else
+                ylim(yl1)
+            end
+
+        end
+        xlabel('$x$', 'interpreter','latex')
+        legend([p4],'Location','north','interpreter','latex')
         bp = gca;
         if save_figs
-            saveas(bp, fullfile(dir_name, [fig_name, '.png']))
+            fig_export(f ,fullfile(dir_name, fig_name),'naps')
         end
 
         % individual figures ----------------------------------------------
         fig_name = sprintf('pdf_d_%s_%s', convertCharsToStrings(distribution_vector(j)), num2str(sample_vec(k)));
         fig_name_mod = ['NAP_KDE_',fig_name];
 
-        figure('Name',fig_name_mod)
+        f = figure('Name',fig_name_mod);
         hold on;
         for i = 1:trials
-            plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
-            plot(nse_kde_pdfs{j,i,k,1}, nse_kde_pdfs{j,i,k,2}, '-m', DisplayName='$\hat{f}(x)_{NAP \ KDE}$')
+            plot(actual.x, actual.pdf_y, '--k')
+            p = plot(nse_kde_pdfs{j,i,k,1}, nse_kde_pdfs{j,i,k,2}, '-m', DisplayName='$NAPS(KDE)$');
 
             if max(actual.x) > 3
                 xlim(xl2)
@@ -406,22 +408,22 @@ for j = 1:length(distribution_vector)
                 ylim(yl1)
             end
 
-            %             title('$\hat{f}(x)_{NAP \ KDE}$','interpreter','latex')
-            xlabel('$x$', Interpreter='latex')
-            ylabel('$\hat{f}(x)$', Interpreter='latex')
-            bp = gca;
-            if save_figs
-                saveas(bp, fullfile(dir_name, [fig_name_mod, '.png']))
-            end
+        end
+        xlabel('$x$', 'interpreter','latex')
+        ylabel('$\hat{f}(x)$','interpreter','latex')
+        legend([p],'Location','north','interpreter','latex')
+        bp = gca;
+        if save_figs
+            fig_export(f ,fullfile(dir_name, fig_name_mod),'naps')
         end
 
         fig_name_mod = ['KDE_',fig_name];
 
-        figure('Name',fig_name_mod)
+        f = figure('Name',fig_name_mod);
         hold on;
         for i = 1:trials
-            plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
-            plot(kde_pdfs{j,i,k,1}, kde_pdfs{j,i,k,2}, '-g', DisplayName='$\hat{f}(x)_{KDE}$')
+            plot(actual.x, actual.pdf_y, '--k')
+            p = plot(kde_pdfs{j,i,k,1}, kde_pdfs{j,i,k,2}, '-g', DisplayName='$KDE$');
 
             if max(actual.x) > 3
                 xlim(xl2)
@@ -433,23 +435,22 @@ for j = 1:length(distribution_vector)
             else
                 ylim(yl1)
             end
-
-            %             title('$\hat{f}(x)_{KDE}$','interpreter','latex')
-            xlabel('$x$', Interpreter='latex')
-            ylabel('$\hat{f}(x)$', Interpreter='latex')
-            bp = gca;
-            if save_figs
-                saveas(bp, fullfile(dir_name, [fig_name_mod, '.png']))
-            end
+        end
+        xlabel('$x$', 'interpreter','latex')
+        ylabel('$\hat{f}(x)$', 'interpreter','latex')
+        legend([p],'Location','north','interpreter','latex')
+        bp = gca;
+        if save_figs
+            fig_export(f ,fullfile(dir_name, fig_name_mod),'naps')
         end
 
         fig_name_mod = ['NAP_',fig_name];
 
-        figure('Name',fig_name_mod)
+        f = figure('Name',fig_name_mod);
         hold on;
         for i = 1:trials
-            plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
-            plot(nse_pdfs{j,i,k,1}, nse_pdfs{j,i,k,2}, '-r', DisplayName='$\hat{f}(x)_{NAP}$')
+            plot(actual.x, actual.pdf_y, '--k')
+            p = plot(nse_pdfs{j,i,k,1}, nse_pdfs{j,i,k,2}, '-r', DisplayName='$NAPS$');
 
             if max(actual.x) > 3
                 xlim(xl2)
@@ -462,23 +463,23 @@ for j = 1:length(distribution_vector)
                 ylim(yl1)
             end
 
-            %             title('$\hat{f}(x)_{NAP}$','interpreter','latex')
-            xlabel('$x$', Interpreter='latex')
-            ylabel('$\hat{f}(x)$', Interpreter='latex')
-            bp = gca;
-            if save_figs
-                saveas(bp, fullfile(dir_name, [fig_name_mod, '.png']))
-            end
+        end
+        xlabel('$x$', 'interpreter','latex')
+        ylabel('$\hat{f}(x)$', 'interpreter','latex')
+        legend([p],'Location','north','interpreter','latex')
+        bp = gca;
+        if save_figs
+            fig_export(f ,fullfile(dir_name, fig_name_mod),'naps')
         end
 
 
         fig_name_mod = ['NMEM_',fig_name];
 
-        figure('Name',fig_name_mod)
+        f = figure('Name',fig_name_mod);
         hold on;
         for i = 1:trials
-            plot(actual.x, actual.pdf_y, '--k', DisplayName='$f(x)$')
-            plot(nmem_pdfs{j,i,k,1}, nmem_pdfs{j,i,k,2}, '-b', DisplayName='$\hat{f}(x)_{NMEM}$')
+            plot(actual.x, actual.pdf_y, '--k')
+            p = plot(nmem_pdfs{j,i,k,1}, nmem_pdfs{j,i,k,2}, '-b', DisplayName='$NMEM$');
 
             if max(actual.x) > 3
                 xlim(xl2)
@@ -491,13 +492,12 @@ for j = 1:length(distribution_vector)
                 ylim(yl1)
             end
 
-            %             title('$\hat{f}(x)_{NMEM}$','interpreter','latex')
         end
-        xlabel('$x$', Interpreter='latex')
-        ylabel('$\hat{f}(x)$', Interpreter='latex')
+        ylabel('$\hat{f}(x)$', 'interpreter','latex')
+        legend([p],'Location','north','interpreter','latex')
         bp = gca;
         if save_figs
-            saveas(bp, fullfile(dir_name, [fig_name_mod, '.png']))
+            fig_export(f ,fullfile(dir_name, fig_name_mod),'naps')
         end
     end
 

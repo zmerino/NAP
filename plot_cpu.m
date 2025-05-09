@@ -13,8 +13,23 @@ status = mkdir(dir_name);
 % Import data table
 % filename = fullfile('data_3','meta_data_100.dat');
 % filename = fullfile('data_test', 'meta_data_4.dat');
-filename = fullfile('data_4', 'meta_data_100.dat');
+filename = fullfile('data_cpu_40_wall', 'meta_data_100.dat');
 data = readtable(filename);
+
+filename = fullfile('data_cpu_40_wall', 'meta_data_100_n.dat');
+data_n = readtable(filename);
+
+% temporary fix: added inpuut sample size to data table
+table_size = size(data_n); 
+rows = table_size(1);
+idx = 1;
+for i = 1:rows
+    if mod(idx+6, 27) == 0
+        idx = 1;
+    end
+    data_n.sample_power(i) = 2^(idx+7);
+    idx = idx + 1;
+end
 
 % Define labels for figures
 
@@ -373,16 +388,16 @@ G = findgroups(T{:, 1});
 % Split table based on first column - gender column
 T_split = splitapply( @(varargin) varargin, T , G);
 % Allocate empty cell array fo sizxe equal to number of rows in T_Split
-subTables = cell(size(T_split, 1));
+subTables_nse = cell(size(T_split, 1));
 % Create sub tables
 for i = 1:size(T_split, 1)
-subTables{i} = table(T_split{i, :}, 'VariableNames', ...
+subTables_nse{i} = table(T_split{i, :}, 'VariableNames', ...
 T.Properties.VariableNames);
 end
 
 hold on;
-for i = 1:length(subTables)
-    data = subTables{i};
+for i = 1:length(subTables_nse)
+    data = subTables_nse{i};
     x = double(string(data.sample_power));
     y = double(data.mean_cpu_time);    
 
@@ -447,6 +462,122 @@ end
 
 
 
-% subplots ----------------------------------------------------------------
+% large n ----------------------------------------------------------------
+
+xlimits = [7,28];
+ylimits = [-4,11];
+
+fig_name = 'line_NAP_large_n Wall Time per Distribution';
+figure('Name',fig_name)
+% compute average ---------------------------------------------------------
+data_nap_n = convertvars(data_n,["distribution","name","estimator","sample_power"],"categorical");
+mean_data__parallel = groupsummary(data_nap_n,["distribution","name","estimator","sample_power"],"mean",["wall_time","cpu_time"]);
+T = mean_data__parallel;
+% Group based on first column - gender column
+% Modify 1 to appropriate column number
+G = findgroups(T{:, 1});
+% Split table based on first column - gender column
+T_split = splitapply( @(varargin) varargin, T , G);
+% Allocate empty cell array fo sizxe equal to number of rows in T_Split
+subTables_n = cell(size(T_split, 1));
+% Create sub tables
+for i = 1:size(T_split, 1)
+subTables_n{i} = table(T_split{i, :}, 'VariableNames', ...
+T.Properties.VariableNames);
+end
+
+hold on;
+for i = 1:length(subTables_n)
+    data_n_plt = subTables_n{i};
+    data_nse_plt = subTables_nse{i};
+
+    x_n = double(string(data_n_plt.sample_power));
+    y_n = double(data_n_plt.mean_wall_time);    
+
+    x_nse = double(string(data_nse_plt.sample_power));
+    y_nse = double(data_nse_plt.mean_wall_time);
+
+    cut = 22-8+1;
+    x = vertcat(x_nse(1:cut), x_n(cut+1:end));
+    y = vertcat(y_nse(1:cut), y_n(cut+1:end));
+
+    x = log(x)/log(2);
+    y = log(y);
+
+    plot(x,y,'.-','DisplayName',string(data_n_plt.name(1)))
+end
+plot([22,22],ylimits,'--k','DisplayName','NMEM Limit')
+data_nap_parallel = convertvars(data_nap_parallel,["distribution","name","estimator","sample_power"],"categorical");
+mean_data__parallel = groupsummary(data_nap_parallel,["distribution","name","estimator","sample_power"],"mean",["wall_time","cpu_time"]);
+T = mean_data__parallel;
+% Group based on first column - gender column
+% Modify 1 to appropriate column number
+G = findgroups(T{:, 1});
+% Split table based on first column - gender column
+T_split = splitapply( @(varargin) varargin, T , G);
+% Allocate empty cell array fo sizxe equal to number of rows in T_Split
+subTables = cell(size(T_split, 1));
+% Create sub tables
+for i = 1:size(T_split, 1)
+subTables{i} = table(T_split{i, :}, 'VariableNames', ...
+T.Properties.VariableNames);
+end
+bp = gca;
+bp.XAxis.TickLabelInterpreter = 'latex';
+xlabel('$log_{2}(N)$','Interpreter','latex')
+ylabel('log(CPU) Time','Interpreter','latex')
+legend('Location','northwest')
+xlim(xlimits)
+ylim(ylimits)
+if save_figs
+    saveas(bp, fullfile(dir_name, [fig_name, '.png']))
+end
+
+
+xlimits = [7,23];
+
+fig_name = 'line_NMEM2 CPU per Distribution';
+figure('Name',fig_name)
+% compute average ---------------------------------------------------------
+data_nmem = convertvars(data_nmem,["distribution","name","estimator","sample_power"],"categorical");
+mean_data_nmem = groupsummary(data_nmem,["distribution","name","estimator","sample_power"],"mean",["wall_time","cpu_time"]);
+T = mean_data_nmem;
+% Group based on first column - gender column
+% Modify 1 to appropriate column number
+G = findgroups(T{:, 1});
+% Split table based on first column - gender column
+T_split = splitapply( @(varargin) varargin, T , G);
+% Allocate empty cell array fo sizxe equal to number of rows in T_Split
+subTables = cell(size(T_split, 1));
+% Create sub tables
+for i = 1:size(T_split, 1)
+subTables{i} = table(T_split{i, :}, 'VariableNames', ...
+T.Properties.VariableNames);
+end
+
+hold on;
+for i = 1:length(subTables)
+    data = subTables{i};
+    x = double(string(data.sample_power));
+    y = double(data.mean_cpu_time);    
+
+    x = log(x)/log(2);
+    y = log(y);
+
+    plot(x,y,'.-', 'DisplayName',string(data.name(1)))
+
+end
+plot([22,22],ylimits,'--k','DisplayName','NMEM Limit')
+bp = gca;
+bp.XAxis.TickLabelInterpreter = 'latex';
+xlabel('$log_{2}(N)$','Interpreter','latex')
+ylabel('log(CPU) Time','Interpreter','latex')
+legend('Location','northwest')
+xlim(xlimits)
+ylim(ylimits)
+if save_figs
+    saveas(bp, fullfile(dir_name, [fig_name, '.png']))
+end
+
 
 

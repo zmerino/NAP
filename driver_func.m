@@ -15,30 +15,30 @@ max_pow = str2num(max_pow)
 cpu_n = str2num(cpu_n)
 cpp_code = string(cpp_code)
 
-%%%%%%%%%%%%%%%%% COMMENT OUT IF RUNNING LOCALLY %%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% create parallel process on cluster
-
-% create a local cluster object
-pc = parcluster('local')
- 
-% explicitly set the JobStorageLocation to the temp directory that was
-% created in your sbatch script
-pc.JobStorageLocation = strcat('/home/zmerino/.matlab/temp_cluster_jobs/', getenv('SLURM_JOB_ID'))
-
-% start the matlabpool with maximum available workers
-% control how many workers by setting ntasks in your sbatch script
-poolobj = gcp('nocreate'); % get the pool object, and do it avoiding creating a new one.
-if isempty(poolobj) % check if there is not a pool.
-    % create parallel process with given parameters
-    parpool(pc, str2num(getenv('SLURM_CPUS_ON_NODE')), 'IdleTimeout', Inf)
-else
-    delete( gcp('nocreate')); % delete the current pool object.
-    % create parallel process with given parameters
-    parpool(pc, str2num(getenv('SLURM_CPUS_ON_NODE')), 'IdleTimeout', Inf)
-end
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%% COMMENT OUT IF RUNNING LOCALLY %%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% % create parallel process on cluster
+% 
+% % create a local cluster object
+% pc = parcluster('local')
+%  
+% % explicitly set the JobStorageLocation to the temp directory that was
+% % created in your sbatch script
+% pc.JobStorageLocation = strcat('/home/zmerino/.matlab/temp_cluster_jobs/', getenv('SLURM_JOB_ID'))
+% 
+% % start the matlabpool with maximum available workers
+% % control how many workers by setting ntasks in your sbatch script
+% poolobj = gcp('nocreate'); % get the pool object, and do it avoiding creating a new one.
+% if isempty(poolobj) % check if there is not a pool.
+%     % create parallel process with given parameters
+%     parpool(pc, str2num(getenv('SLURM_CPUS_ON_NODE')), 'IdleTimeout', Inf)
+% else
+%     delete( gcp('nocreate')); % delete the current pool object.
+%     % create parallel process with given parameters
+%     parpool(pc, str2num(getenv('SLURM_CPUS_ON_NODE')), 'IdleTimeout', Inf)
+% end
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % add C++ code mex file to workspace
 addpath(cpp_code)

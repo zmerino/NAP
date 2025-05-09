@@ -25,7 +25,7 @@ pc = parcluster('local')
  
 % explicitly set the JobStorageLocation to the temp directory that was
 % created in your sbatch script
-pc.JobStorageLocation = strcat('/home/zmerino/.matlab/temp_cluster_jobs/', getenv('SLURM_JOB_ID'))
+% pc.JobStorageLocation = strcat('/home/zmerino/.matlab/temp_cluster_jobs/', getenv('SLURM_JOB_ID'))
 
 % start the matlabpool with maximum available workers
 % control how many workers by setting ntasks in your sbatch script
@@ -44,9 +44,9 @@ end
 % add C++ code mex file to workspace
 addpath(cpp_code)
 % location to save data
-write_dir = fullfile('data_large_n_test',sprintf('%s_cpu_%d_t_%d_large_n', distribution_vector, cpu_n, trials))
+write_dir = fullfile('data_large_n_JF',sprintf('%s_cpu_%d_t_%d_large_n', distribution_vector, cpu_n, trials))
 % name of data table to save
-table_name = sprintf('%s_cpu_%d_t_%d.mat', distribution_vector, cpu_n, trials)
+table_name = sprintf('%s_cpu_%d_t_%d.dat', distribution_vector, cpu_n, trials)
 
 % make directory if doesn't exist
 status = mkdir(write_dir);
@@ -158,8 +158,8 @@ for j = 1:length(distribution_vector)
     wall_vec_se = zeros(length(sample_vec),trials);
     kl_vec_se = zeros(length(sample_vec),trials);
     mse_vec_se = zeros(length(sample_vec),trials);
-    block_scale = zeros(4,length(sample_vec),trials);
-    block_size = zeros(4,length(sample_vec),trials);
+    block_scale = zeros(5,length(sample_vec),trials);
+    block_size = zeros(5,length(sample_vec),trials);
 
     % store utils_analysis.mse per block for all trials per distribution and sample size
     mse_dists_nse = cell(length(sample_vec),trials);
@@ -236,11 +236,13 @@ for j = 1:length(distribution_vector)
             block_size(2,k,i) = min(nap.block_size);
             block_size(3,k,i) = mean(nap.block_size);
             block_size(4,k,i) = median(nap.block_size);
+            block_size(5,k,i) = std(nap.block_size);
 
             block_scale(1,k,i) = max(nap.block_scale);
             block_scale(2,k,i) = min(nap.block_scale);
             block_scale(3,k,i) = mean(nap.block_scale);
             block_scale(4,k,i) = median(nap.block_scale);
+            block_scale(5,k,i) = std(nap.block_scale);
 
             toc
             %==========================================================
@@ -296,6 +298,7 @@ for j = 1:length(distribution_vector)
     temp = utils.reshape_groups(sample_vec',cpu_vec_se);
 
     sample_power = temp(:,1);
+%     sample_power = repelem(sample_power, length(temp(:,2)))';
     cpu_time = temp(:,2);
 
 
@@ -330,7 +333,7 @@ for j = 1:length(distribution_vector)
     % block size ------------------------
 
     % max
-    bs_max_mat = squeeze(block_size(1,:,:));
+    bs_max_mat = squeeze(block_size(1,:,:))';
     bs_max = utils.reshape_groups(sample_vec',bs_max_mat);
     max_size = bs_max;
 
@@ -339,28 +342,28 @@ for j = 1:length(distribution_vector)
 
 
     % min
-    bs_min_mat = squeeze(block_size(2,:,:));
+    bs_min_mat = squeeze(block_size(2,:,:))';
     bs_min = utils.reshape_groups(sample_vec',bs_min_mat);
     min_size = bs_min;
     min_size = min_size(:,2);
 
 
     % mean
-    bs_mean_mat = squeeze(block_size(3,:,:));
+    bs_mean_mat = squeeze(block_size(3,:,:))';
     bs_mean = utils.reshape_groups(sample_vec',bs_mean_mat);
     mean_size = bs_mean;
     mean_size = mean_size(:,2);
 
 
     % median
-    bs_med_mat = squeeze(block_size(4,:,:));
+    bs_med_mat = squeeze(block_size(4,:,:))';
     bs_med = utils.reshape_groups(sample_vec',bs_med_mat);
     median_size = bs_med;
     median_size = median_size(:,2);
 
 
     %std dev
-    bs_stdev_mat = squeeze(block_size(4,:,:));
+    bs_stdev_mat = squeeze(block_size(5,:,:))';
     bs_stdev = utils.reshape_groups(sample_vec',bs_stdev_mat);
     std_size = bs_stdev;
     std_size = std_size(:,2);
@@ -371,31 +374,31 @@ for j = 1:length(distribution_vector)
     % block scale ------------------------
 
     % max
-    bs_max_mat = squeeze(block_scale(1,:,:));
+    bs_max_mat = squeeze(block_scale(1,:,:))';
     bs_max = utils.reshape_groups(sample_vec',bs_max_mat);
     max_scale = bs_max;
     max_scale = max_scale(:,2);
 
     % min
-    bs_min_mat = squeeze(block_scale(2,:,:));
+    bs_min_mat = squeeze(block_scale(2,:,:))';
     bs_min = utils.reshape_groups(sample_vec',bs_min_mat);
     min_scale = bs_min;
     min_scale = min_scale(:,2);
 
     % mean
-    bs_mean_mat = squeeze(block_scale(3,:,:));
+    bs_mean_mat = squeeze(block_scale(3,:,:))';
     bs_mean = utils.reshape_groups(sample_vec',bs_mean_mat);
     mean_scale = bs_mean;
     mean_scale = mean_scale(:,2);
 
     % median
-    bs_med_mat = squeeze(block_scale(4,:,:));
+    bs_med_mat = squeeze(block_scale(4,:,:))';
     bs_med = utils.reshape_groups(sample_vec',bs_med_mat);
     median_scale = bs_med;
     median_scale = median_scale(:,2);
 
     %std dev
-    bs_stdev_mat = squeeze(block_size(4,:,:));
+    bs_stdev_mat = squeeze(block_size(5,:,:))';
     bs_stdev = utils.reshape_groups(sample_vec',bs_stdev_mat);
     std_scale = bs_stdev;
     std_scale = std_scale(:,2);

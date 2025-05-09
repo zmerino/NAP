@@ -5,14 +5,14 @@ clc;clear all; close all;
 
 addpath("functions/")
 addpath("functions_plotting/")
-addpath("cpp_code/")
-% addpath("cpp_code_smooth/")
+% addpath("cpp_code/")
+addpath("cpp_code_smooth/")
 
 publicationQuality();
 
 % figure directory
 sub_dir = 'pset7';
-fig_dir = fullfile('figures_manuscript','obt_figs');
+fig_dir = fullfile('figures_manuscript','test');
 status = mkdir(fig_dir);
 fig_save = true;
 
@@ -27,8 +27,8 @@ estimator_plot_flag =       false;   %<- true/false plot SE results on/off
 data_type_flag =            false;   %<- true/false integer powers of 2/real powers of 2
 save_figs =                 true;   %<- true/false save .png of plots on/off
 % rndom data generation parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-max_pow =                   13; %<---- maximum exponent to generate samples
-min_pow =                   13  ; %<---- minimum exponent to generate samples
+max_pow =                   10; %<---- maximum exponent to generate samples
+min_pow =                   10  ; %<---- minimum exponent to generate samples
 trials =                    1   ;  %<--- trials to run to generate heuristics for programs
 step =                      1;  %<---- control synthetic rndom samples to skip being created
 temp_min_limit =            0; %<---- set upper limit for both
@@ -43,6 +43,10 @@ cpu_type =                   '\';%<--- '\' or '/' for windows or linux
 distribution_vector = ["Trimodal-Normal","Uniform","Normal","Uniform-Mix","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
 distribution = distribution_vector';
 names = ["Tri-Modal-Normal","Uniform", "Normal","Uniform-Mix", "Beta(0.5,1.5)", "Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto", "Stable"];
+
+distribution_vector = ["Normal", "Trimodal-Normal"];
+distribution = distribution_vector';
+names = ["Normal", "Tri-Modal-Normal"];
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Main Function Call Loop used to lable plot figures
@@ -161,7 +165,8 @@ for j = 1:length(distribution_vector)
             tintialSE = cputime;
 
             % nap object instantiation
-            nap = NAP;
+%             nap = NAP;
+            nap = NAPJ;
 
 
             serial = false;

@@ -256,8 +256,15 @@ classdef blocks < NAP % inherit NAP properties i.e. p vector and max block size
                 
                 fig_dir = fullfile('figures_manuscript','obt_figs');
 
+
+                width = 6; % Width in inches
+                height = 4; 
+                res = 1000;
+                defpos = get(groot,'defaultFigurePosition');
+                
                 fig_name = 'br_values_per_level';
-                figure('Name',fig_name)
+                f = figure('Name',fig_name);
+                f.Position = [defpos(1), defpos(2), width*100, height*100];
                 hold on
                 plot(0:size(plevel,1)-1,log(T*ones(size(plevel,1))), '--r');
                 for k = 1:size(BRlevel,1)
@@ -279,8 +286,9 @@ classdef blocks < NAP % inherit NAP properties i.e. p vector and max block size
                 legend('$\Gamma$', 'Interpreter','latex')
                 bp = gca;
                 if obj.save_figs
-                    saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+%                     saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
                     saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
+                    exportgraphics(bp,fullfile(fig_dir, [fig_name, '.png']),'Resolution',res)
                 end
 
                 % set common x limits for subplots
@@ -295,7 +303,7 @@ classdef blocks < NAP % inherit NAP properties i.e. p vector and max block size
                 bp = gca;
 %                 bp.YAxis.Scale ="log";
                 bp.YAxis.Exponent = 3;
-                ylabel('Number per Bin','Interpreter','latex')
+                ylabel('$N_b$','Interpreter','latex')
                 xlim([x_min x_max])
 
 
@@ -352,8 +360,92 @@ classdef blocks < NAP % inherit NAP properties i.e. p vector and max block size
 
                 bp = gca;
                 if obj.save_figs
-                    saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+%                     saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
                     saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
+                    exportgraphics(bp,fullfile(fig_dir, [fig_name, '.png']),'Resolution',res)
+                end
+
+
+                % split figure for tree branching
+                width = 6; % Width in inches
+                height = 2; 
+                defpos = get(groot,'defaultFigurePosition');
+                
+                fig_name = 'tree_branching_top';
+                f = figure('Name',fig_name);
+                f.Position = [defpos(1), defpos(2), width*100, height*100];
+                histogram(obj.sample)
+                bp = gca;
+%                 bp.YAxis.Scale ="log";
+                bp.YAxis.Exponent = 3;
+                ylabel('$N_b$','Interpreter','latex')
+                xlim([x_min x_max])
+
+                if obj.save_figs
+%                     saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                    saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
+                    exportgraphics(bp,fullfile(fig_dir, [fig_name, '.png']),'Resolution',res)
+                end
+
+                fig_name = 'tree_branching_bottom';
+                f = figure('Name',fig_name);
+                f.Position = [defpos(1), defpos(2), width*100, height*100];
+%                 set(f,'defaultFigurePosition', [defpos(1) defpos(2) width*100, height*100]); 
+                hold on
+                % branching level track markers
+                for k = 1:size(plevel,1)-1
+                    plot(obj.sample(plevel{k,1}{1,1}(:,1)),...
+                        (size(plevel,1)-k)*...
+                        ones(size(plevel{k,1}{1,1}(:,1),1),1),...
+                        'o',...
+                        'MarkerEdgeColor',[0.6,0.6,0.6],...
+                        'MarkerFaceColor',[0.6,0.6,0.6],...
+                        'MarkerSize',5)
+
+                    levelTrack = 0:size(plevel,1)-1;
+                end
+                plot(obj.sample(pList),...
+                    zeros(length(pList),1),...
+                    'o',...
+                    'MarkerEdgeColor',[1,0,0],...
+                    'MarkerFaceColor',[1,0,0],...
+                    'MarkerSize',5)
+
+                % boundries of sample markers
+                plot(obj.sample(pdiff{1,1}(:,1)),...
+                    (size(plevel,1)-1)*...
+                    ones(size(pdiff{1,1}(:,1),1),1),...
+                    'o',...
+                    'MarkerEdgeColor',[0,0,0],...
+                    'MarkerFaceColor',[0.6,0.6,0.6],...
+                    'MarkerSize',8)
+                % new partion markers
+                for k = 2:size(pdiff,1)
+                    plot(obj.sample(pdiff{k,1}(:,1)),...
+                        (size(plevel,1)-k)*...
+                        ones(size(pdiff{k,1}(:,1),1),1),...
+                        'o',...
+                        'MarkerEdgeColor',[0,0,0],...
+                        'MarkerFaceColor',[0,0,0],...
+                        'MarkerSize',8)
+                end
+
+                str = cell(1,size(levelTrack,2));
+                for ii = 1:length(levelTrack)
+                    str{ii} = sprintf('%1.0f',levelTrack(end+1-ii));
+                end
+
+                yticks(levelTrack)
+                yticklabels(str)
+                xlabel('x Range','Interpreter','latex')
+                ylabel('Tree Level','Interpreter','latex')
+                xlim([x_min x_max])
+
+                bp = gca;
+                if obj.save_figs
+%                     saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                    saveas(bp, fullfile(fig_dir, [fig_name, '.fig']))
+                    exportgraphics(bp,fullfile(fig_dir, [fig_name, '.png']),'Resolution',res)
                 end
             end
 
@@ -435,22 +527,35 @@ classdef blocks < NAP % inherit NAP properties i.e. p vector and max block size
                 bRight1 = Ns - partition;
                 rRight1 = obj.get_ratio(obj, sample(partition:end));
                 rLeft1 = obj.get_ratio(obj, sample(1:partition));
-                dxbrC = abs(obj.br_product(obj, bLeft1, rLeft1, Ns)-obj.br_product(obj, bRight1, rRight1, Ns));
                 % --------------------
                 leftPar = partition - 1;
                 bLeft2 = leftPar;
                 bRight2 = Ns - leftPar ;
                 rRight2 = obj.get_ratio(obj, sample(leftPar:end));
                 rLeft2 = obj.get_ratio(obj, sample(1:leftPar));
-                dxbrL = abs(obj.br_product(obj, bLeft2,rLeft2,Ns)-obj.br_product(obj, bRight2,rRight2,Ns));
                 % --------------------
                 rightPar = partition + 1;
                 bLeft3 = rightPar;
                 bRight3 = Ns - rightPar;
                 rRight3 = obj.get_ratio(obj, sample(rightPar:end));
                 rLeft3 = obj.get_ratio(obj, sample(1:rightPar));
-                dxbrR = abs(obj.br_product(obj, bLeft3,rLeft3,Ns)-obj.br_product(obj, bRight3,rRight3,Ns));
                 % --------------------
+
+                % MINIMIZE ABS()
+                dxbrC = abs(obj.br_product(obj, bLeft1, rLeft1, Ns)-obj.br_product(obj, bRight1, rRight1, Ns));
+                dxbrL = abs(obj.br_product(obj, bLeft2,rLeft2,Ns)-obj.br_product(obj, bRight2,rRight2,Ns));
+                dxbrR = abs(obj.br_product(obj, bLeft3,rLeft3,Ns)-obj.br_product(obj, bRight3,rRight3,Ns));
+
+                % MINIMIZE MAX()
+%                 dxbrC = max(obj.br_product(obj, bLeft1, rLeft1, Ns), obj.br_product(obj, bRight1, rRight1, Ns));
+%                 dxbrL = max(obj.br_product(obj, bLeft2,rLeft2,Ns), obj.br_product(obj, bRight2,rRight2,Ns));
+%                 dxbrR = max(obj.br_product(obj, bLeft3,rLeft3,Ns),obj.br_product(obj, bRight3,rRight3,Ns));
+
+                % MINIMIZE XI^2
+%                 dxbrC = (obj.br_product(obj, bLeft1, rLeft1, Ns))^2+(obj.br_product(obj, bRight1, rRight1, Ns))^2;
+%                 dxbrL = (obj.br_product(obj, bLeft2,rLeft2,Ns))^2+(obj.br_product(obj, bRight2,rRight2,Ns))^2;
+%                 dxbrR = (obj.br_product(obj, bLeft3,rLeft3,Ns))^2+(obj.br_product(obj, bRight3,rRight3,Ns))^2;
+
                 dxCR = dxbrC - dxbrR;
                 dxLC = dxbrL - dxbrC;
                 dxLR = dxbrL - dxbrR;

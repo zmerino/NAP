@@ -8,34 +8,40 @@ addpath("functions_plotting/")
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% To Plot %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 plot_mse_dist = false;
-table_name = 'mse_kl_100.dat';
-write_dir = fullfile('data_cpu_20_wall_2','kl_mse_data');
-status = mkdir(write_dir);
 
 plot_pdf = true;
 plot_cdf = false;
 plot_sqr = true;
 plot_heavy = false;
-save_figs = false;
+save_figs = true;
 
-calc_q = false;
-
-% figure directory
-fig_dir = fullfile('figures_manuscript','100_trials_v1');
-status = mkdir(fig_dir);
+calc_q = true;
 
 % choose to visualise figures or not
 fig_plot = 'on';
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Import data %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Trials per sample
+trials = 100;
+plt_trials = 10;
+% number of quantile segments
+qnum = 50;
+% number of cpus used to compute raw data
+cpu_n = 20;
+
 % Create actual distrobution onjects
 actual = distributions;
 
 % Path to directory
 % dir_name = fullfile('data','pdf_estimates');
-dir_name = fullfile('data_cpu_20_wall_2','cpu_20_t_100');
-write_name = fullfile('data_cpu_20_wall_2','kl_mse_cpu_20_t_100');
+table_name = 'mse_kl_100.dat';
+dir_name = fullfile(strcat('data_cpu_',num2str(cpu_n),'_wall_2'));
+write_dir = fullfile(dir_name,strcat('test_kl_mse_cpu_',num2str(cpu_n),'_t_',num2str(trials)));
+fig_dir = fullfile('figures_manuscript','kl_mse_quantiles');
+
+status = mkdir(fig_dir);
+status = mkdir(write_dir);
 
 % Define the etimates to plot
 
@@ -44,12 +50,9 @@ n_vec = 2.^[8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
 
 d_vec = ["Trimodal-Normal","Uniform","Normal","Beta-a0p5-b1p5","Beta-a2-b0p5","Beta-a0p5-b0p5","Generalized-Pareto","Stable"];
 names = ["Trimodal-Normal","Uniform","Normal","Beta(0.5,1.5)","Beta(2,0.5)", "Beta(0.5,0.5)", "Generalized-Pareto","Stable"];
+d_vec = ["Stable"];
+names = ["Stable"];
 
-% Trials per sample
-trials = 100;
-plt_trials = 10;
-% number of quantile segments
-qnum = 50;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% quantiles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -71,11 +74,20 @@ kl_dist_nse_per_q = zeros(qnum,plt_trials);
 global_table = table();
 
 for i = 1:length(d_vec)
+
+
     % save distribution name to object
-    actual.dist_name = d_vec(i);
+    dist_name = d_vec(i);
 
     for j = 1:length(n_vec)
         for k = 1:trials
+%         parfor k = 1:trials
+
+            actual = distributions;
+            actual.generate_data = false;
+
+            % save distribution name to object
+            actual.dist_name = dist_name;
 
             % Make sure that distribution names are saved as character vectors
 
@@ -85,12 +97,13 @@ for i = 1:length(d_vec)
                 ' t: ',num2str(k),'/',num2str(trials)])
 
             % Load data from estimate directory
-            load(fullfile(dir_name,['nse_',num2str(d_vec(i)),'_t_',num2str(trials),'_s_', num2str(n_vec(j)),'.mat']));
-            load(fullfile(dir_name,['nmem_',num2str(d_vec(i)),'_t_',num2str(trials),'_s_', num2str(n_vec(j)),'.mat']));
+            read_dir = fullfile(dir_name, strcat(d_vec(i),'_cpu_',num2str(cpu_n),'_t_',num2str(trials)));
+            nse = load(fullfile(read_dir,['nse_',num2str(d_vec(i)),'_t_',num2str(trials),'_s_', num2str(n_vec(j)),'.mat']));
+            nmem = load(fullfile(read_dir,['nmem_',num2str(d_vec(i)),'_t_',num2str(trials),'_s_', num2str(n_vec(j)),'.mat']));
 
             % x
-            nse_data = nse_pdf_data;
-            nmem_data = nmem_pdf_data;
+            nse_data = nse.nse_pdf_data;
+            nmem_data = nmem.nmem_pdf_data;
 
             nap_x = nse_data{2,k}'; % make sure column vector
             nmem_x = nmem_data{2,k};
@@ -113,6 +126,7 @@ for i = 1:length(d_vec)
             actual.max_limit = max(xs);
             actual.x = xs;
             actual = actual.dist_list();
+%             disp(actual)
 
             if sum(~isfinite(xs)) || sum(~isfinite(fs))|| sum(~isfinite(Fs))
                 warning('non-finite values')
@@ -164,9 +178,28 @@ for i = 1:length(d_vec)
                 kl_dist_nse(j, k) = utils_analysis.kl(actual.pdf_y, fs');
             end
 
+
+            if calc_q
+
+                % plot quantiles
+                fig_name = ['quantile_d_',convertStringsToChars(d_vec(i)),'_s_',num2str(n_vec(j))];
+                figure('Name',fig_name, 'visible',fig_plot)
+                hold on;
+                act_h = plot(xs, Fs, '-k', 'DisplayName', '$F(x)$');
+                q_h = plot(xq, quantiles, 'og', 'DisplayName', sprintf('$Q_{%s}(x)$',[num2str(100/qnum),'\%']));
+                pdf_h = plot(xq, fq, '.b', 'DisplayName', '$f(Q^{-1}(y))$');
+                xlabel('x')
+                ylabel('Q(x)')
+                legend([act_h(1),q_h(1),pdf_h(1)],'Interpreter','latex', 'Location','northwest')
+                bp = gca;
+                if save_figs
+                    saveas(bp, fullfile(fig_dir, [fig_name, '.png']))
+                end
+            end
         end
 
         if calc_q
+
             filename = sprintf('kl_per_q_%s_n_%s_t_%s.mat',d_vec(i), num2str(n_vec(j)), num2str(trials));
 
             save(fullfile(write_dir,['nse_', filename]), 'kl_dist_nse_per_q')
