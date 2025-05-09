@@ -11,8 +11,6 @@ classdef utils
             %--------------------------------------------------------------
             sCDF(1) = 0;
             kmax = length(sCDF);
-%             disp(['length(sCDF): ',num2str(kmax)])
-            %pause
             for k=2:kmax
                 fave = 0.5*( sPDF(k) + sPDF(k-1) );
                 area = fave*( sx(k) - sx(k-1) );
@@ -30,8 +28,6 @@ classdef utils
             sampleUpLim = max(sx);
             sampleLoLim = min(sx);
             [row, ~] = find(sample <= sampleUpLim & sample >= sampleLoLim);
-            % disp('sample size')
-            % disp(size(sample))
             u = interp1(sx,sCDF,sample);    % get corresponding u for each x in sample
             %             u = interp1(sx,sCDF,sample(row));    % get corresponding u for each x in sample
             % figure('Name','interp1 figure')

@@ -76,11 +76,6 @@ classdef NAP
                 if ~exist('plt_blockpdf','var')
                     plt_blockpdf = false;
                 end
-                if ~exist('plt_stitchpdf','var')
-                    plt_stitchpdf = false;
-                end
-
-%                 plt_stitchpdf = true;
 
                 %%                                                              user input      section 1
                 targetCoverage = obj.trgt_SURD;
@@ -148,7 +143,7 @@ classdef NAP
                 % partition data into primary blocks      section 6
                 % [j,obj.nBlocks,kBlockLower,kBlockUpper,kList,T,obj.BRlevel,BR0] = block_definition.bin_width_size(obj.N,obj.binN,x);
 
-                obt_blocks = blocksJ;
+                obt_blocks = blocks;
                 obt_blocks.sample = x;
                 obt_blocks.dx = dxn;
                 obt_blocks.dxs = dxns;
