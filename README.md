@@ -4,7 +4,11 @@ The NAP estimator adaptively paritions a sample of univariant data, finds PDF es
 
 This method leverages a density estimator previously developed by Jenny Farmer and Donald Jacobs which is often refered to as [Non-parametric Maximum Entropy Method Density Esitmation](https://github.com/jennyfarmer/PDFAnalyze). The C++ code was compiled into MEX and published on [Mathworks](https://www.mathworks.com/matlabcentral/fileexchange/74834-multivariate-probability-density-estimation?s_tid=prof_contriblnk) for applications in MATLAB.
 
-> **NOTE:** The NAP estimator is theoretically capable of using other methods of PDF estimation to find estiamtes for each parition. Kernal Density Estimation was previously shown to be compatible and produce equivalent results.
+> **NOTE:** The NAP estimator is theoretically capable of using other methods of PDF estimation to find estiamtes for each parition. Kernal Density Estimation was previously shown to be compatible and produce similiar results.
+
+## Installation Notes
+- Required packages: `Parallel Toolbox`, `Statistics and Machine Learning Toolbox`.
+- place `/functions` and `/cpp_code` directories inside desired project folder.
 
 ## Version
 - version 1.0 - February 2023
