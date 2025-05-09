@@ -10,6 +10,6 @@ figures/
 
 # Figure files
 *.fig
-*.png
+
 *.eps
 *.asv

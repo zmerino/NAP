@@ -1,5 +1,8 @@
-classdef misc_functions
+classdef utils
     methods(Static)
+<<<<<<<< HEAD:functions/utils.m
+        function [u,sqr] = sqr(sx,pdf,sample)
+========
         function [outCounts] = countSQR(u, sqr)
             outCounts = zeros(3, 1);
             total = length(sqr);
@@ -68,21 +71,33 @@ classdef misc_functions
             ylabel('SQR');
         end
         function [u,sqr] = sqr(sx,sPDF,sample)
+>>>>>>>> manuscript_code:cpp_code_smooth/misc_functions.m
             Ns = length(sample);
             x = sort(sample);
             sx = sort(sx);
-            pL = (0.5)/Ns;          %probability for data to be  left of window
-            pR = (0.5)/Ns;          %probability for data to be right of window
-            pNorm = 1 - pL - pR;    %probability for data to fall within window
-            sCDF = zeros( size(sPDF) );
-            %--------------------------------------------------------------
-            sCDF(1) = 0;
-            kmax = length(sCDF);
-%             disp(['length(sCDF): ',num2str(kmax)])
-            %pause
+            pL = (0.5)/Ns;
+            pR = (0.5)/Ns;
+            pNorm = 1 - pL - pR;
+            cdf = zeros( size(pdf) );
+
+            cdf(1) = 0;
+            kmax = length(cdf);
             for k=2:kmax
-                fave = 0.5*( sPDF(k) + sPDF(k-1) );
+                fave = 0.5*( pdf(k) + pdf(k-1) );
                 area = fave*( sx(k) - sx(k-1) );
+<<<<<<<< HEAD:functions/utils.m
+                cdf(k) = cdf(k-1) + area;
+            end
+
+            % recalling what pL, pR and pNorm are
+            cdf = pNorm*(cdf/cdf(kmax)) + pL;
+            sample = x(2:end-1);
+
+            % get corresponding u for each x in sample
+            u = interp1(sx,cdf,sample);
+          
+            uref = (1:Ns-2)/(Ns - 1);
+========
                 sCDF(k) = sCDF(k-1) + area;
             end
             temp = sCDF(kmax);
@@ -98,29 +113,24 @@ classdef misc_functions
 %             uref = (1:Ns-2)/(Ns - 1);
             uref = (1:Ns)/(Ns + 1);
             %             uref = (1:size(sample(row),1))/(size(sample(row),1) - 1);
+>>>>>>>> manuscript_code:cpp_code_smooth/misc_functions.m
             if( size(uref,1) ~= size(u,1) )
                 u = u';
             end
             u = sort(u);
-            % issue with u having NaNs: from sample range being outside of sx range
-            sqr = sqrt(Ns)*(u - uref); % normal formula has sqrt(Ns+2) but Ns -> Ns-2
+            sqr = sqrt(Ns)*(u - uref);
         end
         
-        function [sampleVec] = sample_pow(minSamplesExp,maxSamplesExp,dataTypeflag,step)
-            % to be function inputs
-            %--------------------------------------------------------------------------
-            %step = 1; %<---- can be changed to skip number of samples created
-            %minSamplesExp;
-            %maxSamplesExp;
-            %dataTypeflag = true; %<--- true/false integer powers of 2/real powers of 2
+        function [sampleVec] = sample_pow(minSamplesExp,maxSamplesExp,...
+                dataTypeflag,step)
             
             % Define a vector of samples to generate
-            %--------------------------------------------------------------------------
             exponents = minSamplesExp:step:maxSamplesExp;
             sampleVec = zeros(1,length(exponents));
             if dataTypeflag
                 % Generates vector of samples from integer power 2
-                sampleVec(1:length(exponents)) = 2.^exponents(1:length(exponents));
+                sampleVec(1:length(exponents)) = ...
+                    2.^exponents(1:length(exponents));
             else
                 % Generates vector of samples from real power 2
                 for i = 1:length(exponents)
@@ -130,55 +140,8 @@ classdef misc_functions
             end
         end
         
-        function stitch_results_plot(plotQQandSQR,uref,u,msgModelType,Ns,prefix,saveFIG,sqr)
-            if plotQQandSQR
-                figure('Name','SQR and QQ Plots')
-                subplot(2,1,1)
-                hold off;
-                plot(uref,u,'-k','linewidth',1.0);
-                xlabel('exact quantile');
-                ylabel('empirical quantile');
-                title(['QQ-plot:  ',msgModelType,'  N_s = ',num2str(Ns)]);
-                xlim([0,1])
-                
-                subplot(2,1,2)
-                hold on;
-                % create lemon drop oval in gray scale
-                smallN = 256;
-                smallN2 = 258;
-                graymax = 220;
-                range = 0:1/(smallN+1):1;
-                muLD = range*(smallN + 1) / (smallN + 1);
-                lemonDrop = sqrt(muLD.*(1-muLD)) * 3.4;
-                sampleCount2 = (smallN + 2):-1:1;
-                colorRange = (255-graymax)*sampleCount2/(smallN + 2);
-                base = repmat(graymax, smallN + 2, 1);
-                col = (base + colorRange') / 255;
-                rgb = [col col col];
-                count2 = 1;
-                
-                for ii = ceil(smallN2/2):smallN2-1
-                    ix = [ii ii+1 smallN2-ii smallN2-ii+1];
-                    fill(range(ix), lemonDrop(ix), rgb(count2, :),'edgecolor','none')
-                    fill(range(ix), -lemonDrop(ix), rgb(count2, :),'edgecolor','none')
-                    count2 = count2 + 2;
-                end
-                hb1 = plot(muLD,lemonDrop,'k--');
-                hb2 = plot(muLD,-lemonDrop,'k--');
-                % ---------------------------------------------------------
-                plot(u,sqr,'-k');
-                xlabel('exact quantile');
-                ylabel('SQR');
-                title(['SQR-plot:  ',msgModelType,'  N_s = ',num2str(Ns)]);
-                if saveFIG
-                    fig5Name = [prefix,'_QQSQR'];
-                    savefig(fig5Name);
-                end
-            end
-        end
-        
         function val = likelihood()
-            % function to hold loglikelhood function data
+            % hold loglikelhood function data
             val = [-5.99230836533,4.57069309023e-06
                 -5.982836708,9.38049450812e-06
                 -5.97336505068,1.44855544081e-05
@@ -945,27 +908,28 @@ classdef misc_functions
                 0.0318370803853,0.99912100249];
         end
         
-        function n = mixSampling(N,p,mixtureType)
+        function n = mixSampling(N,p,mix_type)
             % Probability Distribution Data Generation function
-            % Created By: Zach D. Merino a MS candidate
-            % Updated: 3/22/19
-            %--------------------------------------------------------------------------
-            % This function generates the size of the sample to be taken from each
-            % individual distrbution in a mixture distribution. This method uses
-            % random sampling from a binomial distribution. This method can easily be
-            % generalized to any size mixture, but for practial use the option to
-            % created a mixture from 2-5 has been included.
-            %--------------------------------------------------------------------------
+            %--------------------------------------------------------------
+            % This function generates the size of the sample to be taken 
+            % from each individual distrbution in a mixture.
+            % Random sampling from a binomial distribution is used. 
+            % Note: This method can easily be generalized to any size 
+            % mixture, but for practial use the option to created a
+            % mixture from 2-5 has been included.
+            %--------------------------------------------------------------
             % n = vector of subsamples for each distribution in the mixture
             % N = sample size to take from total mixture distribution
-            % p = vector of probability weights for each distribution in the mixture
+            % p = vector of probability weights for each distribution in
+            % the mixture
             
-            switch mixtureType
+            switch mix_type
                 case "two"
                     
                     % get random sample from binomial distribution
                     n1 = binornd(N,p(1));
-                    % find sample points for last distribution in the mixture
+                    % find sample points for last distribution in the
+                    % mixture
                     n2 = N - n1;
                     % save number of samples to take from each distribution
                     n = [n1,n2];
@@ -974,10 +938,13 @@ classdef misc_functions
                     
                     % get random sample from binomial distribution
                     n1 = binornd(N,p(1));
-                    % get random sample from binomial distribution with conditional
+                    % get random sample from binomial distribution with
+                    % conditional
+
                     % probabilies
                     n2 = binornd(N-n1,p(2)/(p(2)+p(3)));
-                    % find sample points for last distribution in the mixture
+                    % find sample points for last distribution in the
+                    % mixture
                     n3 = N - n1 - n2;
                     % save number of samples to take from each distribution
                     n = [n1,n2,n3];
@@ -986,11 +953,14 @@ classdef misc_functions
                     
                     % get random sample from binomial distribution
                     n1 = binornd(N,p(1));
-                    % get random sample from binomial distribution with conditional
+                    % get random sample from binomial distribution with
+                    % conditional
+
                     % probabilies
                     n2 = binornd(N-n1,p(2)/(p(2)+p(3)+p(4)));
                     n3 = binornd(N-n1-n2,p(3)/(p(3)+p(4)));
-                    % find sample points for last distribution in the mixture
+                    % find sample points for last distribution in the 
+                    % mixture
                     n4 = N - n1 - n2 - n3;
                     % save number of samples to take from each distribution
                     n = [n1,n2,n3,n4];
@@ -999,12 +969,15 @@ classdef misc_functions
                     
                     % get random sample from binomial distribution
                     n1 = binornd(N,p(1));
-                    % get random sample from binomial distribution with conditional
+                    % get random sample from binomial distribution with
+                    % conditional
+
                     % probabilies
                     n2 = binornd(N-n1,p(2)/(p(2)+p(3)+p(4)+p(5)));
                     n3 = binornd(N-n1-n2,p(3)/(p(3)+p(4)+p(5)));
                     n4 = binornd(N-n1-n2-n3,p(4)/(p(4)+p(5)));
-                    % find sample points for last distribution in the mixture
+                    % find sample points for last distribution in the
+                    % mixture
                     n5 = N - n1 - n2 - n3 - n4;
                     % save number of samples to take from each distribution
                     n = [n1,n2,n3,n4,n5];
@@ -1013,33 +986,19 @@ classdef misc_functions
                     
                     % get random sample from binomial distribution
                     n1 = binornd(N,p(1));
-                    % get random sample from binomial distribution with conditional
+                    % get random sample from binomial distribution with
+                    % conditional
+
                     % probabilies
                     n2 = binornd(N-n1,p(2)/(p(2)+p(3)+p(4)+p(5)+p(6)));
                     n3 = binornd(N-n1-n2,p(3)/(p(3)+p(4)+p(5)+p(6)));
                     n4 = binornd(N-n1-n2-n3,p(4)/(p(4)+p(5)+p(6)));
                     n5 = binornd(N-n1-n2-n3-n4,p(5)/(p(5)+p(6)));
-                    % find sample points for last distribution in the mixture
+                    % find sample points for last distribution in the
+                    % mixture
                     n6 = N - n1 - n2 - n3 - n4 - n5;
                     % save number of samples to take from each distribution
                     n = [n1,n2,n3,n4,n5,n6];
-            end
-        end
-    
-        function C = reshape_groups(groups, data)
-            [row, col] = size(data);
-
-            group = zeros(col, 1);
-            C = [];
-
-            for i = 1:row
-                new = reshape(data(i,:),[col,1]);
-
-                for j = 1:col
-                    group(j) = groups(i);
-                end
-
-                C = [C; horzcat(group, new)];
             end
         end
 
